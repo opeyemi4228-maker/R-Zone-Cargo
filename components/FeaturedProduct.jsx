@@ -235,9 +235,9 @@ export default function TrustAuthority() {
                   <br />Since 2012.
                 </h2>
 
-                <p className="text-white/50 text-[13.5px] font-light leading-relaxed tracking-wide max-w-lg">
+                <p className="text-white/60 text-[15px] font-light leading-relaxed tracking-wide max-w-lg">
                   From families sending care packages to businesses shipping commercial
-                  cargo — R-Zone Enterprises has been the trusted bridge between
+                  cargo, R-Zone Enterprises has been the trusted bridge between
                   the UK and Nigeria for over a decade.
                 </p>
               </motion.div>
@@ -318,7 +318,7 @@ export default function TrustAuthority() {
                     <p className="text-white font-bold text-[12px] tracking-[0.08em] uppercase leading-tight mb-1.5" itemProp="description">
                       {metric.label}
                     </p>
-                    <p className="text-white/38 text-[11px] font-light tracking-wide">
+                    <p className="text-white/60 text-[12px] font-light tracking-wide">
                       {metric.sub}
                     </p>
                   </motion.div>
@@ -334,7 +334,7 @@ export default function TrustAuthority() {
           <div className="max-w-[1400px] mx-auto px-3 py-12 md:py-14">
 
             <motion.p
-              className="text-white/30 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/50 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -371,7 +371,7 @@ export default function TrustAuthority() {
                       <p className="text-white/75 text-[11.5px] font-bold tracking-[0.04em] leading-none mb-0.5">
                         {cert.label}
                       </p>
-                      <p className="text-white/30 text-[10px] font-light leading-none">
+                      <p className="text-white/50 text-[10px] font-light leading-none">
                         {cert.sub}
                       </p>
                     </div>
@@ -386,7 +386,7 @@ export default function TrustAuthority() {
         <div className="relative border-b border-white/[0.06] overflow-hidden">
           <div className="max-w-[1400px] mx-auto px-3 pt-12 md:pt-14">
             <motion.p
-              className="text-white/30 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/60 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -419,10 +419,10 @@ export default function TrustAuthority() {
                   >
                     {p.code}
                   </span>
-                  <span className="text-white/52 text-[12.5px] font-medium whitespace-nowrap">
+                  <span className="text-white/60 text-[12.5px] font-medium whitespace-nowrap">
                     {p.name}
                   </span>
-                  <Plane size={10} className="text-white/15 flex-shrink-0" aria-hidden="true" />
+                  <Plane size={10} className="text-white/40 flex-shrink-0" aria-hidden="true" />
                 </div>
               ))}
             </motion.div>
@@ -435,7 +435,7 @@ export default function TrustAuthority() {
           <div className="max-w-[1400px] mx-auto px-3 py-14 md:py-16">
 
             <motion.p
-              className="text-white/30 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/60 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -477,23 +477,23 @@ export default function TrustAuthority() {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center flex-wrap gap-2 mb-1.5">
-                        <span className="text-[15px]" aria-hidden="true">{office.flag}</span>
+                        <span className="text-[15px] text-white/60" aria-hidden="true">{office.flag}</span>
                         <span className="text-white font-black text-[13px] tracking-[0.06em] uppercase">
                           {office.city}
                         </span>
-                        <span className="text-[#1F51FF] text-[9px] font-bold tracking-[0.14em] uppercase bg-[#0818A8]/22 px-2 py-0.5">
+                        <span className="text-[#1F51FF] text-[10px] font-bold tracking-[0.14em] uppercase bg-[#0818A8]/22 px-2 py-0.5">
                           {office.role}
                         </span>
                       </div>
 
-                      <p className="text-white/48 text-[12px] font-light leading-snug mb-3" itemProp="streetAddress">
+                      <p className="text-white/70 text-[13px] font-light leading-snug mb-3" itemProp="streetAddress">
                         {office.address}
                       </p>
 
                       <div className="flex flex-wrap gap-x-5 gap-y-1.5">
                         <a
                           href={`tel:${office.phone.replace(/[\s()]/g, "")}`}
-                          className="flex items-center gap-1.5 text-white/38 hover:text-white text-[11px] font-medium transition-colors duration-200"
+                          className="flex items-center gap-1.5 text-white/70 hover:text-white text-[12px] font-medium transition-colors duration-200"
                           aria-label={`Call ${office.city}: ${office.phone}`}
                         >
                           <Phone size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
@@ -501,7 +501,7 @@ export default function TrustAuthority() {
                         </a>
                         <a
                           href={`mailto:${office.email}`}
-                          className="flex items-center gap-1.5 text-white/38 hover:text-white text-[11px] font-medium transition-colors duration-200"
+                          className="flex items-center gap-1.5 text-white/70 hover:text-white text-[12px] font-medium transition-colors duration-200"
                           aria-label={`Email ${office.city}: ${office.email}`}
                         >
                           <MessageSquare size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
@@ -509,7 +509,7 @@ export default function TrustAuthority() {
                         </a>
                       </div>
 
-                      <p className="text-white/25 text-[10.5px] font-light mt-2 tracking-wide">
+                      <p className="text-white/70 text-[12px] font-light mt-2 tracking-wide">
                         {office.hours}
                       </p>
                     </div>
@@ -526,8 +526,8 @@ export default function TrustAuthority() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <p className="text-white/35 text-[12.5px] font-light max-w-md leading-relaxed">
-                Our UK-based team handles every query personally — no automated
+              <p className="text-white/60 text-[12.5px] font-light max-w-md leading-relaxed">
+                Our UK-based team handles every query personally, no automated
                 responses, no call centres.
               </p>
               <div className="flex flex-wrap gap-3">

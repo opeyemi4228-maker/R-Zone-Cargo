@@ -22,12 +22,12 @@ const montserrat = Montserrat({
 // ─── Data — sourced from r-zoneenterprises.com ────────────────────────────────
 
 const SERVICES = [
-  { label: "Air Freight to Nigeria",    href: "/air-freight",       icon: Plane },
-  { label: "Sea Shipping to Nigeria",   href: "/sea-shipping",      icon: Ship },
-  { label: "Door to Door Cargo",        href: "/door-to-door-cargo",icon: Truck },
-  { label: "Customs Clearance",         href: "/customs-clearance", icon: FileCheck },
-  { label: "Warehousing",               href: "/warehousing",       icon: Warehouse },
-  { label: "Cargo Handling",            href: "/cargo-handling",    icon: Anchor },
+  { label: "Air Freight to Nigeria",    href: "/services#air-freight",       icon: Plane },
+  { label: "Sea Shipping to Nigeria",   href: "/services#sea-shipping-to-nigeria",      icon: Ship },
+  { label: "Door to Door Cargo",        href: "/services#door-to-door-cargo",icon: Truck },
+  { label: "Customs Clearance",         href: "/services#customs-clearance", icon: FileCheck },
+  { label: "Warehousing",               href: "/services#warehousing",       icon: Warehouse },
+  { label: "Cargo Handling",            href: "/services#cargo-handling",    icon: Anchor },
 ];
 
 const COMPANY = [
@@ -298,7 +298,7 @@ function NewsletterForm() {
                 Please enter a valid email address.
               </motion.p>
             )}
-            <p className="text-white/35 text-[10px] mt-2 tracking-wide font-light">
+            <p className="text-white/40 text-[10px] mt-2 tracking-wide font-light">
               No spam. Unsubscribe anytime.
             </p>
           </motion.form>
@@ -431,7 +431,7 @@ export default function Footer() {
                 .
               </h2>
               <p className="text-white/60 text-[13px] font-light leading-relaxed mt-3 max-w-lg">
-                Door to door cargo from the UK to Nigeria — air freight, sea freight
+                Door to door cargo from the UK to Nigeria air freight, sea freight
                 &amp; car shipping. Get a quote in minutes.
               </p>
             </div>
@@ -539,13 +539,13 @@ export default function Footer() {
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className="font-black text-white text-[17px] tracking-[0.1em] uppercase">R-Zone</span>
-                <span className="font-light text-white/30 text-[17px] tracking-[0.06em] uppercase">Cargo</span>
+                <span className="font-light text-white/40 text-[17px] tracking-[0.06em] uppercase">Cargo</span>
               </div>
             </Link>
 
             <p className="text-white/60 text-[12.5px] font-light leading-[1.8] mb-6 max-w-[280px]">
               Your trusted cargo specialist from the UK to Nigeria. Air freight,
-              sea freight &amp; door to door delivery — since 2012.
+              sea freight &amp; door to door delivery since 2012.
             </p>
 
             {/* Contact block — real data */}
@@ -622,7 +622,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     role="listitem"
                     aria-label={`Follow R-Zone on ${s.label} (opens in new tab)`}
-                    className="w-9 h-9 bg-white/[0.05] border border-white/10 rounded-sm flex items-center justify-center text-white/38 hover:text-white hover:bg-[#0818A8] hover:border-[#0818A8] transition-all duration-200 group relative"
+                    className="w-9 h-9 bg-white/[0.05] border border-white/10 rounded-sm flex items-center justify-center text-white/40 hover:text-white hover:bg-[#0818A8] hover:border-[#0818A8] transition-all duration-200 group relative"
                     whileHover={{ scale: 1.08, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -756,7 +756,7 @@ export default function Footer() {
                     {l.label}
                   </Link>
                   {i < LEGAL_LINKS.length - 1 && (
-                    <span className="text-white/20 text-[10px]" aria-hidden="true">·</span>
+                    <span className="text-white/40 text-[10px]" aria-hidden="true">·</span>
                   )}
                 </span>
               ))}

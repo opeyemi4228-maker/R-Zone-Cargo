@@ -462,7 +462,7 @@ export default function TrackPage() {
       {/* ══ HERO ════════════════════════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative bg-[#00061a] overflow-hidden pt-[104px] pb-14 md:pb-16"
+        className="relative bg-[#00061a] overflow-hidden pt-[104px] pb-14 md:pb-16 hero-section"
       >
         {/* Background */}
         <div className="absolute inset-0">
@@ -491,7 +491,7 @@ export default function TrackPage() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex items-center justify-center gap-1.5 text-[11.5px] text-white/30 font-medium mb-6"
+              className="flex items-center justify-center gap-1.5 text-[11.5px] text-white/40 font-medium mb-6"
             >
               <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
               <span>/</span>
@@ -584,7 +584,7 @@ export default function TrackPage() {
                 custom={0.4}
                 className="flex flex-wrap items-center justify-center gap-2 mt-4"
               >
-                <span className="text-white/30 text-[11px] font-medium">Try a sample:</span>
+                <span className="text-white/40 text-[11px] font-medium">Try a sample:</span>
                 {SAMPLE_IDS.map((id) => (
                   <button
                     key={id}

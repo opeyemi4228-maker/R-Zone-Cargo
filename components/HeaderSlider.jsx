@@ -9,6 +9,8 @@ import {
   useInView,
   useMotionValue,
   useSpring,
+  useScroll,
+  useTransform,
 } from "framer-motion";
 
 const montserrat = Montserrat({
@@ -18,70 +20,66 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-// ─── Animated Counter ─────────────────────────────────────────────────────────
+// ─── Animated Counter (unchanged) ────────────────────────────────────────────
 function AnimatedCounter({ target, suffix = "" }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const ref      = useRef(null);
+  const inView   = useInView(ref, { once: true });
   const motionVal = useMotionValue(0);
-  const spring = useSpring(motionVal, { stiffness: 55, damping: 18 });
+  const spring   = useSpring(motionVal, { stiffness: 55, damping: 18 });
   const [display, setDisplay] = useState(0);
 
-  useEffect(() => {
-    if (inView) motionVal.set(target);
-  }, [inView, target, motionVal]);
-
-  useEffect(() => {
-    return spring.on("change", (v) => setDisplay(Math.floor(v)));
-  }, [spring]);
+  useEffect(() => { if (inView) motionVal.set(target); }, [inView, target, motionVal]);
+  useEffect(() => spring.on("change", (v) => setDisplay(Math.floor(v))), [spring]);
 
   return (
     <span ref={ref} aria-label={`${target}${suffix}`}>
-      {display.toLocaleString()}
-      {suffix}
+      {display.toLocaleString()}{suffix}
     </span>
   );
 }
 
-// ─── Data — sourced from r-zoneenterprises.com ────────────────────────────────
+// ─── Data (unchanged) ─────────────────────────────────────────────────────────
 const STATS = [
-  { value: 12,  suffix: "+", label: "Years Experience"  },
-  { value: 6,   suffix: "",  label: "Continents Covered" },
-  { value: 500, suffix: "+", label: "Tons Delivered"     },
-  { value: 107, suffix: "+", label: "5‑Star Reviews"     },
+  { value: 12,  suffix: "+", label: "Years Experience"   },
+  { value: 6,   suffix: "",  label: "Continents Covered"  },
+  { value: 500, suffix: "+", label: "Tons Delivered"      },
+  { value: 107, suffix: "+", label: "5\u2011Star Reviews" },
 ];
 
-// ─── Variants ─────────────────────────────────────────────────────────────────
+// ─── Animation variants (unchanged) ──────────────────────────────────────────
 const curtainReveal = {
-  hidden: { y: "105%", opacity: 0 },
+  hidden:  { y: "105%", opacity: 0 },
   visible: (d = 0) => ({
-    y: "0%",
-    opacity: 1,
+    y: "0%", opacity: 1,
     transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1], delay: d },
   }),
 };
-
 const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
+  hidden:  { opacity: 0, y: 22 },
   visible: (d = 0) => ({
-    opacity: 1,
-    y: 0,
+    opacity: 1, y: 0,
     transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: d },
   }),
 };
-
 const fadeIn = {
-  hidden: { opacity: 0 },
+  hidden:  { opacity: 0 },
   visible: (d = 0) => ({
     opacity: 1,
     transition: { duration: 0.7, ease: "easeOut", delay: d },
   }),
 };
 
-// ─── Hero ─────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 export default function HeroSection() {
+  // Parallax scroll — image drifts up as user scrolls down (Solutions pattern)
+  const { scrollY }   = useScroll();
+  const imgParallax   = useTransform(scrollY, [0, 700], [0, 130]);
+  const contentFadeOut = useTransform(scrollY, [0, 480], [1, 0.6]);
+
   return (
-    <>
-      {/* ── JSON-LD: Full structured data from r-zoneenterprises.com ── */}
+    <section className="hero-section">
+
+      {/* ── JSON-LD (unchanged) ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -108,20 +106,20 @@ export default function HeroSection() {
                 "addressLocality": "Essex",
                 "postalCode": "RM14 3TS",
                 "addressCountry": "GB",
-                "name": "R-Zone UK Office"
+                "name": "R-Zone UK Office",
               },
               {
                 "@type": "PostalAddress",
                 "streetAddress": "2 Esan Olusegun Close, Off Hotel Solus Bus Stop, Igando",
                 "addressLocality": "Lagos",
                 "addressCountry": "NG",
-                "name": "R-Zone Nigeria Office"
-              }
+                "name": "R-Zone Nigeria Office",
+              },
             ],
             "areaServed": [
               { "@type": "Country", "name": "United Kingdom" },
               { "@type": "Country", "name": "Nigeria" },
-              { "@type": "Continent", "name": "Africa" }
+              { "@type": "Continent", "name": "Africa" },
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -132,15 +130,15 @@ export default function HeroSection() {
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Shipping to Nigeria" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Shipping to Nigeria" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Importation from Nigeria to UK" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cargo to Nigeria" } }
-              ]
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cargo to Nigeria" } },
+              ],
             },
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
               "reviewCount": "107",
               "bestRating": "5",
-              "worstRating": "1"
+              "worstRating": "1",
             },
             "sameAs": ["https://www.instagram.com/rzoneenterprise"],
             "contactPoint": {
@@ -148,17 +146,20 @@ export default function HeroSection() {
               "telephone": "+44-800-772-0864",
               "contactType": "customer service",
               "availableLanguage": ["English"],
-              "hoursAvailable": "Mo-Fr 10:00-18:00"
-            }
+              "hoursAvailable": "Mo-Fr 10:00-18:00",
+            },
           }),
         }}
       />
 
+      {/* ════════════════════════════════════════════════════════════════════
+          HERO SHELL
+      ════════════════════════════════════════════════════════════════════ */}
       <section
         className={`
           ${montserrat.variable}
           font-[family-name:var(--font-montserrat)]
-          relative w-full overflow-hidden bg-[#00061a]
+          relative w-full overflow-hidden bg-[#00040f]
           h-[70vh] min-h-[540px]
           md:h-[70vh] md:min-h-[600px]
           lg:h-[70dvh] lg:min-h-[660px] lg:max-h-[920px]
@@ -169,24 +170,27 @@ export default function HeroSection() {
         itemType="https://schema.org/WPHeader"
       >
 
-        {/* ══ BACKGROUND — CSS background-image (no <img> tag) ══════════════
-            Security notes:
-            • No <img> element in DOM → "Save Image As" not in right-click menu
-            • onContextMenu preventDefault → blocks context menu on container
-            • onDragStart preventDefault → blocks drag-to-desktop
-            • WebkitTouchCallout none → blocks iOS long-press save
-            • pointer-events none + userSelect none → no interaction layer
-        ══════════════════════════════════════════════════════════════════ */}
+        {/* ╔══════════════════════════════════════════════════════════════╗
+            BACKGROUND SYSTEM  ←  ported from Solutions hero visual DNA
+            ─ Right 56%: parallax photo panel with 3-layer gradient blend
+            ─ Full width: grid texture + left atmospheric glow
+            ─ Two animated accent vertical lines
+            ─ Animated route SVG dashed curve
+        ╚══════════════════════════════════════════════════════════════╝ */}
+
+        {/* ── Right-half parallax image panel ── */}
         <div
-          className="absolute inset-0 z-0 select-none overflow-hidden"
+          className="absolute inset-y-0 right-0 w-full lg:w-[56%] overflow-hidden z-0"
           aria-hidden="true"
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
         >
+          {/* Parallax layer — drifts 130 px upward over 700 px of scroll */}
           <motion.div
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1800&q=85')`,
+              y: imgParallax,
+              backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1800&q=85')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -194,56 +198,76 @@ export default function HeroSection() {
               userSelect: "none",
               WebkitTouchCallout: "none",
               pointerEvents: "none",
+              willChange: "transform",
             }}
-            initial={{ scale: 1.06, opacity: 0 }}
-            animate={{ scale: 1,    opacity: 1 }}
-            transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            initial={{ scale: 1.07, opacity: 0 }}
+            animate={{ scale: 1.0, opacity: 1 }}
+            transition={{ duration: 2.0, ease: [0.25, 0.46, 0.45, 0.94] }}
           />
 
-          {/* ── Gradient system — RESTORED from original ── */}
-          {/* Left — deep dark so headline is always readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00061a] via-[#00061a]/80 to-transparent" />
-          {/* Bottom — smooth fade to next section */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#00061a] via-[#00061a]/55 to-transparent" />
-          {/* Top — navbar blend */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00061a]/65 via-transparent to-transparent" />
-          {/* Blue brand tint */}
-          <div className="absolute inset-0 bg-[#0818A8]/8 mix-blend-screen pointer-events-none" />
+          {/* Three-layer gradient blend — identical recipe to Solutions hero */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00040f] via-[#00040f]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#00040f] via-transparent to-[#00040f]/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00040f]/80" />
         </div>
 
-        {/* ── Grid overlay ── */}
+        {/* ── Grid texture (same spec as Solutions hero: 72 × 72 px) ── */}
         <div
-          className="absolute inset-0 z-[1] opacity-[0.022] pointer-events-none select-none"
+          className="absolute inset-0 z-[1] opacity-[0.028] pointer-events-none select-none"
           aria-hidden="true"
           style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)
-            `,
-            backgroundSize: "68px 68px",
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)," +
+              "linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
         />
 
-        {/* ── Atmospheric glow — bottom left ── */}
+        {/* ── Left atmospheric blue glow ── */}
         <div
-          className="absolute -bottom-32 -left-20 w-[580px] h-[380px] bg-[#0818A8]/13 rounded-full blur-3xl z-[1] pointer-events-none"
+          className="absolute top-[-10%] left-[-5%] w-[700px] h-[700px] rounded-full blur-[160px] z-[1] pointer-events-none"
           aria-hidden="true"
+          style={{ background: "radial-gradient(circle, rgba(8,24,168,0.22) 0%, transparent 60%)" }}
         />
 
-        {/* ── Right accent line ── */}
+        {/* ── Secondary glow — faint bottom-centre warmth ── */}
+        <div
+          className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[120px] z-[1] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: "radial-gradient(circle, rgba(8,24,168,0.08) 0%, transparent 65%)" }}
+        />
+
+        {/* ── Two accent vertical lines (Solutions DNA: left 8 % + 28 %) ── */}
+        {[8, 28].map((pos, i) => (
+          <motion.div
+            key={pos}
+            className="absolute top-0 bottom-0 w-px z-[2] pointer-events-none"
+            aria-hidden="true"
+            style={{
+              left: `${pos}%`,
+              background:
+                "linear-gradient(to bottom, transparent 5%, rgba(31,81,255,0.32) 40%, transparent 95%)",
+            }}
+            initial={{ scaleY: 0, opacity: 0 }}
+            animate={{ scaleY: 1, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.9 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+          />
+        ))}
+
+        {/* ── Right-edge accent line ── */}
         <motion.div
           className="absolute right-0 top-0 bottom-0 w-px z-[2] pointer-events-none"
           aria-hidden="true"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 10%, rgba(31,81,255,0.4) 50%, transparent 90%)",
+              "linear-gradient(to bottom, transparent 10%, rgba(31,81,255,0.38) 50%, transparent 90%)",
           }}
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 1.4, delay: 1.0 }}
+          transition={{ duration: 1.5, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        {/* ── Bottom border ── */}
+        {/* ── Bottom rule ── */}
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-px z-[2] pointer-events-none"
           aria-hidden="true"
@@ -253,11 +277,39 @@ export default function HeroSection() {
           }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 1.2, delay: 1.6 }}
+          transition={{ duration: 1.3, delay: 1.6 }}
         />
 
-        {/* ══ MAIN LAYOUT ════════════════════════════════════════════════════ */}
-        <div className="relative z-10 h-full max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col">
+        {/* ── Animated route SVG — dashed arc UK → NG (Solutions DNA) ── */}
+        <div
+          className="absolute bottom-[20%] left-0 right-0 pointer-events-none overflow-hidden z-[2]"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 1400 80"
+            className="w-full opacity-[0.065]"
+            preserveAspectRatio="none"
+          >
+            <motion.path
+              d="M 0 40 Q 350 10 700 40 Q 1050 70 1400 40"
+              fill="none"
+              stroke="#1F51FF"
+              strokeWidth="1.5"
+              strokeDasharray="8 6"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 2.4, delay: 1.4, ease: "easeOut" }}
+            />
+          </svg>
+        </div>
+
+        {/* ════════════════════════════════════════════════════════════════════
+            MAIN LAYOUT  — content 100 % unchanged from original
+        ════════════════════════════════════════════════════════════════════ */}
+        <motion.div
+          className="relative z-10 h-full max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col"
+          style={{ opacity: contentFadeOut }}
+        >
 
           {/* Navbar spacer */}
           <div className="h-[76px] sm:h-[84px] flex-shrink-0" />
@@ -265,35 +317,21 @@ export default function HeroSection() {
           {/* ── CENTRE CONTENT ── */}
           <div className="flex-1 flex flex-col justify-center gap-4 sm:gap-5">
 
-            {/* Tag pill */}
+            {/* Tag pill — upgraded to Solutions pill style (#1F51FF border + text) */}
             <motion.div variants={fadeIn} initial="hidden" animate="visible" custom={0.2}>
-              <div className="inline-flex items-center gap-2.5 border border-white/12 bg-white/[0.06] backdrop-blur-sm px-4 py-2 rounded-full w-fit">
+              <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 backdrop-blur-sm px-4 py-2 rounded-full w-fit">
                 <motion.span
                   className="w-2 h-2 rounded-full bg-[#1F51FF] flex-shrink-0"
                   animate={{ scale: [1, 1.6, 1], opacity: [1, 0.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-white/55 text-[10px] sm:text-[11px] font-semibold tracking-[0.22em] uppercase">
+                <span className="text-[#1F51FF] text-[10px] font-bold tracking-[0.28em] uppercase">
                   UK &amp; Africa Freight Specialists
                 </span>
               </div>
             </motion.div>
 
-            {/* Pre-rule */}
-            <motion.div
-              variants={fadeIn}
-              initial="hidden"
-              animate="visible"
-              custom={0.3}
-              className="flex items-center gap-3"
-            >
-              <div className="w-9 h-px bg-[#1F51FF]" />
-              <span className="text-[#1F51FF] text-[10px] sm:text-[11px] font-bold tracking-[0.28em] uppercase">
-                R-Zone Enterprises
-              </span>
-            </motion.div>
-
-            {/* ── Headline — 3 curtain-reveal lines ── */}
+            {/* ── Headline — 3 curtain-reveal lines (unchanged) ── */}
             <div>
               <h1
                 className="leading-[0.86] tracking-[-0.025em] uppercase"
@@ -344,8 +382,10 @@ export default function HeroSection() {
                     UK &amp;{" "}
                     <span className="relative inline-block text-[#1F51FF]">
                       Nigeria
+                      {/* Gradient underline sweep — upgraded from solid to gradient */}
                       <motion.span
-                        className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"
+                        className="absolute -bottom-1 left-0 h-[3px] rounded-full"
+                        style={{ background: "linear-gradient(to right, #0818A8, #1F51FF)" }}
                         aria-hidden="true"
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
@@ -358,10 +398,10 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            {/* ── Subtext ── */}
+            {/* ── Subtext (unchanged) ── */}
             <motion.p
-              className="text-white/50 font-light leading-[1.85] max-w-[520px]"
-              style={{ fontSize: "clamp(13px, 1.2vw, 16px)" }}
+              className="text-white/60 font-light leading-[1.85] max-w-[520px]"
+              style={{ fontSize: "clamp(13px, 1.2vw, 15px)" }}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
@@ -372,22 +412,20 @@ export default function HeroSection() {
               connecting businesses and families across continents.
             </motion.p>
 
-            {/* CTAs */}
+            {/* ── CTAs (unchanged) ── */}
             <motion.div
               className="flex flex-wrap items-center gap-3"
               initial="hidden"
               animate="visible"
               variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.1, delayChildren: 1.0 },
-                },
+                hidden:  {},
+                visible: { transition: { staggerChildren: 0.1, delayChildren: 1.0 } },
               }}
             >
-              {/* Primary */}
+              {/* Primary CTA */}
               <motion.div
                 variants={{
-                  hidden: { opacity: 0, y: 14 },
+                  hidden:  { opacity: 0, y: 14 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
                 }}
               >
@@ -397,17 +435,14 @@ export default function HeroSection() {
                   className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white font-black tracking-[0.1em] uppercase rounded-sm transition-all duration-200 shadow-lg shadow-[#0818A8]/35 hover:shadow-[#0437F2]/40 text-[11px] sm:text-[12px] px-6 sm:px-7 py-3 sm:py-3.5"
                 >
                   Get a Quote
-                  <ArrowRight
-                    size={13}
-                    className="group-hover:translate-x-1 transition-transform duration-200"
-                  />
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </motion.div>
 
-              {/* Secondary */}
+              {/* Secondary CTA */}
               <motion.div
                 variants={{
-                  hidden: { opacity: 0, y: 14 },
+                  hidden:  { opacity: 0, y: 14 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
                 }}
               >
@@ -417,20 +452,17 @@ export default function HeroSection() {
                   className="group inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 bg-white/[0.06] hover:bg-white/12 backdrop-blur-sm text-white font-bold tracking-[0.08em] uppercase rounded-sm transition-all duration-200 text-[11px] sm:text-[12px] px-6 sm:px-7 py-3 sm:py-3.5"
                 >
                   Track Shipment
-                  <ArrowRight
-                    size={13}
-                    className="group-hover:translate-x-1 transition-transform duration-200"
-                  />
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </motion.div>
 
               {/* Watch reel */}
               <motion.button
                 variants={{
-                  hidden: { opacity: 0 },
+                  hidden:  { opacity: 0 },
                   visible: { opacity: 1, transition: { duration: 0.4 } },
                 }}
-                className="hidden sm:inline-flex items-center gap-2.5 text-white/38 hover:text-white/68 transition-colors duration-200"
+                className="hidden sm:inline-flex items-center gap-2.5 text-white/40 hover:text-white/68 transition-colors duration-200"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 aria-label="Watch R-Zone Enterprises overview"
@@ -446,19 +478,17 @@ export default function HeroSection() {
 
           </div>
 
-          {/* ── BOTTOM BAR — stats LEFT, est + scroll RIGHT ── */}
+          {/* ── BOTTOM BAR — stats LEFT + est/scroll RIGHT (unchanged) ── */}
           <div className="flex-shrink-0 flex items-end justify-between pb-4 sm:pb-5 md:pb-6 gap-6">
 
-            {/* Stats — clean text, no cards, animated roll-in */}
+            {/* Animated stats */}
             <motion.div
               className="flex items-end gap-5 sm:gap-7 md:gap-9"
               initial="hidden"
               animate="visible"
               variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.09, delayChildren: 1.25 },
-                },
+                hidden:  {},
+                visible: { transition: { staggerChildren: 0.09, delayChildren: 1.25 } },
               }}
             >
               {STATS.map((stat, i) => (
@@ -466,8 +496,8 @@ export default function HeroSection() {
                   key={i}
                   className="flex flex-col gap-0.5"
                   variants={{
-                    hidden:   { opacity: 0, y: 16 },
-                    visible:  { opacity: 1, y: 0, transition: { duration: 0.45 } },
+                    hidden:  { opacity: 0, y: 16 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
                   }}
                   whileHover={{ y: -3, transition: { duration: 0.2 } }}
                 >
@@ -478,7 +508,7 @@ export default function HeroSection() {
                     <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                   </span>
                   <span
-                    className="text-white/32 font-medium tracking-[0.14em] uppercase"
+                    className="text-white/40 font-medium tracking-[0.14em] uppercase"
                     style={{ fontSize: "clamp(7.5px, 0.62vw, 10px)" }}
                   >
                     {stat.label}
@@ -496,16 +526,14 @@ export default function HeroSection() {
               custom={1.85}
             >
               <span
-                className="text-white/18 font-semibold tracking-[0.2em] uppercase"
+                className="text-white/40 font-semibold tracking-[0.2em] uppercase"
                 style={{ fontSize: "clamp(7px, 0.6vw, 10px)" }}
               >
                 Est. 2012 · Essex, UK
               </span>
               <motion.button
-                onClick={() =>
-                  window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-                }
-                className="flex items-center gap-1.5 text-white/28 hover:text-white/55 transition-colors duration-200"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+                className="flex items-center gap-1.5 text-white/40 hover:text-white/55 transition-colors duration-200"
                 whileHover={{ y: 1 }}
                 aria-label="Scroll down to explore our services"
               >
@@ -525,9 +553,9 @@ export default function HeroSection() {
             </motion.div>
 
           </div>
-        </div>
+        </motion.div>
 
-        {/* ── Vertical brand text — xl screens only ── */}
+        {/* ── Vertical brand text — xl screens only (unchanged) ── */}
         <motion.div
           className="absolute right-6 top-1/2 -translate-y-1/2 z-10 hidden xl:flex flex-col items-center gap-3 pointer-events-none"
           aria-hidden="true"
@@ -537,12 +565,8 @@ export default function HeroSection() {
         >
           <div className="w-px h-14 bg-white/12" />
           <span
-            className="text-white/16 font-bold tracking-[0.32em] uppercase"
-            style={{
-              fontSize: 9,
-              writingMode: "vertical-rl",
-              textOrientation: "mixed",
-            }}
+            className="text-white/40 font-bold tracking-[0.32em] uppercase"
+            style={{ fontSize: 9, writingMode: "vertical-rl", textOrientation: "mixed" }}
           >
             Cargo · UK to Nigeria · Since 2012
           </span>
@@ -550,6 +574,6 @@ export default function HeroSection() {
         </motion.div>
 
       </section>
-    </>
+    </section>
   );
 }

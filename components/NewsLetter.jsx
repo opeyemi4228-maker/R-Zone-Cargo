@@ -180,7 +180,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
               {step.title}
             </h3>
             <p className={`text-[11px] font-medium tracking-wide transition-colors duration-250 ${
-              isActive ? "text-[#1F51FF]" : "text-white/28"
+              isActive ? "text-[#1F51FF]" : "text-white/40"
             }`}>
               {step.subtitle}
             </p>
@@ -234,7 +234,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
           {/* Inactive — show chevron indicator */}
           {!isActive && (
             <div className="mt-auto">
-              <ChevronRight size={13} className="text-white/22" aria-hidden="true" />
+              <ChevronRight size={13} className="text-white/40" aria-hidden="true" />
             </div>
           )}
 
@@ -371,8 +371,8 @@ export default function HowItWorks() {
                 Works.
               </h2>
 
-              <p className="text-white/48 text-[13.5px] font-light leading-relaxed tracking-wide max-w-lg">
-                Four simple steps — from booking to doorstep delivery anywhere
+              <p className="text-white/60 text-[14px] font-light leading-relaxed tracking-wide max-w-lg">
+                Four simple steps from booking to doorstep delivery anywhere
                 in Nigeria. Air freight or monthly sea, we handle everything in between.
               </p>
             </motion.div>
@@ -396,8 +396,8 @@ export default function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.35 }}
           >
             <div className="flex items-center gap-3">
-              <span className="text-[13px]" aria-hidden="true">🇬🇧</span>
-              <span className="text-white/55 text-[11.5px] font-bold tracking-[0.1em] uppercase">United Kingdom</span>
+              <span className="text-[13px] text-white/50s" aria-hidden="true">🇬🇧</span>
+              <span className="text-white/60 text-[11.5px] font-bold tracking-[0.1em] uppercase">United Kingdom</span>
             </div>
             <div className="flex items-center gap-1 flex-1 max-w-[120px]">
               {Array.from({ length: 6 }).map((_, i) => (
@@ -414,11 +414,11 @@ export default function HowItWorks() {
               <div className="w-0 h-0 border-t-[3px] border-b-[3px] border-l-[5px] border-t-transparent border-b-transparent border-l-[#0818A8]/50 flex-shrink-0" aria-hidden="true" />
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[13px]" aria-hidden="true">🇳🇬</span>
-              <span className="text-white/55 text-[11.5px] font-bold tracking-[0.1em] uppercase">Nigeria</span>
+              <span className="text-[13px text-white/50]" aria-hidden="true">🇳🇬</span>
+              <span className="text-white/60 text-[11.5px] font-bold tracking-[0.1em] uppercase">Nigeria</span>
             </div>
             <div className="hidden sm:block h-px w-12 bg-white/8" aria-hidden="true" />
-            <span className="hidden sm:block text-white/22 text-[10.5px] font-light tracking-wide">
+            <span className="hidden sm:block text-white/70 text-[13px] font-medium tracking-wide">
               Air: 5–10 days · Sea: 4–6 weeks
             </span>
           </motion.div>
@@ -480,11 +480,11 @@ export default function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <div>
-              <p className="text-white font-black text-[14px] tracking-[-0.01em] uppercase mb-1">
+              <p className="text-white font-black text-[16px] tracking-[-0.01em] uppercase mb-1">
                 Ready to get started?
               </p>
-              <p className="text-white/38 text-[12.5px] font-light max-w-sm leading-relaxed">
-                Get a free quote in under 2 minutes — our UK team responds same day.
+              <p className="text-white/60 text-[14px] font-light max-w-sm leading-relaxed">
+                Get a free quote in under 2 minutes our UK team responds same day.
               </p>
             </div>
 

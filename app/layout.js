@@ -5,7 +5,7 @@ import { AppContextProvider } from "@/context/AppContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BodyCleanup from "@/components/BodyCleanup";
-import ToasterWrapper from "@/components/ToasterWrapper";
+import ToasterProvider from "@/components/ToasterProvider";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
 const outfit = Outfit({
@@ -454,7 +454,7 @@ export default function RootLayout({ children }) {
         <BodyCleanup />
 
         {/* Toast notifications — positioned top-right, non-intrusive */}
-        <ToasterWrapper />
+        <ToasterProvider />
 
         {/*
           Skip-to-content link — WCAG 2.1 AA accessibility requirement.

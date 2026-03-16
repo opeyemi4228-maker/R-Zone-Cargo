@@ -111,37 +111,37 @@ const LIST_SERVICES = [
   {
     id: "01",
     title: "Air Freight to Nigeria",
-    subtitle: "fastest UK–Nigeria cargo, door to door.",
-    href: "/air-freight",
+    subtitle: "Fastest UK–Nigeria cargo, door to door.",
+    href: "/services#air-freight",
   },
   {
     id: "02",
     title: "Sea Shipping to Nigeria",
-    subtitle: "affordable monthly sea freight for bulk cargo.",
-    href: "/sea-shipping-to-nigeria",
+    subtitle: "Affordable monthly sea freight for bulk cargo.",
+    href: "/services#sea-shipping-to-nigeria",
   },
   {
     id: "03",
     title: "Door to Door Delivery",
-    subtitle: "seamless collection and final destination drop-off.",
-    href: "/door-to-door-cargo",
+    subtitle: "Seamless collection and final destination drop-off.",
+    href: "/services#door-to-door-cargo",
   },
   {
     id: "04",
     title: "Customs Clearance",
-    subtitle: "fast and hassle-free, full turnkey service.",
-    href: "/customs-clearance",
+    subtitle: "Fast and hassle-free, full turnkey service.",
+    href: "/services#customs-clearance",
   },
   {
     id: "05",
     title: "Importation from Nigeria",
-    subtitle: "weekly air freight & monthly sea from Nigeria to UK.",
-    href: "/importation-from-nigeria",
+    subtitle: "Weekly air freight & monthly sea from Nigeria to UK.",
+    href: "/services#importation-from-nigeria",
   },
   {
     id: "06",
     title: "Car & Vehicle Shipping",
-    subtitle: "specialist vehicle transport to Nigeria & Africa.",
+    subtitle: "Specialist vehicle transport to Nigeria & Africa.",
     href: "/prices",
   },
 ];
@@ -210,7 +210,7 @@ function SectionHeader({ eyebrow, title, accentWord, subtitle, cta }) {
         </h2>
 
         {subtitle && (
-          <p className="mt-4 text-gray-800 text-[14px] font-normal leading-relaxed max-w-lg tracking-wide">
+          <p className="mt-4 text-gray-800 text-[15px] font-normal leading-relaxed max-w-lg tracking-wide">
             {subtitle}
           </p>
         )}
@@ -323,7 +323,7 @@ function ServiceCard({ service, index }) {
 
           {/* Description */}
           <p
-            className="text-gray-800 text-[13px] font-light leading-relaxed flex-1"
+            className="text-gray-800 text-[14px] font-light leading-relaxed flex-1"
             itemProp="description"
           >
             {service.description}
@@ -334,7 +334,7 @@ function ServiceCard({ service, index }) {
             {service.highlights.map((h) => (
               <li
                 key={h}
-                className="text-[10.5px] font-medium text-gray-500 border border-gray-200 px-2.5 py-0.5 rounded-full"
+                className="text-[12px] font-medium text-gray-500 border border-gray-200 px-2.5 py-0.5 rounded-full"
               >
                 {h}
               </li>
@@ -581,7 +581,7 @@ export default function OurServices() {
               eyebrow="How We Ship"
               title="Our Service"
               accentWord="Routes"
-              subtitle="Every route, every method — air, sea and road — handled by our UK-based team with over 12 years of experience."
+              subtitle="Every route, every method air, sea and road handled by our UK-based team with over 12 years of experience."
             />
 
             {/* Top border */}
