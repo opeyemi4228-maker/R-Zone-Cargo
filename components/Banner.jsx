@@ -8,10 +8,11 @@ import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-
 const TESTIMONIALS = [
   {
     id: 1,
@@ -85,8 +86,7 @@ const TESTIMONIALS = [
   },
 ];
 
-// ─── Variants ─────────────────────────────────────────────────────────────────
-
+// ─── Animation variants ───────────────────────────────────────────────────────
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (d = 0) => ({
@@ -95,20 +95,7 @@ const fadeUp = {
   }),
 };
 
-// ─── Stars ────────────────────────────────────────────────────────────────────
-
-function Stars({ count = 5 }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={11} className="fill-[#0818A8] text-[#0818A8]" />
-      ))}
-    </div>
-  );
-}
-
-// ─── Card ─────────────────────────────────────────────────────────────────────
-
+// ─── Testimonial Card ─────────────────────────────────────────────────────────
 function TestimonialCard({ t, featured = false }) {
   return (
     <motion.div
@@ -121,61 +108,66 @@ function TestimonialCard({ t, featured = false }) {
       whileHover={{ y: -4, transition: { duration: 0.25 } }}
     >
       {/* Watermark quote */}
-      <div className={`absolute top-5 right-5 ${featured ? "opacity-20" : "opacity-8"}`}>
+      <div className={`absolute top-5 right-5 ${featured ? "opacity-20" : "opacity-[0.08]"}`} aria-hidden="true">
         <Quote size={28} className={featured ? "text-white" : "text-[#0818A8]"} />
       </div>
 
       {/* Stars */}
       <div className="mb-4">
-        <div className="flex items-center gap-0.5">
+        <div className="flex items-center gap-0.5" aria-label={`${t.stars} out of 5 stars`}>
           {Array.from({ length: t.stars }).map((_, i) => (
             <Star
               key={i}
               size={11}
-              className={featured ? "fill-white text-white opacity-80" : "fill-[#0818A8] text-[#0818A8]"}
+              className={featured ? "fill-white text-white" : "fill-[#0818A8] text-[#0818A8]"}
+              aria-hidden="true"
             />
           ))}
         </div>
       </div>
 
       {/* Pull quote */}
-      <p className={`font-bold leading-snug mb-3 tracking-[-0.01em]
-        ${featured
-          ? "text-white text-[16px] md:text-[17px]"
-          : "text-gray-900 text-[13.5px] md:text-[14px]"
-        }`}
+      <p
+        className={`font-bold leading-snug mb-3 tracking-[-0.01em]
+          ${featured
+            ? "text-white text-[16px] md:text-[17px]"
+            : "text-gray-900 text-[13.5px] md:text-[14px]"
+          }`}
       >
-        "{t.short}"
+        &ldquo;{t.short}&rdquo;
       </p>
 
       {/* Full text */}
-      <p className={`font-light leading-relaxed flex-1 mb-6 text-[12px] md:text-[12.5px]
-        ${featured ? "text-white/75" : "text-gray-500"}`}
+      <p
+        className={`font-light leading-relaxed flex-1 mb-6 text-[12px] md:text-[12.5px]
+          ${featured ? "text-white/80" : "text-gray-800"}`}
       >
         {t.text}
       </p>
 
       {/* Author */}
-      <div className={`flex items-center gap-3 pt-4 border-t
-        ${featured ? "border-white/20" : "border-gray-100"}`}
+      <div
+        className={`flex items-center gap-3 pt-4 border-t
+          ${featured ? "border-white/20" : "border-gray-100"}`}
       >
         {/* Avatar */}
-        <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-black
-          ${featured
-            ? "bg-white/20 text-white"
-            : "bg-[#0818A8] text-white"
-          }`}
+        <div
+          className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-black
+            ${featured ? "bg-white/20 text-white" : "bg-[#0818A8] text-white"}`}
+          aria-hidden="true"
         >
           {t.avatar}
         </div>
         <div>
-          <p className={`font-semibold text-[12px] tracking-[0.02em]
-            ${featured ? "text-white" : "text-gray-900"}`}
+          <p
+            className={`font-semibold text-[12px] tracking-[0.02em]
+              ${featured ? "text-white" : "text-gray-900"}`}
           >
             {t.name}
           </p>
-          <p className={`text-[10.5px] font-normal tracking-[0.02em]
-            ${featured ? "text-white/55" : "text-gray-400"}`}
+          <p
+            className={`text-[10.5px] font-normal tracking-[0.02em]
+              ${featured ? "text-white/80" : "text-gray-800"}`}
           >
             {t.role} · {t.company}
           </p>
@@ -185,10 +177,9 @@ function TestimonialCard({ t, featured = false }) {
   );
 }
 
-// ─── Section ──────────────────────────────────────────────────────────────────
-
+// ─── Main Section ─────────────────────────────────────────────────────────────
 export default function TestimonialsSection() {
-  const ref = useRef(null);
+  const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [active, setActive] = useState(0);
   const total = TESTIMONIALS.length;
@@ -199,24 +190,34 @@ export default function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className={`${montserrat.className} relative bg-white overflow-hidden py-20 md:py-28`}
-      aria-label="Client Testimonials"
+      className={`
+        ${montserrat.variable} font-[family-name:var(--font-montserrat)]
+        relative bg-white overflow-hidden py-20 md:py-28
+      `}
+      aria-label="Client testimonials — R-Zone Enterprises"
     >
 
-      {/* ── Subtle dot pattern ── */}
+      {/* ── Dot pattern ── */}
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        aria-hidden="true"
         style={{
           backgroundImage: `radial-gradient(circle, #0818A8 1px, transparent 1px)`,
           backgroundSize: "28px 28px",
         }}
       />
 
-      {/* ── Top blue accent line ── */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/30 to-transparent" />
+      {/* ── Top accent line ── */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/30 to-transparent"
+        aria-hidden="true"
+      />
 
-      {/* ── Soft blue glow center ── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-[#0818A8]/5 blur-3xl rounded-full pointer-events-none" />
+      {/* ── Soft blue glow ── */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-[#0818A8]/5 blur-3xl rounded-full pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
 
@@ -225,12 +226,15 @@ export default function TestimonialsSection() {
           className="text-center mb-14 md:mb-16"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
         >
-          {/* Tag */}
+          {/* Tag pill */}
           <motion.div variants={fadeUp} custom={0} className="flex justify-center mb-4">
             <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" aria-hidden="true" />
               <span className="text-[#0818A8] text-[10px] font-semibold tracking-[0.22em] uppercase">
                 Testimonials
               </span>
@@ -243,7 +247,7 @@ export default function TestimonialsSection() {
             custom={0.1}
             className="text-gray-900 font-black text-[clamp(28px,5vw,56px)] leading-tight tracking-[-0.02em] mb-3"
           >
-            Don't Take Our{" "}
+            Don&apos;t Take Our{" "}
             <span className="relative inline-block text-[#0818A8]">
               Word For It
               <motion.span
@@ -251,18 +255,20 @@ export default function TestimonialsSection() {
                 initial={{ width: 0 }}
                 animate={inView ? { width: "100%" } : { width: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
+                aria-hidden="true"
               />
             </span>
             .
           </motion.h2>
 
+          {/* Subtext */}
           <motion.p
             variants={fadeUp}
             custom={0.2}
-            className="text-gray-500 text-[13px] font-light tracking-[0.02em] max-w-md mx-auto"
+            className="text-gray-800 text-[13px] font-light tracking-[0.02em] max-w-md mx-auto"
           >
-            Trusted by industry leaders across Africa and beyond — here's what
-            our clients say about working with R-Zone Cargo.
+            The highest-rated organically earned cargo company between the UK,
+            Nigeria, and across Africa — here&apos;s what our clients say.
           </motion.p>
         </motion.div>
 
@@ -274,7 +280,10 @@ export default function TestimonialsSection() {
             className="flex flex-col gap-5 pt-8"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } } }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
+            }}
           >
             {[TESTIMONIALS[0], TESTIMONIALS[3]].map((t) => (
               <motion.div key={t.id} variants={fadeUp}>
@@ -288,7 +297,10 @@ export default function TestimonialsSection() {
             className="flex flex-col gap-5"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } } }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+            }}
           >
             {[TESTIMONIALS[1], TESTIMONIALS[4]].map((t, i) => (
               <motion.div key={t.id} variants={fadeUp}>
@@ -302,7 +314,10 @@ export default function TestimonialsSection() {
             className="flex flex-col gap-5 pt-14"
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.45 } } }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.45 } },
+            }}
           >
             {[TESTIMONIALS[2], TESTIMONIALS[5]].map((t) => (
               <motion.div key={t.id} variants={fadeUp}>
@@ -327,31 +342,39 @@ export default function TestimonialsSection() {
 
           {/* Controls */}
           <div className="flex items-center justify-between mt-6">
-            <div className="flex items-center gap-2">
+            {/* Dot indicators */}
+            <div className="flex items-center gap-2" role="tablist" aria-label="Testimonial navigation">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
+                  role="tab"
+                  aria-selected={i === active}
+                  aria-label={`View testimonial ${i + 1}`}
                   className={`rounded-full transition-all duration-200 ${
                     i === active
                       ? "w-5 h-1.5 bg-[#0818A8]"
-                      : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400"
+                      : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-800"
                   }`}
                 />
               ))}
             </div>
+
+            {/* Prev / Next */}
             <div className="flex items-center gap-2">
               <button
                 onClick={prev}
-                className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
+                className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-800 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
+                aria-label="Previous testimonial"
               >
-                <ChevronLeft size={15} />
+                <ChevronLeft size={15} aria-hidden="true" />
               </button>
               <button
                 onClick={next}
-                className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
+                className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-800 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
+                aria-label="Next testimonial"
               >
-                <ChevronRight size={15} />
+                <ChevronRight size={15} aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -363,18 +386,20 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
+          role="list"
+          aria-label="R-Zone key statistics"
         >
           {[
-            { value: "500+", label: "Satisfied Clients" },
-            { value: "98%",  label: "Client Retention Rate" },
-            { value: "4.9",  label: "Average Rating" },
-            { value: "10K+", label: "Shipments Completed" },
+            { value: "500+",  label: "Satisfied Clients" },
+            { value: "98%",   label: "Client Retention Rate" },
+            { value: "4.9",   label: "Average Rating" },
+            { value: "10K+",  label: "Shipments Completed" },
           ].map((s, i) => (
-            <div key={i} className="flex flex-col gap-1 text-center md:text-left">
+            <div key={i} className="flex flex-col gap-1 text-center md:text-left" role="listitem">
               <span className="text-[#0818A8] font-black text-[clamp(24px,3vw,36px)] leading-none tracking-tight">
                 {s.value}
               </span>
-              <span className="text-gray-400 text-[11px] font-medium tracking-[0.12em] uppercase">
+              <span className="text-gray-800 text-[11px] font-medium tracking-[0.12em] uppercase">
                 {s.label}
               </span>
             </div>
@@ -384,7 +409,10 @@ export default function TestimonialsSection() {
       </div>
 
       {/* ── Bottom accent line ── */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/20 to-transparent" />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/20 to-transparent"
+        aria-hidden="true"
+      />
 
     </section>
   );

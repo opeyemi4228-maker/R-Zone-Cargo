@@ -40,9 +40,9 @@ const STEPS = [
     title: "Drop Off or Request Pickup",
     subtitle: "UK-wide collection available",
     description:
-      "Drop your cargo at our Essex warehouse, or book a door collection from anywhere in the UK. We accept boxes, bags, household items, foodstuffs, and commercial freight.",
+      "Drop your cargo at our Upminster warehouse, or book a door collection from anywhere in the UK. We accept boxes, bags, household items, foodstuffs, and commercial freight.",
     bullets: [
-      "Essex warehouse drop-off",
+      "Upminster warehouse drop-off",
       "UK-wide door collection",
       "Packing advice included",
     ],
@@ -53,9 +53,9 @@ const STEPS = [
     number: "03",
     icon: Plane,
     title: "Cargo Transported UK → Nigeria",
-    subtitle: "Air freight or monthly sea",
+    subtitle: "Weekly air freight & sea sailings",
     description:
-      "Your cargo is consolidated, customs-cleared, and dispatched via our partner airlines or monthly sea freight sailings. Track every milestone in real time.",
+      "Your cargo is consolidated, customs-cleared, and dispatched via our partner airlines or weekly sea freight sailings. Track every milestone in real time.",
     bullets: [
       "Air: 5–10 working days",
       "Sea: 4–6 weeks",
@@ -81,17 +81,20 @@ const STEPS = [
   },
 ];
 
-// ─── Step card (horizontal desktop, vertical mobile) ─────────────────────────
+// ─── Step Card ────────────────────────────────────────────────────────────────
 function StepCard({ step, index, isActive, onClick, inView }) {
-  const Icon = step.icon;
+  const Icon   = step.icon;
   const isLast = index === STEPS.length - 1;
 
   return (
     <div className="flex-1 flex flex-col relative min-w-0">
 
-      {/* Connector line — between cards */}
+      {/* Connector line between cards */}
       {!isLast && (
-        <div className="absolute top-[34px] left-[calc(50%+28px)] right-0 h-px hidden lg:block z-0" aria-hidden="true">
+        <div
+          className="absolute top-[34px] left-[calc(50%+28px)] right-0 h-px hidden lg:block z-0"
+          aria-hidden="true"
+        >
           <motion.div
             className="h-full bg-gradient-to-r from-[#0818A8]/60 to-[#0818A8]/20"
             initial={{ scaleX: 0 }}
@@ -99,7 +102,6 @@ function StepCard({ step, index, isActive, onClick, inView }) {
             transition={{ duration: 0.6, delay: 0.5 + index * 0.18 }}
             style={{ transformOrigin: "left" }}
           />
-          {/* Arrow head */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[4px] border-b-[4px] border-l-[6px] border-t-transparent border-b-transparent border-l-[#0818A8]/40" />
         </div>
       )}
@@ -110,7 +112,8 @@ function StepCard({ step, index, isActive, onClick, inView }) {
         className={`
           relative flex flex-col h-full text-left
           border transition-all duration-350 overflow-hidden
-          focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1F51FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#00061a]
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1F51FF]
+          focus-visible:ring-offset-2 focus-visible:ring-offset-[#00061a]
           ${isActive
             ? "bg-[#0818A8]/18 border-[#0818A8]/60"
             : "bg-white/[0.03] border-white/[0.07] hover:border-[#0818A8]/35 hover:bg-[#0818A8]/8"
@@ -155,32 +158,35 @@ function StepCard({ step, index, isActive, onClick, inView }) {
 
             <div
               className={`
-                w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0 transition-all duration-300
+                w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0
+                transition-all duration-300
                 ${isActive
                   ? "bg-[#0818A8] shadow-lg shadow-[#0818A8]/35"
-                  : "bg-white/[0.06] border border-white/[0.1]"
+                  : "bg-white/[0.06] border border-white/[0.12]"
                 }
               `}
               aria-hidden="true"
             >
               <Icon
                 size={19}
-                className={`transition-colors duration-250 ${isActive ? "text-white" : "text-white/40"}`}
+                className={`transition-colors duration-250 ${
+                  isActive ? "text-white" : "text-white/80"
+                }`}
               />
             </div>
           </div>
 
-          {/* Title */}
+          {/* Title + subtitle */}
           <div>
             <h3
               className={`font-black text-[14.5px] leading-tight tracking-[-0.01em] uppercase mb-1 transition-colors duration-250 ${
-                isActive ? "text-white" : "text-white/65"
+                isActive ? "text-white" : "text-white/80"
               }`}
             >
               {step.title}
             </h3>
             <p className={`text-[11px] font-medium tracking-wide transition-colors duration-250 ${
-              isActive ? "text-[#1F51FF]" : "text-white/40"
+              isActive ? "text-[#1F51FF]" : "text-white/80"
             }`}>
               {step.subtitle}
             </p>
@@ -196,7 +202,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="overflow-hidden"
               >
-                <p className="text-white/55 text-[12.5px] font-light leading-relaxed mb-4 tracking-wide">
+                <p className="text-white/80 text-[12.5px] font-light leading-relaxed mb-4 tracking-wide">
                   {step.description}
                 </p>
 
@@ -210,7 +216,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
                       >
                         <Check size={8} className="text-[#1F51FF]" />
                       </span>
-                      <span className="text-white/60 text-[11.5px] font-light tracking-wide">
+                      <span className="text-white/80 text-[11.5px] font-light tracking-wide">
                         {bullet}
                       </span>
                     </li>
@@ -231,10 +237,10 @@ function StepCard({ step, index, isActive, onClick, inView }) {
             )}
           </AnimatePresence>
 
-          {/* Inactive — show chevron indicator */}
+          {/* Inactive — chevron indicator */}
           {!isActive && (
             <div className="mt-auto">
-              <ChevronRight size={13} className="text-white/40" aria-hidden="true" />
+              <ChevronRight size={13} className="text-white/80" aria-hidden="true" />
             </div>
           )}
 
@@ -244,7 +250,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
   );
 }
 
-// ─── Progress indicator ───────────────────────────────────────────────────────
+// ─── Progress Bar ─────────────────────────────────────────────────────────────
 function ProgressBar({ activeIndex, total, inView }) {
   return (
     <div className="flex items-center gap-2" role="tablist" aria-label="Shipping process steps">
@@ -253,14 +259,12 @@ function ProgressBar({ activeIndex, total, inView }) {
           key={i}
           role="presentation"
           className={`h-[2px] transition-all duration-400 rounded-full ${
-            i <= activeIndex
-              ? "bg-[#0818A8]"
-              : "bg-white/12"
+            i <= activeIndex ? "bg-[#0818A8]" : "bg-white/20"
           } ${i === activeIndex ? "w-8" : "w-4"}`}
           aria-hidden="true"
         />
       ))}
-      <span className="text-white/50 text-[10.5px] font-medium ml-2 tabular-nums">
+      <span className="text-white/80 text-[10.5px] font-medium ml-2 tabular-nums">
         {activeIndex + 1} / {total}
       </span>
     </div>
@@ -275,7 +279,7 @@ export default function HowItWorks() {
 
   return (
     <>
-      {/* ── How-To schema — tells Google this is a step-by-step guide ── */}
+      {/* ── HowTo schema ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -284,7 +288,7 @@ export default function HowItWorks() {
             "@type": "HowTo",
             "name": "How to Ship Cargo from UK to Nigeria with R-Zone Enterprises",
             "description":
-              "A simple 4-step process to ship air freight or sea cargo from the UK to Nigeria with R-Zone Enterprises.",
+              "A simple 4-step process to ship air freight or weekly sea cargo from the UK to Nigeria with R-Zone Enterprises — the highest-rated organically earned cargo company between the UK, Nigeria, and across Africa.",
             "totalTime": "PT10D",
             "estimatedCost": {
               "@type": "MonetaryAmount",
@@ -293,7 +297,7 @@ export default function HowItWorks() {
             },
             "supply": [
               { "@type": "HowToSupply", "name": "Items to ship" },
-              { "@type": "HowToSupply", "name": "UK pickup address or Essex drop-off" },
+              { "@type": "HowToSupply", "name": "UK pickup address or Upminster drop-off" },
             ],
             "step": STEPS.map((s, i) => ({
               "@type": "HowToStep",
@@ -315,8 +319,7 @@ export default function HowItWorks() {
         aria-label="How shipping with R-Zone Enterprises works — 4-step process"
       >
 
-        {/* ══ BACKGROUNDS ══════════════════════════════════════════════════ */}
-        {/* Grid */}
+        {/* ── Backgrounds ── */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.022]"
           aria-hidden="true"
@@ -328,9 +331,14 @@ export default function HowItWorks() {
             backgroundSize: "64px 64px",
           }}
         />
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#1F51FF]/6 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#1F51FF]/6 rounded-full blur-[100px] pointer-events-none"
+          aria-hidden="true"
+        />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 lg:py-28">
 
@@ -346,7 +354,7 @@ export default function HowItWorks() {
               <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/28 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
                 <motion.span
                   className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
-                  animate={{ scale: [1, 1.6, 1], opacity: [1, 0.3, 1] }}
+                  animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   aria-hidden="true"
                 />
@@ -371,9 +379,9 @@ export default function HowItWorks() {
                 Works.
               </h2>
 
-              <p className="text-white/60 text-[14px] font-light leading-relaxed tracking-wide max-w-lg">
+              <p className="text-white/80 text-[14px] font-light leading-relaxed tracking-wide max-w-lg">
                 Four simple steps from booking to doorstep delivery anywhere
-                in Nigeria. Air freight or monthly sea, we handle everything in between.
+                in Nigeria. Weekly air freight and sea sailings — we handle everything in between.
               </p>
             </motion.div>
 
@@ -396,9 +404,12 @@ export default function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.35 }}
           >
             <div className="flex items-center gap-3">
-              <span className="text-[13px] text-white/50s" aria-hidden="true">🇬🇧</span>
-              <span className="text-white/60 text-[11.5px] font-bold tracking-[0.1em] uppercase">United Kingdom</span>
+              <span className="text-[13px]" aria-hidden="true">🇬🇧</span>
+              <span className="text-white/80 text-[11.5px] font-bold tracking-[0.1em] uppercase">
+                United Kingdom
+              </span>
             </div>
+
             <div className="flex items-center gap-1 flex-1 max-w-[120px]">
               {Array.from({ length: 6 }).map((_, i) => (
                 <motion.div
@@ -411,19 +422,26 @@ export default function HowItWorks() {
                   aria-hidden="true"
                 />
               ))}
-              <div className="w-0 h-0 border-t-[3px] border-b-[3px] border-l-[5px] border-t-transparent border-b-transparent border-l-[#0818A8]/50 flex-shrink-0" aria-hidden="true" />
+              <div
+                className="w-0 h-0 border-t-[3px] border-b-[3px] border-l-[5px] border-t-transparent border-b-transparent border-l-[#0818A8]/50 flex-shrink-0"
+                aria-hidden="true"
+              />
             </div>
+
             <div className="flex items-center gap-3">
-              <span className="text-[13px text-white/50]" aria-hidden="true">🇳🇬</span>
-              <span className="text-white/60 text-[11.5px] font-bold tracking-[0.1em] uppercase">Nigeria</span>
+              <span className="text-[13px]" aria-hidden="true">🇳🇬</span>
+              <span className="text-white/80 text-[11.5px] font-bold tracking-[0.1em] uppercase">
+                Nigeria
+              </span>
             </div>
-            <div className="hidden sm:block h-px w-12 bg-white/8" aria-hidden="true" />
-            <span className="hidden sm:block text-white/70 text-[13px] font-medium tracking-wide">
+
+            <div className="hidden sm:block h-px w-12 bg-white/15" aria-hidden="true" />
+            <span className="hidden sm:block text-white/80 text-[13px] font-medium tracking-wide">
               Air: 5–10 days · Sea: 4–6 weeks
             </span>
           </motion.div>
 
-          {/* ── 4-column card grid ── */}
+          {/* ── 4-column step cards ── */}
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
             role="list"
@@ -451,12 +469,12 @@ export default function HowItWorks() {
           >
             <ProgressBar activeIndex={activeStep} total={STEPS.length} inView={inView} />
 
-            {/* Prev/Next */}
+            {/* Prev / Next */}
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setActiveStep((p) => Math.max(0, p - 1))}
                 disabled={activeStep === 0}
-                className="w-8 h-8 border border-white/15 flex items-center justify-center text-white/40 hover:text-white hover:border-white/35 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
                 aria-label="Previous step"
               >
                 <ArrowRight size={13} className="rotate-180" aria-hidden="true" />
@@ -464,7 +482,7 @@ export default function HowItWorks() {
               <button
                 onClick={() => setActiveStep((p) => Math.min(STEPS.length - 1, p + 1))}
                 disabled={activeStep === STEPS.length - 1}
-                className="w-8 h-8 border border-white/15 flex items-center justify-center text-white/40 hover:text-white hover:border-white/35 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
                 aria-label="Next step"
               >
                 <ArrowRight size={13} aria-hidden="true" />
@@ -483,8 +501,8 @@ export default function HowItWorks() {
               <p className="text-white font-black text-[16px] tracking-[-0.01em] uppercase mb-1">
                 Ready to get started?
               </p>
-              <p className="text-white/60 text-[14px] font-light max-w-sm leading-relaxed">
-                Get a free quote in under 2 minutes our UK team responds same day.
+              <p className="text-white/80 text-[14px] font-light max-w-sm leading-relaxed">
+                Get a free quote in under 2 minutes — our UK team responds the same day.
               </p>
             </div>
 
@@ -495,11 +513,15 @@ export default function HowItWorks() {
                 aria-label="Get a free shipping quote"
               >
                 Get a Quote
-                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+                <ArrowRight
+                  size={12}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
+                  aria-hidden="true"
+                />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/45 bg-white/[0.05] hover:bg-white/10 text-white text-[11.5px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
+                className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[11.5px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
                 aria-label="Contact R-Zone Enterprises"
               >
                 Speak to Us

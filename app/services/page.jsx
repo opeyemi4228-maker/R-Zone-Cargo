@@ -40,17 +40,17 @@ const SERVICES = [
       "Foodstuffs & general cargo accepted",
     ],
     process: [
-      { step: "01", label: "Book online or call us", detail: "Get a free quote in minutes" },
-      { step: "02", label: "Drop off or request collection", detail: "Essex warehouse or UK-wide pickup" },
-      { step: "03", label: "Cargo consolidated & dispatched", detail: "Weekly air freight departures" },
-      { step: "04", label: "Delivered in Nigeria", detail: "Door delivery or Lagos warehouse pickup" },
+      { step: "01", label: "Book online or call us",              detail: "Get a free quote in minutes" },
+      { step: "02", label: "Drop off or request collection",      detail: "Upminster warehouse or UK-wide pickup" },
+      { step: "03", label: "Cargo consolidated & dispatched",     detail: "Weekly air freight departures" },
+      { step: "04", label: "Delivered in Nigeria",                detail: "Door delivery or Lagos warehouse pickup" },
     ],
     accent: "#0818A8",
     dark: false,
     schema: "https://schema.org/DeliveryService",
     faq: [
-      { q: "How long does air freight to Nigeria take?", a: "Typically 5–10 working days from the UK to major Nigerian cities including Lagos, Abuja, and Port Harcourt." },
-      { q: "What items can I send by air?", a: "We accept clothing, electronics, foodstuffs, documents, personal effects, and most general cargo. Contact us for prohibited items." },
+      { q: "How long does air freight to Nigeria take?",  a: "Typically 5–10 working days from the UK to major Nigerian cities including Lagos, Abuja, and Port Harcourt." },
+      { q: "What items can I send by air?",               a: "We accept clothing, electronics, foodstuffs, documents, personal effects, and most general cargo. Contact us for prohibited items." },
     ],
   },
   {
@@ -61,11 +61,11 @@ const SERVICES = [
     badge: "Best Value",
     badgeColor: "bg-emerald-50 text-emerald-700",
     title: "Sea Shipping to Nigeria",
-    tagline: "Affordable monthly sea freight for bulk and heavy cargo.",
+    tagline: "Affordable weekly sea freight for bulk and heavy cargo.",
     description:
-      "Our monthly sea freight service is the most cost-effective solution for large, heavy, or high-volume shipments from the UK to Nigeria. Ideal for businesses and individuals who need to move significant quantities of goods without the time pressure.",
+      "Our weekly sea freight service is the most cost-effective solution for large, heavy, or high-volume shipments from the UK to Nigeria. Ideal for businesses and individuals who need to move significant quantities of goods — with weekly sailings every week.",
     highlights: [
-      "Monthly sailings from UK ports",
+      "Weekly sailings from UK ports",
       "Full container (FCL) & shared (LCL)",
       "Best rates for bulk cargo",
       "Vehicles & machinery accepted",
@@ -73,17 +73,17 @@ const SERVICES = [
       "Customs clearance included",
     ],
     process: [
-      { step: "01", label: "Request a sea freight quote", detail: "Volume-based pricing available" },
-      { step: "02", label: "Deliver to our UK warehouse", detail: "Essex consolidation hub" },
-      { step: "03", label: "Monthly sailing departs", detail: "Fixed schedule, no delays" },
-      { step: "04", label: "Nigeria port clearance", detail: "Full customs handling included" },
+      { step: "01", label: "Request a sea freight quote",  detail: "Volume-based pricing available" },
+      { step: "02", label: "Deliver to our UK warehouse",  detail: "Upminster consolidation hub" },
+      { step: "03", label: "Weekly sailing departs",       detail: "Fixed schedule, every week" },
+      { step: "04", label: "Nigeria port clearance",       detail: "Full customs handling included" },
     ],
     accent: "#0437F2",
     dark: true,
     schema: "https://schema.org/FreightService",
     faq: [
       { q: "How long does sea shipping to Nigeria take?", a: "Sea freight typically takes 4–6 weeks depending on the destination port in Nigeria." },
-      { q: "Can I ship a car by sea?", a: "Yes, we specialise in vehicle shipping. Contact us for RoRo (roll-on/roll-off) rates and schedule." },
+      { q: "Can I ship a car by sea?",                    a: "Yes, we specialise in vehicle shipping. Contact us for RoRo (roll-on/roll-off) rates and schedule." },
     ],
   },
   {
@@ -100,23 +100,23 @@ const SERVICES = [
     highlights: [
       "UK-wide door collection",
       "Nigeria door delivery",
-      "Air or sea your choice",
+      "Air or sea — your choice",
       "Both customs handled",
       "Personal & commercial cargo",
       "SMS & email notifications",
     ],
     process: [
-      { step: "01", label: "Book your collection", detail: "Choose air or sea service" },
-      { step: "02", label: "We collect from your door", detail: "Professional packing available" },
-      { step: "03", label: "UK & Nigeria customs cleared", detail: "We handle all documentation" },
-      { step: "04", label: "Delivered to Nigeria address", detail: "Any address, all 36 states" },
+      { step: "01", label: "Book your collection",              detail: "Choose air or sea service" },
+      { step: "02", label: "We collect from your door",        detail: "Professional packing available" },
+      { step: "03", label: "UK & Nigeria customs cleared",     detail: "We handle all documentation" },
+      { step: "04", label: "Delivered to Nigeria address",     detail: "Any address, all 36 states" },
     ],
     accent: "#1F51FF",
     dark: false,
     schema: "https://schema.org/MovingCompany",
     faq: [
-      { q: "Do you collect from anywhere in the UK?", a: "Yes, we offer door collection across the entire UK. Collection fees may apply depending on your location." },
-      { q: "Can you deliver to rural areas in Nigeria?", a: "We deliver to all 36 Nigerian states. Delivery times to rural areas may be slightly longer." },
+      { q: "Do you collect from anywhere in the UK?",       a: "Yes, we offer door collection across the entire UK. Collection fees may apply depending on your location." },
+      { q: "Can you deliver to rural areas in Nigeria?",    a: "We deliver to all 36 Nigerian states. Delivery times to rural areas may be slightly longer." },
     ],
   },
   {
@@ -127,29 +127,29 @@ const SERVICES = [
     badge: "Two-Way",
     badgeColor: "bg-purple-50 text-purple-700",
     title: "Importation from Nigeria",
-    tagline: "Weekly air freight and monthly sea imports from Nigeria to the UK.",
+    tagline: "Weekly air freight and sea imports from Nigeria to the UK.",
     description:
-      "R-Zone Enterprises operates a fully managed importation service for individuals and businesses sending goods from Nigeria to the United Kingdom. From African foodstuffs and clothing to commercial merchandise, we handle every step of the inbound logistics chain.",
+      "R-Zone Enterprises operates a fully managed importation service for individuals and businesses sending goods from Nigeria to the United Kingdom. From African foodstuffs and clothing to commercial merchandise, we handle every step of the inbound logistics chain with weekly departures.",
     highlights: [
       "Weekly air collections from Nigeria",
-      "Monthly sea freight from Lagos",
+      "Weekly sea freight from Lagos",
       "African foodstuffs accepted",
       "UK customs clearance included",
       "Collection from all Nigerian states",
       "Commercial & personal cargo",
     ],
     process: [
-      { step: "01", label: "Enquire about your shipment", detail: "Tell us what you're importing" },
-      { step: "02", label: "Our Nigeria team collects", detail: "Lagos & nationwide pickup" },
-      { step: "03", label: "Air or sea transit to UK", detail: "Weekly or monthly departures" },
-      { step: "04", label: "UK customs cleared & delivered", detail: "To your UK address" },
+      { step: "01", label: "Enquire about your shipment",        detail: "Tell us what you're importing" },
+      { step: "02", label: "Our Nigeria team collects",          detail: "Lagos & nationwide pickup" },
+      { step: "03", label: "Air or sea transit to UK",           detail: "Weekly departures" },
+      { step: "04", label: "UK customs cleared & delivered",     detail: "To your UK address" },
     ],
     accent: "#0818A8",
     dark: true,
     schema: "https://schema.org/FreightService",
     faq: [
-      { q: "Can I import food from Nigeria to the UK?", a: "Yes, we accept African foodstuffs. Some items are subject to UK customs restrictions — contact us for a full list." },
-      { q: "How do I send goods from Nigeria to the UK?", a: "Contact our team or use our online quote form. We'll arrange collection from anywhere in Nigeria." },
+      { q: "Can I import food from Nigeria to the UK?",          a: "Yes, we accept African foodstuffs. Some items are subject to UK customs restrictions — contact us for a full list." },
+      { q: "How do I send goods from Nigeria to the UK?",        a: "Contact our team or use our online quote form. We'll arrange collection from anywhere in Nigeria." },
     ],
   },
   {
@@ -172,17 +172,17 @@ const SERVICES = [
       "Urgent clearance available",
     ],
     process: [
-      { step: "01", label: "Submit cargo documentation", detail: "Commercial invoice, packing list" },
-      { step: "02", label: "HS code & duty assessment", detail: "Accurate tariff classification" },
-      { step: "03", label: "Duty payment & filing", detail: "On your behalf, transparent costs" },
-      { step: "04", label: "Cargo released & delivered", detail: "No delays, no surprises" },
+      { step: "01", label: "Submit cargo documentation",         detail: "Commercial invoice, packing list" },
+      { step: "02", label: "HS code & duty assessment",          detail: "Accurate tariff classification" },
+      { step: "03", label: "Duty payment & filing",              detail: "On your behalf, transparent costs" },
+      { step: "04", label: "Cargo released & delivered",         detail: "No delays, no surprises" },
     ],
     accent: "#0437F2",
     dark: false,
     schema: "https://schema.org/GovernmentService",
     faq: [
-      { q: "Do I need to be present for customs clearance?", a: "No — we act as your customs agent and handle everything on your behalf with the relevant authorities." },
-      { q: "What documents are needed for Nigeria customs?", a: "Typically a commercial invoice, packing list, and bill of lading or air waybill. We'll advise based on your cargo." },
+      { q: "Do I need to be present for customs clearance?",      a: "No — we act as your customs agent and handle everything on your behalf with the relevant authorities." },
+      { q: "What documents are needed for Nigeria customs?",      a: "Typically a commercial invoice, packing list, and bill of lading or air waybill. We'll advise based on your cargo." },
     ],
   },
   {
@@ -195,9 +195,9 @@ const SERVICES = [
     title: "Warehousing",
     tagline: "Secure UK and Nigeria storage solutions for your cargo.",
     description:
-      "R-Zone Enterprises operates secure warehousing facilities in Essex, UK and Lagos, Nigeria. Whether you need short-term storage before a consolidation shipment or longer-term distribution warehousing, we provide flexible, monitored solutions to suit your business.",
+      "R-Zone Enterprises operates secure warehousing facilities in Upminster, Essex UK and Lagos, Nigeria. Whether you need short-term storage before a consolidation shipment or longer-term distribution warehousing, we provide flexible, monitored solutions to suit your business.",
     highlights: [
-      "Essex, UK warehouse facility",
+      "Upminster, Essex UK warehouse",
       "Lagos, Nigeria storage hub",
       "24/7 CCTV monitored",
       "Flexible short & long-term",
@@ -205,17 +205,17 @@ const SERVICES = [
       "Pick, pack & despatch",
     ],
     process: [
-      { step: "01", label: "Discuss your storage needs", detail: "Flexible space available" },
-      { step: "02", label: "Cargo received & logged", detail: "Full inventory tracking" },
-      { step: "03", label: "Secure monitored storage", detail: "CCTV, access controlled" },
-      { step: "04", label: "Released when you're ready", detail: "Pick, pack & ship on demand" },
+      { step: "01", label: "Discuss your storage needs",   detail: "Flexible space available" },
+      { step: "02", label: "Cargo received & logged",      detail: "Full inventory tracking" },
+      { step: "03", label: "Secure monitored storage",     detail: "CCTV, access controlled" },
+      { step: "04", label: "Released when you're ready",   detail: "Pick, pack & ship on demand" },
     ],
     accent: "#1F51FF",
     dark: true,
     schema: "https://schema.org/Accommodation",
     faq: [
       { q: "How long can I store goods in your warehouse?", a: "We offer both short-term (days) and long-term (months) storage. Contact us for tailored pricing." },
-      { q: "Is my cargo insured while in storage?", a: "Yes, all goods stored in our warehouses are covered by comprehensive cargo insurance." },
+      { q: "Is my cargo insured while in storage?",         a: "Yes, all goods stored in our warehouses are covered by comprehensive cargo insurance." },
     ],
   },
   {
@@ -238,34 +238,33 @@ const SERVICES = [
       "Nigerian port authority compliant",
     ],
     process: [
-      { step: "01", label: "Cargo specification review", detail: "Weight, dimensions, class" },
-      { step: "02", label: "Port & equipment planning", detail: "Cranes, specialist vehicles" },
-      { step: "03", label: "Supervised port operations", detail: "Certified handling teams" },
-      { step: "04", label: "Cargo cleared & onward moved", detail: "Documentation complete" },
+      { step: "01", label: "Cargo specification review",    detail: "Weight, dimensions, class" },
+      { step: "02", label: "Port & equipment planning",     detail: "Cranes, specialist vehicles" },
+      { step: "03", label: "Supervised port operations",    detail: "Certified handling teams" },
+      { step: "04", label: "Cargo cleared & onward moved",  detail: "Documentation complete" },
     ],
     accent: "#0818A8",
     dark: false,
     schema: "https://schema.org/Service",
     faq: [
-      { q: "Can you handle dangerous goods?", a: "Yes, we are certified for IATA/IMDG dangerous goods. Full documentation and specialist handling provided." },
-      { q: "Which ports do you operate at?", a: "We operate at all major Nigerian ports including Apapa, Tin Can Island, Onne, and Calabar, plus West African regional ports." },
+      { q: "Can you handle dangerous goods?",   a: "Yes, we are certified for IATA/IMDG dangerous goods. Full documentation and specialist handling provided." },
+      { q: "Which ports do you operate at?",    a: "We operate at all major Nigerian ports including Apapa, Tin Can Island, Onne, and Calabar, plus West African regional ports." },
     ],
   },
 ];
 
 const STATS = [
-  { value: "12+",     label: "Years Experience",     icon: Clock },
-  { value: "50,000+", label: "Shipments Delivered",  icon: Package },
+  { value: "12+",     label: "Years Experience",      icon: Clock },
+  { value: "50,000+", label: "Shipments Delivered",   icon: Package },
   { value: "99%",     label: "Delivery Success Rate", icon: Shield },
   { value: "107+",    label: "Five-Star Reviews",     icon: Star },
 ];
 
-// ─── Fade animation ───────────────────────────────────────────────────────────
+// ─── Animation ────────────────────────────────────────────────────────────────
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (d = 0) => ({
-    opacity: 1,
-    y: 0,
+    opacity: 1, y: 0,
     transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: d },
   }),
 };
@@ -277,7 +276,7 @@ function ServiceNav({ activeId }) {
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
         <div className="flex items-center overflow-x-auto scrollbar-none">
           {SERVICES.map((s) => {
-            const Icon = s.icon;
+            const Icon     = s.icon;
             const isActive = activeId === s.id;
             return (
               <a
@@ -290,7 +289,7 @@ function ServiceNav({ activeId }) {
                   flex-shrink-0 border-b-2
                   ${isActive
                     ? "text-[#0818A8] border-[#0818A8]"
-                    : "text-gray-500 border-transparent hover:text-gray-800 hover:border-gray-300"
+                    : "text-gray-800 border-transparent hover:text-[#0818A8] hover:border-gray-300"
                   }
                 `}
               >
@@ -396,7 +395,9 @@ function ServiceSection({ service, index }) {
                 transition={{ duration: 0.45, delay: 0.3 }}
                 aria-hidden="true"
               />
-              <span className={`text-[10.5px] font-bold tracking-[0.26em] uppercase ${isDark ? "text-white/45" : "text-gray-400"}`}>
+              <span className={`text-[10.5px] font-bold tracking-[0.26em] uppercase ${
+                isDark ? "text-white/80" : "text-gray-800"
+              }`}>
                 R-Zone Services
               </span>
             </motion.div>
@@ -434,7 +435,9 @@ function ServiceSection({ service, index }) {
             <motion.p
               variants={fadeUp}
               custom={0.15}
-              className={`text-[15px] font-semibold leading-snug mb-3 ${isDark ? "text-white/70" : "text-gray-700"}`}
+              className={`text-[15px] font-semibold leading-snug mb-3 ${
+                isDark ? "text-white/80" : "text-gray-800"
+              }`}
             >
               {service.tagline}
             </motion.p>
@@ -443,7 +446,9 @@ function ServiceSection({ service, index }) {
             <motion.p
               variants={fadeUp}
               custom={0.2}
-              className={`text-[13.5px] font-light leading-relaxed mb-8 ${isDark ? "text-white/48" : "text-gray-500"}`}
+              className={`text-[13.5px] font-light leading-relaxed mb-8 ${
+                isDark ? "text-white/80" : "text-gray-800"
+              }`}
               itemProp="description"
             >
               {service.description}
@@ -466,7 +471,7 @@ function ServiceSection({ service, index }) {
                   >
                     <Check size={9} style={{ color: service.accent }} />
                   </span>
-                  <span className={`text-[12.5px] font-medium ${isDark ? "text-white/62" : "text-gray-600"}`}>
+                  <span className={`text-[12.5px] font-medium ${isDark ? "text-white/80" : "text-gray-800"}`}>
                     {h}
                   </span>
                 </li>
@@ -482,14 +487,18 @@ function ServiceSection({ service, index }) {
                 aria-label={`Get a quote for ${service.title}`}
               >
                 Get a Quote
-                <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+                <ArrowRight
+                  size={12}
+                  className="group-hover:translate-x-1 transition-transform duration-200"
+                  aria-hidden="true"
+                />
               </Link>
               <Link
                 href="/contact"
                 className={`inline-flex items-center gap-2 text-[11.5px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 border rounded-sm transition-all duration-200 ${
                   isDark
-                    ? "border-white/20 text-white hover:border-white/45 hover:bg-white/8"
-                    : "border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8]"
+                    ? "border-white/25 text-white hover:border-white/50 hover:bg-white/8"
+                    : "border-gray-300 text-gray-800 hover:border-[#0818A8] hover:text-[#0818A8]"
                 }`}
                 aria-label={`Ask about ${service.title}`}
               >
@@ -506,8 +515,12 @@ function ServiceSection({ service, index }) {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             {/* Process steps */}
-            <div className={`p-6 md:p-8 border ${isDark ? "bg-white/[0.04] border-white/[0.08]" : "bg-gray-50 border-gray-200"}`}>
-              <p className={`text-[10px] font-bold tracking-[0.3em] uppercase mb-6 ${isDark ? "text-white/40" : "text-gray-400"}`}>
+            <div className={`p-6 md:p-8 border ${
+              isDark ? "bg-white/[0.04] border-white/[0.08]" : "bg-gray-50 border-gray-200"
+            }`}>
+              <p className={`text-[10px] font-bold tracking-[0.3em] uppercase mb-6 ${
+                isDark ? "text-white/80" : "text-gray-800"
+              }`}>
                 How It Works
               </p>
               <div className="flex flex-col gap-0">
@@ -515,22 +528,32 @@ function ServiceSection({ service, index }) {
                   <div key={p.step} className="flex items-start gap-4 relative">
                     {pi < service.process.length - 1 && (
                       <div
-                        className={`absolute left-[15px] top-[30px] w-px h-[calc(100%-14px)] ${isDark ? "bg-white/10" : "bg-gray-200"}`}
+                        className={`absolute left-[15px] top-[30px] w-px h-[calc(100%-14px)] ${
+                          isDark ? "bg-white/10" : "bg-gray-200"
+                        }`}
                         aria-hidden="true"
                       />
                     )}
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-black text-[10px] tracking-[0.05em] mt-0.5"
-                      style={{ backgroundColor: `${service.accent}18`, color: service.accent, border: `1.5px solid ${service.accent}30` }}
+                      style={{
+                        backgroundColor: `${service.accent}18`,
+                        color: service.accent,
+                        border: `1.5px solid ${service.accent}30`,
+                      }}
                       aria-label={`Step ${p.step}`}
                     >
                       {p.step}
                     </div>
                     <div className="pb-5">
-                      <p className={`font-bold text-[13px] leading-tight mb-0.5 ${isDark ? "text-white/80" : "text-gray-800"}`}>
+                      <p className={`font-bold text-[13px] leading-tight mb-0.5 ${
+                        isDark ? "text-white/80" : "text-gray-800"
+                      }`}>
                         {p.label}
                       </p>
-                      <p className={`text-[11.5px] font-light ${isDark ? "text-white/40" : "text-gray-400"}`}>
+                      <p className={`text-[11.5px] font-light ${
+                        isDark ? "text-white/80" : "text-gray-800"
+                      }`}>
                         {p.detail}
                       </p>
                     </div>
@@ -540,20 +563,31 @@ function ServiceSection({ service, index }) {
             </div>
 
             {/* FAQ */}
-            <div className={`p-6 md:p-7 border ${isDark ? "bg-white/[0.04] border-white/[0.08]" : "bg-white border-gray-200"}`}>
-              <p className={`text-[10px] font-bold tracking-[0.3em] uppercase mb-5 ${isDark ? "text-white/40" : "text-gray-400"}`}>
+            <div className={`p-6 md:p-7 border ${
+              isDark ? "bg-white/[0.04] border-white/[0.08]" : "bg-white border-gray-200"
+            }`}>
+              <p className={`text-[10px] font-bold tracking-[0.3em] uppercase mb-5 ${
+                isDark ? "text-white/80" : "text-gray-800"
+              }`}>
                 Frequently Asked
               </p>
               <div className="flex flex-col gap-5">
                 {service.faq.map((item, fi) => (
                   <div
                     key={fi}
-                    className={`pb-5 ${fi < service.faq.length - 1 ? `border-b ${isDark ? "border-white/8" : "border-gray-100"}` : ""}`}
+                    className={`pb-5 ${fi < service.faq.length - 1
+                      ? `border-b ${isDark ? "border-white/[0.08]" : "border-gray-100"}`
+                      : ""
+                    }`}
                   >
-                    <p className={`font-bold text-[13px] mb-1.5 leading-snug ${isDark ? "text-white/80" : "text-gray-800"}`}>
+                    <p className={`font-bold text-[13px] mb-1.5 leading-snug ${
+                      isDark ? "text-white/80" : "text-gray-800"
+                    }`}>
                       {item.q}
                     </p>
-                    <p className={`text-[12.5px] font-light leading-relaxed ${isDark ? "text-white/45" : "text-gray-500"}`}>
+                    <p className={`text-[12.5px] font-light leading-relaxed ${
+                      isDark ? "text-white/80" : "text-gray-800"
+                    }`}>
                       {item.a}
                     </p>
                   </div>
@@ -561,8 +595,12 @@ function ServiceSection({ service, index }) {
               </div>
 
               {/* Mini CTA */}
-              <div className={`mt-5 pt-5 border-t flex items-center justify-between ${isDark ? "border-white/8" : "border-gray-100"}`}>
-                <p className={`text-[11.5px] font-light ${isDark ? "text-white/40" : "text-gray-400"}`}>
+              <div className={`mt-5 pt-5 border-t flex items-center justify-between ${
+                isDark ? "border-white/[0.08]" : "border-gray-100"
+              }`}>
+                <p className={`text-[11.5px] font-light ${
+                  isDark ? "text-white/80" : "text-gray-800"
+                }`}>
                   More questions?
                 </p>
                 <a
@@ -581,7 +619,10 @@ function ServiceSection({ service, index }) {
       </div>
 
       {/* Section divider */}
-      <div className={`absolute bottom-0 left-0 right-0 h-px ${isDark ? "bg-white/[0.05]" : "bg-gray-100"}`} aria-hidden="true" />
+      <div
+        className={`absolute bottom-0 left-0 right-0 h-px ${isDark ? "bg-white/[0.05]" : "bg-gray-100"}`}
+        aria-hidden="true"
+      />
     </section>
   );
 }
@@ -614,14 +655,17 @@ function StatsBand() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="w-10 h-10 bg-white/12 rounded-sm flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <div
+                  className="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center flex-shrink-0"
+                  aria-hidden="true"
+                >
                   <Icon size={16} className="text-white" />
                 </div>
                 <div>
                   <p className="text-white font-black text-[22px] leading-none tracking-[-0.02em]">
                     {stat.value}
                   </p>
-                  <p className="text-white/60 text-[11px] font-medium tracking-[0.06em] uppercase mt-0.5">
+                  <p className="text-white/80 text-[11px] font-medium tracking-[0.06em] uppercase mt-0.5">
                     {stat.label}
                   </p>
                 </div>
@@ -656,8 +700,14 @@ function PageHero() {
         }}
       />
       {/* Glows */}
-      <div className="absolute top-0 left-1/3 w-[700px] h-[400px] bg-[#0818A8]/15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-0 left-1/3 w-[700px] h-[400px] bg-[#0818A8]/15 rounded-full blur-[120px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[100px] pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-16 md:py-20">
 
@@ -669,11 +719,16 @@ function PageHero() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="text-white/40 text-[11.5px] font-medium hover:text-white transition-colors">
+          <Link
+            href="/"
+            className="text-white/80 text-[11.5px] font-medium hover:text-white transition-colors"
+          >
             Home
           </Link>
-          <ChevronRight size={11} className="text-white/40" aria-hidden="true" />
-          <span className="text-white/60 text-[11.5px] font-medium" aria-current="page">Services</span>
+          <ChevronRight size={11} className="text-white/80" aria-hidden="true" />
+          <span className="text-white text-[11.5px] font-medium" aria-current="page">
+            Services
+          </span>
         </motion.nav>
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
@@ -687,7 +742,7 @@ function PageHero() {
             <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/30 bg-[#0818A8]/14 px-4 py-1.5 rounded-full mb-5">
               <motion.span
                 className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
-                animate={{ scale: [1, 1.6, 1], opacity: [1, 0.3, 1] }}
+                animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 aria-hidden="true"
               />
@@ -711,12 +766,12 @@ function PageHero() {
                   transition={{ duration: 0.55, delay: 0.55 }}
                 />
               </span>
-              <br />& Logistics.
+              <br />&amp; Logistics.
             </h1>
 
-            <p className="text-white/52 text-[14px] font-light leading-relaxed tracking-wide">
-              Seven specialist services connecting the UK and Nigeria — from express air
-              freight and monthly sea shipping to customs clearance, warehousing,
+            <p className="text-white/80 text-[14px] font-light leading-relaxed tracking-wide">
+              Seven specialist services connecting the UK and Nigeria — from weekly
+              air freight and sea sailings to customs clearance, warehousing,
               and specialist cargo handling.
             </p>
           </motion.div>
@@ -734,7 +789,7 @@ function PageHero() {
                 <a
                   key={s.id}
                   href={`#${s.id}`}
-                  className="inline-flex items-center gap-2 border border-white/12 bg-white/[0.04] hover:border-white/28 hover:bg-white/[0.08] text-white/55 hover:text-white text-[11px] font-semibold tracking-[0.07em] uppercase px-3.5 py-2 transition-all duration-200"
+                  className="inline-flex items-center gap-2 border border-white/20 bg-white/[0.04] hover:border-white/40 hover:bg-white/[0.08] text-white/80 hover:text-white text-[11px] font-semibold tracking-[0.07em] uppercase px-3.5 py-2 transition-all duration-200"
                   aria-label={`Jump to ${s.title}`}
                 >
                   <Icon size={11} aria-hidden="true" />
@@ -755,7 +810,11 @@ function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <section ref={ref} className="relative bg-[#00061a] overflow-hidden" aria-label="Get started with R-Zone">
+    <section
+      ref={ref}
+      className="relative bg-[#00061a] overflow-hidden"
+      aria-label="Get started with R-Zone"
+    >
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
         aria-hidden="true"
@@ -769,7 +828,10 @@ function FinalCTA() {
         aria-hidden="true"
         style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(8,24,168,0.22) 0%, transparent 70%)" }}
       />
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent" aria-hidden="true" />
+      <div
+        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 text-center">
         <motion.div
@@ -779,7 +841,9 @@ function FinalCTA() {
         >
           <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/28 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]" aria-hidden="true" />
-            <span className="text-[#1F51FF] text-[10px] font-bold tracking-[0.28em] uppercase">Get Started Today</span>
+            <span className="text-[#1F51FF] text-[10px] font-bold tracking-[0.28em] uppercase">
+              Get Started Today
+            </span>
           </div>
 
           <h2 className="text-white font-black text-[clamp(26px,5vw,52px)] leading-[0.92] tracking-[-0.025em] uppercase mb-5">
@@ -787,7 +851,7 @@ function FinalCTA() {
             <span className="text-[#1F51FF]">Nigeria?</span>
           </h2>
 
-          <p className="text-white/48 text-[14px] font-light leading-relaxed max-w-xl mx-auto mb-10">
+          <p className="text-white/80 text-[14px] font-light leading-relaxed max-w-xl mx-auto mb-10">
             Get a free quote in under 2 minutes. Our UK-based team responds same day —
             no automated replies, no call centres.
           </p>
@@ -799,11 +863,15 @@ function FinalCTA() {
               aria-label="Get a free shipping quote"
             >
               Get a Free Quote
-              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+              <ArrowRight
+                size={13}
+                className="group-hover:translate-x-1 transition-transform duration-200"
+                aria-hidden="true"
+              />
             </Link>
             <a
               href="tel:+448007720864"
-              className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
+              className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
               aria-label="Call R-Zone: +44 800 772 0864"
             >
               <Phone size={13} aria-hidden="true" />
@@ -811,7 +879,7 @@ function FinalCTA() {
             </a>
             <a
               href="mailto:info@r-zoneenterprises.com"
-              className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
+              className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
               aria-label="Email R-Zone: info@r-zoneenterprises.com"
             >
               <MessageSquare size={13} aria-hidden="true" />
@@ -821,7 +889,7 @@ function FinalCTA() {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             {["Free Quote", "No Obligation", "Same-Day Response", "UK-Based Team"].map((t) => (
-              <span key={t} className="flex items-center gap-2 text-white/40 text-[11.5px] font-light">
+              <span key={t} className="flex items-center gap-2 text-white/80 text-[11.5px] font-light">
                 <Check size={12} className="text-[#1F51FF]" aria-hidden="true" />
                 {t}
               </span>
@@ -865,6 +933,7 @@ export default function ServicesPageClient() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             "name": "R-Zone Enterprises — All Shipping Services",
+            "description": "The highest-rated organically earned cargo and logistics company between the UK, Nigeria, and across Africa.",
             "url": "https://r-zoneenterprises.com/services",
             "numberOfItems": SERVICES.length,
             "itemListElement": SERVICES.map((s, i) => ({

@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 import { Montserrat } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,14 +9,12 @@ import HeaderSlider from "@/components/HeaderSlider";
 import HomeProducts from "@/components/HomeProducts";
 import Banner from "@/components/Banner";
 import NewsLetter from "@/components/NewsLetter";
-import FeaturedProduct from "@/components/FeaturedProduct";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Service from "@/components/Service";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 // ─── Config ───────────────────────────────────────────────────────────────────
@@ -26,7 +25,7 @@ const RESHOW_HOURS  = 6;
 const RESHOW_MS     = RESHOW_HOURS * 60 * 60 * 1000;
 
 const DEFAULT_PREFS = {
-  necessary:   true,  // always on — cannot be toggled
+  necessary:   true,   // always on — cannot be toggled
   analytics:   false,
   marketing:   false,
   preferences: false,
@@ -44,19 +43,17 @@ function safeJSON(raw, fallback) {
 }
 
 // ─── Core visibility logic ────────────────────────────────────────────────────
-//
-//  "accepted"       → Full consent. Never re-show.
-//  "declined"       → Re-show after RESHOW_MS (6 hrs).
-//  "custom"         → Re-show after RESHOW_MS (6 hrs).
-//  null / missing   → First visit. Show immediately.
-//
+//  "accepted"     → Full consent. Never re-show.
+//  "declined"     → Re-show after RESHOW_MS (6 hrs).
+//  "custom"       → Re-show after RESHOW_MS (6 hrs).
+//  null / missing → First visit. Show immediately.
 function shouldShowBanner() {
   const consent   = safeGet(STORAGE_KEY);
   const timestamp = safeGet(TIMESTAMP_KEY);
 
-  if (!consent) return true;
+  if (!consent)               return true;
   if (consent === "accepted") return false;
-  if (!timestamp) return true;
+  if (!timestamp)             return true;
   return Date.now() - parseInt(timestamp, 10) >= RESHOW_MS;
 }
 
@@ -73,7 +70,9 @@ function PrefRow({ label, description, checked, onChange, disabled = false }) {
             </span>
           )}
         </p>
-        <p className="text-gray-400 text-[11px] font-light leading-snug">{description}</p>
+        <p className="text-gray-800 text-[11px] font-light leading-snug">
+          {description}
+        </p>
       </div>
 
       <button
@@ -83,7 +82,8 @@ function PrefRow({ label, description, checked, onChange, disabled = false }) {
         disabled={disabled}
         onClick={() => !disabled && onChange(!checked)}
         className={`
-          relative flex-shrink-0 w-9 h-5 rounded-full border-2 transition-all duration-200 mt-0.5
+          relative flex-shrink-0 w-9 h-5 rounded-full border-2
+          transition-all duration-200 mt-0.5
           focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-1
           ${disabled
             ? "bg-[#0818A8] border-[#0818A8] opacity-70 cursor-not-allowed"
@@ -122,7 +122,7 @@ function CookieBanner() {
     }
   }, []);
 
-  // Escape key declines and closes
+  // Escape key closes banner (decline)
   useEffect(() => {
     if (!visible) return;
     const handler = (e) => { if (e.key === "Escape") handleDecline(); };
@@ -173,7 +173,7 @@ function CookieBanner() {
     <AnimatePresence>
       {visible && (
         <>
-          {/* Backdrop — subtle dim */}
+          {/* Backdrop */}
           <motion.div
             className="fixed inset-0 bg-black/20 z-50 pointer-events-none"
             initial={{ opacity: 0 }}
@@ -189,7 +189,10 @@ function CookieBanner() {
             aria-modal="false"
             aria-label="Cookie consent"
             aria-describedby="cookie-description"
-            className={`${montserrat.className} fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6`}
+            className={`
+              ${montserrat.variable} font-[family-name:var(--font-montserrat)]
+              fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6
+            `}
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
@@ -198,7 +201,10 @@ function CookieBanner() {
             <div className="max-w-[1100px] mx-auto bg-white border border-gray-200 shadow-2xl shadow-black/10 rounded-sm overflow-hidden relative">
 
               {/* Blue top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+              <div
+                className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
+                aria-hidden="true"
+              />
 
               <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 px-6 py-6 md:px-8 md:py-7">
 
@@ -211,16 +217,19 @@ function CookieBanner() {
                     </h3>
                   </div>
 
-                  <p id="cookie-description" className="text-gray-500 text-[13px] font-light leading-relaxed mb-3">
+                  <p
+                    id="cookie-description"
+                    className="text-gray-800 text-[13px] font-light leading-relaxed mb-3"
+                  >
                     R-Zone Cargo uses cookies to personalise content and ads, to provide
                     social media features, and to analyse our traffic. We also share
                     information about your use of our site with our social media,
                     advertising and analytics partners who may combine it with other
-                    information that you've provided to them or that they've collected
+                    information that you&apos;ve provided to them or that they&apos;ve collected
                     from your use of their services.
                   </p>
 
-                  <p className="text-gray-500 text-[13px] font-light leading-relaxed">
+                  <p className="text-gray-800 text-[13px] font-light leading-relaxed">
                     By accepting, you agree to the use of these cookies. To learn more,
                     view our{" "}
                     <Link
@@ -239,12 +248,12 @@ function CookieBanner() {
                   </p>
 
                   {/* Re-prompt notice */}
-                  <p className="text-gray-400 text-[10.5px] font-light mt-2 tracking-wide">
+                  <p className="text-gray-800 text-[10.5px] font-light mt-2 tracking-wide">
                     ↺&nbsp; Your preferences are reviewed every {RESHOW_HOURS} hours to ensure consent remains current.
                   </p>
                 </div>
 
-                {/* ── Buttons ── */}
+                {/* ── Action buttons ── */}
                 <div className="flex flex-row md:flex-col items-center md:items-stretch gap-2.5 flex-shrink-0 md:min-w-[150px] self-end md:self-auto pb-0.5">
 
                   <motion.button
@@ -260,7 +269,7 @@ function CookieBanner() {
 
                   <motion.button
                     onClick={handleDecline}
-                    className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-700 text-[13px] font-medium px-6 py-2.5 rounded-sm transition-colors duration-150 tracking-[0.01em] focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
+                    className="flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-[13px] font-medium px-6 py-2.5 rounded-sm transition-colors duration-150 tracking-[0.01em] focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
                     aria-label="Decline optional cookies"
@@ -297,7 +306,7 @@ function CookieBanner() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 md:px-8 pb-6 pt-2 border-t border-gray-100">
-                      <p className="text-gray-400 text-[10px] font-black tracking-[0.25em] uppercase mb-3 pt-4">
+                      <p className="text-gray-800 text-[10px] font-black tracking-[0.25em] uppercase mb-3 pt-4">
                         Cookie Categories
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
@@ -327,6 +336,7 @@ function CookieBanner() {
                           onChange={togglePref("preferences")}
                         />
                       </div>
+
                       <div className="mt-4 flex flex-wrap items-center gap-3">
                         <motion.button
                           onClick={handleSaveCustom}
@@ -337,7 +347,7 @@ function CookieBanner() {
                           <Check size={11} strokeWidth={2.5} aria-hidden="true" />
                           Save Preferences
                         </motion.button>
-                        <span className="text-gray-400 text-[11px] font-light">
+                        <span className="text-gray-800 text-[11px] font-light">
                           Only enabled categories will be active.
                         </span>
                       </div>
@@ -355,19 +365,15 @@ function CookieBanner() {
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
-
 const Home = () => {
   return (
     <>
- 
-      <div className="">
+      <div>
         <HeaderSlider />
         <HomeProducts />
-     
         <NewsLetter />
         <Banner />
       </div>
-
 
       {/* Cookie banner — renders on top of everything */}
       <CookieBanner />

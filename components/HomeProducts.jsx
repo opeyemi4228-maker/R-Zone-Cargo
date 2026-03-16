@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import {
   Plane, Ship, Truck, Package, ShoppingBag,
-  User, ArrowUpRight,
+  User,
 } from "lucide-react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import FeaturedProduct from "@/components/FeaturedProduct";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
@@ -18,7 +18,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-// ─── Service card data — real R-Zone services ─────────────────────────────────
+// ─── Service card data ────────────────────────────────────────────────────────
 const SERVICE_CARDS = [
   {
     id: "01",
@@ -41,11 +41,11 @@ const SERVICE_CARDS = [
     slug: "sea-shipping-to-nigeria",
     href: "/sea-shipping-to-nigeria",
     description:
-      "Monthly sea freight from the UK to Nigeria. Ideal for heavy, bulky or high-volume shipments at the most affordable rates.",
+      "Weekly sea freight departures from the UK to Nigeria. Ideal for heavy, bulky or high-volume shipments at the most affordable rates.",
     tag: "Best Value",
     tagColor: "bg-emerald-50 text-emerald-700",
     accentColor: "#0437F2",
-    highlights: ["Monthly sailings", "Bulk cargo", "Competitive rates"],
+    highlights: ["Weekly sailings", "Bulk cargo", "Competitive rates"],
     schema: "FreightService",
   },
   {
@@ -55,7 +55,7 @@ const SERVICE_CARDS = [
     slug: "door-to-door-cargo",
     href: "/door-to-door-cargo",
     description:
-      "We collect from your UK address and deliver straight to the final destination in Nigeria — by air or sea, domestic and commercial customers.",
+      "We collect from your UK address and deliver straight to the final destination in Nigeria — by air or sea, for domestic and commercial customers.",
     tag: "Most Popular",
     tagColor: "bg-amber-50 text-amber-700",
     accentColor: "#1F51FF",
@@ -85,7 +85,7 @@ const SERVICE_CARDS = [
     description:
       "Full commercial freight solutions for businesses — vehicles, machinery, industrial equipment, and high-volume merchandise to Nigeria and Africa.",
     tag: "B2B",
-    tagColor: "bg-slate-100 text-slate-600",
+    tagColor: "bg-slate-100 text-slate-700",
     accentColor: "#0437F2",
     highlights: ["Heavy machinery", "Vehicle shipping", "B2B rates"],
     schema: "FreightService",
@@ -99,14 +99,14 @@ const SERVICE_CARDS = [
     description:
       "Send household goods, food items, clothing and personal effects to family and friends in Nigeria. African foodstuffs accepted via weekly air freight.",
     tag: "Personal",
-    tagColor: "bg-rose-50 text-rose-600",
+    tagColor: "bg-rose-50 text-rose-700",
     accentColor: "#1F51FF",
     highlights: ["Foodstuffs accepted", "Weekly air", "Family parcels"],
     schema: "MovingService",
   },
 ];
 
-// ─── List rows — existing component's services ────────────────────────────────
+// ─── List rows ─────────────────────────────────────────────────────────────────
 const LIST_SERVICES = [
   {
     id: "01",
@@ -117,7 +117,7 @@ const LIST_SERVICES = [
   {
     id: "02",
     title: "Sea Shipping to Nigeria",
-    subtitle: "Affordable monthly sea freight for bulk cargo.",
+    subtitle: "Affordable weekly sea freight for bulk cargo.",
     href: "/services#sea-shipping-to-nigeria",
   },
   {
@@ -135,7 +135,7 @@ const LIST_SERVICES = [
   {
     id: "05",
     title: "Importation from Nigeria",
-    subtitle: "Weekly air freight & monthly sea from Nigeria to UK.",
+    subtitle: "Weekly air freight & sea sailings from Nigeria to UK.",
     href: "/services#importation-from-nigeria",
   },
   {
@@ -162,9 +162,9 @@ const ArrowDiag = ({ className = "" }) => (
   </svg>
 );
 
-// ─── Animated section header ──────────────────────────────────────────────────
+// ─── Section Header ───────────────────────────────────────────────────────────
 function SectionHeader({ eyebrow, title, accentWord, subtitle, cta }) {
-  const ref = useRef(null);
+  const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
@@ -226,11 +226,11 @@ function SectionHeader({ eyebrow, title, accentWord, subtitle, cta }) {
         >
           <Link
             href={cta.href}
-            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase font-bold text-[#0818A8]/50 hover:text-[#0818A8] transition-colors duration-300"
+            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.28em] uppercase font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors duration-300"
             aria-label={cta.ariaLabel}
           >
             {cta.label}
-            <span className="flex items-center justify-center w-9 h-9 rounded-full border border-[#0818A8]/22 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-300">
+            <span className="flex items-center justify-center w-9 h-9 rounded-full border border-[#0818A8]/30 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-300">
               <ArrowDiag className="w-4 h-4 text-[#0818A8] group-hover:text-white transition-colors duration-300" />
             </span>
           </Link>
@@ -274,7 +274,7 @@ function ServiceCard({ service, index }) {
           rounded-sm
         "
       >
-        {/* Top accent line — animates in on hover */}
+        {/* Top accent line — animates on hover */}
         <div
           className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] origin-left transition-transform duration-500"
           style={{ transform: hovered ? "scaleX(1)" : "scaleX(0)" }}
@@ -334,7 +334,7 @@ function ServiceCard({ service, index }) {
             {service.highlights.map((h) => (
               <li
                 key={h}
-                className="text-[12px] font-medium text-gray-500 border border-gray-200 px-2.5 py-0.5 rounded-full"
+                className="text-[12px] font-medium text-gray-800 border border-gray-200 px-2.5 py-0.5 rounded-full"
               >
                 {h}
               </li>
@@ -345,7 +345,7 @@ function ServiceCard({ service, index }) {
           <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
             <span
               className="text-[11.5px] font-black tracking-[0.1em] uppercase transition-colors duration-200"
-              style={{ color: hovered ? service.accentColor : "#9ca3af" }}
+              style={{ color: hovered ? service.accentColor : "#374151" }}
             >
               Learn More
             </span>
@@ -354,14 +354,14 @@ function ServiceCard({ service, index }) {
               transition={{ duration: 0.2 }}
               className="w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-300"
               style={{
-                borderColor: hovered ? service.accentColor : "#e5e7eb",
+                borderColor: hovered ? service.accentColor : "#d1d5db",
                 backgroundColor: hovered ? service.accentColor : "transparent",
               }}
               aria-hidden="true"
             >
               <ArrowDiag
                 className="w-3 h-3 transition-colors duration-300"
-                style={{ color: hovered ? "#ffffff" : "#9ca3af" }}
+                style={{ color: hovered ? "#ffffff" : "#374151" }}
               />
             </motion.div>
           </div>
@@ -411,7 +411,9 @@ function ServiceRow({ service, index }) {
         {/* Number */}
         <span
           className="relative z-10 w-10 md:w-14 shrink-0 font-bold text-[11px] tracking-[0.22em] transition-colors duration-200"
-          style={{ color: hovered ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.2)" }}
+          style={{
+            color: hovered ? "rgba(255,255,255,0.80)" : "rgba(0,0,0,0.70)",
+          }}
         >
           {service.id}
         </span>
@@ -430,7 +432,9 @@ function ServiceRow({ service, index }) {
           </span>
           <span
             className="block text-[13px] md:text-[14px] font-normal mt-1 transition-colors duration-200"
-            style={{ color: hovered ? "rgba(255,255,255,0.45)" : "rgba(0,0,0,0.38)" }}
+            style={{
+              color: hovered ? "rgba(255,255,255,0.80)" : "rgba(0,0,0,0.70)",
+            }}
             itemProp="description"
           >
             {service.subtitle}
@@ -441,7 +445,7 @@ function ServiceRow({ service, index }) {
         <span
           className="relative z-10 shrink-0 flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full border transition-all duration-300"
           style={{
-            borderColor: hovered ? "rgba(255,255,255,0.28)" : "rgba(8,24,168,0.22)",
+            borderColor: hovered ? "rgba(255,255,255,0.40)" : "rgba(8,24,168,0.30)",
             color: hovered ? "#ffffff" : "#0818A8",
             transform: hovered ? "rotate(0deg)" : "rotate(-45deg)",
           }}
@@ -458,7 +462,7 @@ function ServiceRow({ service, index }) {
 export default function OurServices() {
   return (
     <>
-      {/* SEO: ItemList schema for all services */}
+      {/* SEO: ItemList schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -467,7 +471,7 @@ export default function OurServices() {
             "@type": "ItemList",
             "name": "R-Zone Enterprises Shipping Services",
             "description":
-              "Core logistics services offered by R-Zone Enterprises — UK to Nigeria cargo specialists.",
+              "Core logistics services offered by R-Zone Enterprises — the highest-rated organically earned cargo and logistics company between the UK, Nigeria, and across Africa.",
             "url": "https://r-zoneenterprises.com/services",
             "numberOfItems": SERVICE_CARDS.length,
             "itemListElement": SERVICE_CARDS.map((s, i) => ({
@@ -531,16 +535,14 @@ export default function OurServices() {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
 
-          {/* ══ PART 1 — CARD GRID ═══════════════════════════════════════════
-              Brief: Icon · Short description · Learn more link
-          ════════════════════════════════════════════════════════════════ */}
+          {/* ══ PART 1 — CARD GRID ═══════════════════════════════════════ */}
           <div className="py-20 md:py-28 lg:py-32">
 
             <SectionHeader
               eyebrow="Core Logistics Services"
               title="What We"
               accentWord="Offer"
-              subtitle="Air freight, sea shipping, door-to-door cargo and specialist logistics solutions connecting the UK and Nigeria — since 2012."
+              subtitle="Air freight, sea shipping with weekly sailings, door-to-door cargo and specialist logistics — the highest-rated cargo company connecting the UK and Nigeria since 2012."
               cta={{
                 label: "All services",
                 href: "/services",
@@ -572,16 +574,14 @@ export default function OurServices() {
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
 
-          {/* ══ PART 2 — LIST ROWS ════════════════════════════════════════════
-              Preserves the original animated list-row design
-          ════════════════════════════════════════════════════════════════ */}
+          {/* ══ PART 2 — LIST ROWS ═══════════════════════════════════════ */}
           <div className="py-20 md:py-28 lg:py-32">
 
             <SectionHeader
               eyebrow="How We Ship"
               title="Our Service"
               accentWord="Routes"
-              subtitle="Every route, every method air, sea and road handled by our UK-based team with over 12 years of experience."
+              subtitle="Every route, every method — air, sea and road — handled by our UK-based team with over 12 years of experience."
             />
 
             {/* Top border */}

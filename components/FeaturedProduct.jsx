@@ -48,7 +48,6 @@ function AnimatedCounter({ target, suffix = "", prefix = "" }) {
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-
 const METRICS = [
   {
     value: 12,
@@ -70,7 +69,7 @@ const METRICS = [
     value: 2,
     suffix: "",
     label: "Warehouses",
-    sub: "Essex UK · Lagos NG",
+    sub: "Upminster UK · Lagos NG",
     icon: Warehouse,
     color: "#1F51FF",
   },
@@ -89,7 +88,7 @@ const CERTIFICATIONS = [
   { icon: Award,       label: "IATA Registered",   sub: "Certified air freight agent" },
   { icon: CheckCircle, label: "NCS Compliant",     sub: "Nigeria Customs Service" },
   { icon: Globe,       label: "6 Continents",      sub: "Worldwide freight reach" },
-  { icon: Star,        label: "Google Excellent",  sub: "107+ verified reviews" },
+  { icon: Star,        label: "Highest Rated",     sub: "Organic · UK to Nigeria" },
   { icon: Users,       label: "10,000+ Customers", sub: "Families & businesses" },
 ];
 
@@ -109,10 +108,11 @@ const AIRLINE_PARTNERS = [
 const OFFICES = [
   {
     flag: "🇬🇧",
-    city: "Essex, United Kingdom",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Upminster, RM14 3TS",
+    city: "Upminster, United Kingdom",
+    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
     role: "Primary Hub",
     phone: "+44 (0) 800 772 0864",
+    phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com",
     mapsUrl: "https://maps.app.goo.gl/QXnmYSxB8CeZ7hmv8",
     hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM",
@@ -120,12 +120,13 @@ const OFFICES = [
   {
     flag: "🇳🇬",
     city: "Lagos, Nigeria",
-    address: "2 Esan Olusegun Close, Off Hotel Solus Bus Stop, Igando, Lagos",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
     role: "West Africa Hub",
-    phone: "+234 000 000 0000",
+    phone: "+234 906 680 6861",
+    phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com",
     mapsUrl: "https://maps.google.com",
-    hours: "Mon–Sat 9AM–5PM WAT",
+    hours: "Mon–Fri 9AM–5PM WAT",
   },
 ];
 
@@ -146,9 +147,10 @@ export default function TrustAuthority() {
             "name": "R-Zone Enterprises",
             "url": "https://r-zoneenterprises.com",
             "foundingDate": "2012",
+            "description": "The highest-rated organically earned cargo and logistics company between the UK, Nigeria, and across Africa.",
             "areaServed": [
-              { "@type": "Country", "name": "United Kingdom" },
-              { "@type": "Country", "name": "Nigeria" },
+              { "@type": "Country",   "name": "United Kingdom" },
+              { "@type": "Country",   "name": "Nigeria" },
               { "@type": "Continent", "name": "Africa" },
             ],
             "aggregateRating": {
@@ -160,7 +162,23 @@ export default function TrustAuthority() {
             "award": [
               "IATA Registered Air Freight Agent",
               "NCS Compliant — Nigeria Customs Service",
+              "Highest-Rated Organically Earned Cargo Company — UK to Nigeria",
               "Google Excellent Rating — 107+ Reviews",
+            ],
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
+                "addressLocality": "Upminster",
+                "postalCode": "RM14 3TS",
+                "addressCountry": "GB",
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange",
+                "addressLocality": "Lagos",
+                "addressCountry": "NG",
+              },
             ],
           }),
         }}
@@ -188,14 +206,20 @@ export default function TrustAuthority() {
             backgroundSize: "64px 64px",
           }}
         />
-        <div className="absolute top-0 left-1/3 w-[800px] h-[600px] rounded-full bg-[#0818A8]/10 blur-[140px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] rounded-full bg-[#1F51FF]/8 blur-[120px] pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute top-0 left-1/3 w-[800px] h-[600px] rounded-full bg-[#0818A8]/10 blur-[140px] pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute bottom-0 right-1/4 w-[600px] h-[400px] rounded-full bg-[#1F51FF]/8 blur-[120px] pointer-events-none"
+          aria-hidden="true"
+        />
 
         {/* ══ PART 1 — HEADER + METRICS ════════════════════════════════════ */}
         <div className="relative border-b border-white/[0.06]">
           <div
             ref={headerRef}
-            className="max-w-[1400px] mx-auto px-3 py-20 md:py-24 lg:py-28"
+            className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 lg:py-28"
           >
 
             {/* Header row */}
@@ -211,7 +235,7 @@ export default function TrustAuthority() {
                 <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/30 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
                   <motion.span
                     className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
-                    animate={{ scale: [1, 1.6, 1], opacity: [1, 0.3, 1] }}
+                    animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                     aria-hidden="true"
                   />
@@ -235,10 +259,12 @@ export default function TrustAuthority() {
                   <br />Since 2012.
                 </h2>
 
-                <p className="text-white/60 text-[15px] font-light leading-relaxed tracking-wide max-w-lg">
-                  From families sending care packages to businesses shipping commercial
-                  cargo, R-Zone Enterprises has been the trusted bridge between
-                  the UK and Nigeria for over a decade.
+                <p className="text-white/80 text-[15px] font-light leading-relaxed tracking-wide max-w-lg">
+                  The highest-rated organically earned cargo and logistics company
+                  between the UK, Nigeria, and across Africa. From families sending
+                  care packages to businesses shipping commercial cargo — R-Zone
+                  Enterprises has been the trusted bridge for over a decade, with
+                  weekly sailings and air departures every week.
                 </p>
               </motion.div>
 
@@ -256,9 +282,13 @@ export default function TrustAuthority() {
                 ].map((badge) => (
                   <span
                     key={badge}
-                    className="inline-flex items-center gap-2 border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-white/60 text-[11px] font-semibold tracking-[0.08em] uppercase"
+                    className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.04] px-3.5 py-2 text-white/80 text-[11px] font-semibold tracking-[0.08em] uppercase"
                   >
-                    <CheckCircle size={11} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
+                    <CheckCircle
+                      size={11}
+                      className="text-[#1F51FF] flex-shrink-0"
+                      aria-hidden="true"
+                    />
                     {badge}
                   </span>
                 ))}
@@ -318,7 +348,7 @@ export default function TrustAuthority() {
                     <p className="text-white font-bold text-[12px] tracking-[0.08em] uppercase leading-tight mb-1.5" itemProp="description">
                       {metric.label}
                     </p>
-                    <p className="text-white/60 text-[12px] font-light tracking-wide">
+                    <p className="text-white/80 text-[12px] font-light tracking-wide">
                       {metric.sub}
                     </p>
                   </motion.div>
@@ -331,16 +361,16 @@ export default function TrustAuthority() {
 
         {/* ══ PART 2 — CERTIFICATIONS ══════════════════════════════════════ */}
         <div className="relative border-b border-white/[0.06]">
-          <div className="max-w-[1400px] mx-auto px-3 py-12 md:py-14">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
 
             <motion.p
-              className="text-white/50 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/80 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="w-5 h-px bg-white/20" aria-hidden="true" />
+              <span className="w-5 h-px bg-white/30" aria-hidden="true" />
               Credentials &amp; Standards
             </motion.p>
 
@@ -362,16 +392,19 @@ export default function TrustAuthority() {
                     transition={{ duration: 0.45, delay: i * 0.07 }}
                   >
                     <div
-                      className="w-9 h-9 bg-[#0818A8]/15 border border-[#0818A8]/25 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-250 rounded-sm"
+                      className="w-9 h-9 bg-[#0818A8]/15 border border-[#0818A8]/25 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-200 rounded-sm"
                       aria-hidden="true"
                     >
-                      <Icon size={14} className="text-[#1F51FF] group-hover:text-white transition-colors duration-250" />
+                      <Icon
+                        size={14}
+                        className="text-[#1F51FF] group-hover:text-white transition-colors duration-200"
+                      />
                     </div>
                     <div>
-                      <p className="text-white/75 text-[11.5px] font-bold tracking-[0.04em] leading-none mb-0.5">
+                      <p className="text-white text-[11.5px] font-bold tracking-[0.04em] leading-none mb-0.5">
                         {cert.label}
                       </p>
-                      <p className="text-white/50 text-[10px] font-light leading-none">
+                      <p className="text-white/80 text-[10px] font-light leading-none">
                         {cert.sub}
                       </p>
                     </div>
@@ -384,23 +417,29 @@ export default function TrustAuthority() {
 
         {/* ══ PART 3 — AIRLINE MARQUEE ═════════════════════════════════════ */}
         <div className="relative border-b border-white/[0.06] overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-3 pt-12 md:pt-14">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14">
             <motion.p
-              className="text-white/60 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/80 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="w-5 h-px bg-white/20" aria-hidden="true" />
+              <span className="w-5 h-px bg-white/30" aria-hidden="true" />
               Airline &amp; Logistics Partners
             </motion.p>
           </div>
 
           <div className="relative py-5 md:py-7" aria-label="Airline partners">
             {/* Fade masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
+            <div
+              className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00061a] to-transparent z-10 pointer-events-none"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00061a] to-transparent z-10 pointer-events-none"
+              aria-hidden="true"
+            />
 
             <motion.div
               className="flex items-center gap-4 w-max"
@@ -419,10 +458,10 @@ export default function TrustAuthority() {
                   >
                     {p.code}
                   </span>
-                  <span className="text-white/60 text-[12.5px] font-medium whitespace-nowrap">
+                  <span className="text-white/80 text-[12.5px] font-medium whitespace-nowrap">
                     {p.name}
                   </span>
-                  <Plane size={10} className="text-white/40 flex-shrink-0" aria-hidden="true" />
+                  <Plane size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
                 </div>
               ))}
             </motion.div>
@@ -432,16 +471,16 @@ export default function TrustAuthority() {
 
         {/* ══ PART 4 — OFFICES ═════════════════════════════════════════════ */}
         <div className="relative">
-          <div className="max-w-[1400px] mx-auto px-3 py-14 md:py-16">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-16">
 
             <motion.p
-              className="text-white/60 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              className="text-white/80 text-[10px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className="w-5 h-px bg-white/20" aria-hidden="true" />
+              <span className="w-5 h-px bg-white/30" aria-hidden="true" />
               Our Offices
             </motion.p>
 
@@ -462,6 +501,7 @@ export default function TrustAuthority() {
                   itemScope
                   itemType="https://schema.org/PostalAddress"
                 >
+                  {/* Top accent line */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400"
                     aria-hidden="true"
@@ -469,15 +509,20 @@ export default function TrustAuthority() {
 
                   <div className="flex items-start gap-4">
                     <div
-                      className="w-11 h-11 bg-[#0818A8]/18 border border-[#0818A8]/28 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-250 rounded-sm"
+                      className="w-11 h-11 bg-[#0818A8]/18 border border-[#0818A8]/28 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-200 rounded-sm"
                       aria-hidden="true"
                     >
-                      <MapPin size={16} className="text-[#1F51FF] group-hover:text-white transition-colors duration-250" />
+                      <MapPin
+                        size={16}
+                        className="text-[#1F51FF] group-hover:text-white transition-colors duration-200"
+                      />
                     </div>
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center flex-wrap gap-2 mb-1.5">
-                        <span className="text-[15px] text-white/60" aria-hidden="true">{office.flag}</span>
+                        <span className="text-[15px] text-white/80" aria-hidden="true">
+                          {office.flag}
+                        </span>
                         <span className="text-white font-black text-[13px] tracking-[0.06em] uppercase">
                           {office.city}
                         </span>
@@ -486,14 +531,17 @@ export default function TrustAuthority() {
                         </span>
                       </div>
 
-                      <p className="text-white/70 text-[13px] font-light leading-snug mb-3" itemProp="streetAddress">
+                      <p
+                        className="text-white/80 text-[13px] font-light leading-snug mb-3"
+                        itemProp="streetAddress"
+                      >
                         {office.address}
                       </p>
 
                       <div className="flex flex-wrap gap-x-5 gap-y-1.5">
                         <a
-                          href={`tel:${office.phone.replace(/[\s()]/g, "")}`}
-                          className="flex items-center gap-1.5 text-white/70 hover:text-white text-[12px] font-medium transition-colors duration-200"
+                          href={office.phoneHref}
+                          className="flex items-center gap-1.5 text-white/80 hover:text-white text-[12px] font-medium transition-colors duration-200"
                           aria-label={`Call ${office.city}: ${office.phone}`}
                         >
                           <Phone size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
@@ -501,7 +549,7 @@ export default function TrustAuthority() {
                         </a>
                         <a
                           href={`mailto:${office.email}`}
-                          className="flex items-center gap-1.5 text-white/70 hover:text-white text-[12px] font-medium transition-colors duration-200"
+                          className="flex items-center gap-1.5 text-white/80 hover:text-white text-[12px] font-medium transition-colors duration-200"
                           aria-label={`Email ${office.city}: ${office.email}`}
                         >
                           <MessageSquare size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
@@ -509,7 +557,7 @@ export default function TrustAuthority() {
                         </a>
                       </div>
 
-                      <p className="text-white/70 text-[12px] font-light mt-2 tracking-wide">
+                      <p className="text-white/80 text-[12px] font-light mt-2 tracking-wide">
                         {office.hours}
                       </p>
                     </div>
@@ -526,14 +574,14 @@ export default function TrustAuthority() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <p className="text-white/60 text-[12.5px] font-light max-w-md leading-relaxed">
-                Our UK-based team handles every query personally, no automated
-                responses, no call centres.
+              <p className="text-white/80 text-[12.5px] font-light max-w-md leading-relaxed">
+                Our UK-based team handles every query personally — no automated
+                responses, no call centres. Just real people who care about your cargo.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-white/20 hover:border-white/45 bg-white/[0.05] hover:bg-white/10 text-white text-[11.5px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
+                  className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[11.5px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
                   aria-label="Contact R-Zone Enterprises"
                 >
                   Contact Us
