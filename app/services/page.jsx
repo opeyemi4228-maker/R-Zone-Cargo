@@ -686,8 +686,7 @@ function PageHero() {
   return (
     <div
       ref={ref}
-      className="relative bg-[#00061a] overflow-hidden hero-section"
-      style={{ paddingTop: "100px" }}
+      className="relative bg-[#00061a] overflow-hidden hero-section pt-10"
       aria-labelledby="services-hero-heading"
     >
       {/* Grid */}
@@ -756,7 +755,7 @@ function PageHero() {
               className="text-white font-black text-[clamp(30px,6vw,68px)] leading-[0.9] tracking-[-0.03em] uppercase mb-5"
             >
               Shipping{" "}
-              <span className="relative inline-block text-[#1F51FF]">
+              <span className="relative inline-block text-[#1F51FF] mb-2">
                 Services
                 <motion.span
                   className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"

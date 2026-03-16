@@ -29,12 +29,12 @@ const outfit = Outfit({
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const STATS = [
-  { value: "2012",    suffix: "",  label: "Year Founded",          icon: Clock,     desc: "Over 12 years in operation" },
-  { value: "50",     suffix: "K+", label: "Shipments Delivered",   icon: Package,   desc: "Safely moved, on time" },
-  { value: "36",     suffix: "",   label: "Nigerian States Served", icon: MapPin,    desc: "Complete national coverage" },
-  { value: "107",    suffix: "+",  label: "Five-Star Reviews",      icon: Star,      desc: "Google verified reviews" },
-  { value: "99",     suffix: "%",  label: "Delivery Success Rate",  icon: Shield,    desc: "Industry-leading reliability" },
-  { value: "6",      suffix: "",   label: "Continents Reached",     icon: Globe,     desc: "Global reach, local expertise" },
+  { value: "2012", suffix: "",   label: "Year Founded",           icon: Clock,   desc: "Over 12 years in operation" },
+  { value: "50",   suffix: "K+", label: "Shipments Delivered",    icon: Package, desc: "Safely moved, on time" },
+  { value: "36",   suffix: "",   label: "Nigerian States Served", icon: MapPin,  desc: "Complete national coverage" },
+  { value: "107",  suffix: "+",  label: "Five-Star Reviews",      icon: Star,    desc: "Google verified reviews" },
+  { value: "99",   suffix: "%",  label: "Delivery Success Rate",  icon: Shield,  desc: "Industry-leading reliability" },
+  { value: "6",    suffix: "",   label: "Continents Reached",     icon: Globe,   desc: "Global reach, local expertise" },
 ];
 
 const TIMELINE = [
@@ -47,8 +47,8 @@ const TIMELINE = [
   {
     year: "2014",
     title: "Sea Freight Launched",
-    body: "Responding to customer demand for more affordable bulk shipping options, R-Zone launched its monthly sea freight service — opening the UK–Nigeria corridor to businesses and individuals with larger consignments.",
-    highlight: "Monthly sea container service begins",
+    body: "Responding to customer demand for more affordable bulk shipping options, R-Zone launched its weekly sea freight service — opening the UK–Nigeria corridor to businesses and individuals with larger consignments.",
+    highlight: "Weekly sea container service begins",
   },
   {
     year: "2016",
@@ -98,7 +98,7 @@ const VALUES = [
   {
     icon: Heart,
     title: "Care",
-    body: "Most of our shipments contain items of deep personal significance gifts for parents, supplies for businesses built from scratch. We understand that and handle everything accordingly.",
+    body: "Most of our shipments contain items of deep personal significance — gifts for parents, supplies for businesses built from scratch. We understand that and handle everything accordingly.",
     accent: "#0437F2",
   },
   {
@@ -126,7 +126,7 @@ const TEAM = [
     name: "Operations Director",
     role: "UK Operations",
     tenure: "Since 2012",
-    detail: "Oversees all UK-side logistics, customer service, and warehouse operations at our Essex facility.",
+    detail: "Oversees all UK-side logistics, customer service, and warehouse operations at our Upminster facility.",
     initial: "O",
   },
   {
@@ -178,37 +178,38 @@ const OFFICES = [
     country: "United Kingdom",
     flag: "🇬🇧",
     role: "Headquarters & Warehouse",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Essex RM14 3TS",
-    phone: "+44 800 772 0864",
+    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
+    phone: "+44 (0) 800 772 0864",
+    phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com",
-    hours: "Mon–Fri 9am–6pm · Sat 10am–2pm",
+    hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM",
     accent: "#0818A8",
   },
   {
     country: "Nigeria",
     flag: "🇳🇬",
     role: "Operations Hub",
-    address: "2 Esan Olusegun Close, Igando, Lagos State",
-    phone: "+234 (0) 800 RZONE",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+    phone: "+234 906 680 6861",
+    phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com",
-    hours: "Mon–Fri 8am–5pm WAT",
+    hours: "Mon–Fri 9AM–5PM WAT",
     accent: "#1F51FF",
   },
 ];
 
 const CERTIFICATIONS = [
-  { label: "IATA Certified", icon: Award,    desc: "International air cargo standards" },
-  { label: "NCS Compliant",  icon: Shield,   desc: "Nigeria Customs Service registered" },
-  { label: "Fully Insured",  icon: CheckCircle, desc: "Comprehensive cargo cover" },
-  { label: "HMRC Registered", icon: Building2, desc: "UK customs authorised agent" },
+  { label: "IATA Certified",  icon: Award,       desc: "International air cargo standards" },
+  { label: "NCS Compliant",   icon: Shield,      desc: "Nigeria Customs Service registered" },
+  { label: "Fully Insured",   icon: CheckCircle, desc: "Comprehensive cargo cover" },
+  { label: "HMRC Registered", icon: Building2,   desc: "UK customs authorised agent" },
 ];
 
 // ─── Animation helpers ────────────────────────────────────────────────────────
 const fadeUp = {
   hidden:  { opacity: 0, y: 32 },
   visible: (d = 0) => ({
-    opacity: 1,
-    y: 0,
+    opacity: 1, y: 0,
     transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: d },
   }),
 };
@@ -221,7 +222,7 @@ const fadeIn = {
   }),
 };
 
-// ─── Section wrapper ─────────────────────────────────────────────────────────
+// ─── Section wrapper ──────────────────────────────────────────────────────────
 function Section({ children, className = "", id, label }) {
   return (
     <section
@@ -244,7 +245,7 @@ function TagPill({ label, dark = true }) {
     }`}>
       <motion.span
         className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
-        animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }}
+        animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
         transition={{ duration: 2.2, repeat: Infinity }}
         aria-hidden="true"
       />
@@ -334,13 +335,16 @@ function Hero() {
         {/* Breadcrumb */}
         <motion.nav
           aria-label="Breadcrumb"
-          className="flex items-center gap-2 mb-10 mt-[-10]"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
+          className="flex items-center gap-2 mb-10 -mt-2.5"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="text-white/40 text-[11.5px] font-medium hover:text-white transition-colors">Home</Link>
-          <ChevronRight size={11} className="text-white/40" aria-hidden="true" />
-          <span className="text-white/55 text-[11.5px] font-medium" aria-current="page">About Us</span>
+          <Link href="/" className="text-white/80 text-[11.5px] font-medium hover:text-white transition-colors">
+            Home
+          </Link>
+          <ChevronRight size={11} className="text-white/80" aria-hidden="true" />
+          <span className="text-white text-[11.5px] font-medium" aria-current="page">About Us</span>
         </motion.nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
@@ -374,17 +378,19 @@ function Hero() {
                 </span>
                 <br />
                 Driven by{" "}
-                <span className="text-white/40">Purpose.</span>
+                <span className="text-white/80">Purpose.</span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
-                className="text-white/52 text-[15px] font-light leading-relaxed tracking-wide max-w-xl mb-10"
+                className="text-white/80 text-[15px] font-light leading-relaxed tracking-wide max-w-xl mb-10"
               >
                 R-Zone Enterprises was founded in Essex in 2012 with a simple mission: to give
                 Nigerian families and businesses in the UK a cargo service they could genuinely
-                rely on. More than 50,000 shipments later, that mission hasn't changed.
+                rely on. The highest-rated organically earned cargo and logistics company between
+                the UK, Nigeria, and across Africa — more than 50,000 shipments later, that
+                mission hasn&apos;t changed.
               </motion.p>
 
               <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
@@ -398,7 +404,7 @@ function Hero() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/45 bg-white/[0.05] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
+                  className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
                   aria-label="Contact R-Zone Enterprises"
                 >
                   Get in Touch
@@ -417,20 +423,25 @@ function Hero() {
             <div className="border border-white/10 bg-white/[0.04] backdrop-blur-sm p-7 space-y-5">
               <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] -mx-7 -mt-7 mb-7" aria-hidden="true" />
 
-              <p className="text-[9.5px] font-bold tracking-[0.3em] uppercase text-white/40 mb-4">Quick Facts</p>
+              <p className="text-[9.5px] font-bold tracking-[0.3em] uppercase text-white/80 mb-4">
+                Quick Facts
+              </p>
 
               {[
-                { icon: MapPin,    label: "Headquartered in",   val: "Essex, UK" },
-                { icon: Globe,     label: "Nigeria hub",         val: "Igando, Lagos" },
-                { icon: Clock,     label: "Operating since",     val: "2012 — 12+ years" },
-                { icon: Package,   label: "Shipments delivered", val: "50,000+" },
-                { icon: Users,     label: "Customers served",    val: "10,000+" },
-                { icon: Star,      label: "Google reviews",      val: "107 × 5-star" },
+                { icon: MapPin,  label: "Headquartered in",   val: "Upminster, Essex UK" },
+                { icon: Globe,   label: "Nigeria hub",         val: "Shagam Interchange, Lagos" },
+                { icon: Clock,   label: "Operating since",     val: "2012 — 12+ years" },
+                { icon: Package, label: "Shipments delivered", val: "50,000+" },
+                { icon: Users,   label: "Customers served",    val: "10,000+" },
+                { icon: Star,    label: "Google reviews",      val: "107 × 5-star" },
               ].map(({ icon: Icon, label, val }) => (
-                <div key={label} className="flex items-center justify-between border-b border-white/[0.06] pb-4 last:border-0 last:pb-0">
+                <div
+                  key={label}
+                  className="flex items-center justify-between border-b border-white/[0.06] pb-4 last:border-0 last:pb-0"
+                >
                   <div className="flex items-center gap-2.5">
                     <Icon size={12} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
-                    <span className="text-white/42 text-[12px] font-light">{label}</span>
+                    <span className="text-white/80 text-[12px] font-light">{label}</span>
                   </div>
                   <span className="text-white text-[12px] font-semibold">{val}</span>
                 </div>
@@ -442,7 +453,10 @@ function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
     </Section>
   );
 }
@@ -482,14 +496,19 @@ function StatsBand() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
               >
-                <div className="w-9 h-9 bg-white/12 rounded-sm flex items-center justify-center mb-3" aria-hidden="true">
+                <div
+                  className="w-9 h-9 bg-white/20 rounded-sm flex items-center justify-center mb-3"
+                  aria-hidden="true"
+                >
                   <Icon size={15} className="text-white" />
                 </div>
                 <p className="text-white font-black text-[28px] leading-none tracking-[-0.025em] mb-1">
-                  {s.value}<span className="text-white/70 text-[20px]">{s.suffix}</span>
+                  {s.value}<span className="text-white/80 text-[20px]">{s.suffix}</span>
                 </p>
-                <p className="text-white/62 text-[10.5px] font-semibold tracking-[0.08em] uppercase mb-1">{s.label}</p>
-                <p className="text-white/40 text-[10px] font-light leading-snug">{s.desc}</p>
+                <p className="text-white/80 text-[10.5px] font-semibold tracking-[0.08em] uppercase mb-1">
+                  {s.label}
+                </p>
+                <p className="text-white/80 text-[10px] font-light leading-snug">{s.desc}</p>
               </motion.div>
             );
           })}
@@ -534,19 +553,19 @@ function WhoWeAre() {
             </motion.div>
 
             <motion.div variants={fadeUp} custom={0.2} className="mt-6 space-y-4">
-              <p className="text-gray-600 text-[14px] font-light leading-relaxed">
+              <p className="text-gray-800 text-[14px] font-light leading-relaxed">
                 R-Zone Enterprises is a specialist UK–Nigeria cargo and freight company, based in
-                Essex and operating since 2012. We were founded to solve a real problem: the UK's
-                Nigerian community deserved a cargo service that was fast, transparent, and
+                Upminster, Essex and operating since 2012. We were founded to solve a real problem:
+                the UK&apos;s Nigerian community deserved a cargo service that was fast, transparent, and
                 genuinely reliable — not one that kept them guessing.
               </p>
-              <p className="text-gray-600 text-[14px] font-light leading-relaxed">
-                Today we offer the full spectrum of logistics solutions — air freight, sea shipping,
-                door-to-door cargo, importation, customs clearance, warehousing and specialist cargo
-                handling — all under one roof, all managed by our own dedicated teams in both
-                countries.
+              <p className="text-gray-800 text-[14px] font-light leading-relaxed">
+                Today we offer the full spectrum of logistics solutions — air freight, sea shipping
+                with weekly sailings, door-to-door cargo, importation, customs clearance,
+                warehousing and specialist cargo handling — all under one roof, all managed by our
+                own dedicated teams in both countries.
               </p>
-              <p className="text-gray-600 text-[14px] font-light leading-relaxed">
+              <p className="text-gray-800 text-[14px] font-light leading-relaxed">
                 We serve families sending goods home. We serve businesses managing cross-border supply
                 chains. We serve entrepreneurs importing African goods into the UK market. Whatever
                 the shipment, whoever the customer — R-Zone delivers.
@@ -555,25 +574,28 @@ function WhoWeAre() {
 
             <motion.div variants={fadeUp} custom={0.35} className="mt-8 grid grid-cols-2 gap-4">
               {[
-                { icon: Plane,  label: "Air Freight",    sub: "5–10 day express" },
-                { icon: Ship,   label: "Sea Freight",    sub: "Monthly sailings" },
-                { icon: Truck,  label: "Door to Door",   sub: "UK-wide collection" },
-                { icon: Globe,  label: "Both Directions",sub: "UK ↔ Nigeria" },
+                { icon: Plane, label: "Air Freight",    sub: "5–10 day express" },
+                { icon: Ship,  label: "Sea Freight",    sub: "Weekly sailings" },
+                { icon: Truck, label: "Door to Door",   sub: "UK-wide collection" },
+                { icon: Globe, label: "Both Directions",sub: "UK ↔ Nigeria" },
               ].map(({ icon: Icon, label, sub }) => (
                 <div key={label} className="flex items-center gap-3 border border-gray-100 bg-gray-50 p-3.5">
-                  <div className="w-9 h-9 bg-[#0818A8]/8 rounded-sm flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <div
+                    className="w-9 h-9 bg-[#0818A8]/8 rounded-sm flex items-center justify-center flex-shrink-0"
+                    aria-hidden="true"
+                  >
                     <Icon size={15} className="text-[#0818A8]" />
                   </div>
                   <div>
                     <p className="text-[12.5px] font-bold text-gray-800">{label}</p>
-                    <p className="text-[11px] text-gray-400 font-light">{sub}</p>
+                    <p className="text-[11px] text-gray-800 font-light">{sub}</p>
                   </div>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* RIGHT — Visual card stack */}
+          {/* RIGHT — Visual card */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 24 }}
@@ -593,12 +615,14 @@ function WhoWeAre() {
                 }}
               />
               <div className="relative z-10">
-                <p className="text-[9.5px] font-bold tracking-[0.3em] uppercase text-white/40 mb-6">Our Route</p>
+                <p className="text-[9.5px] font-bold tracking-[0.3em] uppercase text-white/80 mb-6">
+                  Our Route
+                </p>
                 <div className="flex items-center gap-5 mb-8">
                   <div className="text-center">
                     <p className="text-3xl mb-1">🇬🇧</p>
                     <p className="text-white font-bold text-[12px] tracking-wide">UNITED KINGDOM</p>
-                    <p className="text-white/40 text-[10px] font-light">Essex · London · UK-Wide</p>
+                    <p className="text-white/80 text-[10px] font-light">Essex · London · UK-Wide</p>
                   </div>
                   <div className="flex-1 relative">
                     <div className="h-px bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
@@ -611,27 +635,32 @@ function WhoWeAre() {
                       />
                     </div>
                     <div className="text-center mt-2">
-                      <p className="text-[#1F51FF] text-[9px] font-bold tracking-[0.2em] uppercase">Air · Sea · Road</p>
+                      <p className="text-[#1F51FF] text-[9px] font-bold tracking-[0.2em] uppercase">
+                        Air · Sea · Road
+                      </p>
                     </div>
                   </div>
                   <div className="text-center">
                     <p className="text-3xl mb-1">🇳🇬</p>
                     <p className="text-white font-bold text-[12px] tracking-wide">NIGERIA</p>
-                    <p className="text-white/40 text-[10px] font-light">All 36 States</p>
+                    <p className="text-white/80 text-[10px] font-light">All 36 States</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { val: "5–10",   unit: "days",  label: "Air transit" },
-                    { val: "4–6",    unit: "weeks", label: "Sea transit" },
-                    { val: "24/7",   unit: "",      label: "Tracking" },
+                    { val: "5–10", unit: "days",  label: "Air transit" },
+                    { val: "4–6",  unit: "weeks", label: "Sea transit" },
+                    { val: "24/7", unit: "",      label: "Tracking" },
                   ].map(({ val, unit, label }) => (
                     <div key={label} className="bg-white/[0.05] border border-white/[0.08] p-3 text-center">
                       <p className="text-white font-black text-[18px] leading-none">
-                        {val}<span className="text-[11px] font-light text-white/50 ml-0.5">{unit}</span>
+                        {val}
+                        <span className="text-[11px] font-light text-white/80 ml-0.5">{unit}</span>
                       </p>
-                      <p className="text-white/40 text-[9.5px] font-medium tracking-[0.1em] uppercase mt-1">{label}</p>
+                      <p className="text-white/80 text-[9.5px] font-medium tracking-[0.1em] uppercase mt-1">
+                        {label}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -646,7 +675,9 @@ function WhoWeAre() {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <p className="text-white font-black text-[20px] leading-none">107+</p>
-              <p className="text-white/62 text-[9.5px] font-semibold tracking-[0.15em] uppercase">5-Star Reviews</p>
+              <p className="text-white/80 text-[9.5px] font-semibold tracking-[0.15em] uppercase">
+                5-Star Reviews
+              </p>
             </motion.div>
           </motion.div>
 
@@ -698,7 +729,10 @@ function MissionVision() {
           backgroundSize: "64px 64px",
         }}
       />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
@@ -721,7 +755,8 @@ function MissionVision() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.65, delay: i * 0.12 }}
               >
-                <div className="h-[2px] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500"
+                <div
+                  className="h-[2px] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500"
                   style={{ background: `linear-gradient(to right, ${card.accent}, #1F51FF)` }}
                   aria-hidden="true"
                 />
@@ -732,13 +767,16 @@ function MissionVision() {
                 >
                   <Icon size={19} style={{ color: card.accent }} />
                 </div>
-                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase mb-3" style={{ color: card.accent }}>
+                <p
+                  className="text-[9.5px] font-bold tracking-[0.28em] uppercase mb-3"
+                  style={{ color: card.accent }}
+                >
                   {card.label}
                 </p>
                 <h3 className="text-white font-black text-[17px] leading-tight tracking-[-0.01em] mb-4">
                   {card.title}
                 </h3>
-                <p className="text-white/45 text-[13px] font-light leading-relaxed">
+                <p className="text-white/80 text-[13px] font-light leading-relaxed">
                   {card.body}
                 </p>
               </motion.div>
@@ -778,8 +816,10 @@ function Timeline() {
             <SectionHeadline line1="12 Years of" accent="Milestones." dark={false} id="timeline-heading" />
           </motion.div>
           <motion.p
-            className="text-gray-500 text-[14px] font-light mt-4 max-w-lg mx-auto"
-            initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-gray-800 text-[14px] font-light mt-4 max-w-lg mx-auto"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             From a single warehouse unit to a UK–Nigeria logistics operation trusted by thousands.
           </motion.p>
@@ -796,17 +836,21 @@ function Timeline() {
                 className={`flex-shrink-0 lg:flex-shrink text-left px-4 py-3 border transition-all duration-200 ${
                   active === i
                     ? "border-[#0818A8] bg-[#0818A8] text-white"
-                    : "border-gray-200 bg-white text-gray-500 hover:border-[#0818A8]/40 hover:text-gray-800"
+                    : "border-gray-200 bg-white text-gray-800 hover:border-[#0818A8]/40 hover:text-gray-800"
                 }`}
                 aria-label={`View ${t.year} milestone: ${t.title}`}
                 aria-pressed={active === i}
               >
                 <span className={`block font-black text-[20px] leading-none tracking-[-0.02em] ${
                   active === i ? "text-white" : "text-gray-800"
-                }`}>{t.year}</span>
+                }`}>
+                  {t.year}
+                </span>
                 <span className={`block text-[10.5px] font-semibold tracking-[0.05em] mt-0.5 truncate ${
-                  active === i ? "text-white/75" : "text-gray-400"
-                }`}>{t.title}</span>
+                  active === i ? "text-white/80" : "text-gray-800"
+                }`}>
+                  {t.title}
+                </span>
               </button>
             ))}
           </div>
@@ -840,7 +884,7 @@ function Timeline() {
                   {TIMELINE[active].title}
                 </h3>
 
-                <p className="text-gray-600 text-[14.5px] font-light leading-relaxed mb-7 max-w-2xl">
+                <p className="text-gray-800 text-[14.5px] font-light leading-relaxed mb-7 max-w-2xl">
                   {TIMELINE[active].body}
                 </p>
 
@@ -854,7 +898,7 @@ function Timeline() {
                   <button
                     onClick={() => setActive(Math.max(0, active - 1))}
                     disabled={active === 0}
-                    className="px-5 py-2 border border-gray-300 text-gray-600 text-[11.5px] font-bold hover:border-[#0818A8] hover:text-[#0818A8] disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
+                    className="px-5 py-2 border border-gray-300 text-gray-800 text-[11.5px] font-bold hover:border-[#0818A8] hover:text-[#0818A8] disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
                     aria-label="Previous milestone"
                   >
                     ← Prev
@@ -867,7 +911,7 @@ function Timeline() {
                   >
                     Next →
                   </button>
-                  <span className="ml-auto flex items-center text-[11px] text-gray-400 font-light">
+                  <span className="ml-auto flex items-center text-[11px] text-gray-800 font-light">
                     {active + 1} / {TIMELINE.length}
                   </span>
                 </div>
@@ -898,8 +942,14 @@ function OurValues() {
           backgroundSize: "64px 64px",
         }}
       />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#0818A8]/10 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#0818A8]/10 rounded-full blur-[120px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
@@ -935,7 +985,7 @@ function OurValues() {
                   <Icon size={17} style={{ color: v.accent }} />
                 </div>
                 <h3 className="text-white font-black text-[16px] tracking-[-0.01em] mb-3">{v.title}</h3>
-                <p className="text-white/42 text-[13px] font-light leading-relaxed">{v.body}</p>
+                <p className="text-white/80 text-[13px] font-light leading-relaxed">{v.body}</p>
               </motion.div>
             );
           })}
@@ -972,10 +1022,12 @@ function Testimonials() {
             <SectionHeadline line1="Trusted by" accent="Thousands." dark={false} id="testimonials-heading" />
           </motion.div>
           <motion.p
-            className="text-gray-500 text-[14px] font-light mt-4 max-w-lg mx-auto"
-            initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-gray-800 text-[14px] font-light mt-4 max-w-lg mx-auto"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            107+ five-star reviews on Google — here's what our customers say.
+            107+ five-star reviews on Google — here&apos;s what our customers say.
           </motion.p>
         </div>
 
@@ -1007,13 +1059,19 @@ function Testimonials() {
                   />
                 ))}
               </div>
-              <p className={`text-[13.5px] font-light leading-relaxed mb-6 ${i === 1 ? "text-white/85" : "text-gray-700"}`}>
-                "{t.text}"
+              <p className={`text-[13.5px] font-light leading-relaxed mb-6 ${
+                i === 1 ? "text-white" : "text-gray-800"
+              }`}>
+                &ldquo;{t.text}&rdquo;
               </p>
               <footer>
                 <cite className="not-italic">
-                  <p className={`font-bold text-[13px] ${i === 1 ? "text-white" : "text-gray-800"}`}>{t.author}</p>
-                  <p className={`text-[11px] font-light flex items-center gap-1.5 mt-0.5 ${i === 1 ? "text-white/55" : "text-gray-400"}`}>
+                  <p className={`font-bold text-[13px] ${i === 1 ? "text-white" : "text-gray-800"}`}>
+                    {t.author}
+                  </p>
+                  <p className={`text-[11px] font-light flex items-center gap-1.5 mt-0.5 ${
+                    i === 1 ? "text-white/80" : "text-gray-800"
+                  }`}>
                     <MapPin size={10} aria-hidden="true" />
                     {t.location}
                   </p>
@@ -1025,7 +1083,9 @@ function Testimonials() {
 
         <motion.div
           className="text-center mt-10"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
           <a
             href="https://www.google.com/search?q=R-Zone+Enterprises+reviews"
@@ -1068,10 +1128,10 @@ function Certifications() {
       />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-10 md:py-12">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
-          <p className="text-white/55 text-[10px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
+          <p className="text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
             Accreditations
           </p>
-          <div className="h-px bg-white/18 flex-1 hidden sm:block" aria-hidden="true" />
+          <div className="h-px bg-white/25 flex-1 hidden sm:block" aria-hidden="true" />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full sm:w-auto">
             {CERTIFICATIONS.map((c, i) => {
               const Icon = c.icon;
@@ -1083,12 +1143,15 @@ function Certifications() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.45, delay: i * 0.08 }}
                 >
-                  <div className="w-9 h-9 bg-white/14 rounded-sm flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <div
+                    className="w-9 h-9 bg-white/20 rounded-sm flex items-center justify-center flex-shrink-0"
+                    aria-hidden="true"
+                  >
                     <Icon size={15} className="text-white" />
                   </div>
                   <div>
                     <p className="text-white font-bold text-[12px]">{c.label}</p>
-                    <p className="text-white/48 text-[10px] font-light">{c.desc}</p>
+                    <p className="text-white/80 text-[10px] font-light">{c.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -1118,7 +1181,10 @@ function OurTeam() {
           backgroundSize: "64px 64px",
         }}
       />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
@@ -1129,8 +1195,10 @@ function OurTeam() {
             <SectionHeadline line1="Our" accent="Team." dark id="team-heading" />
           </motion.div>
           <motion.p
-            className="text-white/42 text-[14px] font-light mt-4 max-w-lg mx-auto"
-            initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-white/80 text-[14px] font-light mt-4 max-w-lg mx-auto"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             The specialists who make 50,000+ successful shipments possible — across two countries, every day.
           </motion.p>
@@ -1145,24 +1213,31 @@ function OurTeam() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
-
+              <div
+                className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500"
+                aria-hidden="true"
+              />
               {/* Avatar */}
-              <div className="w-14 h-14 rounded-sm bg-gradient-to-br from-[#0818A8] to-[#1F51FF] flex items-center justify-center mb-5" aria-hidden="true">
+              <div
+                className="w-14 h-14 rounded-sm bg-gradient-to-br from-[#0818A8] to-[#1F51FF] flex items-center justify-center mb-5"
+                aria-hidden="true"
+              >
                 <span className="text-white font-black text-[22px] leading-none">{member.initial}</span>
               </div>
 
               <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#1F51FF] mb-1">{member.tenure}</p>
               <h3 className="text-white font-black text-[15px] leading-tight mb-1">{member.name}</h3>
-              <p className="text-white/45 text-[11.5px] font-semibold mb-4">{member.role}</p>
-              <p className="text-white/40 text-[12px] font-light leading-relaxed">{member.detail}</p>
+              <p className="text-white/80 text-[11.5px] font-semibold mb-4">{member.role}</p>
+              <p className="text-white/80 text-[12px] font-light leading-relaxed">{member.detail}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.p
-          className="text-center text-white/40 text-[12.5px] font-light mt-10"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center text-white/80 text-[12.5px] font-light mt-10"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           Plus 15+ logistics professionals across our UK and Nigeria operations teams.
         </motion.p>
@@ -1237,14 +1312,16 @@ function OurOffices() {
 
               <div className="space-y-3.5">
                 <div className="flex items-start gap-3">
-                  <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-400" aria-hidden="true" />
-                  <p className="text-gray-600 text-[13px] font-light leading-snug" itemProp="address">{office.address}</p>
+                  <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
+                  <p className="text-gray-800 text-[13px] font-light leading-snug" itemProp="address">
+                    {office.address}
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone size={13} className="flex-shrink-0 text-gray-400" aria-hidden="true" />
+                  <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
                   <a
-                    href={`tel:${office.phone.replace(/\s/g, "")}`}
-                    className="text-gray-700 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+                    href={office.phoneHref}
+                    className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
                     itemProp="telephone"
                     aria-label={`Call ${office.country} office: ${office.phone}`}
                   >
@@ -1252,10 +1329,10 @@ function OurOffices() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail size={13} className="flex-shrink-0 text-gray-400" aria-hidden="true" />
+                  <Mail size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
                   <a
                     href={`mailto:${office.email}`}
-                    className="text-gray-700 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+                    className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
                     itemProp="email"
                     aria-label={`Email ${office.country} office: ${office.email}`}
                   >
@@ -1263,8 +1340,10 @@ function OurOffices() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock size={13} className="flex-shrink-0 text-gray-400" aria-hidden="true" />
-                  <p className="text-gray-500 text-[12.5px] font-light" itemProp="openingHours">{office.hours}</p>
+                  <Clock size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
+                  <p className="text-gray-800 text-[12.5px] font-light" itemProp="openingHours">
+                    {office.hours}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -1293,10 +1372,15 @@ function FinalCTA() {
           backgroundSize: "64px 64px",
         }}
       />
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
         style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(8,24,168,0.24) 0%, transparent 70%)" }}
       />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28 text-center">
         <motion.div
@@ -1311,8 +1395,8 @@ function FinalCTA() {
             <span className="text-[#1F51FF]">R-Zone?</span>
           </h2>
 
-          <p className="text-white/48 text-[14px] font-light leading-relaxed max-w-xl mx-auto mb-10">
-            Join over 10,000 customers who've trusted R-Zone Enterprises with their UK–Nigeria
+          <p className="text-white/80 text-[14px] font-light leading-relaxed max-w-xl mx-auto mb-10">
+            Join over 10,000 customers who&apos;ve trusted R-Zone Enterprises with their UK–Nigeria
             cargo. Get a free quote in under 2 minutes.
           </p>
 
@@ -1327,14 +1411,14 @@ function FinalCTA() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
+              className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
               aria-label="View all R-Zone shipping services"
             >
               View Services
             </Link>
             <a
               href="tel:+448007720864"
-              className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
+              className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.06] hover:bg-white/10 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 rounded-sm transition-all duration-200"
               aria-label="Call R-Zone: +44 800 772 0864"
             >
               <Phone size={13} aria-hidden="true" />
@@ -1344,7 +1428,7 @@ function FinalCTA() {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             {["Free Quote", "No Obligation", "Same-Day Response", "UK-Based Team", "12+ Years Experience"].map((t) => (
-              <span key={t} className="flex items-center gap-2 text-white/40 text-[11.5px] font-light">
+              <span key={t} className="flex items-center gap-2 text-white/80 text-[11.5px] font-light">
                 <CheckCircle size={11} className="text-[#1F51FF]" aria-hidden="true" />
                 {t}
               </span>
@@ -1375,10 +1459,10 @@ export default function AboutPageClient() {
             "logo": "https://r-zoneenterprises.com/logo.png",
             "foundingDate": "2012",
             "description":
-              "R-Zone Enterprises is a UK–Nigeria cargo and freight company based in Essex, UK. We offer air freight, sea shipping, door-to-door cargo, customs clearance, warehousing and specialist cargo handling between the UK and all 36 Nigerian states.",
+              "The highest-rated organically earned cargo and logistics company between the UK, Nigeria, and across Africa. R-Zone Enterprises offers air freight, sea shipping with weekly sailings, door-to-door cargo, customs clearance, warehousing and specialist cargo handling.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Unit 10 Moorhen Yard, Elms Lane",
+              "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
               "addressLocality": "Upminster",
               "addressRegion": "Essex",
               "postalCode": "RM14 3TS",
@@ -1387,12 +1471,13 @@ export default function AboutPageClient() {
             "telephone": "+448007720864",
             "email": "info@r-zoneenterprises.com",
             "sameAs": [
-              "https://www.instagram.com/rzoneenterprise",
-              "https://www.google.com/maps?cid=r-zoneenterprises",
+              "https://www.instagram.com/rzoneenterprises",
+              "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr",
             ],
             "areaServed": [
               { "@type": "Country", "name": "United Kingdom" },
               { "@type": "Country", "name": "Nigeria" },
+              { "@type": "Continent", "name": "Africa" },
             ],
             "numberOfEmployees": { "@type": "QuantitativeValue", "value": "15" },
             "aggregateRating": {
@@ -1402,13 +1487,17 @@ export default function AboutPageClient() {
               "bestRating": "5",
               "worstRating": "1",
             },
-            "award": ["IATA Certified Cargo Agent", "NCS Compliant Freight Operator"],
+            "award": [
+              "IATA Certified Cargo Agent",
+              "NCS Compliant Freight Operator",
+              "Highest-Rated Organically Earned Cargo Company — UK to Nigeria",
+            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "UK–Nigeria Shipping Services",
               "itemListElement": [
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Air Freight to Nigeria" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Shipping to Nigeria" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Shipping to Nigeria — Weekly Sailings" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door to Door Cargo" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Importation from Nigeria" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Customs Clearance" } },
@@ -1427,7 +1516,7 @@ export default function AboutPageClient() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://r-zoneenterprises.com" },
+              { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://r-zoneenterprises.com" },
               { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://r-zoneenterprises.com/about" },
             ],
           }),
