@@ -28,16 +28,79 @@ const outfit = Outfit({
   display: "swap",
 });
 
+// ─── WhatsApp icon ─────────────────────────────────────────────────────────────
+function WhatsAppIcon({ size = 13, className = "" }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+// ─── Instagram icon ────────────────────────────────────────────────────────────
+function InstagramIcon({ size = 13, className = "" }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+// ─── Facebook icon ─────────────────────────────────────────────────────────────
+function FacebookIcon({ size = 13, className = "" }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const CONTACT_CHANNELS = [
   {
     icon: Phone,
-    label: "Call Us",
+    label: "Call Us — UK",
     value: "+44 800 772 0864",
-    sub: "Free to call · Mon–Fri 9am–6pm, Sat 10am–2pm",
+    sub: "Free to call · Mon–Fri 10AM–6PM, Sat 11AM–2PM",
     href: "tel:+448007720864",
     accent: "#0818A8",
     cta: "Call Now",
+  },
+  {
+    icon: Phone,
+    label: "Call Us — Nigeria",
+    value: "+234 906 680 6861",
+    sub: "Nigeria representative · Mon–Fri 9AM–5PM WAT",
+    href: "tel:+2349066806861",
+    accent: "#1F51FF",
+    cta: "Call Nigeria",
   },
   {
     icon: Mail,
@@ -45,26 +108,34 @@ const CONTACT_CHANNELS = [
     value: "info@r-zoneenterprises.com",
     sub: "Same-day response guaranteed on weekdays",
     href: "mailto:info@r-zoneenterprises.com",
-    accent: "#1F51FF",
+    accent: "#0437F2",
     cta: "Send Email",
   },
   {
-    icon: Instagram,
+    icon: WhatsAppIcon,
+    label: "WhatsApp",
+    value: "+44 7915 647 119",
+    sub: "Message us directly for fast responses",
+    href: "https://wa.me/447915647119",
+    accent: "#25D366",
+    cta: "Chat Now",
+  },
+];
+
+const SOCIAL_CHANNELS = [
+  {
+    icon: InstagramIcon,
     label: "Instagram",
-    value: "@rzoneenterprise",
-    sub: "DM us for quick quotes & updates",
-    href: "https://www.instagram.com/rzoneenterprise",
+    value: "@rzoneenterprises",
+    href: "https://www.instagram.com/rzoneenterprises",
     accent: "#0437F2",
-    cta: "Follow Us",
   },
   {
-    icon: MapPin,
-    label: "Visit Us",
-    value: "Essex, RM14 3TS",
-    sub: "Unit 10 Moorhen Yard, Elms Lane, Upminster",
-    href: "https://maps.google.com/?q=Unit+10+Moorhen+Yard+Elms+Lane+Essex+RM14+3TS",
+    icon: FacebookIcon,
+    label: "Facebook",
+    value: "R-Zone Enterprises",
+    href: "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr",
     accent: "#0818A8",
-    cta: "Get Directions",
   },
 ];
 
@@ -73,13 +144,14 @@ const OFFICES = [
     flag: "🇬🇧",
     country: "United Kingdom",
     role: "Headquarters & Warehouse",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Upminster, Essex RM14 3TS",
-    phone: "+44 800 772 0864",
+    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
+    phone: "+44 (0) 800 772 0864",
+    phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com",
     hours: [
-      { day: "Monday – Friday", time: "9:00am – 6:00pm" },
-      { day: "Saturday",        time: "10:00am – 2:00pm" },
-      { day: "Sunday",          time: "Closed" },
+      { day: "Monday – Friday", time: "10:00AM – 6:00PM" },
+      { day: "Saturday",        time: "11:00AM – 2:00PM" },
+      { day: "Sunday",          time: "Closed"           },
     ],
     accent: "#0818A8",
   },
@@ -87,30 +159,31 @@ const OFFICES = [
     flag: "🇳🇬",
     country: "Nigeria",
     role: "Operations Hub — Lagos",
-    address: "2 Esan Olusegun Close, Igando, Lagos State, Nigeria",
-    phone: "+234 (0) 808 000 0000",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+    phone: "+234 906 680 6861",
+    phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com",
     hours: [
-      { day: "Monday – Friday", time: "8:00am – 5:00pm WAT" },
-      { day: "Saturday",        time: "9:00am – 1:00pm WAT" },
-      { day: "Sunday",          time: "Closed" },
+      { day: "Monday – Friday", time: "9:00AM – 5:00PM WAT" },
+      { day: "Saturday",        time: "9:00AM – 1:00PM WAT" },
+      { day: "Sunday",          time: "Closed"              },
     ],
     accent: "#1F51FF",
   },
 ];
 
 const ENQUIRY_TYPES = [
-  { value: "quote",      label: "Get a Quote",             icon: BarChart3  },
-  { value: "air",        label: "Air Freight",             icon: Plane      },
-  { value: "sea",        label: "Sea Shipping",            icon: Ship       },
-  { value: "door",       label: "Door to Door",            icon: Truck      },
-  { value: "import",     label: "Importation from Nigeria",icon: Package    },
-  { value: "customs",    label: "Customs Clearance",       icon: FileCheck  },
-  { value: "warehouse",  label: "Warehousing",             icon: Warehouse  },
-  { value: "cargo",      label: "Cargo Handling",          icon: Anchor     },
-  { value: "business",   label: "Business / B2B",          icon: Building2  },
-  { value: "tracking",   label: "Track a Shipment",        icon: MapPin     },
-  { value: "other",      label: "General Enquiry",         icon: MessageSquare },
+  { value: "quote",     label: "Get a Quote",              icon: BarChart3   },
+  { value: "air",       label: "Air Freight",              icon: Plane       },
+  { value: "sea",       label: "Sea Shipping",             icon: Ship        },
+  { value: "door",      label: "Door to Door",             icon: Truck       },
+  { value: "import",    label: "Importation from Nigeria", icon: Package     },
+  { value: "customs",   label: "Customs Clearance",        icon: FileCheck   },
+  { value: "warehouse", label: "Warehousing",              icon: Warehouse   },
+  { value: "cargo",     label: "Cargo Handling",           icon: Anchor      },
+  { value: "business",  label: "Business / B2B",           icon: Building2   },
+  { value: "tracking",  label: "Track a Shipment",         icon: MapPin      },
+  { value: "other",     label: "General Enquiry",          icon: MessageSquare },
 ];
 
 const FAQS = [
@@ -124,11 +197,11 @@ const FAQS = [
   },
   {
     q: "Do you offer collections from all UK locations?",
-    a: "Yes, we collect from anywhere in the UK. Collection charges vary by location. Our Essex warehouse also accepts drop-offs during opening hours.",
+    a: "Yes, we collect from anywhere in the UK. Collection charges vary by location. Our Upminster, Essex warehouse also accepts drop-offs during opening hours.",
   },
   {
     q: "Can I visit your warehouse to drop off cargo?",
-    a: "Yes — our Essex warehouse accepts drop-offs Monday–Friday 9am–6pm and Saturday 10am–2pm. Please call ahead so we can prepare for your arrival.",
+    a: "Yes — our Upminster, Essex warehouse accepts drop-offs Monday–Friday 10AM–6PM and Saturday 11AM–2PM. Please call ahead so we can prepare for your arrival.",
   },
   {
     q: "Do you ship commercial / business cargo?",
@@ -141,10 +214,10 @@ const FAQS = [
 ];
 
 const TRUST_BADGES = [
-  { icon: Star,         label: "107+ Five-Star Reviews" },
-  { icon: Shield,       label: "Fully Insured Cargo"    },
-  { icon: Clock,        label: "Same-Day Response"      },
-  { icon: CheckCircle,  label: "No Automated Replies"   },
+  { icon: Star,        label: "107+ Five-Star Reviews"    },
+  { icon: Shield,      label: "Fully Insured Cargo"       },
+  { icon: Clock,       label: "Same-Day Response"         },
+  { icon: CheckCircle, label: "No Automated Replies"      },
 ];
 
 // ─── Animation ────────────────────────────────────────────────────────────────
@@ -160,11 +233,13 @@ const fadeUp = {
 function TagPill({ label, dark = true }) {
   return (
     <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-6 ${
-      dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"
+      dark
+        ? "border-[#1F51FF]/30 bg-[#0818A8]/14"
+        : "border-[#0818A8]/20 bg-[#0818A8]/6"
     }`}>
       <motion.span
         className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
-        animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }}
+        animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
         transition={{ duration: 2.2, repeat: Infinity }}
         aria-hidden="true"
       />
@@ -175,7 +250,7 @@ function TagPill({ label, dark = true }) {
   );
 }
 
-// ─── Heading with animated underline ─────────────────────────────────────────
+// ─── Page heading ─────────────────────────────────────────────────────────────
 function PageHeading({ line1, accent, dark = true, as: Tag = "h2", id }) {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -215,7 +290,9 @@ function Hero() {
       aria-labelledby="contact-hero-heading"
     >
       {/* Grid texture */}
-      <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
+      <div
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        aria-hidden="true"
         style={{
           backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
           backgroundSize: "64px 64px",
@@ -227,7 +304,8 @@ function Hero() {
         <div className="absolute bottom-[-15%] right-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/10 rounded-full blur-[120px]" />
       </div>
       {/* Vertical accent */}
-      <div className="absolute top-0 right-[20%] w-px h-full opacity-[0.06] pointer-events-none"
+      <div
+        className="absolute top-0 right-[20%] w-px h-full opacity-[0.06] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent, #1F51FF 40%, transparent)" }}
         aria-hidden="true"
       />
@@ -240,11 +318,15 @@ function Hero() {
         <motion.nav
           aria-label="Breadcrumb"
           className="flex items-center gap-2 mb-10"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="text-white/40 text-[11.5px] font-medium hover:text-white transition-colors">Home</Link>
-          <ChevronRight size={11} className="text-white/40" aria-hidden="true" />
-          <span className="text-white/55 text-[11.5px] font-medium" aria-current="page">Contact Us</span>
+          <Link href="/" className="text-white/80 text-[11.5px] font-medium hover:text-white transition-colors">
+            Home
+          </Link>
+          <ChevronRight size={11} className="text-white/80" aria-hidden="true" />
+          <span className="text-white text-[11.5px] font-medium" aria-current="page">Contact Us</span>
         </motion.nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
@@ -266,7 +348,7 @@ function Hero() {
                 custom={0.1}
                 className="text-white font-black text-[clamp(36px,7vw,80px)] leading-[0.88] tracking-[-0.035em] uppercase mb-6"
               >
-                Let's{" "}
+                Let&apos;s{" "}
                 <span className="relative inline-block">
                   <span className="text-[#1F51FF]">Talk.</span>
                   <motion.span
@@ -278,26 +360,48 @@ function Hero() {
                   />
                 </span>
                 <br />
-                <span className="text-white/40">We're Ready.</span>
+                <span className="text-white/80">We&apos;re Ready.</span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
-                className="text-white/50 text-[15px] font-light leading-relaxed tracking-wide max-w-lg mb-9"
+                className="text-white/80 text-[15px] font-light leading-relaxed tracking-wide max-w-lg mb-9"
               >
                 No call centres. No automated emails. When you contact R-Zone Enterprises,
                 you speak directly to our UK-based logistics team — same day, every time.
+                The highest-rated organically earned cargo company between the UK, Nigeria,
+                and across Africa.
               </motion.p>
 
               {/* Trust row */}
-              <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-4 mb-6">
                 {TRUST_BADGES.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-2">
                     <Icon size={12} className="text-[#1F51FF]" aria-hidden="true" />
-                    <span className="text-white/45 text-[11.5px] font-light">{label}</span>
+                    <span className="text-white/80 text-[11.5px] font-light">{label}</span>
                   </div>
                 ))}
+              </motion.div>
+
+              {/* Social links */}
+              <motion.div variants={fadeUp} custom={0.35} className="flex items-center gap-3">
+                {SOCIAL_CHANNELS.map((s) => {
+                  const Icon = s.icon;
+                  return (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 border border-white/[0.1] bg-white/[0.04] hover:border-white/[0.22] hover:bg-white/[0.08] px-3.5 py-2 transition-all duration-200"
+                      aria-label={`Follow R-Zone on ${s.label}`}
+                    >
+                      <Icon size={12} style={{ color: s.accent }} />
+                      <span className="text-white/80 text-[11px] font-semibold">{s.value}</span>
+                    </a>
+                  );
+                })}
               </motion.div>
             </motion.div>
           </div>
@@ -335,11 +439,13 @@ function Hero() {
                   >
                     <Icon size={15} style={{ color: ch.accent }} />
                   </div>
-                  <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-white/40 mb-1">{ch.label}</p>
+                  <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{ch.label}</p>
                   <p className="text-white font-semibold text-[12.5px] leading-tight mb-1 break-all">{ch.value}</p>
-                  <p className="text-white/40 text-[11px] font-light leading-snug mb-3">{ch.sub}</p>
-                  <div className="flex items-center gap-1.5 text-[10.5px] font-bold tracking-[0.08em] transition-colors duration-200"
-                    style={{ color: ch.accent }}>
+                  <p className="text-white/80 text-[11px] font-light leading-snug mb-3">{ch.sub}</p>
+                  <div
+                    className="flex items-center gap-1.5 text-[10.5px] font-bold tracking-[0.08em] transition-colors duration-200"
+                    style={{ color: ch.accent }}
+                  >
                     {ch.cta}
                     <ArrowRight size={9} className="group-hover:translate-x-0.5 transition-transform duration-200" aria-hidden="true" />
                   </div>
@@ -362,20 +468,18 @@ function ContactForm() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", enquiryType: "", subject: "", message: "",
-  });
-  const [errors, setErrors]     = useState({});
-  const [status, setStatus]     = useState("idle"); // idle | loading | success | error
-  const [touched, setTouched]   = useState({});
+  const [form, setForm]   = useState({ name: "", email: "", phone: "", enquiryType: "", subject: "", message: "" });
+  const [errors, setErrors]   = useState({});
+  const [status, setStatus]   = useState("idle");
+  const [touched, setTouched] = useState({});
 
   const validate = useCallback((data) => {
     const e = {};
-    if (!data.name.trim())         e.name         = "Your name is required.";
-    if (!data.email.trim())        e.email        = "Email address is required.";
+    if (!data.name.trim())    e.name        = "Your name is required.";
+    if (!data.email.trim())   e.email       = "Email address is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) e.email = "Please enter a valid email.";
-    if (!data.enquiryType)         e.enquiryType  = "Please select an enquiry type.";
-    if (!data.message.trim())      e.message      = "Please tell us about your enquiry.";
+    if (!data.enquiryType)    e.enquiryType = "Please select an enquiry type.";
+    if (!data.message.trim()) e.message     = "Please tell us about your enquiry.";
     else if (data.message.trim().length < 20) e.message = "Please provide a little more detail (20 chars min).";
     return e;
   }, []);
@@ -400,15 +504,13 @@ function ContactForm() {
     const e = validate(form);
     setErrors(e);
     if (Object.keys(e).length > 0) return;
-
     setStatus("loading");
-    // Simulate API call — replace with real endpoint
     await new Promise(r => setTimeout(r, 1800));
     setStatus("success");
   };
 
   const fieldClass = (field) =>
-    `w-full bg-white/[0.05] border text-white text-[13px] font-light placeholder-white/25
+    `w-full bg-white/[0.05] border text-white text-[13px] font-light placeholder-white/60
      px-4 py-3 outline-none transition-all duration-200
      focus:bg-white/[0.08] focus:border-[#1F51FF]/60
      ${errors[field] && touched[field]
@@ -416,7 +518,7 @@ function ContactForm() {
        : "border-white/[0.1] hover:border-white/[0.2]"
      }`;
 
-  const labelClass = "block text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/45 mb-2";
+  const labelClass = "block text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2";
 
   return (
     <section
@@ -425,19 +527,18 @@ function ContactForm() {
       aria-labelledby="contact-form-heading"
       id="contact-form"
     >
-      <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
+      <div
+        className="absolute inset-0 opacity-[0.022] pointer-events-none"
+        aria-hidden="true"
+        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
       />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/50 to-transparent pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] bg-[#0818A8]/08 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
 
-          {/* LEFT — copy + why contact us */}
+          {/* LEFT — copy */}
           <div className="lg:col-span-4">
             <motion.div
               initial="hidden"
@@ -453,7 +554,7 @@ function ContactForm() {
               <motion.p
                 variants={fadeUp}
                 custom={0.15}
-                className="text-white/45 text-[13.5px] font-light leading-relaxed mt-5 mb-8"
+                className="text-white/80 text-[13.5px] font-light leading-relaxed mt-5 mb-8"
               >
                 Fill in the form and a member of our UK team will respond within the same
                 business day — usually within a few hours.
@@ -462,23 +563,28 @@ function ContactForm() {
               {/* What happens next */}
               <motion.div variants={fadeUp} custom={0.2} className="border border-white/[0.08] bg-white/[0.03] p-6 mb-6">
                 <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] -mx-6 -mt-6 mb-6" aria-hidden="true" />
-                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/40 mb-5">What Happens Next</p>
+                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/80 mb-5">
+                  What Happens Next
+                </p>
                 {[
-                  { n: "01", t: "You submit the form",        d: "Takes less than 2 minutes" },
-                  { n: "02", t: "We review your enquiry",     d: "By our UK logistics team" },
-                  { n: "03", t: "We respond same day",        d: "Mon–Fri business hours" },
-                  { n: "04", t: "We get your cargo moving",   d: "From booking to delivery" },
+                  { n: "01", t: "You submit the form",      d: "Takes less than 2 minutes"  },
+                  { n: "02", t: "We review your enquiry",   d: "By our UK logistics team"   },
+                  { n: "03", t: "We respond same day",      d: "Mon–Fri business hours"     },
+                  { n: "04", t: "We get your cargo moving", d: "From booking to delivery"   },
                 ].map((s, si) => (
                   <div key={s.n} className="flex items-start gap-3 pb-4 last:pb-0 relative">
                     {si < 3 && (
                       <div className="absolute left-[11px] top-[26px] w-px h-[calc(100%-12px)] bg-white/[0.08]" aria-hidden="true" />
                     )}
-                    <div className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[9px] font-black text-[#1F51FF]" aria-label={`Step ${s.n}`}>
+                    <div
+                      className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[9px] font-black text-[#1F51FF]"
+                      aria-label={`Step ${s.n}`}
+                    >
                       {s.n}
                     </div>
                     <div>
-                      <p className="text-white/70 text-[12.5px] font-semibold leading-tight">{s.t}</p>
-                      <p className="text-white/40 text-[11px] font-light">{s.d}</p>
+                      <p className="text-white/80 text-[12.5px] font-semibold leading-tight">{s.t}</p>
+                      <p className="text-white/80 text-[11px] font-light">{s.d}</p>
                     </div>
                   </div>
                 ))}
@@ -486,14 +592,25 @@ function ContactForm() {
 
               {/* Direct contact */}
               <motion.div variants={fadeUp} custom={0.3} className="space-y-3">
-                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/40 mb-3">Or Contact Directly</p>
-                <a href="tel:+448007720864" className="flex items-center gap-3 group" aria-label="Call: +44 800 772 0864">
+                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/80 mb-3">
+                  Or Contact Directly
+                </p>
+                <a href="tel:+448007720864" className="flex items-center gap-3 group" aria-label="Call UK: +44 800 772 0864">
                   <div className="w-8 h-8 bg-[#0818A8]/20 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/40 transition-colors" aria-hidden="true">
                     <Phone size={13} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <p className="text-white/55 text-[10px] font-light">Phone</p>
-                    <p className="text-white text-[13px] font-semibold">+44 800 772 0864</p>
+                    <p className="text-white/80 text-[10px] font-light">UK Phone</p>
+                    <p className="text-white text-[13px] font-semibold">+44 (0) 800 772 0864</p>
+                  </div>
+                </a>
+                <a href="tel:+2349066806861" className="flex items-center gap-3 group" aria-label="Call Nigeria: +234 906 680 6861">
+                  <div className="w-8 h-8 bg-[#0818A8]/20 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/40 transition-colors" aria-hidden="true">
+                    <Phone size={13} className="text-[#1F51FF]" />
+                  </div>
+                  <div>
+                    <p className="text-white/80 text-[10px] font-light">Nigeria Phone</p>
+                    <p className="text-white text-[13px] font-semibold">+234 906 680 6861</p>
                   </div>
                 </a>
                 <a href="mailto:info@r-zoneenterprises.com" className="flex items-center gap-3 group" aria-label="Email: info@r-zoneenterprises.com">
@@ -501,8 +618,17 @@ function ContactForm() {
                     <Mail size={13} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <p className="text-white/55 text-[10px] font-light">Email</p>
+                    <p className="text-white/80 text-[10px] font-light">Email</p>
                     <p className="text-white text-[13px] font-semibold">info@r-zoneenterprises.com</p>
+                  </div>
+                </a>
+                <a href="https://wa.me/447915647119" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group" aria-label="WhatsApp: +44 7915 647 119">
+                  <div className="w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0 transition-colors" style={{ backgroundColor: "rgba(37,211,102,0.15)" }}>
+                    <WhatsAppIcon size={13} className="text-[#25D366]" />
+                  </div>
+                  <div>
+                    <p className="text-white/80 text-[10px] font-light">WhatsApp</p>
+                    <p className="text-white text-[13px] font-semibold">+44 7915 647 119</p>
                   </div>
                 </a>
               </motion.div>
@@ -534,14 +660,23 @@ function ContactForm() {
                     <CheckCircle size={28} className="text-white" />
                   </motion.div>
                   <h3 className="text-white font-black text-[26px] tracking-[-0.015em] mb-3">Message Sent!</h3>
-                  <p className="text-white/50 text-[14px] font-light leading-relaxed max-w-sm mx-auto mb-8">
-                    Thank you for reaching out. A member of our UK team will respond to your enquiry within the same business day.
+                  <p className="text-white/80 text-[14px] font-light leading-relaxed max-w-sm mx-auto mb-8">
+                    Thank you for reaching out. A member of our UK team will respond to your
+                    enquiry within the same business day.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3">
-                    <Link href="/services" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3 rounded-sm transition-all duration-200" aria-label="View R-Zone services">
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3 rounded-sm transition-all duration-200"
+                      aria-label="View R-Zone services"
+                    >
                       View Services
                     </Link>
-                    <Link href="/track" className="inline-flex items-center gap-2 border border-white/20 hover:border-white/45 text-white text-[12px] font-bold px-6 py-3 rounded-sm transition-all duration-200" aria-label="Track a shipment">
+                    <Link
+                      href="/track"
+                      className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[12px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
+                      aria-label="Track a shipment"
+                    >
                       Track Shipment
                     </Link>
                   </div>
@@ -559,7 +694,7 @@ function ContactForm() {
                     <div>
                       <label htmlFor="contact-name" className={labelClass}>Full Name *</label>
                       <div className="relative">
-                        <User size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" aria-hidden="true" />
+                        <User size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
                         <input
                           id="contact-name"
                           type="text"
@@ -585,7 +720,7 @@ function ContactForm() {
                     <div>
                       <label htmlFor="contact-email" className={labelClass}>Email Address *</label>
                       <div className="relative">
-                        <Mail size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" aria-hidden="true" />
+                        <Mail size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
                         <input
                           id="contact-email"
                           type="email"
@@ -609,9 +744,12 @@ function ContactForm() {
 
                     {/* Phone */}
                     <div>
-                      <label htmlFor="contact-phone" className={labelClass}>Phone Number <span className="text-white/40 normal-case font-light tracking-normal">(optional)</span></label>
+                      <label htmlFor="contact-phone" className={labelClass}>
+                        Phone Number{" "}
+                        <span className="text-white/80 normal-case font-light tracking-normal">(optional)</span>
+                      </label>
                       <div className="relative">
-                        <Phone size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" aria-hidden="true" />
+                        <Phone size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
                         <input
                           id="contact-phone"
                           type="tel"
@@ -628,8 +766,8 @@ function ContactForm() {
                     <div>
                       <label htmlFor="contact-enquiry" className={labelClass}>Enquiry Type *</label>
                       <div className="relative">
-                        <Package size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none z-10" aria-hidden="true" />
-                        <ChevronDown size={12} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" aria-hidden="true" />
+                        <Package size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none z-10" aria-hidden="true" />
+                        <ChevronDown size={12} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
                         <select
                           id="contact-enquiry"
                           value={form.enquiryType}
@@ -641,7 +779,7 @@ function ContactForm() {
                           aria-describedby={errors.enquiryType && touched.enquiryType ? "enquiry-error" : undefined}
                           style={{ backgroundImage: "none" }}
                         >
-                          <option value="" disabled style={{ backgroundColor: "#0d0d20", color: "rgba(255,255,255,0.4)" }}>Select enquiry type…</option>
+                          <option value="" disabled style={{ backgroundColor: "#0d0d20", color: "rgba(255,255,255,0.6)" }}>Select enquiry type…</option>
                           {ENQUIRY_TYPES.map(t => (
                             <option key={t.value} value={t.value} style={{ backgroundColor: "#0d0d20", color: "#fff" }}>
                               {t.label}
@@ -659,7 +797,10 @@ function ContactForm() {
 
                   {/* Subject */}
                   <div className="mb-5">
-                    <label htmlFor="contact-subject" className={labelClass}>Subject <span className="text-white/40 normal-case font-light tracking-normal">(optional)</span></label>
+                    <label htmlFor="contact-subject" className={labelClass}>
+                      Subject{" "}
+                      <span className="text-white/80 normal-case font-light tracking-normal">(optional)</span>
+                    </label>
                     <input
                       id="contact-subject"
                       type="text"
@@ -691,17 +832,20 @@ function ContactForm() {
                           <AlertCircle size={10} aria-hidden="true" />{errors.message}
                         </p>
                       ) : <span />}
-                      <span className={`text-[10.5px] font-light ml-auto ${form.message.length >= 20 ? "text-green-400/60" : "text-white/40"}`}>
+                      <span className={`text-[10.5px] font-light ml-auto ${form.message.length >= 20 ? "text-green-400/80" : "text-white/80"}`}>
                         {form.message.length} chars
                       </span>
                     </div>
                   </div>
 
                   {/* Privacy note */}
-                  <p className="text-white/40 text-[10.5px] font-light mb-5 leading-relaxed">
+                  <p className="text-white/80 text-[10.5px] font-light mb-5 leading-relaxed">
                     By submitting this form, you agree that R-Zone Enterprises may contact you
                     regarding your enquiry. We never share your data with third parties.
-                    See our <Link href="/privacy" className="text-white/40 hover:text-white underline underline-offset-2 transition-colors">Privacy Policy</Link>.
+                    See our{" "}
+                    <Link href="/privacy" className="text-white/80 hover:text-white underline underline-offset-2 transition-colors">
+                      Privacy Policy
+                    </Link>.
                   </p>
 
                   {/* Submit */}
@@ -755,11 +899,10 @@ function Offices() {
       aria-labelledby="offices-heading"
       id="offices"
     >
-      <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.035) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-        }}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        aria-hidden="true"
+        style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.035) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -770,8 +913,12 @@ function Offices() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <PageHeading line1="Two Countries," accent="One Team." dark={false} id="offices-heading" />
           </motion.div>
-          <motion.p className="text-gray-500 text-[14px] font-light mt-4 max-w-lg mx-auto"
-            initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
+          <motion.p
+            className="text-gray-800 text-[14px] font-light mt-4 max-w-lg mx-auto"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Both offices are staffed by our own people — no third-party agents, no outsourcing.
           </motion.p>
         </div>
@@ -787,8 +934,8 @@ function Offices() {
               itemScope
               itemType="https://schema.org/LocalBusiness"
             >
-              {/* Top accent */}
-              <div className="h-[3px] w-0 group-hover:w-full transition-all duration-500"
+              <div
+                className="h-[3px] w-0 group-hover:w-full transition-all duration-500"
                 style={{ backgroundColor: office.accent }}
                 aria-hidden="true"
               />
@@ -805,7 +952,8 @@ function Offices() {
                       {office.role}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
+                  <div
+                    className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
                     style={{ backgroundColor: `${office.accent}12` }}
                     aria-hidden="true"
                   >
@@ -816,40 +964,51 @@ function Offices() {
                 {/* Details */}
                 <div className="space-y-4 mb-7">
                   <div className="flex items-start gap-3">
-                    <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-400" aria-hidden="true" />
-                    <p className="text-gray-600 text-[13px] font-light leading-snug" itemProp="address">{office.address}</p>
+                    <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
+                    <p className="text-gray-800 text-[13px] font-light leading-snug" itemProp="address">
+                      {office.address}
+                    </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone size={13} className="flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    <a href={`tel:${office.phone.replace(/[\s()]/g, "")}`}
-                      className="text-gray-700 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+                    <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
+                    <a
+                      href={office.phoneHref}
+                      className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
                       itemProp="telephone"
                       aria-label={`Call ${office.country} office: ${office.phone}`}
-                    >{office.phone}</a>
+                    >
+                      {office.phone}
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail size={13} className="flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    <a href={`mailto:${office.email}`}
-                      className="text-gray-700 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+                    <Mail size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
+                    <a
+                      href={`mailto:${office.email}`}
+                      className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
                       itemProp="email"
                       aria-label={`Email ${office.country} office: ${office.email}`}
-                    >{office.email}</a>
+                    >
+                      {office.email}
+                    </a>
                   </div>
                 </div>
 
-                {/* Hours table */}
+                {/* Hours */}
                 <div className="border-t border-gray-100 pt-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <Clock size={11} className="text-gray-400" aria-hidden="true" />
-                    <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-400">Opening Hours</p>
+                    <Clock size={11} className="text-gray-800" aria-hidden="true" />
+                    <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-800">Opening Hours</p>
                   </div>
                   <dl className="space-y-1.5">
                     {office.hours.map(({ day, time }) => (
                       <div key={day} className="flex items-center justify-between">
-                        <dt className="text-gray-500 text-[12px] font-light">{day}</dt>
-                        <dd className={`text-[12px] font-semibold ${time === "Closed" ? "text-gray-400" : "text-gray-800"}`}
+                        <dt className="text-gray-800 text-[12px] font-light">{day}</dt>
+                        <dd
+                          className={`text-[12px] font-semibold ${time === "Closed" ? "text-gray-800" : "text-gray-800"}`}
                           itemProp="openingHours"
-                        >{time}</dd>
+                        >
+                          {time}
+                        </dd>
                       </div>
                     ))}
                   </dl>
@@ -866,24 +1025,29 @@ function Offices() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.4 }}
         >
-          <div className="aspect-[21/6] md:aspect-[21/5] flex items-center justify-center relative"
-            style={{
-              backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.06) 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
-            }}
+          <div
+            className="aspect-[21/6] md:aspect-[21/5] flex items-center justify-center relative"
+            style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.06) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
           >
             <div className="text-center z-10 relative">
-              <div className="w-14 h-14 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#0818A8]/30" aria-hidden="true">
+              <div
+                className="w-14 h-14 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#0818A8]/30"
+                aria-hidden="true"
+              >
                 <MapPin size={22} className="text-white" />
               </div>
-              <p className="text-[#0b0f1a] font-bold text-[14px] mb-1">Unit 10 Moorhen Yard, Elms Lane</p>
-              <p className="text-gray-500 text-[12px] font-light mb-5">Upminster, Essex RM14 3TS, United Kingdom</p>
+              <p className="text-[#0b0f1a] font-bold text-[14px] mb-1">
+                Unit 10 Moorhen Yard, Elms Lane, Bulphan
+              </p>
+              <p className="text-gray-800 text-[12px] font-light mb-5">
+                Upminster, Essex RM14 3TS, United Kingdom
+              </p>
               <a
-                href="https://maps.google.com/?q=Unit+10+Moorhen+Yard+Elms+Lane+Essex+RM14+3TS"
+                href="https://maps.google.com/?q=Unit+10+Moorhen+Yard+Elms+Lane+Upminster+Essex+RM14+3TS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-2.5 rounded-sm transition-colors duration-200"
-                aria-label="Get directions to R-Zone Essex warehouse (opens Google Maps)"
+                aria-label="Get directions to R-Zone Upminster warehouse (opens Google Maps)"
               >
                 <MapPin size={11} aria-hidden="true" />
                 Get Directions
@@ -911,19 +1075,18 @@ function FAQ() {
       aria-labelledby="faq-heading"
       id="faq"
     >
-      <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
+      <div
+        className="absolute inset-0 opacity-[0.022] pointer-events-none"
+        aria-hidden="true"
+        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
       />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#0818A8]/08 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
 
-          {/* Left — heading */}
+          {/* Left */}
           <div className="lg:col-span-4">
             <motion.div
               initial="hidden"
@@ -936,8 +1099,12 @@ function FAQ() {
               <motion.div variants={fadeUp} custom={0.05}>
                 <PageHeading line1="Frequently" accent="Asked." dark id="faq-heading" />
               </motion.div>
-              <motion.p variants={fadeUp} custom={0.15} className="text-white/42 text-[13.5px] font-light leading-relaxed mt-5 mb-8">
-                Can't find your answer? Call us on{" "}
+              <motion.p
+                variants={fadeUp}
+                custom={0.15}
+                className="text-white/80 text-[13.5px] font-light leading-relaxed mt-5 mb-8"
+              >
+                Can&apos;t find your answer? Call us on{" "}
                 <a href="tel:+448007720864" className="text-[#1F51FF] hover:text-white transition-colors font-medium">
                   +44 800 772 0864
                 </a>{" "}
@@ -947,7 +1114,7 @@ function FAQ() {
               <motion.div variants={fadeUp} custom={0.25}>
                 <a
                   href="#contact-form"
-                  className="inline-flex items-center gap-2 border border-white/20 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[11.5px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
+                  className="inline-flex items-center gap-2 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[11.5px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
                   aria-label="Scroll to contact form"
                 >
                   <MessageSquare size={12} aria-hidden="true" />
@@ -976,7 +1143,7 @@ function FAQ() {
                       aria-controls={`faq-answer-${i}`}
                     >
                       <span className={`text-[13.5px] font-semibold leading-snug transition-colors duration-200 ${
-                        open === i ? "text-white" : "text-white/70 group-hover:text-white"
+                        open === i ? "text-white" : "text-white/80 group-hover:text-white"
                       }`}>
                         {item.q}
                       </span>
@@ -987,7 +1154,7 @@ function FAQ() {
                         aria-hidden="true"
                       >
                         <ChevronDown size={15} className={`transition-colors duration-200 ${
-                          open === i ? "text-[#1F51FF]" : "text-white/40 group-hover:text-white/55"
+                          open === i ? "text-[#1F51FF]" : "text-white/80 group-hover:text-white"
                         }`} />
                       </motion.div>
                     </button>
@@ -1002,7 +1169,7 @@ function FAQ() {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden"
                       >
-                        <p className="text-white/45 text-[13px] font-light leading-relaxed pb-5 pr-8">
+                        <p className="text-white/80 text-[13px] font-light leading-relaxed pb-5 pr-8">
                           {item.a}
                         </p>
                       </motion.dd>
@@ -1032,21 +1199,22 @@ function SocialProofBar() {
       role="region"
       aria-label="Customer trust statistics"
     >
-      <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-          backgroundSize: "44px 44px",
-        }}
+      <div
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        aria-hidden="true"
+        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "44px 44px" }}
       />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-8 md:py-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0 justify-between">
-          <p className="text-white/50 text-[10px] font-bold tracking-[0.3em] uppercase flex-shrink-0">Why Customers Choose Us</p>
+          <p className="text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
+            Why Customers Choose Us
+          </p>
           <div className="flex flex-wrap gap-x-10 gap-y-4">
             {[
-              { val: "107+",    label: "5-Star Reviews",       icon: Star },
+              { val: "107+",    label: "5-Star Reviews",       icon: Star        },
               { val: "99%",     label: "Delivery Rate",        icon: CheckCircle },
-              { val: "12+",     label: "Years in Business",    icon: Clock },
-              { val: "50,000+", label: "Shipments Delivered",  icon: Package },
+              { val: "12+",     label: "Years in Business",    icon: Clock       },
+              { val: "50,000+", label: "Shipments Delivered",  icon: Package     },
             ].map(({ val, label, icon: Icon }, i) => (
               <motion.div
                 key={label}
@@ -1055,9 +1223,9 @@ function SocialProofBar() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
               >
-                <Icon size={14} className="text-white/55" aria-hidden="true" />
+                <Icon size={14} className="text-white/80" aria-hidden="true" />
                 <span className="text-white font-black text-[16px] leading-none">{val}</span>
-                <span className="text-white/50 text-[11px] font-light">{label}</span>
+                <span className="text-white/80 text-[11px] font-light">{label}</span>
               </motion.div>
             ))}
           </div>
@@ -1080,11 +1248,10 @@ function FinalCTA() {
       className="relative bg-white overflow-hidden"
       aria-label="Get a quote or call R-Zone"
     >
-      <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-        }}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        aria-hidden="true"
+        style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24">
@@ -1097,11 +1264,10 @@ function FinalCTA() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden="true"
-              style={{
-                backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-                backgroundSize: "32px 32px",
-              }}
+            <div
+              className="absolute inset-0 opacity-[0.06] pointer-events-none"
+              aria-hidden="true"
+              style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "32px 32px" }}
             />
             <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none translate-x-16 translate-y-16" aria-hidden="true" />
             <div className="relative z-10">
@@ -1111,8 +1277,9 @@ function FinalCTA() {
               <h3 className="text-white font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
                 Get a Free Quote
               </h3>
-              <p className="text-white/62 text-[13px] font-light leading-relaxed mb-8">
-                Tell us about your shipment and we'll provide a transparent, competitive quote — no hidden charges.
+              <p className="text-white/80 text-[13px] font-light leading-relaxed mb-8">
+                Tell us about your shipment and we&apos;ll provide a transparent, competitive
+                quote — no hidden charges, no surprises.
               </p>
               <Link
                 href="/quote"
@@ -1138,17 +1305,27 @@ function FinalCTA() {
             <h3 className="text-[#0b0f1a] font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
               Prefer to Call?
             </h3>
-            <p className="text-gray-500 text-[13px] font-light leading-relaxed mb-8">
-              Our UK team is available Monday–Friday 9am–6pm and Saturday 10am–2pm. Free to call.
+            <p className="text-gray-800 text-[13px] font-light leading-relaxed mb-8">
+              Our UK team is available Monday–Friday 10AM–6PM and Saturday 11AM–2PM.
+              Free to call. Our Nigeria team is also available Mon–Fri 9AM–5PM WAT.
             </p>
-            <a
-              href="tel:+448007720864"
-              className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
-              aria-label="Call R-Zone Enterprises: +44 800 772 0864"
-            >
-              <Phone size={11} aria-hidden="true" />
-              +44 800 772 0864
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="tel:+448007720864"
+                className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+                aria-label="Call R-Zone UK: +44 800 772 0864"
+              >
+                <Phone size={11} aria-hidden="true" />
+                UK: +44 800 772 0864
+              </a>
+              <a
+                href="tel:+2349066806861"
+                className="inline-flex items-center gap-2.5 border border-[#0818A8]/25 hover:bg-[#0818A8]/5 text-[#0818A8] text-[11.5px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+                aria-label="Call R-Zone Nigeria: +234 906 680 6861"
+              >
+                NG: +234 906 680 6861
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -1162,7 +1339,6 @@ function FinalCTA() {
 export default function ContactPageClient() {
   return (
     <>
-      {/* ── Structured data ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1171,7 +1347,7 @@ export default function ContactPageClient() {
             "@type": "ContactPage",
             "name": "Contact R-Zone Enterprises",
             "url": "https://r-zoneenterprises.com/contact",
-            "description": "Contact R-Zone Enterprises for UK–Nigeria cargo shipping enquiries, quotes and tracking support.",
+            "description": "Contact R-Zone Enterprises — the highest-rated organically earned cargo company between the UK, Nigeria, and across Africa.",
             "mainEntity": {
               "@type": ["Organization", "LocalBusiness"],
               "name": "R-Zone Enterprises",
@@ -1180,19 +1356,24 @@ export default function ContactPageClient() {
               "email": "info@r-zoneenterprises.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Unit 10 Moorhen Yard, Elms Lane",
+                "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
                 "addressLocality": "Upminster",
                 "addressRegion": "Essex",
                 "postalCode": "RM14 3TS",
                 "addressCountry": "GB",
               },
               "openingHoursSpecification": [
-                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
-                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "14:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "11:00", "closes": "14:00" },
               ],
               "contactPoint": [
-                { "@type": "ContactPoint", "telephone": "+44-800-772-0864", "contactType": "customer service", "areaServed": "GB", "availableLanguage": "English" },
+                { "@type": "ContactPoint", "telephone": "+44-800-772-0864",  "contactType": "customer service", "areaServed": "GB", "availableLanguage": "English" },
+                { "@type": "ContactPoint", "telephone": "+234-906-680-6861", "contactType": "customer service", "areaServed": "NG", "availableLanguage": "English" },
                 { "@type": "ContactPoint", "email": "info@r-zoneenterprises.com", "contactType": "customer support" },
+              ],
+              "sameAs": [
+                "https://www.instagram.com/rzoneenterprises",
+                "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr",
               ],
             },
           }),
