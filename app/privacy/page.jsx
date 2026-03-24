@@ -93,7 +93,7 @@ function FAQ({ q, a, index }) {
             exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }}
             className="overflow-hidden"
           >
-            <p className="text-gray-700 text-[13.5px] font-light leading-relaxed pb-5 pr-8">{a}</p>
+            <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed pb-5 pr-8">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -118,7 +118,7 @@ function Section({ id, num, title, children }) {
       {/* Section header */}
       <div className="flex items-start gap-5 mb-7">
         <div className="flex-shrink-0 w-10 h-10 bg-[#0818A8] flex items-center justify-center" aria-hidden="true">
-          <span className="text-white font-black text-[11px] tracking-[0.06em]">{num}</span>
+          <span className="text-white font-black text-[13px] tracking-[0.06em]">{num}</span>
         </div>
         <h2
           id={`${id}-heading`}
@@ -142,7 +142,7 @@ function Callout({ type = "blue", children }) {
     green: "border-l-[3px] border-emerald-600 bg-emerald-50 text-emerald-900",
   };
   return (
-    <div className={`px-5 py-4 my-6 text-[13px] font-light leading-relaxed ${styles[type]}`}>
+    <div className={`px-5 py-4 my-6 text-[13px] font-normal leading-relaxed ${styles[type]}`}>
       {children}
     </div>
   );
@@ -150,7 +150,7 @@ function Callout({ type = "blue", children }) {
 
 // ─── Body text ────────────────────────────────────────────────────────────────
 function P({ children, className = "" }) {
-  return <p className={`text-gray-700 text-[14px] font-light leading-relaxed mb-4 ${className}`}>{children}</p>;
+  return <p className={`text-gray-700 text-[14px] font-normal leading-relaxed mb-4 ${className}`}>{children}</p>;
 }
 
 function H3({ children }) {
@@ -165,7 +165,7 @@ function LI({ children }) {
   return (
     <li className="flex items-start gap-3">
       <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
-      <span className="text-gray-700 text-[13.5px] font-light leading-relaxed">{children}</span>
+      <span className="text-gray-700 text-[13.5px] font-normal leading-relaxed">{children}</span>
     </li>
   );
 }
@@ -216,14 +216,14 @@ export default function PrivacyPage() {
       {/* ── TOP UTILITY BAR ── */}
       <div className="bg-[#0818A8]" role="complementary" aria-label="Contact bar">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
-          <p className="text-white/80 text-[11px] font-medium tracking-[0.02em]">
+          <p className="text-white/80 text-[13px] font-medium tracking-[0.02em]">
             R-Zone Enterprises — Legal &amp; Compliance
           </p>
           <div className="hidden sm:flex items-center gap-6">
-            <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[11px] font-medium transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
+            <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
               <Phone size={10} aria-hidden="true" /> +44 800 772 0864
             </a>
-            <a href="mailto:privacy@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[11px] font-medium transition-colors" aria-label="Email privacy team">
+            <a href="mailto:privacy@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Email privacy team">
               <Mail size={10} aria-hidden="true" /> privacy@r-zoneenterprises.com
             </a>
           </div>
@@ -237,9 +237,9 @@ export default function PrivacyPage() {
 
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-8">
-            <Link href="/" className="text-gray-500 text-[11.5px] font-medium hover:text-gray-800 transition-colors">Home</Link>
+            <Link href="/" className="text-gray-500 text-[13px] font-medium hover:text-gray-800 transition-colors">Home</Link>
             <ChevronRight size={11} className="text-gray-300" aria-hidden="true" />
-            <span className="text-gray-800 text-[11.5px] font-medium" aria-current="page">Privacy Policy</span>
+            <span className="text-gray-800 text-[13px] font-medium" aria-current="page">Privacy Policy</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
@@ -256,7 +256,7 @@ export default function PrivacyPage() {
                 <br />
                 <span className="text-[#0818A8]">Policy.</span>
               </h1>
-              <p className="text-gray-600 text-[15px] font-light leading-relaxed max-w-lg">
+              <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
                 We believe privacy is a right, not a checkbox. This policy explains exactly what personal data R-Zone Enterprises collects, how we use it, and the rights you hold over it — in plain language.
               </p>
             </div>
@@ -271,8 +271,8 @@ export default function PrivacyPage() {
               ].map(({ label, val, icon: Icon }) => (
                 <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
                   <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
-                  <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
-                  <p className="text-gray-800 font-semibold text-[12.5px] leading-snug">{val}</p>
+                  <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
+                  <p className="text-gray-800 font-semibold text-[13px] leading-snug">{val}</p>
                 </div>
               ))}
             </div>
@@ -300,10 +300,10 @@ export default function PrivacyPage() {
                     {TOC.map(item => (
                       <a key={item.id} href={`#${item.id}`}
                         onClick={() => setTocMobile(false)}
-                        className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[12px] transition-colors odd:border-r even:border-r-0 ${
+                        className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 ${
                           activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-700 hover:bg-gray-50"
                         }`}>
-                        <span className="text-[9px] font-black text-gray-400 font-[family-name:var(--font-montserrat)]">{item.num}</span>
+                        <span className="text-[13px] font-black text-gray-400 font-[family-name:var(--font-montserrat)]">{item.num}</span>
                         {item.label}
                       </a>
                     ))}
@@ -322,18 +322,18 @@ export default function PrivacyPage() {
           {/* ── STICKY SIDEBAR TOC ── */}
           <aside className="hidden lg:block lg:col-span-3 xl:col-span-2" aria-label="Table of contents">
             <div className="sticky top-[74px]">
-              <p className="text-[9px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
+              <p className="text-[13px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
               <nav aria-label="Section navigation">
                 {TOC.map(item => (
                   <a key={item.id} href={`#${item.id}`}
-                    className={`group flex items-center gap-3 px-3 py-2.5 text-[12px] border-l-2 transition-all duration-150 ${
+                    className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 ${
                       activeId === item.id
                         ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4"
                         : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"
                     }`}
                     aria-current={activeId === item.id ? "true" : undefined}
                   >
-                    <span className={`text-[9px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>
+                    <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>
                       {item.num}
                     </span>
                     {item.label}
@@ -344,13 +344,13 @@ export default function PrivacyPage() {
               {/* Contact card */}
               <div className="mt-6 border border-[#0818A8]/15 bg-[#0818A8]/4 p-4">
                 <Shield size={14} className="text-[#0818A8] mb-2" aria-hidden="true" />
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">DPO Contact</p>
+                <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">DPO Contact</p>
                 <a href="mailto:privacy@r-zoneenterprises.com"
-                  className="text-[11.5px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all"
+                  className="text-[13px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all"
                   aria-label="Email privacy team">
                   privacy@r-zoneenterprises.com
                 </a>
-                <p className="text-gray-600 text-[11px] font-light mt-1">Responds within 1 business day</p>
+                <p className="text-gray-600 text-[13px] font-normal mt-1">Responds within 1 business day</p>
               </div>
             </div>
           </aside>
@@ -423,18 +423,18 @@ export default function PrivacyPage() {
                 <table className="w-full" style={{ minWidth: "520px" }} aria-label="Data processing purposes and legal bases">
                   <thead>
                     <tr className="bg-[#0818A8]">
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white">Purpose</th>
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Data Used</th>
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Legal Basis</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">Purpose</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Data Used</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Legal Basis</th>
                     </tr>
                   </thead>
                   <tbody>
                     {DATA_TABLE.map((row, i) => (
                       <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
-                        <td className="px-5 py-3 text-[13px] text-gray-700 font-light leading-snug">{row.purpose}</td>
-                        <td className="px-5 py-3 text-[12px] text-gray-600 font-light hidden sm:table-cell">{row.data}</td>
+                        <td className="px-5 py-3 text-[13px] text-gray-700 font-normal leading-snug">{row.purpose}</td>
+                        <td className="px-5 py-3 text-[13px] text-gray-600 font-normal hidden sm:table-cell">{row.data}</td>
                         <td className="px-5 py-3">
-                          <span className="inline-block text-[10.5px] font-semibold text-[#0818A8] bg-[#0818A8]/8 px-2.5 py-1 whitespace-nowrap">{row.basis}</span>
+                          <span className="inline-block text-[13px] font-semibold text-[#0818A8] bg-[#0818A8]/8 px-2.5 py-1 whitespace-nowrap">{row.basis}</span>
                         </td>
                       </tr>
                     ))}
@@ -462,9 +462,9 @@ export default function PrivacyPage() {
                   <div key={item.basis} className="border border-gray-200 bg-white p-4 hover:border-[#0818A8]/30 transition-colors">
                     <div className="flex items-center justify-between mb-2">
                       <p className="text-gray-900 font-bold text-[13px]">{item.basis}</p>
-                      <span className="text-[10px] font-bold text-[#0818A8] bg-[#0818A8]/8 px-2 py-0.5">{item.article}</span>
+                      <span className="text-[13px] font-bold text-[#0818A8] bg-[#0818A8]/8 px-2 py-0.5">{item.article}</span>
                     </div>
-                    <p className="text-gray-600 text-[12.5px] font-light leading-relaxed">{item.desc}</p>
+                    <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -496,7 +496,7 @@ export default function PrivacyPage() {
               </UL>
 
               <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
-                <p className="text-[9.5px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Our Three Absolute Rules</p>
+                <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Our Three Absolute Rules</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
                     "We never sell your personal data to any third party",
@@ -507,7 +507,7 @@ export default function PrivacyPage() {
                       <div className="w-5 h-5 bg-[#0818A8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
                         <Check size={10} className="text-white" />
                       </div>
-                      <p className="text-gray-700 text-[12.5px] font-light leading-snug">{rule}</p>
+                      <p className="text-gray-700 text-[13px] font-normal leading-snug">{rule}</p>
                     </div>
                   ))}
                 </div>
@@ -544,17 +544,17 @@ export default function PrivacyPage() {
                 <table className="w-full" style={{ minWidth: "480px" }} aria-label="Data retention periods">
                   <thead>
                     <tr className="bg-[#0818A8]">
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white">Data Category</th>
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Retention Period</th>
-                      <th className="px-5 py-3 text-left text-[10px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Reason</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">Data Category</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Retention Period</th>
+                      <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Reason</th>
                     </tr>
                   </thead>
                   <tbody>
                     {RETENTION_TABLE.map((row, i) => (
                       <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
-                        <td className="px-5 py-3 text-[13px] text-gray-700 font-light">{row.category}</td>
+                        <td className="px-5 py-3 text-[13px] text-gray-700 font-normal">{row.category}</td>
                         <td className="px-5 py-3 text-[13px] text-gray-800 font-semibold whitespace-nowrap">{row.period}</td>
-                        <td className="px-5 py-3 text-[12px] text-gray-600 font-light hidden sm:table-cell">{row.reason}</td>
+                        <td className="px-5 py-3 text-[13px] text-gray-600 font-normal hidden sm:table-cell">{row.reason}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -581,7 +581,7 @@ export default function PrivacyPage() {
                         </div>
                         <div>
                           <p className="text-gray-900 font-bold text-[13px] mb-1.5">{right.title}</p>
-                          <p className="text-gray-600 text-[12.5px] font-light leading-relaxed">{right.body}</p>
+                          <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{right.body}</p>
                         </div>
                       </div>
                     </div>
@@ -593,16 +593,16 @@ export default function PrivacyPage() {
               <P>Email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> or write to our registered address. We respond within <strong className="text-gray-900 font-semibold">one calendar month</strong>. Complex requests may be extended by a further two months — we will notify you.</P>
 
               <div className="border border-gray-200 bg-gray-50 p-5">
-                <p className="text-[9.5px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Right to Complain — ICO</p>
-                <p className="text-gray-700 text-[13.5px] font-light leading-relaxed mb-3">
+                <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Right to Complain — ICO</p>
+                <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-3">
                   If you're not satisfied with how we've handled your data, you can complain to the Information Commissioner's Office.
                 </p>
                 <div className="flex flex-wrap gap-x-8 gap-y-2">
-                  <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#0818A8] text-[12.5px] font-semibold hover:text-[#0437F2] transition-colors" aria-label="Visit ICO website">
+                  <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#0818A8] text-[13px] font-semibold hover:text-[#0437F2] transition-colors" aria-label="Visit ICO website">
                     ico.org.uk <ExternalLink size={10} aria-hidden="true" />
                   </a>
-                  <span className="text-gray-700 text-[12.5px] font-light">0303 123 1113</span>
-                  <span className="text-gray-700 text-[12.5px] font-light">Wycliffe House, Wilmslow, SK9 5AF</span>
+                  <span className="text-gray-700 text-[13px] font-normal">0303 123 1113</span>
+                  <span className="text-gray-700 text-[13px] font-normal">Wycliffe House, Wilmslow, SK9 5AF</span>
                 </div>
               </div>
             </Section>
@@ -636,7 +636,7 @@ export default function PrivacyPage() {
                     <div className="w-5 h-5 bg-[#0818A8] rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
                       <Check size={9} className="text-white" />
                     </div>
-                    <p className="text-gray-700 text-[12.5px] font-light leading-tight">{item}</p>
+                    <p className="text-gray-700 text-[13px] font-normal leading-tight">{item}</p>
                   </div>
                 ))}
               </div>
@@ -679,14 +679,14 @@ export default function PrivacyPage() {
                     <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/25 transition-colors">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon size={13} className="text-[#0818A8]" aria-hidden="true" />
-                        <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
+                        <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
                       </div>
                       {item.href ? (
                         <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#0818A8] transition-colors break-all">
                           {item.val}
                         </a>
                       ) : (
-                        <p className="text-gray-800 font-light text-[13px] leading-snug">{item.val}</p>
+                        <p className="text-gray-800 font-normal text-[13px] leading-snug">{item.val}</p>
                       )}
                     </div>
                   );
@@ -712,18 +712,18 @@ export default function PrivacyPage() {
             <div className="mt-12 border border-[#0818A8]/20 bg-[#0818A8]/4 p-7 md:p-9">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div>
-                  <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Still Have Questions?</p>
+                  <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Still Have Questions?</p>
                   <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">We're Here to Help.</h3>
-                  <p className="text-gray-600 text-[13.5px] font-light mt-1">Our team responds to privacy enquiries within one business day.</p>
+                  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Our team responds to privacy enquiries within one business day.</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="mailto:privacy@r-zoneenterprises.com"
-                    className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+                    className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
                     aria-label="Email privacy team">
                     <Mail size={12} aria-hidden="true" /> Email Privacy Team
                   </a>
                   <Link href="/"
-                    className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[11.5px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200"
+                    className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200"
                     aria-label="Back to R-Zone Enterprises">
                     <ArrowLeft size={11} aria-hidden="true" /> Back to Site
                   </Link>

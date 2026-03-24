@@ -79,11 +79,9 @@ const NAV_ITEMS = [
     href: "/news",
     ariaLabel: "R-Zone shipping guide, news and insights",
     dropdown: [
-      { label: "How Shipping Works", href: "/services",                  icon: BookOpen,   description: "4-step guide from booking to delivery" },
-      { label: "Cargo We Accept",    href: "/services",                  icon: Package,    description: "Boxes, foodstuffs, vehicles, machinery" },
-      { label: "Sailing Schedules",  href: "/schedulesprices#schedules", icon: Ship,       description: "Weekly sea freight departure dates" },
+      { label: "Sailing Schedules",  href: "/schedulesprices", icon: Ship,       description: "Weekly sea freight departure dates" },
       { label: "Prices & Rates",     href: "/schedulesprices#prices",    icon: BarChart3,  description: "Transparent UK–Nigeria pricing" },
-      { label: "News & Insights",    href: "/news",                      icon: Newspaper,  description: "Latest logistics & trade news" },
+      { label: "News & Insights",    href: "/blog",                      icon: Newspaper,  description: "Latest logistics & trade news" },
       { label: "FAQs",               href: "/support",                   icon: HelpCircle, description: "Answers to common questions" },
     ],
   },
@@ -173,7 +171,7 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
                     <div>
                       <span className="block font-semibold leading-tight">{item.label}</span>
                       {item.description && (
-                        <span className={`block text-[10.5px] font-normal mt-0.5 leading-snug ${
+                        <span className={`block text-[13px] font-normal mt-0.5 leading-snug ${
                           transparent
                             ? "text-white/80 group-hover:text-white"
                             : "text-gray-800 group-hover:text-white/80"
@@ -195,7 +193,7 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
                   : "border-gray-200 bg-[#0818A8]/5"
               }`}>
                 <div>
-                  <p className={`text-[9px] font-bold tracking-[0.24em] uppercase mb-3 ${
+                  <p className={`text-[13px] font-bold tracking-[0.24em] uppercase mb-3 ${
                     transparent ? "text-[#1F51FF]" : "text-[#0818A8]"
                   }`}>
                     Featured
@@ -218,12 +216,12 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
                         className={transparent ? "text-[#1F51FF]" : "text-[#0818A8]"}
                       />
                     </div>
-                    <p className={`font-bold text-[12px] leading-snug mb-1 ${
+                    <p className={`font-bold text-[13px] leading-snug mb-1 ${
                       transparent ? "text-white" : "text-gray-800"
                     }`}>
                       {featured.label}
                     </p>
-                    <p className={`text-[10.5px] font-light leading-relaxed ${
+                    <p className={`text-[13px] font-normal leading-relaxed ${
                       transparent ? "text-white/80" : "text-gray-800"
                     }`}>
                       {featured.sub}
@@ -232,7 +230,7 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
                 </div>
                 <Link
                   href={featured.href}
-                  className={`flex items-center gap-1.5 text-[9.5px] font-bold tracking-[0.1em] uppercase mt-4 transition-colors duration-200 ${
+                  className={`flex items-center gap-1.5 text-[13px] font-bold tracking-[0.1em] uppercase mt-4 transition-colors duration-200 ${
                     transparent
                       ? "text-[#1F51FF] hover:text-white"
                       : "text-[#0818A8] hover:text-[#0437F2]"
@@ -279,7 +277,7 @@ function NavItem({ item, pathname, transparent }) {
       <Link
         href={item.href}
         aria-label={item.ariaLabel}
-        className="flex items-center gap-1.5 text-[12.5px] font-black tracking-[0.07em] uppercase bg-[#0818A8] hover:bg-[#0437F2] text-white px-4 py-[5px] rounded-sm transition-all duration-200 shadow-sm shadow-[#0818A8]/30"
+        className="flex items-center gap-1.5 text-[13px] font-black tracking-[0.07em] uppercase bg-[#0818A8] hover:bg-[#0437F2] text-white px-4 py-[5px] rounded-sm transition-all duration-200 shadow-sm shadow-[#0818A8]/30"
       >
         {item.label}
         <ArrowRight size={10} aria-hidden="true" />
@@ -293,7 +291,7 @@ function NavItem({ item, pathname, transparent }) {
       <Link
         href={item.href}
         aria-label={item.ariaLabel}
-        className={`flex items-center gap-1.5 text-[12.5px] font-semibold px-4 py-[5px] border rounded-sm transition-all duration-200 ${
+        className={`flex items-center gap-1.5 text-[13px] font-semibold px-4 py-[5px] border rounded-sm transition-all duration-200 ${
           transparent
             ? "border-white/40 text-white hover:border-white hover:text-white"
             : "border-gray-800 text-gray-800 hover:border-[#0818A8] hover:text-[#0818A8] bg-white"
@@ -462,7 +460,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
                   <span className="font-black text-white text-[14px] tracking-[0.08em] uppercase">
                     R-ZONE
                   </span>
-                  <span className="font-light text-white text-[14px] uppercase">
+                  <span className="font-normal text-white text-[14px] uppercase">
                     CARGO
                   </span>
                 </div>
@@ -481,7 +479,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
               <Link
                 href="/track"
                 onClick={onClose}
-                className="flex-1 flex items-center justify-center gap-1.5 border border-white/20 text-white text-[11.5px] font-bold py-2 rounded-sm hover:bg-white/8 transition-colors"
+                className="flex-1 flex items-center justify-center gap-1.5 border border-white/20 text-white text-[13px] font-bold py-2 rounded-sm hover:bg-white/8 transition-colors"
                 aria-label="Track your shipment"
               >
                 <MapPin size={11} className="text-[#1F51FF]" aria-hidden="true" />
@@ -490,7 +488,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
               <Link
                 href="/quote"
                 onClick={onClose}
-                className="flex-1 flex items-center justify-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black py-2 rounded-sm transition-colors tracking-[0.05em] uppercase"
+                className="flex-1 flex items-center justify-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black py-2 rounded-sm transition-colors tracking-[0.05em] uppercase"
                 aria-label="Get a shipping quote"
               >
                 Get Quote
@@ -535,7 +533,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
                                   key={sub.href + sub.label}
                                   href={sub.href}
                                   onClick={onClose}
-                                  className="flex items-center gap-3 pl-8 pr-5 py-2.5 text-[12.5px] text-white hover:text-white hover:bg-white/5 transition-colors border-t border-white/5"
+                                  className="flex items-center gap-3 pl-8 pr-5 py-2.5 text-[13px] text-white hover:text-white hover:bg-white/5 transition-colors border-t border-white/5"
                                 >
                                   {Icon && (
                                     <Icon
@@ -574,7 +572,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
             <div className="px-5 pt-4 pb-2 border-t border-white/10">
               <a
                 href="tel:+448007720864"
-                className="flex items-center gap-2 text-white hover:text-white text-[11.5px] transition-colors mb-1.5"
+                className="flex items-center gap-2 text-white hover:text-white text-[13px] transition-colors mb-1.5"
                 aria-label="Call R-Zone UK: +44 800 772 0864"
               >
                 <Phone size={11} className="text-[#1F51FF]" aria-hidden="true" />
@@ -582,7 +580,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
               </a>
               <a
                 href="mailto:info@r-zoneenterprises.com"
-                className="flex items-center gap-2 text-white hover:text-white text-[11.5px] transition-colors"
+                className="flex items-center gap-2 text-white hover:text-white text-[13px] transition-colors"
                 aria-label="Email R-Zone"
               >
                 <MessageSquare size={11} className="text-[#1F51FF]" aria-hidden="true" />
@@ -742,7 +740,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     aria-label={link.ariaLabel}
-                    className={`flex items-center gap-1.5 text-[12px] font-normal transition-colors duration-200 ${
+                    className={`flex items-center gap-1.5 text-[13px] font-normal transition-colors duration-200 ${
                       transparent
                         ? "text-white hover:text-white"
                         : "text-black hover:text-[#0818A8]"

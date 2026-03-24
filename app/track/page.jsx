@@ -209,7 +209,7 @@ function TimelineEvent({ event, index, isLast }) {
                   {event.title}
                 </span>
                 {event.status === "active" && (
-                  <span className="inline-flex items-center gap-1 bg-[#0818A8]/8 border border-[#0818A8]/20 text-[#0818A8] text-[9.5px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
+                  <span className="inline-flex items-center gap-1 bg-[#0818A8]/8 border border-[#0818A8]/20 text-[#0818A8] text-[13px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
                     <motion.span
                       className="w-1 h-1 rounded-full bg-[#0818A8]"
                       animate={{ opacity: [1, 0.3, 1] }}
@@ -219,7 +219,7 @@ function TimelineEvent({ event, index, isLast }) {
                   </span>
                 )}
               </div>
-              <div className="flex items-center gap-3 text-[11.5px] text-gray-400 font-light">
+              <div className="flex items-center gap-3 text-[13px] text-gray-400 font-normal">
                 <span className="flex items-center gap-1">
                   <MapPin size={10} />
                   {event.location}
@@ -227,10 +227,10 @@ function TimelineEvent({ event, index, isLast }) {
               </div>
             </div>
             <div className="flex flex-col items-end flex-shrink-0 gap-0.5">
-              <span className={`text-[11.5px] font-semibold ${event.status === "pending" ? "text-gray-300" : "text-gray-600"}`}>
+              <span className={`text-[13px] font-semibold ${event.status === "pending" ? "text-gray-300" : "text-gray-600"}`}>
                 {event.date}
               </span>
-              <span className={`text-[11px] ${event.status === "pending" ? "text-gray-300" : "text-gray-400"}`}>
+              <span className={`text-[13px] ${event.status === "pending" ? "text-gray-300" : "text-gray-400"}`}>
                 {event.time}
               </span>
             </div>
@@ -245,7 +245,7 @@ function TimelineEvent({ event, index, isLast }) {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <p className="mt-2 text-[11.5px] text-gray-500 font-light leading-relaxed bg-gray-50 border border-gray-100 px-3 py-2 rounded-sm">
+              <p className="mt-2 text-[13px] text-gray-500 font-normal leading-relaxed bg-gray-50 border border-gray-100 px-3 py-2 rounded-sm">
                 {event.detail}
               </p>
             </motion.div>
@@ -291,15 +291,15 @@ function TrackingResult({ shipment }) {
           </div>
           <div>
             <p className={`text-[13px] font-black tracking-[-0.01em] ${cfg.text}`}>{shipment.statusLabel}</p>
-            <p className="text-[11.5px] text-gray-500 font-light">{shipment.currentLocation}</p>
+            <p className="text-[13px] text-gray-500 font-normal">{shipment.currentLocation}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-1.5 text-[11.5px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
+          <button className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
             <Download size={12} />
             Export
           </button>
-          <button className="flex items-center gap-1.5 text-[11.5px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
+          <button className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
             <Share2 size={12} />
             Share
           </button>
@@ -317,23 +317,23 @@ function TrackingResult({ shipment }) {
                 <div className="w-7 h-7 bg-[#0818A8]/8 border border-[#0818A8]/15 rounded flex items-center justify-center">
                   <ServiceIcon size={14} className="text-[#0818A8]" strokeWidth={1.75} />
                 </div>
-                <span className="text-[11px] font-bold text-[#0818A8] tracking-[0.12em] uppercase">{shipment.service}</span>
+                <span className="text-[13px] font-bold text-[#0818A8] tracking-[0.12em] uppercase">{shipment.service}</span>
               </div>
               <h2 className="text-gray-900 font-black text-[20px] sm:text-[24px] tracking-[-0.02em]">{shipment.id}</h2>
-              <p className="text-gray-400 text-[12px] font-light mt-0.5">{shipment.description}</p>
+              <p className="text-gray-400 text-[13px] font-normal mt-0.5">{shipment.description}</p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-1">
               <div className="flex items-center gap-1.5">
                 <Calendar size={12} className="text-gray-400" />
-                <span className="text-[12px] text-gray-500 font-light">Booked: <span className="font-semibold text-gray-700">{shipment.bookedDate}</span></span>
+                <span className="text-[13px] text-gray-500 font-normal">Booked: <span className="font-semibold text-gray-700">{shipment.bookedDate}</span></span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Clock size={12} className="text-gray-400" />
-                <span className="text-[12px] text-gray-500 font-light">ETA: <span className="font-semibold text-gray-700">{shipment.eta}</span></span>
+                <span className="text-[13px] text-gray-500 font-normal">ETA: <span className="font-semibold text-gray-700">{shipment.eta}</span></span>
               </div>
               <div className="flex items-center gap-1.5">
                 <FileText size={12} className="text-gray-400" />
-                <span className="text-[12px] text-gray-500 font-light">AWB: <span className="font-semibold text-gray-700">{shipment.mawb}</span></span>
+                <span className="text-[13px] text-gray-500 font-normal">AWB: <span className="font-semibold text-gray-700">{shipment.mawb}</span></span>
               </div>
             </div>
           </div>
@@ -342,8 +342,8 @@ function TrackingResult({ shipment }) {
           <div className="flex items-center gap-3 mb-5 p-4 bg-gray-50 border border-gray-100 rounded-sm">
             <div className="flex flex-col items-center min-w-[80px]">
               <span className="text-[#0818A8] font-black text-[18px] leading-none">{shipment.origin.code}</span>
-              <span className="text-gray-700 font-semibold text-[12px] mt-0.5">{shipment.origin.city}</span>
-              <span className="text-gray-400 text-[10.5px]">{shipment.origin.country}</span>
+              <span className="text-gray-700 font-semibold text-[13px] mt-0.5">{shipment.origin.city}</span>
+              <span className="text-gray-400 text-[13px]">{shipment.origin.country}</span>
             </div>
             <div className="flex-1 flex flex-col items-center gap-1.5">
               <div className="flex items-center w-full gap-1">
@@ -358,21 +358,21 @@ function TrackingResult({ shipment }) {
               </div>
               <div className="flex items-center gap-1.5">
                 <ServiceIcon size={13} className="text-[#0818A8]" strokeWidth={1.75} />
-                <span className="text-[10.5px] text-gray-400 font-medium">{shipment.progress}% complete</span>
+                <span className="text-[13px] text-gray-400 font-medium">{shipment.progress}% complete</span>
               </div>
             </div>
             <div className="flex flex-col items-center min-w-[80px]">
               <span className="text-[#0818A8] font-black text-[18px] leading-none">{shipment.destination.code}</span>
-              <span className="text-gray-700 font-semibold text-[12px] mt-0.5">{shipment.destination.city}</span>
-              <span className="text-gray-400 text-[10.5px]">{shipment.destination.country}</span>
+              <span className="text-gray-700 font-semibold text-[13px] mt-0.5">{shipment.destination.city}</span>
+              <span className="text-gray-400 text-[13px]">{shipment.destination.country}</span>
             </div>
           </div>
 
           {/* Progress bar */}
           <div className="mb-1">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[11.5px] text-gray-500 font-medium">{completedSteps} of {totalSteps} milestones completed</span>
-              <span className="text-[11.5px] font-black text-[#0818A8]">{shipment.progress}%</span>
+              <span className="text-[13px] text-gray-500 font-medium">{completedSteps} of {totalSteps} milestones completed</span>
+              <span className="text-[13px] font-black text-[#0818A8]">{shipment.progress}%</span>
             </div>
             <ProgressBar value={shipment.progress} status={shipment.status} />
           </div>
@@ -394,9 +394,9 @@ function TrackingResult({ shipment }) {
               >
                 <div className="flex items-center gap-1.5 mb-1">
                   <Icon size={11} className="text-gray-400" />
-                  <span className="text-[10.5px] font-bold text-gray-400 tracking-[0.1em] uppercase">{item.label}</span>
+                  <span className="text-[13px] font-bold text-gray-400 tracking-[0.1em] uppercase">{item.label}</span>
                 </div>
-                <p className="text-gray-800 font-semibold text-[12.5px] leading-snug">{item.value}</p>
+                <p className="text-gray-800 font-semibold text-[13px] leading-snug">{item.value}</p>
               </div>
             );
           })}
@@ -491,7 +491,7 @@ export default function TrackPage() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex items-center justify-center gap-1.5 text-[11.5px] text-white/40 font-medium mb-6"
+              className="flex items-center justify-center gap-1.5 text-[13px] text-white/40 font-medium mb-6"
             >
               <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
               <span>/</span>
@@ -506,7 +506,7 @@ export default function TrackPage() {
                   animate={{ scale: [1, 1.5, 1], opacity: [1, 0.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-white/55 text-[10px] font-semibold tracking-[0.22em] uppercase">Real-Time Tracking</span>
+                <span className="text-white/55 text-[13px] font-semibold tracking-[0.22em] uppercase">Real-Time Tracking</span>
               </div>
             </motion.div>
 
@@ -532,7 +532,7 @@ export default function TrackPage() {
             <motion.p
               variants={fadeUp}
               custom={0.2}
-              className="text-white/50 text-[13.5px] font-light leading-relaxed max-w-md mx-auto mb-9"
+              className="text-white/50 text-[13.5px] font-normal leading-relaxed max-w-md mx-auto mb-9"
             >
               Enter your R-Zone tracking number, AWB, or Bill of Lading reference to get live shipment status and full timeline.
             </motion.p>
@@ -584,12 +584,12 @@ export default function TrackPage() {
                 custom={0.4}
                 className="flex flex-wrap items-center justify-center gap-2 mt-4"
               >
-                <span className="text-white/40 text-[11px] font-medium">Try a sample:</span>
+                <span className="text-white/40 text-[13px] font-medium">Try a sample:</span>
                 {SAMPLE_IDS.map((id) => (
                   <button
                     key={id}
                     onClick={() => { setQuery(id); handleTrack(id); }}
-                    className="text-white/45 hover:text-white text-[11px] font-mono border border-white/15 hover:border-white/35 px-2.5 py-1 rounded transition-all duration-200"
+                    className="text-white/45 hover:text-white text-[13px] font-mono border border-white/15 hover:border-white/35 px-2.5 py-1 rounded transition-all duration-200"
                   >
                     {id}
                   </button>
@@ -618,7 +618,7 @@ export default function TrackPage() {
               <AlertCircle size={18} className="text-red-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-red-800 font-bold text-[13.5px] mb-1">No shipment found for <span className="font-mono">{error}</span></p>
-                <p className="text-red-600 text-[12.5px] font-light">
+                <p className="text-red-600 text-[13px] font-normal">
                   Please check your tracking number and try again. For help,{" "}
                   <Link href="/contact" className="underline hover:text-red-800 transition-colors">contact our team</Link>.
                 </p>
@@ -664,7 +664,7 @@ export default function TrackPage() {
             <div className="flex justify-center mb-4">
               <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" />
-                <span className="text-[#0818A8] text-[10px] font-semibold tracking-[0.22em] uppercase">Why Track with R-Zone</span>
+                <span className="text-[#0818A8] text-[13px] font-semibold tracking-[0.22em] uppercase">Why Track with R-Zone</span>
               </div>
             </div>
             <h2 className="text-gray-900 font-black text-[clamp(24px,4vw,44px)] tracking-[-0.02em] mb-3">
@@ -679,7 +679,7 @@ export default function TrackPage() {
                 />
               </span>
             </h2>
-            <p className="text-gray-500 text-[13px] font-light max-w-md mx-auto">
+            <p className="text-gray-500 text-[13px] font-normal max-w-md mx-auto">
               R-Zone's tracking platform gives you live status, milestone alerts, and complete documentation access — anytime, anywhere.
             </p>
           </motion.div>
@@ -705,7 +705,7 @@ export default function TrackPage() {
                     <Icon size={16} className="text-[#0818A8] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <h3 className="text-gray-900 font-black text-[13.5px] mb-1.5 tracking-[-0.01em]">{f.title}</h3>
-                  <p className="text-gray-500 text-[12px] font-light leading-relaxed">{f.desc}</p>
+                  <p className="text-gray-500 text-[13px] font-normal leading-relaxed">{f.desc}</p>
                 </motion.div>
               );
             })}
@@ -717,25 +717,25 @@ export default function TrackPage() {
       <section className="bg-[#0818A8] py-12 md:py-14">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-white/55 text-[10px] font-bold tracking-[0.22em] uppercase mb-1">Need Help?</p>
+            <p className="text-white/55 text-[13px] font-bold tracking-[0.22em] uppercase mb-1">Need Help?</p>
             <h3 className="text-white font-black text-[20px] md:text-[24px] tracking-[-0.01em]">
               Can't find your shipment?
             </h3>
-            <p className="text-white/55 text-[12.5px] font-light mt-1">
+            <p className="text-white/55 text-[13px] font-normal mt-1">
               Our operations team is available 24/7 to assist with tracking queries.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 flex-shrink-0">
             <a
               href="tel:+2340000000000"
-              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[12.5px] font-semibold px-5 py-2.5 rounded transition-all duration-200"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[13px] font-semibold px-5 py-2.5 rounded transition-all duration-200"
             >
               <Phone size={13} />
               +234 000 000 0000
             </a>
             <a
               href="mailto:tracking@r-zoneenterprises.com"
-              className="flex items-center gap-2 bg-white text-[#0818A8] hover:bg-gray-100 text-[12.5px] font-bold px-5 py-2.5 rounded transition-all duration-200"
+              className="flex items-center gap-2 bg-white text-[#0818A8] hover:bg-gray-100 text-[13px] font-bold px-5 py-2.5 rounded transition-all duration-200"
             >
               <Mail size={13} />
               Email Support

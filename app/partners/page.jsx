@@ -171,7 +171,7 @@ function TagPill({ label, dark = false }) {
     }`}>
       <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
         animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
-      <span className={`text-[10px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
+      <span className={`text-[13px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
     </div>
   );
 }
@@ -181,7 +181,7 @@ function SectionHeading({ eyebrow, line1, accent, dark = false, id }) {
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
     <div ref={ref}>
-      {eyebrow && <p className={`text-[10px] font-bold tracking-[0.32em] uppercase mb-3 ${dark ? "text-white/70" : "text-gray-500"}`}>{eyebrow}</p>}
+      {eyebrow && <p className={`text-[13px] font-bold tracking-[0.32em] uppercase mb-3 ${dark ? "text-white/70" : "text-gray-500"}`}>{eyebrow}</p>}
       <h2 id={id} className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${dark ? "text-white" : "text-gray-900"}`}>
         {line1}{" "}
         <span className="relative inline-block text-[#0818A8]">
@@ -208,7 +208,7 @@ function FAQ({ q, a }) {
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }} className="overflow-hidden">
-            <p className="text-gray-700 text-[13.5px] font-light leading-relaxed pb-5 pr-8">{a}</p>
+            <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed pb-5 pr-8">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -260,11 +260,11 @@ function ApplicationForm() {
   };
 
   const inputCls = (field) =>
-    `w-full border text-gray-900 text-[13.5px] font-light placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200 rounded-none
+    `w-full border text-gray-900 text-[13.5px] font-normal placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200 rounded-none
      focus:border-[#0818A8] focus:ring-1 focus:ring-[#0818A8]/20 bg-white
      ${errors[field] && touched[field] ? "border-red-400 bg-red-50/30" : "border-gray-300 hover:border-gray-400"}`;
 
-  const labelCls = "block text-[10.5px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
+  const labelCls = "block text-[13px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
 
   return (
     <div className="border border-gray-200 bg-white overflow-hidden">
@@ -280,14 +280,14 @@ function ApplicationForm() {
               <CheckCircle size={28} className="text-white relative z-10" aria-hidden="true" />
             </motion.div>
             <h3 className="font-black text-[24px] text-gray-900 tracking-[-0.015em] mb-3">Application Received!</h3>
-            <p className="text-gray-600 text-[14px] font-light leading-relaxed max-w-md mx-auto mb-8">
+            <p className="text-gray-600 text-[14px] font-normal leading-relaxed max-w-md mx-auto mb-8">
               Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. Our partnerships team will call you within 2 working days to discuss the right programme for you.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/services" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="View R-Zone services">
+              <Link href="/services" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="View R-Zone services">
                 Explore Services
               </Link>
-              <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[11.5px] font-bold uppercase px-6 py-3 transition-all duration-200" aria-label="Back to home">
+              <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold uppercase px-6 py-3 transition-all duration-200" aria-label="Back to home">
                 Back to Home
               </Link>
             </div>
@@ -296,7 +296,7 @@ function ApplicationForm() {
           <motion.div key="form" className="p-7 md:p-9">
             <div className="mb-7">
               <h3 className="font-black text-[20px] text-gray-900 tracking-[-0.015em] mb-1">Apply to Partner With Us</h3>
-              <p className="text-gray-600 text-[13.5px] font-light">Takes 3 minutes. We'll call you within 2 working days.</p>
+              <p className="text-gray-600 text-[13.5px] font-normal">Takes 3 minutes. We'll call you within 2 working days.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
@@ -308,11 +308,11 @@ function ApplicationForm() {
                     value={form.name} onChange={e => handleChange("name", e.target.value)} onBlur={() => onBlur("name")}
                     className={`${inputCls("name")} pl-9`} aria-required="true" aria-invalid={!!(errors.name && touched.name)} />
                 </div>
-                {errors.name && touched.name && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.name}</p>}
+                {errors.name && touched.name && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.name}</p>}
               </div>
 
               <div>
-                <label htmlFor="p-company" className={labelCls}>Company / Organisation <span className="text-gray-400 normal-case font-light tracking-normal">(optional)</span></label>
+                <label htmlFor="p-company" className={labelCls}>Company / Organisation <span className="text-gray-400 normal-case font-normal tracking-normal">(optional)</span></label>
                 <div className="relative">
                   <Building2 size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true" />
                   <input id="p-company" type="text" autoComplete="organization" placeholder="Company or trading name"
@@ -329,7 +329,7 @@ function ApplicationForm() {
                     value={form.email} onChange={e => handleChange("email", e.target.value)} onBlur={() => onBlur("email")}
                     className={`${inputCls("email")} pl-9`} aria-required="true" aria-invalid={!!(errors.email && touched.email)} />
                 </div>
-                {errors.email && touched.email && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.email}</p>}
+                {errors.email && touched.email && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.email}</p>}
               </div>
 
               <div>
@@ -340,7 +340,7 @@ function ApplicationForm() {
                     value={form.phone} onChange={e => handleChange("phone", e.target.value)} onBlur={() => onBlur("phone")}
                     className={`${inputCls("phone")} pl-9`} aria-required="true" aria-invalid={!!(errors.phone && touched.phone)} />
                 </div>
-                {errors.phone && touched.phone && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.phone}</p>}
+                {errors.phone && touched.phone && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.phone}</p>}
               </div>
             </div>
 
@@ -356,7 +356,7 @@ function ApplicationForm() {
                   {PARTNER_TYPES.map(t => <option key={t.id} value={t.id}>{t.title}</option>)}
                 </select>
               </div>
-              {errors.type && touched.type && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.type}</p>}
+              {errors.type && touched.type && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.type}</p>}
             </div>
 
             <div className="mb-7">
@@ -365,15 +365,15 @@ function ApplicationForm() {
                 placeholder="Describe your business, your customer base, and how you see the partnership working…"
                 value={form.message} onChange={e => handleChange("message", e.target.value)} onBlur={() => onBlur("message")}
                 className={`${inputCls("message")} resize-none`} aria-required="true" aria-invalid={!!(errors.message && touched.message)} />
-              {errors.message && touched.message && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.message}</p>}
+              {errors.message && touched.message && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.message}</p>}
             </div>
 
-            <p className="text-gray-500 text-[10.5px] font-light leading-relaxed mb-5">
+            <p className="text-gray-500 text-[13px] font-normal leading-relaxed mb-5">
               By submitting, you agree that R-Zone Enterprises may contact you about our partner programme. See our <Link href="/privacy" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Privacy Policy</Link>.
             </p>
 
             <button onClick={handleSubmit} disabled={status === "loading"}
-              className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[12px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/25 w-full sm:w-auto justify-center"
+              className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/25 w-full sm:w-auto justify-center"
               aria-label="Submit partner application" aria-busy={status === "loading"}>
               {status === "loading"
                 ? <><Loader2 size={13} className="animate-spin" aria-hidden="true" /> Submitting…</>
@@ -428,9 +428,9 @@ export default function PartnerPage() {
           <div ref={heroRef} className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 pt-[100px] pb-16 md:pb-20">
             <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10"
               initial={{ opacity: 0 }} animate={heroInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
-              <Link href="/" className="text-white/60 text-[11.5px] font-medium hover:text-white transition-colors">Home</Link>
+              <Link href="/" className="text-white/60 text-[13px] font-medium hover:text-white transition-colors">Home</Link>
               <ChevronRight size={11} className="text-white/30" aria-hidden="true" />
-              <span className="text-white/80 text-[11.5px] font-medium" aria-current="page">Partner With Us</span>
+              <span className="text-white/80 text-[13px] font-medium" aria-current="page">Partner With Us</span>
             </motion.nav>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -444,14 +444,14 @@ export default function PartnerPage() {
                       initial={{ width: 0 }} animate={heroInView ? { width: "100%" } : {}} transition={{ duration: 0.6, delay: 0.8 }} />
                   </span>
                 </h1>
-                <p className="text-white/70 text-[15px] font-light leading-relaxed max-w-xl mb-9">
+                <p className="text-white/70 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
                   R-Zone Enterprises is looking for agents, referrers, businesses, and community organisations who share our belief that the UK–Nigeria corridor deserves world-class logistics. If that's you, let's build something together.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="#apply" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="Apply to become a partner">
+                  <a href="#apply" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="Apply to become a partner">
                     Apply Now <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </a>
-                  <a href="#programmes" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[12px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="View partnership programmes">
+                  <a href="#programmes" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="View partnership programmes">
                     View Programmes
                   </a>
                 </div>
@@ -465,7 +465,7 @@ export default function PartnerPage() {
                       initial={{ opacity: 0, y: 12 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.45 + i * 0.08 }}>
                       <Icon size={16} className="text-[#1F51FF] mb-3" aria-hidden="true" />
                       <p className="text-white font-black text-[28px] leading-none tracking-[-0.025em]">{s.val}</p>
-                      <p className="text-white/60 text-[11px] font-semibold tracking-[0.08em] uppercase mt-1">{s.label}</p>
+                      <p className="text-white/60 text-[13px] font-semibold tracking-[0.08em] uppercase mt-1">{s.label}</p>
                     </motion.div>
                   );
                 })}
@@ -491,7 +491,7 @@ export default function PartnerPage() {
                   <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
                     <SectionHeading line1="Partnership" accent="Programmes." id="programmes-heading" />
                   </motion.div>
-                  <motion.p className="text-gray-600 text-[14px] font-light mt-4 max-w-xl mx-auto leading-relaxed"
+                  <motion.p className="text-gray-600 text-[14px] font-normal mt-4 max-w-xl mx-auto leading-relaxed"
                     initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
                     Whether you're a freight agent, a community influencer, an NGO, or a FTSE-listed importer — we have a programme structured for how you work.
                   </motion.p>
@@ -511,7 +511,7 @@ export default function PartnerPage() {
 
                     {p.featured && (
                       <div className="bg-[#0818A8] text-center py-1.5">
-                        <span className="text-white text-[9px] font-bold tracking-[0.25em] uppercase">Most Popular</span>
+                        <span className="text-white text-[13px] font-bold tracking-[0.25em] uppercase">Most Popular</span>
                       </div>
                     )}
 
@@ -522,21 +522,21 @@ export default function PartnerPage() {
                       <div className="w-11 h-11 flex items-center justify-center mb-5" style={{ backgroundColor: `${p.color}10` }} aria-hidden="true">
                         <Icon size={18} style={{ color: p.color }} />
                       </div>
-                      <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase mb-1" style={{ color: p.color }}>{p.tagline}</p>
+                      <p className="text-[13px] font-bold tracking-[0.22em] uppercase mb-1" style={{ color: p.color }}>{p.tagline}</p>
                       <h3 className="text-gray-900 font-black text-[19px] tracking-[-0.015em] mb-3">{p.title}</h3>
-                      <p className="text-gray-600 text-[13px] font-light leading-relaxed mb-6">{p.desc}</p>
+                      <p className="text-gray-600 text-[13px] font-normal leading-relaxed mb-6">{p.desc}</p>
 
                       <ul className="space-y-2 mb-7" role="list">
                         {p.benefits.map(b => (
                           <li key={b} className="flex items-start gap-2.5">
                             <CheckCircle size={12} style={{ color: p.color }} className="flex-shrink-0 mt-0.5" aria-hidden="true" />
-                            <span className="text-gray-700 text-[12.5px] font-light">{b}</span>
+                            <span className="text-gray-700 text-[13px] font-normal">{b}</span>
                           </li>
                         ))}
                       </ul>
 
                       <a href="#apply"
-                        className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.1em] uppercase transition-colors duration-200"
+                        className="inline-flex items-center gap-2 text-[13px] font-black tracking-[0.1em] uppercase transition-colors duration-200"
                         style={{ color: p.color }}
                         aria-label={`Apply for ${p.title} programme`}>
                         Apply for This Programme <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
@@ -593,7 +593,7 @@ export default function PartnerPage() {
                       <Icon size={16} className="text-[#1F51FF]" />
                     </div>
                     <h3 className="text-white font-black text-[16px] tracking-[-0.01em] mb-3">{item.title}</h3>
-                    <p className="text-white/70 text-[13px] font-light leading-relaxed">{item.body}</p>
+                    <p className="text-white/70 text-[13px] font-normal leading-relaxed">{item.body}</p>
                   </motion.div>
                 );
               })}
@@ -639,7 +639,7 @@ export default function PartnerPage() {
                       </div>
                     </div>
                     <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-3">{step.title}</h3>
-                    <p className="text-gray-600 text-[13px] font-light leading-relaxed">{step.body}</p>
+                    <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{step.body}</p>
                   </motion.div>
                 );
               })}
@@ -664,7 +664,7 @@ export default function PartnerPage() {
                     <motion.div ref={ref} initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
                       <TagPill label="Common Questions" />
                       <SectionHeading line1="Partner" accent="FAQs." id="apply-heading" />
-                      <p className="text-gray-600 text-[14px] font-light mt-4 mb-8 leading-relaxed">
+                      <p className="text-gray-600 text-[14px] font-normal mt-4 mb-8 leading-relaxed">
                         Still have questions? Call us on{" "}
                         <a href="tel:+448007720864" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">+44 800 772 0864</a>{" "}
                         or email <a href="mailto:partners@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">partners@r-zoneenterprises.com</a>.
@@ -675,8 +675,8 @@ export default function PartnerPage() {
                       </div>
 
                       <div className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-5">
-                        <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Direct Contact</p>
-                        <p className="text-gray-700 text-[13.5px] font-light leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon–Fri 9am–6pm.</p>
+                        <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Direct Contact</p>
+                        <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon–Fri 9am–6pm.</p>
                         <div className="space-y-2.5">
                           <a href="tel:+448007720864" className="flex items-center gap-3 text-gray-800 hover:text-[#0818A8] font-semibold text-[13px] transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
                             <Phone size={13} className="text-[#0818A8]" aria-hidden="true" /> +44 800 772 0864

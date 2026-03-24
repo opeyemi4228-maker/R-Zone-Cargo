@@ -74,6 +74,7 @@ const COMPANY = [
   { label: "Industries Served", href: "/industries" },
   { label: "News & Insights",   href: "/news" },
   { label: "Careers",           href: "/careers" },
+  {label: "Blog", href:"/blog" },
   { label: "Contact Us",        href: "/contact" },
 ];
 
@@ -158,7 +159,7 @@ const staggerContainer = {
 function ColHeader({ children }) {
   return (
     <div className="mb-5">
-      <h3 className="text-white font-black text-[11px] tracking-[0.22em] uppercase mb-2.5">
+      <h3 className="text-white font-black text-[13px] tracking-[0.22em] uppercase mb-2.5">
         {children}
       </h3>
       <motion.div
@@ -185,7 +186,7 @@ function FooterLink({ href, children, icon: Icon, external = false }) {
     <li role="listitem">
       <Tag
         {...extraProps}
-        className="group flex items-center gap-2 text-white/80 hover:text-white text-[12.5px] font-normal tracking-[0.02em] py-[3px] transition-all duration-300"
+        className="group flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-normal tracking-[0.02em] py-[3px] transition-all duration-300"
         aria-label={isExternal ? `${children} (opens in new tab)` : undefined}
       >
         {Icon && (
@@ -232,10 +233,10 @@ function NewsletterForm() {
 
   return (
     <div>
-      <p className="text-white font-bold text-[11px] tracking-[0.18em] uppercase mb-3">
+      <p className="text-white font-bold text-[13px] tracking-[0.18em] uppercase mb-3">
         Stay Updated
       </p>
-      <p className="text-white/80 text-[11.5px] font-light leading-relaxed mb-4">
+      <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-4">
         Shipping updates, pricing alerts &amp; logistics insights — delivered weekly.
       </p>
 
@@ -249,7 +250,7 @@ function NewsletterForm() {
             exit={{ opacity: 0 }}
           >
             <CheckCircle size={14} className="text-green-400 flex-shrink-0" />
-            <span className="text-green-400 text-[12px] font-medium">You&apos;re subscribed!</span>
+            <span className="text-green-400 text-[13px] font-medium">You&apos;re subscribed!</span>
           </motion.div>
         ) : (
           <motion.form
@@ -274,7 +275,7 @@ function NewsletterForm() {
                   aria-invalid={state === "error"}
                   className={`
                     w-full bg-white/[0.05] border-y border-l text-white
-                    placeholder-white/60 text-[11.5px] px-3.5 py-2.5 outline-none
+                    placeholder-white/60 text-[13px] px-3.5 py-2.5 outline-none
                     focus:bg-white/[0.08] transition-all duration-200 min-w-0
                     rounded-l-sm
                     ${state === "error"
@@ -313,7 +314,7 @@ function NewsletterForm() {
 
             {state === "error" && (
               <motion.p
-                className="text-red-400 text-[10.5px] mt-1.5 font-medium"
+                className="text-red-400 text-[13px] mt-1.5 font-medium"
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
                 role="alert"
@@ -323,7 +324,7 @@ function NewsletterForm() {
               </motion.p>
             )}
 
-            <p className="text-white/80 text-[10px] mt-2 tracking-wide font-light">
+            <p className="text-white/80 text-[13px] mt-2 tracking-wide font-normal">
               No spam. Unsubscribe anytime.
             </p>
           </motion.form>
@@ -437,7 +438,7 @@ export default function Footer() {
                   animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
-                <span className="text-white/80 text-[10px] font-bold tracking-[0.22em] uppercase">
+                <span className="text-white/80 text-[13px] font-bold tracking-[0.22em] uppercase">
                   Ready to Ship?
                 </span>
               </div>
@@ -458,7 +459,7 @@ export default function Footer() {
                 .
               </h2>
 
-              <p className="text-white/80 text-[13px] font-light leading-relaxed mt-3 max-w-lg">
+              <p className="text-white/80 text-[13px] font-normal leading-relaxed mt-3 max-w-lg">
                 Door-to-door cargo from the UK to Nigeria — air freight, sea freight
                 &amp; weekly sailings. The highest-rated organically earned cargo and
                 logistics company between the UK, Nigeria, and across Africa.
@@ -470,7 +471,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-3 flex-shrink-0">
               <Link
                 href="/quote"
-                className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/25 hover:shadow-[#0437F2]/30"
+                className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/25 hover:shadow-[#0437F2]/30"
                 aria-label="Request a shipping quote from R-Zone Enterprises"
               >
                 Request a Quote
@@ -479,7 +480,7 @@ export default function Footer() {
 
               <Link
                 href="/track"
-                className="group inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[11.5px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
+                className="group inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
                 aria-label="Track your R-Zone shipment in real time"
               >
                 Track Shipment
@@ -490,7 +491,7 @@ export default function Footer() {
                 href="https://wa.me/447915647119"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 border border-[#25D366]/30 hover:border-[#25D366]/60 bg-[#25D366]/8 hover:bg-[#25D366]/15 text-[#25D366] text-[11.5px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 rounded-sm transition-all duration-200"
+                className="group inline-flex items-center gap-2.5 border border-[#25D366]/30 hover:border-[#25D366]/60 bg-[#25D366]/8 hover:bg-[#25D366]/15 text-[#25D366] text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 rounded-sm transition-all duration-200"
                 aria-label="Chat with R-Zone on WhatsApp (opens in new tab)"
               >
                 <WhatsAppIcon size={13} />
@@ -531,10 +532,10 @@ export default function Footer() {
                     <Icon size={13} className="text-[#1F51FF] group-hover:text-white transition-colors duration-200" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-[11px] tracking-[0.04em] leading-none mb-0.5">
+                    <p className="text-white font-bold text-[13px] tracking-[0.04em] leading-none mb-0.5">
                       {item.label}
                     </p>
-                    <p className="text-white/80 text-[10px] font-light leading-none">
+                    <p className="text-white/80 text-[13px] font-normal leading-none">
                       {item.sub}
                     </p>
                   </div>
@@ -571,16 +572,16 @@ export default function Footer() {
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className="font-black text-white text-[17px] tracking-[0.1em] uppercase">R-Zone</span>
-                <span className="font-light text-white text-[17px] tracking-[0.06em] uppercase">Cargo</span>
+                <span className="font-normal text-white text-[17px] tracking-[0.06em] uppercase">Cargo</span>
               </div>
             </Link>
 
             {/* Authority claim */}
-            <p className="text-white/80 text-[12px] font-semibold leading-relaxed mb-2 max-w-[280px] text-[#1F51FF]">
+            <p className="text-white/80 text-[13px] font-semibold leading-relaxed mb-2 max-w-[280px] text-[#1F51FF]">
               The highest-rated organically earned cargo &amp; logistics company — UK to Nigeria &amp; across Africa.
             </p>
 
-            <p className="text-white/80 text-[12.5px] font-light leading-[1.8] mb-6 max-w-[280px]">
+            <p className="text-white/80 text-[13px] font-normal leading-[1.8] mb-6 max-w-[280px]">
               Your trusted cargo specialist from the UK to Nigeria. Air freight,
               sea freight &amp; door-to-door delivery — with weekly sailings.
             </p>
@@ -594,7 +595,7 @@ export default function Footer() {
               {/* UK Phone */}
               <a
                 href="tel:+448007720864"
-                className="group flex items-center gap-3 text-white/80 hover:text-white text-[12px] font-normal transition-colors duration-200"
+                className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
                 aria-label="Call R-Zone UK: +44 800 772 0864"
                 itemProp="telephone"
               >
@@ -605,7 +606,7 @@ export default function Footer() {
                   <Phone size={11} className="text-[#1F51FF]" />
                 </div>
                 <div>
-                  <span className="text-white/80 text-[9.5px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇬🇧 UK</span>
+                  <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇬🇧 UK</span>
                   <span>+44 (0) 800 772 0864</span>
                 </div>
               </a>
@@ -613,7 +614,7 @@ export default function Footer() {
               {/* Nigeria Phone */}
               <a
                 href="tel:+2349066806861"
-                className="group flex items-center gap-3 text-white/80 hover:text-white text-[12px] font-normal transition-colors duration-200"
+                className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
                 aria-label="Call R-Zone Nigeria: +234 906 680 6861"
               >
                 <div
@@ -623,7 +624,7 @@ export default function Footer() {
                   <Phone size={11} className="text-[#1F51FF]" />
                 </div>
                 <div>
-                  <span className="text-white/80 text-[9.5px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇳🇬 Nigeria</span>
+                  <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇳🇬 Nigeria</span>
                   <span>+234 906 680 6861</span>
                 </div>
               </a>
@@ -631,7 +632,7 @@ export default function Footer() {
               {/* Email */}
               <a
                 href="mailto:info@r-zoneenterprises.com"
-                className="group flex items-center gap-3 text-white/80 hover:text-white text-[12px] font-normal transition-colors duration-200"
+                className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
                 aria-label="Email R-Zone: info@r-zoneenterprises.com"
                 itemProp="email"
               >
@@ -651,7 +652,7 @@ export default function Footer() {
                   href={office.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-3 text-white/80 hover:text-white text-[12px] font-normal transition-colors duration-200"
+                  className="group flex items-start gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
                   aria-label={`${office.label} — ${office.address} (opens Google Maps)`}
                 >
                   <div
@@ -661,11 +662,11 @@ export default function Footer() {
                     <Navigation size={10} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <span className="text-white/80 text-[9.5px] font-bold tracking-[0.12em] uppercase block mb-0.5">
+                    <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">
                       {office.flag} {office.label}
                     </span>
                     <span className="leading-snug block">{office.address}</span>
-                    <span className="text-white/80 text-[10.5px] font-light block mt-0.5">{office.hours}</span>
+                    <span className="text-white/80 text-[13px] font-normal block mt-0.5">{office.hours}</span>
                   </div>
                 </a>
               ))}
@@ -762,7 +763,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
             <div className="flex items-center gap-2.5">
               <Clock size={12} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
-              <span className="text-white font-bold text-[10.5px] tracking-[0.14em] uppercase">
+              <span className="text-white font-bold text-[13px] tracking-[0.14em] uppercase">
                 Operating Hours
               </span>
             </div>
@@ -772,10 +773,10 @@ export default function Footer() {
               { label: "Support Line",   hours: "24/7 via WhatsApp & Email" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
-                <span className="text-white/80 text-[10px] font-bold tracking-[0.1em] uppercase">
+                <span className="text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase">
                   {item.label}:
                 </span>
-                <span className="text-white/80 text-[11px] font-light">{item.hours}</span>
+                <span className="text-white/80 text-[13px] font-normal">{item.hours}</span>
               </div>
             ))}
           </div>
@@ -795,7 +796,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <p
-              className="text-white/80 text-[11px] font-normal tracking-[0.04em] text-center sm:text-left"
+              className="text-white/80 text-[13px] font-normal tracking-[0.04em] text-center sm:text-left"
               itemProp="copyrightYear"
             >
               © {year}{" "}
@@ -815,12 +816,12 @@ export default function Footer() {
                 <span key={l.href} className="flex items-center gap-4">
                   <Link
                     href={l.href}
-                    className="text-white/80 hover:text-white text-[11px] tracking-[0.03em] transition-colors duration-200"
+                    className="text-white/80 hover:text-white text-[13px] tracking-[0.03em] transition-colors duration-200"
                   >
                     {l.label}
                   </Link>
                   {i < LEGAL_LINKS.length - 1 && (
-                    <span className="text-white/80 text-[10px]" aria-hidden="true">·</span>
+                    <span className="text-white/80 text-[13px]" aria-hidden="true">·</span>
                   )}
                 </span>
               ))}
@@ -829,7 +830,7 @@ export default function Footer() {
             {/* Back to top */}
             <motion.button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="flex items-center gap-2 text-white/80 hover:text-white text-[10.5px] font-bold tracking-[0.1em] uppercase transition-colors duration-200 group flex-shrink-0"
+              className="flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.1em] uppercase transition-colors duration-200 group flex-shrink-0"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Scroll back to top of page"

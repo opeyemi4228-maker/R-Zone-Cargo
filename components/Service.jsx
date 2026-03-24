@@ -109,7 +109,7 @@ function GridCard({ service, index }) {
 
         {/* Text */}
         <div className="px-5 py-4">
-          <p className="text-[#0818A8] text-[9.5px] font-bold tracking-[0.2em] uppercase mb-1.5">
+          <p className="text-[#0818A8] text-[13px] font-bold tracking-[0.2em] uppercase mb-1.5">
             {service.tag}
           </p>
           <h3 className="text-gray-900 font-black text-[14.5px] leading-snug tracking-[-0.01em] mb-3 group-hover:text-[#0818A8] transition-colors duration-200">
@@ -117,7 +117,7 @@ function GridCard({ service, index }) {
           </h3>
           {/* Blue underline accent — matches Emirates red line */}
           <div className="w-8 h-[2px] bg-[#0818A8] mb-3 group-hover:w-14 transition-all duration-300 rounded-full" />
-          <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-gray-500 group-hover:text-[#0818A8] transition-colors duration-200 tracking-[0.02em]">
+          <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-500 group-hover:text-[#0818A8] transition-colors duration-200 tracking-[0.02em]">
             Learn more
             <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform duration-200" />
           </span>
@@ -161,7 +161,7 @@ export default function OurServicesSection() {
           <motion.div variants={fadeUp} custom={0} className="flex justify-center mb-4">
             <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" />
-              <span className="text-[#0818A8] text-[10px] font-semibold tracking-[0.22em] uppercase">
+              <span className="text-[#0818A8] text-[13px] font-semibold tracking-[0.22em] uppercase">
                 Our Services
               </span>
             </div>
@@ -189,7 +189,7 @@ export default function OurServicesSection() {
           <motion.p
             variants={fadeUp}
             custom={0.2}
-            className="text-gray-500 text-[13px] font-light tracking-[0.02em] leading-relaxed max-w-xl mx-auto"
+            className="text-gray-500 text-[13px] font-normal tracking-[0.02em] leading-relaxed max-w-xl mx-auto"
           >
             Explore R-Zone Cargo's full suite of logistics solutions and plan
             the most efficient route for your freight — wherever in the world it
@@ -237,7 +237,7 @@ export default function OurServicesSection() {
 
               {/* Content */}
               <div className="relative z-10 p-6 md:p-7">
-                <p className="text-white/60 text-[9.5px] font-bold tracking-[0.22em] uppercase mb-2">
+                <p className="text-white/60 text-[13px] font-bold tracking-[0.22em] uppercase mb-2">
                   {FEATURED.tag}
                 </p>
                 <h3 className="text-white font-black text-[clamp(22px,3vw,32px)] leading-tight tracking-[-0.02em] mb-2">
@@ -245,10 +245,10 @@ export default function OurServicesSection() {
                 </h3>
                 {/* Blue underline */}
                 <div className="w-8 h-[2px] bg-[#1F51FF] mb-3 group-hover:w-16 transition-all duration-300 rounded-full" />
-                <p className="text-white/65 text-[12.5px] font-light leading-relaxed mb-4 max-w-xs">
+                <p className="text-white/65 text-[13px] font-normal leading-relaxed mb-4 max-w-xs">
                   {FEATURED.desc}
                 </p>
-                <span className="inline-flex items-center gap-2 text-white text-[12px] font-semibold tracking-[0.04em] group-hover:text-[#1F51FF] transition-colors duration-200">
+                <span className="inline-flex items-center gap-2 text-white text-[13px] font-semibold tracking-[0.04em] group-hover:text-[#1F51FF] transition-colors duration-200">
                   Learn more
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
@@ -285,7 +285,7 @@ export default function OurServicesSection() {
         >
           <Link
             href="/services"
-            className="group inline-flex items-center gap-2.5 border border-[#0818A8] text-[#0818A8] hover:bg-[#0818A8] hover:text-white text-[12px] font-bold tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all duration-200"
+            className="group inline-flex items-center gap-2.5 border border-[#0818A8] text-[#0818A8] hover:bg-[#0818A8] hover:text-white text-[13px] font-bold tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all duration-200"
           >
             View All Services
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />

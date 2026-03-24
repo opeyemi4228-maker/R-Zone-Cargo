@@ -226,7 +226,7 @@ function TagPill({ label, dark = false }) {
     }`}>
       <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
         animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
-      <span className={`text-[10px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
+      <span className={`text-[13px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
     </div>
   );
 }
@@ -263,7 +263,7 @@ function JobCard({ role, onApply }) {
       {role.urgent && (
         <div className="bg-[#0818A8] px-5 py-1.5 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" aria-hidden="true" />
-          <span className="text-white text-[9px] font-bold tracking-[0.25em] uppercase">Urgently Hiring</span>
+          <span className="text-white text-[13px] font-bold tracking-[0.25em] uppercase">Urgently Hiring</span>
         </div>
       )}
       <div className={`h-[2px] ${!role.urgent ? "bg-gradient-to-r from-gray-100 to-gray-100 group-hover:from-[#0818A8] group-hover:to-[#1F51FF]" : "bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"}`} aria-hidden="true" />
@@ -278,33 +278,33 @@ function JobCard({ role, onApply }) {
             <div>
               <h3 className="text-gray-900 font-black text-[17px] tracking-[-0.015em] mb-1" itemProp="title">{role.title}</h3>
               <div className="flex flex-wrap items-center gap-3">
-                <span className="flex items-center gap-1.5 text-[11.5px] text-gray-600 font-light">
+                <span className="flex items-center gap-1.5 text-[13px] text-gray-600 font-normal">
                   <Building2 size={11} className="text-gray-400" aria-hidden="true" />{role.department}
                 </span>
-                <span className="text-gray-300 text-[10px]">|</span>
-                <span className="flex items-center gap-1.5 text-[11.5px] text-gray-600 font-light" itemProp="jobLocation">
+                <span className="text-gray-300 text-[13px]">|</span>
+                <span className="flex items-center gap-1.5 text-[13px] text-gray-600 font-normal" itemProp="jobLocation">
                   <MapPin size={11} className="text-gray-400" aria-hidden="true" />{role.location}
                 </span>
-                <span className="text-gray-300 text-[10px]">|</span>
-                <span className="flex items-center gap-1.5 text-[11.5px] text-gray-600 font-light">
+                <span className="text-gray-300 text-[13px]">|</span>
+                <span className="flex items-center gap-1.5 text-[13px] text-gray-600 font-normal">
                   <Clock size={11} className="text-gray-400" aria-hidden="true" />{role.type}
                 </span>
               </div>
             </div>
           </div>
           <div className="text-right flex-shrink-0">
-            <p className="text-[9px] font-bold tracking-[0.18em] uppercase text-gray-400 mb-0.5">Salary</p>
-            <p className="text-[#0818A8] font-bold text-[12.5px] leading-tight" itemProp="baseSalary">{role.salary}</p>
+            <p className="text-[13px] font-bold tracking-[0.18em] uppercase text-gray-400 mb-0.5">Salary</p>
+            <p className="text-[#0818A8] font-bold text-[13px] leading-tight" itemProp="baseSalary">{role.salary}</p>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 text-[13.5px] font-light leading-relaxed mb-5" itemProp="description">{role.desc}</p>
+        <p className="text-gray-600 text-[13.5px] font-normal leading-relaxed mb-5" itemProp="description">{role.desc}</p>
 
         {/* Expand/collapse */}
         <button
           onClick={() => setExpanded(o => !o)}
-          className="flex items-center gap-2 text-[12px] font-semibold text-[#0818A8] hover:text-[#0437F2] transition-colors mb-5"
+          className="flex items-center gap-2 text-[13px] font-semibold text-[#0818A8] hover:text-[#0437F2] transition-colors mb-5"
           aria-expanded={expanded}>
           {expanded ? "Show Less" : "View Full Job Description"}
           <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.2 }} aria-hidden="true">
@@ -318,23 +318,23 @@ function JobCard({ role, onApply }) {
               exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-gray-100 mb-5">
                 <div>
-                  <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Responsibilities</p>
+                  <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Responsibilities</p>
                   <ul className="space-y-2">
                     {role.responsibilities.map((r, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <CheckCircle size={11} className="text-[#0818A8] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span className="text-gray-700 text-[12.5px] font-light leading-snug">{r}</span>
+                        <span className="text-gray-700 text-[13px] font-normal leading-snug">{r}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Requirements</p>
+                  <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Requirements</p>
                   <ul className="space-y-2">
                     {role.requirements.map((r, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
-                        <span className="text-gray-700 text-[12.5px] font-light leading-snug">{r}</span>
+                        <span className="text-gray-700 text-[13px] font-normal leading-snug">{r}</span>
                       </li>
                     ))}
                   </ul>
@@ -346,12 +346,12 @@ function JobCard({ role, onApply }) {
 
         {/* Level badge + Apply */}
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 bg-[#0818A8]/8 text-[#0818A8]">
+          <span className="text-[13px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 bg-[#0818A8]/8 text-[#0818A8]">
             {role.level}
           </span>
           <button
             onClick={() => onApply(role)}
-            className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-2.5 transition-all duration-200 shadow-md shadow-[#0818A8]/20"
+            className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-2.5 transition-all duration-200 shadow-md shadow-[#0818A8]/20"
             aria-label={`Apply for ${role.title}`}>
             Apply Now <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
           </button>
@@ -404,11 +404,11 @@ function ApplyModal({ role, onClose }) {
   };
 
   const inputCls = (field) =>
-    `w-full border text-gray-900 text-[13.5px] font-light placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200
+    `w-full border text-gray-900 text-[13.5px] font-normal placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200
      focus:border-[#0818A8] focus:ring-1 focus:ring-[#0818A8]/20 bg-white
      ${errors[field] && touched[field] ? "border-red-400 bg-red-50/30" : "border-gray-300 hover:border-gray-400"}`;
 
-  const labelCls = "block text-[10.5px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
+  const labelCls = "block text-[13px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
 
   return (
     <motion.div className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -427,10 +427,10 @@ function ApplyModal({ role, onClose }) {
               <CheckCircle size={24} className="text-white" aria-hidden="true" />
             </motion.div>
             <h3 className="font-black text-[22px] text-gray-900 tracking-[-0.015em] mb-3">Application Submitted!</h3>
-            <p className="text-gray-600 text-[14px] font-light leading-relaxed mb-6">
+            <p className="text-gray-600 text-[14px] font-normal leading-relaxed mb-6">
               Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. We've received your application for <strong className="font-semibold text-gray-800">{role?.title}</strong> and will be in touch within 3–5 working days.
             </p>
-            <button onClick={onClose} className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200" aria-label="Close modal">
+            <button onClick={onClose} className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200" aria-label="Close modal">
               Close
             </button>
           </div>
@@ -439,10 +439,10 @@ function ApplyModal({ role, onClose }) {
             <div className="flex items-start justify-between mb-6">
               <div>
                 <h3 id="modal-title" className="font-black text-[18px] text-gray-900 tracking-[-0.015em]">Apply: {role?.title}</h3>
-                <p className="text-gray-600 text-[13px] font-light mt-0.5">{role?.location} · {role?.type}</p>
+                <p className="text-gray-600 text-[13px] font-normal mt-0.5">{role?.location} · {role?.type}</p>
               </div>
               <button onClick={onClose} className="p-1.5 hover:bg-gray-100 transition-colors" aria-label="Close application form">
-                <span className="text-gray-400 text-[18px] leading-none font-light">&times;</span>
+                <span className="text-gray-400 text-[18px] leading-none font-normal">&times;</span>
               </button>
             </div>
 
@@ -455,7 +455,7 @@ function ApplyModal({ role, onClose }) {
                     value={form.name} onChange={e => handleChange("name", e.target.value)} onBlur={() => onBlur("name")}
                     className={`${inputCls("name")} pl-9`} aria-required="true" />
                 </div>
-                {errors.name && touched.name && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.name}</p>}
+                {errors.name && touched.name && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.name}</p>}
               </div>
 
               <div>
@@ -466,7 +466,7 @@ function ApplyModal({ role, onClose }) {
                     value={form.phone} onChange={e => handleChange("phone", e.target.value)} onBlur={() => onBlur("phone")}
                     className={`${inputCls("phone")} pl-9`} aria-required="true" />
                 </div>
-                {errors.phone && touched.phone && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.phone}</p>}
+                {errors.phone && touched.phone && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.phone}</p>}
               </div>
             </div>
 
@@ -478,11 +478,11 @@ function ApplyModal({ role, onClose }) {
                   value={form.email} onChange={e => handleChange("email", e.target.value)} onBlur={() => onBlur("email")}
                   className={`${inputCls("email")} pl-9`} aria-required="true" />
               </div>
-              {errors.email && touched.email && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.email}</p>}
+              {errors.email && touched.email && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.email}</p>}
             </div>
 
             <div className="mb-5">
-              <label htmlFor="a-cv" className={labelCls}>CV Link <span className="text-gray-400 normal-case font-light tracking-normal">(Google Drive, Dropbox, or LinkedIn URL)</span></label>
+              <label htmlFor="a-cv" className={labelCls}>CV Link <span className="text-gray-400 normal-case font-normal tracking-normal">(Google Drive, Dropbox, or LinkedIn URL)</span></label>
               <div className="relative">
                 <Upload size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true" />
                 <input id="a-cv" type="url" placeholder="https://drive.google.com/..."
@@ -492,19 +492,19 @@ function ApplyModal({ role, onClose }) {
             </div>
 
             <div className="mb-6">
-              <label htmlFor="a-cover" className={labelCls}>Covering Note * <span className="text-gray-400 normal-case font-light tracking-normal">(why you, why R-Zone?)</span></label>
+              <label htmlFor="a-cover" className={labelCls}>Covering Note * <span className="text-gray-400 normal-case font-normal tracking-normal">(why you, why R-Zone?)</span></label>
               <textarea id="a-cover" rows={4} placeholder="Tell us what excites you about this role and what you'd bring to R-Zone…"
                 value={form.cover} onChange={e => handleChange("cover", e.target.value)} onBlur={() => onBlur("cover")}
                 className={`${inputCls("cover")} resize-none`} aria-required="true" />
-              {errors.cover && touched.cover && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[11px] mt-1.5"><AlertCircle size={10} />{errors.cover}</p>}
+              {errors.cover && touched.cover && <p role="alert" className="flex items-center gap-1.5 text-red-500 text-[13px] mt-1.5"><AlertCircle size={10} />{errors.cover}</p>}
             </div>
 
-            <p className="text-gray-500 text-[10.5px] font-light leading-relaxed mb-5">
+            <p className="text-gray-500 text-[13px] font-normal leading-relaxed mb-5">
               Your data will be used only for recruitment purposes. See our <Link href="/privacy" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Privacy Policy</Link>.
             </p>
 
             <button onClick={handleSubmit} disabled={status === "loading"}
-              className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[12px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25 w-full justify-center"
+              className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25 w-full justify-center"
               aria-label="Submit application" aria-busy={status === "loading"}>
               {status === "loading"
                 ? <><Loader2 size={13} className="animate-spin" aria-hidden="true" /> Submitting…</>
@@ -568,9 +568,9 @@ export default function CareersPage() {
           <div ref={heroRef} className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 pt-[100px] pb-16 md:pb-20">
             <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10"
               initial={{ opacity: 0 }} animate={heroInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
-              <Link href="/" className="text-white/60 text-[11.5px] font-medium hover:text-white transition-colors">Home</Link>
+              <Link href="/" className="text-white/60 text-[13px] font-medium hover:text-white transition-colors">Home</Link>
               <ChevronRight size={11} className="text-white/30" aria-hidden="true" />
-              <span className="text-white/80 text-[11.5px] font-medium" aria-current="page">Careers</span>
+              <span className="text-white/80 text-[13px] font-medium" aria-current="page">Careers</span>
             </motion.nav>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -585,14 +585,14 @@ export default function CareersPage() {
                         initial={{ width: 0 }} animate={heroInView ? { width: "100%" } : {}} transition={{ duration: 0.6, delay: 0.8 }} />
                     </span>
                   </h1>
-                  <p className="text-white/70 text-[15px] font-light leading-relaxed max-w-xl mb-9">
+                  <p className="text-white/70 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
                     We're a small team doing big things keeping families connected, businesses supplied, and the UK – Nigeria corridor moving. If you want your work to have a real-world impact from day one, you're in the right place.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <a href="#open-roles" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="View open roles">
+                    <a href="#open-roles" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="View open roles">
                       View Open Roles <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </a>
-                    <a href="#culture" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[12px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="Learn about our culture">
+                    <a href="#culture" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="Learn about our culture">
                       Our Culture
                     </a>
                   </div>
@@ -614,8 +614,8 @@ export default function CareersPage() {
                         initial={{ opacity: 0, y: 12 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.45 + i * 0.08 }}>
                         <Icon size={15} className="text-[#1F51FF] mb-3" aria-hidden="true" />
                         <p className="text-white font-black text-[22px] leading-none tracking-[-0.02em]">{s.val}</p>
-                        <p className="text-white/70 text-[11px] font-semibold tracking-[0.06em] uppercase mt-0.5">{s.label}</p>
-                        <p className="text-white/45 text-[10.5px] font-light mt-0.5">{s.sub}</p>
+                        <p className="text-white/70 text-[13px] font-semibold tracking-[0.06em] uppercase mt-0.5">{s.label}</p>
+                        <p className="text-white/45 text-[13px] font-normal mt-0.5">{s.sub}</p>
                       </motion.div>
                     );
                   })}
@@ -645,7 +645,7 @@ export default function CareersPage() {
                         <SectionHeading line1="Open" accent="Roles." id="open-roles-heading" />
                       </motion.div>
                     </div>
-                    <motion.p className="text-gray-600 text-[13.5px] font-light max-w-sm"
+                    <motion.p className="text-gray-600 text-[13.5px] font-normal max-w-sm"
                       initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
                       Don't see your perfect role? Email <a href="mailto:careers@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">careers@r-zoneenterprises.com</a> — we always keep speculative applications on file.
                     </motion.p>
@@ -655,13 +655,13 @@ export default function CareersPage() {
                   <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by department">
                     {DEPARTMENTS.map(dept => (
                       <button key={dept} onClick={() => setFilter(dept)}
-                        className={`px-4 py-2 text-[12px] font-semibold tracking-[0.04em] border transition-all duration-150 ${
+                        className={`px-4 py-2 text-[13px] font-semibold tracking-[0.04em] border transition-all duration-150 ${
                           filter === dept ? "border-[#0818A8] bg-[#0818A8] text-white" : "border-gray-200 text-gray-600 hover:border-[#0818A8]/40 hover:text-[#0818A8] bg-white"
                         }`}
                         aria-pressed={filter === dept}>
                         {dept}
-                        {dept !== "All" && <span className="ml-1.5 text-[10px] opacity-70">({OPEN_ROLES.filter(r => r.department === dept).length})</span>}
-                        {dept === "All" && <span className="ml-1.5 text-[10px] opacity-70">({OPEN_ROLES.length})</span>}
+                        {dept !== "All" && <span className="ml-1.5 text-[13px] opacity-70">({OPEN_ROLES.filter(r => r.department === dept).length})</span>}
+                        {dept === "All" && <span className="ml-1.5 text-[13px] opacity-70">({OPEN_ROLES.length})</span>}
                       </button>
                     ))}
                   </div>
@@ -703,7 +703,7 @@ export default function CareersPage() {
                             initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
                         </span>
                       </h2>
-                      <div className="space-y-4 text-white/70 text-[14px] font-light leading-relaxed">
+                      <div className="space-y-4 text-white/70 text-[14px] font-normal leading-relaxed">
                         <p>We're not a corporate. We're a tight, driven team of logistics professionals, customer experience specialists, and tech-minded operators who care about doing things properly.</p>
                         <p>R-Zone was built to serve the UK–Nigerian community. Many of our team are part of that community, which means the work is personal. When a shipment arrives, a family gets their Christmas gifts, or a business gets its stock — and we all feel that.</p>
                         <p>We believe in giving people real responsibility early. If you're good at your job and you want to grow, R-Zone is the kind of place where your career can accelerate in ways it never would at a larger company.</p>
@@ -727,7 +727,7 @@ export default function CareersPage() {
                         <Icon size={15} className="text-[#1F51FF]" />
                       </div>
                       <h3 className="text-white font-black text-[15px] tracking-[-0.01em] mb-2">{v.title}</h3>
-                      <p className="text-white/65 text-[12.5px] font-light leading-relaxed">{v.body}</p>
+                      <p className="text-white/65 text-[13px] font-normal leading-relaxed">{v.body}</p>
                     </motion.div>
                   );
                 })}
@@ -771,7 +771,7 @@ export default function CareersPage() {
                       <Icon size={16} className="text-[#0818A8]" />
                     </div>
                     <h3 className="text-gray-900 font-bold text-[14px] mb-2">{b.title}</h3>
-                    <p className="text-gray-600 text-[12.5px] font-light leading-relaxed">{b.body}</p>
+                    <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{b.body}</p>
                   </motion.div>
                 );
               })}
@@ -796,7 +796,7 @@ export default function CareersPage() {
                   <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
                     <SectionHeading line1="Simple &" accent="Fast." id="process-heading" />
                   </motion.div>
-                  <motion.p className="text-gray-600 text-[14px] font-light mt-4 max-w-xl mx-auto"
+                  <motion.p className="text-gray-600 text-[14px] font-normal mt-4 max-w-xl mx-auto"
                     initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
                     We respect your time. Our hiring process is designed to be quick, fair, and human — no endless assessments, no months-long waits.
                   </motion.p>
@@ -818,11 +818,11 @@ export default function CareersPage() {
                       <span className="font-black text-[48px] text-[#0818A8]/8 leading-none tracking-[-0.02em]" aria-hidden="true">{step.num}</span>
                       <div className="flex items-center gap-1.5 border border-[#0818A8]/15 bg-[#0818A8]/5 px-2.5 py-1">
                         <Clock size={9} className="text-[#0818A8]" aria-hidden="true" />
-                        <span className="text-[10px] font-bold text-[#0818A8] tracking-[0.1em]">{step.time}</span>
+                        <span className="text-[13px] font-bold text-[#0818A8] tracking-[0.1em]">{step.time}</span>
                       </div>
                     </div>
                     <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-3">{step.title}</h3>
-                    <p className="text-gray-600 text-[13px] font-light leading-relaxed">{step.body}</p>
+                    <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{step.body}</p>
                   </motion.div>
                 );
               })}
@@ -848,22 +848,22 @@ export default function CareersPage() {
                   <h2 className="font-black text-[clamp(28px,5.5vw,58px)] text-white leading-[0.9] tracking-[-0.03em] uppercase mb-5">
                     Don't See Your Role?<br /><span className="text-[#1F51FF]">Apply Anyway.</span>
                   </h2>
-                  <p className="text-white/70 text-[14px] font-light leading-relaxed max-w-xl mx-auto mb-10">
+                  <p className="text-white/70 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
                     We keep all speculative applications on file and contact strong candidates when the right opportunity opens. Email your CV and a covering note to our team.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4 mb-10">
                     <a href="mailto:careers@r-zoneenterprises.com"
-                      className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
+                      className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
                       aria-label="Email careers team">
                       <Mail size={13} aria-hidden="true" /> careers@r-zoneenterprises.com
                     </a>
-                    <a href="#open-roles" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[12px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200" aria-label="View all open roles">
+                    <a href="#open-roles" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200" aria-label="View all open roles">
                       View Open Roles
                     </a>
                   </div>
                   <div className="flex flex-wrap justify-center gap-6">
                     {["No closing dates", "Personal applications read by humans", "Response within 5 working days", "Inclusive employer"].map(t => (
-                      <span key={t} className="flex items-center gap-2 text-white/60 text-[11.5px] font-light">
+                      <span key={t} className="flex items-center gap-2 text-white/60 text-[13px] font-normal">
                         <Check size={11} className="text-[#1F51FF]" aria-hidden="true" />{t}
                       </span>
                     ))}

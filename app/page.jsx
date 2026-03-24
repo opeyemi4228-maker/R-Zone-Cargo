@@ -62,15 +62,15 @@ function PrefRow({ label, description, checked, onChange, disabled = false }) {
   return (
     <div className="flex items-start justify-between gap-4 py-3 border-b border-gray-100 last:border-0">
       <div className="flex-1 min-w-0">
-        <p className="text-gray-800 text-[12.5px] font-semibold leading-tight mb-0.5">
+        <p className="text-gray-800 text-[13px] font-semibold leading-tight mb-0.5">
           {label}
           {disabled && (
-            <span className="ml-2 text-[9.5px] font-black tracking-[0.1em] uppercase text-[#0818A8] bg-[#0818A8]/8 px-1.5 py-0.5">
+            <span className="ml-2 text-[13px] font-black tracking-[0.1em] uppercase text-[#0818A8] bg-[#0818A8]/8 px-1.5 py-0.5">
               Always On
             </span>
           )}
         </p>
-        <p className="text-gray-800 text-[11px] font-light leading-snug">
+        <p className="text-gray-800 text-[13px] font-normal leading-snug">
           {description}
         </p>
       </div>
@@ -219,7 +219,7 @@ function CookieBanner() {
 
                   <p
                     id="cookie-description"
-                    className="text-gray-800 text-[13px] font-light leading-relaxed mb-3"
+                    className="text-gray-800 text-[13px] font-normal leading-relaxed mb-3"
                   >
                     R-Zone Cargo uses cookies to personalise content and ads, to provide
                     social media features, and to analyse our traffic. We also share
@@ -229,7 +229,7 @@ function CookieBanner() {
                     from your use of their services.
                   </p>
 
-                  <p className="text-gray-800 text-[13px] font-light leading-relaxed">
+                  <p className="text-gray-800 text-[13px] font-normal leading-relaxed">
                     By accepting, you agree to the use of these cookies. To learn more,
                     view our{" "}
                     <Link
@@ -248,7 +248,7 @@ function CookieBanner() {
                   </p>
 
                   {/* Re-prompt notice */}
-                  <p className="text-gray-800 text-[10.5px] font-light mt-2 tracking-wide">
+                  <p className="text-gray-800 text-[13px] font-normal mt-2 tracking-wide">
                     ↺&nbsp; Your preferences are reviewed every {RESHOW_HOURS} hours to ensure consent remains current.
                   </p>
                 </div>
@@ -281,7 +281,7 @@ function CookieBanner() {
                     onClick={() => setExpanded((p) => !p)}
                     aria-expanded={expanded}
                     aria-controls="cookie-prefs-panel"
-                    className="flex items-center justify-center gap-1.5 text-[#0818A8] hover:text-[#0437F2] text-[11px] font-bold tracking-[0.06em] uppercase transition-colors duration-150 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
+                    className="flex items-center justify-center gap-1.5 text-[#0818A8] hover:text-[#0437F2] text-[13px] font-bold tracking-[0.06em] uppercase transition-colors duration-150 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
                   >
                     <Settings size={11} aria-hidden="true" />
                     Manage
@@ -306,7 +306,7 @@ function CookieBanner() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 md:px-8 pb-6 pt-2 border-t border-gray-100">
-                      <p className="text-gray-800 text-[10px] font-black tracking-[0.25em] uppercase mb-3 pt-4">
+                      <p className="text-gray-800 text-[13px] font-black tracking-[0.25em] uppercase mb-3 pt-4">
                         Cookie Categories
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
@@ -341,13 +341,13 @@ function CookieBanner() {
                         <motion.button
                           onClick={handleSaveCustom}
                           whileTap={{ scale: 0.98 }}
-                          className="flex items-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-bold tracking-[0.06em] uppercase px-5 py-2 rounded-sm transition-colors duration-150 shadow-sm shadow-[#0818A8]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
+                          className="flex items-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-bold tracking-[0.06em] uppercase px-5 py-2 rounded-sm transition-colors duration-150 shadow-sm shadow-[#0818A8]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
                           aria-label="Save selected cookie preferences"
                         >
                           <Check size={11} strokeWidth={2.5} aria-hidden="true" />
                           Save Preferences
                         </motion.button>
-                        <span className="text-gray-800 text-[11px] font-light">
+                        <span className="text-gray-800 text-[13px] font-normal">
                           Only enabled categories will be active.
                         </span>
                       </div>

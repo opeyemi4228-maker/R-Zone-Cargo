@@ -90,14 +90,14 @@ const PRINCIPLES = [
   { label: "Integrity & confidentiality",         desc: "Appropriate technical and organisational security" },
 ];
 
-function P({ children }) { return <p className="text-gray-700 text-[14px] font-light leading-relaxed mb-4">{children}</p>; }
-function H3({ children }) { return <h3 className="text-gray-900 font-bold text-[12px] tracking-[0.1em] uppercase mb-3 mt-6 first:mt-0">{children}</h3>; }
+function P({ children }) { return <p className="text-gray-700 text-[14px] font-normal leading-relaxed mb-4">{children}</p>; }
+function H3({ children }) { return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.1em] uppercase mb-3 mt-6 first:mt-0">{children}</h3>; }
 function UL({ children }) { return <ul className="space-y-2.5 mb-5">{children}</ul>; }
 function LI({ children }) {
   return (
     <li className="flex items-start gap-3">
       <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.48em]" aria-hidden="true" />
-      <span className="text-gray-700 text-[13.5px] font-light leading-relaxed">{children}</span>
+      <span className="text-gray-700 text-[13.5px] font-normal leading-relaxed">{children}</span>
     </li>
   );
 }
@@ -108,7 +108,7 @@ function Callout({ type = "blue", children }) {
     green: "border-l-[3px] border-emerald-600 bg-emerald-50 text-emerald-900",
     red:   "border-l-[3px] border-red-500 bg-red-50 text-red-900",
   };
-  return <div className={`px-5 py-4 my-6 text-[13px] font-light leading-relaxed ${s[type]}`}>{children}</div>;
+  return <div className={`px-5 py-4 my-6 text-[13px] font-normal leading-relaxed ${s[type]}`}>{children}</div>;
 }
 
 function Section({ id, num, title, children }) {
@@ -121,7 +121,7 @@ function Section({ id, num, title, children }) {
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}>
       <div className="flex items-start gap-5 mb-7">
         <div className="w-10 h-10 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
-          <span className="text-white font-black text-[11px] tracking-[0.06em]">{num}</span>
+          <span className="text-white font-black text-[13px] tracking-[0.06em]">{num}</span>
         </div>
         <h2 id={`${id}-h`} className="font-black text-[clamp(18px,2.8vw,25px)] text-gray-900 leading-tight tracking-[-0.02em] pt-1.5">{title}</h2>
       </div>
@@ -167,10 +167,10 @@ export default function CompliancePage() {
       {/* Top bar */}
       <div className="bg-[#0818A8]">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
-          <p className="text-white/80 text-[11px] font-medium">R-Zone Enterprises — Legal &amp; Compliance</p>
+          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises — Legal &amp; Compliance</p>
           <div className="hidden sm:flex items-center gap-6">
-            <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[11px] font-medium transition-colors" aria-label="Call R-Zone"><Phone size={10} aria-hidden="true" /> +44 800 772 0864</a>
-            <a href="mailto:compliance@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[11px] font-medium transition-colors" aria-label="Email compliance"><Mail size={10} aria-hidden="true" /> compliance@r-zoneenterprises.com</a>
+            <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone"><Phone size={10} aria-hidden="true" /> +44 800 772 0864</a>
+            <a href="mailto:compliance@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Email compliance"><Mail size={10} aria-hidden="true" /> compliance@r-zoneenterprises.com</a>
           </div>
         </div>
       </div>
@@ -179,9 +179,9 @@ export default function CompliancePage() {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-16">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-8">
-            <Link href="/" className="text-gray-500 text-[11.5px] font-medium hover:text-gray-800 transition-colors">Home</Link>
+            <Link href="/" className="text-gray-500 text-[13px] font-medium hover:text-gray-800 transition-colors">Home</Link>
             <ChevronRight size={11} className="text-gray-300" aria-hidden="true" />
-            <span className="text-gray-800 text-[11.5px] font-medium" aria-current="page">Compliance</span>
+            <span className="text-gray-800 text-[13px] font-medium" aria-current="page">Compliance</span>
           </nav>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
@@ -194,7 +194,7 @@ export default function CompliancePage() {
               <h1 className="font-black text-[clamp(32px,6vw,64px)] text-gray-900 leading-[0.88] tracking-[-0.035em] uppercase mb-5">
                 Regulatory<br /><span className="text-[#0818A8]">Compliance.</span>
               </h1>
-              <p className="text-gray-600 text-[15px] font-light leading-relaxed max-w-lg">
+              <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
                 R-Zone Enterprises operates in a highly regulated industry spanning UK and Nigerian customs law, international aviation regulations, data protection legislation, and financial crime prevention. This page sets out our certifications, registrations, and compliance obligations.
               </p>
             </div>
@@ -207,8 +207,8 @@ export default function CompliancePage() {
               ].map(({ label, val, icon: Icon }) => (
                 <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
                   <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
-                  <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
-                  <p className="text-gray-800 font-semibold text-[12.5px] leading-snug">{val}</p>
+                  <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
+                  <p className="text-gray-800 font-semibold text-[13px] leading-snug">{val}</p>
                 </div>
               ))}
             </div>
@@ -216,7 +216,7 @@ export default function CompliancePage() {
 
           {/* Certification status strip */}
           <div className="mt-10 border border-gray-200 bg-gray-50 p-5">
-            <p className="text-[9.5px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Certification Status — All Current</p>
+            <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Certification Status — All Current</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {CERTIFICATIONS.map(cert => {
                 const Icon = cert.icon;
@@ -225,8 +225,8 @@ export default function CompliancePage() {
                     <div className="w-9 h-9 bg-[#0818A8]/8 flex items-center justify-center" aria-hidden="true">
                       <Icon size={15} className="text-[#0818A8]" />
                     </div>
-                    <p className="text-gray-800 font-semibold text-[11px] leading-tight">{cert.title}</p>
-                    <span className="text-[9px] font-bold tracking-[0.12em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5">✓ {cert.status}</span>
+                    <p className="text-gray-800 font-semibold text-[13px] leading-tight">{cert.title}</p>
+                    <span className="text-[13px] font-bold tracking-[0.12em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5">✓ {cert.status}</span>
                   </div>
                 );
               })}
@@ -247,8 +247,8 @@ export default function CompliancePage() {
                   <div className="grid grid-cols-2 gap-0">
                     {TOC.map(item => (
                       <a key={item.id} href={`#${item.id}`} onClick={() => setTocMobile(false)}
-                        className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[12px] transition-colors odd:border-r even:border-r-0 ${activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-700 hover:bg-gray-50"}`}>
-                        <span className="text-[9px] font-black text-gray-400">{item.num}</span>
+                        className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 ${activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-700 hover:bg-gray-50"}`}>
+                        <span className="text-[13px] font-black text-gray-400">{item.num}</span>
                         <span className="leading-snug">{item.label}</span>
                       </a>
                     ))}
@@ -267,21 +267,21 @@ export default function CompliancePage() {
           {/* Sidebar */}
           <aside className="hidden lg:block lg:col-span-3 xl:col-span-2" aria-label="Table of contents">
             <div className="sticky top-[74px]">
-              <p className="text-[9px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
+              <p className="text-[13px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
               <nav aria-label="Section navigation">
                 {TOC.map(item => (
                   <a key={item.id} href={`#${item.id}`}
-                    className={`group flex items-center gap-3 px-3 py-2.5 text-[12px] border-l-2 transition-all duration-150 ${activeId === item.id ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4" : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"}`}>
-                    <span className={`text-[9px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>{item.num}</span>
+                    className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 ${activeId === item.id ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4" : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"}`}>
+                    <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>{item.num}</span>
                     {item.label}
                   </a>
                 ))}
               </nav>
               <div className="mt-6 border border-[#0818A8]/15 bg-[#0818A8]/4 p-4">
                 <CheckSquare size={14} className="text-[#0818A8] mb-2" aria-hidden="true" />
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">Compliance Contact</p>
-                <a href="mailto:compliance@r-zoneenterprises.com" className="text-[11.5px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all">compliance@r-zoneenterprises.com</a>
-                <p className="text-gray-600 text-[11px] font-light mt-1">All enquiries handled promptly</p>
+                <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">Compliance Contact</p>
+                <a href="mailto:compliance@r-zoneenterprises.com" className="text-[13px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all">compliance@r-zoneenterprises.com</a>
+                <p className="text-gray-600 text-[13px] font-normal mt-1">All enquiries handled promptly</p>
               </div>
             </div>
           </aside>
@@ -293,7 +293,7 @@ export default function CompliancePage() {
               <P>R-Zone Enterprises Ltd operates in a highly regulated industry. International freight forwarding spans UK and Nigerian customs law, international aviation regulations, data protection legislation, and financial crime prevention. We take our compliance obligations seriously and invest in systems, training, and governance to meet them consistently.</P>
               <P>Our compliance programme is overseen by our Operations Director and reviewed annually by the company's board of directors. Our compliance policies are available to customers, regulators, and business partners on request.</P>
               <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
-                <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-4">Our Compliance Commitment</p>
+                <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-4">Our Compliance Commitment</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
                     { icon: Shield,    title: "Full Compliance",         desc: "With all applicable UK and Nigerian laws and regulations"       },
@@ -308,7 +308,7 @@ export default function CompliancePage() {
                         </div>
                         <div>
                           <p className="text-gray-900 font-bold text-[13px]">{item.title}</p>
-                          <p className="text-gray-600 text-[12px] font-light leading-snug mt-0.5">{item.desc}</p>
+                          <p className="text-gray-600 text-[13px] font-normal leading-snug mt-0.5">{item.desc}</p>
                         </div>
                       </div>
                     );
@@ -335,18 +335,18 @@ export default function CompliancePage() {
                             <div>
                               <div className="flex items-center gap-3 flex-wrap">
                                 <h3 className="text-gray-900 font-black text-[15px] tracking-[-0.01em]" style={{ textTransform: "none", letterSpacing: "normal" }}>{cert.title}</h3>
-                                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1">✓ {cert.status}</span>
+                                <span className="text-[13px] font-bold tracking-[0.15em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1">✓ {cert.status}</span>
                               </div>
-                              <p className="text-[10.5px] font-semibold text-gray-500 mt-0.5">{cert.authority}</p>
+                              <p className="text-[13px] font-semibold text-gray-500 mt-0.5">{cert.authority}</p>
                             </div>
                           </div>
                         </div>
-                        <p className="text-gray-700 text-[13.5px] font-light leading-relaxed mb-4">{cert.desc}</p>
+                        <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">{cert.desc}</p>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                           {cert.highlights.map((h, i) => (
                             <div key={i} className="flex items-center gap-2">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0" aria-hidden="true" />
-                              <span className="text-gray-600 text-[12px] font-light">{h}</span>
+                              <span className="text-gray-600 text-[13px] font-normal">{h}</span>
                             </div>
                           ))}
                         </div>
@@ -379,8 +379,8 @@ export default function CompliancePage() {
                       <Check size={9} className="text-white" />
                     </div>
                     <div>
-                      <p className="text-gray-900 font-bold text-[12.5px]">{p.label}</p>
-                      <p className="text-gray-600 text-[12px] font-light mt-0.5">{p.desc}</p>
+                      <p className="text-gray-900 font-bold text-[13px]">{p.label}</p>
+                      <p className="text-gray-600 text-[13px] font-normal mt-0.5">{p.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -471,12 +471,12 @@ export default function CompliancePage() {
                     <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/25 transition-colors">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon size={13} className="text-[#0818A8]" aria-hidden="true" />
-                        <p className="text-[9.5px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
+                        <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
                       </div>
                       {item.href ? (
                         <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#0818A8] transition-colors break-all">{item.val}</a>
                       ) : (
-                        <p className="text-gray-800 font-light text-[13px] leading-snug">{item.val}</p>
+                        <p className="text-gray-800 font-normal text-[13px] leading-snug">{item.val}</p>
                       )}
                     </div>
                   );
@@ -488,15 +488,15 @@ export default function CompliancePage() {
             <div className="mt-12 border border-[#0818A8]/20 bg-[#0818A8]/4 p-7 md:p-9">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div>
-                  <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Need Verification?</p>
+                  <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Need Verification?</p>
                   <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">Contact Our Compliance Team.</h3>
-                  <p className="text-gray-600 text-[13.5px] font-light mt-1">Certification verification and regulatory queries handled promptly.</p>
+                  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Certification verification and regulatory queries handled promptly.</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <a href="mailto:compliance@r-zoneenterprises.com" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="Email compliance team">
+                  <a href="mailto:compliance@r-zoneenterprises.com" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="Email compliance team">
                     <Mail size={12} aria-hidden="true" /> Email Compliance
                   </a>
-                  <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[11.5px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200" aria-label="Back to site">
+                  <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200" aria-label="Back to site">
                     <ArrowLeft size={11} aria-hidden="true" /> Back to Site
                   </Link>
                 </div>

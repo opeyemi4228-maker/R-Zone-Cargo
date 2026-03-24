@@ -65,6 +65,7 @@
    2. BASE LAYER — HTML, body & document defaults
    ============================================================ */
 @layer base {
+  body { font-size: 15px; }
 
   /* ── Box model ── */
   *,
@@ -80,7 +81,7 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -307,7 +308,7 @@ html {
   /* ── Buttons ── */
   .rz-btn-primary {
     @apply inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2]
-           text-white font-black tracking-[0.1em] uppercase text-[12px]
+           text-white font-black tracking-[0.1em] uppercase text-[13px]
            px-7 py-3.5 transition-all duration-200 cursor-pointer
            shadow-lg hover:shadow-xl;
     box-shadow: var(--rz-shadow-blue);
@@ -320,14 +321,14 @@ html {
   .rz-btn-secondary {
     @apply inline-flex items-center gap-2.5 border border-[#0818A8]/20
            bg-[#0818A8]/6 hover:bg-[#0818A8]/12 hover:border-[#0818A8]/40
-           text-[#0818A8] font-bold tracking-[0.08em] uppercase text-[12px]
+           text-[#0818A8] font-bold tracking-[0.08em] uppercase text-[13px]
            px-7 py-3.5 transition-all duration-200 cursor-pointer;
   }
 
   .rz-btn-ghost {
     @apply inline-flex items-center gap-2.5 border border-white/22
            hover:border-white/50 bg-white/[0.06] hover:bg-white/12
-           text-white font-bold tracking-[0.08em] uppercase text-[12px]
+           text-white font-bold tracking-[0.08em] uppercase text-[13px]
            px-7 py-3.5 transition-all duration-200 cursor-pointer;
   }
 
@@ -343,11 +344,11 @@ html {
   }
 
   .rz-pill-label {
-    @apply text-[10px] font-bold tracking-[0.30em] uppercase text-[#0818A8];
+    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#0818A8];
   }
 
   .rz-pill-label-dark {
-    @apply text-[10px] font-bold tracking-[0.30em] uppercase text-[#1F51FF];
+    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#1F51FF];
   }
 
   /* ── Section headings ── */
@@ -403,7 +404,7 @@ html {
   /* ── Form inputs ── */
   .rz-input {
     @apply w-full border border-gray-300 bg-white text-gray-900
-           text-[13.5px] font-light placeholder-gray-400
+           text-[13.5px] font-normal placeholder-gray-400
            px-4 py-3.5 outline-none transition-all duration-200
            focus:border-[#0818A8] focus:ring-1;
     border-radius: 0;
@@ -420,7 +421,7 @@ html {
   }
 
   .rz-label {
-    @apply block text-[10.5px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2;
+    @apply block text-[13px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2;
   }
 
   /* ── Dividers ── */
@@ -460,7 +461,7 @@ html {
 
   /* ── Badge ── */
   .rz-badge {
-    @apply inline-flex items-center gap-1 text-[9.5px] font-bold
+    @apply inline-flex items-center gap-1 text-[13px] font-bold
            tracking-[0.18em] uppercase px-2.5 py-1 border;
   }
 
@@ -482,7 +483,7 @@ html {
 
   /* ── Callout blocks ── */
   .rz-callout {
-    @apply px-5 py-4 border-l-[3px] text-[13px] font-light leading-relaxed;
+    @apply px-5 py-4 border-l-[3px] text-[13px] font-normal leading-relaxed;
   }
 
   .rz-callout-blue {

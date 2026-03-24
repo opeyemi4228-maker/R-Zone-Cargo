@@ -243,7 +243,7 @@ function TagPill({ label, dark = true }) {
         transition={{ duration: 2.2, repeat: Infinity }}
         aria-hidden="true"
       />
-      <span className={`text-[10px] font-bold tracking-[0.28em] uppercase ${
+      <span className={`text-[13px] font-bold tracking-[0.28em] uppercase ${
         dark ? "text-[#1F51FF]" : "text-[#0818A8]"
       }`}>{label}</span>
     </div>
@@ -322,11 +322,11 @@ function Hero() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="text-white/80 text-[11.5px] font-medium hover:text-white transition-colors">
+          <Link href="/" className="text-white/80 text-[13px] font-medium hover:text-white transition-colors">
             Home
           </Link>
           <ChevronRight size={11} className="text-white/80" aria-hidden="true" />
-          <span className="text-white text-[11.5px] font-medium" aria-current="page">Contact Us</span>
+          <span className="text-white text-[13px] font-medium" aria-current="page">Contact Us</span>
         </motion.nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
@@ -366,7 +366,7 @@ function Hero() {
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
-                className="text-white/80 text-[15px] font-light leading-relaxed tracking-wide max-w-lg mb-9"
+                className="text-white/80 text-[15px] font-normal leading-relaxed tracking-wide max-w-lg mb-9"
               >
                 No call centres. No automated emails. When you contact R-Zone Enterprises,
                 you speak directly to our UK-based logistics team — same day, every time.
@@ -379,7 +379,7 @@ function Hero() {
                 {TRUST_BADGES.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-2">
                     <Icon size={12} className="text-[#1F51FF]" aria-hidden="true" />
-                    <span className="text-white/80 text-[11.5px] font-light">{label}</span>
+                    <span className="text-white/80 text-[13px] font-normal">{label}</span>
                   </div>
                 ))}
               </motion.div>
@@ -398,7 +398,7 @@ function Hero() {
                       aria-label={`Follow R-Zone on ${s.label}`}
                     >
                       <Icon size={12} style={{ color: s.accent }} />
-                      <span className="text-white/80 text-[11px] font-semibold">{s.value}</span>
+                      <span className="text-white/80 text-[13px] font-semibold">{s.value}</span>
                     </a>
                   );
                 })}
@@ -439,11 +439,11 @@ function Hero() {
                   >
                     <Icon size={15} style={{ color: ch.accent }} />
                   </div>
-                  <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{ch.label}</p>
-                  <p className="text-white font-semibold text-[12.5px] leading-tight mb-1 break-all">{ch.value}</p>
-                  <p className="text-white/80 text-[11px] font-light leading-snug mb-3">{ch.sub}</p>
+                  <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{ch.label}</p>
+                  <p className="text-white font-semibold text-[13px] leading-tight mb-1 break-all">{ch.value}</p>
+                  <p className="text-white/80 text-[13px] font-normal leading-snug mb-3">{ch.sub}</p>
                   <div
-                    className="flex items-center gap-1.5 text-[10.5px] font-bold tracking-[0.08em] transition-colors duration-200"
+                    className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.08em] transition-colors duration-200"
                     style={{ color: ch.accent }}
                   >
                     {ch.cta}
@@ -510,7 +510,7 @@ function ContactForm() {
   };
 
   const fieldClass = (field) =>
-    `w-full bg-white/[0.05] border text-white text-[13px] font-light placeholder-white/60
+    `w-full bg-white/[0.05] border text-white text-[13px] font-normal placeholder-white/60
      px-4 py-3 outline-none transition-all duration-200
      focus:bg-white/[0.08] focus:border-[#1F51FF]/60
      ${errors[field] && touched[field]
@@ -518,7 +518,7 @@ function ContactForm() {
        : "border-white/[0.1] hover:border-white/[0.2]"
      }`;
 
-  const labelClass = "block text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2";
+  const labelClass = "block text-[13px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2";
 
   return (
     <section
@@ -554,7 +554,7 @@ function ContactForm() {
               <motion.p
                 variants={fadeUp}
                 custom={0.15}
-                className="text-white/80 text-[13.5px] font-light leading-relaxed mt-5 mb-8"
+                className="text-white/80 text-[13.5px] font-normal leading-relaxed mt-5 mb-8"
               >
                 Fill in the form and a member of our UK team will respond within the same
                 business day — usually within a few hours.
@@ -563,7 +563,7 @@ function ContactForm() {
               {/* What happens next */}
               <motion.div variants={fadeUp} custom={0.2} className="border border-white/[0.08] bg-white/[0.03] p-6 mb-6">
                 <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] -mx-6 -mt-6 mb-6" aria-hidden="true" />
-                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/80 mb-5">
+                <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-5">
                   What Happens Next
                 </p>
                 {[
@@ -577,14 +577,14 @@ function ContactForm() {
                       <div className="absolute left-[11px] top-[26px] w-px h-[calc(100%-12px)] bg-white/[0.08]" aria-hidden="true" />
                     )}
                     <div
-                      className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[9px] font-black text-[#1F51FF]"
+                      className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[13px] font-black text-[#1F51FF]"
                       aria-label={`Step ${s.n}`}
                     >
                       {s.n}
                     </div>
                     <div>
-                      <p className="text-white/80 text-[12.5px] font-semibold leading-tight">{s.t}</p>
-                      <p className="text-white/80 text-[11px] font-light">{s.d}</p>
+                      <p className="text-white/80 text-[13px] font-semibold leading-tight">{s.t}</p>
+                      <p className="text-white/80 text-[13px] font-normal">{s.d}</p>
                     </div>
                   </div>
                 ))}
@@ -592,7 +592,7 @@ function ContactForm() {
 
               {/* Direct contact */}
               <motion.div variants={fadeUp} custom={0.3} className="space-y-3">
-                <p className="text-[9.5px] font-bold tracking-[0.28em] uppercase text-white/80 mb-3">
+                <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-3">
                   Or Contact Directly
                 </p>
                 <a href="tel:+448007720864" className="flex items-center gap-3 group" aria-label="Call UK: +44 800 772 0864">
@@ -600,7 +600,7 @@ function ContactForm() {
                     <Phone size={13} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-[10px] font-light">UK Phone</p>
+                    <p className="text-white/80 text-[13px] font-normal">UK Phone</p>
                     <p className="text-white text-[13px] font-semibold">+44 (0) 800 772 0864</p>
                   </div>
                 </a>
@@ -609,7 +609,7 @@ function ContactForm() {
                     <Phone size={13} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-[10px] font-light">Nigeria Phone</p>
+                    <p className="text-white/80 text-[13px] font-normal">Nigeria Phone</p>
                     <p className="text-white text-[13px] font-semibold">+234 906 680 6861</p>
                   </div>
                 </a>
@@ -618,7 +618,7 @@ function ContactForm() {
                     <Mail size={13} className="text-[#1F51FF]" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-[10px] font-light">Email</p>
+                    <p className="text-white/80 text-[13px] font-normal">Email</p>
                     <p className="text-white text-[13px] font-semibold">info@r-zoneenterprises.com</p>
                   </div>
                 </a>
@@ -627,7 +627,7 @@ function ContactForm() {
                     <WhatsAppIcon size={13} className="text-[#25D366]" />
                   </div>
                   <div>
-                    <p className="text-white/80 text-[10px] font-light">WhatsApp</p>
+                    <p className="text-white/80 text-[13px] font-normal">WhatsApp</p>
                     <p className="text-white text-[13px] font-semibold">+44 7915 647 119</p>
                   </div>
                 </a>
@@ -660,21 +660,21 @@ function ContactForm() {
                     <CheckCircle size={28} className="text-white" />
                   </motion.div>
                   <h3 className="text-white font-black text-[26px] tracking-[-0.015em] mb-3">Message Sent!</h3>
-                  <p className="text-white/80 text-[14px] font-light leading-relaxed max-w-sm mx-auto mb-8">
+                  <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-sm mx-auto mb-8">
                     Thank you for reaching out. A member of our UK team will respond to your
                     enquiry within the same business day.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3">
                     <Link
                       href="/services"
-                      className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3 rounded-sm transition-all duration-200"
+                      className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 rounded-sm transition-all duration-200"
                       aria-label="View R-Zone services"
                     >
                       View Services
                     </Link>
                     <Link
                       href="/track"
-                      className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[12px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
+                      className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
                       aria-label="Track a shipment"
                     >
                       Track Shipment
@@ -710,7 +710,7 @@ function ContactForm() {
                         />
                       </div>
                       {errors.name && touched.name && (
-                        <p id="name-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[11px] mt-1.5">
+                        <p id="name-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[13px] mt-1.5">
                           <AlertCircle size={10} aria-hidden="true" />{errors.name}
                         </p>
                       )}
@@ -736,7 +736,7 @@ function ContactForm() {
                         />
                       </div>
                       {errors.email && touched.email && (
-                        <p id="email-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[11px] mt-1.5">
+                        <p id="email-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[13px] mt-1.5">
                           <AlertCircle size={10} aria-hidden="true" />{errors.email}
                         </p>
                       )}
@@ -746,7 +746,7 @@ function ContactForm() {
                     <div>
                       <label htmlFor="contact-phone" className={labelClass}>
                         Phone Number{" "}
-                        <span className="text-white/80 normal-case font-light tracking-normal">(optional)</span>
+                        <span className="text-white/80 normal-case font-normal tracking-normal">(optional)</span>
                       </label>
                       <div className="relative">
                         <Phone size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
@@ -788,7 +788,7 @@ function ContactForm() {
                         </select>
                       </div>
                       {errors.enquiryType && touched.enquiryType && (
-                        <p id="enquiry-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[11px] mt-1.5">
+                        <p id="enquiry-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[13px] mt-1.5">
                           <AlertCircle size={10} aria-hidden="true" />{errors.enquiryType}
                         </p>
                       )}
@@ -799,7 +799,7 @@ function ContactForm() {
                   <div className="mb-5">
                     <label htmlFor="contact-subject" className={labelClass}>
                       Subject{" "}
-                      <span className="text-white/80 normal-case font-light tracking-normal">(optional)</span>
+                      <span className="text-white/80 normal-case font-normal tracking-normal">(optional)</span>
                     </label>
                     <input
                       id="contact-subject"
@@ -828,18 +828,18 @@ function ContactForm() {
                     />
                     <div className="flex items-center justify-between mt-1.5">
                       {errors.message && touched.message ? (
-                        <p id="message-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[11px]">
+                        <p id="message-error" role="alert" className="flex items-center gap-1.5 text-red-400 text-[13px]">
                           <AlertCircle size={10} aria-hidden="true" />{errors.message}
                         </p>
                       ) : <span />}
-                      <span className={`text-[10.5px] font-light ml-auto ${form.message.length >= 20 ? "text-green-400/80" : "text-white/80"}`}>
+                      <span className={`text-[13px] font-normal ml-auto ${form.message.length >= 20 ? "text-green-400/80" : "text-white/80"}`}>
                         {form.message.length} chars
                       </span>
                     </div>
                   </div>
 
                   {/* Privacy note */}
-                  <p className="text-white/80 text-[10.5px] font-light mb-5 leading-relaxed">
+                  <p className="text-white/80 text-[13px] font-normal mb-5 leading-relaxed">
                     By submitting this form, you agree that R-Zone Enterprises may contact you
                     regarding your enquiry. We never share your data with third parties.
                     See our{" "}
@@ -852,7 +852,7 @@ function ContactForm() {
                   <button
                     onClick={handleSubmit}
                     disabled={status === "loading"}
-                    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[12px] font-black tracking-[0.1em] uppercase px-10 py-4 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
+                    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-10 py-4 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
                     aria-label="Submit contact form"
                     aria-busy={status === "loading"}
                   >
@@ -870,7 +870,7 @@ function ContactForm() {
                   </button>
 
                   {status === "error" && (
-                    <p role="alert" className="flex items-center gap-2 text-red-400 text-[12px] mt-4">
+                    <p role="alert" className="flex items-center gap-2 text-red-400 text-[13px] mt-4">
                       <AlertCircle size={13} aria-hidden="true" />
                       Something went wrong. Please try again or call us directly.
                     </p>
@@ -914,7 +914,7 @@ function Offices() {
             <PageHeading line1="Two Countries," accent="One Team." dark={false} id="offices-heading" />
           </motion.div>
           <motion.p
-            className="text-gray-800 text-[14px] font-light mt-4 max-w-lg mx-auto"
+            className="text-gray-800 text-[14px] font-normal mt-4 max-w-lg mx-auto"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -948,7 +948,7 @@ function Offices() {
                     <h3 className="text-[#0b0f1a] font-black text-[22px] tracking-[-0.015em]" itemProp="addressCountry">
                       {office.country}
                     </h3>
-                    <p className="text-[10.5px] font-bold tracking-[0.2em] uppercase mt-0.5" style={{ color: office.accent }}>
+                    <p className="text-[13px] font-bold tracking-[0.2em] uppercase mt-0.5" style={{ color: office.accent }}>
                       {office.role}
                     </p>
                   </div>
@@ -965,7 +965,7 @@ function Offices() {
                 <div className="space-y-4 mb-7">
                   <div className="flex items-start gap-3">
                     <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
-                    <p className="text-gray-800 text-[13px] font-light leading-snug" itemProp="address">
+                    <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address">
                       {office.address}
                     </p>
                   </div>
@@ -997,14 +997,14 @@ function Offices() {
                 <div className="border-t border-gray-100 pt-5">
                   <div className="flex items-center gap-2 mb-3">
                     <Clock size={11} className="text-gray-800" aria-hidden="true" />
-                    <p className="text-[9.5px] font-bold tracking-[0.22em] uppercase text-gray-800">Opening Hours</p>
+                    <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-800">Opening Hours</p>
                   </div>
                   <dl className="space-y-1.5">
                     {office.hours.map(({ day, time }) => (
                       <div key={day} className="flex items-center justify-between">
-                        <dt className="text-gray-800 text-[12px] font-light">{day}</dt>
+                        <dt className="text-gray-800 text-[13px] font-normal">{day}</dt>
                         <dd
-                          className={`text-[12px] font-semibold ${time === "Closed" ? "text-gray-800" : "text-gray-800"}`}
+                          className={`text-[13px] font-semibold ${time === "Closed" ? "text-gray-800" : "text-gray-800"}`}
                           itemProp="openingHours"
                         >
                           {time}
@@ -1039,14 +1039,14 @@ function Offices() {
               <p className="text-[#0b0f1a] font-bold text-[14px] mb-1">
                 Unit 10 Moorhen Yard, Elms Lane, Bulphan
               </p>
-              <p className="text-gray-800 text-[12px] font-light mb-5">
+              <p className="text-gray-800 text-[13px] font-normal mb-5">
                 Upminster, Essex RM14 3TS, United Kingdom
               </p>
               <a
                 href="https://maps.google.com/?q=Unit+10+Moorhen+Yard+Elms+Lane+Upminster+Essex+RM14+3TS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-2.5 rounded-sm transition-colors duration-200"
+                className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-2.5 rounded-sm transition-colors duration-200"
                 aria-label="Get directions to R-Zone Upminster warehouse (opens Google Maps)"
               >
                 <MapPin size={11} aria-hidden="true" />
@@ -1102,7 +1102,7 @@ function FAQ() {
               <motion.p
                 variants={fadeUp}
                 custom={0.15}
-                className="text-white/80 text-[13.5px] font-light leading-relaxed mt-5 mb-8"
+                className="text-white/80 text-[13.5px] font-normal leading-relaxed mt-5 mb-8"
               >
                 Can&apos;t find your answer? Call us on{" "}
                 <a href="tel:+448007720864" className="text-[#1F51FF] hover:text-white transition-colors font-medium">
@@ -1114,7 +1114,7 @@ function FAQ() {
               <motion.div variants={fadeUp} custom={0.25}>
                 <a
                   href="#contact-form"
-                  className="inline-flex items-center gap-2 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[11.5px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
+                  className="inline-flex items-center gap-2 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[13px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
                   aria-label="Scroll to contact form"
                 >
                   <MessageSquare size={12} aria-hidden="true" />
@@ -1169,7 +1169,7 @@ function FAQ() {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden"
                       >
-                        <p className="text-white/80 text-[13px] font-light leading-relaxed pb-5 pr-8">
+                        <p className="text-white/80 text-[13px] font-normal leading-relaxed pb-5 pr-8">
                           {item.a}
                         </p>
                       </motion.dd>
@@ -1206,7 +1206,7 @@ function SocialProofBar() {
       />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-8 md:py-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0 justify-between">
-          <p className="text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
+          <p className="text-white/80 text-[13px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
             Why Customers Choose Us
           </p>
           <div className="flex flex-wrap gap-x-10 gap-y-4">
@@ -1225,7 +1225,7 @@ function SocialProofBar() {
               >
                 <Icon size={14} className="text-white/80" aria-hidden="true" />
                 <span className="text-white font-black text-[16px] leading-none">{val}</span>
-                <span className="text-white/80 text-[11px] font-light">{label}</span>
+                <span className="text-white/80 text-[13px] font-normal">{label}</span>
               </motion.div>
             ))}
           </div>
@@ -1277,13 +1277,13 @@ function FinalCTA() {
               <h3 className="text-white font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
                 Get a Free Quote
               </h3>
-              <p className="text-white/80 text-[13px] font-light leading-relaxed mb-8">
+              <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-8">
                 Tell us about your shipment and we&apos;ll provide a transparent, competitive
                 quote — no hidden charges, no surprises.
               </p>
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2.5 bg-white text-[#0818A8] text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 hover:bg-white/90 transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 bg-white text-[#0818A8] text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 hover:bg-white/90 transition-colors duration-200"
                 aria-label="Get a free shipping quote"
               >
                 Get Quote
@@ -1305,14 +1305,14 @@ function FinalCTA() {
             <h3 className="text-[#0b0f1a] font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
               Prefer to Call?
             </h3>
-            <p className="text-gray-800 text-[13px] font-light leading-relaxed mb-8">
+            <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-8">
               Our UK team is available Monday–Friday 10AM–6PM and Saturday 11AM–2PM.
               Free to call. Our Nigeria team is also available Mon–Fri 9AM–5PM WAT.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+448007720864"
-                className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11.5px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
                 aria-label="Call R-Zone UK: +44 800 772 0864"
               >
                 <Phone size={11} aria-hidden="true" />
@@ -1320,7 +1320,7 @@ function FinalCTA() {
               </a>
               <a
                 href="tel:+2349066806861"
-                className="inline-flex items-center gap-2.5 border border-[#0818A8]/25 hover:bg-[#0818A8]/5 text-[#0818A8] text-[11.5px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 border border-[#0818A8]/25 hover:bg-[#0818A8]/5 text-[#0818A8] text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
                 aria-label="Call R-Zone Nigeria: +234 906 680 6861"
               >
                 NG: +234 906 680 6861
