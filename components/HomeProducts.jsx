@@ -50,7 +50,7 @@ const SERVICE_CARDS = [
   {
     id: "05", icon: Package,
     title: "Commercial Cargo",
-    href: "/services",
+    href: "/services#cargo-handling",
     description: "Full freight for businesses — vehicles, machinery, industrial equipment and high-volume merchandise to Nigeria.",
     tag: "B2B", tagColor: "bg-slate-100 text-slate-700", accentColor: "#0437F2",
     highlights: ["Vehicles & machinery", "High-volume rates", "Nigeria & Africa"],
