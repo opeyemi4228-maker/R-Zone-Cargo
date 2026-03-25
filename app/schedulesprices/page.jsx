@@ -48,21 +48,53 @@ const IMPORTATION_SCHEDULES = [
 ];
 
 const AIR_RATES = [
-  { range: "1–10 kg",    rate: "£7.50", per: "per kg", note: "Minimum charge applies"  },
-  { range: "11–25 kg",   rate: "£6.80", per: "per kg", note: ""                         },
-  { range: "26–50 kg",   rate: "£6.20", per: "per kg", note: ""                         },
-  { range: "51–100 kg",  rate: "£5.80", per: "per kg", note: "Popular for businesses"   },
-  { range: "101–250 kg", rate: "£5.40", per: "per kg", note: ""                         },
-  { range: "251+ kg",    rate: "£5.00", per: "per kg", note: "Contact for bulk quote"   },
+  { range: "All weights", rate: "£5.20", per: "per kg", note: "Plus £25 handling fee" },
 ];
 
 const SEA_RATES = [
-  { range: "1–50 kg",      rate: "£4.50", per: "per kg", note: "Min 5kg applies"        },
-  { range: "51–100 kg",    rate: "£4.00", per: "per kg", note: ""                        },
-  { range: "101–250 kg",   rate: "£3.60", per: "per kg", note: ""                        },
-  { range: "251–500 kg",   rate: "£3.20", per: "per kg", note: "Popular for bulk cargo"  },
-  { range: "501 kg–1 ton", rate: "£3.00", per: "per kg", note: ""                        },
-  { range: "1 ton+",       rate: "POA",   per: "",        note: "Call for container rate" },
+  { range: "All weights", rate: "£2.00", per: "per kg", note: "Bags from £65 depending on size" },
+];
+
+const STATE_RATES = [
+  { state: "Lagos", doorToDoor: "5.2", collection: "4.8", minWeight: "20" },
+  { state: "Abuja", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Anambra", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Abia", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Adamawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Akwa Ibom", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Bauchi", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Bayelsa", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Benue", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Borno", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Cross River", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Delta", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Ebonyi", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Edo", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Ekiti", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Enugu", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Gombe", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Imo", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
+  { state: "Jigawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Kaduna", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Ibadan", doorToDoor: "5.3", collection: "5", minWeight: "20" },
+  { state: "Akure", doorToDoor: "5.3", collection: "5", minWeight: "20" },
+  { state: "Kano", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Katsina", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Kebbi", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Kogi", doorToDoor: "6.3", collection: "6", minWeight: "30" },
+  { state: "Kwara", doorToDoor: "6.3", collection: "5.5", minWeight: "30" },
+  { state: "Nasarawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Niger", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Ogun", doorToDoor: "5.8", collection: "5.5", minWeight: "30" },
+  { state: "Ondo", doorToDoor: "6", collection: "5.5", minWeight: "30" },
+  { state: "Osun", doorToDoor: "6", collection: "5.5", minWeight: "30" },
+  { state: "Oyo", doorToDoor: "6", collection: "", minWeight: "30" },
+  { state: "Plateau", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Rivers", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Sokoto", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Taraba", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Yobe", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Zamfara", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
 ];
 
 const DOOR_SURCHARGES = [
@@ -77,13 +109,13 @@ const DOOR_SURCHARGES = [
 const PRICING_TIERS = [
   {
     name: "Personal",   icon: Package,   tagline: "For individuals & families",
-    accent: "#0818A8",  featured: false, airRate: "from £7.50/kg", seaRate: "from £4.50/kg",
+    accent: "#0818A8",  featured: false, airRate: "from £5.20/kg", seaRate: "from £2/kg",
     includes: ["Air & sea options", "UK door collection", "Nigeria door delivery", "Real-time tracking", "Customs clearance", "SMS & email notifications"],
     cta: "Get a Quote", href: "/quote",
   },
   {
     name: "Business",   icon: BarChart3, tagline: "For SMEs & commercial shippers",
-    accent: "#0818A8",  featured: true,  airRate: "from £5.80/kg", seaRate: "from £3.20/kg",
+    accent: "#0818A8",  featured: true,  airRate: "from £5.20/kg", seaRate: "from £2/kg",
     includes: ["Discounted bulk rates", "Dedicated account manager", "Priority customs handling", "Weekly reporting", "SLA guarantee", "Credit terms available", "Volume discount schedule"],
     cta: "Contact Sales", href: "/contact",
   },
@@ -105,11 +137,11 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
   {
     q: "How much does it cost to ship cargo from the UK to Nigeria?",
-    a: "Sea freight from the UK to Nigeria starts from £3 per kg (4–6 weeks transit). Air freight starts from £5 per kg (5–10 working days). Door-to-door cargo from £6/kg including UK collection and Nigerian delivery. Get a free quote from R-Zone.",
+    a: "Sea freight from the UK to Nigeria starts from £2 per kg (4–6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (5–10 working days). Door-to-door cargo pricing varies by Nigerian state — from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
   },
   {
     q: "What is the cheapest way to ship from the UK to Nigeria?",
-    a: "Sea freight is the cheapest option — from £3 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4–6 weeks. For time-sensitive cargo, air freight from £5/kg departs weekly.",
+    a: "Sea freight is the cheapest option — from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4–6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs weekly.",
   },
   {
     q: "Are there any hidden fees?",
@@ -746,6 +778,41 @@ function PricingSection() {
               ))}
             </div>
           </div>
+        </motion.div>
+
+        {/* State-by-state rates */}
+        <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.55 }}>
+          <div className="mb-6">
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Door-to-Door Rates</h3>
+            <p className="text-gray-800 text-[13px] font-normal mt-1">Door-to-door delivery rates to all 36 Nigerian states. Collection rates apply when you deliver to our UK warehouse.</p>
+          </div>
+          <div className="overflow-hidden border border-gray-200 bg-white">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[600px]" aria-label="Door-to-door delivery rates by Nigerian state">
+                <thead>
+                  <tr className="bg-[#0818A8]">
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">State</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Door-to-Door Rate £</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Collection Rate £</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Min Weight (KG)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {STATE_RATES.map((row, i) => (
+                    <tr key={row.state} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
+                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.state}</td>
+                      <td className="px-5 py-3.5 text-[13px] font-bold text-[#0818A8]">£{row.doorToDoor}/kg</td>
+                      <td className="px-5 py-3.5 text-[13px] font-bold text-[#0818A8]">£{row.collection}/kg</td>
+                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.minWeight}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="text-gray-800 text-[13px] font-normal mt-3">
+            * All rates are per kg. Minimum weight requirements apply. Door-to-door includes UK collection and Nigerian delivery to your specified address.
+          </p>
         </motion.div>
 
         {/* Pricing FAQs — SEO high-value */}

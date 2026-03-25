@@ -8,6 +8,7 @@ import {
   Shield, Award, Globe, Clock, Package,
   CheckCircle, Warehouse, Plane, Star,
   TrendingUp, Users, MapPin, Phone, MessageSquare,
+  Ship,
 } from "lucide-react";
 
 const montserrat = Montserrat({
@@ -45,16 +46,13 @@ const CERTIFICATIONS = [
 ];
 
 const AIRLINE_PARTNERS = [
-  { name: "British Airways Cargo", code: "BA" },
-  { name: "Virgin Atlantic Cargo", code: "VS" },
-  { name: "Emirates SkyCargo",     code: "EK" },
-  { name: "Ethiopian Cargo",       code: "ET" },
-  { name: "Air Peace",             code: "P4" },
-  { name: "Qatar Airways Cargo",   code: "QR" },
-  { name: "Kenya Airways",         code: "KQ" },
-  { name: "Turkish Cargo",         code: "TK" },
-  { name: "Lufthansa Cargo",       code: "LH" },
-  { name: "DHL Aviation",          code: "DH" },
+  { name: "Allied Air", code: "AA" },
+  { name: "DHL",        code: "DH" },
+  { name: "Air Peace",   code: "P4" },
+];
+
+const SEA_PARTNERS = [
+  { name: "Grimaldi", url: "https://www.grimaldi.co.uk/" },
 ];
 
 const OFFICES = [
@@ -252,6 +250,34 @@ export default function TrustAuthority() {
                   <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
                   <Plane size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
                 </div>
+              ))}
+            </motion.div>
+          </div>
+          <div className="pb-12" />
+        </div>
+
+        {/* ── PART 3.5: Sea partners ── */}
+        <div className="relative border-b border-white/[0.06] overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14">
+            <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
+              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <span className="w-5 h-px bg-white/30" aria-hidden="true" />
+              Sea Freight Partners
+            </motion.p>
+          </div>
+          <div className="relative py-5 md:py-7" aria-label="R-Zone sea freight partners for UK to Nigeria shipping">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
+            <motion.div className="flex items-center gap-4 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear", repeatType: "loop" }}>
+              {[...SEA_PARTNERS, ...SEA_PARTNERS].map((p, i) => (
+                <a key={`${p.name}-${i}`} href={p.url} target="_blank" rel="noopener noreferrer"
+                  className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200"
+                  aria-label={`${p.name} — R-Zone sea freight partner for UK Nigeria shipping`}>
+                  <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
+                  <Ship size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
+                </a>
               ))}
             </motion.div>
           </div>
