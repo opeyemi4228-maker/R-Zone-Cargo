@@ -18,7 +18,7 @@ const SERVICE_CARDS = [
   {
     id: "01", icon: Plane,
     title: "Air Freight to Nigeria",
-    href: "/air-freight",
+    href: "/services#air-freight",
     description: "Fast air cargo from the UK to Lagos, Abuja and all 36 Nigerian states. 5–10 working days. Door collection available.",
     tag: "Fastest", tagColor: "bg-[#0818A8]/10 text-[#0818A8]", accentColor: "#0818A8",
     highlights: ["5–10 working days", "All 36 states", "Door collection"],
@@ -26,7 +26,7 @@ const SERVICE_CARDS = [
   {
     id: "02", icon: Ship,
     title: "Sea Freight to Nigeria",
-    href: "/sea-shipping-to-nigeria",
+    href: "/services#sea-freight",
     description: "Weekly consolidated sea freight from UK ports to Lagos. Best value for bulk, heavy or high-volume cargo. From £3/kg.",
     tag: "Best Value", tagColor: "bg-emerald-50 text-emerald-700", accentColor: "#0437F2",
     highlights: ["Weekly sailings", "From £3/kg", "4–6 weeks transit"],
@@ -34,7 +34,7 @@ const SERVICE_CARDS = [
   {
     id: "03", icon: Truck,
     title: "Door to Door Cargo",
-    href: "/door-to-door-cargo",
+    href: "/services#door-to-door",
     description: "We collect from your UK address and deliver to any Nigerian address — air or sea, both customs handled.",
     tag: "Most Popular", tagColor: "bg-amber-50 text-amber-700", accentColor: "#1F51FF",
     highlights: ["UK-wide collection", "Any Nigerian address", "Both customs handled"],
@@ -58,7 +58,7 @@ const SERVICE_CARDS = [
   {
     id: "06", icon: User,
     title: "Personal Cargo Shipping",
-    href: "/door-to-door-cargo",
+    href: "/services#door-to-door",
     description: "Send household goods, food, clothing and personal effects to family in Nigeria. African foodstuffs accepted.",
     tag: "Personal", tagColor: "bg-rose-50 text-rose-700", accentColor: "#1F51FF",
     highlights: ["Foodstuffs accepted", "Weekly air", "Family parcels"],
