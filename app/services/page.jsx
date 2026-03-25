@@ -62,7 +62,7 @@ const SERVICES = [
     slug: "sea-shipping-to-nigeria",
     nav: "Sea Shipping",
     icon: Ship,
-    badge: "Best Value — from £3/kg",
+    badge: "Best Value — from <£5/kg depending on the State. Check Pricing",
     badgeColor: "bg-emerald-50 text-emerald-700",
     title: "Sea Freight to Nigeria",
     tagline: "Weekly sea freight sailings. The cheapest way to ship to Nigeria.",
