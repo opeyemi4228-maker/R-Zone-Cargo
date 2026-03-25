@@ -378,7 +378,7 @@ export default function TermsPage() {
             <Section id="t1" num="01" title="Definitions & Acceptance of Terms">
               <H3>1.1 — Key Definitions</H3>
               <UL>
-                <LI><strong className="text-gray-900 font-semibold">"RZE" / "R-Zone"</strong> — R-Zone Enterprises Ltd, also operating as R-Zone Cargo and Shipping Services, registered in England and Wales. Registered office: Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"RZE" / "R-Zone"</strong> — R-Zone Enterprises Ltd, also operating as R-Zone Cargo and Shipping Services, registered in England and Wales. Registered office: Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS.</LI>
                 <LI><strong className="text-gray-900 font-semibold">"Customer"</strong> — the sender of a consignment making payment in advance to RZE or via an approved payment method.</LI>
                 <LI><strong className="text-gray-900 font-semibold">"Consignment / Cargo"</strong> — any one or more parcels sent at one time by the Customer to an agreed destination.</LI>
                 <LI><strong className="text-gray-900 font-semibold">"Dangerous Goods"</strong> — items specified as dangerous, hazardous, prohibited, or restricted by regulatory bodies or legislation governing transport by road, rail, sea, or air.</LI>
@@ -687,7 +687,7 @@ export default function TermsPage() {
               <div className="border border-gray-200 bg-gray-50 p-5 mb-7">
                 <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-800 mb-2">Registered Office</p>
                 <p className="text-gray-800 text-[13px] font-semibold">R-Zone Enterprises Ltd</p>
-                <p className="text-gray-800 text-[13px] font-normal">Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS, United Kingdom</p>
+                <p className="text-gray-800 text-[13px] font-normal">Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS, United Kingdom</p>
                 <p className="text-gray-800 text-[13px] font-normal mt-1">Registered in England and Wales</p>
               </div>
 

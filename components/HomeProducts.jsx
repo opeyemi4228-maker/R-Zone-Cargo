@@ -66,12 +66,12 @@ const SERVICE_CARDS = [
 ];
 
 const LIST_SERVICES = [
-  { id: "01", title: "Air Freight to Nigeria",      subtitle: "Weekly departures · 5–10 working days",                href: "/air-freight"              },
-  { id: "02", title: "Sea Freight to Nigeria",      subtitle: "Weekly sailings · from £3/kg · 4–6 weeks",            href: "/sea-shipping-to-nigeria"  },
-  { id: "03", title: "Door to Door Delivery",       subtitle: "UK collection to any Nigerian address",                href: "/door-to-door-cargo"       },
+  { id: "01", title: "Air Freight to Nigeria",      subtitle: "Weekly departures · 5–10 working days",                href: "/services#air-freight"     },
+  { id: "02", title: "Sea Freight to Nigeria",      subtitle: "Weekly sailings · from £3/kg · 4–6 weeks",            href: "/services#sea-freight"     },
+  { id: "03", title: "Door to Door Delivery",       subtitle: "UK collection to any Nigerian address",                href: "/services#door-to-door"    },
   { id: "04", title: "Customs Clearance",           subtitle: "UK & Nigeria — fully managed, zero stress",           href: "/services#customs-clearance"},
-  { id: "05", title: "Importation from Nigeria",    subtitle: "Weekly air & sea · Nigeria to UK",                    href: "/importation-from-nigeria" },
-  { id: "06", title: "Car & Vehicle Shipping",      subtitle: "Specialist vehicle transport to Nigeria & Africa",    href: "/prices"                   },
+  { id: "05", title: "Importation from Nigeria",    subtitle: "Weekly air & sea · Nigeria to UK",                    href: "/services#importation"     },
+  { id: "06", title: "Car & Vehicle Shipping",      subtitle: "Specialist vehicle transport to Nigeria & Africa",    href: "/services#vehicles"        },
 ];
 
 const ArrowDiag = ({ className = "" }) => (

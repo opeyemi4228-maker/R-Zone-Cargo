@@ -34,12 +34,12 @@ const STATS = [
 ];
 
 const LINKS = [
-  { label: "Air Freight UK–Nigeria",  href: "/air-freight",              title: "Air freight UK to Nigeria — weekly departures"       },
-  { label: "Sea Freight UK–Nigeria",  href: "/sea-shipping-to-nigeria",  title: "Sea freight UK to Nigeria — from £3/kg, 4–6 weeks"   },
-  { label: "Door-to-Door Cargo",      href: "/door-to-door-cargo",       title: "Door to door cargo UK to Nigeria"                    },
-  { label: "Cargo to Abuja",          href: "/cargo-abuja",              title: "Cargo shipping from UK to Abuja"                     },
-  { label: "Cargo to Lagos",          href: "/cargo-lagos",              title: "Cargo shipping from UK to Lagos"                     },
-  { label: "Import from Nigeria",     href: "/importation-from-nigeria", title: "Import goods from Nigeria to UK — weekly services"   },
+  { id: "air", label: "Air Freight UK–Nigeria",  href: "/services",  title: "Air freight UK to Nigeria — weekly departures"       },
+  { id: "sea", label: "Sea Freight UK–Nigeria",  href: "/services",  title: "Sea freight UK to Nigeria — from £3/kg, 4–6 weeks"   },
+  { id: "d2d", label: "Door-to-Door Cargo",      href: "/services",  title: "Door to door cargo UK to Nigeria"                    },
+  { id: "abuja", label: "Cargo to Abuja",        href: "/services",  title: "Cargo shipping from UK to Abuja"                     },
+  { id: "lagos", label: "Cargo to Lagos",        href: "/services",  title: "Cargo shipping from UK to Lagos"                     },
+  { id: "import", label: "Import from Nigeria",  href: "/services",  title: "Import goods from Nigeria to UK — weekly services"   },
 ];
 
 const curtainReveal = {
@@ -83,8 +83,8 @@ export default function HeroSection() {
             "paymentAccepted": "Cash, Credit Card, Bank Transfer",
             "openingHours": ["Mo-Fr 10:00-18:00", "Sa 11:00-14:00"],
             "address": [
-              { "@type": "PostalAddress", "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
-              { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG" },
+              { "@type": "PostalAddress", "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
+              { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG", "description": "Collection Points: Egbeda, Surulele, Ajah, Ibadan" },
             ],
             "areaServed": [
               { "@type": "Country", "name": "United Kingdom" },
@@ -260,9 +260,9 @@ export default function HeroSection() {
               The{" "}
               <strong className="text-white font-semibold">highest-rated, #1 ranked UK–Nigeria cargo company on Google</strong>
               {" "}— air freight, weekly sea sailings, and door-to-door delivery to{" "}
-              <Link href="/cargo-lagos" className="text-white/80 underline underline-offset-2 hover:text-white transition-colors" title="Cargo to Lagos from UK">Lagos</Link>
+              <Link href="/services#air-freight" className="text-white/80 underline underline-offset-2 hover:text-white transition-colors" title="Cargo to Lagos from UK">Lagos</Link>
               ,{" "}
-              <Link href="/cargo-abuja" className="text-white/80 underline underline-offset-2 hover:text-white transition-colors" title="Cargo to Abuja from UK">Abuja</Link>
+              <Link href="/services#air-freight" className="text-white/80 underline underline-offset-2 hover:text-white transition-colors" title="Cargo to Abuja from UK">Abuja</Link>
               {" "}and all 36 Nigerian states. Collected across the UK.
             </motion.p>
 
@@ -270,7 +270,7 @@ export default function HeroSection() {
             <motion.nav aria-label="R-Zone cargo services" className="flex flex-wrap gap-2"
               variants={fadeUp} initial="hidden" animate="visible" custom={0.82}>
               {LINKS.map(item => (
-                <Link key={item.href} href={item.href} title={item.title}
+                <Link key={item.id} href={item.href} title={item.title}
                   className="inline-flex items-center gap-1.5 border border-white/[0.12] bg-white/[0.04] hover:border-[#1F51FF]/50 hover:bg-[#0818A8]/15 text-white/80 hover:text-white text-[11px] font-semibold tracking-[0.06em] px-3 py-1.5 transition-all duration-200">
                   {item.label}
                   <ChevronDown size={9} className="rotate-[-90deg]" aria-hidden="true" />

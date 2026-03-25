@@ -60,13 +60,13 @@ const AIRLINE_PARTNERS = [
 const OFFICES = [
   {
     flag: "🇬🇧", city: "Upminster, United Kingdom", role: "UK Primary Hub",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
+    address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
     phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com", hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM",
   },
   {
     flag: "🇳🇬", city: "Lagos, Nigeria", role: "West Africa Hub",
-    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com", hours: "Mon–Fri 9AM–5PM WAT",
   },
@@ -107,8 +107,8 @@ export default function TrustAuthority() {
             { "@type": "Continent", "name": "Africa"         },
           ],
           "address": [
-            { "@type": "PostalAddress", "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
-            { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG" },
+            { "@type": "PostalAddress", "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
+            { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG", "description": "<strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan" },
           ],
         }),
       }} />
@@ -286,7 +286,7 @@ export default function TrustAuthority() {
                         <span className="text-white font-black text-[13px] tracking-[0.06em] uppercase">{office.city}</span>
                         <span className="text-[#1F51FF] text-[11px] font-bold tracking-[0.14em] uppercase bg-[#0818A8]/22 px-2 py-0.5">{office.role}</span>
                       </div>
-                      <p className="text-white/80 text-[13px] font-normal leading-snug mb-3" itemProp="streetAddress">{office.address}</p>
+                      <p className="text-white/80 text-[13px] font-normal leading-snug mb-3" itemProp="streetAddress" dangerouslySetInnerHTML={{ __html: office.address }}></p>
                       <div className="flex flex-wrap gap-x-5 gap-y-1.5">
                         <a href={office.phoneHref} className="flex items-center gap-1.5 text-white/80 hover:text-white text-[13px] font-medium transition-colors duration-200"
                           aria-label={`Call R-Zone ${office.city}: ${office.phone}`}>

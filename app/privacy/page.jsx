@@ -365,7 +365,7 @@ export default function PrivacyPage() {
               </P>
               <div className="border border-gray-200 bg-gray-50 px-5 py-4 mb-5 inline-block">
                 <p className="text-gray-800 text-[13.5px] font-medium leading-relaxed">
-                  Unit 10 Moorhen Yard, Elms Lane<br />
+                  Unit 9 Moorhen Yard, Elms Lane<br />
                   Upminster, Essex RM14 3TS<br />
                   United Kingdom
                 </p>
@@ -672,7 +672,7 @@ export default function PrivacyPage() {
                   { label: "Data Protection",   val: "privacy@r-zoneenterprises.com",  href: "mailto:privacy@r-zoneenterprises.com",  icon: Shield   },
                   { label: "General Enquiries", val: "info@r-zoneenterprises.com",      href: "mailto:info@r-zoneenterprises.com",      icon: Mail     },
                   { label: "Phone",             val: "+44 800 772 0864",                href: "tel:+448007720864",                      icon: Phone    },
-                  { label: "Post",              val: "Unit 10 Moorhen Yard, Elms Lane, Upminster, Essex RM14 3TS", href: null, icon: Globe },
+                  { label: "Post",              val: "Unit 9 Moorhen Yard, Elms Lane, Upminster, Essex RM14 3TS", href: null, icon: Globe },
                 ].map(item => {
                   const Icon = item.icon;
                   return (

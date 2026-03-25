@@ -266,7 +266,7 @@ export default function RootLayout({ children }) {
                     // UK office — primary
                     "address": {
                       "@type":           "PostalAddress",
-                      "streetAddress":   "Unit 10 Moorhen Yard, Elms Lane",
+                      "streetAddress":   "Unit 9 Moorhen Yard, Elms Lane",
                       "addressLocality": "Upminster",
                       "addressRegion":   "Essex",
                       "postalCode":      "RM14 3TS",

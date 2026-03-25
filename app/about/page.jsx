@@ -69,8 +69,8 @@ const TESTIMONIALS = [
 ];
 
 const OFFICES = [
-  { country: "United Kingdom", flag: "🇬🇧", role: "Headquarters & Warehouse", address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS", phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864", email: "info@r-zoneenterprises.com", hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM", accent: "#0818A8" },
-  { country: "Nigeria",        flag: "🇳🇬", role: "Operations Hub — Lagos",   address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos", phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861", email: "nigeria@r-zoneenterprises.com", hours: "Mon–Fri 9AM–5PM WAT", accent: "#1F51FF" },
+  { country: "United Kingdom", flag: "🇬🇧", role: "Headquarters & Warehouse", address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS", phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864", email: "info@r-zoneenterprises.com", hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM", accent: "#0818A8" },
+  { country: "Nigeria",        flag: "🇳🇬", role: "Operations Hub — Lagos",   address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan", phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861", email: "nigeria@r-zoneenterprises.com", hours: "Mon–Fri 9AM–5PM WAT", accent: "#1F51FF" },
 ];
 
 const CERTIFICATIONS = [
@@ -713,7 +713,7 @@ function OurOffices() {
               <div className="space-y-3.5">
                 <div className="flex items-start gap-3">
                   <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
-                  <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address">{office.address}</p>
+                  <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address" dangerouslySetInnerHTML={{ __html: office.address }}></p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
@@ -814,8 +814,8 @@ export default function AboutPageClient() {
             "email": "info@r-zoneenterprises.com",
             "sameAs": ["https://www.instagram.com/rzoneenterprises", "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr"],
             "address": [
-              { "@type": "PostalAddress", "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
-              { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG" },
+              { "@type": "PostalAddress", "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
+              { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG", "description": "<strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan" },
             ],
             "areaServed": [
               { "@type": "Country", "name": "United Kingdom" },

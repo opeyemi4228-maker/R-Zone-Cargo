@@ -1182,7 +1182,7 @@ function ContactSection() {
           {[
             {
               flag: "🇬🇧", country: "UK Office — Upminster, Essex",
-              addr: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
+              addr: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
               hours: [
                 { d: "Mon–Fri",  t: "10:00AM – 6:00PM" },
                 { d: "Saturday", t: "11:00AM – 2:00PM"  },
@@ -1192,7 +1192,7 @@ function ContactSection() {
             },
             {
               flag: "🇳🇬", country: "Nigeria Hub — Lagos",
-              addr: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+              addr: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
               hours: [
                 { d: "Mon–Fri",  t: "9:00AM – 5:00PM WAT" },
                 { d: "Saturday", t: "9:00AM – 1:00PM WAT"  },
@@ -1214,7 +1214,7 @@ function ContactSection() {
                 <span className="text-[32px] leading-none flex-shrink-0" aria-hidden="true">{office.flag}</span>
                 <div>
                   <p className="text-white font-black text-[15px] tracking-[-0.01em]">{office.country}</p>
-                  <p className="text-white/80 text-[13px] font-normal mt-1 leading-snug">{office.addr}</p>
+                  <p className="text-white/80 text-[13px] font-normal mt-1 leading-snug" dangerouslySetInnerHTML={{ __html: office.addr }}></p>
                 </div>
               </div>
               <div className="border-t border-white/[0.07] pt-4 grid grid-cols-3 gap-2">

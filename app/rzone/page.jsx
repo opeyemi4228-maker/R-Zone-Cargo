@@ -595,7 +595,7 @@ function GroupContact(){
                 {icon:Phone,      label:"Phone",     val:"+44 (0) 800 772 0864",       href:"tel:+448007720864",                               desc:"R-Zone Cargo / Group enquiries"},
                 {icon:MessageSquare,label:"WhatsApp",val:"Chat on WhatsApp",           href:"https://wa.me/448007720864?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20R-Zone.",desc:"Fastest response"},
                 {icon:Mail,       label:"Email",     val:"info@r-zoneenterprises.com", href:"mailto:info@r-zoneenterprises.com",               desc:"Response within 1 business day"},
-                {icon:MapPin,     label:"HQ",        val:"Upminster, Essex UK",        href:"#",                                               desc:"Unit 10 Moorhen Yard, RM14 3TS"},
+                {icon:MapPin,     label:"HQ",        val:"Upminster, Essex UK",        href:"#",                                               desc:"Unit 9 Moorhen Yard, RM14 3TS"},
                 {icon:Instagram,  label:"Instagram", val:"@rzoneenterprises",          href:"https://instagram.com/rzoneenterprises",          desc:"Follow for group updates"},
               ].map(c=>{const Icon=c.icon;return(
                 <a key={c.label} href={c.href} target={c.href.startsWith("http")?`_blank`:undefined} rel={c.href.startsWith("http")?"noopener noreferrer":undefined}
@@ -716,7 +716,7 @@ const SCHEMA = {
       "url":"https://r-zoneinternational.com",
       "description":"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. Parent company of R-Zone Cargo (the #1 highest-rated UK-to-Nigeria cargo company on Google with 107+ five-star reviews), R-Zone Homes, and R-Zone Shortlets.",
       "foundingDate":"2012",
-      "address":{"@type":"PostalAddress","streetAddress":"Unit 10 Moorhen Yard, Elms Lane, Bulphan","addressLocality":"Upminster","addressRegion":"Essex","postalCode":"RM14 3TS","addressCountry":"GB"},
+      "address":{"@type":"PostalAddress","streetAddress":"Unit 9 Moorhen Yard, Elms Lane, Bulphan","addressLocality":"Upminster","addressRegion":"Essex","postalCode":"RM14 3TS","addressCountry":"GB"},
       "telephone":"+448007720864","email":"info@r-zoneenterprises.com",
       "sameAs":["https://www.instagram.com/rzoneenterprises","https://r-zoneenterprises.com"],
       "areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Nigeria"}],

@@ -464,7 +464,7 @@ export default function CompliancePage() {
                   { label: "AML & Sanctions",     val: "aml@r-zoneenterprises.com",        href: "mailto:aml@r-zoneenterprises.com",        icon: Scale       },
                   { label: "Claims & Complaints", val: "complaints@r-zoneenterprises.com", href: "mailto:complaints@r-zoneenterprises.com", icon: FileCheck   },
                   { label: "Phone",               val: "+44 800 772 0864",                 href: "tel:+448007720864",                       icon: Phone       },
-                  { label: "Post",                val: "Unit 10 Moorhen Yard, Elms Lane, Upminster, Essex RM14 3TS", href: null,            icon: Globe       },
+                  { label: "Post",                val: "Unit 9 Moorhen Yard, Elms Lane, Upminster, Essex RM14 3TS", href: null,            icon: Globe       },
                 ].map(item => {
                   const Icon = item.icon;
                   return (

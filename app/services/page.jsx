@@ -14,6 +14,7 @@ import {
   Briefcase, Heart, Zap, Clock, CheckCircle,
   Phone, Mail, Instagram, ExternalLink,
   BarChart3, Layers, Target, Eye,
+  Plane, Ship, Truck, Car,
 } from "lucide-react";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
@@ -271,6 +272,7 @@ function GroupNavbar() {
 
           <nav className="hidden md:flex items-center gap-7" aria-label="R-Zone International navigation">
             {[
+              { label: "Our Services",    href: "#air-freight" },
               { label: "Our Companies",  href: "#companies" },
               { label: "About the Group",href: "#about"     },
               { label: "Values",         href: "#values"    },
@@ -529,6 +531,191 @@ function GroupStats() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SERVICES
+// ═══════════════════════════════════════════════════════════════════════════════
+function Services() {
+  const ref    = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  const services = [
+    {
+      id: "air-freight",
+      title: "Air Freight to Nigeria",
+      subtitle: "Fast, reliable air cargo",
+      description: "Weekly air freight departures from the UK to Lagos, Abuja and all 36 Nigerian states. 5–10 working days transit time with full customs clearance included.",
+      features: ["5–10 working days", "All 36 states", "Door collection available", "Customs clearance"],
+      icon: Plane,
+      color: "#0818A8"
+    },
+    {
+      id: "sea-freight",
+      title: "Sea Freight to Nigeria",
+      subtitle: "Cost-effective bulk shipping",
+      description: "Weekly consolidated sea freight from UK ports to Lagos. Best value for heavy, bulky or high-volume cargo from £3/kg with 4–6 weeks transit.",
+      features: ["Weekly sailings", "From £3/kg", "4–6 weeks transit", "Bulk cargo specialist"],
+      icon: Ship,
+      color: "#0437F2"
+    },
+    {
+      id: "door-to-door",
+      title: "Door to Door Delivery",
+      subtitle: "Complete end-to-end service",
+      description: "We collect from your UK address and deliver to any Nigerian address. Choose air or sea freight with full customs handling and last-mile delivery.",
+      features: ["UK-wide collection", "Any Nigerian address", "Air or sea options", "Customs included"],
+      icon: Truck,
+      color: "#1F51FF"
+    },
+    {
+      id: "customs-clearance",
+      title: "Customs Clearance",
+      subtitle: "Zero-stress customs handling",
+      description: "Full customs clearance service for UK and Nigeria. We handle all documentation, duties, and regulatory requirements for smooth cargo movement.",
+      features: ["UK & Nigeria customs", "All documentation", "Duty calculation", "Regulatory compliance"],
+      icon: Shield,
+      color: "#0818A8"
+    },
+    {
+      id: "importation",
+      title: "Importation from Nigeria",
+      subtitle: "Nigeria to UK shipping",
+      description: "Weekly air and sea services bringing goods from Nigeria to the UK. Perfect for Nigerian exporters and UK businesses importing from Nigeria.",
+      features: ["Weekly air & sea", "Nigeria to UK", "Export documentation", "UK customs clearance"],
+      icon: Package,
+      color: "#0437F2"
+    },
+    {
+      id: "vehicles",
+      title: "Car & Vehicle Shipping",
+      subtitle: "Specialist vehicle transport",
+      description: "Professional vehicle shipping service to Nigeria and across Africa. Roll-on/roll-off service with full insurance and customs handling.",
+      features: ["Cars & vehicles", "Roll-on/roll-off", "Full insurance", "Africa-wide delivery"],
+      icon: Car,
+      color: "#1F51FF"
+    }
+  ];
+
+  return (
+    <section
+      ref={ref}
+      className="relative bg-white overflow-hidden"
+      aria-labelledby="services-heading"
+    >
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: "linear-gradient(rgba(0,0,0,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,1) 1px,transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
+        <div className="text-center mb-16">
+          <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
+            <div className="inline-flex items-center gap-2.5 border border-[#0818A8]/30 bg-[#0818A8]/10 px-4 py-1.5 rounded-full mb-5">
+              <motion.span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]"
+                animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
+              <span className="text-[#0818A8] text-[13px] font-bold tracking-[0.28em] uppercase">
+                Our Services
+              </span>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
+            <h2 id="services-heading" className="text-[#0f1923] font-black text-[clamp(28px,5vw,58px)] leading-[0.92] tracking-[-0.025em] uppercase mb-4">
+              Freight & Logistics
+              <span className="relative inline-block text-[#0818A8]">
+                {" "}Solutions
+                <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full" aria-hidden="true"
+                  initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.55 }} />
+              </span>
+            </h2>
+          </motion.div>
+          <motion.p
+            className="text-[#0f1923]/80 text-[15px] font-normal mt-5 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            From air freight to sea shipping, door-to-door delivery to customs clearance — 
+            we provide comprehensive logistics solutions connecting the UK and Nigeria.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service, i) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.id}
+                id={service.id}
+                className="group relative border border-[#0f1923]/10 bg-white hover:border-[#0818A8]/20 hover:shadow-lg transition-all duration-300 scroll-mt-24"
+                initial={{ opacity: 0, y: 28 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+              >
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div 
+                      className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: `${service.color}15` }}
+                      aria-hidden="true"
+                    >
+                      <Icon size={20} style={{ color: service.color }} />
+                    </div>
+                    <div>
+                      <h3 className="text-[#0f1923] font-bold text-[18px] leading-tight mb-1">{service.title}</h3>
+                      <p className="text-[#0f1923]/70 text-[13px] font-medium">{service.subtitle}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-[#0f1923]/80 text-[14px] font-normal leading-relaxed mb-5">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <CheckCircle size={14} className="text-emerald-600 flex-shrink-0" aria-hidden="true" />
+                        <span className="text-[#0f1923]/70 text-[13px] font-normal">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="/quote"
+                    className="inline-flex items-center gap-2 border border-[#0818A8] hover:bg-[#0818A8] text-[#0818A8] hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
+                    aria-label={`Get quote for ${service.title}`}
+                  >
+                    Get Quote
+                    <ArrowRight size={12} aria-hidden="true" />
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <Link
+            href="/quote"
+            className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+            aria-label="Get a comprehensive shipping quote"
+          >
+            Get Comprehensive Quote
+            <ArrowRight size={12} aria-hidden="true" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -1166,7 +1353,7 @@ function GroupContact() {
               {[
                 { icon: Phone,     label: "Phone",     val: "+44 (0) 800 772 0864",       href: "tel:+448007720864",                     desc: "R-Zone Cargo / Group enquiries"   },
                 { icon: Mail,      label: "Email",     val: "info@r-zoneenterprises.com", href: "mailto:info@r-zoneenterprises.com",     desc: "Responses within 1 business day"  },
-                { icon: MapPin,    label: "HQ",        val: "Upminster, Essex UK",        href: "#",                                     desc: "Unit 10 Moorhen Yard, RM14 3TS"   },
+                { icon: MapPin,    label: "HQ",        val: "Upminster, Essex UK",        href: "#",                                     desc: "Unit 9 Moorhen Yard, RM14 3TS"   },
                 { icon: Instagram, label: "Instagram", val: "@rzoneenterprises",          href: "https://instagram.com/rzoneenterprises",desc: "Follow for group updates"          },
               ].map(c => {
                 const Icon = c.icon;
@@ -1409,7 +1596,7 @@ const SCHEMA = {
       "foundingDate": "2012",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
+        "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan",
         "addressLocality": "Upminster",
         "addressRegion": "Essex",
         "postalCode": "RM14 3TS",
@@ -1461,6 +1648,7 @@ export default function RZoneInternationalClient() {
         <main>
           <Hero />
           <GroupStats />
+          <Services />
           <Companies />
           <AboutGroup />
           <GroupTimeline />

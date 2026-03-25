@@ -144,7 +144,7 @@ const OFFICES = [
     flag: "🇬🇧",
     country: "United Kingdom",
     role: "Headquarters & Warehouse",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
+    address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
     phone: "+44 (0) 800 772 0864",
     phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com",
@@ -159,7 +159,7 @@ const OFFICES = [
     flag: "🇳🇬",
     country: "Nigeria",
     role: "Operations Hub — Lagos",
-    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861",
     phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com",
@@ -965,9 +965,7 @@ function Offices() {
                 <div className="space-y-4 mb-7">
                   <div className="flex items-start gap-3">
                     <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
-                    <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address">
-                      {office.address}
-                    </p>
+                    <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address" dangerouslySetInnerHTML={{ __html: office.address }}></p>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
@@ -1037,7 +1035,7 @@ function Offices() {
                 <MapPin size={22} className="text-white" />
               </div>
               <p className="text-[#0b0f1a] font-bold text-[14px] mb-1">
-                Unit 10 Moorhen Yard, Elms Lane, Bulphan
+                Unit 9 Moorhen Yard, Elms Lane, Bulphan
               </p>
               <p className="text-gray-800 text-[13px] font-normal mb-5">
                 Upminster, Essex RM14 3TS, United Kingdom
@@ -1356,7 +1354,7 @@ export default function ContactPageClient() {
               "email": "info@r-zoneenterprises.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
+                "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan",
                 "addressLocality": "Upminster",
                 "addressRegion": "Essex",
                 "postalCode": "RM14 3TS",

@@ -10,7 +10,7 @@ import {
   Menu, X, Package, MapPin, Truck, Warehouse,
   FileCheck, Plane, Ship, Phone, ArrowRight,
   BookOpen, Anchor, Newspaper,
-  Briefcase, BarChart3, ShieldCheck,
+  Briefcase, BarChart3, ShieldCheck, Car,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { assets } from "@/assets/assets";
@@ -46,12 +46,11 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "All Services",             href: "/services",                          icon: Globe,     description: "Full overview of R-Zone cargo solutions" },
       { label: "Air Freight to Nigeria",   href: "/services#air-freight",              icon: Plane,     description: "Fast UK–Nigeria air cargo, 5–10 days" },
-      { label: "Sea Shipping to Nigeria",  href: "/services#sea-shipping-to-nigeria",  icon: Ship,      description: "Affordable weekly sea freight departures" },
-      { label: "Door to Door Cargo",       href: "/services#door-to-door-cargo",       icon: Truck,     description: "UK collection · Nigeria delivery" },
-      { label: "Importation from Nigeria", href: "/services#importation-from-nigeria", icon: Package,   description: "Weekly air & sea imports handled end-to-end" },
+      { label: "Sea Freight to Nigeria",   href: "/services#sea-freight",              icon: Ship,      description: "Affordable weekly sea freight departures" },
+      { label: "Door to Door Cargo",       href: "/services#door-to-door",             icon: Truck,     description: "UK collection · Nigeria delivery" },
+      { label: "Importation from Nigeria", href: "/services#importation",              icon: Package,   description: "Weekly air & sea imports handled end-to-end" },
       { label: "Customs Clearance",        href: "/services#customs-clearance",        icon: FileCheck, description: "Expert end-to-end customs handling" },
-      { label: "Warehousing",              href: "/services#warehousing",              icon: Warehouse, description: "Secure UK & Nigeria storage facilities" },
-      { label: "Cargo Handling",           href: "/services#cargo-handling",           icon: Anchor,    description: "Port operations & specialist cargo" },
+      { label: "Car & Vehicle Shipping",   href: "/services#vehicles",                 icon: Car,       description: "Specialist vehicle transport to Nigeria" },
     ],
     featured: {
       label: "Track in Real Time",
@@ -76,11 +75,11 @@ const NAV_ITEMS = [
 
   {
     label: "Shipping Guide",
-    href: "/news",
+    href: "/blog",
     ariaLabel: "R-Zone shipping guide, news and insights",
     dropdown: [
       { label: "Sailing Schedules",  href: "/schedulesprices", icon: Ship,       description: "Weekly sea freight departure dates" },
-      { label: "Prices & Rates",     href: "/schedulesprices#prices",    icon: BarChart3,  description: "Transparent UK–Nigeria pricing" },
+      { label: "Prices & Rates",     href: "/schedulesprices#pricing",    icon: BarChart3,  description: "Transparent UK–Nigeria pricing" },
       { label: "News & Insights",    href: "/blog",                      icon: Newspaper,  description: "Latest logistics & trade news" },
       { label: "FAQs",               href: "/support",                   icon: HelpCircle, description: "Answers to common questions" },
     ],
@@ -93,7 +92,7 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "About Us",          href: "/about",      icon: Globe,       description: "Our story — founded 2012, Essex UK" },
       { label: "R-Zone Enterprise", href: "/rzone",      icon: ShieldCheck, description: "Why thousands of customers trust us" },
-      { label: "Industries Served", href: "/industries", icon: MapPin,      description: "Sectors we specialise in" },
+      { label: "Business Solutions", href: "/business-solutions", icon: Briefcase,   description: "B2B shipping solutions & enterprise services" },
       { label: "Careers",           href: "/careers",    icon: Briefcase,   description: "Join the R-Zone team" },
     ],
   },

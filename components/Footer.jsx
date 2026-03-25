@@ -101,7 +101,7 @@ const OFFICES = [
     flag: "🇬🇧",
     city: "Upminster, UK",
     label: "UK Office",
-    address: "Unit 10 Moorhen Yard, Elms Lane, Bulphan, Upminster, United Kingdom, RM14 3TS",
+    address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, United Kingdom, RM14 3TS",
     phone: "+44 (0) 800 772 0864",
     hours: "Mon–Fri: 10AM–6PM · Sat: 11AM–2PM",
     mapsUrl: "https://maps.app.goo.gl/QXnmYSxB8CeZ7hmv8",
@@ -110,7 +110,7 @@ const OFFICES = [
     flag: "🇳🇬",
     city: "Lagos, Nigeria",
     label: "Nigeria Warehouse",
-    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
+    address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861",
     hours: "Mon–Fri: 9AM–5PM",
     mapsUrl: "https://maps.google.com",
@@ -381,7 +381,7 @@ export default function Footer() {
             "address": [
               {
                 "@type": "PostalAddress",
-                "streetAddress": "Unit 10 Moorhen Yard, Elms Lane, Bulphan",
+                "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan",
                 "addressLocality": "Upminster",
                 "postalCode": "RM14 3TS",
                 "addressCountry": "GB"
@@ -390,7 +390,8 @@ export default function Footer() {
                 "@type": "PostalAddress",
                 "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange",
                 "addressLocality": "Lagos",
-                "addressCountry": "NG"
+                "addressCountry": "NG",
+                "description": "<strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan"
               }
             ],
             "sameAs": [
@@ -665,7 +666,7 @@ export default function Footer() {
                     <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">
                       {office.flag} {office.label}
                     </span>
-                    <span className="leading-snug block">{office.address}</span>
+                    <span className="leading-snug block" dangerouslySetInnerHTML={{ __html: office.address }}></span>
                     <span className="text-white/80 text-[13px] font-normal block mt-0.5">{office.hours}</span>
                   </div>
                 </a>
