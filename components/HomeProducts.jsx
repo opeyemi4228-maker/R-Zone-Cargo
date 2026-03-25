@@ -72,7 +72,7 @@ const LIST_SERVICES = [
   { id: "04", title: "Customs Clearance",           subtitle: "UK & Nigeria — fully managed, zero stress",           href: "/services#customs-clearance"},
   { id: "05", title: "Importation from Nigeria",    subtitle: "Weekly air & sea · Nigeria to UK",                    href: "/services#importation"     },
   { id: "06", title: "Car & Vehicle Shipping",      subtitle: "Specialist vehicle transport to Nigeria & Africa",    href: "/services#vehicles"        },
-];
+];  
 
 const ArrowDiag = ({ className = "" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
