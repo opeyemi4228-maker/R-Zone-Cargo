@@ -214,7 +214,7 @@ const FAQS = [
 ];
 
 const TRUST_BADGES = [
-  { icon: Star,        label: "107+ Five-Star Reviews"    },
+  { icon: Star,        label: "100+ Five-Star Reviews"    },
   { icon: Shield,      label: "Fully Insured Cargo"       },
   { icon: Clock,       label: "Same-Day Response"         },
   { icon: CheckCircle, label: "No Automated Replies"      },
@@ -1209,7 +1209,7 @@ function SocialProofBar() {
           </p>
           <div className="flex flex-wrap gap-x-10 gap-y-4">
             {[
-              { val: "107+",    label: "5-Star Reviews",       icon: Star        },
+              { val: "100+",    label: "5-Star Reviews",       icon: Star        },
               { val: "99%",     label: "Delivery Rate",        icon: CheckCircle },
               { val: "12+",     label: "Years in Business",    icon: Clock       },
               { val: "50,000+", label: "Shipments Delivered",  icon: Package     },

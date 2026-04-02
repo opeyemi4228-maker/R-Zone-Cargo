@@ -32,7 +32,7 @@ function AnimatedCounter({ target, suffix = "", prefix = "" }) {
 const METRICS = [
   { value: 12,    suffix: "+", label: "Years Operating",      sub: "Established 2012",                icon: Clock,     color: "#1F51FF" },
   { value: 50000, suffix: "+", label: "Shipments Delivered",  sub: "UK to Nigeria & beyond",          icon: Package,   color: "#0818A8" },
-  { value: 107,   suffix: "+", label: "5-Star Google Reviews",sub: "Highest-ranked UK–Nigeria cargo", icon: Star,      color: "#1F51FF" },
+  { value: 100,   suffix: "+", label: "5-Star Google Reviews",sub: "Highest-ranked UK–Nigeria cargo", icon: Star,      color: "#1F51FF" },
   { value: 99,    suffix: "%", label: "Delivery Success Rate", sub: "Industry-leading reliability",   icon: TrendingUp, color: "#0818A8" },
 ];
 
@@ -52,7 +52,10 @@ const AIRLINE_PARTNERS = [
 ];
 
 const SEA_PARTNERS = [
-  { name: "Grimaldi", url: "https://www.grimaldi.co.uk/" },
+  { name: "GRIMALDI", url: "https://www.grimaldi.co.uk/" },
+  { name: "MSC", url: "https://www.msc.com/" },
+  { name: "MAERSK LINE", url: "https://www.maersk.com/" },
+  { name: "CMA CGM", url: "https://www.cmacgm.com/" },
 ];
 
 const OFFICES = [
@@ -84,15 +87,15 @@ export default function TrustAuthority() {
           "name": "R-Zone Enterprises",
           "url": "https://r-zoneenterprises.com",
           "foundingDate": "2012",
-          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
+          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "5", "reviewCount": "107", "bestRating": "5",
-            "description": "Highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned.",
+            "ratingValue": "5", "reviewCount": "100", "bestRating": "5",
+            "description": "Highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned.",
           },
           "award": [
             "Highest-Rated & Highest-Ranked UK-to-Nigeria Cargo Company on Google",
-            "107+ Five-Star Google Reviews — Organically Earned",
+            "100+ Five-Star Google Reviews — Organically Earned",
             "IATA Registered Air Freight Agent",
             "NCS Compliant — Nigeria Customs Service",
           ],
@@ -147,7 +150,7 @@ export default function TrustAuthority() {
                 <p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-lg">
                   The{" "}
                   <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-                  {" "}— 107+ five-star reviews, organically earned. Families and businesses
+                  {" "}— 100+ five-star reviews, organically earned. Families and businesses
                   across the UK trust R-Zone for air freight, weekly sea sailings, and
                   door-to-door delivery to Lagos, Abuja and all 36 Nigerian states.
                 </p>
@@ -156,7 +159,7 @@ export default function TrustAuthority() {
               <motion.div className="flex flex-wrap lg:flex-col gap-3 lg:items-end"
                 initial={{ opacity: 0, x: 16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}>
-                {["#1 Ranked on Google — UK to Nigeria", "IATA Registered Air Freight Agent", "107+ Five-Star Reviews — Organically Earned"].map(badge => (
+                {["#1 Ranked on Google — UK to Nigeria", "IATA Registered Air Freight Agent", "100+ Five-Star Reviews — Organically Earned"].map(badge => (
                   <span key={badge} className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.04] px-3.5 py-2 text-white/80 text-[13px] font-semibold tracking-[0.08em] uppercase">
                     <CheckCircle size={11} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
                     {badge}
@@ -229,21 +232,17 @@ export default function TrustAuthority() {
 
         {/* ── PART 3: Airline marquee ── */}
         <div className="relative border-b border-white/[0.06] overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14 flex justify-center">
             <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <span className="w-5 h-px bg-white/30" aria-hidden="true" />
               Airline &amp; Logistics Partners
             </motion.p>
           </div>
-          <div className="relative py-5 md:py-7" aria-label="R-Zone airline partners for UK to Nigeria air freight">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
-            <motion.div className="flex items-center gap-4 w-max"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear", repeatType: "loop" }}>
-              {[...AIRLINE_PARTNERS, ...AIRLINE_PARTNERS].map((p, i) => (
-                <div key={`${p.code}-${i}`}
+          <div className="relative py-5 md:py-7 flex justify-center" aria-label="R-Zone airline partners for UK to Nigeria air freight">
+            <motion.div className="flex items-center gap-4 flex-wrap justify-center max-w-3xl">
+              {AIRLINE_PARTNERS.map((p, i) => (
+                <div key={i}
                   className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
                   aria-label={`${p.name} — R-Zone airline partner for UK Nigeria air freight`}>
                   <span className="font-black text-[13px] tracking-[0.14em] text-[#1F51FF] bg-[#0818A8]/22 px-2 py-0.5" aria-hidden="true">{p.code}</span>
@@ -258,26 +257,22 @@ export default function TrustAuthority() {
 
         {/* ── PART 3.5: Sea partners ── */}
         <div className="relative border-b border-white/[0.06] overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14 flex justify-center">
             <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <span className="w-5 h-px bg-white/30" aria-hidden="true" />
               Sea Freight Partners
             </motion.p>
           </div>
-          <div className="relative py-5 md:py-7" aria-label="R-Zone sea freight partners for UK to Nigeria shipping">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#00061a] to-transparent z-10 pointer-events-none" aria-hidden="true" />
-            <motion.div className="flex items-center gap-4 w-max"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear", repeatType: "loop" }}>
-              {[...SEA_PARTNERS, ...SEA_PARTNERS].map((p, i) => (
-                <a key={`${p.name}-${i}`} href={p.url} target="_blank" rel="noopener noreferrer"
-                  className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200"
+          <div className="relative py-5 md:py-7 flex justify-center" aria-label="R-Zone sea freight partners for UK to Nigeria shipping">
+            <motion.div className="flex items-center gap-4 flex-wrap justify-center max-w-3xl">
+              {SEA_PARTNERS.map((p, i) => (
+                <div key={i}
+                  className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
                   aria-label={`${p.name} — R-Zone sea freight partner for UK Nigeria shipping`}>
                   <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
                   <Ship size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
-                </a>
+                </div>
               ))}
             </motion.div>
           </div>

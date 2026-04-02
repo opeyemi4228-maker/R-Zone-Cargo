@@ -6,7 +6,7 @@
  * ADD TO layout.tsx:
  * export const metadata = {
  *   title: "R-Zone International — UK–Nigeria Enterprise Group",
- *   description: "R-Zone International is the UK–Nigeria enterprise group behind R-Zone Cargo — the #1 highest-rated UK–Nigeria cargo company on Google. 107+ five-star reviews. Founded 2012. Upminster, Essex.",
+ *   description: "R-Zone International is the UK–Nigeria enterprise group behind R-Zone Cargo — the #1 highest-rated UK–Nigeria cargo company on Google. 100+ five-star reviews. Founded 2012. Upminster, Essex.",
  *   keywords: ["R-Zone International","UK Nigeria enterprise group","R-Zone Cargo","Nigerian diaspora business UK","UK Nigeria shipping company","Nigeria real estate UK","shortlets Lagos Abuja"],
  *   alternates: { canonical: "https://r-zoneinternational.com" },
  * };
@@ -24,9 +24,9 @@ const SUBSIDIARIES = [
   {
     id:"cargo", name:"R-Zone Cargo", category:"Freight & Logistics",
     tagline:"The #1 highest-rated UK–Nigeria cargo company on Google.",
-    description:"R-Zone Cargo is the group's flagship freight and logistics operation — connecting UK businesses and families to all 36 Nigerian states via air freight (5–10 working days), weekly sea shipping (4–6 weeks transit), door-to-door delivery, and specialist cargo handling since 2012. The highest-rated organically earned cargo company between the UK, Nigeria, and across Africa, with 107+ five-star Google reviews.",
+    description:"R-Zone Cargo is the group's flagship freight and logistics operation — connecting UK businesses and families to all 36 Nigerian states via air freight (5–10 working days), weekly sea shipping (4–6 weeks transit), door-to-door delivery, and specialist cargo handling since 2012. The highest-rated organically earned cargo company between the UK, Nigeria, and across Africa, with 100+ five-star Google reviews.",
     icon:Package, href:"https://r-zoneenterprises.com", image:"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
-    stats:[{val:"50K+",label:"Shipments"},{val:"12+",label:"Years"},{val:"107+",label:"⭐ Reviews"}],
+    stats:[{val:"50K+",label:"Shipments"},{val:"12+",label:"Years"},{val:"100+",label:"⭐ Reviews"}],
     highlights:["Air freight 5–10 working days","Sea freight 4–6 weeks transit","All 36 Nigerian states covered","Customs clearance UK & Nigeria"],
     color:"#0818A8", gradient:"from-[#0818A8] to-[#1F51FF]", live:true,
   },
@@ -56,7 +56,7 @@ const GROUP_STATS = [
   {val:"2",   label:"Countries",      icon:Globe,    sub:"UK & Nigeria"},
   {val:"10K+",label:"Customers Served",icon:Users,   sub:"Families & businesses"},
   {val:"£M+", label:"Cargo Moved",    icon:BarChart3,sub:"Annually (R-Zone Cargo)"},
-  {val:"107+",label:"5-Star Reviews", icon:Star,     sub:"#1 on Google UK–Nigeria cargo"},
+  {val:"100+",label:"5-Star Reviews", icon:Star,     sub:"#1 on Google UK–Nigeria cargo"},
 ];
 
 const VALUES = [
@@ -86,7 +86,7 @@ const TYPE_COLORS = {
 
 const FAQ_ITEMS = [
   {q:"What is R-Zone International?", a:"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. It is the parent company of R-Zone Cargo (UK–Nigeria freight and logistics), R-Zone Homes (Nigerian real estate), and R-Zone Shortlets (serviced apartments in Lagos and Abuja)."},
-  {q:"Who owns R-Zone Cargo?", a:"R-Zone Cargo is owned and operated by R-Zone International — the parent group headquartered in Upminster, Essex, UK. R-Zone Cargo is the group's flagship business and the highest-rated UK-to-Nigeria cargo company on Google, with 107+ five-star reviews organically earned since 2012."},
+  {q:"Who owns R-Zone Cargo?", a:"R-Zone Cargo is owned and operated by R-Zone International — the parent group headquartered in Upminster, Essex, UK. R-Zone Cargo is the group's flagship business and the highest-rated UK-to-Nigeria cargo company on Google, with 100+ five-star reviews organically earned since 2012."},
   {q:"How long has R-Zone been operating?", a:"R-Zone Enterprises — now trading as R-Zone Cargo — was founded in 2012 in Upminster, Essex, UK. The group has been providing UK–Nigeria freight and logistics services for over 12 years."},
   {q:"Does R-Zone ship to all Nigerian states?", a:"Yes. R-Zone Cargo delivers to all 36 Nigerian states including Lagos, Abuja (FCT), Rivers, Kano, Delta, Oyo, Anambra, Enugu, and more. Air freight from the UK to Nigeria takes 5–10 working days; sea freight takes 4–6 weeks transit."},
   {q:"What businesses does R-Zone International operate?", a:"R-Zone International operates three business lines: R-Zone Cargo (UK–Nigeria freight, air freight, sea freight, door-to-door delivery), R-Zone Homes (Nigerian residential and commercial real estate for the UK diaspora), and R-Zone Shortlets (premium serviced apartments in Lagos and Abuja)."},
@@ -200,7 +200,7 @@ function Hero(){
           <motion.div initial={{opacity:0,y:-10}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.5}}
             className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full mb-6">
             <Award size={13} className="text-[#1F51FF]" aria-hidden="true"/>
-            <span className="text-white text-[13px] font-bold">R-Zone Cargo — #1 Highest-Rated UK–Nigeria Cargo on Google · 107+ Five-Star Reviews</span>
+            <span className="text-white text-[13px] font-bold">R-Zone Cargo — #1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
           </motion.div>
 
           <motion.div initial={{opacity:0,y:-10}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.5,delay:0.05}} className="flex items-center gap-4 mb-8">
@@ -668,7 +668,7 @@ function GroupFooter(){
             </div>
             {/* SEO-rich footer description */}
             <p className="text-white/80 text-[13px] font-normal leading-relaxed max-w-xs">
-              R-Zone International — the UK–Nigeria enterprise group. Parent company of R-Zone Cargo (the #1 highest-rated UK–Nigeria cargo company on Google with 107+ five-star reviews), R-Zone Homes, and R-Zone Shortlets. Founded 2012. Upminster, Essex, United Kingdom.
+              R-Zone International — the UK–Nigeria enterprise group. Parent company of R-Zone Cargo (the #1 highest-rated UK–Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets. Founded 2012. Upminster, Essex, United Kingdom.
             </p>
           </div>
           <div>
@@ -714,7 +714,7 @@ const SCHEMA = {
       "@type":"Organization","@id":"https://r-zoneinternational.com/#org",
       "name":"R-Zone International","alternateName":["R-Zone Group","R-Zone International Group"],
       "url":"https://r-zoneinternational.com",
-      "description":"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. Parent company of R-Zone Cargo (the #1 highest-rated UK-to-Nigeria cargo company on Google with 107+ five-star reviews), R-Zone Homes, and R-Zone Shortlets.",
+      "description":"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. Parent company of R-Zone Cargo (the #1 highest-rated UK-to-Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets.",
       "foundingDate":"2012",
       "address":{"@type":"PostalAddress","streetAddress":"Unit 9 Moorhen Yard, Elms Lane, Bulphan","addressLocality":"Upminster","addressRegion":"Essex","postalCode":"RM14 3TS","addressCountry":"GB"},
       "telephone":"+448007720864","email":"info@r-zoneenterprises.com",
@@ -722,8 +722,8 @@ const SCHEMA = {
       "areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Nigeria"}],
       "subOrganization":[
         {"@type":"LocalBusiness","name":"R-Zone Cargo","url":"https://r-zoneenterprises.com",
-          "description":"The #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight 5–10 working days, sea freight 4–6 weeks transit. Delivery to all 36 Nigerian states. 107+ five-star reviews organically earned since 2012.",
-          "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"107","bestRating":"5"},
+          "description":"The #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight 5–10 working days, sea freight 4–6 weeks transit. Delivery to all 36 Nigerian states. 100+ five-star reviews organically earned since 2012.",
+          "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100","bestRating":"5"},
           "telephone":"+448007720864","areaServed":["United Kingdom","Nigeria"]},
         {"@type":"Organization","name":"R-Zone Homes","description":"Nigerian residential and commercial real estate for the UK diaspora. Off-plan properties and property management in Lagos and Abuja."},
         {"@type":"Organization","name":"R-Zone Shortlets","description":"Premium serviced short-term apartments in Lagos and Abuja for business travellers and the Nigerian diaspora."},

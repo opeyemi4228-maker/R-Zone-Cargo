@@ -9,7 +9,7 @@
  * export const metadata = {
  *   title: "UK–Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
  *   description:
- *     "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg. Door-to-door, customs clearance, warehousing and importation. 107+ five-star reviews. Weekly departures. Same-day response.",
+ *     "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg. Door-to-door, customs clearance, warehousing and importation. 100+ five-star reviews. Weekly departures. Same-day response.",
  *   keywords: [
  *     "UK Nigeria cargo company","air freight Nigeria","sea freight Nigeria UK",
  *     "door to door cargo Nigeria","customs clearance Nigeria UK",
@@ -154,14 +154,14 @@ const WHY_RZONE = [
   { icon:Users,     title:"Real People. No Bots. No Call Centres.",              accent:"#1F51FF", body:"Our UK-based team answers calls and responds to emails the same day, Mon to Fri. You will never be routed to a call centre, an automated system, or an overseas outsourced team." },
   { icon:Globe,     title:"Both Ends of the Corridor, In-House",                 accent:"#0818A8", body:"Unlike brokers who outsource Nigeria-side operations, R-Zone runs its own Lagos hub. Seamless customs clearance, port handling, and last-mile delivery across all 36 Nigerian states." },
   { icon:Zap,       title:"Weekly Departures — Air & Sea, Every Week",           accent:"#1F51FF", body:"Air freight departs weekly. Sea freight sails weekly. You are never waiting weeks for a vessel. Your UK–Nigeria cargo moves on schedule every week of the year." },
-  { icon:Award,     title:"#1 Highest-Rated UK–Nigeria Cargo Company on Google", accent:"#0818A8", body:"107+ five-star Google reviews — organically earned, never incentivised. The most trusted cargo and logistics company between the UK, Nigeria, and across Africa since 2012." },
+  { icon:Award,     title:"#1 Highest-Rated UK–Nigeria Cargo Company on Google", accent:"#0818A8", body:"100+ five-star Google reviews — organically earned, never incentivised. The most trusted cargo and logistics company between the UK, Nigeria, and across Africa since 2012." },
   { icon:TrendingUp,title:"Transparent Pricing. No Hidden Charges.",             accent:"#1F51FF", body:"R-Zone quotes include customs, handling, and all fees upfront. What you are quoted is what you pay. We have built our 12-year reputation on complete pricing transparency." },
 ];
 
 const TRUST_STATS = [
   { val:"50,000+", label:"Shipments Delivered",       icon:Package,   sub:"Safely delivered, on time"       },
   { val:"12+",     label:"Years Operating",           icon:Clock,     sub:"Trusted since 2012"              },
-  { val:"107+",    label:"Five-Star Google Reviews",  icon:Star,      sub:"Organically earned"              },
+  { val:"100+",    label:"Five-Star Google Reviews",  icon:Star,      sub:"Organically earned"              },
   { val:"99%",     label:"Delivery Success Rate",     icon:Shield,    sub:"Industry-leading record"         },
   { val:"36",      label:"Nigerian States Served",    icon:MapPin,    sub:"Full national NG coverage"       },
   { val:"2",       label:"Warehouse Locations",       icon:Warehouse, sub:"Upminster UK & Lagos Nigeria"    },
@@ -241,7 +241,7 @@ function Hero() {
               <motion.div variants={fadeUp} custom={0}
                 className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full mb-4">
                 <Award size={13} className="text-[#1F51FF]" aria-hidden="true" />
-                <span className="text-white text-[13px] font-bold">Highest-Ranked UK–Nigeria Cargo on Google · 107+ Five-Star Reviews</span>
+                <span className="text-white text-[13px] font-bold">Highest-Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
               </motion.div>
 
               <motion.div variants={fadeUp} custom={0.02}>
@@ -324,7 +324,7 @@ function Hero() {
                 { icon:Globe,   label:"Nigeria Hub",             val:"Shagam Interchange, Lagos"     },
                 { icon:Clock,   label:"Operating Since",         val:"2012 — 12+ years"               },
                 { icon:Package, label:"Shipments Delivered",     val:"50,000+"                        },
-                { icon:Star,    label:"Google Reviews",          val:"107 × Five-Star (organically)"  },
+                { icon:Star,    label:"Google Reviews",          val:"100 × Five-Star (organically)"  },
                 { icon:Shield,  label:"Certification",           val:"IATA · HMRC Authorised"         },
                 { icon:Zap,     label:"Weekly Departures",       val:"Air & Sea — every week"         },
                 { icon:Globe,   label:"Nigerian States Covered", val:"All 36 + FCT Abuja"             },
@@ -875,11 +875,11 @@ export default function BusinessSolutionsClient() {
           {
             "@type":"LocalBusiness","@id":"https://r-zoneenterprises.com/#business",
             "name":"R-Zone Enterprises",
-            "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
+            "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
             "url":"https://r-zoneenterprises.com","telephone":"+448007720864","email":"info@r-zoneenterprises.com",
             "address":{ "@type":"PostalAddress","addressLocality":"Upminster","addressRegion":"Essex","addressCountry":"GB" },
             "areaServed":["United Kingdom","Nigeria"],
-            "aggregateRating":{ "@type":"AggregateRating","ratingValue":"5","reviewCount":"107","bestRating":"5" },
+            "aggregateRating":{ "@type":"AggregateRating","ratingValue":"5","reviewCount":"100","bestRating":"5" },
           },
           {
             "@type":"ItemList",

@@ -1,8 +1,8 @@
 "use client";
 
 import { Montserrat } from "next/font/google";
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const montserrat = Montserrat({
@@ -16,111 +16,111 @@ const montserrat = Montserrat({
 const TESTIMONIALS = [
   {
     id: 1,
-    name: "Halima Aro",
-    avatar: "HA",
-    date: "July 2023",
+    name: "Dotun Fowowe",
+    avatar: "DF",
+    date: "1 month ago",
     stars: 5,
-    short: "Nothing short of fantastic — real-time updates every step.",
-    text: "From start to finish, R-Zone demonstrated the utmost professionalism, efficiency, and care. Communication was excellent — I was kept informed every step of the way, from pickup to delivery, with real-time updates. My items arrived in perfect condition and right on schedule. Without a doubt, I wholeheartedly recommend R-Zone for all shipping needs.",
+    short: "Timely delivery and amazing communication throughout.",
+    text: "I am really pleased and excited with timely delivery and the commitment of R-Zone Cargo. The intervals communication they gave all through the transaction was amazing. I will definitely keep coming back again and again to do business with them.",
   },
   {
     id: 2,
-    name: "Adeola Enahoro",
-    avatar: "AE",
-    date: "November 2022",
+    name: "Charles Eze",
+    avatar: "CE",
+    date: "3 months ago",
     stars: 5,
-    short: "Left the UK Friday, received in Lagos by Thursday.",
-    text: "Very quick and swift delivery. Goods left the UK on Friday and I received them to my doorstep in Lagos by the following Thursday. My items were fragile and all were received in perfect state.",
+    short: "Consistently exceeded expectations over 8 years of service.",
+    text: "I have been using and trusted R-ZONE CARGO for over eight years, and their delivery service has consistently exceeded my expectations. Every item arrives on time, professionally packaged, and in perfect condition. Their reliability, efficiency, and attention to detail make them a standout logistics partner. I highly recommend R-ZONE CARGO for dependable and high-quality delivery services. TRY THEM TODAY & THANK ME LATER.",
   },
   {
     id: 3,
-    name: "Oludotun Otesile",
-    avatar: "OO",
-    date: "August 2022",
+    name: "Shola Oluwatobi",
+    avatar: "SO",
+    date: "4 months ago",
     stars: 5,
-    short: "Professional staff in both London and Lagos.",
-    text: "I have always depended on R-Zone Enterprises for shipping my items from England to my home in Abeokuta. They always repackage my goods safely. They communicate excellently to inform me of when my goods are in Lagos and when it will be delivered. Their service is good value for money because my items are always delivered as given to them. Staff in London and Lagos are very professional.",
+    short: "Superb packaging and reliable service overall.",
+    text: "I am happy with this cargo company, most expecially the packaging, its superb. Just that there was a bit of differ in the the delivery date but all other is👌. I would recommend them.",
   },
   {
     id: 4,
-    name: "Grace Somorin",
-    avatar: "GS",
-    date: "April 2021",
+    name: "Musa Femi",
+    avatar: "MF",
+    date: "7 months ago",
     stars: 5,
-    short: "Efficient, reasonable pricing, superb customer service.",
-    text: "I used R-Zone Cargo from London to Lagos, Nigeria. I'm really pleased — their service is not only efficient, their price is incredibly reasonable, their customer service is superb and their delivery date is spot on. All my luggage remained intact, they re-packed my bags for safety. I will use them again and again. I highly recommend them to anyone looking for efficiency, effectiveness and trustworthiness.",
+    short: "Fast and reliable — received in less than 6 weeks.",
+    text: "R-zone Cargo is fast and reliable service! I sent a bag from London to Nigeria, and my sister received it in less than six weeks. I truly enjoyed their service and will definitely keep using them.",
   },
   {
     id: 5,
-    name: "Vincent Adebiyi",
-    avatar: "VA",
-    date: "August 2023",
+    name: "ABOSEDE THOMAS",
+    avatar: "AT",
+    date: "1 month ago",
     stars: 5,
-    short: "Used for 7 years — never lost a single package.",
-    text: "A very reliable service which I have used for the past 7 years. Always accurate and on time with deliveries, with great communication. I have never lost a package and all products were delivered with extreme care and diligence.",
+    short: "Prompt, exactly 6 weeks — no hiccups at all.",
+    text: "It was prompt, exactly 6 weeks. No hiccups. I like the cargo and shipping services.",
   },
   {
     id: 6,
-    name: "Alake Taiwo",
-    avatar: "AT",
-    date: "December 2021",
+    name: "Olusegun Olaniyi",
+    avatar: "OO",
+    date: "10 months ago",
     stars: 5,
-    short: "Trustworthy, on time, and they work with integrity.",
-    text: "They are so standard and on time. They work with integrity and we are so impressed. They respond swiftly and give wonderful service. Our goods arrived intact and in good shape. I will patronise them over and over and will also recommend them to anyone that wants to do business with them. They are awesome and trustworthy.",
+    short: "Reliable, trusted, and consistent in every transaction.",
+    text: "R-Zone Cargo & Shipping Services are reliable, trusted and consistent when it to general either diaspora or locally. This is my second time of doing business with them, please be assured that all goes well.",
   },
   {
     id: 7,
-    name: "David Goliath",
-    avatar: "DG",
-    date: "March 2024",
+    name: "Jane Moore",
+    avatar: "JM",
+    date: "1 year ago",
     stars: 5,
-    short: "Proactive, reliable and trusted — I'll recommend to everyone.",
-    text: "Your company was proactive, reliable, and trusted. I will recommend you to my friends who want to ship their consignments.",
+    short: "Arrived earlier than expected — incredible service.",
+    text: "I recently used R-Zone Enterprises Ltd to send a package to my sister in Abuja, and I couldn't be more impressed with their service! The delivery arrived even earlier than expected, which was a wonderful surprise. My sister received everything in perfect condition.",
   },
   {
     id: 8,
-    name: "Christiana Ogum",
-    avatar: "CO",
-    date: "September 2023",
+    name: "ANYIAM CHUKWUDI EUGENE",
+    avatar: "AC",
+    date: "9 months ago",
     stars: 5,
-    short: "Parcel received ahead of time — very professional team.",
-    text: "The service was excellent, parcel was received way ahead of schedule. Very professional team — I was updated through each process. I will definitely come back.",
+    short: "Items delivered exactly on the promised date.",
+    text: "Great service! My family is so happy to receive the items I sent to them in Lagos. I feel relieved and glad. The items were delivered exactly on the date promised. Thank you, R-Zone Cargo & Shipping Service. Thank you once again!",
   },
   {
     id: 9,
-    name: "Ijeoma Njoku",
-    avatar: "IN",
-    date: "May 2021",
+    name: "Mo Judith",
+    avatar: "MJ",
+    date: "1 year ago",
     stars: 5,
-    short: "Fantastic company — great service in great hands.",
-    text: "R-Zone Enterprises Ltd — fantastic company, great service, reliable and efficient. Will advise you to use them for your international and domestic deliveries. Will definitely use them again. You're in great hands.",
+    short: "Very efficient and reliable — delivered in 6 weeks.",
+    text: "My first time using R-Zone cargo and o must confess they are very efficient and reliable. My delivery was with 6 weeks as promised. My good were delivered straight to my house and intact. I'm really happy and impressed. Will definitely be using them and also recommend them people. 👌",
   },
   {
     id: 10,
-    name: "hauwa ummi",
-    avatar: "HU",
-    date: "March 2023",
+    name: "billy ozigis",
+    avatar: "BO",
+    date: "1 year ago",
     stars: 5,
-    short: "Swift delivery, prompt response, trustworthy every time.",
-    text: "Great service. Kudos. Swift delivery and prompt response to any enquiries. Good customer service and trustworthy. Will recommend them over and over.",
+    short: "Highly coordinated with swift and organized delivery.",
+    text: "Rzone as a Company is highly coordinated and I'm always impressed by their swift delivery services. Through their organized timetable, u get to have an insight of when your goods will arrive. I highly recommend.",
   },
   {
     id: 11,
-    name: "Rose Igwegbe",
-    avatar: "RI",
-    date: "October 2022",
+    name: "Bola Ladejo",
+    avatar: "BL",
+    date: "1 year ago",
     stars: 5,
-    short: "Using them for 5 years — items always arrive intact.",
-    text: "Great service all the time. Items sent are intact when they arrive at the destination. I have been using the company for about 5 years now.",
+    short: "Referred by a friend — did not disappoint us.",
+    text: "R-Zone Cargo and Shipping lived upto expectations, they were referred by a friend and we surely were not disappointed. Professional service from start to finish.",
   },
   {
     id: 12,
-    name: "Ifeoma Dike",
-    avatar: "ID",
-    date: "June 2022",
+    name: "h u",
+    avatar: "HU",
+    date: "3 years ago",
     stars: 5,
-    short: "Excellent, professional, very affordable.",
-    text: "Excellent and professional cargo service to Nigeria. Most importantly, very affordable. I am one very happy customer. Thanks R-Zone Enterprises!",
+    short: "Swift delivery, excellent service, highly trustworthy.",
+    text: "Great service. Kudos. Swift delivery and prompt response to any enquiries. Good Customer service! And trustworthy. Will recommend them over and over.",
   },
 ];
 
@@ -204,8 +204,40 @@ function TestimonialCard({ t, featured = false }) {
 export default function TestimonialsSection() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [active, setActive] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const total  = TESTIMONIALS.length;
+
+  // Auto-advance every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % total);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [total]);
+
+  // Get the 3 testimonials to show (with wrapping)
+  const getVisibleTestimonials = () => {
+    const testimonials = [];
+    for (let i = -1; i <= 1; i++) {
+      const index = (currentIndex + i + total) % total;
+      testimonials.push({
+        ...TESTIMONIALS[index],
+        position: i + 1, // 0, 1, 2 (left, center, right)
+        isCenter: i === 0
+      });
+    }
+    return testimonials;
+  };
+
+  const visibleTestimonials = getVisibleTestimonials();
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % total);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  };
 
   return (
     <>
@@ -216,11 +248,11 @@ export default function TestimonialsSection() {
           "@type": "LocalBusiness",
           "@id": "https://r-zoneenterprises.com/#organization",
           "name": "R-Zone Enterprises",
-          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned.",
+          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned.",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
-            "reviewCount": "107",
+            "reviewCount": "100",
             "bestRating": "5",
             "worstRating": "1",
           },
@@ -263,7 +295,7 @@ export default function TestimonialsSection() {
               <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
                 <Star size={10} className="fill-[#0818A8] text-[#0818A8]" aria-hidden="true" />
                 <span className="text-[#0818A8] text-[13px] font-bold tracking-[0.22em] uppercase">
-                  107+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo
+                  100+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo
                 </span>
               </div>
             </motion.div>
@@ -284,54 +316,88 @@ export default function TestimonialsSection() {
               className="text-gray-800 text-[14px] font-normal max-w-lg mx-auto leading-relaxed">
               The{" "}
               <strong className="text-gray-900 font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-              {" "}— 107+ verified five-star reviews from real customers across the UK and Nigeria.
+              {" "}— 100+ verified five-star reviews from real customers across the UK and Nigeria.
             </motion.p>
           </motion.div>
 
-          {/* Desktop 3-col grid */}
-          <div className="hidden md:grid grid-cols-3 gap-5 lg:gap-6">
-            {DESKTOP_COLS.map((col, colIdx) => (
-              <motion.div key={colIdx}
-                className={`flex flex-col gap-5 ${colIdx === 0 ? "pt-8" : colIdx === 2 ? "pt-14" : ""}`}
-                initial="hidden" animate={inView ? "visible" : "hidden"}
-                variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 * colIdx } } }}>
-                {col.map((t, i) => (
-                  <motion.div key={t.id} variants={fadeUp}>
-                    <TestimonialCard t={t} featured={colIdx === 1 && i === 0} />
+          {/* Testimonials Slider */}
+          <div className="relative overflow-hidden">
+            <div className="flex justify-center gap-4 md:gap-6">
+              <AnimatePresence mode="popLayout">
+                {visibleTestimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={`${testimonial.id}-${currentIndex}-${index}`}
+                    className={`flex-shrink-0 transition-all duration-700 ${
+                      testimonial.isCenter 
+                        ? 'w-full max-w-[400px] md:max-w-[420px] z-10' 
+                        : 'w-full max-w-[350px] md:max-w-[380px]'
+                    }`}
+                    initial={{ 
+                      scale: 0.8, 
+                      opacity: 0, 
+                      x: index === 0 ? -200 : index === 2 ? 200 : 0,
+                      y: 20
+                    }}
+                    animate={{ 
+                      scale: testimonial.isCenter ? 1.08 : 0.92,
+                      opacity: testimonial.isCenter ? 1 : 0.8,
+                      x: 0,
+                      y: testimonial.isCenter ? -10 : 0
+                    }}
+                    exit={{ 
+                      scale: 0.8, 
+                      opacity: 0, 
+                      x: index === 0 ? -200 : index === 2 ? 200 : 0,
+                      y: 20
+                    }}
+                    transition={{ 
+                      duration: 0.8, 
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      scale: { duration: 1.0, ease: "easeOut" }
+                    }}
+                    style={{
+                      filter: testimonial.isCenter ? 'drop-shadow(0 20px 25px rgba(8, 24, 168, 0.15))' : 'none'
+                    }}
+                  >
+                    <TestimonialCard t={testimonial} featured={testimonial.isCenter} />
                   </motion.div>
                 ))}
-              </motion.div>
-            ))}
-          </div>
+              </AnimatePresence>
+            </div>
 
-          {/* Mobile carousel */}
-          <div className="md:hidden">
-            <motion.div key={active}
-              initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}>
-              <TestimonialCard t={TESTIMONIALS[active]} featured={active === 1} />
-            </motion.div>
-
-            <div className="flex items-center justify-between mt-6">
-              <div className="flex items-center gap-2" role="tablist" aria-label="Customer review navigation">
-                {TESTIMONIALS.map((_, i) => (
-                  <button key={i} onClick={() => setActive(i)} role="tab"
-                    aria-selected={i === active} aria-label={`View review ${i + 1}`}
-                    className={`rounded-full transition-all duration-200 ${i === active ? "w-5 h-1.5 bg-[#0818A8]" : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-800"}`} />
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <button 
+                onClick={prevSlide}
+                className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="Previous testimonials"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              
+              {/* Dots indicator */}
+              <div className="flex items-center gap-2">
+                {Array.from({ length: total }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentIndex(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === currentIndex 
+                        ? 'w-8 h-3 bg-[#0818A8]' 
+                        : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to testimonial ${i + 1}`}
+                  />
                 ))}
               </div>
-              <div className="flex items-center gap-2">
-                <button onClick={() => setActive(a => (a - 1 + total) % total)}
-                  className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-800 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
-                  aria-label="Previous customer review">
-                  <ChevronLeft size={15} aria-hidden="true" />
-                </button>
-                <button onClick={() => setActive(a => (a + 1) % total)}
-                  className="w-9 h-9 rounded border border-gray-200 flex items-center justify-center text-gray-800 hover:text-[#0818A8] hover:border-[#0818A8]/40 transition-all"
-                  aria-label="Next customer review">
-                  <ChevronRight size={15} aria-hidden="true" />
-                </button>
-              </div>
+              
+              <button 
+                onClick={nextSlide}
+                className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="Next testimonials"
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
           </div>
 
@@ -342,7 +408,7 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6, delay: 0.8 }} role="list"
             aria-label="R-Zone Enterprises customer satisfaction statistics">
             {[
-              { value: "107+",  label: "Five-Star Reviews"     },
+              { value: "100+",  label: "Five-Star Reviews"     },
               { value: "12+",   label: "Years of Service"      },
               { value: "5.0",   label: "Google Rating"         },
               { value: "50K+",  label: "Shipments Delivered"   },

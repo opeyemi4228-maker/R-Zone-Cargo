@@ -53,7 +53,7 @@ const SERVICES = [
     imgAlt: "Cargo aircraft being loaded at UK airport for Nigeria air freight service",
     faq: [
       { q: "How long does air freight to Nigeria take?",          a: "Typically 5–10 working days from the UK to Lagos, Abuja, Port Harcourt and all major Nigerian cities. Weekly departures guarantee no long waits." },
-      { q: "How much does air freight to Nigeria cost per kg?",   a: "Air freight from the UK to Nigeria starts from £5 per kg. Contact R-Zone for a free, personalised quote based on your cargo weight and dimensions." },
+      { q: "How much does air freight to Nigeria cost per kg?",   a: <>Air freight from the UK to Nigeria starts from £5 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#0818A8] hover:underline">Price List</Link></> },
       { q: "What items can I send by air to Nigeria?",            a: "We accept clothing, electronics, foodstuffs, documents, personal effects and most general cargo. Contact us for a full list of accepted and prohibited items." },
     ],
   },
@@ -89,7 +89,7 @@ const SERVICES = [
     imgAlt: "Container ship carrying sea freight from UK to Nigeria — weekly sailings",
     faq: [
       { q: "How long does sea freight to Nigeria take?",              a: "Sea freight from the UK to Nigeria typically takes 4–6 weeks. Sailing is weekly — your cargo never waits more than a week to depart." },
-      { q: "What is the cheapest way to ship to Nigeria from the UK?", a: "Sea freight is the cheapest option — starting from £3 per kg for consolidated (LCL) shipments. R-Zone operates weekly sailings so you get the best price without long delays." },
+      { q: "What is the cheapest way to ship to Nigeria from the UK?", a: <>Sea freight is the cheapest option — starting from £3 per kg for consolidated (LCL) shipments. <Link href="/schedulesprices#pricing" className="font-bold text-[#0437F2] hover:underline">Price List</Link></> },
       { q: "Can I ship a car by sea to Nigeria?",                     a: "Yes. We specialise in vehicle shipping to Nigeria by sea. Contact us for RoRo (roll-on/roll-off) rates and the current sailing schedule." },
     ],
   },
@@ -125,12 +125,12 @@ const SERVICES = [
     imgAlt: "R-Zone door to door cargo collection service UK to Nigeria",
     faq: [
       { q: "Do you collect from anywhere in the UK?",     a: "Yes, we offer door collection across the entire UK — from London, Manchester, Birmingham, Leeds and beyond. Collection fees may apply depending on your postcode." },
-      { q: "How much does door-to-door cargo to Nigeria cost?", a: "Door-to-door cargo from the UK to Nigeria starts from £6 per kg, including UK collection and Nigerian delivery. Get a free quote for your specific shipment." },
+      { q: "How much does door-to-door cargo to Nigeria cost?", a: <>Door-to-door cargo from the UK to Nigeria starts from £6 per kg, including UK collection and Nigerian delivery. <Link href="/schedulesprices#pricing" className="font-bold text-[#1F51FF] hover:underline">Price List</Link></> },
       { q: "Can you deliver to Abuja and rural Nigerian areas?",a: "Yes. We deliver door-to-door to all 36 Nigerian states including Lagos, Abuja, Port Harcourt, Kano, Enugu, Ibadan and all rural areas." },
     ],
   },
   {
-    id: "importation-from-nigeria",
+    id: "importation",
     slug: "importation-from-nigeria",
     nav: "Importation",
     icon: Package,
@@ -273,13 +273,51 @@ const SERVICES = [
       { q: "Do you handle oversized or project cargo?",            a: "Yes. We specialise in oversized, out-of-gauge (OOG) and heavy-lift project cargo. Contact us to discuss your specific requirements." },
     ],
   },
+  {
+    id: "vehicles",
+    slug: "vehicles",
+    nav: "Car & Vehicle Shipping",
+    icon: Truck,
+    badge: "Specialist Service",
+    badgeColor: "bg-orange-50 text-orange-700",
+    title: "Car & Vehicle Shipping UK to Nigeria",
+    tagline: "Professional vehicle shipping with full protection, documentation & door-to-door delivery.",
+    description:
+      "R-Zone Enterprises specialises in safe, secure vehicle shipping from the UK to Nigeria. Whether you're relocating a personal car, sending vehicles for commercial use, or importing luxury vehicles, we provide complete end-to-end logistics with professional handling, full insurance cover, and comprehensive customs documentation. All vehicles are shipped via RoRo (roll-on/roll-off) on dedicated container vessels with departures every month.",
+    highlights: [
+      "RoRo (roll-on/roll-off) specialist shipping",
+      "All vehicle types — cars, trucks, motorcycles",
+      "Full comprehensive insurance included",
+      "Door collection in UK + door delivery in Nigeria",
+      "Export & import documentation handled end-to-end",
+      "4–6 weeks transit to all Nigerian ports",
+    ],
+    process: [
+      { step: "01", label: "Vehicle specification & quote",    detail: "Send photos, year, make, mileage, VIN"        },
+      { step: "02", label: "Collection & shipment logistics",  detail: "Pick up from your UK location"              },
+      { step: "03", label: "Prepared for RoRo shipping",       detail: "Professional handling & full insurance"     },
+      { step: "04", label: "Delivered to Nigeria address",     detail: "All customs & duties cleared on arrival"   },
+    ],
+    accent: "#D97706",
+    dark: false,
+    // Vehicle/car shipping
+    img: "https://images.unsplash.com/photo-1604629209793-ba4f8a3ae0f2?w=1400&q=80&auto=format&fit=crop",
+    imgAlt: "Car and vehicle shipping UK to Nigeria — R-Zone professional RoRo container service",
+    faq: [
+      { q: "How much does it cost to ship a car from the UK to Nigeria?", a: <>Vehicle shipping costs range from £1,500–£4,500 depending on vehicle type, size, and specifications. <Link href="/schedulesprices#pricing" className="font-bold text-[#D97706] hover:underline">Price List</Link></> },
+      { q: "What happens to my car during shipping?", a: "Your vehicle is loaded onto a dedicated RoRo vessel, secured, and transported in a sealed container. It's fully insured throughout at no extra cost. We provide real-time updates and door delivery to your Nigerian address." },
+      { q: "How long does car shipping from the UK to Nigeria take?", a: "Typical transit time is 4–6 weeks depending on the Nigerian port (Lagos, Port Harcourt, or Calabar). We depart monthly with guaranteed safe arrival and full customs clearance on your behalf." },
+      { q: "Can I ship a vehicle to Abuja or inland Nigeria?", a: "Yes. We deliver to all Nigerian cities — Lagos, Abuja, Port Harcourt, Kano, and all 36 states. After port clearance, we arrange onward transport to your final destination." },
+      { q: "What documents do I need to ship my car to Nigeria?", a: "Required: UK V5 Registration Document (car logbook), proof of ID, proof of ownership, and passport scan. Our customs team handles the rest — Nigerian import permits, duty assessment, and full NCS clearance." },
+    ],
+  },
 ];
 
 const STATS = [
   { value: "12+",     label: "Years Experience",       icon: Clock   },
   { value: "50,000+", label: "Shipments Delivered",    icon: Package },
   { value: "99%",     label: "Delivery Success Rate",  icon: Shield  },
-  { value: "107+",    label: "5-Star Reviews",         icon: Star    },
+  { value: "100+",    label: "5-Star Reviews",         icon: Star    },
 ];
 
 const fadeUp = {
@@ -495,7 +533,9 @@ function ServiceSection({ service, index }) {
                     itemScope itemType="https://schema.org/Question">
                     <p className={`font-bold text-[13px] mb-1.5 leading-snug ${isDark ? "text-white/80" : "text-gray-800"}`} itemProp="name">{item.q}</p>
                     <div itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
-                      <p className={`text-[13px] font-normal leading-relaxed ${isDark ? "text-white/80" : "text-gray-800"}`} itemProp="text">{item.a}</p>
+                      <p className={`text-[13px] font-normal leading-relaxed ${isDark ? "text-white/80" : "text-gray-800"}`} itemProp="text">
+                        {typeof item.a === "string" ? item.a : item.a}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -577,7 +617,7 @@ function PageHero() {
             <div className="inline-flex items-center gap-2.5 border border-amber-400/35 bg-amber-400/8 px-4 py-1.5 rounded-full mb-5">
               <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-amber-400 text-[11px] font-black tracking-[0.28em] uppercase">
-                #1 Ranked UK–Nigeria Cargo · 107+ Five-Star Reviews
+                #1 Ranked UK–Nigeria Cargo · 100+ Five-Star Reviews
               </span>
             </div>
             <h1 id="services-hero-heading"

@@ -1,25 +1,45 @@
 "use client";
 
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * R-Zone Enterprises — Track Shipment Page (Redesigned)
+ * /track
+ *
+ * Design: Mission Control — dark navy operational terminal aesthetic.
+ * Matches R-Zone brand palette (#00061a base, #0818A8 / #1F51FF accents).
+ *
+ * ADD TO /track/layout.tsx:
+ * export const metadata = {
+ *   title: "Track Your UK–Nigeria Shipment | R-Zone Enterprises",
+ *   description:
+ *     "Track your UK to Nigeria cargo shipment in real time. Enter your R-Zone booking reference for live status, milestones, and estimated delivery. #1 rated UK–Nigeria cargo company on Google.",
+ *   alternates: { canonical: "https://r-zoneenterprises.com/track" },
+ * };
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import { Montserrat } from "next/font/google";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   Search, Package, MapPin, Clock, CheckCircle,
   Circle, Truck, Plane, Ship, Warehouse,
   ArrowRight, Phone, Mail, AlertCircle,
-  ChevronDown, RefreshCw, Download, Share2,
+  ChevronRight, RefreshCw, Download, Share2,
   Navigation, Calendar, Weight, FileText,
-  Shield, Globe, Zap, BarChart3,
+  Shield, Globe, Zap, BarChart3, Award,
+  MessageSquare, ChevronDown, Loader2,
 } from "lucide-react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-mont",
+  display: "swap",
 });
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
-
 const MOCK_SHIPMENTS = {
   "RZC-2024-00847": {
     id: "RZC-2024-00847",
@@ -42,16 +62,16 @@ const MOCK_SHIPMENTS = {
     currentLocation: "Dubai International Airport, UAE",
     nextMilestone: "Arrival at London Heathrow",
     events: [
-      { date: "Mar 01, 2026", time: "09:14", status: "done",   title: "Shipment Booked",             location: "Lagos, Nigeria",            detail: "Booking confirmed. AWB generated: MS-0847-2024-LOS" },
-      { date: "Mar 02, 2026", time: "11:30", status: "done",   title: "Cargo Picked Up",              location: "Ikeja, Lagos",              detail: "Cargo collected from shipper premises. 14 pieces, 842kg verified." },
-      { date: "Mar 02, 2026", time: "18:45", status: "done",   title: "Accepted at Origin",           location: "Lagos Airport Cargo, LOS",  detail: "Cargo accepted at airline cargo terminal. Security screening passed." },
-      { date: "Mar 03, 2026", time: "08:20", status: "done",   title: "Departed Origin",              location: "Lagos — Flight MS447",       detail: "Cargo departed Lagos on connecting flight MS447." },
-      { date: "Mar 03, 2026", time: "23:55", status: "done",   title: "Arrived Transit Hub",          location: "Dubai, UAE — DXB",          detail: "Cargo arrived at Dubai transit facility. Held for connecting flight." },
-      { date: "Mar 04, 2026", time: "14:20", status: "active", title: "In Transit — Dubai Hub",       location: "Dubai International, UAE",  detail: "Cargo processing at transit hub. On schedule for connecting flight to London." },
-      { date: "Mar 06, 2026", time: "06:00", status: "pending",title: "Departs for Destination",      location: "Dubai — Flight EK003",       detail: "Scheduled departure on EK003 to London Heathrow." },
-      { date: "Mar 07, 2026", time: "07:30", status: "pending", title: "Arrives London Heathrow",      location: "London, UK — LHR",          detail: "Estimated arrival. Customs pre-clearance filed." },
-      { date: "Mar 07, 2026", time: "14:00", status: "pending", title: "Customs Clearance",            location: "HMRC — Heathrow",           detail: "UK import clearance. Duties pre-paid via DDP incoterm." },
-      { date: "Mar 07, 2026", time: "18:00", status: "pending", title: "Out for Delivery",             location: "London, UK",                detail: "Last-mile delivery to consignee address." },
+      { date:"Mar 01, 2026", time:"09:14", status:"done",    title:"Shipment Booked",       location:"Lagos, Nigeria",            detail:"Booking confirmed. AWB generated: MS-0847-2024-LOS" },
+      { date:"Mar 02, 2026", time:"11:30", status:"done",    title:"Cargo Picked Up",       location:"Ikeja, Lagos",              detail:"Cargo collected from shipper premises. 14 pieces, 842kg verified." },
+      { date:"Mar 02, 2026", time:"18:45", status:"done",    title:"Accepted at Origin",    location:"Lagos Airport Cargo, LOS",  detail:"Cargo accepted at airline cargo terminal. Security screening passed." },
+      { date:"Mar 03, 2026", time:"08:20", status:"done",    title:"Departed Origin",       location:"Lagos — Flight MS447",      detail:"Cargo departed Lagos on connecting flight MS447." },
+      { date:"Mar 03, 2026", time:"23:55", status:"done",    title:"Arrived Transit Hub",   location:"Dubai, UAE — DXB",         detail:"Cargo arrived at Dubai transit facility. Held for connecting flight." },
+      { date:"Mar 04, 2026", time:"14:20", status:"active",  title:"In Transit — Dubai Hub",location:"Dubai International, UAE", detail:"Cargo processing at transit hub. On schedule for connecting flight to London." },
+      { date:"Mar 06, 2026", time:"06:00", status:"pending", title:"Departs for Destination",location:"Dubai — Flight EK003",    detail:"Scheduled departure on EK003 to London Heathrow." },
+      { date:"Mar 07, 2026", time:"07:30", status:"pending", title:"Arrives London Heathrow",location:"London, UK — LHR",        detail:"Estimated arrival. Customs pre-clearance filed." },
+      { date:"Mar 07, 2026", time:"14:00", status:"pending", title:"Customs Clearance",     location:"HMRC — Heathrow",          detail:"UK import clearance. Duties pre-paid via DDP incoterm." },
+      { date:"Mar 07, 2026", time:"18:00", status:"pending", title:"Out for Delivery",      location:"London, UK",               detail:"Last-mile delivery to consignee address." },
     ],
   },
   "RZC-2024-00612": {
@@ -75,13 +95,13 @@ const MOCK_SHIPMENTS = {
     currentLocation: "Delivered — Apapa, Lagos",
     nextMilestone: "Shipment Complete",
     events: [
-      { date: "Jan 15, 2026", time: "10:00", status: "done",   title: "Booking Confirmed",         location: "Shanghai, China",         detail: "FCL booking confirmed. Container allocated: TCKU3456781." },
-      { date: "Jan 22, 2026", time: "14:00", status: "done",   title: "Cargo Stuffed & Sealed",    location: "Shanghai CY",             detail: "Container stuffed, sealed, and gate-in confirmed at port." },
-      { date: "Jan 25, 2026", time: "08:00", status: "done",   title: "Vessel Departed",           location: "Port of Shanghai",        detail: "Vessel MSC ARIA departed Shanghai. ETD confirmed." },
-      { date: "Feb 18, 2026", time: "16:30", status: "done",   title: "Arrived Transhipment Port", location: "Tanger Med, Morocco",     detail: "Container arrived transhipment hub. Transferred to feeder vessel." },
-      { date: "Feb 24, 2026", time: "11:15", status: "done",   title: "Arrived Destination Port",  location: "Apapa Port, Lagos",       detail: "Vessel berthed. Discharge operations commenced." },
-      { date: "Feb 25, 2026", time: "09:00", status: "done",   title: "Customs Cleared",           location: "NCS — Apapa",             detail: "Import examination complete. Duty paid. Release order obtained." },
-      { date: "Feb 28, 2026", time: "13:40", status: "done",   title: "Delivered",                 location: "Amuwo-Odofin, Lagos",     detail: "Container delivered and devanned at consignee warehouse. POD signed." },
+      { date:"Jan 15, 2026", time:"10:00", status:"done", title:"Booking Confirmed",        location:"Shanghai, China",      detail:"FCL booking confirmed. Container allocated: TCKU3456781." },
+      { date:"Jan 22, 2026", time:"14:00", status:"done", title:"Cargo Stuffed & Sealed",   location:"Shanghai CY",          detail:"Container stuffed, sealed, and gate-in confirmed at port." },
+      { date:"Jan 25, 2026", time:"08:00", status:"done", title:"Vessel Departed",          location:"Port of Shanghai",     detail:"Vessel MSC ARIA departed Shanghai. ETD confirmed." },
+      { date:"Feb 18, 2026", time:"16:30", status:"done", title:"Arrived Transhipment Port",location:"Tanger Med, Morocco",  detail:"Container arrived transhipment hub. Transferred to feeder vessel." },
+      { date:"Feb 24, 2026", time:"11:15", status:"done", title:"Arrived Destination Port", location:"Apapa Port, Lagos",    detail:"Vessel berthed. Discharge operations commenced." },
+      { date:"Feb 25, 2026", time:"09:00", status:"done", title:"Customs Cleared",          location:"NCS — Apapa",          detail:"Import examination complete. Duty paid. Release order obtained." },
+      { date:"Feb 28, 2026", time:"13:40", status:"done", title:"Delivered",                location:"Amuwo-Odofin, Lagos",  detail:"Container delivered and devanned at consignee warehouse. POD signed." },
     ],
   },
   "RZC-2024-00991": {
@@ -105,13 +125,13 @@ const MOCK_SHIPMENTS = {
     currentLocation: "NAFDAC Inspection — Abuja Airport",
     nextMilestone: "Release & Delivery",
     events: [
-      { date: "Mar 03, 2026", time: "08:00", status: "done",   title: "Shipment Booked",         location: "Frankfurt, Germany",         detail: "Booking confirmed for temperature-controlled air freight." },
-      { date: "Mar 03, 2026", time: "16:30", status: "done",   title: "Departed Frankfurt",      location: "Frankfurt Airport, FRA",     detail: "Departed on LH568 in cold chain container. Temp log active." },
-      { date: "Mar 04, 2026", time: "05:15", status: "done",   title: "Arrived Abuja",           location: "Nnamdi Azikiwe Airport, ABV",detail: "Arrived on schedule. Temperature integrity maintained: 2–8°C." },
-      { date: "Mar 04, 2026", time: "09:00", status: "done",   title: "Lodged with Customs",     location: "NCS — Abuja Airport",        detail: "Import entry filed. NAFDAC examination initiated." },
-      { date: "Mar 06, 2026", time: "10:30", status: "active", title: "NAFDAC Inspection",       location: "NAFDAC Unit — Abuja Airport",detail: "Physical inspection by NAFDAC officers in progress." },
-      { date: "Mar 06, 2026", time: "16:00", status: "pending",title: "Release Order Expected",  location: "NCS — Abuja",                detail: "Pending NAFDAC clearance certificate and duty payment." },
-      { date: "Mar 06, 2026", time: "18:00", status: "pending",title: "Out for Delivery",        location: "Abuja, Nigeria",             detail: "Temperature-controlled last-mile delivery to hospital." },
+      { date:"Mar 03, 2026", time:"08:00", status:"done",    title:"Shipment Booked",       location:"Frankfurt, Germany",          detail:"Booking confirmed for temperature-controlled air freight." },
+      { date:"Mar 03, 2026", time:"16:30", status:"done",    title:"Departed Frankfurt",    location:"Frankfurt Airport, FRA",      detail:"Departed on LH568 in cold chain container. Temp log active." },
+      { date:"Mar 04, 2026", time:"05:15", status:"done",    title:"Arrived Abuja",         location:"Nnamdi Azikiwe Airport, ABV", detail:"Arrived on schedule. Temperature integrity maintained: 2–8°C." },
+      { date:"Mar 04, 2026", time:"09:00", status:"done",    title:"Lodged with Customs",   location:"NCS — Abuja Airport",         detail:"Import entry filed. NAFDAC examination initiated." },
+      { date:"Mar 06, 2026", time:"10:30", status:"active",  title:"NAFDAC Inspection",     location:"NAFDAC Unit — Abuja Airport", detail:"Physical inspection by NAFDAC officers in progress." },
+      { date:"Mar 06, 2026", time:"16:00", status:"pending", title:"Release Order Expected",location:"NCS — Abuja",                 detail:"Pending NAFDAC clearance certificate and duty payment." },
+      { date:"Mar 06, 2026", time:"18:00", status:"pending", title:"Out for Delivery",      location:"Abuja, Nigeria",              detail:"Temperature-controlled last-mile delivery to hospital." },
     ],
   },
 };
@@ -119,626 +139,563 @@ const MOCK_SHIPMENTS = {
 const SAMPLE_IDS = ["RZC-2024-00847", "RZC-2024-00612", "RZC-2024-00991"];
 
 const STATUS_CONFIG = {
-  in_transit: { color: "#0818A8", bg: "bg-blue-50",   border: "border-blue-200",   text: "text-[#0818A8]",  dot: "bg-[#0818A8]"  },
-  delivered:  { color: "#16a34a", bg: "bg-green-50",  border: "border-green-200",  text: "text-green-700",  dot: "bg-green-500"  },
-  customs:    { color: "#d97706", bg: "bg-amber-50",  border: "border-amber-200",  text: "text-amber-700",  dot: "bg-amber-500"  },
-  booked:     { color: "#6366f1", bg: "bg-indigo-50", border: "border-indigo-200", text: "text-indigo-700", dot: "bg-indigo-500" },
+  in_transit: { color:"#1F51FF", label:"In Transit",        dotClass:"bg-[#1F51FF]",    chipClass:"border-[#1F51FF]/30 bg-[#1F51FF]/10 text-[#1F51FF]",    pulse:true  },
+  delivered:  { color:"#22c55e", label:"Delivered",         dotClass:"bg-emerald-400",  chipClass:"border-emerald-400/30 bg-emerald-400/10 text-emerald-400", pulse:false },
+  customs:    { color:"#f59e0b", label:"Customs Clearance", dotClass:"bg-amber-400",    chipClass:"border-amber-400/30 bg-amber-400/10 text-amber-400",       pulse:true  },
+  booked:     { color:"#a78bfa", label:"Booked",            dotClass:"bg-violet-400",   chipClass:"border-violet-400/30 bg-violet-400/10 text-violet-400",    pulse:false },
 };
 
-// ─── Variants ─────────────────────────────────────────────────────────────────
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (d = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: d },
-  }),
-};
-
-// ─── Progress Bar ─────────────────────────────────────────────────────────────
-
-function ProgressBar({ value, status }) {
-  const color = STATUS_CONFIG[status]?.color || "#0818A8";
+// ─── Animated scanning ring ───────────────────────────────────────────────────
+function ScanRing() {
   return (
-    <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-      <motion.div
-        className="h-full rounded-full"
-        style={{ backgroundColor: color }}
-        initial={{ width: 0 }}
-        animate={{ width: `${value}%` }}
-        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
-      />
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+      {[1,2,3].map(i=>(
+        <motion.div key={i} className="absolute rounded-full border border-[#1F51FF]/20"
+          animate={{ scale:[1,2.5], opacity:[0.6,0] }}
+          transition={{ duration:2.5, repeat:Infinity, delay:i*0.8, ease:"easeOut" }}
+          style={{ width:40, height:40 }}/>
+      ))}
     </div>
   );
 }
 
-// ─── Timeline Event ───────────────────────────────────────────────────────────
-
-function TimelineEvent({ event, index, isLast }) {
-  const [expanded, setExpanded] = useState(false);
+// ─── Animated route visualiser ────────────────────────────────────────────────
+function RouteVisualiser({ shipment }) {
+  const cfg = STATUS_CONFIG[shipment.status];
+  const ServiceIcon = shipment.serviceIcon;
+  const isSeaFreight = shipment.service === "Sea Freight";
 
   return (
-    <motion.div
-      className="relative flex gap-4"
-      initial={{ opacity: 0, x: -16 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.06, duration: 0.4 }}
-    >
-      {/* Spine */}
-      <div className="flex flex-col items-center flex-shrink-0 w-8">
-        {/* Dot */}
-        <div className={`relative z-10 flex-shrink-0 ${
-          event.status === "done"
-            ? "w-7 h-7 bg-[#0818A8] rounded-full flex items-center justify-center shadow-md shadow-[#0818A8]/25"
-            : event.status === "active"
-            ? "w-7 h-7 bg-white border-2 border-[#0818A8] rounded-full flex items-center justify-center"
-            : "w-7 h-7 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center"
+    <div className="relative bg-[#020c28] border border-white/[0.07] overflow-hidden">
+      {/* Grid overlay */}
+      <div className="absolute inset-0 opacity-[0.04]"
+        style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"32px 32px" }}
+        aria-hidden="true"/>
+
+      <div className="relative z-10 p-5 sm:p-7">
+        <div className="flex items-center gap-3 sm:gap-6">
+
+          {/* Origin */}
+          <div className="flex flex-col items-center text-center flex-shrink-0 min-w-[72px]">
+            <div className="w-10 h-10 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center mb-2">
+              <span className="text-[#1F51FF] font-black text-[13px] leading-none">{shipment.origin.code}</span>
+            </div>
+            <p className="text-white font-bold text-[13px] leading-tight">{shipment.origin.city}</p>
+            <p className="text-white/50 text-[13px] leading-tight">{shipment.origin.country}</p>
+          </div>
+
+          {/* Animated path */}
+          <div className="flex-1 relative flex flex-col items-center gap-2 px-2">
+            {/* Path line */}
+            <div className="relative w-full h-[2px] bg-white/[0.06] overflow-hidden">
+              <motion.div className="absolute inset-y-0 left-0 h-full"
+                style={{ background:`linear-gradient(to right, #0818A8, ${cfg.color})` }}
+                initial={{ width:"0%" }} animate={{ width:`${shipment.progress}%` }}
+                transition={{ duration:1.5, ease:[0.25,0.46,0.45,0.94], delay:0.4 }}/>
+              {/* Travelling dot */}
+              {shipment.status !== "delivered" && (
+                <motion.div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-[#00061a] shadow-lg"
+                  style={{ backgroundColor:cfg.color, boxShadow:`0 0 8px ${cfg.color}` }}
+                  initial={{ left:"0%" }} animate={{ left:`${shipment.progress}%` }}
+                  transition={{ duration:1.5, ease:[0.25,0.46,0.45,0.94], delay:0.4 }}
+                  aria-hidden="true"/>
+              )}
+            </div>
+            {/* Icon + progress */}
+            <div className="flex items-center gap-2">
+              <ServiceIcon size={13} style={{ color:cfg.color }} aria-hidden="true"/>
+              <span className="text-[13px] font-bold" style={{ color:cfg.color }}>{shipment.progress}% complete</span>
+              <span className="text-white/40 text-[13px]">·</span>
+              <span className="text-white/50 text-[13px]">ETA {shipment.eta}</span>
+            </div>
+          </div>
+
+          {/* Destination */}
+          <div className="flex flex-col items-center text-center flex-shrink-0 min-w-[72px]">
+            <div className={`w-10 h-10 rounded-full border flex items-center justify-center mb-2 ${
+              shipment.status==="delivered" ? "bg-emerald-400/20 border-emerald-400/40" : "bg-white/[0.05] border-white/[0.12]"
+            }`}>
+              {shipment.status==="delivered"
+                ? <CheckCircle size={16} className="text-emerald-400"/>
+                : <span className="text-white/50 font-black text-[13px] leading-none">{shipment.destination.code}</span>
+              }
+            </div>
+            <p className="text-white font-bold text-[13px] leading-tight">{shipment.destination.city}</p>
+            <p className="text-white/50 text-[13px] leading-tight">{shipment.destination.country}</p>
+          </div>
+        </div>
+
+        {/* Current location ticker */}
+        <div className="mt-4 flex items-center gap-2 border-t border-white/[0.06] pt-4">
+          <div className="relative flex-shrink-0">
+            <span className={`w-2 h-2 rounded-full inline-block ${cfg.dotClass}`} aria-hidden="true"/>
+            {cfg.pulse&&<span className={`absolute inset-0 w-2 h-2 rounded-full animate-ping ${cfg.dotClass} opacity-60`} aria-hidden="true"/>}
+          </div>
+          <span className="text-white/50 text-[13px] font-normal">Current location:</span>
+          <span className="text-white font-semibold text-[13px]">{shipment.currentLocation}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Timeline event ───────────────────────────────────────────────────────────
+function TimelineEvent({ event, index, isLast }) {
+  return (
+    <motion.div className="relative flex gap-4"
+      initial={{ opacity:0, x:-12 }} animate={{ opacity:1, x:0 }}
+      transition={{ delay:index*0.055, duration:0.4, ease:[0.25,0.46,0.45,0.94] }}>
+
+      {/* Spine + dot */}
+      <div className="flex flex-col items-center flex-shrink-0 w-7">
+        <div className={`relative z-10 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
+          event.status==="done"
+            ? "bg-[#0818A8] shadow-lg shadow-[#0818A8]/30"
+            : event.status==="active"
+            ? "bg-transparent border-2 border-[#1F51FF]"
+            : "bg-transparent border border-white/[0.1]"
         }`}>
-          {event.status === "done" ? (
-            <CheckCircle size={13} className="text-white" />
-          ) : event.status === "active" ? (
-            <motion.div
-              className="w-3 h-3 bg-[#0818A8] rounded-full"
-              animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
+          {event.status==="done" ? (
+            <CheckCircle size={12} className="text-white" aria-hidden="true"/>
+          ) : event.status==="active" ? (
+            <motion.div className="w-2.5 h-2.5 rounded-full bg-[#1F51FF]"
+              animate={{ scale:[1,1.3,1], opacity:[1,0.5,1] }} transition={{ duration:1.4, repeat:Infinity }} aria-hidden="true"/>
           ) : (
-            <Circle size={10} className="text-gray-300" />
+            <div className="w-2 h-2 rounded-full bg-white/[0.1]" aria-hidden="true"/>
           )}
         </div>
-        {/* Connector line */}
         {!isLast && (
-          <div className={`flex-1 w-px mt-1 ${
-            event.status === "done" ? "bg-[#0818A8]/30" : "bg-gray-150"
-          }`} style={{ minHeight: 28 }} />
+          <div className={`flex-1 w-px mt-1 min-h-[24px] ${event.status==="done"?"bg-[#0818A8]/35":"bg-white/[0.06]"}`}
+            aria-hidden="true"/>
         )}
       </div>
 
       {/* Content */}
-      <div className={`flex-1 pb-5 ${isLast ? "" : ""}`}>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="w-full text-left group"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                <span className={`text-[13px] font-bold tracking-[-0.01em] ${
-                  event.status === "pending" ? "text-gray-400" : "text-gray-900"
-                }`}>
-                  {event.title}
+      <div className={`flex-1 pb-5 ${event.status==="pending"?"opacity-35":""}`}>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 flex-wrap mb-0.5">
+              <span className={`text-[13px] font-bold ${event.status==="done"?"text-white":event.status==="active"?"text-white":"text-white/40"}`}>
+                {event.title}
+              </span>
+              {event.status==="active" && (
+                <span className="inline-flex items-center gap-1 border border-[#1F51FF]/30 bg-[#1F51FF]/10 text-[#1F51FF] text-[13px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
+                  <motion.span className="w-1 h-1 rounded-full bg-[#1F51FF]"
+                    animate={{ opacity:[1,0.3,1] }} transition={{ duration:1.2, repeat:Infinity }} aria-hidden="true"/>
+                  Live
                 </span>
-                {event.status === "active" && (
-                  <span className="inline-flex items-center gap-1 bg-[#0818A8]/8 border border-[#0818A8]/20 text-[#0818A8] text-[13px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
-                    <motion.span
-                      className="w-1 h-1 rounded-full bg-[#0818A8]"
-                      animate={{ opacity: [1, 0.3, 1] }}
-                      transition={{ duration: 1.2, repeat: Infinity }}
-                    />
-                    Live
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-3 text-[13px] text-gray-400 font-normal">
-                <span className="flex items-center gap-1">
-                  <MapPin size={10} />
-                  {event.location}
-                </span>
-              </div>
+              )}
             </div>
-            <div className="flex flex-col items-end flex-shrink-0 gap-0.5">
-              <span className={`text-[13px] font-semibold ${event.status === "pending" ? "text-gray-300" : "text-gray-600"}`}>
-                {event.date}
-              </span>
-              <span className={`text-[13px] ${event.status === "pending" ? "text-gray-300" : "text-gray-400"}`}>
-                {event.time}
-              </span>
+            <div className="flex items-center gap-1.5 text-[13px] text-white/40 font-normal">
+              <MapPin size={9} aria-hidden="true"/>
+              <span>{event.location}</span>
             </div>
           </div>
-        </button>
+          <div className="flex flex-col items-end flex-shrink-0 gap-0.5 text-right">
+            <span className={`text-[13px] font-semibold ${event.status!=="pending"?"text-white/60":"text-white/20"}`}>{event.date}</span>
+            <span className={`text-[13px] font-normal ${event.status!=="pending"?"text-white/35":"text-white/15"}`}>{event.time}</span>
+          </div>
+        </div>
 
-        <AnimatePresence>
-          {(event.status !== "pending") && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <p className="mt-2 text-[13px] text-gray-500 font-normal leading-relaxed bg-gray-50 border border-gray-100 px-3 py-2 rounded-sm">
-                {event.detail}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {event.status!=="pending" && (
+          <motion.div initial={{ opacity:0, height:0 }} animate={{ opacity:1, height:"auto" }} transition={{ duration:0.2 }}>
+            <p className="mt-2 text-[13px] text-white/50 font-normal leading-relaxed bg-white/[0.03] border border-white/[0.06] px-3 py-2.5">
+              {event.detail}
+            </p>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
 }
 
-// ─── Result Card ──────────────────────────────────────────────────────────────
-
+// ─── Full tracking result ─────────────────────────────────────────────────────
 function TrackingResult({ shipment }) {
   const cfg = STATUS_CONFIG[shipment.status];
   const ServiceIcon = shipment.serviceIcon;
-  const completedSteps = shipment.events.filter(e => e.status === "done").length;
-  const totalSteps = shipment.events.length;
+  const completed = shipment.events.filter(e=>e.status==="done").length;
+  const total     = shipment.events.length;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="mt-6"
-    >
+    <motion.div initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }}
+      transition={{ duration:0.5, ease:[0.25,0.46,0.45,0.94] }}
+      className="mt-8">
 
-      {/* ── Top bar ── */}
-      <div className={`${cfg.bg} ${cfg.border} border rounded-t-sm px-5 sm:px-7 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3`}>
+      {/* ── Status header ── */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
-          <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
-            shipment.status === "delivered" ? "bg-green-500" :
-            shipment.status === "customs"   ? "bg-amber-500" : "bg-[#0818A8]"
-          }`}>
-            {shipment.status === "delivered"
-              ? <CheckCircle size={16} className="text-white" />
-              : <motion.div
-                  animate={{ rotate: shipment.status === "in_transit" ? [0, 360] : 0 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                >
-                  <Navigation size={15} className="text-white" />
-                </motion.div>
-            }
-          </div>
-          <div>
-            <p className={`text-[13px] font-black tracking-[-0.01em] ${cfg.text}`}>{shipment.statusLabel}</p>
-            <p className="text-[13px] text-gray-500 font-normal">{shipment.currentLocation}</p>
-          </div>
+          {/* Status chip */}
+          <span className={`inline-flex items-center gap-2 border px-3.5 py-1.5 text-[13px] font-bold tracking-[0.12em] uppercase ${cfg.chipClass}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${cfg.dotClass} ${cfg.pulse?"animate-pulse":""}`} aria-hidden="true"/>
+            {cfg.label}
+          </span>
+          <span className="text-white/40 text-[13px] font-normal">{shipment.id}</span>
         </div>
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
-            <Download size={12} />
-            Export
+          <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200"
+            aria-label="Export tracking data">
+            <Download size={11} aria-hidden="true"/> Export
           </button>
-          <button className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-800 font-medium border border-gray-200 bg-white px-3 py-1.5 rounded transition-colors">
-            <Share2 size={12} />
-            Share
+          <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200"
+            aria-label="Share tracking link">
+            <Share2 size={11} aria-hidden="true"/> Share
           </button>
         </div>
       </div>
 
-      {/* ── Main content ── */}
-      <div className="border border-t-0 border-gray-200 rounded-b-sm overflow-hidden bg-white">
-
-        {/* ── Header info ── */}
-        <div className="px-5 sm:px-7 py-5 border-b border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-5">
-            <div>
-              <div className="flex items-center gap-2.5 mb-1">
-                <div className="w-7 h-7 bg-[#0818A8]/8 border border-[#0818A8]/15 rounded flex items-center justify-center">
-                  <ServiceIcon size={14} className="text-[#0818A8]" strokeWidth={1.75} />
-                </div>
-                <span className="text-[13px] font-bold text-[#0818A8] tracking-[0.12em] uppercase">{shipment.service}</span>
-              </div>
-              <h2 className="text-gray-900 font-black text-[20px] sm:text-[24px] tracking-[-0.02em]">{shipment.id}</h2>
-              <p className="text-gray-400 text-[13px] font-normal mt-0.5">{shipment.description}</p>
-            </div>
-            <div className="flex flex-col items-start md:items-end gap-1">
-              <div className="flex items-center gap-1.5">
-                <Calendar size={12} className="text-gray-400" />
-                <span className="text-[13px] text-gray-500 font-normal">Booked: <span className="font-semibold text-gray-700">{shipment.bookedDate}</span></span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Clock size={12} className="text-gray-400" />
-                <span className="text-[13px] text-gray-500 font-normal">ETA: <span className="font-semibold text-gray-700">{shipment.eta}</span></span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <FileText size={12} className="text-gray-400" />
-                <span className="text-[13px] text-gray-500 font-normal">AWB: <span className="font-semibold text-gray-700">{shipment.mawb}</span></span>
-              </div>
-            </div>
+      {/* ── Service + reference bar ── */}
+      <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 bg-[#0818A8]/25 border border-[#0818A8]/30 flex items-center justify-center flex-shrink-0">
+            <ServiceIcon size={15} className="text-[#1F51FF]" aria-hidden="true"/>
           </div>
-
-          {/* Route visual */}
-          <div className="flex items-center gap-3 mb-5 p-4 bg-gray-50 border border-gray-100 rounded-sm">
-            <div className="flex flex-col items-center min-w-[80px]">
-              <span className="text-[#0818A8] font-black text-[18px] leading-none">{shipment.origin.code}</span>
-              <span className="text-gray-700 font-semibold text-[13px] mt-0.5">{shipment.origin.city}</span>
-              <span className="text-gray-400 text-[13px]">{shipment.origin.country}</span>
-            </div>
-            <div className="flex-1 flex flex-col items-center gap-1.5">
-              <div className="flex items-center w-full gap-1">
-                {Array.from({ length: 10 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`flex-1 h-0.5 rounded-full transition-colors ${
-                      i < Math.floor(shipment.progress / 10) ? "bg-[#0818A8]" : "bg-gray-200"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="flex items-center gap-1.5">
-                <ServiceIcon size={13} className="text-[#0818A8]" strokeWidth={1.75} />
-                <span className="text-[13px] text-gray-400 font-medium">{shipment.progress}% complete</span>
-              </div>
-            </div>
-            <div className="flex flex-col items-center min-w-[80px]">
-              <span className="text-[#0818A8] font-black text-[18px] leading-none">{shipment.destination.code}</span>
-              <span className="text-gray-700 font-semibold text-[13px] mt-0.5">{shipment.destination.city}</span>
-              <span className="text-gray-400 text-[13px]">{shipment.destination.country}</span>
-            </div>
-          </div>
-
-          {/* Progress bar */}
-          <div className="mb-1">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[13px] text-gray-500 font-medium">{completedSteps} of {totalSteps} milestones completed</span>
-              <span className="text-[13px] font-black text-[#0818A8]">{shipment.progress}%</span>
-            </div>
-            <ProgressBar value={shipment.progress} status={shipment.status} />
-          </div>
-        </div>
-
-        {/* ── Details grid ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 border-b border-gray-100">
-          {[
-            { label: "Shipper",     value: shipment.shipper,   icon: Package },
-            { label: "Consignee",   value: shipment.consignee, icon: MapPin },
-            { label: "Pieces",      value: shipment.pieces,    icon: BarChart3 },
-            { label: "Weight",      value: shipment.weight,    icon: Weight },
-          ].map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={i}
-                className={`px-5 py-4 ${i < 3 ? "border-r border-gray-100" : ""}`}
-              >
-                <div className="flex items-center gap-1.5 mb-1">
-                  <Icon size={11} className="text-gray-400" />
-                  <span className="text-[13px] font-bold text-gray-400 tracking-[0.1em] uppercase">{item.label}</span>
-                </div>
-                <p className="text-gray-800 font-semibold text-[13px] leading-snug">{item.value}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* ── Timeline ── */}
-        <div className="px-5 sm:px-7 py-6">
-          <h3 className="text-gray-900 font-black text-[14px] tracking-[-0.01em] mb-5 flex items-center gap-2">
-            <Clock size={14} className="text-[#0818A8]" />
-            Shipment Timeline
-          </h3>
           <div>
-            {shipment.events.map((event, i) => (
-              <TimelineEvent
-                key={i}
-                event={event}
-                index={i}
-                isLast={i === shipment.events.length - 1}
-              />
-            ))}
+            <p className="text-[#1F51FF] text-[13px] font-bold tracking-[0.18em] uppercase">{shipment.service}</p>
+            <p className="text-white/60 text-[13px] font-normal">{shipment.description}</p>
           </div>
         </div>
+        <div className="flex flex-wrap gap-5">
+          {[
+            { icon:Calendar, label:"Booked",   val:shipment.bookedDate },
+            { icon:Clock,    label:"ETA",       val:shipment.eta        },
+            { icon:FileText, label:"Reference", val:shipment.mawb       },
+          ].map(({icon:Icon,label,val})=>(
+            <div key={label} className="flex items-center gap-1.5">
+              <Icon size={11} className="text-white/35" aria-hidden="true"/>
+              <span className="text-white/40 text-[13px]">{label}:</span>
+              <span className="text-white/80 text-[13px] font-semibold">{val}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
+      {/* ── Route visualiser ── */}
+      <RouteVisualiser shipment={shipment}/>
+
+      {/* ── Progress milestone bar ── */}
+      <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mt-4 mb-4">
+        <div className="flex items-center justify-between mb-2.5">
+          <span className="text-white/50 text-[13px] font-normal">{completed} of {total} milestones completed</span>
+          <span className="text-[13px] font-black" style={{ color:cfg.color }}>{shipment.progress}%</span>
+        </div>
+        <div className="w-full h-1.5 bg-white/[0.07] overflow-hidden">
+          <motion.div className="h-full"
+            style={{ background:`linear-gradient(to right, #0818A8, ${cfg.color})` }}
+            initial={{ width:"0%" }} animate={{ width:`${shipment.progress}%` }}
+            transition={{ duration:1.4, ease:[0.25,0.46,0.45,0.94], delay:0.3 }}/>
+        </div>
+        {/* Milestone ticks */}
+        <div className="flex justify-between mt-1.5">
+          {shipment.events.map((_,i)=>(
+            <div key={i} className={`w-px h-2 ${i<completed?"bg-[#0818A8]":"bg-white/[0.08]"}`} aria-hidden="true"/>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Cargo details grid ── */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.09] mb-4 overflow-hidden">
+        {[
+          { icon:Package,  label:"Shipper",   val:shipment.shipper   },
+          { icon:MapPin,   label:"Consignee", val:shipment.consignee },
+          { icon:BarChart3,label:"Pieces",    val:shipment.pieces    },
+          { icon:Weight,   label:"Weight",    val:shipment.weight    },
+        ].map(({icon:Icon,label,val})=>(
+          <div key={label} className="bg-[#00061a] px-4 py-4">
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <Icon size={10} className="text-white/35" aria-hidden="true"/>
+              <span className="text-[13px] font-bold text-white/35 tracking-[0.15em] uppercase">{label}</span>
+            </div>
+            <p className="text-white/80 font-semibold text-[13px] leading-snug">{val}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Timeline ── */}
+      <div className="border border-white/[0.09] bg-white/[0.02] overflow-hidden">
+        <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true"/>
+        <div className="px-5 sm:px-7 py-6">
+          <div className="flex items-center gap-2 mb-6">
+            <Clock size={13} className="text-[#1F51FF]" aria-hidden="true"/>
+            <h3 className="text-white font-black text-[13px] tracking-[0.2em] uppercase">Shipment Timeline</h3>
+            <span className="ml-auto text-white/40 text-[13px] font-normal">{completed}/{total} complete</span>
+          </div>
+          {shipment.events.map((event,i)=>(
+            <TimelineEvent key={i} event={event} index={i} isLast={i===shipment.events.length-1}/>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
+// ─── Main Page ────────────────────────────────────────────────────────────────
 export default function TrackPage() {
-  const [query, setQuery] = useState("");
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
+  const [query,   setQuery]   = useState("");
+  const [result,  setResult]  = useState(null);
+  const [error,   setError]   = useState(null);
   const [loading, setLoading] = useState(false);
-  const heroRef = useRef(null);
-  const featuresRef = useRef(null);
-  const featuresInView = useInView(featuresRef, { once: true, margin: "-60px" });
+  const [scanned, setScanned] = useState(false);
+
+  const featuresRef  = useRef(null);
+  const featuresInView = useInView(featuresRef, { once:true, margin:"-60px" });
 
   const handleTrack = async (id) => {
-    const searchId = (id || query).trim().toUpperCase();
+    const searchId = (id||query).trim().toUpperCase();
     if (!searchId) return;
-    setLoading(true);
-    setError(null);
-    setResult(null);
-    await new Promise((r) => setTimeout(r, 1000));
+    setLoading(true); setError(null); setResult(null); setScanned(false);
+    await new Promise(r=>setTimeout(r,1100));
     const found = MOCK_SHIPMENTS[searchId];
-    if (found) {
-      setResult(found);
-    } else {
-      setError(searchId);
-    }
+    if (found) { setResult(found); setScanned(true); }
+    else { setError(searchId); }
     setLoading(false);
   };
 
-  const handleKey = (e) => {
-    if (e.key === "Enter") handleTrack();
-  };
+  const handleKey = (e) => { if (e.key==="Enter") handleTrack(); };
 
   return (
-    <main className={`${montserrat.className} bg-white min-h-screen`}>
+    <main className={`${montserrat.variable} font-[family-name:var(--font-mont)] bg-[#00061a] min-h-screen`}>
 
-      {/* ══ HERO ════════════════════════════════════════════════════════════ */}
-      <section
-        ref={heroRef}
-        className="relative bg-[#00061a] overflow-hidden pt-[104px] pb-14 md:pb-16 hero-section"
-      >
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80"
-            alt=""
-            aria-hidden
-            className="w-full h-full object-cover opacity-15"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00061a]/98 via-[#00061a]/85 to-[#00061a]/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#00061a] via-transparent to-transparent" />
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{ backgroundImage: `linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)`, backgroundSize: "56px 56px" }}
-          />
-          <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[500px] h-[300px] bg-[#0818A8]/12 blur-3xl rounded-full pointer-events-none" />
+      {/* ══ HERO ═════════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden" aria-labelledby="track-hero-heading">
+
+        {/* Background grid */}
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
+          style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"64px 64px" }}/>
+
+        {/* Atmospheric glows */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-[-10%] left-[15%] w-[700px] h-[500px] bg-[#0818A8]/18 rounded-full blur-[150px]"/>
+          <div className="absolute top-[30%] right-[-5%] w-[400px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[120px]"/>
         </div>
 
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 sm:px-8 xl:px-10 text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          >
-            {/* Breadcrumb */}
-            <motion.div
-              variants={fadeUp}
-              custom={0}
-              className="flex items-center justify-center gap-1.5 text-[13px] text-white/40 font-medium mb-6"
-            >
-              <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-white/50">Track Shipment</span>
-            </motion.div>
-
-            {/* Tag */}
-            <motion.div variants={fadeUp} custom={0.05} className="flex justify-center mb-4">
-              <div className="inline-flex items-center gap-2 border border-white/15 bg-white/5 backdrop-blur-sm px-4 py-1.5 rounded-full">
-                <motion.span
-                  className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
-                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0.4, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <span className="text-white/55 text-[13px] font-semibold tracking-[0.22em] uppercase">Real-Time Tracking</span>
-              </div>
-            </motion.div>
-
-            {/* Headline */}
-            <motion.h1
-              variants={fadeUp}
-              custom={0.1}
-              className="text-white font-black text-[clamp(30px,5.5vw,60px)] leading-tight tracking-[-0.02em] mb-3"
-            >
-              Track Your{" "}
-              <span className="relative inline-block text-[#1F51FF]">
-                Shipment
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.7, delay: 0.6 }}
-                />
-              </span>
-              .
-            </motion.h1>
-
-            <motion.p
-              variants={fadeUp}
-              custom={0.2}
-              className="text-white/50 text-[13.5px] font-normal leading-relaxed max-w-md mx-auto mb-9"
-            >
-              Enter your R-Zone tracking number, AWB, or Bill of Lading reference to get live shipment status and full timeline.
-            </motion.p>
-
-            {/* ── SEARCH BAR ── */}
-            <motion.div
-              variants={fadeUp}
-              custom={0.3}
-              className="max-w-[680px] mx-auto"
-            >
-              <div className="flex items-stretch shadow-2xl shadow-black/30">
-                <div className="relative flex-1">
-                  <Search
-                    size={16}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Enter tracking number e.g. RZC-2024-00847"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={handleKey}
-                    className="w-full h-[54px] pl-11 pr-4 bg-white text-gray-900 text-[14px] font-normal placeholder-gray-400 focus:outline-none border-0 rounded-l-sm"
-                  />
-                </div>
-                <motion.button
-                  onClick={() => handleTrack()}
-                  disabled={loading}
-                  className="h-[54px] px-7 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-70 text-white text-[13px] font-bold tracking-[0.08em] uppercase transition-colors duration-200 flex items-center gap-2 flex-shrink-0 rounded-r-sm"
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {loading ? (
-                    <motion.div
-                      className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                    />
-                  ) : (
-                    <Search size={15} />
-                  )}
-                  {loading ? "Tracking..." : "Track Now"}
-                </motion.button>
-              </div>
-
-              {/* Sample IDs */}
-              <motion.div
-                variants={fadeUp}
-                custom={0.4}
-                className="flex flex-wrap items-center justify-center gap-2 mt-4"
-              >
-                <span className="text-white/40 text-[13px] font-medium">Try a sample:</span>
-                {SAMPLE_IDS.map((id) => (
-                  <button
-                    key={id}
-                    onClick={() => { setQuery(id); handleTrack(id); }}
-                    className="text-white/45 hover:text-white text-[13px] font-mono border border-white/15 hover:border-white/35 px-2.5 py-1 rounded transition-all duration-200"
-                  >
-                    {id}
-                  </button>
-                ))}
-              </motion.div>
-            </motion.div>
-          </motion.div>
+        {/* Vertical accent lines */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          {[20,50,80].map(p=>(
+            <div key={p} className="absolute top-0 bottom-0 w-px opacity-[0.035]"
+              style={{ left:`${p}%`, background:"linear-gradient(to bottom, transparent, rgba(31,81,255,0.8) 50%, transparent)" }}/>
+          ))}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent" />
-      </section>
+        <div className="relative z-10 max-w-[900px] mx-auto px-5 sm:px-8 xl:px-10 pt-[110px] pb-12 md:pb-16">
 
-      {/* ══ RESULTS ═════════════════════════════════════════════════════════ */}
-      <div className="max-w-[900px] mx-auto px-5 sm:px-8 xl:px-10 pb-16">
+          {/* Breadcrumb */}
+          <motion.nav aria-label="Breadcrumb"
+            className="flex items-center gap-2 justify-center mb-8"
+            initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.4 }}>
+            <Link href="/" className="text-white/40 text-[13px] font-medium hover:text-white/60 transition-colors">Home</Link>
+            <ChevronRight size={10} className="text-white/30" aria-hidden="true"/>
+            <span className="text-white/50 text-[13px] font-medium" aria-current="page">Track Shipment</span>
+          </motion.nav>
 
-        {/* Error state */}
-        <AnimatePresence>
-          {error && (
-            <motion.div
-              className="mt-6 flex items-start gap-3 bg-red-50 border border-red-200 px-5 py-4 rounded-sm"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3 }}
-            >
-              <AlertCircle size={18} className="text-red-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-red-800 font-bold text-[13.5px] mb-1">No shipment found for <span className="font-mono">{error}</span></p>
-                <p className="text-red-600 text-[13px] font-normal">
-                  Please check your tracking number and try again. For help,{" "}
-                  <Link href="/contact" className="underline hover:text-red-800 transition-colors">contact our team</Link>.
-                </p>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Loading skeleton */}
-        <AnimatePresence>
-          {loading && (
-            <motion.div
-              className="mt-6 space-y-3"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              {[80, 60, 90, 70].map((w, i) => (
-                <div key={i} className="h-5 bg-gray-100 rounded animate-pulse" style={{ width: `${w}%` }} />
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Result */}
-        <AnimatePresence mode="wait">
-          {result && !loading && <TrackingResult key={result.id} shipment={result} />}
-        </AnimatePresence>
-      </div>
-
-      {/* ══ FEATURES ════════════════════════════════════════════════════════ */}
-      <section
-        ref={featuresRef}
-        className="bg-[#f0f4ff] border-t border-gray-200 py-16 md:py-20"
-      >
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex justify-center mb-4">
-              <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" />
-                <span className="text-[#0818A8] text-[13px] font-semibold tracking-[0.22em] uppercase">Why Track with R-Zone</span>
-              </div>
+          {/* #1 badge */}
+          <motion.div className="flex justify-center mb-5"
+            initial={{ opacity:0, y:-8 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
+            <div className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full">
+              <Award size={12} className="text-[#1F51FF]" aria-hidden="true"/>
+              <span className="text-white text-[13px] font-bold">#1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
             </div>
-            <h2 className="text-gray-900 font-black text-[clamp(24px,4vw,44px)] tracking-[-0.02em] mb-3">
-              Full visibility.{" "}
-              <span className="relative inline-block text-[#0818A8]">
-                Zero surprises.
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full"
-                  initial={{ width: 0 }}
-                  animate={featuresInView ? { width: "100%" } : { width: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                />
-              </span>
-            </h2>
-            <p className="text-gray-500 text-[13px] font-normal max-w-md mx-auto">
-              R-Zone's tracking platform gives you live status, milestone alerts, and complete documentation access — anytime, anywhere.
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              { icon: Zap,       title: "Live Status Updates",     desc: "Real-time milestone tracking from booking to proof of delivery." },
-              { icon: Shield,    title: "Secure Access",           desc: "Tracking data encrypted and accessible only with your reference number." },
-              { icon: Globe,     title: "Global Network",          desc: "Track shipments across air, sea, and road on every continent." },
-              { icon: FileText,  title: "Document Access",         desc: "Download AWBs, packing lists, and PODs directly from tracking results." },
-            ].map((f, i) => {
-              const Icon = f.icon;
-              return (
-                <motion.div
-                  key={i}
-                  className="bg-white border border-gray-200 hover:border-[#0818A8]/30 hover:shadow-md hover:shadow-[#0818A8]/6 p-5 rounded-sm transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -3 }}
-                >
-                  <div className="w-10 h-10 bg-[#0818A8]/8 border border-[#0818A8]/15 rounded flex items-center justify-center mb-4 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-300">
-                    <Icon size={16} className="text-[#0818A8] group-hover:text-white transition-colors duration-300" />
+          {/* Tag pill */}
+          <motion.div className="flex justify-center mb-5"
+            initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.5, delay:0.05 }}>
+            <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 px-4 py-1.5 rounded-full">
+              <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
+                animate={{ scale:[1,1.7,1], opacity:[1,0.4,1] }} transition={{ duration:2, repeat:Infinity }} aria-hidden="true"/>
+              <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Real-Time UK–Nigeria Tracking</span>
+            </div>
+          </motion.div>
+
+          {/* H1 */}
+          <motion.h1 id="track-hero-heading"
+            className="text-white font-black text-center text-[clamp(30px,6vw,68px)] leading-[0.88] tracking-[-0.035em] uppercase mb-4"
+            initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.65, delay:0.1 }}>
+            Track Your{" "}
+            <span className="relative inline-block text-[#1F51FF]">
+              Shipment.
+              <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+                initial={{ width:0 }} animate={{ width:"100%" }} transition={{ duration:0.6, delay:0.8 }}/>
+            </span>
+          </motion.h1>
+
+          {/* Subtext */}
+          <motion.p className="text-white/60 text-[14px] font-normal leading-relaxed max-w-md mx-auto text-center mb-10"
+            initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.55, delay:0.22 }}>
+            Enter your R-Zone booking reference, AWB, or Bill of Lading number
+            for live status, full milestone timeline, and cargo details.
+          </motion.p>
+
+          {/* ── SEARCH BAR ── */}
+          <motion.div className="max-w-[660px] mx-auto"
+            initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.55, delay:0.35 }}>
+
+            {/* Input row */}
+            <div className="relative flex items-stretch mb-5">
+              {/* Scan ring when loading */}
+              {loading && (
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 z-20" aria-hidden="true">
+                  <ScanRing/>
+                </div>
+              )}
+              <div className="relative flex-1">
+                <Search size={16} className={`absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none transition-colors ${loading?"text-[#1F51FF]":"text-white/30"}`} aria-hidden="true"/>
+                <input type="text"
+                  placeholder="e.g. RZC-2024-00847  ·  AWB  ·  Bill of Lading"
+                  value={query} onChange={e=>{setQuery(e.target.value);setError(null);}} onKeyDown={handleKey}
+                  className="w-full h-[54px] pl-11 pr-4 bg-white/[0.07] border border-white/[0.12] border-r-0 text-white text-[14px] font-normal placeholder-white/25 focus:outline-none focus:bg-white/[0.1] focus:border-[#1F51FF]/50 transition-all duration-200 font-mono"
+                  aria-label="Enter UK–Nigeria shipment tracking number"/>
+              </div>
+              <motion.button onClick={()=>handleTrack()} disabled={loading}
+                className="h-[54px] px-8 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.1em] uppercase transition-all duration-200 flex items-center gap-2 flex-shrink-0 border border-[#1F51FF]/30"
+                whileHover={{ scale:1.01 }} whileTap={{ scale:0.98 }}
+                aria-label="Track UK–Nigeria shipment">
+                {loading
+                  ? <><Loader2 size={14} className="animate-spin" aria-hidden="true"/> Scanning…</>
+                  : <><Zap size={14} aria-hidden="true"/> Track Now</>
+                }
+              </motion.button>
+            </div>
+
+            {/* Sample IDs */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="text-white/30 text-[13px] font-normal">Try a sample:</span>
+              {SAMPLE_IDS.map(id=>(
+                <button key={id} onClick={()=>{setQuery(id); handleTrack(id);}}
+                  className="text-white/40 hover:text-white text-[13px] font-mono border border-white/[0.1] hover:border-white/[0.3] bg-white/[0.03] hover:bg-white/[0.07] px-2.5 py-1 transition-all duration-200"
+                  aria-label={`Track sample shipment ${id}`}>
+                  {id}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* ── RESULTS ── */}
+          <div className="mt-2">
+
+            {/* Error */}
+            <AnimatePresence>
+              {error && (
+                <motion.div className="mt-6 flex items-start gap-3 bg-red-500/8 border border-red-500/25 px-5 py-4"
+                  initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-12 }} transition={{ duration:0.3 }}>
+                  <AlertCircle size={16} className="text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true"/>
+                  <div>
+                    <p className="text-red-300 font-bold text-[13.5px] mb-1">
+                      No shipment found for <span className="font-mono text-red-200">{error}</span>
+                    </p>
+                    <p className="text-red-400/80 text-[13px] font-normal">
+                      Check your reference format (RZC-XXXX-XXXXX) and try again. Need help?{" "}
+                      <a href="tel:+448007720864" className="underline text-red-300 hover:text-white transition-colors">Call +44 800 772 0864</a>
+                      {" "}or{" "}
+                      <a href="https://wa.me/447915647119" target="_blank" rel="noopener noreferrer" className="underline text-red-300 hover:text-white transition-colors">WhatsApp us</a>.
+                    </p>
                   </div>
-                  <h3 className="text-gray-900 font-black text-[13.5px] mb-1.5 tracking-[-0.01em]">{f.title}</h3>
-                  <p className="text-gray-500 text-[13px] font-normal leading-relaxed">{f.desc}</p>
                 </motion.div>
-              );
-            })}
+              )}
+            </AnimatePresence>
+
+            {/* Loading skeleton */}
+            <AnimatePresence>
+              {loading && (
+                <motion.div className="mt-8 space-y-3"
+                  initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }}>
+                  {[90,70,85,55,75].map((w,i)=>(
+                    <div key={i} className="h-4 bg-white/[0.05] animate-pulse" style={{ width:`${w}%` }}/>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Result */}
+            <AnimatePresence mode="wait">
+              {result && !loading && <TrackingResult key={result.id} shipment={result}/>}
+            </AnimatePresence>
           </div>
         </div>
       </section>
 
-      {/* ══ HELP STRIP ══════════════════════════════════════════════════════ */}
-      <section className="bg-[#0818A8] py-12 md:py-14">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
+      <section ref={featuresRef} className="relative border-t border-white/[0.06] py-16 md:py-20" aria-labelledby="features-heading">
+        <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
+          style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"64px 64px" }}/>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0818A8]/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"/>
+
+        <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10">
+          <div className="text-center mb-12">
+            <motion.div initial={{ opacity:0 }} animate={featuresInView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
+              <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]" aria-hidden="true"/>
+                <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Why Track with R-Zone</span>
+              </div>
+            </motion.div>
+            <motion.h2 id="features-heading"
+              className="text-white font-black text-[clamp(24px,4vw,44px)] leading-[0.9] tracking-[-0.025em] uppercase mb-3"
+              initial={{ opacity:0, y:16 }} animate={featuresInView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}>
+              Full Visibility.{" "}
+              <span className="relative inline-block text-[#1F51FF]">
+                Zero Surprises.
+                <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+                  initial={{ width:0 }} animate={featuresInView?{ width:"100%" }:{}} transition={{ duration:0.6, delay:0.5 }}/>
+              </span>
+            </motion.h2>
+            <motion.p className="text-white/50 text-[14px] font-normal max-w-md mx-auto leading-relaxed"
+              initial={{ opacity:0 }} animate={featuresInView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
+              R-Zone's tracking platform gives you live status, milestone alerts, and complete documentation — for every UK–Nigeria shipment.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon:Zap,      title:"Live Status Updates",    desc:"Real-time milestone tracking from booking to proof of delivery — air or sea.",     accent:"#1F51FF" },
+              { icon:Shield,   title:"Secure Reference Access",desc:"Tracking data accessible only with your unique R-Zone booking reference.",          accent:"#0818A8" },
+              { icon:Globe,    title:"UK & Nigeria Coverage",  desc:"Track UK-to-Nigeria and Nigeria-to-UK shipments across air, sea, and road.",        accent:"#1F51FF" },
+              { icon:FileText, title:"Document Download",      desc:"Download AWBs, packing lists, and proof of delivery directly from tracking results.", accent:"#0818A8" },
+            ].map((f,i)=>{const Icon=f.icon;return(
+              <motion.div key={i}
+                className="group border border-white/[0.07] bg-white/[0.03] p-6 hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 relative overflow-hidden"
+                initial={{ opacity:0, y:16 }} animate={featuresInView?{ opacity:1, y:0 }:{}} transition={{ delay:i*0.1, duration:0.5 }}>
+                <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500" style={{ backgroundColor:f.accent }} aria-hidden="true"/>
+                <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ backgroundColor:`${f.accent}18`, border:`1px solid ${f.accent}30` }} aria-hidden="true">
+                  <Icon size={16} style={{ color:f.accent }}/>
+                </div>
+                <h3 className="text-white font-black text-[13.5px] mb-2 tracking-[-0.01em]">{f.title}</h3>
+                <p className="text-white/50 text-[13px] font-normal leading-relaxed">{f.desc}</p>
+              </motion.div>
+            );})}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ HELP STRIP ════════════════════════════════════════════════════════ */}
+      <section className="relative bg-[#0818A8] overflow-hidden py-12 md:py-14"
+        aria-label="Contact R-Zone for UK–Nigeria tracking help">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true"
+          style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"44px 44px" }}/>
+        <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <p className="text-white/55 text-[13px] font-bold tracking-[0.22em] uppercase mb-1">Need Help?</p>
-            <h3 className="text-white font-black text-[20px] md:text-[24px] tracking-[-0.01em]">
-              Can't find your shipment?
+            <p className="text-white/60 text-[13px] font-bold tracking-[0.28em] uppercase mb-1">Need Help?</p>
+            <h3 className="text-white font-black text-[clamp(18px,3vw,26px)] tracking-[-0.02em] uppercase mb-1">
+              Can&apos;t find your UK–Nigeria shipment?
             </h3>
-            <p className="text-white/55 text-[13px] font-normal mt-1">
-              Our operations team is available 24/7 to assist with tracking queries.
+            <p className="text-white/60 text-[13px] font-normal">
+              Our UK-based team is available Mon–Fri 10AM–6PM · Sat 11AM–2PM to assist with any tracking query.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 flex-shrink-0">
-            <a
-              href="tel:+2340000000000"
-              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[13px] font-semibold px-5 py-2.5 rounded transition-all duration-200"
-            >
-              <Phone size={13} />
-              +234 000 000 0000
+            <a href="tel:+448007720864"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200"
+              aria-label="Call R-Zone UK: +44 800 772 0864">
+              <Phone size={12} aria-hidden="true"/> +44 800 772 0864
             </a>
-            <a
-              href="mailto:tracking@r-zoneenterprises.com"
-              className="flex items-center gap-2 bg-white text-[#0818A8] hover:bg-gray-100 text-[13px] font-bold px-5 py-2.5 rounded transition-all duration-200"
-            >
-              <Mail size={13} />
-              Email Support
+            <a href="https://wa.me/447915647119?text=Hello%2C%20I%20need%20help%20tracking%20my%20UK%20to%20Nigeria%20shipment."
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200"
+              aria-label="WhatsApp R-Zone about tracking">
+              <MessageSquare size={12} className="text-[#25D366]" aria-hidden="true"/> WhatsApp Us
+            </a>
+            <a href="mailto:info@r-zoneenterprises.com"
+              className="flex items-center gap-2 bg-white text-[#0818A8] hover:bg-white/90 text-[13px] font-black px-5 py-2.5 transition-all duration-200"
+              aria-label="Email R-Zone tracking support">
+              <Mail size={12} aria-hidden="true"/> Email Support
             </a>
           </div>
         </div>

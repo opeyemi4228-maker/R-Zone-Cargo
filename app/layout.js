@@ -34,7 +34,7 @@ export const metadata = {
     template: "%s | R-Zone Enterprises",
   },
   description:
-    "R-Zone Enterprises offers door to door cargo to Nigeria from the UK, air freight to Nigeria, sea shipping, car shipping, and importation from Nigeria. Trusted by 107+ customers. Call: +44 800 772 0864.",
+    "R-Zone Enterprises offers door to door cargo to Nigeria from the UK, air freight to Nigeria, sea shipping, car shipping, and importation from Nigeria. Trusted by 100+ customers. Call: +44 800 772 0864.",
 
   // ── Keyword targeting — real services from the site ───────────────────────
   keywords: [
@@ -93,7 +93,7 @@ export const metadata = {
     locale:      "en_GB",
     title:       "R-Zone Enterprises | Door to Door Cargo to Nigeria from UK",
     description:
-      "Shipping services to Nigeria by air freight and sea freight. Door to door cargo, car shipping, and importation from Nigeria. Over 10 years experience. 107+ 5-star reviews.",
+      "Shipping services to Nigeria by air freight and sea freight. Door to door cargo, car shipping, and importation from Nigeria. Over 10 years experience. 100+ 5-star reviews.",
     images: [
       {
         url:    "/og-image.jpg",          // Place a 1200×630 image at /public/og-image.jpg
@@ -368,7 +368,7 @@ export default function RootLayout({ children }) {
                     "aggregateRating": {
                       "@type":       "AggregateRating",
                       "ratingValue": "5",
-                      "reviewCount": "107",
+                      "reviewCount": "100",
                       "bestRating":  "5",
                       "worstRating": "1",
                     },

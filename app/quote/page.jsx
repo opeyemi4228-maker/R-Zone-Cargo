@@ -13,7 +13,7 @@
  * • H1  → "Get a Free UK–Nigeria Shipping Quote"
  * • H2s → Step headings + FAQ section + Stats section
  * • JSON-LD: BreadcrumbList + WebPage + Service + FAQPage
- * • Trust claim: "#1 Highest-Rated UK–Nigeria Cargo on Google · 107+ Reviews"
+ * • Trust claim: "#1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Reviews"
  * • Sea freight = 4–6 weeks (non-negotiable)
  * • Air freight = 5–10 working days
  * • Internal links: /services, /track, /contact, /about, /privacy
@@ -25,7 +25,7 @@
  * export const metadata = {
  *   title: "Free UK–Nigeria Shipping Quote | R-Zone Enterprises",
  *   description:
- *     "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg · Sea freight from £3/kg · Same-day response. 107+ five-star reviews.",
+ *     "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg · Sea freight from £3/kg · Same-day response. 100+ five-star reviews.",
  *   keywords: [
  *     "shipping quote UK to Nigeria","cargo quote Nigeria UK",
  *     "air freight quote Nigeria","sea freight quote UK Nigeria",
@@ -174,7 +174,7 @@ const CARGO_TYPES = [
 
 const TRUST_ITEMS = [
   { icon: Award,        text: "#1 Ranked UK–Nigeria Cargo on Google" },
-  { icon: Star,         text: "107+ organically earned five-star reviews" },
+  { icon: Star,         text: "100+ organically earned five-star reviews" },
   { icon: CheckCircle,  text: "Free quote — no obligation, no pressure" },
   { icon: Clock,        text: "Same-day response Mon–Fri" },
   { icon: Shield,       text: "Fully insured cargo, every shipment" },
@@ -207,13 +207,13 @@ const FAQ_ITEMS = [
   },
   {
     q: "Why is R-Zone the best cargo company for UK–Nigeria shipping?",
-    a: "R-Zone Enterprises is the highest-rated UK-to-Nigeria cargo company on Google — with 107+ five-star reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
+    a: "R-Zone Enterprises is the highest-rated UK-to-Nigeria cargo company on Google — with 100+ five-star reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
   },
 ];
 
 // ─── Backlink-magnet stats ─────────────────────────────────────────────────────
 const STATS = [
-  { value: "107+",   label: "Five-Star Google Reviews",    note: "Highest-rated UK–Nigeria cargo company on Google" },
+  { value: "100+",   label: "Five-Star Google Reviews",    note: "Highest-rated UK–Nigeria cargo company on Google" },
   { value: "12+",    label: "Years in Operation",          note: "Trusted since our founding" },
   { value: "36",     label: "Nigerian States Covered",     note: "Including Abuja FCT, Lagos, Rivers, Kano" },
   { value: "£3/kg",  label: "Sea Freight Starting Rate",   note: "Weekly sailings, 4–6 weeks transit" },
@@ -1557,7 +1557,7 @@ export default function QuotePageClient() {
                 "@type": "WebPage",
                 "name": "Free UK–Nigeria Shipping Quote — R-Zone Enterprises",
                 "url": "https://r-zoneenterprises.com/quote",
-                "description": "Get a free UK-to-Nigeria cargo shipping quote from the highest-rated cargo company on Google. 107+ five-star reviews. Air freight from £5/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
+                "description": "Get a free UK-to-Nigeria cargo shipping quote from the highest-rated cargo company on Google. 100+ five-star reviews. Air freight from £5/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
                 "isPartOf": { "@type": "WebSite", "url": "https://r-zoneenterprises.com", "name": "R-Zone Enterprises" },
                 "breadcrumb": { "@type": "BreadcrumbList" },
               },
@@ -1566,7 +1566,7 @@ export default function QuotePageClient() {
                 "@type": "LocalBusiness",
                 "@id": "https://r-zoneenterprises.com/#business",
                 "name": "R-Zone Enterprises",
-                "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
+                "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
                 "url": "https://r-zoneenterprises.com",
                 "telephone": "+448007720864",
                 "email": "info@r-zoneenterprises.com",
@@ -1580,7 +1580,7 @@ export default function QuotePageClient() {
                 "aggregateRating": {
                   "@type": "AggregateRating",
                   "ratingValue": "5",
-                  "reviewCount": "107",
+                  "reviewCount": "100",
                   "bestRating": "5",
                   "worstRating": "1",
                 },
@@ -1676,7 +1676,7 @@ export default function QuotePageClient() {
                 >
                   <Award size={13} className="text-[#1F51FF]" aria-hidden="true" />
                   <span className="text-white text-[13px] font-bold">
-                    Highest-Ranked UK–Nigeria Cargo on Google · 107+ Five-Star Reviews
+                    Highest-Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews
                   </span>
                 </motion.div>
 

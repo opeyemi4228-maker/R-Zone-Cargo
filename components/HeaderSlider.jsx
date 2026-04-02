@@ -29,7 +29,7 @@ function AnimatedCounter({ target, suffix = "" }) {
 const STATS = [
   { value: 12,    suffix: "+", label: "Years Operating"     },
   { value: 50000, suffix: "+", label: "Shipments Delivered" },
-  { value: 107,   suffix: "+", label: "5-Star Reviews"      },
+  { value: 100,   suffix: "+", label: "5-Star Reviews"      },
   { value: 36,    suffix: "",  label: "Nigerian States"     },
 ];
 
@@ -74,7 +74,7 @@ export default function HeroSection() {
             "alternateName": ["R-Zone Cargo", "RZE Cargo", "R-Zone Shipping"],
             "url": "https://r-zoneenterprises.com",
             "logo": "https://r-zoneenterprises.com/wp-content/uploads/2022/09/Logo-colour-112.png",
-            "description": "R-Zone Enterprises is the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door cargo and customs clearance between the UK and Nigeria since 2012.",
+            "description": "R-Zone Enterprises is the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door cargo and customs clearance between the UK and Nigeria since 2012.",
             "slogan": "The Highest-Rated & Highest-Ranked Cargo Company Between the UK and Nigeria",
             "foundingDate": "2012",
             "telephone": "+448007720864",
@@ -111,7 +111,7 @@ export default function HeroSection() {
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cargo Services Abuja & Lagos", "description": "Door-to-door cargo to Abuja, Lagos and all 36 Nigerian states.", "areaServed": ["Abuja", "Lagos", "Nigeria"] } },
               ],
             },
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "107", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned." },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "100", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned." },
             "sameAs": ["https://www.instagram.com/rzoneenterprises", "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr"],
             "contactPoint": [
               { "@type": "ContactPoint", "telephone": "+44-800-772-0864", "contactType": "customer service", "areaServed": "GB", "hoursAvailable": "Mo-Fr 10:00-18:00", "contactOption": "TollFree" },
@@ -126,7 +126,7 @@ export default function HeroSection() {
               { "@type": "Question", "name": "How much does cargo from UK to Nigeria cost per kg?", "acceptedAnswer": { "@type": "Answer", "text": "Sea freight from £3/kg (4–6 weeks). Air freight from £5/kg (5–10 working days). Door-to-door from £6/kg. Get a free quote from R-Zone." } },
               { "@type": "Question", "name": "What is the cheapest way to ship from UK to Nigeria?", "acceptedAnswer": { "@type": "Answer", "text": "Sea freight — from £3/kg, with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit 4–6 weeks." } },
               { "@type": "Question", "name": "Does R-Zone deliver to Abuja and all Nigerian states?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. R-Zone delivers door-to-door to all 36 Nigerian states including Lagos, Abuja, Port Harcourt, Kano, Ibadan and Enugu." } },
-              { "@type": "Question", "name": "Is R-Zone the best cargo company from UK to Nigeria?", "acceptedAnswer": { "@type": "Answer", "text": "R-Zone is the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned. Operating since 2012 with in-house teams in Upminster, Essex and Lagos, Nigeria." } },
+              { "@type": "Question", "name": "Is R-Zone the best cargo company from UK to Nigeria?", "acceptedAnswer": { "@type": "Answer", "text": "R-Zone is the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. Operating since 2012 with in-house teams in Upminster, Essex and Lagos, Nigeria." } },
               { "@type": "Question", "name": "Can I ship goods from Nigeria to the UK?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. R-Zone runs weekly air and sea importation services from Nigeria to the UK, with full UK customs clearance included." } },
             ],
           },
@@ -209,7 +209,7 @@ export default function HeroSection() {
                 <div className="inline-flex items-center gap-2 border border-amber-400/35 bg-amber-400/8 backdrop-blur-sm px-3.5 py-1.5 rounded-full" itemProp="award">
                   <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
                   <span className="text-amber-400 text-[11px] font-black tracking-[0.22em] uppercase">
-                    #1 Ranked UK–Nigeria Cargo on Google · 107+ Five-Star Reviews
+                    #1 Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews
                   </span>
                 </div>
                 <div className="hidden lg:inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 backdrop-blur-sm px-4 py-1.5 rounded-full">

@@ -134,7 +134,7 @@ const PROCESS_STEPS = [
 ];
 
 const WHY_PARTNER = [
-  { icon: Star,        title: "107+ Five-Star Reviews",    body: "Your customers get a service that's already proven. Our Google rating means you're referring with confidence, not risk."                    },
+  { icon: Star,        title: "100+ Five-Star Reviews",    body: "Your customers get a service that's already proven. Our Google rating means you're referring with confidence, not risk."                    },
   { icon: Clock,       title: "12+ Years of Track Record", body: "Established in 2012 — we've operated through a pandemic, currency crises, and Brexit without missing a sailing."                           },
   { icon: Globe,       title: "All 36 Nigerian States",    body: "Wherever your customers need cargo to go in Nigeria, we can get it there. No off-limits destinations."                                      },
   { icon: BarChart3,   title: "Transparent Partner Portal", body: "Real-time visibility of referred shipments, commissions earned, and payment schedules — no chasing, no guesswork."                         },
@@ -145,7 +145,7 @@ const WHY_PARTNER = [
 const STATS = [
   { val: "50,000+", label: "Shipments Delivered",  icon: Package },
   { val: "12+",     label: "Years Operating",       icon: Clock   },
-  { val: "107+",    label: "5-Star Reviews",        icon: Star    },
+  { val: "100+",    label: "5-Star Reviews",        icon: Star    },
   { val: "36",      label: "Nigerian States",       icon: MapPin  },
 ];
 

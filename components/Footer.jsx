@@ -63,6 +63,7 @@ const SERVICES = [
   { label: "Air Freight to Nigeria",    href: "/services#air-freight",              icon: Plane },
   { label: "Sea Shipping to Nigeria",   href: "/services#sea-shipping-to-nigeria",  icon: Ship },
   { label: "Door to Door Cargo",        href: "/services#door-to-door-cargo",       icon: Truck },
+  { label: "Car & Vehicle Shipping",    href: "/services#vehicles",                 icon: Truck },
   { label: "Customs Clearance",         href: "/services#customs-clearance",        icon: FileCheck },
   { label: "Warehousing",               href: "/services#warehousing",              icon: Warehouse },
   { label: "Cargo Handling",            href: "/services#cargo-handling",           icon: Anchor },

@@ -31,7 +31,7 @@ const STATS = [
   { value: "2012", suffix: "",   label: "Year Founded",           icon: Clock,   desc: "12+ years operating"           },
   { value: "50",   suffix: "K+", label: "Shipments Delivered",    icon: Package, desc: "Safely moved, on time"          },
   { value: "36",   suffix: "",   label: "Nigerian States Served", icon: MapPin,  desc: "Complete national coverage"     },
-  { value: "107",  suffix: "+",  label: "Five-Star Reviews",      icon: Star,    desc: "#1 ranked UK–Nigeria on Google" },
+  { value: "100",  suffix: "+",  label: "Five-Star Reviews",      icon: Star,    desc: "#1 ranked UK–Nigeria on Google" },
   { value: "99",   suffix: "%",  label: "Delivery Success Rate",  icon: Shield,  desc: "Industry-leading reliability"   },
   { value: "2",    suffix: "",   label: "Warehouse Locations",    icon: Globe,   desc: "Upminster UK · Lagos Nigeria"   },
 ];
@@ -168,7 +168,7 @@ function Hero() {
                 R-Zone Enterprises was founded in Essex in 2012 with one mission: to give Nigerian families
                 and businesses in the UK a cargo service they could genuinely rely on. The{" "}
                 <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-                {" "}— 107+ five-star reviews, organically earned, and 50,000+ shipments delivered since 2012.
+                {" "}— 100+ five-star reviews, organically earned, and 50,000+ shipments delivered since 2012.
               </motion.p>
               <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
                 <Link href="/quote"
@@ -196,7 +196,7 @@ function Hero() {
                 { icon: Globe,   label: "Nigeria Hub",          val: "Shagam Interchange, Lagos"  },
                 { icon: Clock,   label: "Operating Since",      val: "2012 — 12+ years"           },
                 { icon: Package, label: "Shipments Delivered",  val: "50,000+"                    },
-                { icon: Star,    label: "Google Reviews",       val: "107 × Five-Star"            },
+                { icon: Star,    label: "Google Reviews",       val: "100 × Five-Star"            },
                 { icon: Users,   label: "Google Ranking",       val: "#1 UK–Nigeria Cargo"        },
               ].map(({ icon: Icon, label, val }) => (
                 <div key={label} className="flex items-center justify-between border-b border-white/[0.06] pb-4 last:border-0 last:pb-0">
@@ -354,7 +354,7 @@ function WhoWeAre() {
             <motion.div className="absolute -bottom-5 -right-4 bg-[#0818A8] px-5 py-3 shadow-xl shadow-[#0818A8]/30"
               initial={{ opacity: 0, scale: 0.85 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.7 }}>
-              <p className="text-white font-black text-[20px] leading-none">107+</p>
+              <p className="text-white font-black text-[20px] leading-none">100+</p>
               <p className="text-white/80 text-[11px] font-semibold tracking-[0.15em] uppercase">#1 on Google</p>
             </motion.div>
           </motion.div>
@@ -536,7 +536,7 @@ function Testimonials() {
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
           <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
-            <TagPill label="107+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo" dark={false} />
+            <TagPill label="100+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo" dark={false} />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <SectionHeadline line1="Trusted by" accent="Thousands." dark={false} id="testimonials-heading" />
@@ -578,8 +578,8 @@ function Testimonials() {
           transition={{ duration: 0.5, delay: 0.5 }}>
           <a href="https://www.google.com/search?q=R-Zone+Enterprises+reviews" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors duration-200 border-b border-[#0818A8]/30 hover:border-[#0437F2]/50 pb-0.5"
-            aria-label="Read all 107 five-star R-Zone reviews on Google (opens in new tab)">
-            Read all 107+ reviews on Google <ArrowRight size={12} aria-hidden="true" />
+            aria-label="Read all 100 five-star R-Zone reviews on Google (opens in new tab)">
+            Read all 100+ reviews on Google <ArrowRight size={12} aria-hidden="true" />
           </a>
         </motion.div>
       </div>
@@ -808,7 +808,7 @@ export default function AboutPageClient() {
             "alternateName": ["R-Zone Cargo", "RZE Cargo"],
             "url": "https://r-zoneenterprises.com",
             "foundingDate": "2012",
-            "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned. R-Zone Enterprises offers air freight, sea freight with weekly sailings, door-to-door cargo, customs clearance, warehousing and importation between the UK and Nigeria since 2012.",
+            "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. R-Zone Enterprises offers air freight, sea freight with weekly sailings, door-to-door cargo, customs clearance, warehousing and importation between the UK and Nigeria since 2012.",
             "slogan": "The Highest-Rated & Highest-Ranked Cargo Company Between the UK and Nigeria",
             "telephone": "+448007720864",
             "email": "info@r-zoneenterprises.com",
@@ -825,8 +825,8 @@ export default function AboutPageClient() {
               { "@type": "City",    "name": "London" },
               { "@type": "Continent", "name": "Africa" },
             ],
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "107", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 107+ five-star reviews, organically earned." },
-            "award": ["#1 Ranked UK-to-Nigeria Cargo Company on Google", "107+ Five-Star Google Reviews — Organically Earned", "IATA Certified Air Freight Agent", "NCS Compliant Freight Operator", "HMRC Registered UK Customs Agent"],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "100", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned." },
+            "award": ["#1 Ranked UK-to-Nigeria Cargo Company on Google", "100+ Five-Star Google Reviews — Organically Earned", "IATA Certified Air Freight Agent", "NCS Compliant Freight Operator", "HMRC Registered UK Customs Agent"],
             "numberOfEmployees": { "@type": "QuantitativeValue", "value": "15" },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -852,7 +852,7 @@ export default function AboutPageClient() {
             "@type": "AboutPage",
             "url": "https://r-zoneenterprises.com/about",
             "name": "About R-Zone Enterprises — UK to Nigeria Cargo Company Since 2012",
-            "description": "Learn about R-Zone Enterprises — the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Founded in Essex in 2012. 107+ five-star reviews. Air freight, sea freight and door-to-door cargo.",
+            "description": "Learn about R-Zone Enterprises — the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Founded in Essex in 2012. 100+ five-star reviews. Air freight, sea freight and door-to-door cargo.",
             "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
           },
         ],

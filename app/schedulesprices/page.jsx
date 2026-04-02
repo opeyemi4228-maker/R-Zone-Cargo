@@ -26,14 +26,60 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const YEAR = "2026";
+const YEAR = String(new Date().getFullYear());
 
-const SEA_SCHEDULES = [
-  { id: "mar-week1", month: "March", cutoff: "06 Mar", sailing: "07 Mar", eta: "04 Apr", status: "departed", vessel: "MV West Coast", port: "Tin Can Island" },
-  { id: "mar-week2", month: "March", cutoff: "13 Mar", sailing: "14 Mar", eta: "11 Apr", status: "departed", vessel: "MV West Coast", port: "Tin Can Island" },
-  { id: "mar-week3", month: "March", cutoff: "20 Mar", sailing: "21 Mar", eta: "18 Apr", status: "departed", vessel: "MV West Coast", port: "Tin Can Island" },
-  { id: "mar-week4", month: "March", cutoff: "27 Mar", sailing: "28 Mar", eta: "25 Apr", status: "open", vessel: "MV West Coast", port: "Tin Can Island" },
-];
+const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function formatDate(d) {
+  const day = `${d.getDate()}`.padStart(2, "0");
+  const month = MONTH_NAMES[d.getMonth()];
+  return `${day} ${month}`;
+}
+
+function getCurrentMonthSeaSchedules() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+
+  // Find first Friday of the month
+  let cutoff = new Date(firstDay);
+  while (cutoff.getDay() !== 5) {
+    cutoff.setDate(cutoff.getDate() + 1);
+  }
+
+  const schedules = [];
+  let week = 1;
+  while (cutoff <= lastDay) {
+    const sailing = new Date(cutoff);
+    sailing.setDate(cutoff.getDate() + 6); // next week Thursday
+
+    const eta = new Date(sailing);
+    eta.setDate(sailing.getDate() + 28); // 4 weeks after sailing
+
+    const status = cutoff < new Date(today.getFullYear(), today.getMonth(), today.getDate()) ? "departed" : "open";
+
+    schedules.push({
+      id: `${MONTH_NAMES[month].toLowerCase()}-week${week}`,
+      month: MONTH_NAMES[month],
+      cutoff: formatDate(cutoff),
+      sailing: formatDate(sailing),
+      eta: formatDate(eta),
+      status,
+      vessel: "Grimaldi",
+      port: "Lagos",
+    });
+
+    cutoff.setDate(cutoff.getDate() + 7);
+    week += 1;
+  }
+
+  return schedules;
+}
+
+const SEA_SCHEDULES = getCurrentMonthSeaSchedules();
 
 const AIR_SCHEDULES = [
   { day: "Monday",    departure: "LHR / LGW", airline: "British Airways",   transit: "5–7 working days",  frequency: "Weekly" },
@@ -41,11 +87,7 @@ const AIR_SCHEDULES = [
   { day: "Friday",    departure: "LHR / MAN",  airline: "Multiple Carriers", transit: "7–10 working days", frequency: "Weekly" },
 ];
 
-const IMPORTATION_SCHEDULES = [
-  { route: "Lagos → London", type: "Air", frequency: "Every Thursday",  transit: "5–8 working days", port: "LOS → LHR"       },
-  { route: "Lagos → London", type: "Sea", frequency: "Weekly sailings", transit: "4–6 weeks",         port: "Apapa → Tilbury" },
-  { route: "Abuja → London", type: "Air", frequency: "Twice weekly",   transit: "5–8 working days", port: "ABV → LHR"       },
-];
+
 
 const AIR_RATES = [
   { range: "All weights", rate: "£5.20", per: "per kg", note: "Plus £25 handling fee" },
@@ -302,9 +344,8 @@ function SchedulesSection() {
   const inView     = useInView(ref, { once: true, margin: "-60px" });
   const [activeTab, setActiveTab] = useState("sea");
   const tabs = [
-    { id: "sea",    label: "Sea Freight UK to Nigeria",   icon: Ship    },
-    { id: "air",    label: "Air Freight UK to Nigeria",   icon: Plane   },
-    { id: "import", label: "Importation Nigeria to UK",   icon: Package },
+    { id: "sea",  label: "Sea Freight UK to Nigeria", icon: Ship  },
+    { id: "air",  label: "Air Freight UK to Nigeria", icon: Plane },
   ];
 
   return (
@@ -526,48 +567,7 @@ function SchedulesSection() {
             </motion.div>
           )}
 
-          {/* IMPORT */}
-          {activeTab === "import" && (
-            <motion.div key="import" id="tab-panel-import" role="tabpanel" aria-labelledby="tab-import"
-              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
-              <div className="flex items-start gap-3 border border-[#1F51FF]/20 bg-[#0818A8]/12 px-5 py-3.5 mb-8">
-                <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <p className="text-white/80 text-[13px] font-normal leading-snug">
-                  We operate <strong className="text-white font-semibold">weekly Nigeria to UK importation</strong> services by both air and sea.
-                  Our Lagos team handles collection from any of Nigeria&apos;s 36 states, customs clearance, and consolidation.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-                {IMPORTATION_SCHEDULES.map((s, i) => (
-                  <motion.div key={i} className="border border-white/[0.1] bg-white/[0.04] p-6 group hover:border-[#0818A8]/50 transition-all duration-300"
-                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }}>
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-7 h-7 bg-[#0818A8]/20 rounded-sm flex items-center justify-center" aria-hidden="true">
-                        {s.type === "Air" ? <Plane size={12} className="text-[#1F51FF]" /> : <Ship size={12} className="text-[#1F51FF]" />}
-                      </div>
-                      <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1F51FF]">{s.type} — Nigeria to UK</span>
-                    </div>
-                    <p className="text-white font-black text-[15px] leading-snug tracking-[-0.01em] mb-1">{s.route}</p>
-                    <p className="text-white/80 text-[13px] font-normal mb-4">{s.port}</p>
-                    <div className="border-t border-white/[0.07] pt-4 grid grid-cols-2 gap-3">
-                      <div>
-                        <p className="text-[11px] uppercase tracking-[0.18em] text-white/80 font-bold">Frequency</p>
-                        <p className="text-white/80 text-[13px] font-semibold mt-0.5">{s.frequency}</p>
-                      </div>
-                      <div>
-                        <p className="text-[11px] uppercase tracking-[0.18em] text-white/80 font-bold">Transit</p>
-                        <p className="text-[#1F51FF] text-[13px] font-semibold mt-0.5">{s.transit}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
-                aria-label="Enquire about importing goods from Nigeria to UK">
-                Enquire About Importation <ArrowRight size={11} aria-hidden="true" />
-              </Link>
-            </motion.div>
-          )}
+
         </AnimatePresence>
       </div>
     </section>

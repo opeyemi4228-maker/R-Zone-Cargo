@@ -74,10 +74,11 @@ const NAV_ITEMS = [
   },
 
   {
-    label: "Shipping Guide",
+    label: "Information Hub",
     href: "/blog",
     ariaLabel: "R-Zone shipping guide, news and insights",
     dropdown: [
+      { label: "Importation",  href: "/importation", icon: Package,       description: "Importation guide" },
       { label: "Sailing Schedules",  href: "/schedulesprices", icon: Ship,       description: "Weekly sea freight departure dates" },
       { label: "Prices & Rates",     href: "/schedulesprices#pricing",    icon: BarChart3,  description: "Transparent UK–Nigeria pricing" },
       { label: "News & Insights",    href: "/blog",                      icon: Newspaper,  description: "Latest logistics & trade news" },
