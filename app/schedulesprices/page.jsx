@@ -82,9 +82,7 @@ function getCurrentMonthSeaSchedules() {
 const SEA_SCHEDULES = getCurrentMonthSeaSchedules();
 
 const AIR_SCHEDULES = [
-  { day: "Monday",    departure: "LHR / LGW", airline: "British Airways",   transit: "5–7 working days",  frequency: "Weekly" },
-  { day: "Wednesday", departure: "LHR",        airline: "Virgin Atlantic",   transit: "5–7 working days",  frequency: "Weekly" },
-  { day: "Friday",    departure: "LHR / MAN",  airline: "Multiple Carriers", transit: "7–10 working days", frequency: "Weekly" },
+  { day: "Friday", departure: "LHR", airline: "Multiple Carriers", transit: "7 days · Arrives next Friday", frequency: "Weekly" },
 ];
 
 
@@ -179,11 +177,11 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
   {
     q: "How much does it cost to ship cargo from the UK to Nigeria?",
-    a: "Sea freight from the UK to Nigeria starts from £2 per kg (4–6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (5–10 working days). Door-to-door cargo pricing varies by Nigerian state — from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
+    a: "Sea freight from the UK to Nigeria starts from £2 per kg (4–6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (7 days — departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state — from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
   },
   {
     q: "What is the cheapest way to ship from the UK to Nigeria?",
-    a: "Sea freight is the cheapest option — from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4–6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs weekly.",
+    a: "Sea freight is the cheapest option — from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4–6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs every Friday from LHR, arriving Lagos the following Friday.",
   },
   {
     q: "Are there any hidden fees?",
@@ -195,7 +193,7 @@ const FAQS_PRICING = [
   },
   {
     q: "Do prices include VAT?",
-    a: "Prices shown are exclusive of UK VAT where applicable. VAT is charged at the standard rate on UK-origin services for UK VAT-registered customers.",
+    a: "Exported goods from the UK are generally not charged UK VAT. They are 'zero-rated' (0% VAT) because they are not consumed in the UK, provided specific conditions are met and official evidence of export is kept.",
   },
   {
     q: "Can I get a fixed price for regular UK–Nigeria shipments?",
@@ -292,7 +290,7 @@ function Hero() {
             <motion.p variants={fadeUp} custom={0.2} className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
               Full {YEAR} UK–Nigeria sailing and flight schedules alongside fully transparent
               pricing — no hidden fees, no surprises.{" "}
-              <strong className="text-white font-semibold">Sea freight from £3/kg · Air freight from £5/kg.</strong>
+              <strong className="text-white font-semibold">Sea freight from £2/kg · Air freight from £5/kg.</strong>
               {" "}Weekly departures on both routes.
             </motion.p>
             <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
@@ -311,10 +309,10 @@ function Hero() {
           <motion.div className="grid grid-cols-2 gap-3"
             initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.3 }}>
             {[
-              { icon: Plane,        label: "Air Freight",      val1: "Weekly",  val2: "departures",   sub: "Mon · Wed · Fri",  accent: "#0818A8" },
-              { icon: Ship,         label: "Sea Freight",      val1: "Weekly",  val2: "sailings",     sub: "4–6 weeks transit", accent: "#1F51FF" },
-              { icon: Zap,          label: "Fastest Transit",  val1: "5–7",     val2: "working days", sub: "UK to Nigeria air", accent: "#0437F2" },
-              { icon: TrendingDown, label: "Sea From",         val1: "£3",      val2: "/kg",          sub: "Cheapest option",  accent: "#0818A8" },
+              { icon: Plane,        label: "Air Freight",      val1: "Every",   val2: "Friday",       sub: "Departs LHR weekly",   accent: "#0818A8" },
+              { icon: Ship,         label: "Sea Freight",      val1: "Weekly",  val2: "sailings",     sub: "4–6 weeks transit",    accent: "#1F51FF" },
+              { icon: Zap,          label: "Air Transit",      val1: "7",       val2: "days",         sub: "Friday to Friday",     accent: "#0437F2" },
+              { icon: TrendingDown, label: "Sea From",         val1: "£2",      val2: "/kg",          sub: "Cheapest option",  accent: "#0818A8" },
             ].map(({ icon: Icon, label, val1, val2, sub, accent }, i) => (
               <motion.div key={label}
                 className="group border border-white/[0.08] bg-white/[0.04] p-5 relative overflow-hidden hover:border-white/[0.2] hover:bg-white/[0.07] transition-all duration-300"
@@ -502,13 +500,13 @@ function SchedulesSection() {
               <div className="flex items-start gap-3 border border-[#1F51FF]/20 bg-[#0818A8]/12 px-5 py-3.5 mb-8">
                 <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <p className="text-white/80 text-[13px] font-normal leading-snug">
-                  Air freight to Nigeria departs <strong className="text-white font-semibold">three times weekly</strong> from London Heathrow, Gatwick and Manchester to Lagos (LOS) and Abuja (ABV).
-                  Same-week dispatch for cargo received by 12pm on departure day.
+                  Air freight to Nigeria departs <strong className="text-white font-semibold">every Friday</strong> from London Heathrow (LHR) to Lagos (LOS).
+                  Cargo must be received by <strong className="text-white font-semibold">12pm Friday</strong> for same-day dispatch — arrives Lagos the <strong className="text-white font-semibold">following Friday</strong>.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              <div className="flex justify-center mb-10">
                 {AIR_SCHEDULES.map((sched, i) => (
-                  <motion.div key={sched.day} className="border border-white/[0.1] bg-white/[0.04] p-6 relative overflow-hidden group hover:border-[#0818A8]/50 hover:bg-[#0818A8]/10 transition-all duration-300"
+                  <motion.div key={sched.day} className="w-full max-w-lg border border-white/[0.1] bg-white/[0.04] p-8 relative overflow-hidden group hover:border-[#0818A8]/50 hover:bg-[#0818A8]/10 transition-all duration-300"
                     initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }}>
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
                     <div className="w-10 h-10 bg-[#0818A8]/20 rounded-sm flex items-center justify-center mb-4" aria-hidden="true">
@@ -517,14 +515,14 @@ function SchedulesSection() {
                     <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/80 mb-1">{sched.frequency} Departure</p>
                     <p className="text-white font-black text-[20px] leading-none tracking-[-0.01em] mb-1">{sched.day}</p>
                     <p className="text-white/80 text-[13px] font-normal mb-3">{sched.departure}</p>
-                    <div className="flex items-center justify-between border-t border-white/[0.07] pt-3">
-                      <div>
-                        <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80">Transit</p>
-                        <p className="text-[#1F51FF] font-bold text-[13px]">{sched.transit}</p>
+                    <div className="flex items-center justify-between gap-6 border-t border-white/[0.07] pt-4">
+                      <div className="min-w-0">
+                        <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80 mb-0.5">Transit</p>
+                        <p className="text-[#1F51FF] font-bold text-[14px] whitespace-nowrap">{sched.transit}</p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80">Carrier</p>
-                        <p className="text-white/80 text-[13px] font-normal">{sched.airline}</p>
+                      <div className="text-right shrink-0">
+                        <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80 mb-0.5">Carrier</p>
+                        <p className="text-white/80 text-[14px] font-normal">{sched.airline}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -537,11 +535,11 @@ function SchedulesSection() {
                 </p>
                 <div className="flex items-center gap-0 overflow-x-auto">
                   {[
-                    { label: "Day 1",   title: "Book & Drop Off",     sub: "Upminster warehouse",   icon: Package     },
-                    { label: "Day 1–2", title: "Consolidated",        sub: "Palletised & labelled", icon: Anchor      },
-                    { label: "Day 2–3", title: "Departs LHR",         sub: "Airside loading",       icon: Plane       },
-                    { label: "Day 4–5", title: "Lagos Airport",       sub: "LOS customs clearance", icon: MapPin      },
-                    { label: "Day 5–7", title: "Cleared & Delivered", sub: "Door or Lagos pickup",  icon: CheckCircle },
+                    { label: "Fri · Wk 1", title: "Book & Drop Off",     sub: "12pm cut-off deadline",  icon: Package     },
+                    { label: "Fri · Wk 1", title: "Departs LHR",         sub: "Cargo loaded & airside", icon: Plane       },
+                    { label: "Sat – Thu",  title: "In Transit",           sub: "UK → Lagos",             icon: Anchor      },
+                    { label: "Thu · Wk 2", title: "Lagos Airport",        sub: "LOS customs clearance",  icon: MapPin      },
+                    { label: "Fri · Wk 2", title: "Cleared & Delivered",  sub: "Door or Lagos pickup",   icon: CheckCircle },
                   ].map((step, si) => {
                     const Icon = step.icon;
                     return (
@@ -583,7 +581,7 @@ function SectionDivider() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex flex-wrap gap-x-10 gap-y-3">
           {[
-            { val: "£3/kg",   label: "Sea freight from UK to Nigeria" },
+            { val: "£2/kg",   label: "Sea freight from UK to Nigeria" },
             { val: "£5/kg",   label: "Air freight from UK to Nigeria" },
             { val: "0",       label: "Hidden fees"                    },
             { val: "Weekly",  label: "Sailings & departures"          },
@@ -627,7 +625,7 @@ function PricingSection() {
           <motion.p className="text-gray-800 text-[14px] font-normal mt-4 max-w-xl mx-auto"
             initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
             No surprises. No hidden extras.{" "}
-            <strong className="text-gray-900 font-semibold">Sea freight from £3/kg · Air freight from £5/kg.</strong>
+            <strong className="text-gray-900 font-semibold">Sea freight from £2/kg · Air freight from £5/kg.</strong>
             {" "}Volume discounts and business rates available on request.
           </motion.p>
         </div>
@@ -874,7 +872,7 @@ function FinalCTA() {
             <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Book the Next Sailing to Nigeria</h3>
             <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6">
               March and April {YEAR} sailings are now open. Secure your cargo space — weekly cut-off dates apply.
-              Sea freight to Lagos from £3/kg.
+              Sea freight to Lagos from £2/kg.
             </p>
             <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
               aria-label="Book sea freight from UK to Nigeria">
@@ -929,8 +927,8 @@ const SCHEMA_LD = {
       "@type": "Service",
       "name": "Sea Freight UK to Nigeria — Weekly Sailings",
       "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
-      "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4–6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria — from £3/kg.",
-      "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "3.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £3 per kg" },
+      "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4–6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria — from £2/kg.",
+      "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "2.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £2 per kg" },
       "areaServed": ["United Kingdom", "Nigeria"],
       "serviceType": "Sea Freight",
     },
@@ -938,7 +936,7 @@ const SCHEMA_LD = {
       "@type": "Service",
       "name": "Air Freight UK to Nigeria — Weekly Departures",
       "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
-      "description": "Air freight from UK to Nigeria. Weekly departures Monday, Wednesday and Friday from London Heathrow, Gatwick and Manchester to Lagos and Abuja. 5–10 working days transit.",
+      "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday — arrives Lagos the following Friday. 7 days transit.",
       "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.00", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5 per kg" },
       "areaServed": ["United Kingdom", "Nigeria"],
       "serviceType": "Air Freight",
@@ -947,7 +945,7 @@ const SCHEMA_LD = {
       "@type": "WebPage",
       "url": "https://r-zoneenterprises.com/schedules-prices",
       "name": "UK to Nigeria Cargo Schedules & Prices — R-Zone Enterprises",
-      "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates — sea freight from £3/kg, air freight from £5/kg. No hidden fees.",
+      "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates — sea freight from £2/kg, air freight from £5/kg. No hidden fees.",
       "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
     },
   ],

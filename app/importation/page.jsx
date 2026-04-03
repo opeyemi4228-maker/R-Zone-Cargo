@@ -93,7 +93,7 @@ const FOODSTUFFS = [
 const FAQS = [
   {
     q: "How do I send goods from Nigeria to the UK with R-Zone?",
-    a: "Contact our Lagos team or the UK office with your cargo details — weight, Nigerian state, and type of goods. Drop off at our Igando, Lagos office or arrange collection. We dispatch via weekly air freight (min 20kg) or monthly sea freight (min 2 bags).",
+    a: "Contact our Lagos team or the UK office with your cargo details — weight, Nigerian state, and type of goods. Drop off at our Egbeda, Lagos office or arrange collection. We dispatch via weekly air freight (min 20kg) or monthly sea freight (min 2 bags).",
   },
   {
     q: "What is the minimum weight for importation from Nigeria to the UK?",
@@ -129,8 +129,8 @@ const PROCESS_STEPS = [
   },
   {
     n: "02", icon: Warehouse, title: "Drop Off in Lagos",
-    sub: "Igando, Lagos — our collection office",
-    body: "Bring cargo to 2 Esan Olusegun Close, Off Hotel Solus Bus Stop, Igando, Lagos. Our team assesses, weighs and repacks where necessary.",
+    sub: "Egbeda, Lagos — our collection office",
+    body: "Bring cargo to 150 Idimu Egbeda Road, by Seliat BRT Bus Stop, Egbeda, Lagos. Our team assesses, weighs and repacks where necessary.",
   },
   {
     n: "03", icon: Plane, title: "Air or Sea Dispatch",
@@ -519,8 +519,8 @@ function ServiceOverview() {
                 <div>
                   <p className="text-[11px] font-black tracking-[0.28em] uppercase text-[#0818A8] mb-1">Our Lagos Collection Office</p>
                   <p className="text-gray-900 font-semibold text-[14px] leading-snug mb-1">
-                    2 Esan Olusegun Close, Off Hotel Solus Bus Stop,
-                    Igando, Lagos, Nigeria
+                    150 Idimu Egbeda Road, by Seliat BRT Bus Stop,
+                    Egbeda, Lagos, Nigeria
                   </p>
                   <p className="text-gray-800 text-[13px] font-normal">
                     Drop off your cargo directly — our team assesses, weighs and repacks for safe transit.
@@ -1206,7 +1206,7 @@ function FinalCTA() {
             {[
               { icon: Plane,     title: "Weekly Air",          detail: "5–8 working days",    href: "#",              accent: "#1F51FF" },
               { icon: Ship,      title: "Monthly Sea",         detail: "4–6 weeks transit",   href: "#",              accent: "#0818A8" },
-              { icon: MapPin,    title: "Lagos Collection",    detail: "Igando office",        href: "/contact",       accent: "#1F51FF" },
+              { icon: MapPin,    title: "Lagos Collection",    detail: "Egbeda office",        href: "/contact",       accent: "#1F51FF" },
               { icon: Package,   title: "Foodstuffs",          detail: "View approved items",  href: "#foodstuffs",    accent: "#0818A8" },
               { icon: Globe,     title: "All 36 States",       detail: "State-by-state rates", href: "#rates",         accent: "#1F51FF" },
               { icon: Shield,    title: "Customs Included",    detail: "HMRC UK clearance",   href: "/services",      accent: "#0818A8" },
@@ -1315,7 +1315,6 @@ export default function ImportationPageClient() {
         <Hero />
         <ServiceOverview />
         <HowItWorks />
-        <RatesSection />
         <FoodstuffsSection />
         <FAQSection />
         <FinalCTA />
