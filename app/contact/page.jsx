@@ -504,9 +504,34 @@ function ContactForm() {
     const e = validate(form);
     setErrors(e);
     if (Object.keys(e).length > 0) return;
+
     setStatus("loading");
-    await new Promise(r => setTimeout(r, 1800));
-    setStatus("success");
+
+    // Map internal values to the exact labels Google Form expects
+    const enquiryLabel = ENQUIRY_TYPES.find(t => t.value === form.enquiryType)?.label ?? form.enquiryType;
+
+    const params = new URLSearchParams();
+    params.append("entry.1590116596", form.name);
+    params.append("entry.1083142110", form.email);
+    params.append("entry.1085913896", form.phone);
+    params.append("entry.1252944764", enquiryLabel);
+    params.append("entry.2057225620", form.subject);
+    params.append("entry.1119040527", form.message);
+
+    try {
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSfbeEWR4g5rSzgZ_tkLPSmqq85SmkkeD6l6PdCxmuo7E6MSKg/formResponse",
+        {
+          method: "POST",
+          body: params.toString(),
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        }
+      );
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   const fieldClass = (field) =>

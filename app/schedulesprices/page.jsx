@@ -88,7 +88,7 @@ const AIR_SCHEDULES = [
 
 
 const AIR_RATES = [
-  { range: "All weights", rate: "£5.20", per: "per kg", note: "Plus £25 handling fee" },
+  { range: "All weights", rate: "£5.20", per: "per kg", note: "Plus £20 handling fee" },
 ];
 
 const SEA_RATES = [
@@ -96,45 +96,71 @@ const SEA_RATES = [
 ];
 
 const STATE_RATES = [
-  { state: "Lagos", doorToDoor: "5.2", collection: "4.8", minWeight: "20" },
-  { state: "Abuja", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Anambra", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Abia", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Adamawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Akwa Ibom", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Bauchi", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Bayelsa", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Benue", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Borno", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Cross River", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Delta", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Ebonyi", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Edo", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Ekiti", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Enugu", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Gombe", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Imo", doorToDoor: "6.3", collection: "5.8", minWeight: "30" },
-  { state: "Jigawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Kaduna", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Ibadan", doorToDoor: "5.3", collection: "5", minWeight: "20" },
-  { state: "Akure", doorToDoor: "5.3", collection: "5", minWeight: "20" },
-  { state: "Kano", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Katsina", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Kebbi", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Kogi", doorToDoor: "6.3", collection: "6", minWeight: "30" },
-  { state: "Kwara", doorToDoor: "6.3", collection: "5.5", minWeight: "30" },
-  { state: "Nasarawa", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Niger", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Ogun", doorToDoor: "5.8", collection: "5.5", minWeight: "30" },
-  { state: "Ondo", doorToDoor: "6", collection: "5.5", minWeight: "30" },
-  { state: "Osun", doorToDoor: "6", collection: "5.5", minWeight: "30" },
-  { state: "Oyo", doorToDoor: "6", collection: "", minWeight: "30" },
-  { state: "Plateau", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Rivers", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Sokoto", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Taraba", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Yobe", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
-  { state: "Zamfara", doorToDoor: "6.8", collection: "6.5", minWeight: "30" },
+  { state: "Abia",        doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Abuja (FCT)", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Adamawa",     doorToDoor: "7.00", collection: "7.00", minWeight: "30", minWeightNote: null,                    days: "10"  },
+  { state: "Akwa Ibom",   doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Anambra",     doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Bauchi",      doorToDoor: null,   collection: "7.00", minWeight: "30", minWeightNote: null,                    days: "10"  },
+  { state: "Bayelsa",     doorToDoor: "7.00", collection: "7.00", minWeight: "30", minWeightNote: null,                    days: "10"  },
+  { state: "Borno",       doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Cross River", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Delta",       doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Ebonyi",      doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Edo",         doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Ekiti",       doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Enugu",       doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Gombe",       doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Imo",         doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Jigawa",      doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Kaduna",      doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Kano",        doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "12"  },
+  { state: "Katsina",     doorToDoor: null,   collection: "7.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Kebbi",       doorToDoor: null,   collection: "7.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Kogi",        doorToDoor: "6.50", collection: "6.20", minWeight: "30", minWeightNote: null,                    days: "15"  },
+  { state: "Kwara",       doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Lagos",       doorToDoor: "5.50", collection: "5.20", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5–7" },
+  { state: "Nasarawa",    doorToDoor: "7.00", collection: "7.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Niger",       doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Ogun",        doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Ondo",        doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Osun",        doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Oyo",         doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Plateau",     doorToDoor: "6.50", collection: "6.20", minWeight: "30", minWeightNote: null,                    days: "15"  },
+  { state: "Rivers",      doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Sokoto",      doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "10"  },
+  { state: "Taraba",      doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Yobe",        doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+  { state: "Zamfara",     doorToDoor: null,   collection: "7.50", minWeight: "20", minWeightNote: null,                    days: "15"  },
+];
+
+const FIXED_ITEM_RATES = [
+  { item: '19" TV',               price: 120  },
+  { item: '24" TV',               price: 160  },
+  { item: '32" TV',               price: 180  },
+  { item: '37" TV',               price: 200  },
+  { item: '40" TV',               price: 230  },
+  { item: '42" TV',               price: 260  },
+  { item: '46" TV',               price: 300  },
+  { item: '50" TV',               price: 350  },
+  { item: 'Laptop (15"–17")',     price: 50   },
+  { item: "Computer & Desktop",   price: 150  },
+  { item: "Mobile Phone (per unit)", price: 30 },
+  { item: "iPad",                 price: 25   },
+  { item: "Printer",              price: 50   },
+];
+
+const VEHICLE_RATES = [
+  { type: "Saloon Car",          roro: "£840",       note: null           },
+  { type: "4×4 / Jeep",         roro: "£1,130",     note: "Max 25 CBM"   },
+  { type: "Van (Short)",         roro: "On Request", note: "Max 30 CBM"   },
+  { type: "Van (Medium)",        roro: "On Request", note: null           },
+  { type: "Van (Long)",          roro: "On Request", note: null           },
+];
+
+const CONTAINER_RATES = [
+  { type: "20 FT",  price: "On Request" },
+  { type: "40 FT",  price: "On Request" },
 ];
 
 const DOOR_SURCHARGES = [
@@ -781,27 +807,36 @@ function PricingSection() {
         {/* State-by-state rates */}
         <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.55 }}>
           <div className="mb-6">
-            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Door-to-Door Rates</h3>
-            <p className="text-gray-800 text-[13px] font-normal mt-1">Door-to-door delivery rates to all 36 Nigerian states. Collection rates apply when you deliver to our UK warehouse.</p>
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Cargo Rates — Nigeria</h3>
+            <p className="text-gray-800 text-[13px] font-normal mt-1">Door-to-door and office collection rates to all Nigerian states. Rates are per kg.</p>
           </div>
           <div className="overflow-hidden border border-gray-200 bg-white">
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[600px]" aria-label="Door-to-door delivery rates by Nigerian state">
+              <table className="w-full min-w-[700px]" aria-label="Cargo freight rates by Nigerian state">
                 <thead>
                   <tr className="bg-[#0818A8]">
                     <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">State</th>
-                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Door-to-Door Rate £</th>
-                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Collection Rate £</th>
-                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Min Weight (KG)</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Door-to-Door (£/kg)</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Office Collection (£/kg)</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Min Weight (kg)</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Delivery (Days)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {STATE_RATES.map((row, i) => (
                     <tr key={row.state} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
                       <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.state}</td>
-                      <td className="px-5 py-3.5 text-[13px] font-bold text-[#0818A8]">£{row.doorToDoor}/kg</td>
+                      <td className="px-5 py-3.5 text-[13px] font-bold">
+                        {row.doorToDoor
+                          ? <span className="text-[#0818A8]">£{row.doorToDoor}/kg</span>
+                          : <span className="text-orange-600 font-semibold">Office Only</span>}
+                      </td>
                       <td className="px-5 py-3.5 text-[13px] font-bold text-[#0818A8]">£{row.collection}/kg</td>
-                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.minWeight}</td>
+                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">
+                        {row.minWeight}kg
+                        {row.minWeightNote && <span className="ml-1 text-[11px] text-gray-600">({row.minWeightNote})</span>}
+                      </td>
+                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.days}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -809,7 +844,119 @@ function PricingSection() {
             </div>
           </div>
           <p className="text-gray-800 text-[13px] font-normal mt-3">
-            * All rates are per kg. Minimum weight requirements apply. Door-to-door includes UK collection and Nigerian delivery to your specified address.
+            * All rates are per kg. Minimum weight requirements apply. "Office Only" states do not offer door-to-door delivery — office collection rate applies.
+            All shipments subject to a £20 handling charge.
+          </p>
+        </motion.div>
+
+        {/* Fixed item rates */}
+        <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.58 }}>
+          <div className="mb-6">
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Fixed-Price Items — Door to Door (Lagos)</h3>
+            <p className="text-gray-800 text-[13px] font-normal mt-1">
+              Flat-rate door-to-door pricing for electronics to Lagos. Rates for other destinations vary — contact us for a quote.
+            </p>
+          </div>
+          <div className="overflow-hidden border border-gray-200 bg-white">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[400px]" aria-label="Fixed price door-to-door rates for electronics to Lagos Nigeria">
+                <thead>
+                  <tr className="bg-[#0818A8]">
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Item Description</th>
+                    <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Price (£)</th>
+                    <th scope="col" className="px-5 py-3 text-right text-[11px] font-bold tracking-[0.22em] uppercase text-white/80"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {FIXED_ITEM_RATES.map((row, i) => (
+                    <tr key={row.item} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
+                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.item}</td>
+                      <td className="px-5 py-3.5 text-[16px] font-black text-[#0818A8]">£{row.price}</td>
+                      <td className="px-5 py-3.5 text-right">
+                        <a href="/quote" className="text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors">Book →</a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 border border-amber-200 bg-amber-50 px-5 py-3.5 mt-4">
+            <AlertCircle size={14} className="text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+            <p className="text-amber-900 text-[13px] font-normal leading-snug">
+              <strong className="font-semibold">Important:</strong> You are responsible for proper packaging of all items. R-Zone does not accept liability for improperly packed consignments.
+              Rates above apply to Plasma and LCD TVs, computers and laptops to <strong className="font-semibold">Lagos only</strong>. For other destinations, contact us for a quote.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Vehicle & container rates */}
+        <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.61 }}>
+          <div className="mb-6">
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Car & Container Shipping to Nigeria</h3>
+            <p className="text-gray-800 text-[13px] font-normal mt-1">
+              RORO (Roll-on/Roll-off) vehicle shipping and container rates to Tin Can Island / Apapa, Lagos.
+              Prices are port-to-port only — loading, haulage and clearing costs are not included.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Vehicle RORO */}
+            <div className="overflow-hidden border border-gray-200 bg-white">
+              <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
+                <Truck size={13} className="text-white/80" aria-hidden="true" />
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Vehicle RORO Shipping — Lagos</span>
+              </div>
+              <table className="w-full" aria-label="RORO vehicle shipping prices to Lagos Nigeria">
+                <thead>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Vehicle Type</th>
+                    <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">RORO Price</th>
+                    <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {VEHICLE_RATES.map((row, i) => (
+                    <tr key={row.type} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
+                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.type}</td>
+                      <td className="px-5 py-3.5 text-[14px] font-black text-[#0818A8]">{row.roro}</td>
+                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.note ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Container */}
+            <div className="overflow-hidden border border-gray-200 bg-white">
+              <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
+                <Anchor size={13} className="text-white/80" aria-hidden="true" />
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Container Shipping — Lagos</span>
+              </div>
+              <table className="w-full" aria-label="Container shipping prices to Lagos Nigeria">
+                <thead>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Container Type</th>
+                    <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {CONTAINER_RATES.map((row, i) => (
+                    <tr key={row.type} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
+                      <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.type}</td>
+                      <td className="px-5 py-3.5 text-[14px] font-black text-[#0818A8]">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="px-5 py-4 border-t border-gray-100">
+                <a href="/contact" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200">
+                  Request Container Quote <ArrowRight size={11} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-800 text-[13px] font-normal mt-4">
+            * All vehicle and container prices are port-to-port (Tin Can Island / Apapa, Lagos) only. Loading, haulage and clearing charges are not included.
+            Contact us to request a full door-to-door quote including all extras.
           </p>
         </motion.div>
 
