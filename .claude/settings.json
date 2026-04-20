@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "C:\\Users\\HP USER\\Desktop\\R-Zone Cargo\\app\\blog"
+    ],
+    "allow": [
+      "Bash(npx next *)"
+    ]
+  }
+}
