@@ -190,7 +190,7 @@ export default function HeroSection() {
             transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00040f] via-[#00040f]/78 to-[#00040f]/18" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00040f] via-[#00040f]/85 to-[#00040f]/18" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#00040f] via-[#00040f]/20 to-[#00040f]/38" />
         </div>
 

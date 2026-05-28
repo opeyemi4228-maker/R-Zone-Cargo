@@ -331,7 +331,7 @@ export default function ArticleReader({ article, related }) {
       aria-labelledby="article-h1"
     >
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
-      <div className="relative bg-[#00061a] overflow-hidden">
+      <div className="relative bg-[#000208] overflow-hidden">
         {/* Grid background */}
         <div
           className="absolute inset-0 opacity-[0.025] pointer-events-none"
@@ -357,7 +357,7 @@ export default function ArticleReader({ article, related }) {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-35"
+            className="object-cover opacity-20"
           />
           <div
             className="absolute inset-0 bg-gradient-to-t from-[#00061a] via-[#00061a]/55 to-[#00061a]/20"
