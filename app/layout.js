@@ -2,8 +2,7 @@ import React from 'react';
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { AppContextProvider } from "@/context/AppContext";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalShell from "@/components/ConditionalShell";
 import BodyCleanup from "@/components/BodyCleanup";
 import ToasterProvider from "@/components/ToasterProvider";
 
@@ -467,22 +466,9 @@ export default function RootLayout({ children }) {
           Skip to main content
         </a>
 
-        {/* Site navigation */}
-        <Navbar />
-
-        {/*
-          Main content wrapper.
-          id="main-content" is the skip-link target.
-          role="main" duplicates <main> semantics for older assistive tech.
-        */}
         <AppContextProvider>
-          <div id="main-content" role="main">
-            {children}
-          </div>
+          <ConditionalShell>{children}</ConditionalShell>
         </AppContextProvider>
-
-        {/* Site footer */}
-        <Footer />
 
       </body>
     </html>

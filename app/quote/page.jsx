@@ -1530,10 +1530,15 @@ export default function QuotePageClient() {
 
   const handleSubmit = useCallback(async () => {
     setStatus("loading");
-    await new Promise(r => setTimeout(r, 2000));
-    setStatus("success");
-    setStep(6);
-  }, []);
+    try {
+      const { saveQuoteRequest } = await import("../../lib/adminAuth");
+      await saveQuoteRequest(form);
+      setStatus("success");
+      setStep(6);
+    } catch {
+      setStatus("error");
+    }
+  }, [form]);
 
   return (
     <>
@@ -1812,6 +1817,15 @@ export default function QuotePageClient() {
                           >
                             Continue
                             <ArrowRight size={12} aria-hidden="true" />
+                          </button>
+                        ) : status === "error" ? (
+                          <button
+                            type="button"
+                            onClick={handleSubmit}
+                            className="inline-flex items-center gap-2.5 bg-red-600 hover:bg-red-500 text-white text-[13px] font-black tracking-[0.09em] uppercase px-7 py-3 transition-all duration-200 shadow-lg shadow-red-600/30"
+                            aria-label="Submission failed — retry"
+                          >
+                            Submission failed — Retry <Send size={12} aria-hidden="true" />
                           </button>
                         ) : (
                           <button

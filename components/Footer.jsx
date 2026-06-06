@@ -217,19 +217,27 @@ function FooterLink({ href, children, icon: Icon, external = false }) {
 function NewsletterForm() {
   const [email, setEmail]   = useState("");
   const [state, setState]   = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("Please enter a valid email address.");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErrorMsg("Please enter a valid email address.");
       setState("error");
       setTimeout(() => setState("idle"), 3000);
       return;
     }
     setState("loading");
-    // Replace with real API endpoint
-    await new Promise((r) => setTimeout(r, 1200));
-    setState("success");
-    setEmail("");
+    try {
+      const { saveSubscriber } = await import("../lib/adminAuth");
+      await saveSubscriber(email);
+      setState("success");
+      setEmail("");
+    } catch (err) {
+      setErrorMsg(err?.message || "Something went wrong. Please try again.");
+      setState("error");
+      setTimeout(() => setState("idle"), 4000);
+    }
   };
 
   return (
@@ -321,7 +329,7 @@ function NewsletterForm() {
                 role="alert"
                 aria-live="polite"
               >
-                Please enter a valid email address.
+                {errorMsg}
               </motion.p>
             )}
 

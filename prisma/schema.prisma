@@ -1,0 +1,69 @@
+// R-Zone Cargo — database schema
+// Run `npm run db:push` (dev) or `npm run db:migrate` to apply changes.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Quote requests (from /quote) ───────────────────────────────────────────
+model Quote {
+  id              String   @id @default(cuid())
+  // Shipment
+  service         String?
+  cargoType       String?
+  weight          String?
+  items           String?
+  dimensions      String?
+  cargoValue      String?
+  notes           String?
+  direction       String?
+  fromCity        String?
+  toState         String?
+  collection      String?
+  targetDate      String?
+  deliveryAddress String?
+  // Contact
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  company         String?
+  source          String?
+  // Admin
+  status          String   @default("New") // New | Contacted | Closed
+  createdAt       DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ─── Contact messages (from /contact) ───────────────────────────────────────
+model Contact {
+  id           String   @id @default(cuid())
+  name         String
+  email        String
+  phone        String?
+  enquiryType  String?
+  enquiryLabel String?
+  subject      String?
+  message      String
+  status       String   @default("Unread") // Unread | Read
+  createdAt    DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ─── Newsletter subscribers (from footer) ───────────────────────────────────
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
