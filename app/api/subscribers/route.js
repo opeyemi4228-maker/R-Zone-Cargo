@@ -33,12 +33,7 @@ export async function POST(req) {
     return Response.json({ error: "A valid email is required." }, { status: 400 });
   }
 
-  // Idempotent: re-subscribing an existing email succeeds quietly.
-  const existing = await prisma.subscriber.findUnique({ where: { email } });
-  if (existing) {
-    return Response.json({ ok: true, alreadySubscribed: true });
-  }
-
+  // Allow the same email to subscribe multiple times — each is its own entry.
   await prisma.subscriber.create({ data: { email } });
   sendSubscriberWelcome(email).catch((e) => console.error("[subscribers] email error", e));
 

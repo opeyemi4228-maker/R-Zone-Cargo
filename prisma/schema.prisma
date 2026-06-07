@@ -62,7 +62,7 @@ model Contact {
 // ─── Newsletter subscribers (from footer) ───────────────────────────────────
 model Subscriber {
   id        String   @id @default(cuid())
-  email     String   @unique
+  email     String
   createdAt DateTime @default(now())
 
   @@index([createdAt])
