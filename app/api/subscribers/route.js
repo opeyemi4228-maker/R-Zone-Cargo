@@ -35,7 +35,14 @@ export async function POST(req) {
 
   // Allow the same email to subscribe multiple times — each is its own entry.
   await prisma.subscriber.create({ data: { email } });
-  sendSubscriberWelcome(email).catch((e) => console.error("[subscribers] email error", e));
+
+  // Await email so it completes before the serverless function freezes on
+  // return (Vercel kills un-awaited promises). Still best-effort.
+  try {
+    await sendSubscriberWelcome(email);
+  } catch (e) {
+    console.error("[subscribers] email error", e);
+  }
 
   return Response.json({ ok: true }, { status: 201 });
 }

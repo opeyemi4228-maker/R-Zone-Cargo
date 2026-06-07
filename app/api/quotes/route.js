@@ -54,8 +54,14 @@ export async function POST(req) {
 
   const quote = await prisma.quote.create({ data });
 
-  // Best-effort email; never blocks the response on failure.
-  sendQuoteEmails(quote).catch((e) => console.error("[quotes] email error", e));
+  // Await email so it completes before the serverless function freezes on
+  // return (Vercel kills un-awaited promises). Still best-effort: a failure
+  // here is logged but never fails the submission.
+  try {
+    await sendQuoteEmails(quote);
+  } catch (e) {
+    console.error("[quotes] email error", e);
+  }
 
   return Response.json({ ok: true, id: quote.id }, { status: 201 });
 }

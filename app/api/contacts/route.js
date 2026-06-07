@@ -50,7 +50,14 @@ export async function POST(req) {
     },
   });
 
-  sendContactEmails(contact).catch((e) => console.error("[contacts] email error", e));
+  // Await email so it completes before the serverless function freezes on
+  // return (Vercel kills un-awaited promises). Still best-effort: a failure
+  // here is logged but never fails the submission.
+  try {
+    await sendContactEmails(contact);
+  } catch (e) {
+    console.error("[contacts] email error", e);
+  }
 
   return Response.json({ ok: true, id: contact.id }, { status: 201 });
 }
