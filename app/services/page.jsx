@@ -19,6 +19,32 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+export const metadata = {
+  title: "UK–Nigeria Cargo Services | R-Zone Enterprises",
+  description:
+    "Air freight to Nigeria, sea freight to Nigeria from UK, door to door cargo Nigeria and customs clearance by R-Zone Enterprises. Weekly departures and UK-wide collection."
+  ,
+  keywords: [
+    "UK Nigeria cargo services",
+    "air freight to Nigeria",
+    "sea freight to Nigeria from UK",
+    "door to door cargo Nigeria",
+    "Nigeria customs clearance UK",
+    "cargo to Nigeria from UK",
+    "UK to Nigeria shipping",
+    "Lagos cargo from UK",
+    "Abuja cargo from UK",
+  ],
+  alternates: { canonical: "https://r-zoneenterprises.com/services" },
+  openGraph: {
+    title: "UK–Nigeria Cargo Services | R-Zone Enterprises",
+    description:
+      "Air freight to Nigeria, sea freight to Nigeria from UK, door to door cargo Nigeria and customs clearance by R-Zone Enterprises. Weekly departures and UK-wide collection.",
+    url: "https://r-zoneenterprises.com/services",
+    siteName: "R-Zone Enterprises",
+  },
+};
+
 // ─── Service data ─────────────────────────────────────────────────────────────
 const SERVICES = [
   {
@@ -633,7 +659,7 @@ function PageHero() {
             <p className="text-white/80 text-[14px] font-normal leading-relaxed">
               The{" "}
               <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-              {" "}— air freight, weekly sea sailings, door-to-door delivery, customs clearance, warehousing and port operations.
+              {" "}— cargo to Nigeria from UK by air freight to Nigeria, weekly sea freight to Nigeria from UK, door-to-door delivery, customs clearance, warehousing and port operations.
               All managed by our own teams in the UK and Nigeria.
             </p>
           </motion.div>

@@ -7,18 +7,31 @@
  *
  * Design: Mission Control — dark navy operational terminal aesthetic.
  * Matches R-Zone brand palette (#00061a base, #0818A8 / #1F51FF accents).
- *
- * ADD TO /track/layout.tsx:
- * export const metadata = {
- *   title: "Track Your UK–Nigeria Shipment | R-Zone Enterprises",
- *   description:
- *     "Track your UK to Nigeria cargo shipment in real time. Enter your R-Zone booking reference for live status, milestones, and estimated delivery. #1 rated UK–Nigeria cargo company on Google.",
- *   alternates: { canonical: "https://r-zoneenterprises.com/track" },
- * };
- * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import { Montserrat } from "next/font/google";
+
+export const metadata = {
+  title: "Track Your UK–Nigeria Shipment | R-Zone Enterprises",
+  description:
+    "Track your UK to Nigeria cargo shipment in real time, including air freight to Nigeria and sea freight to Nigeria from UK. Enter your R-Zone booking reference for live status, milestones, and estimated delivery. #1 rated UK–Nigeria cargo company on Google.",
+  keywords: [
+    "track your UK Nigeria shipment",
+    "UK Nigeria cargo tracking",
+    "cargo tracking Nigeria UK",
+    "shipment tracking Nigeria",
+    "UK to Nigeria cargo status",
+  ],
+  alternates: { canonical: "https://r-zoneenterprises.com/track" },
+  openGraph: {
+    title: "Track Your UK–Nigeria Shipment | R-Zone Enterprises",
+    description:
+      "Track your UK to Nigeria cargo shipment in real time. Enter your R-Zone booking reference for live status, milestones, and estimated delivery.",
+    url: "https://r-zoneenterprises.com/track",
+    siteName: "R-Zone Enterprises",
+  },
+};
+
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -521,8 +534,7 @@ export default function TrackPage() {
           {/* Subtext */}
           <motion.p className="text-white/60 text-[14px] font-normal leading-relaxed max-w-md mx-auto text-center mb-10"
             initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.55, delay:0.22 }}>
-            Enter your R-Zone booking reference, AWB, or Bill of Lading number
-            for live status, full milestone timeline, and cargo details.
+            Track your UK to Nigeria cargo shipment — air freight to Nigeria, sea freight to Nigeria from UK and door to door cargo Nigeria — by entering your R-Zone booking reference, AWB, or Bill of Lading number for live status, customs clearance progress, full milestone timeline, and cargo details.
           </motion.p>
 
           {/* ── SEARCH BAR ── */}

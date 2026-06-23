@@ -20,30 +20,33 @@
  * • WhatsApp CTA: embedded in sidebar + contact strip
  * • FAQ section: 6 questions (Google PAA / featured snippet eligible)
  * • Stats block: linkable asset for backlinks / press citations
- *
- * ADD TO /quote/layout.tsx (or page.tsx metadata export):
- * export const metadata = {
- *   title: "Free UK–Nigeria Shipping Quote | R-Zone Enterprises",
- *   description:
- *     "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg · Sea freight from £3/kg · Same-day response. 100+ five-star reviews.",
- *   keywords: [
- *     "shipping quote UK to Nigeria","cargo quote Nigeria UK",
- *     "air freight quote Nigeria","sea freight quote UK Nigeria",
- *     "cargo Abuja","cargo Lagos","UK Nigeria cargo company",
- *   ],
- *   alternates: { canonical: "https://r-zoneenterprises.com/quote" },
- *   openGraph: {
- *     title: "Free UK–Nigeria Shipping Quote | R-Zone Enterprises",
- *     description:
- *       "The #1 highest-rated UK-to-Nigeria cargo company on Google. Get your free quote in 4 steps. Same-day response.",
- *     url: "https://r-zoneenterprises.com/quote",
- *     siteName: "R-Zone Enterprises",
- *   },
- * };
- * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import { Montserrat, Outfit } from "next/font/google";
+
+export const metadata = {
+  title: "Free UK–Nigeria Shipping Quote | R-Zone Enterprises",
+  description:
+    "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Cargo to Nigeria from UK by air freight from £5/kg or sea freight from £3/kg. Same-day response. 100+ five-star reviews.",
+  keywords: [
+    "shipping quote UK to Nigeria",
+    "cargo quote Nigeria UK",
+    "air freight quote Nigeria",
+    "sea freight quote UK Nigeria",
+    "cargo Abuja",
+    "cargo Lagos",
+    "UK Nigeria cargo company",
+  ],
+  alternates: { canonical: "https://r-zoneenterprises.com/quote" },
+  openGraph: {
+    title: "Free UK–Nigeria Shipping Quote | R-Zone Enterprises",
+    description:
+      "The #1 highest-rated UK-to-Nigeria cargo company on Google. Get your free quote in 4 steps. Same-day response.",
+    url: "https://r-zoneenterprises.com/quote",
+    siteName: "R-Zone Enterprises",
+  },
+};
+
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -1714,7 +1717,8 @@ export default function QuotePageClient() {
                 >
                   Answer 4 simple steps — our UK-based team responds with a personalised, no-obligation
                   cargo shipping quote within the same business day. No call centres. No automated replies.
-                  Air freight, sea freight, door-to-door, and import services covering all 36 Nigerian states.
+                  Cargo to Nigeria from UK by air freight, sea freight to Nigeria from UK, door to door cargo Nigeria,
+                  and Nigeria customs clearance UK across all 36 Nigerian states.
                 </motion.p>
               </motion.div>
 

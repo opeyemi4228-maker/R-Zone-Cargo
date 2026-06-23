@@ -28,6 +28,32 @@ import Image from "next/image";
 import {
   motion, useInView, useScroll, useTransform, AnimatePresence,
 } from "framer-motion";
+
+export const metadata = {
+  title: "UK–Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
+  description:
+    "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg, door-to-door cargo to Nigeria from UK, customs clearance, warehousing and importation from Nigeria. 100+ five-star reviews. Weekly departures. Same-day response.",
+  keywords: [
+    "UK Nigeria cargo company",
+    "air freight Nigeria",
+    "sea freight Nigeria UK",
+    "door to door cargo Nigeria",
+    "customs clearance Nigeria UK",
+    "import from Nigeria to UK",
+    "cargo Abuja",
+    "cargo Lagos",
+    "UK Nigeria shipping company",
+    "freight forwarding Nigeria",
+  ],
+  alternates: { canonical: "https://r-zoneenterprises.com/business-solutions" },
+  openGraph: {
+    title: "UK–Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
+    description:
+      "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg, door-to-door cargo to Nigeria from UK, customs clearance, warehousing and importation from Nigeria. 100+ five-star reviews.",
+    url: "https://r-zoneenterprises.com/business-solutions",
+    siteName: "R-Zone Enterprises",
+  },
+};
 import {
   Plane, Ship, Truck, Package, FileCheck, Warehouse, Anchor,
   ArrowRight, Check, ChevronRight, Clock, Shield, Star, MapPin,
@@ -284,10 +310,10 @@ function Hero() {
               {/* SEO body — keyword-rich */}
               <motion.p variants={fadeUp} custom={0.2}
                 className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-10">
-                Cargo delayed at customs. Supply chains stalled. No visibility on your UK-to-Nigeria shipment.
+                Cargo delayed at customs. Supply chains stalled. No visibility on your UK-to-Nigeria shipment or cargo to Nigeria from UK.
                 R-Zone Enterprises solves every UK–Nigeria logistics challenge —
                 with our own teams on <strong className="text-white font-semibold">both sides of the corridor</strong> since 2012.
-                Air freight, sea freight, door-to-door, customs clearance, warehousing and importation — all under one roof.
+                Air freight to Nigeria, sea freight to Nigeria from UK, door-to-door cargo to Nigeria, customs clearance, warehousing and importation — all under one roof.
               </motion.p>
 
               <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">

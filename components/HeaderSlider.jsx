@@ -292,9 +292,9 @@ export default function HeroSection() {
                 animate="visible"
                 custom={0.76}
               >
-                Air freight, weekly sea freight, customs clearance and
-                door-to-door delivery across Lagos, Abuja and all 36 Nigerian
-                states and back.
+                Cargo to Nigeria from UK by air freight, weekly sea freight to Nigeria from UK,
+                door to door cargo Nigeria, Nigeria customs clearance UK and door-to-door delivery across Lagos, Abuja
+                and all 36 Nigerian states and back.
               </motion.p>
 
               <motion.div
