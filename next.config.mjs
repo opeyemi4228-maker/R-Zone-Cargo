@@ -36,6 +36,24 @@ const nextConfig = {
             { source: "/((?!_next/|api/|admin|.*\\.).*)", headers: [htmlCache] },
         ];
     },
+    // Canonicalize to the bare apex host. https://www.r-zoneenterprises.com
+    // otherwise serves a full 200 duplicate of the site while every canonical
+    // tag, the sitemap, and robots.txt point at the apex — so Google has to
+    // guess the two hosts are the same page ("Page with redirect" / duplicate
+    // host noise in Search Console) and there are two separate CDN caches to
+    // keep in sync. A single 301 collapses everything onto one canonical URL.
+    async redirects() {
+        return [
+            {
+                source: "/:path*",
+                has: [{ type: "host", value: "www.r-zoneenterprises.com" }],
+                destination: "https://r-zoneenterprises.com/:path*",
+                // 301 (not the default 308) to match the existing http→https
+                // redirects and give the clearest canonicalization signal.
+                statusCode: 301,
+            },
+        ];
+    },
     images: {
         remotePatterns: [
             {
