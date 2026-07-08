@@ -76,13 +76,14 @@ export const metadata = {
   referrer:  "strict-origin-when-cross-origin",
 
   // ── Canonical URL ─────────────────────────────────────────────────────────
-  alternates: {
-    canonical: SITE_URL,
-    languages: {
-      "en-GB": SITE_URL,
-      "en-NG": `${SITE_URL}/ng`,
-    },
-  },
+  // NOTE: do NOT set a site-wide canonical here. Root metadata is inherited by
+  // every page, so a fixed `canonical: SITE_URL` made every page that doesn't
+  // set its own canonical declare itself a duplicate of the homepage — Google
+  // then dropped them as "Alternate page with proper canonical tag". Pages that
+  // need an explicit canonical set it in their own metadata (e.g. /track,
+  // /business-solutions, blog posts); every other page self-canonicalizes to
+  // its own URL. The old `languages` hreflang also pointed en-NG at /ng, which
+  // 404s, so it is removed too.
 
   // ── Open Graph — social sharing ───────────────────────────────────────────
   openGraph: {
