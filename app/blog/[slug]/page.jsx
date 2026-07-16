@@ -1,6 +1,6 @@
 // app/blog/[slug]/page.jsx
 // ─────────────────────────────────────────────────────────────────────────────
-// SERVER COMPONENT — runs at build time (SSG) via generateStaticParams.
+// SERVER COMPONENT   runs at build time (SSG) via generateStaticParams.
 // Every article becomes a real, crawlable, indexable HTML page at:
 //   https://r-zoneenterprises.com/blog/{slug}
 //
@@ -15,7 +15,7 @@
 //   ✅ BreadcrumbList JSON-LD schema
 //   ✅ Organization JSON-LD schema
 //   ✅ HTTP 200 with real server-rendered HTML (not hash fragment)
-//   ✅ generateStaticParams — pre-builds every article at deploy time
+//   ✅ generateStaticParams   pre-builds every article at deploy time
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { notFound } from "next/navigation";
@@ -34,7 +34,7 @@ import ArticleReader from "./ArticleReader";
 // ─────────────────────────────────────────────────────────────────────────────
 // generateStaticParams
 // Pre-builds every article slug as a static HTML page at deploy time.
-// Google gets real HTML — not a JS-rendered hash fragment.
+// Google gets real HTML   not a JS-rendered hash fragment.
 // ─────────────────────────────────────────────────────────────────────────────
 export function generateStaticParams() {
   return getAllSlugs(); // returns [{ slug: "air-freight-vs-sea-freight-ultimate-guide" }, ...]
@@ -42,17 +42,17 @@ export function generateStaticParams() {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // generateMetadata
-// Each article gets its own unique <head> — title, description, OG, Twitter.
+// Each article gets its own unique <head>   title, description, OG, Twitter.
 // This is what Google, Facebook and WhatsApp read when they visit the URL.
 // ─────────────────────────────────────────────────────────────────────────────
 export async function generateMetadata({ params }) {
   const article = getArticleBySlug(params.slug);
 
-  // If slug doesn't exist, Next.js returns a 404 — no orphan pages.
+  // If slug doesn't exist, Next.js returns a 404   no orphan pages.
   if (!article) {
     return {
       title: "Article Not Found | R-Zone Cargo",
-      description: "This article could not be found. Browse all UK–Nigeria shipping guides on the R-Zone Cargo blog.",
+      description: "This article could not be found. Browse all UK Nigeria shipping guides on the R-Zone Cargo blog.",
     };
   }
 
@@ -124,7 +124,7 @@ export async function generateMetadata({ params }) {
 // ─────────────────────────────────────────────────────────────────────────────
 // JSON-LD Schema Builder
 // Injects structured data into <head> as application/ld+json scripts.
-// Google reads these to display rich results — FAQ boxes, breadcrumbs,
+// Google reads these to display rich results   FAQ boxes, breadcrumbs,
 // article metadata, and "People Also Ask" entries.
 // ─────────────────────────────────────────────────────────────────────────────
 function buildSchemas(article) {
@@ -253,7 +253,7 @@ export default function ArticlePage({ params }) {
       {/* ── Server-Rendered SEO Content ───────────────────────────────────── */}
       {/* This block is ONLY for search engine crawlers.                       */}
       {/* It renders the full article as plain HTML that Googlebot can read    */}
-      {/* even if JavaScript is disabled. Hidden visually — shown to crawlers. */}
+      {/* even if JavaScript is disabled. Hidden visually   shown to crawlers. */}
       <div
         aria-hidden="true"
         style={{
@@ -265,7 +265,7 @@ export default function ArticlePage({ params }) {
           whiteSpace: "nowrap",
         }}
       >
-        {/* H1 — most important on-page SEO signal */}
+        {/* H1   most important on-page SEO signal */}
         <h1>{article.title}</h1>
 
         {/* Article meta for crawlers */}
@@ -303,7 +303,7 @@ export default function ArticlePage({ params }) {
         {/* Tags as plain text */}
         <p>Topics: {article.tags.join(", ")}</p>
 
-        {/* Internal links — distributes SEO authority across the site */}
+        {/* Internal links   distributes SEO authority across the site */}
         <nav>
           <a href={`${SITE_URL}/blog`}>Back to all shipping guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free UK to Nigeria shipping quote</a>
@@ -311,7 +311,7 @@ export default function ArticlePage({ params }) {
           <a href={`${SITE_URL}/services`}>Our UK to Nigeria shipping services</a>
         </nav>
 
-        {/* Related articles — internal linking for crawl depth */}
+        {/* Related articles   internal linking for crawl depth */}
         {related.length > 0 && (
           <nav>
             <p>Related articles:</p>
@@ -326,7 +326,7 @@ export default function ArticlePage({ params }) {
 
       {/* ── Interactive UI (Client Component) ────────────────────────────── */}
       {/* ArticleReader handles all animations, share panel, back button etc. */}
-      {/* It receives article + related as plain props — no data fetching      */}
+      {/* It receives article + related as plain props   no data fetching      */}
       <ArticleReader article={article} related={related} />
     </>
   );

@@ -40,8 +40,8 @@ const TOC = [
 ];
 
 const SERVICES_LIST = [
-  { icon: "✈",  title: "Air Freight",         desc: "Weekly air cargo from LHR, LGW, MAN to Lagos (LOS) and Abuja (ABV). Transit typically 5–10 working days." },
-  { icon: "🚢", title: "Sea Freight",          desc: "Weekly consolidated sea freight from UK ports to Apapa and Tin Can Island, Lagos. Transit 4–6 weeks." },
+  { icon: "✈",  title: "Air Freight",         desc: "Weekly air cargo from LHR, LGW, MAN to Lagos (LOS) and Abuja (ABV). Transit typically 5 10 working days." },
+  { icon: "🚢", title: "Sea Freight",          desc: "Weekly consolidated sea freight from UK ports to Apapa and Tin Can Island, Lagos. Transit 4 6 weeks." },
   { icon: "🚚", title: "Door-to-Door Cargo",  desc: "Collection from your UK address with delivery to any Nigerian address, via air or sea." },
   { icon: "📦", title: "Import from Nigeria",  desc: "Air and sea import services bringing goods from Nigeria to the United Kingdom." },
   { icon: "📋", title: "Customs Clearance",   desc: "End-to-end customs brokerage and clearance at UK and Nigerian ports. Included on all shipments." },
@@ -60,28 +60,28 @@ const PROHIBITED = [
 ];
 
 const RESTRICTED = [
-  "Dangerous goods (IATA/IMDG class hazardous materials) — prior written approval required",
-  "Perishable goods and foodstuffs — NAFDAC regulations apply upon arrival in Nigeria",
-  "Electrical and electronic equipment — must be declared and properly packaged",
-  "Vehicles and automotive parts — sea freight only, customs documentation required",
-  "Pharmaceuticals and medical devices — subject to NAFDAC/MHRA clearance",
-  "High-value items exceeding £5,000 declared value — cargo insurance mandatory",
+  "Dangerous goods (IATA/IMDG class hazardous materials)   prior written approval required",
+  "Perishable goods and foodstuffs   NAFDAC regulations apply upon arrival in Nigeria",
+  "Electrical and electronic equipment   must be declared and properly packaged",
+  "Vehicles and automotive parts   sea freight only, customs documentation required",
+  "Pharmaceuticals and medical devices   subject to NAFDAC/MHRA clearance",
+  "High-value items exceeding £5,000 declared value   cargo insurance mandatory",
 ];
 
 const TRANSIT_TABLE = [
-  { service: "Air Freight",              typical: "5–10 working days",  note: "LHR/LGW/MAN to LOS/ABV — excludes customs"     },
-  { service: "Sea Freight",              typical: "4–6 weeks",           note: "UK ports to Apapa/Tin Can Island, Lagos"        },
-  { service: "Door-to-Door (Air)",       typical: "7–14 working days",  note: "Includes UK collection and Nigeria delivery"    },
-  { service: "Door-to-Door (Sea)",       typical: "5–8 weeks",           note: "Includes UK collection and Nigeria delivery"    },
-  { service: "Importation (Air)",        typical: "5–8 working days",   note: "LOS/ABV to LHR — excludes customs"              },
-  { service: "Importation (Sea)",        typical: "4–6 weeks",           note: "Apapa/Lagos to UK ports"                        },
+  { service: "Air Freight",              typical: "5 10 working days",  note: "LHR/LGW/MAN to LOS/ABV   excludes customs"     },
+  { service: "Sea Freight",              typical: "4 6 weeks",           note: "UK ports to Apapa/Tin Can Island, Lagos"        },
+  { service: "Door-to-Door (Air)",       typical: "7 14 working days",  note: "Includes UK collection and Nigeria delivery"    },
+  { service: "Door-to-Door (Sea)",       typical: "5 8 weeks",           note: "Includes UK collection and Nigeria delivery"    },
+  { service: "Importation (Air)",        typical: "5 8 working days",   note: "LOS/ABV to LHR   excludes customs"              },
+  { service: "Importation (Sea)",        typical: "4 6 weeks",           note: "Apapa/Lagos to UK ports"                        },
 ];
 
 const CANCELLATION_TABLE = [
   { timing: "More than 5 working days before sailing/dispatch", refund: "Full refund minus £25 administration fee" },
-  { timing: "2–5 working days before sailing/dispatch",         refund: "50% refund"                               },
+  { timing: "2 5 working days before sailing/dispatch",         refund: "50% refund"                               },
   { timing: "Less than 2 working days / cargo received",        refund: "No refund"                                },
-  { timing: "After customs declaration filed",                  refund: "No refund — customs costs remain payable" },
+  { timing: "After customs declaration filed",                  refund: "No refund   customs costs remain payable" },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -220,9 +220,9 @@ export default function TermsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Terms of Service — R-Zone Enterprises",
+            "name": "Terms of Service   R-Zone Enterprises",
             "url": "https://r-zoneenterprises.com/terms",
-            "description": "R-Zone Enterprises Terms of Service governing use of UK–Nigeria cargo, freight and logistics services.",
+            "description": "R-Zone Enterprises Terms of Service governing use of UK Nigeria cargo, freight and logistics services.",
             "dateModified": "2025-01-15",
             "publisher": { "@type": "Organization", "name": "R-Zone Enterprises", "url": "https://r-zoneenterprises.com" },
           }),
@@ -232,7 +232,7 @@ export default function TermsPage() {
       {/* ── Top bar ── */}
       <div className="bg-[#0818A8]">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
-          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises — Legal &amp; Compliance</p>
+          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises   Legal &amp; Compliance</p>
           <div className="hidden sm:flex items-center gap-6">
             <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/80 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone">
               <Phone size={10} aria-hidden="true" /> +44 (0) 800 772 0864
@@ -265,13 +265,13 @@ export default function TermsPage() {
                 Terms of<br /><span className="text-[#0818A8]">Service.</span>
               </h1>
               <p className="text-gray-800 text-[15px] font-normal leading-relaxed max-w-lg">
-                The legal agreement between you and R-Zone Enterprises Ltd governing use of our UK–Nigeria freight and logistics services. Written clearly — no legal jargon without plain-English explanation.
+                The legal agreement between you and R-Zone Enterprises Ltd governing use of our UK Nigeria freight and logistics services. Written clearly   no legal jargon without plain-English explanation.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
                 { label: "Last Updated", val: "15 January 2025",   icon: Clock    },
-                { label: "Version",      val: "v3.0 — 2025",       icon: FileText },
+                { label: "Version",      val: "v3.0   2025",       icon: FileText },
                 { label: "Jurisdiction", val: "England & Wales",   icon: Globe    },
                 { label: "Governed By",  val: "English Law",       icon: Scale    },
               ].map(({ label, val, icon: Icon }) => (
@@ -376,21 +376,21 @@ export default function TermsPage() {
 
             {/* ── 01 ── */}
             <Section id="t1" num="01" title="Definitions & Acceptance of Terms">
-              <H3>1.1 — Key Definitions</H3>
+              <H3>1.1   Key Definitions</H3>
               <UL>
-                <LI><strong className="text-gray-900 font-semibold">"RZE" / "R-Zone"</strong> — R-Zone Enterprises Ltd, also operating as R-Zone Cargo and Shipping Services, registered in England and Wales. Registered office: Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Customer"</strong> — the sender of a consignment making payment in advance to RZE or via an approved payment method.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Consignment / Cargo"</strong> — any one or more parcels sent at one time by the Customer to an agreed destination.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Dangerous Goods"</strong> — items specified as dangerous, hazardous, prohibited, or restricted by regulatory bodies or legislation governing transport by road, rail, sea, or air.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Despatch"</strong> — the time when the Customer hands a consignment to a representative or agent of RZE for delivery.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Working Day"</strong> — any day other than a Saturday, Sunday, Bank or Public Holiday, Good Friday, or Christmas Day.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"UK"</strong> — England, Scotland, Wales, and Northern Ireland.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Nigeria"</strong> — the Federal Republic of Nigeria and its current 36 states of the Federation.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Demurrage / Storage Charges"</strong> — charges for storage of goods in our warehouse or agent&apos;s warehouse, accruing after the free storage period expires.</LI>
-                <LI><strong className="text-gray-900 font-semibold">"Antique"</strong> — an object over 100 years of age. <strong className="text-gray-900 font-semibold">"Collectable"</strong> — an item that has appreciated in value due to scarcity or being no longer in production.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"RZE" / "R-Zone"</strong>   R-Zone Enterprises Ltd, also operating as R-Zone Cargo and Shipping Services, registered in England and Wales. Registered office: Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Customer"</strong>   the sender of a consignment making payment in advance to RZE or via an approved payment method.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Consignment / Cargo"</strong>   any one or more parcels sent at one time by the Customer to an agreed destination.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Dangerous Goods"</strong>   items specified as dangerous, hazardous, prohibited, or restricted by regulatory bodies or legislation governing transport by road, rail, sea, or air.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Despatch"</strong>   the time when the Customer hands a consignment to a representative or agent of RZE for delivery.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Working Day"</strong>   any day other than a Saturday, Sunday, Bank or Public Holiday, Good Friday, or Christmas Day.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"UK"</strong>   England, Scotland, Wales, and Northern Ireland.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Nigeria"</strong>   the Federal Republic of Nigeria and its current 36 states of the Federation.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Demurrage / Storage Charges"</strong>   charges for storage of goods in our warehouse or agent&apos;s warehouse, accruing after the free storage period expires.</LI>
+                <LI><strong className="text-gray-900 font-semibold">"Antique"</strong>   an object over 100 years of age. <strong className="text-gray-900 font-semibold">"Collectable"</strong>   an item that has appreciated in value due to scarcity or being no longer in production.</LI>
               </UL>
-              <H3>1.2 — Acceptance</H3>
-              <P>These Terms of Service constitute a legally binding agreement between you and R-Zone Enterprises Ltd. By accessing our website, submitting a booking, dropping off cargo, or using any of our freight and logistics services, you confirm that you have read, understood, and agree to these Terms in their entirety. These Terms apply to all customers — individuals and businesses alike.</P>
+              <H3>1.2   Acceptance</H3>
+              <P>These Terms of Service constitute a legally binding agreement between you and R-Zone Enterprises Ltd. By accessing our website, submitting a booking, dropping off cargo, or using any of our freight and logistics services, you confirm that you have read, understood, and agree to these Terms in their entirety. These Terms apply to all customers   individuals and businesses alike.</P>
               <P>We reserve the right to update these Terms at any time. Material changes will be communicated by email and posted on our website. Continued use of our services after notification constitutes acceptance of the revised Terms.</P>
               <Callout type="blue">These conditions constitute the entire agreement between RZE and the Customer. Each party acknowledges that in entering into these conditions it is not relying on any representation or undertaking, whether oral or in writing, save as expressly incorporated herein.</Callout>
             </Section>
@@ -412,22 +412,22 @@ export default function TermsPage() {
 
             {/* ── 03 ── */}
             <Section id="t3" num="03" title="Booking & Confirmation">
-              <H3>3.1 — How to Book</H3>
+              <H3>3.1   How to Book</H3>
               <P>Bookings may be made via our website, by telephone (+44 800 772 0864), by email (info@r-zoneenterprises.com), or in person at our Upminster, Essex warehouse. A booking is not confirmed until you receive written confirmation from us including a booking reference number.</P>
-              <H3>3.2 — Accuracy of Information</H3>
-              <P>You are responsible for providing accurate and complete information at booking — including cargo description, weight, dimensions, declared value, collection address, and delivery address. The Customer must provide a full inventory of items in each package, and a copy handed to the despatch driver/team. Inaccuracies may result in additional charges, delays, customs seizure, or rejection of your cargo.</P>
-              <H3>3.3 — Cut-Off Times</H3>
-              <P>Sea freight shipments must be received at our warehouse by the cut-off date on our published sailing schedule — typically 5 working days before the vessel departure date. Air freight has a same-day cut-off of 12:00 noon on the departure day. Consignments dispatched after 5:30pm on a Working Day will be deemed received on the next Working Day. We cannot guarantee inclusion if cargo arrives after the stated cut-off.</P>
-              <H3>3.4 — Amendments</H3>
+              <H3>3.2   Accuracy of Information</H3>
+              <P>You are responsible for providing accurate and complete information at booking   including cargo description, weight, dimensions, declared value, collection address, and delivery address. The Customer must provide a full inventory of items in each package, and a copy handed to the despatch driver/team. Inaccuracies may result in additional charges, delays, customs seizure, or rejection of your cargo.</P>
+              <H3>3.3   Cut-Off Times</H3>
+              <P>Sea freight shipments must be received at our warehouse by the cut-off date on our published sailing schedule   typically 5 working days before the vessel departure date. Air freight has a same-day cut-off of 12:00 noon on the departure day. Consignments dispatched after 5:30pm on a Working Day will be deemed received on the next Working Day. We cannot guarantee inclusion if cargo arrives after the stated cut-off.</P>
+              <H3>3.4   Amendments</H3>
               <P>Amendments to confirmed bookings (including changes to delivery address) may incur additional administrative charges. Amendments to filed customs declarations are subject to customs authority approval and cannot be guaranteed. Address changes before customs filing are straightforward; after filing, an additional administrative fee applies.</P>
-              <H3>3.5 — Door-to-Door Delivery</H3>
-              <P>In a door-to-door delivery, RZE undertakes to deliver to the address specified in the despatch documentation — not to a specific person. If delivery is to a specific named person, this must be arranged and clearly stated at the time of booking. Where roads are not accessible by vehicle, cargo will be dropped at the nearest motorable local terminal as agreed.</P>
+              <H3>3.5   Door-to-Door Delivery</H3>
+              <P>In a door-to-door delivery, RZE undertakes to deliver to the address specified in the despatch documentation   not to a specific person. If delivery is to a specific named person, this must be arranged and clearly stated at the time of booking. Where roads are not accessible by vehicle, cargo will be dropped at the nearest motorable local terminal as agreed.</P>
               <P>RZE will request the person accepting delivery to sign an acknowledgement/delivery receipt. Copies of such receipts shall be available for up to four weeks from the date of delivery, subject to payment of applicable charges.</P>
             </Section>
 
             {/* ── 04 ── */}
             <Section id="t4" num="04" title="Cargo Restrictions">
-              <H3>4.1 — Prohibited Items (Absolute — No Exceptions)</H3>
+              <H3>4.1   Prohibited Items (Absolute   No Exceptions)</H3>
               <div className="border border-red-100 bg-red-50/60 p-5 mb-5">
                 <div className="flex items-center gap-2 mb-3">
                   <Ban size={14} className="text-red-600" aria-hidden="true" />
@@ -445,7 +445,7 @@ export default function TermsPage() {
               <Callout type="red">
                 <strong className="font-semibold">Criminal notice:</strong> All firearms, ammunition, prohibited drugs and controlled substances are strictly prohibited on any RZE freight, shipping, storage, or distribution service. RZE will report any suspicious items to law enforcement agencies. Customers deliberately attempting to transport or store any controlled substance using our services are liable to criminal prosecution under the law.
               </Callout>
-              <H3>4.2 — Restricted Items (Prior Approval Required)</H3>
+              <H3>4.2   Restricted Items (Prior Approval Required)</H3>
               <UL>{RESTRICTED.map((r, i) => <LI key={i}>{r}</LI>)}</UL>
               <P>RZE may add or delete items from the prohibited/restricted list without notice but will endeavour to make any changes available on our website at www.r-zoneenterprises.com.</P>
               <Callout type="amber">
@@ -455,7 +455,7 @@ export default function TermsPage() {
 
             {/* ── 05 ── */}
             <Section id="t5" num="05" title="Packaging Requirements">
-              <P>The sender is ultimately responsible for packaging all consignments sent through RZE. All cargo must be packaged to withstand the normal rigours of international freight handling — including stacking, vibration, and changes in temperature and humidity. RZE will not be liable for damage resulting from poor packaging by the Customer.</P>
+              <P>The sender is ultimately responsible for packaging all consignments sent through RZE. All cargo must be packaged to withstand the normal rigours of international freight handling   including stacking, vibration, and changes in temperature and humidity. RZE will not be liable for damage resulting from poor packaging by the Customer.</P>
               <UL>
                 <LI>Each item/box must be clearly labelled with full sender name, recipient name, and destination postal address including postcode</LI>
                 <LI>Fragile items must be marked, packed with appropriate protective material, and where possible placed in see-through plastic</LI>
@@ -469,13 +469,13 @@ export default function TermsPage() {
 
             {/* ── 06 ── */}
             <Section id="t6" num="06" title="Customs & Import Duties">
-              <H3>6.1 — Customer Responsibility</H3>
+              <H3>6.1   Customer Responsibility</H3>
               <P>By accepting these Terms, you confirm all customs declaration information provided is true, accurate, and complete to the best of your knowledge. The Customer shall ensure that addressing and documentation requirements are fully met, including the full postal address, postcode, and any required customs or commercial invoices.</P>
-              <H3>6.2 — Duties and Taxes</H3>
+              <H3>6.2   Duties and Taxes</H3>
               <P>Import duties, taxes, and customs charges levied by the Nigeria Customs Service (NCS) or HMRC are payable by the recipient/customer and are not included in our quoted rates unless explicitly stated in writing. Where we pay duties on your behalf, we will invoice them directly to you and they shall be payable immediately.</P>
-              <H3>6.3 — Delays and Seizure</H3>
-              <P>We cannot be held responsible for delays caused by customs inspection, detention, examination, or clearance procedures — including NAFDAC and all security organisation examinations. Transit time estimates exclude customs processing time. If customs seize or detain your cargo due to prohibited content, misdeclaration, or any reason attributable to the Customer, you accept full liability for all resulting costs including demurrage and storage charges.</P>
-              <H3>6.4 — Customs Damage</H3>
+              <H3>6.3   Delays and Seizure</H3>
+              <P>We cannot be held responsible for delays caused by customs inspection, detention, examination, or clearance procedures   including NAFDAC and all security organisation examinations. Transit time estimates exclude customs processing time. If customs seize or detain your cargo due to prohibited content, misdeclaration, or any reason attributable to the Customer, you accept full liability for all resulting costs including demurrage and storage charges.</P>
+              <H3>6.4   Customs Damage</H3>
               <P>In the event that customs authorities re-examine cargo and damage occurs in the process, RZE will, as a goodwill gesture, refund up to <strong className="text-gray-900 font-semibold">10% of the invoice value</strong> of the affected goods, or arrange repair through our designated contractors to a state of perfection.</P>
               <Callout type="amber">
                 <strong className="font-semibold">Misdeclaration warning:</strong> Providing false information to customs is a criminal offence in both the UK and Nigeria. R-Zone Enterprises will not assist in customs fraud and will cooperate fully with any investigation. RZE will not file inaccurate customs declarations under any circumstances.
@@ -484,9 +484,9 @@ export default function TermsPage() {
 
             {/* ── 07 ── */}
             <Section id="t7" num="07" title="Pricing & Payment">
-              <H3>7.1 — Quotations</H3>
+              <H3>7.1   Quotations</H3>
               <P>All quotes are valid for 7 calendar days from the date of issue. Rates may change due to fuel surcharges, currency fluctuations, or carrier tariff changes. We will notify you of any changes before confirming. RZE reserves the right to implement corresponding price increases where taxes or transport costs change significantly for reasons outside our control.</P>
-              <H3>7.2 — Volumetric Weight</H3>
+              <H3>7.2   Volumetric Weight</H3>
               <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
                 <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-800 mb-3">Volumetric Weight Formula (per RZE Tariff)</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -509,18 +509,18 @@ export default function TermsPage() {
                     <p className="text-gray-800 text-[13px] font-normal">L × W × H (cm) ÷ <strong className="text-gray-900 font-semibold">1,000</strong></p>
                   </div>
                 </div>
-                <p className="text-gray-800 text-[13px] font-normal mt-3">We charge whichever is greater — actual weight or volumetric weight. Charges may be assessed at time of despatch or at any time prior to delivery.</p>
+                <p className="text-gray-800 text-[13px] font-normal mt-3">We charge whichever is greater   actual weight or volumetric weight. Charges may be assessed at time of despatch or at any time prior to delivery.</p>
               </div>
-              <H3>7.3 — Payment Terms</H3>
+              <H3>7.3   Payment Terms</H3>
               <UL>
                 <LI><strong className="text-gray-900 font-semibold">Individual customers:</strong> Full payment required before cargo is accepted. Consignments will not be shipped if full payment has not been received.</LI>
                 <LI><strong className="text-gray-900 font-semibold">Business accounts:</strong> Net 14 or 30-day payment terms may be agreed in writing by RZE.</LI>
                 <LI><strong className="text-gray-900 font-semibold">Accepted methods:</strong> Bank transfer (BACS/Faster Payments), debit/credit card, PayPal. Cash is not accepted.</LI>
               </UL>
-              <H3>7.4 — Uncollected / Unshipped Consignments</H3>
+              <H3>7.4   Uncollected / Unshipped Consignments</H3>
               <P>Any unshipped consignment left in our warehouse and not collected by the customer after request by RZE will attract a daily storage charge of <strong className="text-gray-900 font-semibold">£0.50 per kilogram, or a minimum of £5 per day</strong> for consignments under 20kg. All outstanding charges must be paid in full before consignment can be released.</P>
               <P>RZE will endeavour to contact the customer to arrange collection. RZE reserves the right to treat all unshipped and unclaimed consignments as abandoned after <strong className="text-gray-900 font-semibold">21 days</strong> and will deal with such consignments as it deems reasonably fit.</P>
-              <H3>7.5 — Late Payment</H3>
+              <H3>7.5   Late Payment</H3>
               <P>Interest on overdue invoices is charged at 8% per annum above the Bank of England base rate, in accordance with the Late Payment of Commercial Debts (Interest) Act 1998. RZE shall take all reasonable and legal means necessary to recover any associated costs for its services and all third-party services provided.</P>
             </Section>
 
@@ -530,9 +530,9 @@ export default function TermsPage() {
               <BlueTable
                 headers={["Location", "Free Storage Period", "Charge After Free Period", "Abandoned After"]}
                 rows={[
-                  ["UK — Upminster Warehouse",   "3 days from receipt",        "£2 per day (or £0.50/kg/day for unshipped cargo)",  "30 days"],
-                  ["Nigeria — Lagos Facility",   "21 days from delivery attempt", "₦5,000 per day",                                "30 days from delivery attempt"],
-                  ["Third-Party Storage (UK/NG)","As per provider terms",     "As per provider — invoiced to customer",           "30 days"],
+                  ["UK   Upminster Warehouse",   "3 days from receipt",        "£2 per day (or £0.50/kg/day for unshipped cargo)",  "30 days"],
+                  ["Nigeria   Lagos Facility",   "21 days from delivery attempt", "₦5,000 per day",                                "30 days from delivery attempt"],
+                  ["Third-Party Storage (UK/NG)","As per provider terms",     "As per provider   invoiced to customer",           "30 days"],
                 ]}
                 minWidth={600}
               />
@@ -549,13 +549,13 @@ export default function TermsPage() {
 
             {/* ── 09 ── */}
             <Section id="t9" num="09" title="Liability & Claims">
-              <H3>9.1 — Air Freight Liability</H3>
+              <H3>9.1   Air Freight Liability</H3>
               <P>For air freight, our liability is governed by the Warsaw Convention (as amended by the Montreal Protocol) or the Montreal Convention 1999, whichever applies. Liability is limited to <strong className="text-gray-900 font-semibold">19 SDR per kilogram</strong> of cargo lost or damaged.</P>
-              <H3>9.2 — Sea Freight Liability</H3>
+              <H3>9.2   Sea Freight Liability</H3>
               <P>For sea freight, liability is limited under the Hague-Visby Rules to <strong className="text-gray-900 font-semibold">666.67 SDR per package or 2 SDR per kilogram</strong>, whichever is higher.</P>
-              <H3>9.3 — General Compensation Cap</H3>
+              <H3>9.3   General Compensation Cap</H3>
               <P>In the event of any compensation, our liability as a freight forwarder is limited to a maximum of <strong className="text-gray-900 font-semibold">10% of the declared invoice value</strong> of the consignment. Customers are advised to submit a full packing list and take out independent cargo insurance for goods of high value. See Section 10.</P>
-              <H3>9.4 — Liability Exclusions</H3>
+              <H3>9.4   Liability Exclusions</H3>
               <P>RZE shall not be liable to pay compensation or refunds in respect of:</P>
               <UL>
                 <LI>Loss or damage from inadequate packaging by the Customer</LI>
@@ -569,17 +569,17 @@ export default function TermsPage() {
                 <LI>Any fraudulent or dishonest act by the Customer or any person misrepresenting authority to receive</LI>
                 <LI>Consequential losses, loss of profit, or indirect losses of any kind</LI>
               </UL>
-              <H3>9.5 — Claims Procedure</H3>
-              <P>Submit all claims in writing to <a href="mailto:claims@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">claims@r-zoneenterprises.com</a> within <strong className="text-gray-900 font-semibold">7 days of delivery</strong> (damage) or <strong className="text-gray-900 font-semibold">14 days of expected delivery date</strong> (loss). Include: booking reference, description of goods, photographs, packing list, and estimated value. RZE will respond within 2 working days and complete its investigation within 10–14 working days.</P>
+              <H3>9.5   Claims Procedure</H3>
+              <P>Submit all claims in writing to <a href="mailto:claims@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">claims@r-zoneenterprises.com</a> within <strong className="text-gray-900 font-semibold">7 days of delivery</strong> (damage) or <strong className="text-gray-900 font-semibold">14 days of expected delivery date</strong> (loss). Include: booking reference, description of goods, photographs, packing list, and estimated value. RZE will respond within 2 working days and complete its investigation within 10 14 working days.</P>
               <Callout type="blue">
-                <strong className="font-semibold">Recommendation:</strong> Our carrier liability limits may be significantly lower than the actual value of your goods. We strongly recommend taking out cargo insurance on all shipments — especially high-value cargo. See Section 10.
+                <strong className="font-semibold">Recommendation:</strong> Our carrier liability limits may be significantly lower than the actual value of your goods. We strongly recommend taking out cargo insurance on all shipments   especially high-value cargo. See Section 10.
               </Callout>
             </Section>
 
             {/* ── 10 ── */}
             <Section id="t10" num="10" title="Insurance">
               <P>Customers are ultimately responsible for insuring any consignment being sent on any of our services (Air or Sea). <strong className="text-gray-900 font-semibold">RZE does not provide cargo insurance</strong> and neither RZE nor any of its agents provide insurance for items being shipped or air freighted.</P>
-              <P>RZE offers optional cargo insurance through our approved insurance partner. Premiums are calculated as a percentage of declared cargo value and must be arranged at the time of booking — insurance cannot be added after despatch or after an incident has occurred.</P>
+              <P>RZE offers optional cargo insurance through our approved insurance partner. Premiums are calculated as a percentage of declared cargo value and must be arranged at the time of booking   insurance cannot be added after despatch or after an incident has occurred.</P>
               <P>Where you choose not to purchase insurance, your claim in the event of loss or damage is limited to the carrier liability caps in Section 9, which may be substantially lower than the actual value of your goods.</P>
               <Callout type="amber">
                 <strong className="font-semibold">Important:</strong> For all consignments of significant value, we strongly recommend arranging independent cargo insurance. Please speak to our team at the time of booking.
@@ -588,7 +588,7 @@ export default function TermsPage() {
 
             {/* ── 11 ── */}
             <Section id="t11" num="11" title="Transit Times">
-              <P>All transit times are estimates only — not guarantees. They represent typical performance under normal operating conditions and <strong className="text-gray-900 font-semibold">exclude customs processing time</strong>. Only Working Days count for exported air freight (typically 7 working days) whilst imported air freight can take up to 10 working days.</P>
+              <P>All transit times are estimates only   not guarantees. They represent typical performance under normal operating conditions and <strong className="text-gray-900 font-semibold">exclude customs processing time</strong>. Only Working Days count for exported air freight (typically 7 working days) whilst imported air freight can take up to 10 working days.</P>
               <BlueTable
                 headers={["Service", "Typical Transit", "Notes"]}
                 rows={TRANSIT_TABLE.map(r => [r.service, r.typical, r.note])}
@@ -599,10 +599,10 @@ export default function TermsPage() {
             {/* ── 12 ── */}
             <Section id="t12" num="12" title="Loss, Damage & Delay">
               <P>In the event your cargo is lost, damaged, or significantly delayed, contact us immediately at <a href="tel:+448007720864" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">+44 800 772 0864</a> or <a href="mailto:info@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">info@r-zoneenterprises.com</a>.</P>
-              <P>We investigate all reported incidents thoroughly. Our internal investigation typically completes within 10–14 working days. Where cargo cannot be located within <strong className="text-gray-900 font-semibold">30 days</strong> of the expected delivery date, it will be treated as lost and any valid claim processed per Section 9.</P>
+              <P>We investigate all reported incidents thoroughly. Our internal investigation typically completes within 10 14 working days. Where cargo cannot be located within <strong className="text-gray-900 font-semibold">30 days</strong> of the expected delivery date, it will be treated as lost and any valid claim processed per Section 9.</P>
               <P>RZE shall not be liable in respect of any consignment where any person has been fraudulent or dishonest in any way, or misrepresents authority to receive a consignment on the addressee&apos;s or Customer&apos;s behalf.</P>
               <Callout type="amber">
-                <strong className="font-semibold">Non-delivery process:</strong> RZE will attempt to deliver once. After an unsuccessful delivery attempt, the addressee may request redelivery, redirection, or collection — subject to additional charges. If unclaimed after 10 working days of attempted delivery notification, the consignment will be returned to our warehouse. Free storage applies for 21 days, after which daily charges apply.
+                <strong className="font-semibold">Non-delivery process:</strong> RZE will attempt to deliver once. After an unsuccessful delivery attempt, the addressee may request redelivery, redirection, or collection   subject to additional charges. If unclaimed after 10 working days of attempted delivery notification, the consignment will be returned to our warehouse. Free storage applies for 21 days, after which daily charges apply.
               </Callout>
             </Section>
 
@@ -613,11 +613,11 @@ export default function TermsPage() {
                 rows={CANCELLATION_TABLE.map(r => [r.timing, r.refund])}
                 minWidth={400}
               />
-              <H3>13.2 — Cancellation by Us</H3>
+              <H3>13.2   Cancellation by Us</H3>
               <P>If we cancel or significantly delay a sailing or flight departure, we will offer a full refund or transfer to the next available departure at no additional cost to you.</P>
-              <H3>13.3 — Consumer Rights</H3>
+              <H3>13.3   Consumer Rights</H3>
               <P>Online bookings may carry a 14-day right to cancel under the Consumer Contracts Regulations 2013. This right does not apply once we have commenced performance of the service at your request.</P>
-              <H3>13.4 — Storage After Cancellation</H3>
+              <H3>13.4   Storage After Cancellation</H3>
               <P>Where a booking is cancelled but cargo is already held at our warehouse, daily storage charges will apply after the 3-day free period. The Customer must arrange collection promptly or a delivery address change which will incur additional charges as agreed by RZE.</P>
             </Section>
 
@@ -625,10 +625,10 @@ export default function TermsPage() {
             <Section id="t14" num="14" title="Customer Obligations">
               <P>By using our services you agree to:</P>
               <UL>
-                <LI>Provide accurate, complete, and truthful information at all times — including a full inventory of package contents and correct recipient contact details including a valid Nigerian phone number</LI>
+                <LI>Provide accurate, complete, and truthful information at all times   including a full inventory of package contents and correct recipient contact details including a valid Nigerian phone number</LI>
                 <LI>Comply with all applicable UK and Nigerian laws, regulations, and customs requirements</LI>
                 <LI>Not tender prohibited or restricted goods without prior written approval from RZE</LI>
-                <LI>Package all goods adequately for international freight handling — the Customer takes full responsibility for packing</LI>
+                <LI>Package all goods adequately for international freight handling   the Customer takes full responsibility for packing</LI>
                 <LI>Ensure the recipient is available to receive delivery, or arrange a suitable alternative in advance</LI>
                 <LI>Retain all Customer copies of despatch documentation, as these will be required to support any claim</LI>
                 <LI>Pay all amounts due to RZE in accordance with our payment terms</LI>
@@ -638,13 +638,13 @@ export default function TermsPage() {
 
             {/* ── 15 ── */}
             <Section id="t15" num="15" title="Intellectual Property">
-              <P>All content on our website — including text, graphics, logos, images, and software — is the property of R-Zone Enterprises Ltd and is protected by UK and international intellectual property laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</P>
+              <P>All content on our website   including text, graphics, logos, images, and software   is the property of R-Zone Enterprises Ltd and is protected by UK and international intellectual property laws. You may not reproduce, distribute, or create derivative works without our prior written consent.</P>
               <P>By using our website you agree to our Website Terms. RZE may personalise the site based on usage, activity, and preferences. Our website contents, including prices and service descriptions, may change at any time without notice. Your continued use of the website constitutes acceptance of any changes.</P>
             </Section>
 
             {/* ── 16 ── */}
             <Section id="t16" num="16" title="Termination">
-              <P>We reserve the right to refuse service, suspend or terminate your account, and/or cancel any pending bookings if you breach these Terms, provide fraudulent or false information, or where we reasonably suspect illegal activity — including any attempt to transport controlled substances. In such cases, no refund will be due and you remain liable for any outstanding amounts and costs incurred by RZE.</P>
+              <P>We reserve the right to refuse service, suspend or terminate your account, and/or cancel any pending bookings if you breach these Terms, provide fraudulent or false information, or where we reasonably suspect illegal activity   including any attempt to transport controlled substances. In such cases, no refund will be due and you remain liable for any outstanding amounts and costs incurred by RZE.</P>
               <P>RZE&apos;s compensation and other conditions are subject to revision from time to time, and services may be added or deleted. RZE reserves the right to pass on any further costs that arise prior to release/delivery of a consignment, regardless of the initial agreed price.</P>
             </Section>
 
@@ -652,9 +652,9 @@ export default function TermsPage() {
             <Section id="t17" num="17" title="Governing Law">
               <P>These Terms are governed by and construed in accordance with the laws of <strong className="text-gray-900 font-semibold">England and Wales</strong>. Each party irrevocably agrees to submit to the exclusive jurisdiction of the courts of England and Wales over any claim or matter arising under or in connection with this agreement.</P>
               <P>Before commencing legal proceedings, we encourage resolution through our complaints process: <a href="mailto:complaints@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">complaints@r-zoneenterprises.com</a>. We aim to resolve all complaints within <strong className="text-gray-900 font-semibold">14 working days</strong>.</P>
-              <H3>17.1 — Severability</H3>
+              <H3>17.1   Severability</H3>
               <P>If any provision of these Terms is found by any court or administrative body of competent jurisdiction to be invalid or unenforceable, such invalidity shall not affect the remaining provisions, which shall remain in full force and effect.</P>
-              <H3>17.2 — VAT</H3>
+              <H3>17.2   VAT</H3>
               <P>At this time, most services provided by RZE are exempt from VAT. Should this change, VAT at the appropriate rate shall be added to the prices payable by the Customer. For UK VAT-registered business customers, VAT is charged at the standard rate on UK-origin services where applicable.</P>
             </Section>
 
@@ -703,7 +703,7 @@ export default function TermsPage() {
                   },
                   {
                     q: "How do I make a claim for lost cargo?",
-                    a: "Email claims@r-zoneenterprises.com within 14 days of the expected delivery date with your booking reference, full description and packing list of goods, and declared value. We will respond within 2 working days and complete our investigation within 10–14 working days.",
+                    a: "Email claims@r-zoneenterprises.com within 14 days of the expected delivery date with your booking reference, full description and packing list of goods, and declared value. We will respond within 2 working days and complete our investigation within 10 14 working days.",
                   },
                   {
                     q: "What is the maximum weight per bag or box?",

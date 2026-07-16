@@ -32,7 +32,7 @@ export default function Page() {
         {article.content.map((s, i) => <div key={i}><h2>{s.h}</h2><p>{s.body.replace(/\*\*(.*?)\*\*/g, "$1")}</p></div>)}
         <h2>Frequently Asked Questions</h2>
         {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
-        <nav><a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping guides</a><a href={`${SITE_URL}/quote`}>Get a free quote</a><a href={`${SITE_URL}/contact`}>Contact R-Zone</a></nav>
+        <nav><a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a><a href={`${SITE_URL}/quote`}>Get a free quote</a><a href={`${SITE_URL}/contact`}>Contact R-Zone</a></nav>
         {related.map((r) => <a key={r.id} href={`${SITE_URL}/blog/${r.slug}`}>{r.title}</a>)}
       </div>
       <ArticleReader article={article} related={related} />

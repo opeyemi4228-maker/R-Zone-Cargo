@@ -104,7 +104,7 @@ const OFFICES = [
     label: "UK Office",
     address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, United Kingdom, RM14 3TS",
     phone: "+44 (0) 800 772 0864",
-    hours: "Mon–Fri: 10AM–6PM · Sat: 11AM–2PM",
+    hours: "Mon Fri: 10AM 6PM · Sat: 11AM 2PM",
     mapsUrl: "https://maps.app.goo.gl/QXnmYSxB8CeZ7hmv8",
   },
   {
@@ -113,7 +113,7 @@ const OFFICES = [
     label: "Nigeria Warehouse",
     address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861",
-    hours: "Mon–Fri: 9AM–5PM",
+    hours: "Mon Fri: 9AM 5PM",
     mapsUrl: "https://maps.google.com",
   },
 ];
@@ -246,7 +246,7 @@ function NewsletterForm() {
         Stay Updated
       </p>
       <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-4">
-        Shipping updates, pricing alerts &amp; logistics insights — delivered weekly.
+        Shipping updates, pricing alerts &amp; logistics insights   delivered weekly.
       </p>
 
       <AnimatePresence mode="wait">
@@ -427,7 +427,7 @@ export default function Footer() {
       <div className="absolute -bottom-24 right-0 w-80 h-80 bg-[#1F51FF]/8 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-[#0818A8]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-      {/* ══ SECTION 1 — CTA BAND ═════════════════════════════════════════ */}
+      {/* ══ SECTION 1   CTA BAND ═════════════════════════════════════════ */}
       <motion.div
         className="relative border-b border-white/[0.07]"
         initial={{ opacity: 0 }}
@@ -440,7 +440,7 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
 
-            {/* Left — headline */}
+            {/* Left   headline */}
             <div className="max-w-2xl">
               <div className="flex items-center gap-2.5 mb-3">
                 <motion.span
@@ -470,14 +470,14 @@ export default function Footer() {
               </h2>
 
               <p className="text-white/80 text-[13px] font-normal leading-relaxed mt-3 max-w-lg">
-                Door-to-door cargo from the UK to Nigeria — air freight, sea freight
+                Door-to-door cargo from the UK to Nigeria   air freight, sea freight
                 &amp; weekly sailings. The highest-rated organically earned cargo and
                 logistics company between the UK, Nigeria, and across Africa.
                 Get a quote in minutes.
               </p>
             </div>
 
-            {/* Right — CTAs */}
+            {/* Right   CTAs */}
             <div className="flex flex-wrap gap-3 flex-shrink-0">
               <Link
                 href="/quote"
@@ -513,7 +513,7 @@ export default function Footer() {
         </div>
       </motion.div>
 
-      {/* ══ SECTION 2 — TRUST BADGES ═════════════════════════════════════ */}
+      {/* ══ SECTION 2   TRUST BADGES ═════════════════════════════════════ */}
       <motion.div
         className="relative border-b border-white/[0.06]"
         initial={{ opacity: 0, y: 12 }}
@@ -556,7 +556,7 @@ export default function Footer() {
         </div>
       </motion.div>
 
-      {/* ══ SECTION 3 — MAIN LINK GRID ═══════════════════════════════════ */}
+      {/* ══ SECTION 3   MAIN LINK GRID ═══════════════════════════════════ */}
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-18">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8"
@@ -572,7 +572,7 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-flex items-center gap-3 mb-5 group"
-              aria-label="R-Zone Enterprises — home"
+              aria-label="R-Zone Enterprises   home"
             >
               <div
                 className="w-10 h-10 bg-[#0818A8] rounded-sm flex items-center justify-center group-hover:bg-[#0437F2] transition-colors duration-200 shadow-lg shadow-[#0818A8]/30"
@@ -588,12 +588,12 @@ export default function Footer() {
 
             {/* Authority claim */}
             <p className="text-white/80 text-[13px] font-semibold leading-relaxed mb-2 max-w-[280px] text-[#1F51FF]">
-              The highest-rated organically earned cargo &amp; logistics company — UK to Nigeria &amp; across Africa.
+              The highest-rated organically earned cargo &amp; logistics company   UK to Nigeria &amp; across Africa.
             </p>
 
             <p className="text-white/80 text-[13px] font-normal leading-[1.8] mb-6 max-w-[280px]">
               Your trusted cargo specialist from the UK to Nigeria. Air freight,
-              sea freight &amp; door-to-door delivery — with weekly sailings.
+              sea freight &amp; door-to-door delivery   with weekly sailings.
             </p>
 
             {/* Contact block */}
@@ -663,7 +663,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
-                  aria-label={`${office.label} — ${office.address} (opens Google Maps)`}
+                  aria-label={`${office.label}   ${office.address} (opens Google Maps)`}
                 >
                   <div
                     className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#0818A8]/60 group-hover:border-[#0818A8] transition-all duration-200"
@@ -761,7 +761,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* ══ SECTION 4 — OFFICE HOURS BAND ════════════════════════════════ */}
+      {/* ══ SECTION 4   OFFICE HOURS BAND ════════════════════════════════ */}
       <motion.div
         className="relative border-t border-white/[0.06] border-b border-b-white/[0.06]"
         initial={{ opacity: 0 }}
@@ -778,8 +778,8 @@ export default function Footer() {
               </span>
             </div>
             {[
-              { label: "UK Office",      hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM · Closed Sunday" },
-              { label: "Nigeria Office", hours: "Mon–Fri 9AM–5PM" },
+              { label: "UK Office",      hours: "Mon Fri 10AM 6PM · Sat 11AM 2PM · Closed Sunday" },
+              { label: "Nigeria Office", hours: "Mon Fri 9AM 5PM" },
               { label: "Support Line",   hours: "24/7 via WhatsApp & Email" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
@@ -793,7 +793,7 @@ export default function Footer() {
         </div>
       </motion.div>
 
-      {/* ══ SECTION 5 — BOTTOM BAR ═══════════════════════════════════════ */}
+      {/* ══ SECTION 5   BOTTOM BAR ═══════════════════════════════════════ */}
       <motion.div
         className="relative"
         initial={{ opacity: 0 }}

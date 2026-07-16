@@ -15,7 +15,7 @@ function withSubmittedAt(q) {
   return { ...q, submittedAt: q.createdAt };
 }
 
-// GET /api/quotes — admin only
+// GET /api/quotes   admin only
 export async function GET() {
   try {
     await requireAdmin();
@@ -26,7 +26,7 @@ export async function GET() {
   return Response.json(quotes.map(withSubmittedAt));
 }
 
-// POST /api/quotes — public submission
+// POST /api/quotes   public submission
 export async function POST(req) {
   let body;
   try {

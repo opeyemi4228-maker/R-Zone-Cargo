@@ -42,7 +42,7 @@ const schemas = [
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   },
-  // Speakable — voice search optimisation for transit time questions
+  // Speakable   voice search optimisation for transit time questions
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -87,7 +87,7 @@ export default function Page() {
         <h2>Frequently Asked Questions</h2>
         {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free shipping quote</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo</a>
         </nav>

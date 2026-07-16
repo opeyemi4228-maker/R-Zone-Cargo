@@ -32,11 +32,11 @@ const SERVICES = [
     badge: "Fastest Option",
     badgeColor: "bg-blue-50 text-blue-700",
     title: "Air Freight to Nigeria",
-    tagline: "Fast, reliable UK–Nigeria air cargo. 5–10 working days.",
+    tagline: "Fast, reliable UK Nigeria air cargo. 5 10 working days.",
     description:
-      "Our air freight service is the fastest way to send cargo from the United Kingdom to Nigeria. Whether you're shipping personal effects, commercial merchandise, or time-sensitive goods, R-Zone Enterprises connects you to all 36 Nigerian states via a network of trusted airline partners — weekly departures from London Heathrow, Gatwick and Manchester.",
+      "Our air freight service is the fastest way to send cargo from the United Kingdom to Nigeria. Whether you're shipping personal effects, commercial merchandise, or time-sensitive goods, R-Zone Enterprises connects you to all 36 Nigerian states via a network of trusted airline partners   weekly departures from London Heathrow, Gatwick and Manchester.",
     highlights: [
-      "5–10 working days transit",
+      "5 10 working days transit",
       "All 36 Nigerian states covered",
       "Door collection across the UK",
       "Real-time tracking included",
@@ -44,7 +44,7 @@ const SERVICES = [
       "Foodstuffs & general cargo accepted",
     ],
     process: [
-      { step: "01", label: "Book online, WhatsApp or call us",  detail: "Free quote in minutes — same-day response"    },
+      { step: "01", label: "Book online, WhatsApp or call us",  detail: "Free quote in minutes   same-day response"    },
       { step: "02", label: "Drop off or request collection",    detail: "Upminster warehouse or UK-wide door pickup"    },
       { step: "03", label: "Cargo consolidated & dispatched",   detail: "Weekly air freight departures from UK"         },
       { step: "04", label: "Delivered anywhere in Nigeria",     detail: "Door delivery or Lagos warehouse pickup"       },
@@ -55,7 +55,7 @@ const SERVICES = [
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=80&auto=format&fit=crop",
     imgAlt: "Cargo aircraft being loaded at UK airport for Nigeria air freight service",
     faq: [
-      { q: "How long does air freight to Nigeria take?",          a: "Typically 5–10 working days from the UK to Lagos, Abuja, Port Harcourt and all major Nigerian cities. Weekly departures guarantee no long waits." },
+      { q: "How long does air freight to Nigeria take?",          a: "Typically 5 10 working days from the UK to Lagos, Abuja, Port Harcourt and all major Nigerian cities. Weekly departures guarantee no long waits." },
       { q: "How much does air freight to Nigeria cost per kg?",   a: <>Air freight from the UK to Nigeria starts from £5 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#0818A8] hover:underline">Price List</Link></> },
       { q: "What items can I send by air to Nigeria?",            a: "We accept clothing, electronics, foodstuffs, documents, personal effects and most general cargo. Contact us for a full list of accepted and prohibited items." },
     ],
@@ -65,22 +65,22 @@ const SERVICES = [
     slug: "sea-shipping-to-nigeria",
     nav: "Sea Shipping",
     icon: Ship,
-    badge: "Best Value — from <£5/kg depending on the State. Check Pricing",
+    badge: "Best Value   from <£5/kg depending on the State. Check Pricing",
     badgeColor: "bg-emerald-50 text-emerald-700",
     title: "Sea Freight to Nigeria",
     tagline: "Weekly sea freight sailings. The cheapest way to ship to Nigeria.",
     description:
-      "Our weekly sea freight service is the most cost-effective solution for large, heavy, or high-volume shipments from the UK to Nigeria — from just £3 per kg. Ideal for businesses and individuals moving significant quantities of goods, with fixed weekly sailings from UK ports to Apapa and Tin Can Island, Lagos.",
+      "Our weekly sea freight service is the most cost-effective solution for large, heavy, or high-volume shipments from the UK to Nigeria   from just £3 per kg. Ideal for businesses and individuals moving significant quantities of goods, with fixed weekly sailings from UK ports to Apapa and Tin Can Island, Lagos.",
     highlights: [
       "Weekly fixed-schedule sailings",
-      "From £3/kg — cheapest option",
+      "From £3/kg   cheapest option",
       "Full container (FCL) & shared (LCL)",
       "Vehicles & machinery accepted",
-      "4–6 weeks transit time",
+      "4 6 weeks transit time",
       "Customs clearance included",
     ],
     process: [
-      { step: "01", label: "Request a sea freight quote",   detail: "Volume-based pricing — from £3/kg"         },
+      { step: "01", label: "Request a sea freight quote",   detail: "Volume-based pricing   from £3/kg"         },
       { step: "02", label: "Deliver to Upminster warehouse",detail: "UK-wide door collection also available"     },
       { step: "03", label: "Weekly sailing departs",        detail: "Fixed schedule, every week, UK to Lagos"   },
       { step: "04", label: "Nigeria port clearance",        detail: "Full customs handling at Apapa/Tin Can"    },
@@ -89,10 +89,10 @@ const SERVICES = [
     dark: true,
     // Container ship at sea
     img: "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "Container ship carrying sea freight from UK to Nigeria — weekly sailings",
+    imgAlt: "Container ship carrying sea freight from UK to Nigeria   weekly sailings",
     faq: [
-      { q: "How long does sea freight to Nigeria take?",              a: "Sea freight from the UK to Nigeria typically takes 4–6 weeks. Sailing is weekly — your cargo never waits more than a week to depart." },
-      { q: "What is the cheapest way to ship to Nigeria from the UK?", a: <>Sea freight is the cheapest option — starting from £3 per kg for consolidated (LCL) shipments. <Link href="/schedulesprices#pricing" className="font-bold text-[#0437F2] hover:underline">Price List</Link></> },
+      { q: "How long does sea freight to Nigeria take?",              a: "Sea freight from the UK to Nigeria typically takes 4 6 weeks. Sailing is weekly   your cargo never waits more than a week to depart." },
+      { q: "What is the cheapest way to ship to Nigeria from the UK?", a: <>Sea freight is the cheapest option   starting from £3 per kg for consolidated (LCL) shipments. <Link href="/schedulesprices#pricing" className="font-bold text-[#0437F2] hover:underline">Price List</Link></> },
       { q: "Can I ship a car by sea to Nigeria?",                     a: "Yes. We specialise in vehicle shipping to Nigeria by sea. Contact us for RoRo (roll-on/roll-off) rates and the current sailing schedule." },
     ],
   },
@@ -106,11 +106,11 @@ const SERVICES = [
     title: "Door to Door Cargo Nigeria",
     tagline: "We collect from your UK address. We deliver to any Nigerian door.",
     description:
-      "R-Zone's door-to-door cargo service removes all logistics complexity. We collect from your UK address, consolidate, clear customs at both ends, and deliver directly to the recipient's door anywhere in Nigeria — by air or sea, your choice. One contact, zero handoffs, both customs handled.",
+      "R-Zone's door-to-door cargo service removes all logistics complexity. We collect from your UK address, consolidate, clear customs at both ends, and deliver directly to the recipient's door anywhere in Nigeria   by air or sea, your choice. One contact, zero handoffs, both customs handled.",
     highlights: [
       "UK-wide door collection",
-      "Nigeria door delivery — all 36 states",
-      "Air or sea — your choice",
+      "Nigeria door delivery   all 36 states",
+      "Air or sea   your choice",
       "Both UK & Nigeria customs handled",
       "Personal & commercial cargo accepted",
       "SMS & email tracking updates",
@@ -127,7 +127,7 @@ const SERVICES = [
     img: "https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=1400&q=80&auto=format&fit=crop",
     imgAlt: "R-Zone door to door cargo collection service UK to Nigeria",
     faq: [
-      { q: "Do you collect from anywhere in the UK?",     a: "Yes, we offer door collection across the entire UK — from London, Manchester, Birmingham, Leeds and beyond. Collection fees may apply depending on your postcode." },
+      { q: "Do you collect from anywhere in the UK?",     a: "Yes, we offer door collection across the entire UK   from London, Manchester, Birmingham, Leeds and beyond. Collection fees may apply depending on your postcode." },
       { q: "How much does door-to-door cargo to Nigeria cost?", a: <>Door-to-door cargo from the UK to Nigeria starts from £6 per kg, including UK collection and Nigerian delivery. <Link href="/schedulesprices#pricing" className="font-bold text-[#1F51FF] hover:underline">Price List</Link></> },
       { q: "Can you deliver to Abuja and rural Nigerian areas?",a: "Yes. We deliver door-to-door to all 36 Nigerian states including Lagos, Abuja, Port Harcourt, Kano, Enugu, Ibadan and all rural areas." },
     ],
@@ -142,7 +142,7 @@ const SERVICES = [
     title: "Importation from Nigeria to UK",
     tagline: "Weekly air and sea imports from Nigeria to the United Kingdom.",
     description:
-      "R-Zone Enterprises operates a fully managed importation service for individuals and businesses sending goods from Nigeria to the UK. From African foodstuffs, clothing and textiles to commercial merchandise — we handle every step of the inbound logistics chain with weekly air and sea departures from Lagos.",
+      "R-Zone Enterprises operates a fully managed importation service for individuals and businesses sending goods from Nigeria to the UK. From African foodstuffs, clothing and textiles to commercial merchandise   we handle every step of the inbound logistics chain with weekly air and sea departures from Lagos.",
     highlights: [
       "Weekly air collections from Lagos",
       "Weekly sea freight from Apapa port",
@@ -161,11 +161,11 @@ const SERVICES = [
     dark: true,
     // Nigerian goods / cargo at port
     img: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "Nigerian goods prepared for importation to UK — weekly air and sea services from Lagos",
+    imgAlt: "Nigerian goods prepared for importation to UK   weekly air and sea services from Lagos",
     faq: [
-      { q: "Can I import food and foodstuffs from Nigeria to the UK?", a: "Yes, we accept African foodstuffs and food products from Nigeria. Some items are subject to UK HMRC and DEFRA restrictions — contact us for the full accepted items list." },
-      { q: "How do I send goods from Nigeria to the UK?",              a: "Contact our team or use our online quote form. We'll arrange collection from anywhere in Nigeria — Lagos, Abuja, Port Harcourt and all 36 states." },
-      { q: "How long does importation from Nigeria to the UK take?",   a: "Air freight from Nigeria to the UK takes 5–8 working days. Sea freight takes 4–6 weeks. We operate weekly departures on both routes." },
+      { q: "Can I import food and foodstuffs from Nigeria to the UK?", a: "Yes, we accept African foodstuffs and food products from Nigeria. Some items are subject to UK HMRC and DEFRA restrictions   contact us for the full accepted items list." },
+      { q: "How do I send goods from Nigeria to the UK?",              a: "Contact our team or use our online quote form. We'll arrange collection from anywhere in Nigeria   Lagos, Abuja, Port Harcourt and all 36 states." },
+      { q: "How long does importation from Nigeria to the UK take?",   a: "Air freight from Nigeria to the UK takes 5 8 working days. Sea freight takes 4 6 weeks. We operate weekly departures on both routes." },
     ],
   },
   {
@@ -176,9 +176,9 @@ const SERVICES = [
     badge: "UK & Nigeria",
     badgeColor: "bg-slate-100 text-slate-700",
     title: "Customs Clearance UK & Nigeria",
-    tagline: "Expert customs clearance — no delays, no surprises.",
+    tagline: "Expert customs clearance   no delays, no surprises.",
     description:
-      "Navigating UK HMRC and Nigeria Customs Service (NCS) regulations requires specialist knowledge. R-Zone's experienced customs team handles all documentation, HS code classification, duty payment, and compliance checks — so your cargo clears without delays, fines, or unexpected costs at either end.",
+      "Navigating UK HMRC and Nigeria Customs Service (NCS) regulations requires specialist knowledge. R-Zone's experienced customs team handles all documentation, HS code classification, duty payment, and compliance checks   so your cargo clears without delays, fines, or unexpected costs at either end.",
     highlights: [
       "UK import & export clearance (HMRC)",
       "Nigeria Customs Service (NCS) compliant",
@@ -190,18 +190,18 @@ const SERVICES = [
     process: [
       { step: "01", label: "Submit cargo documentation",       detail: "Commercial invoice, packing list, AWB/BOL"  },
       { step: "02", label: "HS code & duty assessment",        detail: "Accurate tariff classification every time"  },
-      { step: "03", label: "Duty payment & official filing",   detail: "On your behalf — transparent costs"         },
+      { step: "03", label: "Duty payment & official filing",   detail: "On your behalf   transparent costs"         },
       { step: "04", label: "Cargo released & delivered",       detail: "No delays, no surprises"                   },
     ],
     accent: "#0437F2",
     dark: false,
     // Customs / documentation
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "Customs clearance documentation — R-Zone UK and Nigeria customs service",
+    imgAlt: "Customs clearance documentation   R-Zone UK and Nigeria customs service",
     faq: [
-      { q: "Do I need to be present for customs clearance?",     a: "No — R-Zone acts as your authorised customs agent. We handle all HMRC and NCS filings entirely on your behalf." },
+      { q: "Do I need to be present for customs clearance?",     a: "No   R-Zone acts as your authorised customs agent. We handle all HMRC and NCS filings entirely on your behalf." },
       { q: "What documents are needed for Nigeria customs?",     a: "Typically: commercial invoice, packing list, and bill of lading or air waybill. We will advise exactly what is needed based on your cargo type." },
-      { q: "How do I avoid customs delays when shipping to Nigeria?", a: "Accurate documentation and correct HS codes are key. R-Zone's customs team checks everything before filing — preventing delays before they happen." },
+      { q: "How do I avoid customs delays when shipping to Nigeria?", a: "Accurate documentation and correct HS codes are key. R-Zone's customs team checks everything before filing   preventing delays before they happen." },
     ],
   },
   {
@@ -224,7 +224,7 @@ const SERVICES = [
       "Pick, pack & same-day despatch",
     ],
     process: [
-      { step: "01", label: "Discuss your storage needs",    detail: "Flexible space — short or long-term"       },
+      { step: "01", label: "Discuss your storage needs",    detail: "Flexible space   short or long-term"       },
       { step: "02", label: "Cargo received & inventoried",  detail: "Full digital inventory tracking"           },
       { step: "03", label: "Secure monitored storage",      detail: "24/7 CCTV, access controlled facility"    },
       { step: "04", label: "Released when you're ready",    detail: "Pick, pack & ship on demand"              },
@@ -233,10 +233,10 @@ const SERVICES = [
     dark: true,
     // Warehouse interior
     img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "R-Zone secure warehouse facility — Upminster Essex UK and Lagos Nigeria storage",
+    imgAlt: "R-Zone secure warehouse facility   Upminster Essex UK and Lagos Nigeria storage",
     faq: [
       { q: "How long can I store goods in your UK warehouse?", a: "We offer both short-term (days) and long-term (months) storage at our Upminster, Essex facility. A 3-day free storage period applies to all incoming consignments before daily charges apply." },
-      { q: "Is my cargo insured while in R-Zone storage?",     a: "Yes — all goods stored in our UK and Nigeria warehouses are covered by comprehensive cargo insurance throughout their stay." },
+      { q: "Is my cargo insured while in R-Zone storage?",     a: "Yes   all goods stored in our UK and Nigeria warehouses are covered by comprehensive cargo insurance throughout their stay." },
       { q: "Can I store goods in Nigeria before delivery?",    a: "Yes. Our Lagos hub offers short and long-term storage before last-mile delivery to any of Nigeria's 36 states." },
     ],
   },
@@ -252,7 +252,7 @@ const SERVICES = [
     description:
       "R-Zone's cargo handling service covers port stevedoring, heavy lift, oversized and out-of-gauge cargo management at Apapa, Tin Can Island, Onne, and Calabar. From project cargo to IATA/IMDG-certified dangerous goods handling, our specialist teams ensure safe, efficient, fully compliant cargo movement at every major Nigerian port.",
     highlights: [
-      "Port stevedoring — all Nigerian ports",
+      "Port stevedoring   all Nigerian ports",
       "Heavy lift & project cargo specialist",
       "Oversized & out-of-gauge (OOG) cargo",
       "IATA/IMDG dangerous goods certified",
@@ -269,10 +269,10 @@ const SERVICES = [
     dark: false,
     // Port / cargo operations
     img: "https://images.unsplash.com/photo-1468818419799-3d02e0b85c1a?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "Port cargo handling operations at Nigerian port — R-Zone specialist stevedoring",
+    imgAlt: "Port cargo handling operations at Nigerian port   R-Zone specialist stevedoring",
     faq: [
       { q: "Can R-Zone handle dangerous goods at Nigerian ports?", a: "Yes. We are IATA/IMDG certified for dangerous goods. Full specialist documentation, packaging and supervised handling is provided at all major Nigerian ports." },
-      { q: "Which ports in Nigeria do you operate at?",            a: "We operate at all major Nigerian ports — Apapa, Tin Can Island, Onne (Port Harcourt), and Calabar — plus West African regional ports." },
+      { q: "Which ports in Nigeria do you operate at?",            a: "We operate at all major Nigerian ports   Apapa, Tin Can Island, Onne (Port Harcourt), and Calabar   plus West African regional ports." },
       { q: "Do you handle oversized or project cargo?",            a: "Yes. We specialise in oversized, out-of-gauge (OOG) and heavy-lift project cargo. Contact us to discuss your specific requirements." },
     ],
   },
@@ -289,11 +289,11 @@ const SERVICES = [
       "R-Zone Enterprises specialises in safe, secure vehicle shipping from the UK to Nigeria. Whether you're relocating a personal car, sending vehicles for commercial use, or importing luxury vehicles, we provide complete end-to-end logistics with professional handling, full insurance cover, and comprehensive customs documentation. All vehicles are shipped via RoRo (roll-on/roll-off) on dedicated container vessels with departures every month.",
     highlights: [
       "RoRo (roll-on/roll-off) specialist shipping",
-      "All vehicle types — cars, trucks, motorcycles",
+      "All vehicle types   cars, trucks, motorcycles",
       "Full comprehensive insurance included",
       "Door collection in UK + door delivery in Nigeria",
       "Export & import documentation handled end-to-end",
-      "4–6 weeks transit to all Nigerian ports",
+      "4 6 weeks transit to all Nigerian ports",
     ],
     process: [
       { step: "01", label: "Vehicle specification & quote",    detail: "Send photos, year, make, mileage, VIN"        },
@@ -305,13 +305,13 @@ const SERVICES = [
     dark: false,
     // Vehicle/car shipping
     img: "https://images.unsplash.com/photo-1604629209793-ba4f8a3ae0f2?w=1400&q=80&auto=format&fit=crop",
-    imgAlt: "Car and vehicle shipping UK to Nigeria — R-Zone professional RoRo container service",
+    imgAlt: "Car and vehicle shipping UK to Nigeria   R-Zone professional RoRo container service",
     faq: [
-      { q: "How much does it cost to ship a car from the UK to Nigeria?", a: <>Vehicle shipping costs range from £1,500–£4,500 depending on vehicle type, size, and specifications. <Link href="/schedulesprices#pricing" className="font-bold text-[#D97706] hover:underline">Price List</Link></> },
+      { q: "How much does it cost to ship a car from the UK to Nigeria?", a: <>Vehicle shipping costs range from £1,500 £4,500 depending on vehicle type, size, and specifications. <Link href="/schedulesprices#pricing" className="font-bold text-[#D97706] hover:underline">Price List</Link></> },
       { q: "What happens to my car during shipping?", a: "Your vehicle is loaded onto a dedicated RoRo vessel, secured, and transported in a sealed container. It's fully insured throughout at no extra cost. We provide real-time updates and door delivery to your Nigerian address." },
-      { q: "How long does car shipping from the UK to Nigeria take?", a: "Typical transit time is 4–6 weeks depending on the Nigerian port (Lagos, Port Harcourt, or Calabar). We depart monthly with guaranteed safe arrival and full customs clearance on your behalf." },
-      { q: "Can I ship a vehicle to Abuja or inland Nigeria?", a: "Yes. We deliver to all Nigerian cities — Lagos, Abuja, Port Harcourt, Kano, and all 36 states. After port clearance, we arrange onward transport to your final destination." },
-      { q: "What documents do I need to ship my car to Nigeria?", a: "Required: UK V5 Registration Document (car logbook), proof of ID, proof of ownership, and passport scan. Our customs team handles the rest — Nigerian import permits, duty assessment, and full NCS clearance." },
+      { q: "How long does car shipping from the UK to Nigeria take?", a: "Typical transit time is 4 6 weeks depending on the Nigerian port (Lagos, Port Harcourt, or Calabar). We depart monthly with guaranteed safe arrival and full customs clearance on your behalf." },
+      { q: "Can I ship a vehicle to Abuja or inland Nigeria?", a: "Yes. We deliver to all Nigerian cities   Lagos, Abuja, Port Harcourt, Kano, and all 36 states. After port clearance, we arrange onward transport to your final destination." },
+      { q: "What documents do I need to ship my car to Nigeria?", a: "Required: UK V5 Registration Document (car logbook), proof of ID, proof of ownership, and passport scan. Our customs team handles the rest   Nigerian import permits, duty assessment, and full NCS clearance." },
     ],
   },
 ];
@@ -386,7 +386,7 @@ function ServiceSection({ service, index }) {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 lg:py-28">
 
-        {/* ── IMAGE BANNER — full width above content ── */}
+        {/* ── IMAGE BANNER   full width above content ── */}
         <motion.div className="relative w-full overflow-hidden mb-14 md:mb-16"
           initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
@@ -414,14 +414,14 @@ function ServiceSection({ service, index }) {
             <div className="absolute top-4 right-4 hidden sm:flex items-center gap-2 border backdrop-blur-md px-3.5 py-2"
               style={{ borderColor: "rgba(255,255,255,0.2)", backgroundColor: "rgba(0,0,0,0.55)" }}>
               <Star size={10} className="text-amber-400 fill-amber-400" aria-hidden="true" />
-              <span className="text-white text-[11px] font-black tracking-[0.1em]">#1 Ranked UK–Nigeria</span>
+              <span className="text-white text-[11px] font-black tracking-[0.1em]">#1 Ranked UK Nigeria</span>
             </div>
           </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-          {/* LEFT — Content */}
+          {/* LEFT   Content */}
           <motion.div initial="hidden" animate={inView ? "visible" : "hidden"}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
             <motion.div variants={fadeUp} custom={0} className="flex items-center gap-3 mb-5">
@@ -438,7 +438,7 @@ function ServiceSection({ service, index }) {
               <motion.div className="h-[2px] rounded-full" style={{ backgroundColor: service.accent }}
                 initial={{ width: 0 }} animate={inView ? { width: 28 } : {}} transition={{ duration: 0.45, delay: 0.3 }} aria-hidden="true" />
               <span className={`text-[11px] font-bold tracking-[0.26em] uppercase ${isDark ? "text-white/80" : "text-gray-800"}`}>
-                R-Zone UK–Nigeria Services
+                R-Zone UK Nigeria Services
               </span>
             </motion.div>
 
@@ -496,7 +496,7 @@ function ServiceSection({ service, index }) {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT — Process + FAQ */}
+          {/* RIGHT   Process + FAQ */}
           <motion.div className="flex flex-col gap-8" initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}>
 
@@ -566,7 +566,7 @@ function StatsBand() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <div ref={ref} className="bg-[#0818A8] relative overflow-hidden"
-      aria-label="R-Zone key statistics — highest-rated UK to Nigeria cargo company">
+      aria-label="R-Zone key statistics   highest-rated UK to Nigeria cargo company">
       <div className="absolute inset-0 opacity-[0.07]" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "44px 44px" }} />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-10 md:py-12">
@@ -620,12 +620,12 @@ function PageHero() {
             <div className="inline-flex items-center gap-2.5 border border-amber-400/35 bg-amber-400/8 px-4 py-1.5 rounded-full mb-5">
               <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-amber-400 text-[11px] font-black tracking-[0.28em] uppercase">
-                #1 Ranked UK–Nigeria Cargo · 100+ Five-Star Reviews
+                #1 Ranked UK Nigeria Cargo · 100+ Five-Star Reviews
               </span>
             </div>
             <h1 id="services-hero-heading"
               className="text-white font-black text-[clamp(30px,6vw,68px)] leading-[0.9] tracking-[-0.03em] uppercase mb-5">
-              UK–Nigeria Cargo{" "}
+              UK Nigeria Cargo{" "}
               <span className="relative inline-block text-[#1F51FF]">
                 Services
                 <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
@@ -636,7 +636,7 @@ function PageHero() {
             <p className="text-white/80 text-[14px] font-normal leading-relaxed">
               The{" "}
               <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-              {" "}— cargo to Nigeria from UK by air freight to Nigeria, weekly sea freight to Nigeria from UK, door-to-door delivery, customs clearance, warehousing and port operations.
+              {" "}  cargo to Nigeria from UK by air freight to Nigeria, weekly sea freight to Nigeria from UK, door-to-door delivery, customs clearance, warehousing and port operations.
               All managed by our own teams in the UK and Nigeria.
             </p>
           </motion.div>
@@ -685,7 +685,7 @@ function FinalCTA() {
           </h2>
           <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
             Air freight from £5/kg · Sea freight from £3/kg · Weekly departures.
-            Free quote in under 2 minutes — our UK team responds the same day.
+            Free quote in under 2 minutes   our UK team responds the same day.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
             <Link href="/quote"
@@ -744,7 +744,7 @@ export default function ServicesPageClient() {
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
-          "name": "R-Zone Enterprises — UK to Nigeria Cargo & Shipping Services",
+          "name": "R-Zone Enterprises   UK to Nigeria Cargo & Shipping Services",
           "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Air freight, sea freight with weekly sailings, door-to-door cargo, importation, customs clearance and warehousing.",
           "url": "https://r-zoneenterprises.com/services",
           "numberOfItems": SERVICES.length,
@@ -772,7 +772,7 @@ export default function ServicesPageClient() {
         }),
       }} />
 
-      {/* FAQPage schema — all service FAQs */}
+      {/* FAQPage schema   all service FAQs */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",

@@ -20,7 +20,7 @@ const SITE_URL  = "https://r-zoneenterprises.com";
 const SITE_NAME = "R-Zone Enterprises";
 const LOGO_URL  = `${SITE_URL}/wp-content/uploads/2022/09/Logo-colour-112.png`;
 
-// ─── Root metadata — all real data from r-zoneenterprises.com ────────────────
+// ─── Root metadata   all real data from r-zoneenterprises.com ────────────────
 export const metadata = {
 
   // ── Canonical base for all relative OG/Twitter image URLs ─────────────────
@@ -35,7 +35,7 @@ export const metadata = {
   description:
     "R-Zone Enterprises offers door to door cargo to Nigeria from the UK, air freight to Nigeria, sea shipping, car shipping, and importation from Nigeria. Trusted by 100+ customers. Call: +44 800 772 0864.",
 
-  // ── Keyword targeting — real services from the site ───────────────────────
+  // ── Keyword targeting   real services from the site ───────────────────────
   keywords: [
     // Core service terms
     "door to door cargo to Nigeria",
@@ -78,14 +78,14 @@ export const metadata = {
   // ── Canonical URL ─────────────────────────────────────────────────────────
   // NOTE: do NOT set a site-wide canonical here. Root metadata is inherited by
   // every page, so a fixed `canonical: SITE_URL` made every page that doesn't
-  // set its own canonical declare itself a duplicate of the homepage — Google
+  // set its own canonical declare itself a duplicate of the homepage   Google
   // then dropped them as "Alternate page with proper canonical tag". Pages that
   // need an explicit canonical set it in their own metadata (e.g. /track,
   // /business-solutions, blog posts); every other page self-canonicalizes to
   // its own URL. The old `languages` hreflang also pointed en-NG at /ng, which
   // 404s, so it is removed too.
 
-  // ── Open Graph — social sharing ───────────────────────────────────────────
+  // ── Open Graph   social sharing ───────────────────────────────────────────
   openGraph: {
     type:        "website",
     url:          SITE_URL,
@@ -99,7 +99,7 @@ export const metadata = {
         url:    "/og-image.jpg",          // Place a 1200×630 image at /public/og-image.jpg
         width:  1200,
         height: 630,
-        alt:    "R-Zone Enterprises — Door to Door Cargo to Nigeria from UK",
+        alt:    "R-Zone Enterprises   Door to Door Cargo to Nigeria from UK",
         type:   "image/jpeg",
       },
     ],
@@ -116,14 +116,14 @@ export const metadata = {
     images:      ["/og-image.jpg"],
   },
 
-  // ── Verification placeholders — add real tokens when available ────────────
+  // ── Verification placeholders   add real tokens when available ────────────
   verification: {
     google: "REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN",
     // bing:   "REPLACE_WITH_BING_WEBMASTER_TOKEN",
     // yandex: "REPLACE_WITH_YANDEX_TOKEN",
   },
 
-  // ── Robots — full indexing, no AI training ────────────────────────────────
+  // ── Robots   full indexing, no AI training ────────────────────────────────
   robots: {
     index:               true,
     follow:              true,
@@ -137,7 +137,7 @@ export const metadata = {
     },
   },
 
-  // ── Icons — place files in /public ────────────────────────────────────────
+  // ── Icons   place files in /public ────────────────────────────────────────
   icons: {
     icon: [
       { url: "/favicon.ico",              sizes: "any" },
@@ -164,7 +164,7 @@ export const metadata = {
     statusBarStyle:  "black-translucent",
   },
 
-  // ── Format detection — prevent iOS auto-linking phone numbers in meta ─────
+  // ── Format detection   prevent iOS auto-linking phone numbers in meta ─────
   formatDetection: {
     telephone: false,
     email:     false,
@@ -172,7 +172,7 @@ export const metadata = {
   },
 };
 
-// ─── Viewport — separate export required by Next.js 14+ ──────────────────────
+// ─── Viewport   separate export required by Next.js 14+ ──────────────────────
 export const viewport = {
   width:                "device-width",
   initialScale:          1,
@@ -189,13 +189,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en-GB"                     // Correct locale — company is UK-based
+      lang="en-GB"                     // Correct locale   company is UK-based
       dir="ltr"
       suppressHydrationWarning         // Suppress extension-injected attribute mismatches
     >
       <head>
         {React.Children.toArray([
-          /* ── DNS prefetch & preconnect — speeds up third-party resources ── */
+          /* ── DNS prefetch & preconnect   speeds up third-party resources ── */
           <link key="preconnect-google" rel="preconnect" href="https://fonts.googleapis.com" />,
           <link key="preconnect-gstatic" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />,
           <link key="dns-google-analytics" rel="dns-prefetch" href="//www.google-analytics.com" />,
@@ -203,7 +203,7 @@ export default function RootLayout({ children }) {
           <link key="dns-maps" rel="dns-prefetch" href="//maps.googleapis.com" />,
           <link key="dns-wa" rel="dns-prefetch" href="//wa.me" />,
 
-          /* ── Geo meta — both offices ───────────────────────────────────── */
+          /* ── Geo meta   both offices ───────────────────────────────────── */
           <meta key="geo-region" name="geo.region" content="GB-ESS" />,
           <meta key="geo-placename" name="geo.placename" content="Essex, United Kingdom" />,
           <meta key="geo-position" name="geo.position" content="51.5078;0.2648" />,
@@ -263,7 +263,7 @@ export default function RootLayout({ children }) {
                       },
                     ],
 
-                    // UK office — primary
+                    // UK office   primary
                     "address": {
                       "@type":           "PostalAddress",
                       "streetAddress":   "Unit 9 Moorhen Yard, Elms Lane",
@@ -273,7 +273,7 @@ export default function RootLayout({ children }) {
                       "addressCountry":  "GB",
                     },
 
-                    // Nigeria office — branch
+                    // Nigeria office   branch
                     "branchOf": {
                       "@id": `${SITE_URL}/#organization`,
                     },
@@ -416,7 +416,7 @@ export default function RootLayout({ children }) {
                     ],
                   },
 
-                  // ── WebSite schema — enables Google Sitelinks Search Box ──
+                  // ── WebSite schema   enables Google Sitelinks Search Box ──
                   {
                     "@type":   "WebSite",
                     "@id":     `${SITE_URL}/#website`,
@@ -453,11 +453,11 @@ export default function RootLayout({ children }) {
         */}
         <BodyCleanup />
 
-        {/* Toast notifications — positioned top-right, non-intrusive */}
+        {/* Toast notifications   positioned top-right, non-intrusive */}
         <ToasterProvider />
 
         {/*
-          Skip-to-content link — WCAG 2.1 AA accessibility requirement.
+          Skip-to-content link   WCAG 2.1 AA accessibility requirement.
           Visually hidden until focused; lets keyboard users skip nav.
         */}
         <a
@@ -480,7 +480,7 @@ export default function RootLayout({ children }) {
 ════════════════════════════════════════════════════════════════════════════════
   REQUIRED: next.config.js Security Headers
   Copy the headers() block below into your next.config.js.
-  Meta-tag equivalents above are fallbacks only — real protection needs these.
+  Meta-tag equivalents above are fallbacks only   real protection needs these.
 ════════════════════════════════════════════════════════════════════════════════
 
 /** @type {import('next').NextConfig} * /
@@ -506,7 +506,7 @@ const nextConfig = {
           // ── DNS prefetch control ─────────────────────────────────────
           { key: "X-DNS-Prefetch-Control", value: "on" },
 
-          // ── Permissions policy — disable unused browser APIs ─────────
+          // ── Permissions policy   disable unused browser APIs ─────────
           {
             key: "Permissions-Policy",
             value: [
@@ -539,7 +539,7 @@ const nextConfig = {
             ].join("; "),
           },
 
-          // ── HSTS — force HTTPS for 1 year ───────────────────────────
+          // ── HSTS   force HTTPS for 1 year ───────────────────────────
           {
             key: "Strict-Transport-Security",
             value: "max-age=31536000; includeSubDomains; preload",
@@ -571,7 +571,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "production",  // Strip console.* in prod
   },
 
-  // ── Power by header — hide Next.js fingerprint ────────────────────────────
+  // ── Power by header   hide Next.js fingerprint ────────────────────────────
   poweredByHeader: false,
 
   // ── Compression ───────────────────────────────────────────────────────────

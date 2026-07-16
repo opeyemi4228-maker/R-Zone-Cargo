@@ -129,7 +129,7 @@ export default function sitemap() {
   ];
 
   // ── Blog article pages ─────────────────────────────────────────────────────
-  // One sitemap entry per article — each with its own canonical URL,
+  // One sitemap entry per article   each with its own canonical URL,
   // last-modified date, and priority score defined in articles.js
   const articlePages = ARTICLES.map((article) => ({
     url: `${SITE_URL}/blog/${article.slug}`,

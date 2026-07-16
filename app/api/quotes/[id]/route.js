@@ -3,7 +3,7 @@ import { requireAdmin } from "../../../../lib/serverAuth";
 
 const VALID_STATUS = ["New", "Contacted", "Closed"];
 
-// PATCH /api/quotes/[id] — update status (admin only)
+// PATCH /api/quotes/[id]   update status (admin only)
 export async function PATCH(req, { params }) {
   try {
     await requireAdmin();
@@ -34,7 +34,7 @@ export async function PATCH(req, { params }) {
   }
 }
 
-// DELETE /api/quotes/[id] — admin only
+// DELETE /api/quotes/[id]   admin only
 export async function DELETE(_req, { params }) {
   try {
     await requireAdmin();

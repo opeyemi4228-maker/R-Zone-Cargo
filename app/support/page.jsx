@@ -53,9 +53,9 @@ const FAQ_CATEGORIES = [
       { q: "How do I book a shipment with R-Zone?", a: "You can book online via our Get a Quote form, call us on +44 800 772 0864, email info@r-zoneenterprises.com, or visit our Upminster, Essex warehouse in person. We confirm all bookings in writing with a unique reference number." },
       { q: "What items can I ship to Nigeria?", a: "We accept most general cargo including clothing, electronics, foodstuffs, household goods, documents, and personal effects. Some items require prior approval (dangerous goods, pharmaceuticals, high-value items). Contact us to check a specific item." },
       { q: "What is the minimum weight for a shipment?", a: "There is no strict minimum, but sea freight has a minimum charge equivalent to 5kg. Air freight has no minimum weight restriction. Contact us for small parcel or document-only shipments." },
-      { q: "Can I ship foodstuffs to Nigeria?", a: "Yes — we accept most food items including African foodstuffs. Some items require NAFDAC compliance documentation upon arrival in Nigeria. We advise on specific food categories on request." },
+      { q: "Can I ship foodstuffs to Nigeria?", a: "Yes   we accept most food items including African foodstuffs. Some items require NAFDAC compliance documentation upon arrival in Nigeria. We advise on specific food categories on request." },
       { q: "How far in advance do I need to book sea freight?", a: "We recommend booking at least 5 working days before the published cut-off date to guarantee space on the weekly sailing. The cut-off is typically 5 days before the vessel departure date." },
-      { q: "Can I change my delivery address after booking?", a: "Yes, in most cases. Contact us as early as possible — address changes before customs filing are straightforward. Changes after customs filing may incur a small administration fee." },
+      { q: "Can I change my delivery address after booking?", a: "Yes, in most cases. Contact us as early as possible   address changes before customs filing are straightforward. Changes after customs filing may incur a small administration fee." },
     ],
   },
   {
@@ -66,9 +66,9 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "How do I track my shipment?", a: "Use our Track Shipment tool at r-zoneenterprises.com/track with your booking reference number (format: RZC-XXXX-XXXXX). You can also call +44 800 772 0864 or WhatsApp +44 7915 647 119 for a live update." },
       { q: "When will I receive my tracking number?", a: "Air freight tracking numbers are issued within 24 hours of cargo acceptance. Sea freight booking references are issued at booking confirmation, with vessel tracking details available after the sailing date." },
-      { q: "My tracking hasn't updated in several days — what do I do?", a: "Occasional delays in tracking updates can occur, particularly during customs processing. If your tracking hasn't updated in more than 5 working days (air) or 2 weeks (sea), contact us and we'll investigate directly with the carrier." },
+      { q: "My tracking hasn't updated in several days   what do I do?", a: "Occasional delays in tracking updates can occur, particularly during customs processing. If your tracking hasn't updated in more than 5 working days (air) or 2 weeks (sea), contact us and we'll investigate directly with the carrier." },
       { q: "How will I know when my cargo has arrived in Nigeria?", a: "We send SMS and email notifications at key milestones: departure, arrival at Lagos, customs clearance, and delivery attempt. If you haven't received notifications, check your contact details are up to date on your booking." },
-      { q: "Can the recipient in Nigeria track the shipment?", a: "Yes — share your booking reference with the recipient and they can use our tracking tool or contact our Lagos team directly. We can also set up notifications to a Nigerian phone number on request." },
+      { q: "Can the recipient in Nigeria track the shipment?", a: "Yes   share your booking reference with the recipient and they can use our tracking tool or contact our Lagos team directly. We can also set up notifications to a Nigerian phone number on request." },
     ],
   },
   {
@@ -79,10 +79,10 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Do I need to pay customs duty in Nigeria?", a: "Import duties may apply depending on the type and value of your goods. Duties are levied by the Nigeria Customs Service (NCS) and are payable by the recipient in Nigeria. We calculate expected duties and inform you at booking." },
       { q: "What documents do I need for customs?", a: "Typically: a completed packing list, commercial invoice (for business goods), and the recipient's address in Nigeria. We provide guidance on additional documents (NAFDAC, SON certificates) based on your cargo type." },
-      { q: "Why is my cargo held at customs?", a: "Common reasons include: missing or incorrect documentation, prohibited item queries, undervalued declarations, or random inspection. Contact us immediately if you receive a customs hold notification — we handle clearance on your behalf." },
-      { q: "Can R-Zone handle customs clearance for me?", a: "Yes — customs clearance is included in all our shipments. Our in-house customs team handles UK export declarations and our Lagos team manages Nigeria Customs Service (NCS) clearance." },
-      { q: "How long does customs clearance take in Nigeria?", a: "Standard clearance takes 2–5 working days at Apapa or Tin Can Island ports. We apply for expedited clearance where available. Delays can occur during public holidays, port congestion, or if documentation is incomplete." },
-      { q: "Can I declare a lower value to avoid customs duty?", a: "No — misdeclaration is a criminal offence in both the UK and Nigeria. R-Zone Enterprises will not file inaccurate customs declarations. We can advise on legitimate duty relief schemes." },
+      { q: "Why is my cargo held at customs?", a: "Common reasons include: missing or incorrect documentation, prohibited item queries, undervalued declarations, or random inspection. Contact us immediately if you receive a customs hold notification   we handle clearance on your behalf." },
+      { q: "Can R-Zone handle customs clearance for me?", a: "Yes   customs clearance is included in all our shipments. Our in-house customs team handles UK export declarations and our Lagos team manages Nigeria Customs Service (NCS) clearance." },
+      { q: "How long does customs clearance take in Nigeria?", a: "Standard clearance takes 2 5 working days at Apapa or Tin Can Island ports. We apply for expedited clearance where available. Delays can occur during public holidays, port congestion, or if documentation is incomplete." },
+      { q: "Can I declare a lower value to avoid customs duty?", a: "No   misdeclaration is a criminal offence in both the UK and Nigeria. R-Zone Enterprises will not file inaccurate customs declarations. We can advise on legitimate duty relief schemes." },
     ],
   },
   {
@@ -91,11 +91,11 @@ const FAQ_CATEGORIES = [
     label: "Delivery & Collection",
     color: "#0818A8",
     faqs: [
-      { q: "Do you collect from my home in the UK?", a: "Yes — we offer door collection across the entire UK for an additional fee based on your location. Our Upminster, Essex warehouse also accepts drop-offs Mon–Fri 10AM–6PM and Sat 11AM–2PM." },
-      { q: "How long does door delivery in Nigeria take after customs clearance?", a: "Lagos and surrounding areas: 1–3 working days. Other southern states: 3–5 working days. Northern states: 5–7 working days. We use our own delivery network in Lagos and trusted partners nationally." },
+      { q: "Do you collect from my home in the UK?", a: "Yes   we offer door collection across the entire UK for an additional fee based on your location. Our Upminster, Essex warehouse also accepts drop-offs Mon Fri 10AM 6PM and Sat 11AM 2PM." },
+      { q: "How long does door delivery in Nigeria take after customs clearance?", a: "Lagos and surrounding areas: 1 3 working days. Other southern states: 3 5 working days. Northern states: 5 7 working days. We use our own delivery network in Lagos and trusted partners nationally." },
       { q: "What happens if the recipient isn't home for delivery?", a: "Our Nigeria delivery team will call the recipient ahead of delivery. If they are unavailable, the cargo is held at our Lagos facility for up to 5 working days at no charge. After 5 days, storage charges may apply." },
-      { q: "Can I collect my cargo from your Lagos warehouse?", a: "Yes — recipients can collect from our Shagam Interchange, Lagos facility. Bring a valid ID and your booking reference. Call our Lagos team on arrival to arrange assisted collection." },
-      { q: "Do you deliver to all 36 Nigerian states?", a: "Yes — we deliver to all 36 states and the FCT Abuja. Transit times vary by state. Some remote areas require the recipient to collect from a nearby town; our team advises at booking." },
+      { q: "Can I collect my cargo from your Lagos warehouse?", a: "Yes   recipients can collect from our Shagam Interchange, Lagos facility. Bring a valid ID and your booking reference. Call our Lagos team on arrival to arrange assisted collection." },
+      { q: "Do you deliver to all 36 Nigerian states?", a: "Yes   we deliver to all 36 states and the FCT Abuja. Transit times vary by state. Some remote areas require the recipient to collect from a nearby town; our team advises at booking." },
     ],
   },
   {
@@ -106,7 +106,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "What payment methods do you accept?", a: "Bank transfer (BACS/Faster Payments), debit/credit card, and PayPal. Business accounts with regular shipments can apply for 14 or 30-day credit terms. We do not accept cash." },
       { q: "When do I need to pay?", a: "Individual customers: full payment is required before cargo is accepted. Business account customers: payment is due within the agreed credit period after invoice date." },
-      { q: "Can I get a refund if I cancel my shipment?", a: "Cancellations more than 5 working days before sailing/dispatch: full refund minus £25 admin fee. 2–5 days before: 50% refund. Within 2 days or cargo received: no refund. See our Terms of Service for full details." },
+      { q: "Can I get a refund if I cancel my shipment?", a: "Cancellations more than 5 working days before sailing/dispatch: full refund minus £25 admin fee. 2 5 days before: 50% refund. Within 2 days or cargo received: no refund. See our Terms of Service for full details." },
       { q: "How is the shipping cost calculated?", a: "Charges are based on the greater of actual weight or volumetric weight. Volumetric weight = (Length × Width × Height in cm) ÷ 5,000 for air freight, ÷ 1,000 for sea freight." },
       { q: "Are there any hidden fees?", a: "No. Our quotes include customs clearance, standard packaging, and standard delivery. Additional charges (door collection, out-of-state delivery, insurance, packing service) are quoted separately and transparently at booking." },
     ],
@@ -117,10 +117,10 @@ const FAQ_CATEGORIES = [
     label: "Claims & Complaints",
     color: "#0437F2",
     faqs: [
-      { q: "My cargo arrived damaged — what do I do?", a: "Report damage within 7 days of delivery to claims@r-zoneenterprises.com. Include your booking reference, photos of the damage, photos of the packaging, and an estimate of the value affected. We respond within 2 working days." },
-      { q: "My cargo hasn't arrived — what do I do?", a: "If your cargo hasn't arrived within 14 days of the expected delivery date, contact us immediately. We will investigate with the carrier and our Nigeria team. Cargo missing for more than 30 days is classified as lost and a claim can be submitted." },
+      { q: "My cargo arrived damaged   what do I do?", a: "Report damage within 7 days of delivery to claims@r-zoneenterprises.com. Include your booking reference, photos of the damage, photos of the packaging, and an estimate of the value affected. We respond within 2 working days." },
+      { q: "My cargo hasn't arrived   what do I do?", a: "If your cargo hasn't arrived within 14 days of the expected delivery date, contact us immediately. We will investigate with the carrier and our Nigeria team. Cargo missing for more than 30 days is classified as lost and a claim can be submitted." },
       { q: "How do I make a formal complaint?", a: "Email complaints@r-zoneenterprises.com with your booking reference, a detailed description of your concern, and what resolution you're looking for. We acknowledge within 2 working days and aim to resolve within 14." },
-      { q: "What compensation can I claim for lost cargo?", a: "Air freight liability is capped at 19 SDR/kg under the Montreal Convention. Sea freight liability is capped under the Hague-Visby Rules. Cargo insurance significantly increases your compensation entitlement — we strongly recommend it for all shipments." },
+      { q: "What compensation can I claim for lost cargo?", a: "Air freight liability is capped at 19 SDR/kg under the Montreal Convention. Sea freight liability is capped under the Hague-Visby Rules. Cargo insurance significantly increases your compensation entitlement   we strongly recommend it for all shipments." },
       { q: "How do I claim on my cargo insurance?", a: "Contact claims@r-zoneenterprises.com with your booking reference and insurance certificate number. We will assist you with the insurer's claims process. Insurance claims should be submitted within 30 days of the incident." },
     ],
   },
@@ -129,10 +129,10 @@ const FAQ_CATEGORIES = [
 const CONTACT_CHANNELS = [
   {
     icon: Phone,
-    title: "Call Us — UK",
+    title: "Call Us   UK",
     desc: "Speak directly to our UK team",
     value: "+44 (0) 800 772 0864",
-    sub: "Free to call · Mon–Fri 10AM–6PM · Sat 11AM–2PM",
+    sub: "Free to call · Mon Fri 10AM 6PM · Sat 11AM 2PM",
     href: "tel:+448007720864",
     action: "Call Now",
     color: "#0818A8",
@@ -165,7 +165,7 @@ const CONTACT_CHANNELS = [
     title: "Instagram DM",
     desc: "Quick questions & updates",
     value: "@rzoneenterprises",
-    sub: "Active daily — Mon to Sat",
+    sub: "Active daily   Mon to Sat",
     href: "https://instagram.com/rzoneenterprises",
     action: "Open Instagram",
     color: "#0818A8",
@@ -174,10 +174,10 @@ const CONTACT_CHANNELS = [
 ];
 
 const STATUS_ITEMS = [
-  { label: "UK Air Departures",    status: "operational", detail: "Mon · Wed · Fri — on schedule"          },
-  { label: "Sea Freight Sailings", status: "operational", detail: "Weekly sailings — spaces available"      },
+  { label: "UK Air Departures",    status: "operational", detail: "Mon · Wed · Fri   on schedule"          },
+  { label: "Sea Freight Sailings", status: "operational", detail: "Weekly sailings   spaces available"      },
   { label: "Nigeria Deliveries",   status: "operational", detail: "Lagos deliveries running normally"       },
-  { label: "Customs Clearance",    status: "delayed",     detail: "Minor delays at Apapa — +1–2 days est." },
+  { label: "Customs Clearance",    status: "delayed",     detail: "Minor delays at Apapa   +1 2 days est." },
   { label: "UK Customer Support",  status: "operational", detail: "Lines open · +44 800 772 0864"          },
   { label: "Online Tracking",      status: "operational", detail: "System fully operational"               },
 ];
@@ -186,7 +186,7 @@ const POPULAR_ARTICLES = [
   { title: "How to pack your cargo correctly",              cat: "Packing Guide", href: "#" },
   { title: "Understanding Nigerian customs duties",         cat: "Customs",       href: "#" },
   { title: "What the tracking statuses mean",               cat: "Tracking",      href: "#" },
-  { title: "Air freight vs sea freight — which to choose",  cat: "Shipping",      href: "#" },
+  { title: "Air freight vs sea freight   which to choose",  cat: "Shipping",      href: "#" },
   { title: "How to avoid cargo delays at Apapa port",      cat: "Delivery",      href: "#" },
   { title: "Making a claim for lost or damaged cargo",      cat: "Claims",        href: "#" },
 ];
@@ -208,9 +208,9 @@ const MOCK_SHIPMENTS = {
       { label: "Cargo Received",      date: "04 Oct", time: "09:15", done: true  },
       { label: "Departed LHR",        date: "06 Oct", time: "21:45", done: true  },
       { label: "Arrived Lagos (LOS)", date: "08 Oct", time: "06:30", done: true  },
-      { label: "Customs Clearance",   date: "09 Oct", time: "—",     done: false, active: true },
-      { label: "Out for Delivery",    date: "Expected 11 Oct", time: "—", done: false },
-      { label: "Delivered",           date: "—",      time: "—",     done: false },
+      { label: "Customs Clearance",   date: "09 Oct", time: " ",     done: false, active: true },
+      { label: "Out for Delivery",    date: "Expected 11 Oct", time: " ", done: false },
+      { label: "Delivered",           date: " ",      time: " ",     done: false },
     ],
   },
   "RZC-2024-00612": {
@@ -393,7 +393,7 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
               <Search size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
               <input
                 type="search"
-                placeholder="Search — e.g. 'track shipment', 'customs duty', 'damaged cargo'…"
+                placeholder="Search   e.g. 'track shipment', 'customs duty', 'damaged cargo'…"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 onKeyDown={handleKey}
@@ -650,7 +650,7 @@ function TrackWidget() {
             </div>
           </motion.div>
 
-          {/* Right — tracking result */}
+          {/* Right   tracking result */}
           <motion.div
             initial={{ opacity: 0, x: 16 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -765,7 +765,7 @@ function TrackWidget() {
                             </p>
                             <div className="text-right flex-shrink-0 ml-4">
                               <p className={`text-[13px] ${step.done ? "font-semibold" : "font-normal"} text-gray-800`}>{step.date}</p>
-                              {step.time !== "—" && <p className="text-[13px] font-normal text-gray-800">{step.time}</p>}
+                              {step.time !== " " && <p className="text-[13px] font-normal text-gray-800">{step.time}</p>}
                             </div>
                           </div>
                         </div>
@@ -1005,7 +1005,7 @@ function GuidesSection() {
                 Helpful<br /><span className="text-[#0818A8]">Guides.</span>
               </h2>
               <p className="text-gray-800 text-[14px] font-normal leading-relaxed mb-6">
-                Step-by-step guides for common tasks — written by our operations team in plain language.
+                Step-by-step guides for common tasks   written by our operations team in plain language.
               </p>
               <div className="border border-gray-200 bg-gray-50 p-5">
                 <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-800 mb-4">Popular Articles</p>
@@ -1025,7 +1025,7 @@ function GuidesSection() {
             </motion.div>
           </div>
 
-          {/* Right — guide cards */}
+          {/* Right   guide cards */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {GUIDES.map((guide, i) => {
               const Icon = guide.icon;
@@ -1116,7 +1116,7 @@ function ContactSection() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Our UK-based team responds every time — no bots, no ticket queues.
+            Our UK-based team responds every time   no bots, no ticket queues.
             Call, WhatsApp, or email.
           </motion.p>
         </div>
@@ -1181,21 +1181,21 @@ function ContactSection() {
         >
           {[
             {
-              flag: "🇬🇧", country: "UK Office — Upminster, Essex",
+              flag: "🇬🇧", country: "UK Office   Upminster, Essex",
               addr: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
               hours: [
-                { d: "Mon–Fri",  t: "10:00AM – 6:00PM" },
-                { d: "Saturday", t: "11:00AM – 2:00PM"  },
+                { d: "Mon Fri",  t: "10:00AM   6:00PM" },
+                { d: "Saturday", t: "11:00AM   2:00PM"  },
                 { d: "Sunday",   t: "Closed"             },
               ],
               color: "#0818A8",
             },
             {
-              flag: "🇳🇬", country: "Nigeria Hub — Lagos",
+              flag: "🇳🇬", country: "Nigeria Hub   Lagos",
               addr: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
               hours: [
-                { d: "Mon–Fri",  t: "9:00AM – 5:00PM WAT" },
-                { d: "Saturday", t: "9:00AM – 1:00PM WAT"  },
+                { d: "Mon Fri",  t: "9:00AM   5:00PM WAT" },
+                { d: "Saturday", t: "9:00AM   1:00PM WAT"  },
                 { d: "Sunday",   t: "Closed"               },
               ],
               color: "#1F51FF",

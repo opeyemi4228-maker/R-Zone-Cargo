@@ -1,7 +1,7 @@
 import { prisma } from "../../../../lib/prisma";
 import { requireAdmin } from "../../../../lib/serverAuth";
 
-// DELETE /api/subscribers/[id] — admin only
+// DELETE /api/subscribers/[id]   admin only
 export async function DELETE(_req, { params }) {
   try {
     await requireAdmin();

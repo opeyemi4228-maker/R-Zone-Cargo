@@ -119,7 +119,7 @@ const STATE_RATES = [
   { state: "Kebbi",       doorToDoor: null,   collection: "7.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
   { state: "Kogi",        doorToDoor: "6.50", collection: "6.20", minWeight: "30", minWeightNote: null,                    days: "15"  },
   { state: "Kwara",       doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
-  { state: "Lagos",       doorToDoor: "5.50", collection: "5.20", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5–7" },
+  { state: "Lagos",       doorToDoor: "5.50", collection: "5.20", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 7" },
   { state: "Nasarawa",    doorToDoor: "7.00", collection: "7.00", minWeight: "20", minWeightNote: null,                    days: "15"  },
   { state: "Niger",       doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null,                    days: "15"  },
   { state: "Ogun",        doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null,                    days: "10"  },
@@ -143,7 +143,7 @@ const FIXED_ITEM_RATES = [
   { item: '42" TV',               price: 260  },
   { item: '46" TV',               price: 300  },
   { item: '50" TV',               price: 350  },
-  { item: 'Laptop (15"–17")',     price: 50   },
+  { item: 'Laptop (15" 17")',     price: 50   },
   { item: "Computer & Desktop",   price: 150  },
   { item: "Mobile Phone (per unit)", price: 30 },
   { item: "iPad",                 price: 25   },
@@ -203,26 +203,26 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
   {
     q: "How much does it cost to ship cargo from the UK to Nigeria?",
-    a: "Sea freight from the UK to Nigeria starts from £2 per kg (4–6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (7 days — departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state — from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
+    a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (7 days   departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state   from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
   },
   {
     q: "What is the cheapest way to ship from the UK to Nigeria?",
-    a: "Sea freight is the cheapest option — from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4–6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs every Friday from LHR, arriving Lagos the following Friday.",
+    a: "Sea freight is the cheapest option   from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs every Friday from LHR, arriving Lagos the following Friday.",
   },
   {
     q: "Are there any hidden fees?",
-    a: "No. R-Zone's rates are fully transparent. The price you are quoted is the price you pay. Any optional extras — collection, delivery, insurance — are quoted upfront before you commit.",
+    a: "No. R-Zone's rates are fully transparent. The price you are quoted is the price you pay. Any optional extras   collection, delivery, insurance   are quoted upfront before you commit.",
   },
   {
     q: "How is cargo weight calculated?",
-    a: "We charge on actual weight or volumetric weight — whichever is greater. Volumetric weight = (L × W × H in cm) ÷ 6,000 for air freight and ÷ 1,000 for sea freight.",
+    a: "We charge on actual weight or volumetric weight   whichever is greater. Volumetric weight = (L × W × H in cm) ÷ 6,000 for air freight and ÷ 1,000 for sea freight.",
   },
   {
     q: "Do prices include VAT?",
     a: "Exported goods from the UK are generally not charged UK VAT. They are 'zero-rated' (0% VAT) because they are not consumed in the UK, provided specific conditions are met and official evidence of export is kept.",
   },
   {
-    q: "Can I get a fixed price for regular UK–Nigeria shipments?",
+    q: "Can I get a fixed price for regular UK Nigeria shipments?",
     a: "Yes. Business and enterprise customers can negotiate fixed monthly rates. Contact our sales team to discuss a tailored contract with volume discount pricing.",
   },
   {
@@ -297,16 +297,16 @@ function Hero() {
               <div className="inline-flex items-center gap-2 border border-amber-400/35 bg-amber-400/8 px-3.5 py-1.5 rounded-full mb-4">
                 <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
                 <span className="text-amber-400 text-[11px] font-black tracking-[0.22em] uppercase">
-                  #1 Ranked UK–Nigeria Cargo on Google
+                  #1 Ranked UK Nigeria Cargo on Google
                 </span>
               </div>
             </motion.div>
             <motion.div variants={fadeUp} custom={0.05}>
-              <TagPill label={`${YEAR} Schedules & Rates — UK to Nigeria`} dark />
+              <TagPill label={`${YEAR} Schedules & Rates   UK to Nigeria`} dark />
             </motion.div>
             <motion.h1 id="sp-hero-heading" variants={fadeUp} custom={0.1}
               className="text-white font-black text-[clamp(34px,6.5vw,76px)] leading-[0.88] tracking-[-0.035em] uppercase mb-6">
-              UK–Nigeria Cargo<br />Schedules &amp;{" "}
+              UK Nigeria Cargo<br />Schedules &amp;{" "}
               <span className="relative inline-block text-[#1F51FF]">
                 Prices.
                 <motion.span className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]" aria-hidden="true"
@@ -314,8 +314,8 @@ function Hero() {
               </span>
             </motion.h1>
             <motion.p variants={fadeUp} custom={0.2} className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
-              Full {YEAR} UK–Nigeria sailing and flight schedules alongside fully transparent
-              pricing — no hidden fees, no surprises.{" "}
+              Full {YEAR} UK Nigeria sailing and flight schedules alongside fully transparent
+              pricing   no hidden fees, no surprises.{" "}
               <strong className="text-white font-semibold">Sea freight from £2/kg · Air freight from £5/kg.</strong>
               {" "}Weekly departures on both routes.
             </motion.p>
@@ -336,7 +336,7 @@ function Hero() {
             initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.3 }}>
             {[
               { icon: Plane,        label: "Air Freight",      val1: "Every",   val2: "Friday",       sub: "Departs LHR weekly",   accent: "#0818A8" },
-              { icon: Ship,         label: "Sea Freight",      val1: "Weekly",  val2: "sailings",     sub: "4–6 weeks transit",    accent: "#1F51FF" },
+              { icon: Ship,         label: "Sea Freight",      val1: "Weekly",  val2: "sailings",     sub: "4 6 weeks transit",    accent: "#1F51FF" },
               { icon: Zap,          label: "Air Transit",      val1: "7",       val2: "days",         sub: "Friday to Friday",     accent: "#0437F2" },
               { icon: TrendingDown, label: "Sea From",         val1: "£2",      val2: "/kg",          sub: "Cheapest option",  accent: "#0818A8" },
             ].map(({ icon: Icon, label, val1, val2, sub, accent }, i) => (
@@ -383,14 +383,14 @@ function SchedulesSection() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <div>
             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
-              <TagPill label={`${YEAR} UK–Nigeria Sailing & Flight Schedule`} dark />
+              <TagPill label={`${YEAR} UK Nigeria Sailing & Flight Schedule`} dark />
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
-              <SectionHeading line1="UK–Nigeria Sailing &amp;" accent="Flight Schedules." dark id="schedules-heading" />
+              <SectionHeading line1="UK Nigeria Sailing &amp;" accent="Flight Schedules." dark id="schedules-heading" />
             </motion.div>
             <motion.p className="text-white/80 text-[14px] font-normal mt-4 max-w-xl"
               initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-              All {YEAR} UK–Nigeria departure dates. Sea cargo has a strict weekly cut-off — book early to guarantee your space on the next sailing to Lagos.
+              All {YEAR} UK Nigeria departure dates. Sea cargo has a strict weekly cut-off   book early to guarantee your space on the next sailing to Lagos.
             </motion.p>
           </div>
           <motion.div className="flex flex-wrap gap-3 flex-shrink-0"
@@ -429,7 +429,7 @@ function SchedulesSection() {
                 <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <p className="text-white/80 text-[13px] font-normal leading-snug">
                   <strong className="text-white font-semibold">Cut-off date</strong> is the last day to drop off at our Upminster warehouse or arrange UK door collection.
-                  The vessel sails 5 days after cut-off. ETA to Lagos is typically 4–6 weeks.
+                  The vessel sails 5 days after cut-off. ETA to Lagos is typically 4 6 weeks.
                 </p>
               </div>
               {/* Desktop table */}
@@ -527,7 +527,7 @@ function SchedulesSection() {
                 <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <p className="text-white/80 text-[13px] font-normal leading-snug">
                   Air freight to Nigeria departs <strong className="text-white font-semibold">every Friday</strong> from London Heathrow (LHR) to Lagos (LOS).
-                  Cargo must be received by <strong className="text-white font-semibold">12pm Friday</strong> for same-day dispatch — arrives Lagos the <strong className="text-white font-semibold">following Friday</strong>.
+                  Cargo must be received by <strong className="text-white font-semibold">12pm Friday</strong> for same-day dispatch   arrives Lagos the <strong className="text-white font-semibold">following Friday</strong>.
                 </p>
               </div>
               <div className="flex justify-center mb-10">
@@ -557,13 +557,13 @@ function SchedulesSection() {
               {/* Journey steps */}
               <div className="border border-white/[0.08] bg-white/[0.03] p-7 md:p-9 mb-8">
                 <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-white/80 mb-7">
-                  Typical Air Freight Journey — UK to Nigeria
+                  Typical Air Freight Journey   UK to Nigeria
                 </p>
                 <div className="flex items-center gap-0 overflow-x-auto">
                   {[
                     { label: "Fri · Wk 1", title: "Book & Drop Off",     sub: "12pm cut-off deadline",  icon: Package     },
                     { label: "Fri · Wk 1", title: "Departs LHR",         sub: "Cargo loaded & airside", icon: Plane       },
-                    { label: "Sat – Thu",  title: "In Transit",           sub: "UK → Lagos",             icon: Anchor      },
+                    { label: "Sat   Thu",  title: "In Transit",           sub: "UK → Lagos",             icon: Anchor      },
                     { label: "Thu · Wk 2", title: "Lagos Airport",        sub: "LOS customs clearance",  icon: MapPin      },
                     { label: "Fri · Wk 2", title: "Cleared & Delivered",  sub: "Door or Lagos pickup",   icon: CheckCircle },
                   ].map((step, si) => {
@@ -643,7 +643,7 @@ function PricingSection() {
 
         <div className="text-center mb-14">
           <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
-            <TagPill label="UK–Nigeria Cargo Rates — Transparent Pricing" dark={false} />
+            <TagPill label="UK Nigeria Cargo Rates   Transparent Pricing" dark={false} />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <SectionHeading line1="Clear, Fair" accent="Pricing." dark={false} id="pricing-heading" />
@@ -697,7 +697,7 @@ function PricingSection() {
                   </ul>
                   <Link href={tier.href}
                     className={`w-full text-center text-[13px] font-black tracking-[0.09em] uppercase py-3.5 transition-all duration-200 ${tier.featured ? "bg-[#0818A8] hover:bg-[#0437F2] text-white shadow-lg shadow-[#0818A8]/30" : "border-2 border-[#0818A8]/25 text-[#0818A8] hover:bg-[#0818A8] hover:text-white hover:border-[#0818A8]"}`}
-                    aria-label={`${tier.cta} — ${tier.name} UK to Nigeria cargo`}>{tier.cta}
+                    aria-label={`${tier.cta}   ${tier.name} UK to Nigeria cargo`}>{tier.cta}
                   </Link>
                 </div>
               </motion.div>
@@ -709,7 +709,7 @@ function PricingSection() {
         <motion.div className="mb-16" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
-              <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Rate Tables — UK to Nigeria</h3>
+              <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Rate Tables   UK to Nigeria</h3>
               <p className="text-gray-800 text-[13px] font-normal mt-1">Standard published rates. Heavier shipments attract lower per-kg rates.</p>
             </div>
             <div className="flex border border-gray-200 overflow-hidden" role="tablist" aria-label="Air or sea rate table">
@@ -746,7 +746,7 @@ function PricingSection() {
                         <td className="px-5 py-3.5 hidden sm:table-cell text-gray-800 text-[13px] font-normal">{row.note}</td>
                         <td className="px-5 py-3.5 text-right">
                           <Link href="/quote" className="text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors"
-                            aria-label={`Get a quote for ${row.range} — ${activeRateTab === "air" ? "air" : "sea"} freight UK to Nigeria`}>Quote →</Link>
+                            aria-label={`Get a quote for ${row.range}   ${activeRateTab === "air" ? "air" : "sea"} freight UK to Nigeria`}>Quote →</Link>
                         </td>
                       </tr>
                     ))}
@@ -791,7 +791,7 @@ function PricingSection() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
               <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Always Included</p>
-              <h3 className="text-[#0b0f1a] font-black text-[18px]">Every R-Zone UK–Nigeria shipment includes</h3>
+              <h3 className="text-[#0b0f1a] font-black text-[18px]">Every R-Zone UK Nigeria shipment includes</h3>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {INCLUDED_ALWAYS.map(({ icon: Icon, label }) => (
@@ -807,7 +807,7 @@ function PricingSection() {
         {/* State-by-state rates */}
         <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.55 }}>
           <div className="mb-6">
-            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Cargo Rates — Nigeria</h3>
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Cargo Rates   Nigeria</h3>
             <p className="text-gray-800 text-[13px] font-normal mt-1">Door-to-door and office collection rates to all Nigerian states. Rates are per kg.</p>
           </div>
           <div className="overflow-hidden border border-gray-200 bg-white">
@@ -844,7 +844,7 @@ function PricingSection() {
             </div>
           </div>
           <p className="text-gray-800 text-[13px] font-normal mt-3">
-            * All rates are per kg. Minimum weight requirements apply. "Office Only" states do not offer door-to-door delivery — office collection rate applies.
+            * All rates are per kg. Minimum weight requirements apply. "Office Only" states do not offer door-to-door delivery   office collection rate applies.
             All shipments subject to a £20 handling charge.
           </p>
         </motion.div>
@@ -852,9 +852,9 @@ function PricingSection() {
         {/* Fixed item rates */}
         <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.58 }}>
           <div className="mb-6">
-            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Fixed-Price Items — Door to Door (Lagos)</h3>
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Fixed-Price Items   Door to Door (Lagos)</h3>
             <p className="text-gray-800 text-[13px] font-normal mt-1">
-              Flat-rate door-to-door pricing for electronics to Lagos. Rates for other destinations vary — contact us for a quote.
+              Flat-rate door-to-door pricing for electronics to Lagos. Rates for other destinations vary   contact us for a quote.
             </p>
           </div>
           <div className="overflow-hidden border border-gray-200 bg-white">
@@ -896,7 +896,7 @@ function PricingSection() {
             <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Car & Container Shipping to Nigeria</h3>
             <p className="text-gray-800 text-[13px] font-normal mt-1">
               RORO (Roll-on/Roll-off) vehicle shipping and container rates to Tin Can Island / Apapa, Lagos.
-              Prices are port-to-port only — loading, haulage and clearing costs are not included.
+              Prices are port-to-port only   loading, haulage and clearing costs are not included.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -904,7 +904,7 @@ function PricingSection() {
             <div className="overflow-hidden border border-gray-200 bg-white">
               <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
                 <Truck size={13} className="text-white/80" aria-hidden="true" />
-                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Vehicle RORO Shipping — Lagos</span>
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Vehicle RORO Shipping   Lagos</span>
               </div>
               <table className="w-full" aria-label="RORO vehicle shipping prices to Lagos Nigeria">
                 <thead>
@@ -919,7 +919,7 @@ function PricingSection() {
                     <tr key={row.type} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
                       <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.type}</td>
                       <td className="px-5 py-3.5 text-[14px] font-black text-[#0818A8]">{row.roro}</td>
-                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.note ?? "—"}</td>
+                      <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.note ?? " "}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -929,7 +929,7 @@ function PricingSection() {
             <div className="overflow-hidden border border-gray-200 bg-white">
               <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
                 <Anchor size={13} className="text-white/80" aria-hidden="true" />
-                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Container Shipping — Lagos</span>
+                <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Container Shipping   Lagos</span>
               </div>
               <table className="w-full" aria-label="Container shipping prices to Lagos Nigeria">
                 <thead>
@@ -960,11 +960,11 @@ function PricingSection() {
           </p>
         </motion.div>
 
-        {/* Pricing FAQs — SEO high-value */}
+        {/* Pricing FAQs   SEO high-value */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.6 }}>
           <div className="mb-6">
-            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Shipping Costs — Frequently Asked Questions</h3>
-            <p className="text-gray-800 text-[13px] font-normal mt-1">Common questions about UK–Nigeria cargo prices and shipping costs.</p>
+            <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Shipping Costs   Frequently Asked Questions</h3>
+            <p className="text-gray-800 text-[13px] font-normal mt-1">Common questions about UK Nigeria cargo prices and shipping costs.</p>
           </div>
           <dl className="border border-gray-200 overflow-hidden">
             {FAQS_PRICING.map((item, i) => (
@@ -1004,7 +1004,7 @@ function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <section ref={ref} className="relative bg-[#00061a] overflow-hidden"
-      aria-label="Book UK to Nigeria sea or air freight — R-Zone Enterprises">
+      aria-label="Book UK to Nigeria sea or air freight   R-Zone Enterprises">
       <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
@@ -1018,7 +1018,7 @@ function FinalCTA() {
             <Calendar size={22} className="text-[#1F51FF] mb-5" aria-hidden="true" />
             <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Book the Next Sailing to Nigeria</h3>
             <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6">
-              May and June {YEAR} sailings are now open. Secure your cargo space — weekly cut-off dates apply.
+              May and June {YEAR} sailings are now open. Secure your cargo space   weekly cut-off dates apply.
               Sea freight to Lagos from £2/kg.
             </p>
             <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
@@ -1030,9 +1030,9 @@ function FinalCTA() {
             initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }}>
             <div className="h-[2px] bg-gradient-to-r from-[#1F51FF] to-[#0437F2] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
             <BarChart3 size={22} className="text-[#1F51FF] mb-5" aria-hidden="true" />
-            <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Get a Free Quote — UK to Nigeria</h3>
+            <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Get a Free Quote   UK to Nigeria</h3>
             <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6">
-              Tell us about your cargo and we&apos;ll give you a precise price — air or sea, personal or commercial. Same-day response.
+              Tell us about your cargo and we&apos;ll give you a precise price   air or sea, personal or commercial. Same-day response.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/quote" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 hover:border-white/40 text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
@@ -1072,18 +1072,18 @@ const SCHEMA_LD = {
     },
     {
       "@type": "Service",
-      "name": "Sea Freight UK to Nigeria — Weekly Sailings",
+      "name": "Sea Freight UK to Nigeria   Weekly Sailings",
       "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
-      "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4–6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria — from £2/kg.",
+      "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4 6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria   from £2/kg.",
       "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "2.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £2 per kg" },
       "areaServed": ["United Kingdom", "Nigeria"],
       "serviceType": "Sea Freight",
     },
     {
       "@type": "Service",
-      "name": "Air Freight UK to Nigeria — Weekly Departures",
+      "name": "Air Freight UK to Nigeria   Weekly Departures",
       "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
-      "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday — arrives Lagos the following Friday. 7 days transit.",
+      "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday   arrives Lagos the following Friday. 7 days transit.",
       "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.00", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5 per kg" },
       "areaServed": ["United Kingdom", "Nigeria"],
       "serviceType": "Air Freight",
@@ -1091,8 +1091,8 @@ const SCHEMA_LD = {
     {
       "@type": "WebPage",
       "url": "https://r-zoneenterprises.com/schedules-prices",
-      "name": "UK to Nigeria Cargo Schedules & Prices — R-Zone Enterprises",
-      "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates — sea freight from £2/kg, air freight from £5/kg. No hidden fees.",
+      "name": "UK to Nigeria Cargo Schedules & Prices   R-Zone Enterprises",
+      "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates   sea freight from £2/kg, air freight from £5/kg. No hidden fees.",
       "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
     },
   ],

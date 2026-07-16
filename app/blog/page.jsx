@@ -1,6 +1,6 @@
 // app/blog/page.jsx
 // ─────────────────────────────────────────────────────────────────────────────
-// SERVER COMPONENT — the /blog listing page.
+// SERVER COMPONENT   the /blog listing page.
 // Rendered server-side so Google can fully read and index it.
 //
 // SEO delivered by this file:
@@ -35,7 +35,7 @@ export const metadata = {
   // ── Primary SEO ────────────────────────────────────────────────────────────
   title: "UK to Nigeria Shipping Blog 2026: Guides, Tips & News | R-Zone Cargo",
   description:
-    "Expert shipping guides, customs tips, industry news and logistics insights for UK–Nigeria cargo. Air freight, sea freight, NAFDAC, Apapa port and more — R-Zone Cargo blog.",
+    "Expert shipping guides, customs tips, industry news and logistics insights for UK Nigeria cargo. Air freight, sea freight, NAFDAC, Apapa port and more   R-Zone Cargo blog.",
   keywords: [
     "UK to Nigeria shipping guide",
     "UK Nigeria cargo blog",
@@ -60,14 +60,14 @@ export const metadata = {
     url: `${SITE_URL}/blog`,
     title: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
     description:
-      "Expert guides, customs tips and logistics news for UK–Nigeria cargo shippers. Trusted by 10,000+ customers. R-Zone Cargo — the UK's #1 Nigeria shipping company.",
+      "Expert guides, customs tips and logistics news for UK Nigeria cargo shippers. Trusted by 10,000+ customers. R-Zone Cargo   the UK's #1 Nigeria shipping company.",
     siteName: SITE_NAME,
     images: [
       {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "R-Zone Cargo — UK to Nigeria Shipping Blog",
+        alt: "R-Zone Cargo   UK to Nigeria Shipping Blog",
       },
     ],
   },
@@ -79,7 +79,7 @@ export const metadata = {
     creator: TWITTER_HANDLE,
     title: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
     description:
-      "Expert guides, customs tips and logistics news for UK–Nigeria shippers. R-Zone Cargo.",
+      "Expert guides, customs tips and logistics news for UK Nigeria shippers. R-Zone Cargo.",
     images: [DEFAULT_OG_IMAGE],
   },
 
@@ -110,7 +110,7 @@ function buildBlogPageSchemas(articles) {
       url: `${SITE_URL}/blog`,
       name: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
       description:
-        "Expert shipping guides, customs tips and logistics insights for UK–Nigeria cargo shippers.",
+        "Expert shipping guides, customs tips and logistics insights for UK Nigeria cargo shippers.",
       isPartOf: {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
@@ -122,7 +122,7 @@ function buildBlogPageSchemas(articles) {
     },
 
     // ── 2. Blog Schema ────────────────────────────────────────────────────────
-    // Lists every article as a BlogPosting — Google uses this to understand
+    // Lists every article as a BlogPosting   Google uses this to understand
     // the full scope of your content and indexes articles more aggressively.
     {
       "@context": "https://schema.org",
@@ -182,7 +182,7 @@ function buildBlogPageSchemas(articles) {
     },
 
     // ── 4. Organization Schema ────────────────────────────────────────────────
-    // Reinforces brand entity on every page — builds Google's trust in
+    // Reinforces brand entity on every page   builds Google's trust in
     // R-Zone as a legitimate, established business.
     {
       "@context": "https://schema.org",
@@ -228,7 +228,7 @@ export default function BlogPage() {
       ))}
 
       {/* ── Server-Rendered SEO Content ──────────────────────────────────────── */}
-      {/* Fully crawlable HTML — Googlebot reads every article title, excerpt   */}
+      {/* Fully crawlable HTML   Googlebot reads every article title, excerpt   */}
       {/* and link even with JavaScript disabled. Hidden visually.              */}
       <div
         aria-hidden="true"
@@ -241,17 +241,17 @@ export default function BlogPage() {
           whiteSpace: "nowrap",
         }}
       >
-        {/* Page H1 — primary keyword signal for the /blog page */}
-        <h1>UK to Nigeria Shipping Blog — Guides, Tips &amp; News 2026</h1>
+        {/* Page H1   primary keyword signal for the /blog page */}
+        <h1>UK to Nigeria Shipping Blog   Guides, Tips &amp; News 2026</h1>
 
         <p>
           Expert shipping guides, customs tips, industry news and logistics
-          insights for UK–Nigeria cargo shippers. R-Zone Cargo — the UK's
+          insights for UK Nigeria cargo shippers. R-Zone Cargo   the UK's
           highest-rated Nigeria shipping company with 107+ five-star Google
           reviews.
         </p>
 
-        {/* Category navigation — internal links to filtered views */}
+        {/* Category navigation   internal links to filtered views */}
         <nav aria-label="Blog categories">
           <p>Browse by topic:</p>
           {CATEGORIES.filter((c) => c.id !== "all").map((cat) => (
@@ -261,11 +261,11 @@ export default function BlogPage() {
           ))}
         </nav>
 
-        {/* Full article list — every article is a real link at /blog/{slug} */}
+        {/* Full article list   every article is a real link at /blog/{slug} */}
         {/* This is the key difference from the old hash URL system.          */}
         <nav aria-label="All blog articles">
           <p>
-            All {articles.length} UK–Nigeria shipping articles from R-Zone
+            All {articles.length} UK Nigeria shipping articles from R-Zone
             Cargo:
           </p>
           {articles.map((article) => (
@@ -284,9 +284,9 @@ export default function BlogPage() {
           ))}
         </nav>
 
-        {/* Internal links — key pages of the site */}
+        {/* Internal links   key pages of the site */}
         <nav aria-label="R-Zone services">
-          <a href={`${SITE_URL}/`}>R-Zone Cargo — UK to Nigeria Shipping</a>
+          <a href={`${SITE_URL}/`}>R-Zone Cargo   UK to Nigeria Shipping</a>
           <a href={`${SITE_URL}/quote`}>
             Get a free UK to Nigeria shipping quote
           </a>
@@ -299,7 +299,7 @@ export default function BlogPage() {
 
       {/* ── Interactive Blog UI (Client Component) ───────────────────────────── */}
       {/* BlogList handles all filtering, search, animations and navigation.    */}
-      {/* It receives pre-fetched data as props — no client-side data fetching. */}
+      {/* It receives pre-fetched data as props   no client-side data fetching. */}
       <BlogList articles={articles} featured={featured} categories={CATEGORIES} />
     </>
   );

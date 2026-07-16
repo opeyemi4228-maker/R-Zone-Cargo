@@ -23,14 +23,14 @@ const montserrat = Montserrat({
 const ARTICLE = {
   slug: "uk-to-nigeria-shipping-price-guide-2026",
   category: "guides",
-  title: "UK to Nigeria Shipping Price Guide 2026 — Full Cost Breakdown",
+  title: "UK to Nigeria Shipping Price Guide 2026   Full Cost Breakdown",
   excerpt:
-    "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5/kg. Sea from £2/kg. Full breakdown by item type, weight, and destination — plus a free shipping calculator.",
+    "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5/kg. Sea from £2/kg. Full breakdown by item type, weight, and destination   plus a free shipping calculator.",
   author: "R-Zone Operations Team",
   date: "12 May 2026",
   readTime: "14 min read",
   img: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=80&auto=format&fit=crop",
-  imgAlt: "UK to Nigeria cargo shipping price guide 2026 — R-Zone",
+  imgAlt: "UK to Nigeria cargo shipping price guide 2026   R-Zone",
   tags: [
     "Shipping Price",
     "UK to Nigeria",
@@ -71,11 +71,11 @@ const STATE_RATES = [
 const FAQS = [
   {
     q: "How much does it cost to ship 20kg from the UK to Nigeria?",
-    a: "By sea: approximately £40–60 depending on your destination state. By air: approximately £104–130. Door-to-door delivery adds £20–35 for Nigerian delivery.",
+    a: "By sea: approximately £40 60 depending on your destination state. By air: approximately £104 130. Door-to-door delivery adds £20 35 for Nigerian delivery.",
   },
   {
     q: "Is air freight or sea freight cheaper?",
-    a: "Sea freight is always cheaper per kg — from £2/kg vs air at £5.20/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4–6 weeks.",
+    a: "Sea freight is always cheaper per kg   from £2/kg vs air at £5.20/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4 6 weeks.",
   },
   {
     q: "Are there hidden charges?",
@@ -83,7 +83,7 @@ const FAQS = [
   },
   {
     q: "Do I pay customs duty in Nigeria?",
-    a: "For personal-use goods, most items are cleared without additional duty for individuals. Commercial quantities attract NCS tariff rates. R-Zone handles all Nigerian customs clearance — no extra fee for standard shipments.",
+    a: "For personal-use goods, most items are cleared without additional duty for individuals. Commercial quantities attract NCS tariff rates. R-Zone handles all Nigerian customs clearance   no extra fee for standard shipments.",
   },
   {
     q: "How is my shipping price calculated?",
@@ -91,13 +91,13 @@ const FAQS = [
   },
   {
     q: "Can I ship food from the UK to Nigeria?",
-    a: "Yes. R-Zone accepts most dry goods — garri, fufu, crayfish, egusi, ogbono, tinned goods, dry spices. Minimum 20kg for food shipments. Some restricted items apply (no chicken-flavour seasonings, fresh produce, or alcohol).",
+    a: "Yes. R-Zone accepts most dry goods   garri, fufu, crayfish, egusi, ogbono, tinned goods, dry spices. Minimum 20kg for food shipments. Some restricted items apply (no chicken-flavour seasonings, fresh produce, or alcohol).",
   },
 ];
 
 // ─── TOC ─────────────────────────────────────────────────────────────────────
 const SECTIONS = [
-  "Quick Summary: UK–Nigeria Shipping Rates 2026",
+  "Quick Summary: UK Nigeria Shipping Rates 2026",
   "Air Freight Prices: UK to Nigeria",
   "Sea Freight Prices: UK to Nigeria",
   "Shipping Cost by Item Type",
@@ -219,8 +219,8 @@ function ShippingCalculator() {
       <div className="bg-[#0818A8] px-6 py-4 flex items-center gap-3">
         <Calculator size={18} className="text-white" />
         <div>
-          <p className="text-white font-black text-[14px] tracking-[-0.01em] uppercase">UK–Nigeria Shipping Calculator</p>
-          <p className="text-white/60 text-[11px] font-light">Estimate your cargo cost instantly — air & sea</p>
+          <p className="text-white font-black text-[14px] tracking-[-0.01em] uppercase">UK Nigeria Shipping Calculator</p>
+          <p className="text-white/60 text-[11px] font-light">Estimate your cargo cost instantly   air & sea</p>
         </div>
         <span className="ml-auto text-[9px] font-black tracking-[0.2em] uppercase bg-white/15 text-white px-3 py-1.5">2026 Rates</span>
       </div>
@@ -341,7 +341,7 @@ function CTABox() {
       <div className="relative z-10">
         <p className="text-white/60 text-[10px] font-black tracking-[0.3em] uppercase mb-2">Ready to Ship?</p>
         <h3 className="text-white font-black text-[22px] md:text-[28px] tracking-[-0.015em] mb-3 leading-tight">
-          Get a free UK–Nigeria cargo quote from R-Zone.
+          Get a free UK Nigeria cargo quote from R-Zone.
         </h3>
         <p className="text-white/70 text-[13px] font-normal mb-7 max-w-xl leading-relaxed">
           Air from £5/kg · Sea from £2/kg · Weekly departures · Same-day response · 107+ five-star reviews · #1 on Google.
@@ -466,8 +466,8 @@ export default function PriceGuideArticle() {
                 {[
                   ["Air Freight from", "£5.20/kg"],
                   ["Sea Freight from", "£2.00/kg"],
-                  ["Air Transit", "7 days (Fri–Fri)"],
-                  ["Sea Transit", "4–6 weeks"],
+                  ["Air Transit", "7 days (Fri Fri)"],
+                  ["Sea Transit", "4 6 weeks"],
                   ["Google Reviews", "100+ ★★★★★"],
                 ].map(([label, val]) => (
                   <div key={label} className="flex flex-col">
@@ -496,16 +496,16 @@ export default function PriceGuideArticle() {
               </ol>
             </motion.div>
 
-            {/* S1 — Quick Summary */}
+            {/* S1   Quick Summary */}
             <motion.section ref={s1} initial={{ opacity: 0, y: 20 }} animate={v1 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
-              <SectionHeading index={1}>Quick Summary: UK–Nigeria Shipping Rates 2026</SectionHeading>
+              <SectionHeading index={1}>Quick Summary: UK Nigeria Shipping Rates 2026</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
-                R-Zone Enterprises operates the UK's highest-rated door-to-door cargo service to Nigeria. Here are the current 2026 rates — transparent, all-inclusive, no hidden fees.
+                R-Zone Enterprises operates the UK's highest-rated door-to-door cargo service to Nigeria. Here are the current 2026 rates   transparent, all-inclusive, no hidden fees.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 {[
                   { icon: "✈", mode: "Air Freight", rate: "from £5.20/kg", transit: "7 working days (Friday to Friday)", best: "Electronics, clothing, documents, urgent shipments", color: "#0818A8" },
-                  { icon: "🚢", mode: "Sea Freight", rate: "from £2.00/kg", transit: "4–6 weeks", best: "Household goods, furniture, bulk clothing, machinery", color: "#0437F2" },
+                  { icon: "🚢", mode: "Sea Freight", rate: "from £2.00/kg", transit: "4 6 weeks", best: "Household goods, furniture, bulk clothing, machinery", color: "#0437F2" },
                 ].map(s => (
                   <div key={s.mode} className="border-2 border-[#0818A8]/20 bg-white p-5 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-[3px]" style={{ backgroundColor: s.color }} />
@@ -537,7 +537,7 @@ export default function PriceGuideArticle() {
               </div>
             </motion.section>
 
-            {/* S2 — Air Freight */}
+            {/* S2   Air Freight */}
             <motion.section ref={s2} initial={{ opacity: 0, y: 20 }} animate={v2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={2}>Air Freight Prices: UK to Nigeria</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-5">
@@ -554,9 +554,9 @@ export default function PriceGuideArticle() {
                   </thead>
                   <tbody>
                     {[
-                      ["Air Freight (standard)", "£5.20/kg", "7 working days (Fri–Fri)", "Friday", "UK docs + customs + tracking"],
-                      ["Air Freight + UK Collection", "£5.20/kg + £25+", "7 working days (Fri–Fri)", "Friday", "Door-to-UK warehouse"],
-                      ["Air Door-to-Door", "£6.00+/kg", "10 working days (Fri–Fri + delivery)", "Friday", "UK door + NG delivery"],
+                      ["Air Freight (standard)", "£5.20/kg", "7 working days (Fri Fri)", "Friday", "UK docs + customs + tracking"],
+                      ["Air Freight + UK Collection", "£5.20/kg + £25+", "7 working days (Fri Fri)", "Friday", "Door-to-UK warehouse"],
+                      ["Air Door-to-Door", "£6.00+/kg", "10 working days (Fri Fri + delivery)", "Friday", "UK door + NG delivery"],
                     ].map((row, i) => (
                       <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                         {row.map((cell, j) => (
@@ -567,10 +567,10 @@ export default function PriceGuideArticle() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-gray-500 text-[12px] font-light mt-3">Volumetric formula: L × W × H (cm) ÷ 6,000. Charged on whichever is greater — actual or volumetric.</p>
+              <p className="text-gray-500 text-[12px] font-light mt-3">Volumetric formula: L × W × H (cm) ÷ 6,000. Charged on whichever is greater   actual or volumetric.</p>
             </motion.section>
 
-            {/* S3 — Sea Freight */}
+            {/* S3   Sea Freight */}
             <motion.section ref={s3} initial={{ opacity: 0, y: 20 }} animate={v3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={3}>Sea Freight Prices: UK to Nigeria</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-5">
@@ -587,9 +587,9 @@ export default function PriceGuideArticle() {
                   </thead>
                   <tbody>
                     {[
-                      ["LCL Sea Freight", "£2.00/kg", "4–6 weeks", "Weekly", "UK docs + customs + tracking"],
-                      ["FCL Container", "Custom", "4–6 weeks", "Weekly", "Full container load"],
-                      ["Vehicle (RoRo)", "Custom", "4–6 weeks", "Monthly", "Car, van, motorcycle"],
+                      ["LCL Sea Freight", "£2.00/kg", "4 6 weeks", "Weekly", "UK docs + customs + tracking"],
+                      ["FCL Container", "Custom", "4 6 weeks", "Weekly", "Full container load"],
+                      ["Vehicle (RoRo)", "Custom", "4 6 weeks", "Monthly", "Car, van, motorcycle"],
                     ].map((row, i) => (
                       <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                         {row.map((cell, j) => (
@@ -603,11 +603,11 @@ export default function PriceGuideArticle() {
               <p className="text-gray-500 text-[12px] font-light">Volumetric formula for sea: L × W × H (cm) ÷ 1,000. Dense cargo is dramatically cheaper than bulky, light cargo by sea.</p>
             </motion.section>
 
-            {/* S4 — By Item Type */}
+            {/* S4   By Item Type */}
             <motion.section ref={s4} initial={{ opacity: 0, y: 20 }} animate={v4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={4}>Shipping Cost by Item Type</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
-                Below are estimated shipping costs from the UK to Lagos for the most commonly shipped items. Prices include transit and Lagos customs clearance — no hidden extras.
+                Below are estimated shipping costs from the UK to Lagos for the most commonly shipped items. Prices include transit and Lagos customs clearance   no hidden extras.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {ITEM_PRICES.map((item, i) => (
@@ -637,12 +637,12 @@ export default function PriceGuideArticle() {
               </div>
               <div className="mt-4 bg-[#0818A8]/5 border border-[#0818A8]/10 px-5 py-4">
                 <p className="text-[12.5px] text-gray-600 font-normal leading-relaxed">
-                  <strong className="font-bold text-gray-900">Note:</strong> Prices above are estimates based on standard packaging for the item. Actual cost depends on how you pack — large boxes with lots of air space increase volumetric weight significantly. Use the calculator below to get your exact estimate.
+                  <strong className="font-bold text-gray-900">Note:</strong> Prices above are estimates based on standard packaging for the item. Actual cost depends on how you pack   large boxes with lots of air space increase volumetric weight significantly. Use the calculator below to get your exact estimate.
                 </p>
               </div>
             </motion.section>
 
-            {/* S5 — Calculator */}
+            {/* S5   Calculator */}
             <section className="mb-14">
               <SectionHeading index={5}>Free Shipping Cost Calculator</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-2">
@@ -651,7 +651,7 @@ export default function PriceGuideArticle() {
               <ShippingCalculator />
             </section>
 
-            {/* S6 — State Rates */}
+            {/* S6   State Rates */}
             <motion.section ref={s6} initial={{ opacity: 0, y: 20 }} animate={v6 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={6}>Nigerian Delivery Rates by State</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-5">
@@ -684,18 +684,18 @@ export default function PriceGuideArticle() {
               </p>
             </motion.section>
 
-            {/* S7 — Hidden Charges */}
+            {/* S7   Hidden Charges */}
             <motion.section ref={s7} initial={{ opacity: 0, y: 20 }} animate={v7 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={7}>Hidden Charges to Watch For</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
-                Not all cargo companies are as transparent as R-Zone. Here are the most common hidden charges in the UK–Nigeria shipping industry — and how R-Zone handles each one.
+                Not all cargo companies are as transparent as R-Zone. Here are the most common hidden charges in the UK Nigeria shipping industry   and how R-Zone handles each one.
               </p>
               <div className="space-y-3">
                 {[
-                  { charge: "Fuel Surcharge", industry: "Often added silently — 5–25% on top of quoted rate", rzone: "Zero. R-Zone pricing is all-inclusive. What we quote, you pay." },
+                  { charge: "Fuel Surcharge", industry: "Often added silently   5 25% on top of quoted rate", rzone: "Zero. R-Zone pricing is all-inclusive. What we quote, you pay." },
                   { charge: "Volumetric Upsell", industry: "Some companies quote by actual weight then charge volumetric", rzone: "We always calculate both and communicate upfront before you pay." },
-                  { charge: "Nigeria Customs Clearance Fee", industry: "£50–300 charged separately after arrival", rzone: "Included in every R-Zone shipment. No separate customs fee." },
-                  { charge: "Last-Mile Delivery", industry: "Often excluded from quoted price — £20–80 extra", rzone: "Quoted separately and transparently. Always disclosed before booking." },
+                  { charge: "Nigeria Customs Clearance Fee", industry: "£50 300 charged separately after arrival", rzone: "Included in every R-Zone shipment. No separate customs fee." },
+                  { charge: "Last-Mile Delivery", industry: "Often excluded from quoted price   £20 80 extra", rzone: "Quoted separately and transparently. Always disclosed before booking." },
                   { charge: "Packing / Repacking Fee", industry: "Charged without warning if cargo arrives poorly packed", rzone: "Our team advises upfront. Packing services quoted at £15+/item." },
                   { charge: "Storage/Demurrage", industry: "If cargo sits at port due to poor documentation", rzone: "R-Zone pre-files all NCS documents electronically. Clearance delays are rare." },
                 ].map((row, i) => (
@@ -717,7 +717,7 @@ export default function PriceGuideArticle() {
               </div>
             </motion.section>
 
-            {/* S8 — Pro Tips */}
+            {/* S8   Pro Tips */}
             <motion.section ref={s8} initial={{ opacity: 0, y: 20 }} animate={v8 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
               <SectionHeading index={8}>How to Ship Cheaper: 7 Pro Tips</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
@@ -725,13 +725,13 @@ export default function PriceGuideArticle() {
               </p>
               <div className="space-y-4">
                 {[
-                  { tip: "Use vacuum packing bags for clothing", detail: "Clothing is voluminous but light. Vacuum bags can reduce a 60L bag of clothes to a third of its size — slashing volumetric weight dramatically, especially for sea freight." },
-                  { tip: "Choose the right box size", detail: "A half-empty box is an expensive box. Use the smallest box that safely fits your cargo. Avoid supermarket boxes — their weakened walls can't survive a sea freight journey." },
+                  { tip: "Use vacuum packing bags for clothing", detail: "Clothing is voluminous but light. Vacuum bags can reduce a 60L bag of clothes to a third of its size   slashing volumetric weight dramatically, especially for sea freight." },
+                  { tip: "Choose the right box size", detail: "A half-empty box is an expensive box. Use the smallest box that safely fits your cargo. Avoid supermarket boxes   their weakened walls can't survive a sea freight journey." },
                   { tip: "Consolidate multiple boxes into one", detail: "Two half-full boxes generate more volumetric weight than one full box. Combine your shipments and pack tightly with appropriate cushioning." },
                   { tip: "Ship by sea for large, heavy cargo", detail: "For anything over 30kg that is not time-sensitive, sea freight is dramatically cheaper. The saving on a 50kg shipment versus air is typically £100+." },
                   { tip: "Book early to avoid rush charges", detail: "Last-minute air freight can attract surcharges. Book at least 3 days before departure day for guaranteed space at the standard rate." },
                   { tip: "Declare accurately to avoid re-weigh fees", detail: "If your declared weight differs significantly from our warehouse measurement, a re-weigh fee may apply. Weigh your cargo at home using bathroom scales before booking." },
-                  { tip: "Use office collection for lower delivery cost", detail: "If you or a trusted person can collect from our R-Zone partner offices in Lagos or key state capitals, office-collection rates are typically 5–10% cheaper than door delivery." },
+                  { tip: "Use office collection for lower delivery cost", detail: "If you or a trusted person can collect from our R-Zone partner offices in Lagos or key state capitals, office-collection rates are typically 5 10% cheaper than door delivery." },
                 ].map((item, i) => (
                   <motion.div key={i} className="flex gap-4 border border-gray-100 bg-white p-5 hover:border-[#0818A8]/20 hover:shadow-md hover:shadow-[#0818A8]/5 transition-all duration-200"
                     initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
@@ -745,18 +745,18 @@ export default function PriceGuideArticle() {
               </div>
             </motion.section>
 
-            {/* S9 — FAQ */}
+            {/* S9   FAQ */}
             <section className="mb-14">
               <SectionHeading index={9}>Frequently Asked Questions</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
-                The most common questions R-Zone receives about UK–Nigeria shipping prices, costs and charges.
+                The most common questions R-Zone receives about UK Nigeria shipping prices, costs and charges.
               </p>
               <div className="space-y-2">
                 {FAQS.map((faq, i) => <FAQItem key={i} q={faq.q} a={faq.a} index={i} />)}
               </div>
             </section>
 
-            {/* S10 — Get Quote CTA */}
+            {/* S10   Get Quote CTA */}
             <section className="mb-8">
               <SectionHeading index={10}>Get a Free Quote from R-Zone</SectionHeading>
               <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
@@ -764,9 +764,9 @@ export default function PriceGuideArticle() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                 {[
-                  { icon: Phone, label: "Call Us", value: "+44 800 772 0864", sub: "Mon–Fri 9am–6pm", href: "tel:+448007720864" },
+                  { icon: Phone, label: "Call Us", value: "+44 800 772 0864", sub: "Mon Fri 9am 6pm", href: "tel:+448007720864" },
                   { icon: Mail, label: "WhatsApp", value: "+44 7915 647 119", sub: "7 days a week", href: "https://wa.me/447915647119" },
-                  { icon: Package, label: "Visit Us", value: "Upminster, Essex", sub: "Mon–Fri 10am–6pm, Sat 11am–2pm", href: "https://r-zoneenterprises.com/contact" },
+                  { icon: Package, label: "Visit Us", value: "Upminster, Essex", sub: "Mon Fri 10am 6pm, Sat 11am 2pm", href: "https://r-zoneenterprises.com/contact" },
                 ].map(({ icon: Icon, label, value, sub, href }) => (
                   <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
                     className="group border border-gray-200 p-5 hover:border-[#0818A8] hover:shadow-md hover:shadow-[#0818A8]/8 transition-all duration-200 bg-white flex flex-col items-center text-center">
@@ -809,7 +809,7 @@ export default function PriceGuideArticle() {
                   { val: "100+", label: "Five-Star Reviews" },
                   { val: "12+", label: "Years Experience" },
                   { val: "50,000+", label: "Shipments Delivered" },
-                  { val: "#1", label: "on Google UK–Nigeria" },
+                  { val: "#1", label: "on Google UK Nigeria" },
                 ].map(s => (
                   <div key={s.label}>
                     <p className="font-black text-white text-[26px] md:text-[32px] leading-none tracking-[-0.02em]">{s.val}</p>

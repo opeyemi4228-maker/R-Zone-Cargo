@@ -31,46 +31,46 @@ const STATS = [
   { value: "2012", suffix: "",   label: "Year Founded",           icon: Clock,   desc: "12+ years operating"           },
   { value: "50",   suffix: "K+", label: "Shipments Delivered",    icon: Package, desc: "Safely moved, on time"          },
   { value: "36",   suffix: "",   label: "Nigerian States Served", icon: MapPin,  desc: "Complete national coverage"     },
-  { value: "100",  suffix: "+",  label: "Five-Star Reviews",      icon: Star,    desc: "#1 ranked UK–Nigeria on Google" },
+  { value: "100",  suffix: "+",  label: "Five-Star Reviews",      icon: Star,    desc: "#1 ranked UK Nigeria on Google" },
   { value: "99",   suffix: "%",  label: "Delivery Success Rate",  icon: Shield,  desc: "Industry-leading reliability"   },
   { value: "2",    suffix: "",   label: "Warehouse Locations",    icon: Globe,   desc: "Upminster UK · Lagos Nigeria"   },
 ];
 
 const TIMELINE = [
   { year: "2012", title: "R-Zone is Born",           highlight: "Company founded in Upminster, Essex, UK",   body: "Founded in Essex with a single mission: to give Nigerian families and businesses in the UK a cargo service they could genuinely trust. One warehouse unit, one van, one unwavering commitment to reliability." },
-  { year: "2014", title: "Sea Freight Launched",     highlight: "Weekly sea container service begins",        body: "In response to customer demand for affordable bulk shipping, R-Zone launched its weekly sea freight service — opening the UK–Nigeria corridor to businesses with larger consignments from just £3/kg." },
-  { year: "2016", title: "Lagos Hub Opens",          highlight: "Nigeria operations hub established — Lagos", body: "We opened our Nigeria hub in Lagos, giving us direct oversight of last-mile delivery, port clearance, and on-the-ground customer service. Both ends of the corridor, managed by our own team." },
+  { year: "2014", title: "Sea Freight Launched",     highlight: "Weekly sea container service begins",        body: "In response to customer demand for affordable bulk shipping, R-Zone launched its weekly sea freight service   opening the UK Nigeria corridor to businesses with larger consignments from just £3/kg." },
+  { year: "2016", title: "Lagos Hub Opens",          highlight: "Nigeria operations hub established   Lagos", body: "We opened our Nigeria hub in Lagos, giving us direct oversight of last-mile delivery, port clearance, and on-the-ground customer service. Both ends of the corridor, managed by our own team." },
   { year: "2018", title: "IATA Certification",       highlight: "IATA certified air freight operation",       body: "R-Zone achieved full IATA certification, validating our air freight capabilities against international aviation standards. This opened access to a broader network of airline partners including British Airways, Emirates and Ethiopian Cargo." },
-  { year: "2020", title: "Through the Pandemic",     highlight: "Zero service interruptions during COVID-19",  body: "While global supply chains collapsed, ours kept moving. R-Zone maintained uninterrupted UK–Nigeria operations throughout 2020 — keeping families connected and businesses supplied when it mattered most." },
-  { year: "2022", title: "10 Years. 10,000+ Customers.", highlight: "10,000 customers milestone reached",    body: "A decade of delivering. We celebrated our 10th anniversary having served over 10,000 unique customers — families, SMEs, importers and exporters who chose R-Zone as their trusted UK–Nigeria logistics partner." },
-  { year: "2024", title: "Digital & Growth",         highlight: "Real-time tracking & online systems live",   body: "We launched real-time shipment tracking, an online quote system, and a fully digital customer portal — making R-Zone the most technically advanced UK–Nigeria cargo operator, while maintaining the personal service our customers rely on." },
+  { year: "2020", title: "Through the Pandemic",     highlight: "Zero service interruptions during COVID-19",  body: "While global supply chains collapsed, ours kept moving. R-Zone maintained uninterrupted UK Nigeria operations throughout 2020   keeping families connected and businesses supplied when it mattered most." },
+  { year: "2022", title: "10 Years. 10,000+ Customers.", highlight: "10,000 customers milestone reached",    body: "A decade of delivering. We celebrated our 10th anniversary having served over 10,000 unique customers   families, SMEs, importers and exporters who chose R-Zone as their trusted UK Nigeria logistics partner." },
+  { year: "2024", title: "Digital & Growth",         highlight: "Real-time tracking & online systems live",   body: "We launched real-time shipment tracking, an online quote system, and a fully digital customer portal   making R-Zone the most technically advanced UK Nigeria cargo operator, while maintaining the personal service our customers rely on." },
 ];
 
 const VALUES = [
-  { icon: Shield,     title: "Reliability",              accent: "#0818A8", body: "Our 99% delivery success rate is not a claim — it's the result of disciplined operations and a culture that treats every shipment as personal." },
+  { icon: Shield,     title: "Reliability",              accent: "#0818A8", body: "Our 99% delivery success rate is not a claim   it's the result of disciplined operations and a culture that treats every shipment as personal." },
   { icon: Eye,        title: "Transparency",             accent: "#1F51FF", body: "No hidden fees. No vague timelines. We tell you exactly what shipping costs, when it departs, and where it is at every stage." },
-  { icon: Heart,      title: "Care",                     accent: "#0437F2", body: "Most shipments contain items of deep personal significance. We understand that — and handle everything accordingly." },
+  { icon: Heart,      title: "Care",                     accent: "#0437F2", body: "Most shipments contain items of deep personal significance. We understand that   and handle everything accordingly." },
   { icon: Zap,        title: "Speed",                    accent: "#0818A8", body: "From collection to customs to delivery, R-Zone operates with urgency. Weekly departures mean your cargo never waits." },
-  { icon: Handshake,  title: "Partnership",              accent: "#1F51FF", body: "We don't want one-off customers — we want long-term relationships. Our returning customer rate reflects the trust we've built." },
-  { icon: TrendingUp, title: "Continuous Improvement",   accent: "#0437F2", body: "Every year we invest in new routes, new technology, and new capabilities — to serve our customers better than the year before." },
+  { icon: Handshake,  title: "Partnership",              accent: "#1F51FF", body: "We don't want one-off customers   we want long-term relationships. Our returning customer rate reflects the trust we've built." },
+  { icon: TrendingUp, title: "Continuous Improvement",   accent: "#0437F2", body: "Every year we invest in new routes, new technology, and new capabilities   to serve our customers better than the year before." },
 ];
 
 const TEAM = [
   { name: "Operations Director",      role: "UK Operations",         tenure: "Since 2012", initial: "O", detail: "Oversees all UK-side logistics, customer service, and warehouse operations at our Upminster, Essex facility." },
-  { name: "Nigeria Country Manager",  role: "Nigeria Hub — Lagos",   tenure: "Since 2016", initial: "N", detail: "Leads our Lagos operations team, port clearance specialists, and last-mile delivery network across all 36 states." },
+  { name: "Nigeria Country Manager",  role: "Nigeria Hub   Lagos",   tenure: "Since 2016", initial: "N", detail: "Leads our Lagos operations team, port clearance specialists, and last-mile delivery network across all 36 states." },
   { name: "Head of Air Freight",      role: "Air Cargo Division",    tenure: "Since 2018", initial: "A", detail: "Manages IATA-certified air freight operations and airline partner relationships including British Airways, Emirates and Ethiopian Cargo." },
-  { name: "Customer Relations Lead",  role: "Client Services",       tenure: "Since 2019", initial: "C", detail: "Dedicated to ensuring every customer interaction is fast, personal and genuinely helpful — no call centres, no bots." },
+  { name: "Customer Relations Lead",  role: "Client Services",       tenure: "Since 2019", initial: "C", detail: "Dedicated to ensuring every customer interaction is fast, personal and genuinely helpful   no call centres, no bots." },
 ];
 
 const TESTIMONIALS = [
   { text: "I've been shipping with R-Zone for 6 years and they have never let me down. My goods always arrive on time and in perfect condition. Genuinely the best cargo company I've used.", author: "Vincent A.", location: "London → Lagos", stars: 5 },
-  { text: "Professional, transparent with pricing, and they actually pick up the phone. R-Zone has completely changed how our business manages its UK–Nigeria supply chain.", author: "Emmanuel K.", location: "Birmingham → Abuja", stars: 5 },
-  { text: "Sent goods to my family in Abeokuta — they arrived ahead of schedule. The tracking was accurate, communication excellent. Will not use anyone else.", author: "Oludotun O.", location: "Essex → Abeokuta", stars: 5 },
+  { text: "Professional, transparent with pricing, and they actually pick up the phone. R-Zone has completely changed how our business manages its UK Nigeria supply chain.", author: "Emmanuel K.", location: "Birmingham → Abuja", stars: 5 },
+  { text: "Sent goods to my family in Abeokuta   they arrived ahead of schedule. The tracking was accurate, communication excellent. Will not use anyone else.", author: "Oludotun O.", location: "Essex → Abeokuta", stars: 5 },
 ];
 
 const OFFICES = [
-  { country: "United Kingdom", flag: "🇬🇧", role: "Headquarters & Warehouse", address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS", phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864", email: "info@r-zoneenterprises.com", hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM", accent: "#0818A8" },
-  { country: "Nigeria",        flag: "🇳🇬", role: "Operations Hub — Lagos",   address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan", phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861", email: "nigeria@r-zoneenterprises.com", hours: "Mon–Fri 9AM–5PM WAT", accent: "#1F51FF" },
+  { country: "United Kingdom", flag: "🇬🇧", role: "Headquarters & Warehouse", address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS", phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864", email: "info@r-zoneenterprises.com", hours: "Mon Fri 10AM 6PM · Sat 11AM 2PM", accent: "#0818A8" },
+  { country: "Nigeria",        flag: "🇳🇬", role: "Operations Hub   Lagos",   address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan", phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861", email: "nigeria@r-zoneenterprises.com", hours: "Mon Fri 9AM 5PM WAT", accent: "#1F51FF" },
 ];
 
 const CERTIFICATIONS = [
@@ -126,7 +126,7 @@ function Hero() {
 
   return (
     <Section className="bg-[#00061a] min-h-[80vh] flex flex-col justify-end hero-section"
-      label="About R-Zone Enterprises — the highest-rated UK to Nigeria cargo company">
+      label="About R-Zone Enterprises   the highest-rated UK to Nigeria cargo company">
       <motion.div className="absolute inset-0 pointer-events-none" style={{ y: bgY }} aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.025]"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
@@ -151,7 +151,7 @@ function Hero() {
             <motion.div initial="hidden" animate={inView ? "visible" : "hidden"}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
               <motion.div variants={fadeUp} custom={0}>
-                <TagPill label="The #1 Ranked UK–Nigeria Cargo Company · Est. 2012" dark />
+                <TagPill label="The #1 Ranked UK Nigeria Cargo Company · Est. 2012" dark />
               </motion.div>
               <motion.h1 variants={fadeUp} custom={0.1}
                 className="text-white font-black text-[clamp(36px,7vw,84px)] leading-[0.88] tracking-[-0.035em] uppercase mb-7">
@@ -168,7 +168,7 @@ function Hero() {
                 R-Zone Enterprises was founded in Essex in 2012 with one mission: to give Nigerian families
                 and businesses in the UK a cargo service they could genuinely rely on. The{" "}
                 <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-                {" "}— 100+ five-star reviews, organically earned, and 50,000+ shipments delivered since 2012.
+                {" "}  100+ five-star reviews, organically earned, and 50,000+ shipments delivered since 2012.
               </motion.p>
               <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
                 <Link href="/quote"
@@ -194,10 +194,10 @@ function Hero() {
               {[
                 { icon: MapPin,  label: "UK Headquarters",     val: "Upminster, Essex"           },
                 { icon: Globe,   label: "Nigeria Hub",          val: "Shagam Interchange, Lagos"  },
-                { icon: Clock,   label: "Operating Since",      val: "2012 — 12+ years"           },
+                { icon: Clock,   label: "Operating Since",      val: "2012   12+ years"           },
                 { icon: Package, label: "Shipments Delivered",  val: "50,000+"                    },
                 { icon: Star,    label: "Google Reviews",       val: "100 × Five-Star"            },
-                { icon: Users,   label: "Google Ranking",       val: "#1 UK–Nigeria Cargo"        },
+                { icon: Users,   label: "Google Ranking",       val: "#1 UK Nigeria Cargo"        },
               ].map(({ icon: Icon, label, val }) => (
                 <div key={label} className="flex items-center justify-between border-b border-white/[0.06] pb-4 last:border-0 last:pb-0">
                   <div className="flex items-center gap-2.5">
@@ -224,7 +224,7 @@ function StatsBand() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <div ref={ref} className="bg-[#0818A8] relative overflow-hidden" role="region"
-      aria-label="R-Zone Enterprises key statistics — UK to Nigeria cargo">
+      aria-label="R-Zone Enterprises key statistics   UK to Nigeria cargo">
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "44px 44px" }} />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
@@ -259,7 +259,7 @@ function WhoWeAre() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <Section className="bg-white" label="Who R-Zone Enterprises are — UK to Nigeria cargo specialists" id="who-we-are">
+    <Section className="bg-white" label="Who R-Zone Enterprises are   UK to Nigeria cargo specialists" id="who-we-are">
       <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
         style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -272,24 +272,24 @@ function WhoWeAre() {
             </motion.div>
             <motion.div variants={fadeUp} custom={0.2} className="mt-6 space-y-4">
               <p className="text-gray-800 text-[14px] font-normal leading-relaxed">
-                R-Zone Enterprises is a specialist UK–Nigeria cargo company based in Upminster, Essex, operating since 2012.
+                R-Zone Enterprises is a specialist UK Nigeria cargo company based in Upminster, Essex, operating since 2012.
                 We are the{" "}
                 <strong className="text-gray-900 font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-                {" "}— built to solve a real problem: businesses and families in the UK deserved a cargo service that was fast, transparent, and genuinely reliable.
+                {" "}  built to solve a real problem: businesses and families in the UK deserved a cargo service that was fast, transparent, and genuinely reliable.
               </p>
               <p className="text-gray-800 text-[14px] font-normal leading-relaxed">
-                We offer the full spectrum of UK–Nigeria logistics — air freight (5–10 working days),
-                weekly sea freight sailings (4–6 weeks, from £3/kg), door-to-door cargo, importation,
-                customs clearance, warehousing — all managed by our own teams in both countries.
+                We offer the full spectrum of UK Nigeria logistics   air freight (5 10 working days),
+                weekly sea freight sailings (4 6 weeks, from £3/kg), door-to-door cargo, importation,
+                customs clearance, warehousing   all managed by our own teams in both countries.
               </p>
               <p className="text-gray-800 text-[14px] font-normal leading-relaxed">
                 We serve families sending goods home to Lagos, Abuja, Port Harcourt and all 36 Nigerian states.
-                We serve businesses managing cross-border supply chains. Whatever the shipment — R-Zone delivers.
+                We serve businesses managing cross-border supply chains. Whatever the shipment   R-Zone delivers.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} custom={0.35} className="mt-8 grid grid-cols-2 gap-4">
               {[
-                { icon: Plane, label: "Air Freight",     sub: "5–10 working days"  },
+                { icon: Plane, label: "Air Freight",     sub: "5 10 working days"  },
                 { icon: Ship,  label: "Sea Freight",     sub: "Weekly sailings"    },
                 { icon: Truck, label: "Door to Door",    sub: "UK-wide collection" },
                 { icon: Globe, label: "Both Directions", sub: "UK ↔ Nigeria"       },
@@ -339,8 +339,8 @@ function WhoWeAre() {
                 </div>
                 <div className="grid grid-cols-3 gap-3">
                   {[
-                    { val: "5–10", unit: "days",  label: "Air transit"  },
-                    { val: "4–6",  unit: "weeks", label: "Sea transit"  },
+                    { val: "5 10", unit: "days",  label: "Air transit"  },
+                    { val: "4 6",  unit: "weeks", label: "Sea transit"  },
                     { val: "24/7", unit: "",      label: "Tracking"     },
                   ].map(({ val, unit, label }) => (
                     <div key={label} className="bg-white/[0.05] border border-white/[0.08] p-3 text-center">
@@ -371,8 +371,8 @@ function MissionVision() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const cards  = [
-    { icon: Target,    label: "Our Mission", accent: "#0818A8", title: "Deliver without compromise.", body: "Fast, transparent, reliable UK–Nigeria cargo — for families and businesses, every shipment, every time." },
-    { icon: Eye,       label: "Our Vision",  accent: "#1F51FF", title: "The definitive UK–Nigeria logistics partner.", body: "To be the most trusted name in UK–Nigeria freight — recognised for excellence, technology, and a customer-first culture." },
+    { icon: Target,    label: "Our Mission", accent: "#0818A8", title: "Deliver without compromise.", body: "Fast, transparent, reliable UK Nigeria cargo   for families and businesses, every shipment, every time." },
+    { icon: Eye,       label: "Our Vision",  accent: "#1F51FF", title: "The definitive UK Nigeria logistics partner.", body: "To be the most trusted name in UK Nigeria freight   recognised for excellence, technology, and a customer-first culture." },
     { icon: Handshake, label: "Our Promise", accent: "#0437F2", title: "We treat your cargo like our own.", body: "Every shipment through R-Zone is handled with the same care we'd give our own belongings. Your trust is not taken lightly." },
   ];
   return (
@@ -419,7 +419,7 @@ function Timeline() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const [active, setActive] = useState(0);
   return (
-    <Section className="bg-white" label="R-Zone history — UK Nigeria cargo company since 2012" id="history">
+    <Section className="bg-white" label="R-Zone history   UK Nigeria cargo company since 2012" id="history">
       <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
         style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.035) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -432,7 +432,7 @@ function Timeline() {
           </motion.div>
           <motion.p className="text-gray-800 text-[14px] font-normal mt-4 max-w-lg mx-auto"
             initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-            From a single warehouse unit in Essex to the UK&apos;s #1 ranked UK–Nigeria cargo company.
+            From a single warehouse unit in Essex to the UK&apos;s #1 ranked UK Nigeria cargo company.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -524,26 +524,26 @@ function OurValues() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// TESTIMONIALS — real customer reviews
+// TESTIMONIALS   real customer reviews
 // ═══════════════════════════════════════════════════════════════════════════════
 function Testimonials() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <Section className="bg-white" label="Real customer reviews — R-Zone UK to Nigeria cargo" id="testimonials">
+    <Section className="bg-white" label="Real customer reviews   R-Zone UK to Nigeria cargo" id="testimonials">
       <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
         style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
           <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
-            <TagPill label="100+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo" dark={false} />
+            <TagPill label="100+ Five-Star Reviews · #1 Ranked UK Nigeria Cargo" dark={false} />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <SectionHeadline line1="Trusted by" accent="Thousands." dark={false} id="testimonials-heading" />
           </motion.div>
           <motion.p className="text-gray-800 text-[14px] font-normal mt-4 max-w-lg mx-auto"
             initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-            The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — here&apos;s what our real customers say.
+            The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   here&apos;s what our real customers say.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -595,7 +595,7 @@ function Certifications() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <div ref={ref} className="bg-[#0818A8] relative overflow-hidden" role="region"
-      aria-label="R-Zone certifications — IATA, NCS, HMRC, fully insured">
+      aria-label="R-Zone certifications   IATA, NCS, HMRC, fully insured">
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "44px 44px" }} />
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-10 md:py-12">
@@ -633,7 +633,7 @@ function OurTeam() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <Section className="bg-[#00061a]" label="R-Zone team — UK and Nigeria logistics specialists" id="team">
+    <Section className="bg-[#00061a]" label="R-Zone team   UK and Nigeria logistics specialists" id="team">
       <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
@@ -647,7 +647,7 @@ function OurTeam() {
           </motion.div>
           <motion.p className="text-white/80 text-[14px] font-normal mt-4 max-w-lg mx-auto"
             initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-            The specialists who make 50,000+ successful shipments possible — across the UK and Nigeria, every day.
+            The specialists who make 50,000+ successful shipments possible   across the UK and Nigeria, every day.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -681,7 +681,7 @@ function OurOffices() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <Section className="bg-white" label="R-Zone office locations — UK and Nigeria" id="offices">
+    <Section className="bg-white" label="R-Zone office locations   UK and Nigeria" id="offices">
       <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
         style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -745,7 +745,7 @@ function FinalCTA() {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
-    <Section className="bg-[#00061a]" label="Ship with R-Zone — get a free UK to Nigeria cargo quote">
+    <Section className="bg-[#00061a]" label="Ship with R-Zone   get a free UK to Nigeria cargo quote">
       <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
@@ -758,7 +758,7 @@ function FinalCTA() {
             Ship from the UK to Nigeria<br />with <span className="text-[#1F51FF]">R-Zone.</span>
           </h2>
           <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
-            Join over 10,000 customers who trust R-Zone for UK–Nigeria cargo.
+            Join over 10,000 customers who trust R-Zone for UK Nigeria cargo.
             Air freight from £5/kg · Sea freight from £3/kg · Weekly departures.
             Free quote in under 2 minutes.
           </p>
@@ -808,7 +808,7 @@ export default function AboutPageClient() {
             "alternateName": ["R-Zone Cargo", "RZE Cargo"],
             "url": "https://r-zoneenterprises.com",
             "foundingDate": "2012",
-            "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. R-Zone Enterprises offers air freight, sea freight with weekly sailings, door-to-door cargo, customs clearance, warehousing and importation between the UK and Nigeria since 2012.",
+            "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews, organically earned. R-Zone Enterprises offers air freight, sea freight with weekly sailings, door-to-door cargo, customs clearance, warehousing and importation between the UK and Nigeria since 2012.",
             "slogan": "The Highest-Rated & Highest-Ranked Cargo Company Between the UK and Nigeria",
             "telephone": "+448007720864",
             "email": "info@r-zoneenterprises.com",
@@ -825,15 +825,15 @@ export default function AboutPageClient() {
               { "@type": "City",    "name": "London" },
               { "@type": "Continent", "name": "Africa" },
             ],
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "100", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned." },
-            "award": ["#1 Ranked UK-to-Nigeria Cargo Company on Google", "100+ Five-Star Google Reviews — Organically Earned", "IATA Certified Air Freight Agent", "NCS Compliant Freight Operator", "HMRC Registered UK Customs Agent"],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "100", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews, organically earned." },
+            "award": ["#1 Ranked UK-to-Nigeria Cargo Company on Google", "100+ Five-Star Google Reviews   Organically Earned", "IATA Certified Air Freight Agent", "NCS Compliant Freight Operator", "HMRC Registered UK Customs Agent"],
             "numberOfEmployees": { "@type": "QuantitativeValue", "value": "15" },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "UK–Nigeria Cargo & Shipping Services",
+              "name": "UK Nigeria Cargo & Shipping Services",
               "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Air Freight UK to Nigeria", "description": "Weekly air cargo from London to Lagos and Abuja. 5–10 working days." } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Freight UK to Nigeria — Weekly Sailings", "description": "Weekly consolidated sea freight to Lagos. 4–6 weeks. From £3/kg." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Air Freight UK to Nigeria", "description": "Weekly air cargo from London to Lagos and Abuja. 5 10 working days." } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Freight UK to Nigeria   Weekly Sailings", "description": "Weekly consolidated sea freight to Lagos. 4 6 weeks. From £3/kg." } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door to Door Cargo UK to Nigeria", "description": "UK door collection to any of Nigeria's 36 states." } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Importation from Nigeria to UK", "description": "Weekly air and sea from Nigeria to UK. Full customs clearance included." } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Customs Clearance UK & Nigeria", "description": "HMRC authorised, NCS compliant customs brokerage." } },
@@ -851,8 +851,8 @@ export default function AboutPageClient() {
           {
             "@type": "AboutPage",
             "url": "https://r-zoneenterprises.com/about",
-            "name": "About R-Zone Enterprises — UK to Nigeria Cargo Company Since 2012",
-            "description": "Learn about R-Zone Enterprises — the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Founded in Essex in 2012. 100+ five-star reviews. Air freight, sea freight and door-to-door cargo.",
+            "name": "About R-Zone Enterprises   UK to Nigeria Cargo Company Since 2012",
+            "description": "Learn about R-Zone Enterprises   the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Founded in Essex in 2012. 100+ five-star reviews. Air freight, sea freight and door-to-door cargo.",
             "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
           },
         ],

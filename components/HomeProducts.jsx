@@ -19,9 +19,9 @@ const SERVICE_CARDS = [
     id: "01", icon: Plane,
     title: "Air Freight to Nigeria",
     href: "/services#air-freight",
-    description: "Fast air cargo from the UK to Lagos, Abuja and all 36 Nigerian states. 5–10 working days. Door collection available.",
+    description: "Fast air cargo from the UK to Lagos, Abuja and all 36 Nigerian states. 5 10 working days. Door collection available.",
     tag: "Fastest", tagColor: "bg-[#0818A8]/10 text-[#0818A8]", accentColor: "#0818A8",
-    highlights: ["5–10 working days", "All 36 states", "Door collection"],
+    highlights: ["5 10 working days", "All 36 states", "Door collection"],
   },
   {
     id: "02", icon: Ship,
@@ -29,13 +29,13 @@ const SERVICE_CARDS = [
     href: "/services#sea-freight",
     description: "Weekly consolidated sea freight from UK ports to Lagos. Best value for bulk, heavy or high-volume cargo. From £3/kg.",
     tag: "Best Value", tagColor: "bg-emerald-50 text-emerald-700", accentColor: "#0437F2",
-    highlights: ["Weekly sailings", "From £3/kg", "4–6 weeks transit"],
+    highlights: ["Weekly sailings", "From £3/kg", "4 6 weeks transit"],
   },
   {
     id: "03", icon: Truck,
     title: "Door to Door Cargo",
     href: "/services#door-to-door",
-    description: "We collect from your UK address and deliver to any Nigerian address — air or sea, both customs handled.",
+    description: "We collect from your UK address and deliver to any Nigerian address   air or sea, both customs handled.",
     tag: "Most Popular", tagColor: "bg-amber-50 text-amber-700", accentColor: "#1F51FF",
     highlights: ["UK-wide collection", "Any Nigerian address", "Both customs handled"],
   },
@@ -51,7 +51,7 @@ const SERVICE_CARDS = [
     id: "05", icon: Package,
     title: "Commercial Cargo",
     href: "/services#cargo-handling",
-    description: "Full freight for businesses — vehicles, machinery, industrial equipment and high-volume merchandise to Nigeria.",
+    description: "Full freight for businesses   vehicles, machinery, industrial equipment and high-volume merchandise to Nigeria.",
     tag: "B2B", tagColor: "bg-slate-100 text-slate-700", accentColor: "#0437F2",
     highlights: ["Vehicles & machinery", "High-volume rates", "Nigeria & Africa"],
   },
@@ -66,10 +66,10 @@ const SERVICE_CARDS = [
 ];
 
 const LIST_SERVICES = [
-  { id: "01", title: "Air Freight to Nigeria",      subtitle: "Weekly departures · 5–10 working days",                href: "/services#air-freight"     },
-  { id: "02", title: "Sea Freight to Nigeria",      subtitle: "Weekly sailings · from £3/kg · 4–6 weeks",            href: "/services#sea-freight"     },
+  { id: "01", title: "Air Freight to Nigeria",      subtitle: "Weekly departures · 5 10 working days",                href: "/services#air-freight"     },
+  { id: "02", title: "Sea Freight to Nigeria",      subtitle: "Weekly sailings · from £3/kg · 4 6 weeks",            href: "/services#sea-freight"     },
   { id: "03", title: "Door to Door Delivery",       subtitle: "UK collection to any Nigerian address",                href: "/services#door-to-door"    },
-  { id: "04", title: "Customs Clearance",           subtitle: "UK & Nigeria — fully managed, zero stress",           href: "/services#customs-clearance"},
+  { id: "04", title: "Customs Clearance",           subtitle: "UK & Nigeria   fully managed, zero stress",           href: "/services#customs-clearance"},
   { id: "05", title: "Importation from Nigeria",    subtitle: "Weekly air & sea · Nigeria to UK",                    href: "/services#importation"     },
   { id: "06", title: "Car & Vehicle Shipping",      subtitle: "Specialist vehicle transport to Nigeria & Africa",    href: "/services#vehicles"        },
 ];  
@@ -136,8 +136,8 @@ function ServiceCard({ service, index }) {
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       itemScope itemType="https://schema.org/Service" className="relative group">
       <Link href={service.href}
-        aria-label={`${service.title} — UK to Nigeria cargo service from R-Zone Enterprises`}
-        title={`${service.title} — R-Zone Enterprises`}
+        aria-label={`${service.title}   UK to Nigeria cargo service from R-Zone Enterprises`}
+        title={`${service.title}   R-Zone Enterprises`}
         className="flex flex-col h-full bg-white border border-gray-200/80 hover:border-[#0818A8]/30 hover:shadow-xl hover:shadow-[#0818A8]/7 transition-all duration-300 overflow-hidden rounded-sm">
         <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] origin-left transition-transform duration-500"
           style={{ transform: hovered ? "scaleX(1)" : "scaleX(0)" }} aria-hidden="true" />
@@ -187,8 +187,8 @@ function ServiceRow({ service, index }) {
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
       itemScope itemType="https://schema.org/Service">
       <Link href={service.href} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-        aria-label={`${service.title} — ${service.subtitle}`}
-        title={`${service.title} — R-Zone Enterprises UK to Nigeria`}
+        aria-label={`${service.title}   ${service.subtitle}`}
+        title={`${service.title}   R-Zone Enterprises UK to Nigeria`}
         className="relative flex items-center w-full py-6 md:py-7 border-b border-black/[0.06] overflow-hidden group">
         <span className="pointer-events-none absolute inset-0 bg-[#0818A8] origin-left"
           style={{ transform: hovered ? "scaleX(1)" : "scaleX(0)", transition: "transform 0.52s cubic-bezier(0.76, 0, 0.24, 1)" }}
@@ -226,7 +226,7 @@ export default function OurServices() {
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
-          "name": "R-Zone Enterprises — UK to Nigeria Cargo & Shipping Services",
+          "name": "R-Zone Enterprises   UK to Nigeria Cargo & Shipping Services",
           "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google. Air freight, sea freight with weekly sailings, door-to-door delivery, customs clearance and importation from Nigeria.",
           "url": "https://r-zoneenterprises.com/services",
           "numberOfItems": SERVICE_CARDS.length,
@@ -265,10 +265,10 @@ export default function OurServices() {
           {/* ── CARD GRID ── */}
           <div className="py-20 md:py-28 lg:py-32">
             <SectionHeader
-              eyebrow="UK–Nigeria Cargo Services"
+              eyebrow="UK Nigeria Cargo Services"
               title="Shipping Services"
               accentWord="That Deliver"
-              subtitle="Air freight, sea freight with weekly sailings, and door-to-door cargo — from the UK's #1 ranked Nigeria cargo company, operating since 2012."
+              subtitle="Air freight, sea freight with weekly sailings, and door-to-door cargo   from the UK's #1 ranked Nigeria cargo company, operating since 2012."
               cta={{ label: "All services", href: "/services", ariaLabel: "View all UK to Nigeria shipping services from R-Zone Enterprises" }}
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
@@ -294,7 +294,7 @@ export default function OurServices() {
               eyebrow="Every Route We Cover"
               title="Our Shipping"
               accentWord="Routes"
-              subtitle="Every UK–Nigeria route handled in-house — air, sea and road — by our Essex and Lagos teams."
+              subtitle="Every UK Nigeria route handled in-house   air, sea and road   by our Essex and Lagos teams."
             />
             <div className="border-t border-black/[0.06]" aria-hidden="true" />
             <div role="list" aria-label="R-Zone UK to Nigeria shipping routes">

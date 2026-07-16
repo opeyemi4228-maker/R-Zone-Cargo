@@ -11,12 +11,12 @@ import {
 } from "../../../lib/adminAuth";
 
 function fmt(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 
 function fmtTime(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
 }
 
@@ -154,7 +154,7 @@ export default function AdminDashboard() {
                 <div key={q.id} className="flex items-center justify-between px-5 py-3.5 hover:bg-[#f8fafc] transition-colors">
                   <div className="min-w-0 flex-1">
                     <p className="text-[#0f172a] text-[13px] font-semibold truncate">{q.firstName} {q.lastName}</p>
-                    <p className="text-[#94a3b8] text-[11px] font-medium mt-0.5 truncate">{q.service || "—"} · {q.direction || "—"}</p>
+                    <p className="text-[#94a3b8] text-[11px] font-medium mt-0.5 truncate">{q.service || " "} · {q.direction || " "}</p>
                   </div>
                   <div className="flex items-center gap-3 ml-3 flex-shrink-0">
                     <span className="text-[#94a3b8] text-[11px] font-medium hidden sm:block">{fmt(q.submittedAt)}</span>
@@ -190,7 +190,7 @@ export default function AdminDashboard() {
                 <div key={c.id} className="flex items-center justify-between px-5 py-3.5 hover:bg-[#f8fafc] transition-colors">
                   <div className="min-w-0 flex-1">
                     <p className="text-[#0f172a] text-[13px] font-semibold truncate">{c.name}</p>
-                    <p className="text-[#94a3b8] text-[11px] font-medium mt-0.5 truncate">{c.enquiryLabel || c.enquiryType || "—"} · {c.subject || "—"}</p>
+                    <p className="text-[#94a3b8] text-[11px] font-medium mt-0.5 truncate">{c.enquiryLabel || c.enquiryType || " "} · {c.subject || " "}</p>
                   </div>
                   <div className="flex items-center gap-3 ml-3 flex-shrink-0">
                     <span className="text-[#94a3b8] text-[11px] font-medium hidden sm:block">{fmt(c.submittedAt)}</span>

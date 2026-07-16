@@ -13,7 +13,6 @@ Disallow: /
 
 User-Agent: Google-Extended
 Disallow: /
-
 User-Agent: CCBot
 Disallow: /
 

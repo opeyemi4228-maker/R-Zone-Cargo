@@ -1,12 +1,12 @@
 "use client";
 
 /**
- * R-Zone International — Group Homepage (SEO-Optimised)
+ * R-Zone International   Group Homepage (SEO-Optimised)
  *
  * ADD TO layout.tsx:
  * export const metadata = {
- *   title: "R-Zone International — UK–Nigeria Enterprise Group",
- *   description: "R-Zone International is the UK–Nigeria enterprise group behind R-Zone Cargo — the #1 highest-rated UK–Nigeria cargo company on Google. 100+ five-star reviews. Founded 2012. Upminster, Essex.",
+ *   title: "R-Zone International   UK Nigeria Enterprise Group",
+ *   description: "R-Zone International is the UK Nigeria enterprise group behind R-Zone Cargo   the #1 highest-rated UK Nigeria cargo company on Google. 100+ five-star reviews. Founded 2012. Upminster, Essex.",
  *   keywords: ["R-Zone International","UK Nigeria enterprise group","R-Zone Cargo","Nigerian diaspora business UK","UK Nigeria shipping company","Nigeria real estate UK","shortlets Lagos Abuja"],
  *   alternates: { canonical: "https://r-zoneinternational.com" },
  * };
@@ -23,11 +23,11 @@ const montserrat = Montserrat({ subsets:["latin"], weight:["300","400","500","60
 const SUBSIDIARIES = [
   {
     id:"cargo", name:"R-Zone Cargo", category:"Freight & Logistics",
-    tagline:"The #1 highest-rated UK–Nigeria cargo company on Google.",
-    description:"R-Zone Cargo is the group's flagship freight and logistics operation — connecting UK businesses and families to all 36 Nigerian states via air freight (5–10 working days), weekly sea shipping (4–6 weeks transit), door-to-door delivery, and specialist cargo handling since 2012. The highest-rated organically earned cargo company between the UK, Nigeria, and across Africa, with 100+ five-star Google reviews.",
+    tagline:"The #1 highest-rated UK Nigeria cargo company on Google.",
+    description:"R-Zone Cargo is the group's flagship freight and logistics operation   connecting UK businesses and families to all 36 Nigerian states via air freight (5 10 working days), weekly sea shipping (4 6 weeks transit), door-to-door delivery, and specialist cargo handling since 2012. The highest-rated organically earned cargo company between the UK, Nigeria, and across Africa, with 100+ five-star Google reviews.",
     icon:Package, href:"https://r-zoneenterprises.com", image:"https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
     stats:[{val:"50K+",label:"Shipments"},{val:"12+",label:"Years"},{val:"100+",label:"⭐ Reviews"}],
-    highlights:["Air freight 5–10 working days","Sea freight 4–6 weeks transit","All 36 Nigerian states covered","Customs clearance UK & Nigeria"],
+    highlights:["Air freight 5 10 working days","Sea freight 4 6 weeks transit","All 36 Nigerian states covered","Customs clearance UK & Nigeria"],
     color:"#0818A8", gradient:"from-[#0818A8] to-[#1F51FF]", live:true,
   },
   {
@@ -41,8 +41,8 @@ const SUBSIDIARIES = [
   },
   {
     id:"shortlets", name:"R-Zone Shortlets", category:"Serviced Accommodation",
-    tagline:"Premium short-stay apartments — Lagos & Abuja.",
-    description:"R-Zone Shortlets operates a curated portfolio of fully-serviced short-term apartments in Lagos and Abuja — serving business travellers, the UK Nigerian diaspora, and premium leisure guests who demand quality without compromise.",
+    tagline:"Premium short-stay apartments   Lagos & Abuja.",
+    description:"R-Zone Shortlets operates a curated portfolio of fully-serviced short-term apartments in Lagos and Abuja   serving business travellers, the UK Nigerian diaspora, and premium leisure guests who demand quality without compromise.",
     icon:Building2, href:"#", image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80",
     stats:[{val:"LOS",label:"Lagos"},{val:"ABJ",label:"Abuja"},{val:"24/7",label:"Support"}],
     highlights:["Fully furnished apartments","24/7 concierge","Corporate rates","Monthly stays available"],
@@ -56,23 +56,23 @@ const GROUP_STATS = [
   {val:"2",   label:"Countries",      icon:Globe,    sub:"UK & Nigeria"},
   {val:"10K+",label:"Customers Served",icon:Users,   sub:"Families & businesses"},
   {val:"£M+", label:"Cargo Moved",    icon:BarChart3,sub:"Annually (R-Zone Cargo)"},
-  {val:"100+",label:"5-Star Reviews", icon:Star,     sub:"#1 on Google UK–Nigeria cargo"},
+  {val:"100+",label:"5-Star Reviews", icon:Star,     sub:"#1 on Google UK Nigeria cargo"},
 ];
 
 const VALUES = [
-  {icon:Shield,     title:"Integrity in Everything",              accent:"#0818A8", body:"Every R-Zone brand operates with the same foundational commitment — transparent dealings, honest communication, and delivery on every promise made to every customer."},
-  {icon:Globe,      title:"Built by the Diaspora, for the Diaspora", accent:"#1F51FF", body:"R-Zone International was built by the Nigerian diaspora, for the diaspora. Our businesses exist to bridge the gap between the UK and Nigeria — making commerce, property and daily life seamlessly connected."},
-  {icon:TrendingUp, title:"Long-Term Growth Over Short-Term Gain", accent:"#0818A8", body:"We build for decades, not quarters. Each R-Zone company is designed with sustainable growth in mind — creating lasting value for customers, partners and the communities we serve in both the UK and Nigeria."},
-  {icon:Target,     title:"Execution Over Talk",                  accent:"#1F51FF", body:"The R-Zone name means something because we deliver. Across every brand — from UK–Nigeria logistics to Nigerian real estate — operational excellence is non-negotiable."},
+  {icon:Shield,     title:"Integrity in Everything",              accent:"#0818A8", body:"Every R-Zone brand operates with the same foundational commitment   transparent dealings, honest communication, and delivery on every promise made to every customer."},
+  {icon:Globe,      title:"Built by the Diaspora, for the Diaspora", accent:"#1F51FF", body:"R-Zone International was built by the Nigerian diaspora, for the diaspora. Our businesses exist to bridge the gap between the UK and Nigeria   making commerce, property and daily life seamlessly connected."},
+  {icon:TrendingUp, title:"Long-Term Growth Over Short-Term Gain", accent:"#0818A8", body:"We build for decades, not quarters. Each R-Zone company is designed with sustainable growth in mind   creating lasting value for customers, partners and the communities we serve in both the UK and Nigeria."},
+  {icon:Target,     title:"Execution Over Talk",                  accent:"#1F51FF", body:"The R-Zone name means something because we deliver. Across every brand   from UK Nigeria logistics to Nigerian real estate   operational excellence is non-negotiable."},
 ];
 
 const TIMELINE = [
   {year:"2012",event:"R-Zone Enterprises founded in Upminster, Essex, UK",type:"founding"},
-  {year:"2014",event:"Weekly UK–Nigeria sea freight corridor opened",type:"expansion"},
+  {year:"2014",event:"Weekly UK Nigeria sea freight corridor opened",type:"expansion"},
   {year:"2016",event:"Lagos, Nigeria operations hub established",type:"expansion"},
-  {year:"2018",event:"IATA certification secured — air cargo capability live",type:"milestone"},
+  {year:"2018",event:"IATA certification secured   air cargo capability live",type:"milestone"},
   {year:"2020",event:"Zero service interruptions throughout the pandemic",type:"milestone"},
-  {year:"2022",event:"10,000+ UK–Nigeria customers served milestone",type:"milestone"},
+  {year:"2022",event:"10,000+ UK Nigeria customers served milestone",type:"milestone"},
   {year:"2023",event:"R-Zone International Group formally constituted",type:"founding"},
   {year:"2024",event:"R-Zone Homes & Shortlets divisions launched",type:"expansion"},
   {year:"2025",event:"New venture lines entering active development phase",type:"expansion"},
@@ -85,11 +85,11 @@ const TYPE_COLORS = {
 };
 
 const FAQ_ITEMS = [
-  {q:"What is R-Zone International?", a:"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. It is the parent company of R-Zone Cargo (UK–Nigeria freight and logistics), R-Zone Homes (Nigerian real estate), and R-Zone Shortlets (serviced apartments in Lagos and Abuja)."},
-  {q:"Who owns R-Zone Cargo?", a:"R-Zone Cargo is owned and operated by R-Zone International — the parent group headquartered in Upminster, Essex, UK. R-Zone Cargo is the group's flagship business and the highest-rated UK-to-Nigeria cargo company on Google, with 100+ five-star reviews organically earned since 2012."},
-  {q:"How long has R-Zone been operating?", a:"R-Zone Enterprises — now trading as R-Zone Cargo — was founded in 2012 in Upminster, Essex, UK. The group has been providing UK–Nigeria freight and logistics services for over 12 years."},
-  {q:"Does R-Zone ship to all Nigerian states?", a:"Yes. R-Zone Cargo delivers to all 36 Nigerian states including Lagos, Abuja (FCT), Rivers, Kano, Delta, Oyo, Anambra, Enugu, and more. Air freight from the UK to Nigeria takes 5–10 working days; sea freight takes 4–6 weeks transit."},
-  {q:"What businesses does R-Zone International operate?", a:"R-Zone International operates three business lines: R-Zone Cargo (UK–Nigeria freight, air freight, sea freight, door-to-door delivery), R-Zone Homes (Nigerian residential and commercial real estate for the UK diaspora), and R-Zone Shortlets (premium serviced apartments in Lagos and Abuja)."},
+  {q:"What is R-Zone International?", a:"R-Zone International is a diversified UK Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. It is the parent company of R-Zone Cargo (UK Nigeria freight and logistics), R-Zone Homes (Nigerian real estate), and R-Zone Shortlets (serviced apartments in Lagos and Abuja)."},
+  {q:"Who owns R-Zone Cargo?", a:"R-Zone Cargo is owned and operated by R-Zone International   the parent group headquartered in Upminster, Essex, UK. R-Zone Cargo is the group's flagship business and the highest-rated UK-to-Nigeria cargo company on Google, with 100+ five-star reviews organically earned since 2012."},
+  {q:"How long has R-Zone been operating?", a:"R-Zone Enterprises   now trading as R-Zone Cargo   was founded in 2012 in Upminster, Essex, UK. The group has been providing UK Nigeria freight and logistics services for over 12 years."},
+  {q:"Does R-Zone ship to all Nigerian states?", a:"Yes. R-Zone Cargo delivers to all 36 Nigerian states including Lagos, Abuja (FCT), Rivers, Kano, Delta, Oyo, Anambra, Enugu, and more. Air freight from the UK to Nigeria takes 5 10 working days; sea freight takes 4 6 weeks transit."},
+  {q:"What businesses does R-Zone International operate?", a:"R-Zone International operates three business lines: R-Zone Cargo (UK Nigeria freight, air freight, sea freight, door-to-door delivery), R-Zone Homes (Nigerian residential and commercial real estate for the UK diaspora), and R-Zone Shortlets (premium serviced apartments in Lagos and Abuja)."},
 ];
 
 const fadeUp = {
@@ -139,7 +139,7 @@ function GroupNavbar(){
       transition={{duration:0.35}} role="banner">
       <div className={`border-b transition-all duration-300 ${scrolled?"border-white/[0.07]":"border-transparent"}`}>
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 h-[68px] flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group" aria-label="R-Zone International Group — home">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="R-Zone International Group   home">
             <div className="w-9 h-9 bg-gradient-to-br from-[#0818A8] to-[#1F51FF] rounded-sm flex items-center justify-center flex-shrink-0" aria-hidden="true">
               <span className="text-white font-black text-[14px] tracking-[0.05em]">RZ</span>
             </div>
@@ -155,7 +155,7 @@ function GroupNavbar(){
           </nav>
           <Link href="https://r-zoneenterprises.com/quote"
             className="hidden sm:inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
-            aria-label="Get a free UK–Nigeria shipping quote from R-Zone Cargo">
+            aria-label="Get a free UK Nigeria shipping quote from R-Zone Cargo">
             Ship with Cargo <ArrowRight size={10} aria-hidden="true"/>
           </Link>
         </div>
@@ -186,7 +186,7 @@ function Hero(){
           <svg viewBox="0 0 200 200" className="w-full h-full absolute inset-0">
             <path id="circle-text" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
             <text style={{fontSize:10.5,fontFamily:"var(--font-mont)",fontWeight:500,letterSpacing:"0.2em",fill:"rgba(255,255,255,0.6)"}}>
-              <textPath href="#circle-text">R-ZONE INTERNATIONAL · FOUNDED 2012 · UK–NIGERIA · </textPath>
+              <textPath href="#circle-text">R-ZONE INTERNATIONAL · FOUNDED 2012 · UK NIGERIA · </textPath>
             </text>
           </svg>
           <div className="w-16 h-16 bg-gradient-to-br from-[#0818A8] to-[#1F51FF] rounded-full flex items-center justify-center">
@@ -200,7 +200,7 @@ function Hero(){
           <motion.div initial={{opacity:0,y:-10}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.5}}
             className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full mb-6">
             <Award size={13} className="text-[#1F51FF]" aria-hidden="true"/>
-            <span className="text-white text-[13px] font-bold">R-Zone Cargo — #1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
+            <span className="text-white text-[13px] font-bold">R-Zone Cargo   #1 Highest-Rated UK Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
           </motion.div>
 
           <motion.div initial={{opacity:0,y:-10}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.5,delay:0.05}} className="flex items-center gap-4 mb-8">
@@ -216,7 +216,7 @@ function Hero(){
             </motion.p>
             <motion.h1 id="rzi-hero-heading" className="font-black text-[clamp(48px,9vw,120px)] leading-[0.85] tracking-[-0.04em] uppercase"
               initial={{opacity:0}} animate={inView?{opacity:1}:{}} transition={{duration:0.8,delay:0.2}}>
-              <span className="text-white block">UK–Nigeria</span>
+              <span className="text-white block">UK Nigeria</span>
               <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text" style={{backgroundImage:"linear-gradient(135deg, #1F51FF 0%, #0818A8 50%, #ffffff 100%)"}}>Commerce.</span>
                 <motion.span className="absolute -bottom-3 left-0 h-1 rounded-full" style={{background:"linear-gradient(to right, #0818A8, #1F51FF)"}}
@@ -225,12 +225,12 @@ function Hero(){
             </motion.h1>
           </div>
 
-          {/* SEO body — diaspora + corridor keywords */}
+          {/* SEO body   diaspora + corridor keywords */}
           <motion.p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-10 tracking-wide"
             initial={{opacity:0,y:16}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.65,delay:0.35}}>
-            R-Zone International is the UK–Nigeria enterprise group behind R-Zone Cargo —
-            the #1 highest-rated UK-to-Nigeria cargo company on Google — alongside R-Zone Homes
-            and R-Zone Shortlets. A growing portfolio of businesses built for the UK–Nigeria
+            R-Zone International is the UK Nigeria enterprise group behind R-Zone Cargo  
+            the #1 highest-rated UK-to-Nigeria cargo company on Google   alongside R-Zone Homes
+            and R-Zone Shortlets. A growing portfolio of businesses built for the UK Nigeria
             corridor and the Nigerian diaspora economy, since 2012.
           </motion.p>
 
@@ -241,7 +241,7 @@ function Hero(){
             </a>
             <a href="https://wa.me/448007720864?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20UK%20to%20Nigeria%20shipping." target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 border border-[#25D366]/30 bg-[#25D366]/08 hover:bg-[#25D366]/14 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
-              aria-label="WhatsApp R-Zone for UK–Nigeria cargo enquiry">
+              aria-label="WhatsApp R-Zone for UK Nigeria cargo enquiry">
               <MessageSquare size={13} className="text-[#25D366]" aria-hidden="true"/> WhatsApp Cargo
             </a>
             <a href="#about" className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="About R-Zone International Group">
@@ -271,7 +271,7 @@ function Hero(){
 function GroupStats(){
   const ref=useRef(null);const inView=useInView(ref,{once:true,margin:"-40px"});
   return (
-    <div ref={ref} className="bg-[#0818A8] relative overflow-hidden" role="region" aria-label="R-Zone International group statistics — the #1 UK–Nigeria cargo company on Google">
+    <div ref={ref} className="bg-[#0818A8] relative overflow-hidden" role="region" aria-label="R-Zone International group statistics   the #1 UK Nigeria cargo company on Google">
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true" style={{backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",backgroundSize:"44px 44px"}}/>
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
@@ -304,7 +304,7 @@ function Companies(){
           </motion.div>
           <motion.p className="text-white/80 text-[14px] font-normal mt-5 max-w-xl mx-auto leading-relaxed"
             initial={{opacity:0}} animate={inView?{opacity:1}:{}} transition={{duration:0.5,delay:0.2}}>
-            Each R-Zone company is independently operated, sector-focused, and unified by the same group standards of quality, reliability and service excellence across the UK–Nigeria corridor.
+            Each R-Zone company is independently operated, sector-focused, and unified by the same group standards of quality, reliability and service excellence across the UK Nigeria corridor.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-6">
@@ -314,7 +314,7 @@ function Companies(){
               itemScope itemType="https://schema.org/Organization">
               <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${sub.gradient}`} aria-hidden="true"/>
               <div className="relative h-48 overflow-hidden">
-                <img src={sub.image} alt={`${sub.name} — ${sub.category} · R-Zone International UK–Nigeria Group`}
+                <img src={sub.image} alt={`${sub.name}   ${sub.category} · R-Zone International UK Nigeria Group`}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
                   loading="lazy" onError={e=>{e.currentTarget.style.display="none";}}/>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000410] via-[#000410]/50 to-transparent" aria-hidden="true"/>
@@ -339,7 +339,7 @@ function Companies(){
                     <h3 className="text-white font-black text-[21px] tracking-[-0.015em]" itemProp="name">{sub.name}</h3>
                     <p className="text-white/80 text-[14.5px] mt-1 leading-snug">{sub.tagline}</p>
                   </div>
-                  {sub.href!=="#"&&<a href={sub.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/[0.12] hover:border-white/30 hover:bg-white/[0.08] flex items-center justify-center transition-all duration-200 flex-shrink-0 ml-4" aria-label={`Visit ${sub.name} — UK–Nigeria ${sub.category.toLowerCase()}`}><ArrowUpRight size={14} className="text-white/80" aria-hidden="true"/></a>}
+                  {sub.href!=="#"&&<a href={sub.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/[0.12] hover:border-white/30 hover:bg-white/[0.08] flex items-center justify-center transition-all duration-200 flex-shrink-0 ml-4" aria-label={`Visit ${sub.name}   UK Nigeria ${sub.category.toLowerCase()}`}><ArrowUpRight size={14} className="text-white/80" aria-hidden="true"/></a>}
                 </div>
                 <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6" itemProp="description">{sub.description}</p>
                 <div className="flex gap-6 mb-5 border-t border-white/[0.06] pt-5">
@@ -351,7 +351,7 @@ function Companies(){
                 {sub.live?(
                   <a href={sub.href} target="_blank" rel="noopener noreferrer"
                     className="group/cta inline-flex items-center gap-2 text-[13px] font-black tracking-[0.1em] uppercase transition-all duration-200" style={{color:sub.color}}
-                    aria-label={`Visit ${sub.name} — UK–Nigeria ${sub.category.toLowerCase()}`}>
+                    aria-label={`Visit ${sub.name}   UK Nigeria ${sub.category.toLowerCase()}`}>
                     Visit {sub.name} <ArrowRight size={10} className="group-hover/cta:translate-x-1 transition-transform" aria-hidden="true"/>
                   </a>
                 ):(
@@ -379,9 +379,9 @@ function AboutGroup(){
             <motion.div variants={fadeUp} custom={0}><Tag label="The Group Story" dark={false}/></motion.div>
             <motion.div variants={fadeUp} custom={0.05}><Heading serif="who we are" sans="Built in Essex. Built for Nigeria." dark={false} id="about-group-heading"/></motion.div>
             <motion.div variants={fadeUp} custom={0.15} className="mt-7 space-y-4">
-              <p className="text-gray-900 text-[14px] font-normal leading-relaxed">R-Zone International began as a single idea in Upminster, Essex, UK in 2012: that the Nigerian diaspora deserved world-class services — not just adequate ones. Starting with cargo logistics between the UK and Nigeria, we proved that a company built by and for the community could outperform established competitors on every metric that matters.</p>
-              <p className="text-gray-800 text-[14px] font-normal leading-relaxed">A decade on, that conviction has grown into a multi-company group. R-Zone International now operates across freight, real estate, and short-stay accommodation across Lagos and Abuja — with new verticals in active development. Each business shares the same DNA: deep understanding of the UK–Nigeria corridor, operational excellence, and an obsession with customer experience.</p>
-              <p className="text-gray-800 text-[14px] font-normal leading-relaxed">Our ambition is to become the most trusted commercial infrastructure company connecting Britain and Nigeria — the group that ambitious Nigerians in the UK and Nigeria turn to, across every aspect of their lives and businesses.</p>
+              <p className="text-gray-900 text-[14px] font-normal leading-relaxed">R-Zone International began as a single idea in Upminster, Essex, UK in 2012: that the Nigerian diaspora deserved world-class services   not just adequate ones. Starting with cargo logistics between the UK and Nigeria, we proved that a company built by and for the community could outperform established competitors on every metric that matters.</p>
+              <p className="text-gray-800 text-[14px] font-normal leading-relaxed">A decade on, that conviction has grown into a multi-company group. R-Zone International now operates across freight, real estate, and short-stay accommodation across Lagos and Abuja   with new verticals in active development. Each business shares the same DNA: deep understanding of the UK Nigeria corridor, operational excellence, and an obsession with customer experience.</p>
+              <p className="text-gray-800 text-[14px] font-normal leading-relaxed">Our ambition is to become the most trusted commercial infrastructure company connecting Britain and Nigeria   the group that ambitious Nigerians in the UK and Nigeria turn to, across every aspect of their lives and businesses.</p>
             </motion.div>
             <motion.div variants={fadeUp} custom={0.3} className="mt-8 flex flex-wrap gap-3">
               <a href="https://r-zoneenterprises.com/about" target="_blank" rel="noopener noreferrer"
@@ -446,7 +446,7 @@ function GroupTimeline(){
       <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-[#0818A8]/20 to-transparent pointer-events-none hidden lg:block" aria-hidden="true"/>
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
-          <motion.div initial={{opacity:0}} animate={inView?{opacity:1}:{}} transition={{duration:0.5}}><Tag label="UK–Nigeria Group History Since 2012" dark/></motion.div>
+          <motion.div initial={{opacity:0}} animate={inView?{opacity:1}:{}} transition={{duration:0.5}}><Tag label="UK Nigeria Group History Since 2012" dark/></motion.div>
           <motion.div initial={{opacity:0,y:16}} animate={inView?{opacity:1,y:0}:{}} transition={{duration:0.6,delay:0.1}}><Heading serif="the journey" sans="From One to Many." dark id="timeline-heading"/></motion.div>
         </div>
         <div className="relative">
@@ -499,11 +499,11 @@ function GroupValues(){
             <motion.div variants={fadeUp} custom={0}><Tag label="What Drives R-Zone" dark={false}/></motion.div>
             <motion.div variants={fadeUp} custom={0.05}><Heading serif="across every brand" sans="Our Group Values." dark={false} id="values-heading"/></motion.div>
             <motion.p variants={fadeUp} custom={0.15} className="text-gray-800 text-[14px] font-normal leading-relaxed mt-5 max-w-sm">
-              These principles are not aspirations — they are operational standards enforced across every R-Zone company, every team, and every customer interaction across the UK–Nigeria corridor.
+              These principles are not aspirations   they are operational standards enforced across every R-Zone company, every team, and every customer interaction across the UK Nigeria corridor.
             </motion.p>
             <motion.blockquote variants={fadeUp} custom={0.3} className="mt-10 border-l-4 border-[#0818A8] pl-6">
-              <p className="text-[#0b0f1a] text-[20px] leading-snug mb-2">&ldquo;We exist to make the UK–Nigeria opportunity real — not just possible.&rdquo;</p>
-              <footer className="text-gray-800 text-[13px] font-normal">— R-Zone International, Group Mandate</footer>
+              <p className="text-[#0b0f1a] text-[20px] leading-snug mb-2">&ldquo;We exist to make the UK Nigeria opportunity real   not just possible.&rdquo;</p>
+              <footer className="text-gray-800 text-[13px] font-normal">  R-Zone International, Group Mandate</footer>
             </motion.blockquote>
           </motion.div>
           <div className="space-y-5">
@@ -588,7 +588,7 @@ function GroupContact(){
             <motion.div variants={fadeUp} custom={0}><Tag label="Get in Touch" dark/></motion.div>
             <motion.div variants={fadeUp} custom={0.05}><Heading serif="work with us" sans="Contact the Group." dark id="contact-heading"/></motion.div>
             <motion.p variants={fadeUp} custom={0.15} className="text-white/80 text-[14px] font-normal leading-relaxed mt-5 mb-8 max-w-md">
-              Whether you&apos;re a customer, investor, business partner, or journalist — we&apos;d love to hear from you. For UK–Nigeria cargo enquiries, contact R-Zone Cargo directly; for group-level enquiries reach us below.
+              Whether you&apos;re a customer, investor, business partner, or journalist   we&apos;d love to hear from you. For UK Nigeria cargo enquiries, contact R-Zone Cargo directly; for group-level enquiries reach us below.
             </motion.p>
             <motion.div variants={fadeUp} custom={0.25} className="space-y-4 mb-8">
               {[
@@ -630,7 +630,7 @@ function GroupContact(){
                   {sub.live?(
                     <a href={sub.href} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-[13px] font-bold transition-colors" style={{color:sub.color}}
-                      aria-label={`Visit ${sub.name} — UK–Nigeria ${sub.category.toLowerCase()}`}>
+                      aria-label={`Visit ${sub.name}   UK Nigeria ${sub.category.toLowerCase()}`}>
                       Visit <ExternalLink size={9} aria-hidden="true"/>
                     </a>
                   ):<span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase">{sub.badge}</span>}
@@ -640,12 +640,12 @@ function GroupContact(){
             <div className="border border-[#0818A8]/25 bg-[#0818A8]/10 p-6">
               <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#1F51FF] mb-2">Ready to Ship Today?</p>
               <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-5">
-                R-Zone Cargo is live now — get a free UK–Nigeria shipping quote in under 2 minutes.
-                Air freight 5–10 working days · Sea freight 4–6 weeks · All 36 Nigerian states.
+                R-Zone Cargo is live now   get a free UK Nigeria shipping quote in under 2 minutes.
+                Air freight 5 10 working days · Sea freight 4 6 weeks · All 36 Nigerian states.
               </p>
               <a href="https://r-zoneenterprises.com/quote" target="_blank" rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.09em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/30 w-full justify-center"
-                aria-label="Get a free UK–Nigeria shipping quote from R-Zone Cargo">
+                aria-label="Get a free UK Nigeria shipping quote from R-Zone Cargo">
                 Get a Free Cargo Quote <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
               </a>
             </div>
@@ -668,7 +668,7 @@ function GroupFooter(){
             </div>
             {/* SEO-rich footer description */}
             <p className="text-white/80 text-[13px] font-normal leading-relaxed max-w-xs">
-              R-Zone International — the UK–Nigeria enterprise group. Parent company of R-Zone Cargo (the #1 highest-rated UK–Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets. Founded 2012. Upminster, Essex, United Kingdom.
+              R-Zone International   the UK Nigeria enterprise group. Parent company of R-Zone Cargo (the #1 highest-rated UK Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets. Founded 2012. Upminster, Essex, United Kingdom.
             </p>
           </div>
           <div>
@@ -676,7 +676,7 @@ function GroupFooter(){
             <div className="space-y-2">
               {SUBSIDIARIES.map(s=>(
                 <div key={s.id}>{s.live?(
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white text-[13px] font-normal transition-colors flex items-center gap-1.5" aria-label={`${s.name} — UK–Nigeria ${s.category.toLowerCase()}`}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white text-[13px] font-normal transition-colors flex items-center gap-1.5" aria-label={`${s.name}   UK Nigeria ${s.category.toLowerCase()}`}>
                     {s.name} <ExternalLink size={9} aria-hidden="true"/>
                   </a>
                 ):<span className="text-white/80 text-[13px] font-normal">{s.name} <span className="text-[13px] ml-1 opacity-70">({s.badge})</span></span>}</div>
@@ -714,7 +714,7 @@ const SCHEMA = {
       "@type":"Organization","@id":"https://r-zoneinternational.com/#org",
       "name":"R-Zone International","alternateName":["R-Zone Group","R-Zone International Group"],
       "url":"https://r-zoneinternational.com",
-      "description":"R-Zone International is a diversified UK–Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. Parent company of R-Zone Cargo (the #1 highest-rated UK-to-Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets.",
+      "description":"R-Zone International is a diversified UK Nigeria enterprise group founded in 2012 and headquartered in Upminster, Essex. Parent company of R-Zone Cargo (the #1 highest-rated UK-to-Nigeria cargo company on Google with 100+ five-star reviews), R-Zone Homes, and R-Zone Shortlets.",
       "foundingDate":"2012",
       "address":{"@type":"PostalAddress","streetAddress":"Unit 9 Moorhen Yard, Elms Lane, Bulphan","addressLocality":"Upminster","addressRegion":"Essex","postalCode":"RM14 3TS","addressCountry":"GB"},
       "telephone":"+448007720864","email":"info@r-zoneenterprises.com",
@@ -722,14 +722,14 @@ const SCHEMA = {
       "areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Nigeria"}],
       "subOrganization":[
         {"@type":"LocalBusiness","name":"R-Zone Cargo","url":"https://r-zoneenterprises.com",
-          "description":"The #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight 5–10 working days, sea freight 4–6 weeks transit. Delivery to all 36 Nigerian states. 100+ five-star reviews organically earned since 2012.",
+          "description":"The #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight 5 10 working days, sea freight 4 6 weeks transit. Delivery to all 36 Nigerian states. 100+ five-star reviews organically earned since 2012.",
           "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100","bestRating":"5"},
           "telephone":"+448007720864","areaServed":["United Kingdom","Nigeria"]},
         {"@type":"Organization","name":"R-Zone Homes","description":"Nigerian residential and commercial real estate for the UK diaspora. Off-plan properties and property management in Lagos and Abuja."},
         {"@type":"Organization","name":"R-Zone Shortlets","description":"Premium serviced short-term apartments in Lagos and Abuja for business travellers and the Nigerian diaspora."},
       ],
     },
-    {"@type":"WebSite","url":"https://r-zoneinternational.com","name":"R-Zone International","description":"The UK–Nigeria enterprise group — R-Zone Cargo, R-Zone Homes, R-Zone Shortlets.","publisher":{"@id":"https://r-zoneinternational.com/#org"}},
+    {"@type":"WebSite","url":"https://r-zoneinternational.com","name":"R-Zone International","description":"The UK Nigeria enterprise group   R-Zone Cargo, R-Zone Homes, R-Zone Shortlets.","publisher":{"@id":"https://r-zoneinternational.com/#org"}},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"R-Zone International","item":"https://r-zoneinternational.com"}]},
     {"@type":"FAQPage","mainEntity":FAQ_ITEMS.map(item=>({"@type":"Question","name":item.q,"acceptedAnswer":{"@type":"Answer","text":item.a}}))},
   ],

@@ -2,12 +2,12 @@
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- * R-Zone Enterprises — Business Solutions Page (SEO-Optimised)
+ * R-Zone Enterprises   Business Solutions Page (SEO-Optimised)
  * /business-solutions
  *
  * ADD TO /business-solutions/layout.tsx or page.tsx:
  * export const metadata = {
- *   title: "UK–Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
+ *   title: "UK Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
  *   description:
  *     "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg. Door-to-door, customs clearance, warehousing and importation. 100+ five-star reviews. Weekly departures. Same-day response.",
  *   keywords: [
@@ -58,9 +58,9 @@ const IMGS = {
 };
 
 const BUSINESS_PROBLEMS = [
-  { id:"customs-delays",     problem:"Cargo stuck at UK or Nigerian customs?",        solve:"We clear both ends — in-house, no delays."                 },
+  { id:"customs-delays",     problem:"Cargo stuck at UK or Nigerian customs?",        solve:"We clear both ends   in-house, no delays."                 },
   { id:"supply-chain",       problem:"Supply chain breaking down?",                   solve:"Weekly fixed departures. Zero interruptions."              },
-  { id:"expensive-shipping", problem:"Air freight too expensive for bulk cargo?",     solve:"Sea freight from £3/kg — weekly UK–Nigeria sailings."      },
+  { id:"expensive-shipping", problem:"Air freight too expensive for bulk cargo?",     solve:"Sea freight from £3/kg   weekly UK Nigeria sailings."      },
   { id:"nigeria-collection", problem:"Need goods collected anywhere in Nigeria?",     solve:"Our Lagos team picks up from all 36 states."               },
   { id:"no-tracking",        problem:"No visibility on your shipment?",               solve:"Real-time tracking from UK departure to Nigerian door."    },
 ];
@@ -68,46 +68,46 @@ const BUSINESS_PROBLEMS = [
 const SOLUTIONS = [
   {
     id:"air-freight", slug:"/air-freight", icon:Plane, label:"Air Freight", badge:"Fastest Option",
-    problemTitle:"Need cargo in Nigeria fast — from the UK?",
+    problemTitle:"Need cargo in Nigeria fast   from the UK?",
     problemBody:"Delayed stock means lost revenue. Time-sensitive shipments cannot wait weeks at sea. Your business needs a reliable, fast air corridor from the UK to Nigeria with guaranteed weekly departures.",
     solutionTitle:"Air Freight UK to Nigeria.",
-    solutionBody:"Weekly air freight from London Heathrow, Gatwick and Manchester direct to Lagos and Abuja. IATA-certified handling on every consignment. Air cargo from the UK to Nigeria in 5–10 working days.",
-    sub:"5–10 working days UK to Nigeria", rate:"from £5/kg", accent:"#0818A8",
+    solutionBody:"Weekly air freight from London Heathrow, Gatwick and Manchester direct to Lagos and Abuja. IATA-certified handling on every consignment. Air cargo from the UK to Nigeria in 5 10 working days.",
+    sub:"5 10 working days UK to Nigeria", rate:"from £5/kg", accent:"#0818A8",
     img:IMGS.airFreight, imgAlt:"Cargo aircraft loaded at Heathrow for air freight to Nigeria",
-    points:["5–10 working days UK to Nigeria","Weekly departures — Heathrow, Gatwick, Manchester","All 36 Nigerian states covered","UK door collection available","Real-time tracking on every shipment","IATA-certified cargo handling"],
-    metric:{ val:"5–10", unit:"working days", label:"UK to Nigeria air freight" },
+    points:["5 10 working days UK to Nigeria","Weekly departures   Heathrow, Gatwick, Manchester","All 36 Nigerian states covered","UK door collection available","Real-time tracking on every shipment","IATA-certified cargo handling"],
+    metric:{ val:"5 10", unit:"working days", label:"UK to Nigeria air freight" },
     airlines:["British Airways","Virgin Atlantic","Emirates","Ethiopian Airlines"],
   },
   {
     id:"sea-freight", slug:"/sea-shipping-to-nigeria", icon:Ship, label:"Sea Freight", badge:"Best Value",
-    problemTitle:"High UK–Nigeria shipping costs eating your margins?",
+    problemTitle:"High UK Nigeria shipping costs eating your margins?",
     problemBody:"Air freight at scale is not viable for bulk goods, vehicles or machinery. You need an affordable, reliable sea corridor between the UK and Nigeria without hidden charges.",
     solutionTitle:"Weekly Sea Freight UK to Nigeria.",
-    solutionBody:"Weekly consolidated sea freight from UK ports to Lagos. 4–6 weeks transit time. The most cost-effective way to move bulk, heavy, or high-volume cargo between the UK and Nigeria, every single week.",
-    sub:"4–6 weeks transit · Weekly sailings", rate:"from £3/kg", accent:"#1F51FF",
+    solutionBody:"Weekly consolidated sea freight from UK ports to Lagos. 4 6 weeks transit time. The most cost-effective way to move bulk, heavy, or high-volume cargo between the UK and Nigeria, every single week.",
+    sub:"4 6 weeks transit · Weekly sailings", rate:"from £3/kg", accent:"#1F51FF",
     img:IMGS.seaFreight, imgAlt:"Container ship departing UK port with weekly sea freight to Nigeria",
-    points:["Weekly fixed-schedule UK–Nigeria sailings","FCL (full container) & LCL (shared) options","Vehicles, heavy machinery & bulk cargo accepted","Customs clearance UK & Nigeria included","4–6 weeks transit time","Essex consolidation warehouse available"],
-    metric:{ val:"£3", unit:"/kg", label:"from — UK to Nigeria sea freight" },
+    points:["Weekly fixed-schedule UK Nigeria sailings","FCL (full container) & LCL (shared) options","Vehicles, heavy machinery & bulk cargo accepted","Customs clearance UK & Nigeria included","4 6 weeks transit time","Essex consolidation warehouse available"],
+    metric:{ val:"£3", unit:"/kg", label:"from   UK to Nigeria sea freight" },
     airlines:[],
   },
   {
     id:"door-to-door", slug:"/door-to-door-cargo", icon:Truck, label:"Door to Door", badge:"Most Popular",
-    problemTitle:"Managing UK–Nigeria logistics from two countries?",
+    problemTitle:"Managing UK Nigeria logistics from two countries?",
     problemBody:"Coordinating UK collections, Nigerian customs, and last-mile delivery through multiple providers is a management nightmare. One mistake and your shipment stalls.",
-    solutionTitle:"Complete Door-to-Door UK–Nigeria Cargo.",
-    solutionBody:"We collect from your UK address and deliver to any address across all 36 Nigerian states — including Abuja, Lagos, Port Harcourt, and Kano. Both UK and Nigerian customs handled in-house. Air or sea — your choice. One point of contact from start to finish.",
+    solutionTitle:"Complete Door-to-Door UK Nigeria Cargo.",
+    solutionBody:"We collect from your UK address and deliver to any address across all 36 Nigerian states   including Abuja, Lagos, Port Harcourt, and Kano. Both UK and Nigerian customs handled in-house. Air or sea   your choice. One point of contact from start to finish.",
     sub:"UK collection · Nigeria delivery", rate:"from £6/kg", accent:"#0437F2",
     img:IMGS.doorToDoor, imgAlt:"R-Zone door-to-door cargo van collecting from UK address for Nigeria delivery",
-    points:["Single point of contact UK to Nigeria","UK-wide door collection","Delivery to all 36 Nigerian states","Air or sea — you choose","UK & Nigeria customs both handled in-house","SMS & email notifications throughout"],
-    metric:{ val:"1", unit:"contact", label:"end-to-end UK–Nigeria management" },
+    points:["Single point of contact UK to Nigeria","UK-wide door collection","Delivery to all 36 Nigerian states","Air or sea   you choose","UK & Nigeria customs both handled in-house","SMS & email notifications throughout"],
+    metric:{ val:"1", unit:"contact", label:"end-to-end UK Nigeria management" },
     airlines:[],
   },
   {
     id:"importation", slug:"/importation-from-nigeria", icon:Package, label:"Import from Nigeria", badge:"Two-Way",
     problemTitle:"Importing goods from Nigeria to the UK?",
-    problemBody:"Getting goods out of Nigeria is complex — port clearance, NCS compliance, UK customs, VAT. Without the right partner your goods sit in Lagos for weeks.",
+    problemBody:"Getting goods out of Nigeria is complex   port clearance, NCS compliance, UK customs, VAT. Without the right partner your goods sit in Lagos for weeks.",
     solutionTitle:"Importation from Nigeria to the UK, Solved.",
-    solutionBody:"Weekly air and sea services bringing Nigerian goods to the UK. African foodstuffs, textiles, commercial merchandise — our Lagos team handles collection from anywhere in Nigeria and delivers to your UK door, customs cleared.",
+    solutionBody:"Weekly air and sea services bringing Nigerian goods to the UK. African foodstuffs, textiles, commercial merchandise   our Lagos team handles collection from anywhere in Nigeria and delivers to your UK door, customs cleared.",
     sub:"Weekly air · Weekly sea · Nigeria to UK", rate:"from £5/kg", accent:"#0818A8",
     img:IMGS.importation, imgAlt:"Nigerian goods prepared for importation to UK with R-Zone Enterprises",
     points:["Weekly air cargo collections from Lagos","Weekly sea departures from Apapa port","African foodstuffs accepted","Full UK customs clearance included","Collection from all 36 Nigerian states","Commercial & personal cargo both welcome"],
@@ -116,12 +116,12 @@ const SOLUTIONS = [
   },
   {
     id:"customs", slug:"/customs-clearance", icon:FileCheck, label:"Customs Clearance", badge:"Specialist",
-    problemTitle:"Cargo held at UK or Nigerian customs — again?",
-    problemBody:"Incorrect documentation, wrong HS codes, missed compliance checks — customs errors cost businesses thousands in demurrage and delays. UK–Nigeria customs requires specialists who know both systems inside out.",
+    problemTitle:"Cargo held at UK or Nigerian customs   again?",
+    problemBody:"Incorrect documentation, wrong HS codes, missed compliance checks   customs errors cost businesses thousands in demurrage and delays. UK Nigeria customs requires specialists who know both systems inside out.",
     solutionTitle:"UK & Nigeria Customs Clearance, Handled.",
-    solutionBody:"End-to-end customs brokerage by our in-house team — covering UK HMRC and Nigeria Customs Service (NCS). HS code classification, duty calculation, compliance checks, and all filings. Your cargo moves on time, every time.",
+    solutionBody:"End-to-end customs brokerage by our in-house team   covering UK HMRC and Nigeria Customs Service (NCS). HS code classification, duty calculation, compliance checks, and all filings. Your cargo moves on time, every time.",
     sub:"UK HMRC & Nigeria NCS", rate:"Included", accent:"#1F51FF",
-    img:IMGS.customs, imgAlt:"Customs clearance documentation being processed for UK–Nigeria shipment",
+    img:IMGS.customs, imgAlt:"Customs clearance documentation being processed for UK Nigeria shipment",
     points:["UK import & export customs clearance (HMRC)","Nigeria Customs Service (NCS) compliant","Accurate HS code classification","Duty & VAT calculation handled","Urgent priority clearance available","HMRC authorised customs agent"],
     metric:{ val:"0", unit:"surprises", label:"transparent customs clearance" },
     airlines:[],
@@ -129,9 +129,9 @@ const SOLUTIONS = [
   {
     id:"warehousing", slug:"/warehousing", icon:Warehouse, label:"Warehousing", badge:"UK & Nigeria",
     problemTitle:"No storage solution at the UK or Nigerian end?",
-    problemBody:"Without a trusted warehouse partner at both ends of the UK–Nigeria corridor, your stock sits untracked, uninsured, and managed by third parties who do not understand your cargo.",
+    problemBody:"Without a trusted warehouse partner at both ends of the UK Nigeria corridor, your stock sits untracked, uninsured, and managed by third parties who do not understand your cargo.",
     solutionTitle:"Secure UK & Nigeria Warehousing.",
-    solutionBody:"Monitored storage at our Upminster, Essex (UK) and Lagos (Nigeria) facilities. Pre-consolidation, long-term distribution, or just-in-time despatch — managed by the same team that ships your cargo.",
+    solutionBody:"Monitored storage at our Upminster, Essex (UK) and Lagos (Nigeria) facilities. Pre-consolidation, long-term distribution, or just-in-time despatch   managed by the same team that ships your cargo.",
     sub:"Upminster Essex UK · Lagos Nigeria", rate:"from £25/wk", accent:"#0437F2",
     img:IMGS.warehousing, imgAlt:"Secure R-Zone warehouse in Upminster Essex for UK and Nigeria cargo storage",
     points:["Upminster, Essex UK warehouse facility","Lagos, Nigeria storage hub","24/7 CCTV monitored & fully insured","Flexible short & long-term storage terms","Full inventory management system","Pick, pack & same-day despatch"],
@@ -142,7 +142,7 @@ const SOLUTIONS = [
     id:"cargo-handling", slug:"/services", icon:Anchor, label:"Cargo Handling", badge:"Specialist",
     problemTitle:"Oversized, hazardous or heavy-lift cargo for Nigeria?",
     problemBody:"Standard couriers will not touch it. Freight forwarders without Nigerian port experience create expensive mistakes. Your project cargo needs a certified specialist team.",
-    solutionTitle:"Specialist Port & Cargo Handling — Nigeria.",
+    solutionTitle:"Specialist Port & Cargo Handling   Nigeria.",
     solutionBody:"Port stevedoring, heavy lift, oversized and out-of-gauge cargo at Apapa, Tin Can Island, Onne, and Calabar ports. IATA/IMDG dangerous goods certified. Full compliance from UK origin to Nigerian final placement.",
     sub:"Nigerian port operations · Heavy lift", rate:"POA", accent:"#0818A8",
     img:IMGS.cargo, imgAlt:"Port crane loading specialist out-of-gauge cargo at Nigerian Apapa port",
@@ -153,11 +153,11 @@ const SOLUTIONS = [
 ];
 
 const WHY_RZONE = [
-  { icon:Shield,    title:"Fully Insured, IATA-Certified & HMRC-Registered",    accent:"#0818A8", body:"Every R-Zone shipment carries comprehensive cargo insurance. IATA-certified, NCS-compliant, and HMRC-registered — operating to international standards at every stage of the UK–Nigeria corridor." },
+  { icon:Shield,    title:"Fully Insured, IATA-Certified & HMRC-Registered",    accent:"#0818A8", body:"Every R-Zone shipment carries comprehensive cargo insurance. IATA-certified, NCS-compliant, and HMRC-registered   operating to international standards at every stage of the UK Nigeria corridor." },
   { icon:Users,     title:"Real People. No Bots. No Call Centres.",              accent:"#1F51FF", body:"Our UK-based team answers calls and responds to emails the same day, Mon to Fri. You will never be routed to a call centre, an automated system, or an overseas outsourced team." },
   { icon:Globe,     title:"Both Ends of the Corridor, In-House",                 accent:"#0818A8", body:"Unlike brokers who outsource Nigeria-side operations, R-Zone runs its own Lagos hub. Seamless customs clearance, port handling, and last-mile delivery across all 36 Nigerian states." },
-  { icon:Zap,       title:"Weekly Departures — Air & Sea, Every Week",           accent:"#1F51FF", body:"Air freight departs weekly. Sea freight sails weekly. You are never waiting weeks for a vessel. Your UK–Nigeria cargo moves on schedule every week of the year." },
-  { icon:Award,     title:"#1 Highest-Rated UK–Nigeria Cargo Company on Google", accent:"#0818A8", body:"100+ five-star Google reviews — organically earned, never incentivised. The most trusted cargo and logistics company between the UK, Nigeria, and across Africa since 2012." },
+  { icon:Zap,       title:"Weekly Departures   Air & Sea, Every Week",           accent:"#1F51FF", body:"Air freight departs weekly. Sea freight sails weekly. You are never waiting weeks for a vessel. Your UK Nigeria cargo moves on schedule every week of the year." },
+  { icon:Award,     title:"#1 Highest-Rated UK Nigeria Cargo Company on Google", accent:"#0818A8", body:"100+ five-star Google reviews   organically earned, never incentivised. The most trusted cargo and logistics company between the UK, Nigeria, and across Africa since 2012." },
   { icon:TrendingUp,title:"Transparent Pricing. No Hidden Charges.",             accent:"#1F51FF", body:"R-Zone quotes include customs, handling, and all fees upfront. What you are quoted is what you pay. We have built our 12-year reputation on complete pricing transparency." },
 ];
 
@@ -171,17 +171,17 @@ const TRUST_STATS = [
 ];
 
 const PROCESS = [
-  { num:"01", title:"Tell Us Your UK–Nigeria Logistics Challenge",  body:"Share your cargo details, destination in Nigeria, and timeline. Air, sea, import or export — we identify the right solution and quote the same day.", icon:Briefcase, label:"Free consultation" },
-  { num:"02", title:"We Build Your Personalised Solution",          body:"Our UK team produces a transparent, itemised quote — no hidden charges, no guesswork. You know exactly what you are paying and when your cargo moves.", icon:BarChart3, label:"Itemised quote" },
-  { num:"03", title:"R-Zone Handles Everything End-to-End",         body:"Collection, export manifests, UK customs, airline or vessel booking, Nigerian customs clearance, and last-mile delivery — your dedicated handler manages every step.", icon:Shield, label:"End-to-end managed" },
-  { num:"04", title:"Real-Time Tracking to the Nigerian Door",      body:"Live updates from UK departure to Nigeria delivery. Your team is notified at every milestone — no chasing, no guessing, no calls to a call centre.", icon:MapPin, label:"Live tracking" },
+  { num:"01", title:"Tell Us Your UK Nigeria Logistics Challenge",  body:"Share your cargo details, destination in Nigeria, and timeline. Air, sea, import or export   we identify the right solution and quote the same day.", icon:Briefcase, label:"Free consultation" },
+  { num:"02", title:"We Build Your Personalised Solution",          body:"Our UK team produces a transparent, itemised quote   no hidden charges, no guesswork. You know exactly what you are paying and when your cargo moves.", icon:BarChart3, label:"Itemised quote" },
+  { num:"03", title:"R-Zone Handles Everything End-to-End",         body:"Collection, export manifests, UK customs, airline or vessel booking, Nigerian customs clearance, and last-mile delivery   your dedicated handler manages every step.", icon:Shield, label:"End-to-end managed" },
+  { num:"04", title:"Real-Time Tracking to the Nigerian Door",      body:"Live updates from UK departure to Nigeria delivery. Your team is notified at every milestone   no chasing, no guessing, no calls to a call centre.", icon:MapPin, label:"Live tracking" },
 ];
 
 const FAQ_ITEMS = [
-  { q:"How does R-Zone handle customs clearance between the UK and Nigeria?", a:"R-Zone's in-house customs team handles all UK HMRC and Nigeria Customs Service (NCS) documentation, HS code classification, duty and VAT calculation, and compliance filings — included in all standard shipments. We are an HMRC-authorised customs agent." },
-  { q:"Does R-Zone offer weekly sea freight to Nigeria?", a:"Yes. R-Zone operates weekly sea freight sailings from UK ports to Lagos, Nigeria. Both LCL (shared container) and FCL (full container load) options are available. Sea freight transit time from the UK to Nigeria is 4–6 weeks." },
-  { q:"Can R-Zone collect cargo from anywhere in the UK?", a:"Yes — R-Zone offers UK-wide door collection for both air and sea freight shipments to Nigeria. Cargo can also be dropped off at our Upminster, Essex consolidation warehouse." },
-  { q:"How long does air freight from the UK to Nigeria take?", a:"Air freight from the UK to Nigeria takes 5–10 working days, depending on the destination state and Nigerian customs clearance speed. R-Zone operates weekly air departures from London Heathrow, Gatwick, and Manchester." },
+  { q:"How does R-Zone handle customs clearance between the UK and Nigeria?", a:"R-Zone's in-house customs team handles all UK HMRC and Nigeria Customs Service (NCS) documentation, HS code classification, duty and VAT calculation, and compliance filings   included in all standard shipments. We are an HMRC-authorised customs agent." },
+  { q:"Does R-Zone offer weekly sea freight to Nigeria?", a:"Yes. R-Zone operates weekly sea freight sailings from UK ports to Lagos, Nigeria. Both LCL (shared container) and FCL (full container load) options are available. Sea freight transit time from the UK to Nigeria is 4 6 weeks." },
+  { q:"Can R-Zone collect cargo from anywhere in the UK?", a:"Yes   R-Zone offers UK-wide door collection for both air and sea freight shipments to Nigeria. Cargo can also be dropped off at our Upminster, Essex consolidation warehouse." },
+  { q:"How long does air freight from the UK to Nigeria take?", a:"Air freight from the UK to Nigeria takes 5 10 working days, depending on the destination state and Nigerian customs clearance speed. R-Zone operates weekly air departures from London Heathrow, Gatwick, and Manchester." },
   { q:"Does R-Zone deliver to Abuja, Lagos, and all Nigerian states?", a:"Yes. R-Zone delivers to all 36 Nigerian states including Abuja (FCT), Lagos, Rivers, Kano, Delta, Oyo, Anambra, Enugu, and every other state. Our Lagos-based hub manages last-mile delivery across the country." },
   { q:"What types of cargo does R-Zone ship from the UK to Nigeria?", a:"R-Zone ships general cargo, clothing and textiles, electronics, household goods, foodstuffs, machinery, vehicles, building materials, commercial merchandise, and personal effects. Hazardous goods and oversized cargo are handled by our specialist port team." },
 ];
@@ -240,25 +240,25 @@ function Hero() {
             <motion.div initial="hidden" animate={inView ? "visible" : "hidden"}
               variants={{ hidden:{}, visible:{ transition:{ staggerChildren:0.1 } } }}>
 
-              {/* Trust badge — #1 claim */}
+              {/* Trust badge   #1 claim */}
               <motion.div variants={fadeUp} custom={0}
                 className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full mb-4">
                 <Award size={13} className="text-[#1F51FF]" aria-hidden="true" />
-                <span className="text-white text-[13px] font-bold">Highest-Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
+                <span className="text-white text-[13px] font-bold">Highest-Ranked UK Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
               </motion.div>
 
               <motion.div variants={fadeUp} custom={0.02}>
                 <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/30 bg-[#0818A8]/14 px-4 py-1.5 rounded-full mb-6 w-fit">
                   <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
                     animate={{ scale:[1,1.7,1], opacity:[1,0.4,1] }} transition={{ duration:2.2, repeat:Infinity }} aria-hidden="true" />
-                  <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">UK–Nigeria Business Logistics Solutions</span>
+                  <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">UK Nigeria Business Logistics Solutions</span>
                 </div>
               </motion.div>
 
-              {/* H1 — primary keyword embedded */}
+              {/* H1   primary keyword embedded */}
               <motion.h1 id="biz-hero-heading" variants={fadeUp} custom={0.1}
                 className="text-white font-black text-[clamp(36px,7vw,84px)] leading-[0.88] tracking-[-0.035em] uppercase mb-7">
-                Your UK–Nigeria Cargo.{" "}
+                Your UK Nigeria Cargo.{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 text-[#1F51FF]">Our Solution.</span>
                   <motion.span className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]" aria-hidden="true"
@@ -284,31 +284,31 @@ function Hero() {
                 </AnimatePresence>
               </motion.div>
 
-              {/* SEO body — keyword-rich */}
+              {/* SEO body   keyword-rich */}
               <motion.p variants={fadeUp} custom={0.2}
                 className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-10">
                 Cargo delayed at customs. Supply chains stalled. No visibility on your UK-to-Nigeria shipment or cargo to Nigeria from UK.
-                R-Zone Enterprises solves every UK–Nigeria logistics challenge —
+                R-Zone Enterprises solves every UK Nigeria logistics challenge  
                 with our own teams on <strong className="text-white font-semibold">both sides of the corridor</strong> since 2012.
-                Air freight to Nigeria, sea freight to Nigeria from UK, door-to-door cargo to Nigeria, customs clearance, warehousing and importation — all under one roof.
+                Air freight to Nigeria, sea freight to Nigeria from UK, door-to-door cargo to Nigeria, customs clearance, warehousing and importation   all under one roof.
               </motion.p>
 
               <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
                 <Link href="/quote"
                   className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
-                  aria-label="Get a free UK–Nigeria business shipping quote">
+                  aria-label="Get a free UK Nigeria business shipping quote">
                   Solve My Logistics Problem
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
                 </Link>
                 <a href="https://wa.me/448007720864?text=Hello%2C%20I%27d%20like%20to%20discuss%20UK%20to%20Nigeria%20cargo."
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 border border-[#25D366]/30 bg-[#25D366]/08 hover:bg-[#25D366]/14 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
-                  aria-label="WhatsApp R-Zone for a UK–Nigeria cargo solution">
+                  aria-label="WhatsApp R-Zone for a UK Nigeria cargo solution">
                   <MessageSquare size={13} className="text-[#25D366]" aria-hidden="true" /> WhatsApp Us
                 </a>
                 <a href="#solutions"
                   className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
-                  aria-label="View all UK–Nigeria business logistics solutions">
+                  aria-label="View all UK Nigeria business logistics solutions">
                   See All Solutions
                 </a>
               </motion.div>
@@ -325,11 +325,11 @@ function Hero() {
               {[
                 { icon:MapPin,  label:"UK Headquarters",        val:"Upminster, Essex"               },
                 { icon:Globe,   label:"Nigeria Hub",             val:"Shagam Interchange, Lagos"     },
-                { icon:Clock,   label:"Operating Since",         val:"2012 — 12+ years"               },
+                { icon:Clock,   label:"Operating Since",         val:"2012   12+ years"               },
                 { icon:Package, label:"Shipments Delivered",     val:"50,000+"                        },
                 { icon:Star,    label:"Google Reviews",          val:"100 × Five-Star (organically)"  },
                 { icon:Shield,  label:"Certification",           val:"IATA · HMRC Authorised"         },
-                { icon:Zap,     label:"Weekly Departures",       val:"Air & Sea — every week"         },
+                { icon:Zap,     label:"Weekly Departures",       val:"Air & Sea   every week"         },
                 { icon:Globe,   label:"Nigerian States Covered", val:"All 36 + FCT Abuja"             },
               ].map(({ icon:Icon, label, val }) => (
                 <div key={label} className="flex items-center justify-between border-b border-white/[0.06] pb-4 last:border-0 last:pb-0">
@@ -363,14 +363,14 @@ function SolutionNav() {
 
   return (
     <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
-      role="navigation" aria-label="UK–Nigeria business logistics solutions navigation">
+      role="navigation" aria-label="UK Nigeria business logistics solutions navigation">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
         <div className="flex items-center gap-0 overflow-x-auto scrollbar-none">
           {SOLUTIONS.map(s => {
             const Icon = s.icon; const isActive = active === s.id;
             return (
               <a key={s.id} href={`#${s.id}`}
-                aria-label={`${s.label} — UK–Nigeria ${s.label.toLowerCase()} service`}
+                aria-label={`${s.label}   UK Nigeria ${s.label.toLowerCase()} service`}
                 className={`flex items-center gap-2 px-4 py-3.5 text-[12px] font-semibold tracking-[0.03em] whitespace-nowrap flex-shrink-0 border-b-2 transition-all duration-150 ${
                   isActive ? "border-[#0818A8] text-[#0818A8]" : "border-transparent text-gray-600 hover:text-[#0818A8] hover:border-gray-300"
                 }`}>
@@ -381,7 +381,7 @@ function SolutionNav() {
           <div className="ml-auto flex-shrink-0 pl-4">
             <Link href="/quote"
               className="inline-flex items-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[11px] font-black tracking-[0.08em] uppercase px-5 py-2 transition-all duration-200 my-2"
-              aria-label="Get a free UK–Nigeria shipping quote">
+              aria-label="Get a free UK Nigeria shipping quote">
               Free Quote <ArrowRight size={10} aria-hidden="true" />
             </Link>
           </div>
@@ -456,7 +456,7 @@ function SolutionSection({ sol, index }) {
               <span className={`text-[10px] font-bold tracking-[0.28em] uppercase ${isDark?"text-white/60":"text-gray-500"}`}>R-Zone Solution</span>
             </motion.div>
 
-            {/* H2 — keyword per service */}
+            {/* H2   keyword per service */}
             <motion.h2 id={`${sol.id}-heading`} variants={fadeUp} custom={0.1}
               className={`font-black text-[clamp(26px,4.5vw,48px)] leading-[0.92] tracking-[-0.03em] uppercase mb-3 ${isDark?"text-white":"text-gray-900"}`}
               itemProp="name">
@@ -571,7 +571,7 @@ function WhyRZone() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
           <motion.div initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
-            <TagPill label="Why Businesses Choose R-Zone for UK–Nigeria Cargo" dark />
+            <TagPill label="Why Businesses Choose R-Zone for UK Nigeria Cargo" dark />
           </motion.div>
           <motion.h2 id="why-heading" initial={{ opacity:0, y:16 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}
             className="font-black text-[clamp(26px,4.5vw,52px)] text-white leading-[0.92] tracking-[-0.028em] uppercase">
@@ -584,8 +584,8 @@ function WhyRZone() {
           </motion.h2>
           <motion.p className="text-white/65 text-[14px] font-light mt-4 max-w-xl mx-auto leading-relaxed"
             initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
-            Other UK–Nigeria freight providers route your cargo through third-party networks and hope for the best.
-            R-Zone owns both ends of the corridor — UK and Nigeria — and that changes everything.
+            Other UK Nigeria freight providers route your cargo through third-party networks and hope for the best.
+            R-Zone owns both ends of the corridor   UK and Nigeria   and that changes everything.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -610,8 +610,8 @@ function WhyRZone() {
         <motion.div className="text-center mt-10" initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.5 }}>
           <Link href="/about"
             className="inline-flex items-center gap-2 text-[#1F51FF] hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase transition-colors"
-            aria-label="Learn more about R-Zone Enterprises — 12 years of UK–Nigeria logistics">
-            About R-Zone — 12 years of UK–Nigeria logistics <ChevronRight size={13} aria-hidden="true" />
+            aria-label="Learn more about R-Zone Enterprises   12 years of UK Nigeria logistics">
+            About R-Zone   12 years of UK Nigeria logistics <ChevronRight size={13} aria-hidden="true" />
           </Link>
         </motion.div>
       </div>
@@ -635,13 +635,13 @@ function TrustStats() {
           <motion.div initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
             <div className="inline-flex items-center gap-2.5 border border-white/25 bg-white/10 px-4 py-1.5 rounded-full mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-white/80" aria-hidden="true" />
-              <span className="text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase">R-Zone UK–Nigeria Cargo — By the Numbers</span>
+              <span className="text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase">R-Zone UK Nigeria Cargo   By the Numbers</span>
             </div>
           </motion.div>
           <motion.h2 id="trust-heading" initial={{ opacity:0, y:16 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}
             className="font-black text-[clamp(26px,4.5vw,50px)] text-white leading-[0.92] tracking-[-0.03em] uppercase">
             The #1 Highest-Rated{" "}
-            <span className="text-white/60">UK–Nigeria Cargo Company on Google.</span>
+            <span className="text-white/60">UK Nigeria Cargo Company on Google.</span>
           </motion.h2>
           <motion.p className="text-white/70 text-[14px] font-light mt-4 max-w-lg mx-auto leading-relaxed"
             initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
@@ -679,7 +679,7 @@ function HowRZoneWorks() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="text-center mb-14">
           <motion.div initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
-            <TagPill label="How UK–Nigeria Shipping Works with R-Zone" />
+            <TagPill label="How UK Nigeria Shipping Works with R-Zone" />
           </motion.div>
           <motion.h2 id="how-heading" initial={{ opacity:0, y:16 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}
             className="font-black text-[clamp(26px,4.5vw,52px)] text-gray-900 leading-[0.92] tracking-[-0.028em] uppercase">
@@ -692,7 +692,7 @@ function HowRZoneWorks() {
           </motion.h2>
           <motion.p className="text-gray-600 text-[14px] font-light mt-4 max-w-lg mx-auto leading-relaxed"
             initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
-            Four steps. One UK–Nigeria team. Zero handoffs. Your freight challenge becomes our fully-managed solution.
+            Four steps. One UK Nigeria team. Zero handoffs. Your freight challenge becomes our fully-managed solution.
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -724,7 +724,7 @@ function HowRZoneWorks() {
         <div className="text-center mt-10">
           <Link href="/quote"
             className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.09em] uppercase px-8 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
-            aria-label="Get your free UK–Nigeria cargo quote from R-Zone">
+            aria-label="Get your free UK Nigeria cargo quote from R-Zone">
             Get Your Free Quote <ArrowRight size={13} aria-hidden="true" />
           </Link>
         </div>
@@ -745,11 +745,11 @@ function FAQSection() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <motion.div initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
-              <TagPill label="Common Questions About UK–Nigeria Shipping" />
+              <TagPill label="Common Questions About UK Nigeria Shipping" />
             </motion.div>
             <motion.h2 id="faq-heading" initial={{ opacity:0, y:16 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}
               className="font-black text-[clamp(24px,4vw,42px)] text-gray-900 leading-[0.92] tracking-[-0.025em] uppercase mb-4">
-              UK–Nigeria Cargo{" "}<span className="text-[#0818A8]">FAQ</span>
+              UK Nigeria Cargo{" "}<span className="text-[#0818A8]">FAQ</span>
             </motion.h2>
             <motion.p className="text-gray-600 text-[14px] font-light leading-relaxed"
               initial={{ opacity:0 }} animate={inView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
@@ -795,7 +795,7 @@ function BusinessCTA() {
   const inView = useInView(ref, { once:true, margin:"-40px" });
   return (
     <section ref={ref} className="relative bg-[#00061a] overflow-hidden"
-      aria-label="Contact R-Zone — UK–Nigeria cargo and logistics specialists">
+      aria-label="Contact R-Zone   UK Nigeria cargo and logistics specialists">
       <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"64px 64px" }} />
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
@@ -804,18 +804,18 @@ function BusinessCTA() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity:0, y:20 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.65 }}>
-            <TagPill label="Speak to Our UK–Nigeria Logistics Team" dark />
+            <TagPill label="Speak to Our UK Nigeria Logistics Team" dark />
             <h2 className="font-black text-[clamp(30px,5.5vw,60px)] text-white leading-[0.9] tracking-[-0.03em] uppercase mb-5">
-              Ready to Solve<br /><span className="text-[#1F51FF]">Your UK–Nigeria Logistics Problem?</span>
+              Ready to Solve<br /><span className="text-[#1F51FF]">Your UK Nigeria Logistics Problem?</span>
             </h2>
             <p className="text-white/65 text-[15px] font-light leading-relaxed max-w-lg mb-8">
-              Our UK-based team responds the same day — no call centres, no automated replies.
-              Real cargo experts who know the UK–Nigeria corridor inside out. Air freight, sea freight, or door-to-door — we solve it.
+              Our UK-based team responds the same day   no call centres, no automated replies.
+              Real cargo experts who know the UK Nigeria corridor inside out. Air freight, sea freight, or door-to-door   we solve it.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Link href="/quote"
                 className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[12.5px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-2xl shadow-[#0818A8]/40"
-                aria-label="Get a free UK–Nigeria business cargo quote from R-Zone">
+                aria-label="Get a free UK Nigeria business cargo quote from R-Zone">
                 Get a Free Quote
                 <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
@@ -827,12 +827,12 @@ function BusinessCTA() {
               <a href="https://wa.me/448007720864?text=Hello%2C%20I%20need%20help%20with%20UK%20to%20Nigeria%20cargo."
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 border border-[#25D366]/30 bg-[#25D366]/08 hover:bg-[#25D366]/14 text-white text-[12.5px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200"
-                aria-label="WhatsApp R-Zone Enterprises for UK–Nigeria cargo">
+                aria-label="WhatsApp R-Zone Enterprises for UK Nigeria cargo">
                 <MessageSquare size={13} className="text-[#25D366]" aria-hidden="true" /> WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap gap-6">
-              {["Free Consultation","Same-Day Response","No Hidden Fees","IATA Certified","Weekly UK–Nigeria Departures"].map(t => (
+              {["Free Consultation","Same-Day Response","No Hidden Fees","IATA Certified","Weekly UK Nigeria Departures"].map(t => (
                 <span key={t} className="flex items-center gap-2 text-white/65 text-[12px] font-light">
                   <Check size={12} className="text-[#1F51FF]" aria-hidden="true" /> {t}
                 </span>
@@ -848,7 +848,7 @@ function BusinessCTA() {
                 <motion.a key={sol.id} href={`#${sol.id}`}
                   className="group border border-white/[0.07] bg-white/[0.04] p-5 hover:border-white/[0.18] hover:bg-white/[0.07] transition-all duration-300 relative overflow-hidden"
                   initial={{ opacity:0, y:12 }} animate={inView?{ opacity:1, y:0 }:{}} transition={{ duration:0.45, delay:0.4+i*0.06 }}
-                  aria-label={`View ${sol.label} — UK to Nigeria`}>
+                  aria-label={`View ${sol.label}   UK to Nigeria`}>
                   <div className="absolute top-0 left-0 right-0 h-[2px] w-0 group-hover:w-full transition-all duration-400"
                     style={{ backgroundColor:sol.accent }} aria-hidden="true" />
                   <Icon size={16} style={{ color:sol.accent }} className="mb-3" aria-hidden="true" />
@@ -878,7 +878,7 @@ export default function BusinessSolutionsClient() {
           {
             "@type":"LocalBusiness","@id":"https://r-zoneenterprises.com/#business",
             "name":"R-Zone Enterprises",
-            "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
+            "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
             "url":"https://r-zoneenterprises.com","telephone":"+448007720864","email":"info@r-zoneenterprises.com",
             "address":{ "@type":"PostalAddress","addressLocality":"Upminster","addressRegion":"Essex","addressCountry":"GB" },
             "areaServed":["United Kingdom","Nigeria"],
@@ -886,7 +886,7 @@ export default function BusinessSolutionsClient() {
           },
           {
             "@type":"ItemList",
-            "name":"R-Zone Enterprises — UK–Nigeria Cargo & Logistics Services",
+            "name":"R-Zone Enterprises   UK Nigeria Cargo & Logistics Services",
             "url":"https://r-zoneenterprises.com/business-solutions",
             "numberOfItems":SOLUTIONS.length,
             "itemListElement":SOLUTIONS.map((s,i) => ({
@@ -912,7 +912,7 @@ export default function BusinessSolutionsClient() {
       <div className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] w-full`}>
         <Hero />
         <SolutionNav />
-        <main id="solutions" aria-label="UK–Nigeria business logistics solutions">
+        <main id="solutions" aria-label="UK Nigeria business logistics solutions">
           {SOLUTIONS.map((sol, i) => <SolutionSection key={sol.id} sol={sol} index={i} />)}
         </main>
         <WhyRZone />

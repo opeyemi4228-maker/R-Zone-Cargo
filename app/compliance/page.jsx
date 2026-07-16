@@ -34,7 +34,7 @@ const CERTIFICATIONS = [
   {
     icon: Award,
     title: "IATA Cargo Agent",
-    authority: "IATA — Geneva",
+    authority: "IATA   Geneva",
     status: "Active",
     desc: "R-Zone Enterprises holds IATA (International Air Transport Association) cargo agent accreditation, authorising us to book air cargo space on behalf of customers on IATA member airlines worldwide. Our IATA registration is subject to annual audit and renewal.",
     highlights: ["Annual audit compliance", "Access to IATA airline network", "IATA DGR certified staff", "Air waybill issuance authorised"],
@@ -42,7 +42,7 @@ const CERTIFICATIONS = [
   {
     icon: Building2,
     title: "HMRC Authorised Customs Agent",
-    authority: "HMRC — United Kingdom",
+    authority: "HMRC   United Kingdom",
     status: "Active",
     desc: "We are registered with HM Revenue & Customs as an authorised customs agent, enabling us to submit import and export declarations through the UK's Customs Declaration Service (CDS) and CHIEF systems on behalf of our customers.",
     highlights: ["CDS & CHIEF access", "Import/export declarations", "UK tariff classification", "Duty calculation & payment"],
@@ -50,23 +50,23 @@ const CERTIFICATIONS = [
   {
     icon: Globe,
     title: "Nigeria Customs Service Registration",
-    authority: "NCS — Abuja, Nigeria",
+    authority: "NCS   Abuja, Nigeria",
     status: "Active",
     desc: "R-Zone Enterprises is registered with the Nigeria Customs Service (NCS) as a licensed freight forwarder, authorising our Lagos team to handle customs clearance at all major Nigerian ports including Apapa and Tin Can Island.",
     highlights: ["All major Nigerian ports", "NAFDAC liaison capability", "SON compliance guidance", "DPR regulated commodities"],
   },
   {
     icon: Shield,
-    title: "ICO Registration — Data Protection",
-    authority: "ICO — United Kingdom",
+    title: "ICO Registration   Data Protection",
+    authority: "ICO   United Kingdom",
     status: "Active",
     desc: "R-Zone Enterprises Ltd is registered with the UK Information Commissioner's Office (ICO) as required under the Data Protection Act 2018. Our registration is renewed annually. We are fully compliant with UK GDPR.",
     highlights: ["UK GDPR compliant", "Annual ICO renewal", "Data breach protocol active", "DPO designated"],
   },
   {
     icon: FileCheck,
-    title: "Companies House — England & Wales",
-    authority: "Companies House — Cardiff",
+    title: "Companies House   England & Wales",
+    authority: "Companies House   Cardiff",
     status: "Active",
     desc: "R-Zone Enterprises Ltd is incorporated and registered in England and Wales. Our company registration, directors, confirmation statements, and annual accounts are filed on time and publicly accessible at Companies House.",
     highlights: ["Registered in England & Wales", "Annual accounts filed", "Confirmation statements current", "Directors' details public"],
@@ -157,9 +157,9 @@ export default function CompliancePage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "WebPage",
-        "name": "Compliance — R-Zone Enterprises",
+        "name": "Compliance   R-Zone Enterprises",
         "url": "https://r-zoneenterprises.com/compliance",
-        "description": "R-Zone Enterprises regulatory compliance — IATA certification, HMRC customs agent, NCS registration, UK GDPR, AML, trade controls and consumer protection.",
+        "description": "R-Zone Enterprises regulatory compliance   IATA certification, HMRC customs agent, NCS registration, UK GDPR, AML, trade controls and consumer protection.",
         "dateModified": "2025-01-15",
         "publisher": { "@type": "Organization", "name": "R-Zone Enterprises", "url": "https://r-zoneenterprises.com" },
       })}} />
@@ -167,7 +167,7 @@ export default function CompliancePage() {
       {/* Top bar */}
       <div className="bg-[#0818A8]">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
-          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises — Legal &amp; Compliance</p>
+          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises   Legal &amp; Compliance</p>
           <div className="hidden sm:flex items-center gap-6">
             <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone"><Phone size={10} aria-hidden="true" /> +44 800 772 0864</a>
             <a href="mailto:compliance@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Email compliance"><Mail size={10} aria-hidden="true" /> compliance@r-zoneenterprises.com</a>
@@ -201,7 +201,7 @@ export default function CompliancePage() {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { label: "Last Updated", val: "15 January 2025",    icon: Clock      },
-                { label: "Version",      val: "v3.0 — 2025",        icon: FileText   },
+                { label: "Version",      val: "v3.0   2025",        icon: FileText   },
                 { label: "Frameworks",   val: "UK, Nigeria & Intl.", icon: Globe      },
                 { label: "Oversight",    val: "Board-level review",  icon: TrendingUp },
               ].map(({ label, val, icon: Icon }) => (
@@ -216,7 +216,7 @@ export default function CompliancePage() {
 
           {/* Certification status strip */}
           <div className="mt-10 border border-gray-200 bg-gray-50 p-5">
-            <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Certification Status — All Current</p>
+            <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Certification Status   All Current</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {CERTIFICATIONS.map(cert => {
                 const Icon = cert.icon;
@@ -358,19 +358,19 @@ export default function CompliancePage() {
             </Section>
 
             <Section id="co3" num="03" title="Customs Compliance">
-              <H3>3.1 — UK Customs</H3>
+              <H3>3.1   UK Customs</H3>
               <P>We operate as an authorised customs agent under UK law. All UK import and export declarations are filed electronically through HMRC's Customs Declaration Service (CDS). We maintain accurate records of all customs entries for a minimum of six years as required by law.</P>
               <P>Our customs team is trained in UK tariff classification (Commodity Codes), Rules of Origin, and import duty calculation. We hold letters of authority from customers authorising us to act on their behalf in all customs matters.</P>
-              <H3>3.2 — Nigeria Customs</H3>
+              <H3>3.2   Nigeria Customs</H3>
               <P>Our Lagos operations team is registered with the Nigeria Customs Service (NCS) and complies fully with the Nigeria Customs and Excise Management Act. All Nigerian import declarations are filed in accordance with NCS procedures, including payment of applicable import duties and levies.</P>
               <P>We comply with NAFDAC requirements for regulated imports including foodstuffs, cosmetics, and pharmaceuticals, and with SON (Standards Organisation of Nigeria) requirements for regulated products.</P>
-              <H3>3.3 — Customs Accuracy</H3>
+              <H3>3.3   Customs Accuracy</H3>
               <P>We always file customs declarations accurately based on information provided by our customers. Customers who provide incorrect or incomplete cargo information are solely responsible for any penalties, delays, or seizures arising.</P>
               <Callout type="red"><strong className="font-semibold">Criminal offence:</strong> Misdeclaration of goods to customs authorities is a criminal offence in both the UK and Nigeria. R-Zone Enterprises will not assist in customs fraud and will cooperate fully with any investigation by customs authorities.</Callout>
             </Section>
 
             <Section id="co4" num="04" title="Data Protection Compliance">
-              <H3>4.1 — UK GDPR & Data Protection Act 2018</H3>
+              <H3>4.1   UK GDPR & Data Protection Act 2018</H3>
               <P>R-Zone Enterprises Ltd is registered with the Information Commissioner's Office (ICO) as required by the Data Protection Act 2018. We process personal data in accordance with the six data protection principles:</P>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
                 {PRINCIPLES.map((p, i) => (
@@ -385,32 +385,32 @@ export default function CompliancePage() {
                   </div>
                 ))}
               </div>
-              <H3>4.2 — Privacy by Design</H3>
+              <H3>4.2   Privacy by Design</H3>
               <P>We embed data protection principles into our systems and processes from the outset. Privacy impact assessments are conducted for new processing activities that may present risk to individuals' rights.</P>
               <P>For full details of our data protection practices, see our <a href="/privacy" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Privacy Policy</a>.</P>
             </Section>
 
             <Section id="co5" num="05" title="Anti-Money Laundering">
               <P>R-Zone Enterprises complies with the UK Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 and the Proceeds of Crime Act 2002.</P>
-              <H3>5.1 — Customer Due Diligence</H3>
-              <P>We apply Customer Due Diligence (CDD) procedures to our business customers and, where applicable, high-value individual customers — including identity verification, source of funds checks, and assessment of the business relationship.</P>
-              <H3>5.2 — Suspicious Activity Reporting</H3>
+              <H3>5.1   Customer Due Diligence</H3>
+              <P>We apply Customer Due Diligence (CDD) procedures to our business customers and, where applicable, high-value individual customers   including identity verification, source of funds checks, and assessment of the business relationship.</P>
+              <H3>5.2   Suspicious Activity Reporting</H3>
               <P>We have a legal obligation to report suspicious activity to the National Crime Agency (NCA) via a Suspicious Activity Report (SAR) where we know, suspect, or have reasonable grounds to suspect money laundering or terrorist financing. We cannot inform the subject of any such report (tipping off is a criminal offence).</P>
-              <H3>5.3 — Sanctions Screening</H3>
+              <H3>5.3   Sanctions Screening</H3>
               <P>We screen all parties against UK Government sanctions lists (OFSI) and UN Security Council sanctions lists. We will not provide services to sanctioned individuals or entities.</P>
-              <H3>5.4 — Bribery & Corruption</H3>
+              <H3>5.4   Bribery & Corruption</H3>
               <P>R-Zone Enterprises has a zero-tolerance policy for bribery and corruption in accordance with the Bribery Act 2010. We do not offer, give, request, or accept bribes in any form. All staff are trained on our anti-bribery policy.</P>
               <Callout type="amber"><strong className="font-semibold">Reporting:</strong> If you have concerns about financial crime involving R-Zone Enterprises, please report them to <a href="mailto:aml@r-zoneenterprises.com" className="font-semibold underline underline-offset-2">aml@r-zoneenterprises.com</a>. All reports are treated confidentially.</Callout>
             </Section>
 
             <Section id="co6" num="06" title="Trade & Export Controls">
-              <P>We comply with UK Strategic Export Controls administered by the Export Control Joint Unit (ECJU) of the Department for Business and Trade. We do not ship controlled goods — military equipment, dual-use items, or items on the UK Military List — without appropriate export licences.</P>
+              <P>We comply with UK Strategic Export Controls administered by the Export Control Joint Unit (ECJU) of the Department for Business and Trade. We do not ship controlled goods   military equipment, dual-use items, or items on the UK Military List   without appropriate export licences.</P>
               <P>Our staff are trained to identify potentially controlled goods and refer such matters to our compliance team before acceptance. Where in doubt, we will not ship.</P>
               <P>We comply with Nigeria's import prohibition list and all applicable trade embargoes. We do not circumvent or assist customers in circumventing trade restrictions.</P>
             </Section>
 
             <Section id="co7" num="07" title="Cargo & Aviation Security">
-              <H3>7.1 — Aviation Security</H3>
+              <H3>7.1   Aviation Security</H3>
               <P>Where we provide air freight services, we operate in accordance with EC Regulation 300/2008 and its implementing regulations, as retained in UK law. We apply appropriate security controls to cargo before acceptance, including:</P>
               <UL>
                 <LI>Identity verification of consignors</LI>
@@ -418,9 +418,9 @@ export default function CompliancePage() {
                 <LI>Secure, access-controlled storage of cargo awaiting dispatch</LI>
                 <LI>Chain of custody documentation for all air cargo</LI>
               </UL>
-              <H3>7.2 — Dangerous Goods</H3>
+              <H3>7.2   Dangerous Goods</H3>
               <P>We comply with IATA Dangerous Goods Regulations (DGR) for hazardous materials by air, and with the International Maritime Dangerous Goods (IMDG) Code for sea freight. Staff handling dangerous goods hold current IATA DGR certification.</P>
-              <H3>7.3 — Warehouse Security</H3>
+              <H3>7.3   Warehouse Security</H3>
               <P>Our Essex warehouse operates 24/7 CCTV monitoring, access-controlled entry, and alarm systems. Access is restricted to authorised staff and pre-approved visitors. All visitors sign in and are accompanied by a staff member.</P>
             </Section>
 
@@ -432,8 +432,8 @@ export default function CompliancePage() {
                 <LI><strong className="text-gray-900 font-semibold">Consumer Protection from Unfair Trading Regulations 2008:</strong> Prohibition on unfair practices, misleading actions, and aggressive selling</LI>
                 <LI><strong className="text-gray-900 font-semibold">Pricing Practices Guide:</strong> Transparent and accurate pricing without hidden fees</LI>
               </UL>
-              <H3>8.1 — Complaints</H3>
-              <P>We operate a formal complaints procedure. Submit complaints to <a href="mailto:complaints@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">complaints@r-zoneenterprises.com</a>. We acknowledge within 2 working days and resolve within 14 working days. If unsatisfied, you may refer to our ADR body — details provided on escalation.</P>
+              <H3>8.1   Complaints</H3>
+              <P>We operate a formal complaints procedure. Submit complaints to <a href="mailto:complaints@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">complaints@r-zoneenterprises.com</a>. We acknowledge within 2 working days and resolve within 14 working days. If unsatisfied, you may refer to our ADR body   details provided on escalation.</P>
             </Section>
 
             <Section id="co9" num="09" title="Environmental Responsibility">
@@ -449,10 +449,10 @@ export default function CompliancePage() {
             </Section>
 
             <Section id="co10" num="10" title="Compliance Reporting & Whistleblowing">
-              <P>R-Zone Enterprises takes compliance failures seriously. If you are a staff member, customer, or third party who becomes aware of a potential compliance failure — suspected fraud, data breach, regulatory violation, or illegal activity — please report it promptly.</P>
+              <P>R-Zone Enterprises takes compliance failures seriously. If you are a staff member, customer, or third party who becomes aware of a potential compliance failure   suspected fraud, data breach, regulatory violation, or illegal activity   please report it promptly.</P>
               <P>Reports may be made to our compliance team at <a href="mailto:compliance@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">compliance@r-zoneenterprises.com</a>. All reports are treated confidentially and investigated promptly. We do not tolerate retaliation against anyone raising a concern in good faith.</P>
               <P>Staff have rights under the Public Interest Disclosure Act 1998 (PIDA) to report certain concerns directly to a relevant regulatory body.</P>
-              <Callout type="blue"><strong className="font-semibold">Data breaches:</strong> In the event of a personal data breach, we notify the ICO within 72 hours where required, and inform affected individuals without undue delay — as required by UK GDPR Articles 33 and 34.</Callout>
+              <Callout type="blue"><strong className="font-semibold">Data breaches:</strong> In the event of a personal data breach, we notify the ICO within 72 hours where required, and inform affected individuals without undue delay   as required by UK GDPR Articles 33 and 34.</Callout>
             </Section>
 
             <Section id="co11" num="11" title="Contact Compliance Team">

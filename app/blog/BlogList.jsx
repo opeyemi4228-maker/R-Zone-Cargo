@@ -1,12 +1,12 @@
 "use client";
 // app/blog/BlogList.jsx
 // ─────────────────────────────────────────────────────────────────────────────
-// CLIENT COMPONENT — all interactive blog listing UI.
+// CLIENT COMPONENT   all interactive blog listing UI.
 // Receives `articles`, `featured`, and `categories` as props from the
 // server component (app/blog/page.jsx).
 //
 // Navigation: clicking an article card uses Next.js router.push("/blog/{slug}")
-// which loads the real server-rendered article page — no hash fragments.
+// which loads the real server-rendered article page   no hash fragments.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useRef, useState, useMemo } from "react";
@@ -490,7 +490,7 @@ function NewsletterSection() {
               <span className="text-white/40">Delivered Weekly.</span>
             </h2>
             <p className="text-white/65 text-[14px] font-light leading-relaxed">
-              Join 2,000+ UK–Nigeria shippers who get our weekly logistics
+              Join 2,000+ UK Nigeria shippers who get our weekly logistics
               briefing.
             </p>
           </motion.div>
@@ -586,7 +586,7 @@ function NewsletterSection() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// BLOG LIST — main export
+// BLOG LIST   main export
 // ─────────────────────────────────────────────────────────────────────────────
 export default function BlogList({ articles, featured, categories }) {
   const router = useRouter();
@@ -598,7 +598,7 @@ export default function BlogList({ articles, featured, categories }) {
   const { ref: topicRef, inView: topicInView } = useReveal("-40px");
   const { ref: hdrRef, inView: hdrInView } = useReveal("-40px");
 
-  // Navigate to the real /blog/{slug} page — no hash fragments
+  // Navigate to the real /blog/{slug} page   no hash fragments
   const handleOpen = (article) => {
     router.push(`/blog/${article.slug}`);
   };
@@ -702,7 +702,7 @@ export default function BlogList({ articles, featured, categories }) {
                 <TagPill label="R-Zone Cargo Blog" dark />
               </motion.div>
 
-              {/* H1 — visible heading for users, SEO signal for Google */}
+              {/* H1   visible heading for users, SEO signal for Google */}
               <motion.h1
                 id="blog-hero-h1"
                 className="font-black text-[clamp(36px,7vw,82px)] text-white leading-[0.87] tracking-[-0.038em] uppercase mb-5"
@@ -734,7 +734,7 @@ export default function BlogList({ articles, featured, categories }) {
                 transition={{ duration: 0.6, delay: 0.25 }}
               >
                 Shipping guides, customs tips, industry news and logistics
-                insights from R-Zone — keeping UK–Nigeria shippers informed in
+                insights from R-Zone   keeping UK Nigeria shippers informed in
                 2026.
               </motion.p>
             </div>

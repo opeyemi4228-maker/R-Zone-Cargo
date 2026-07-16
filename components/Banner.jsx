@@ -47,7 +47,7 @@ const TESTIMONIALS = [
     avatar: "MF",
     date: "7 months ago",
     stars: 5,
-    short: "Fast and reliable — received in less than 6 weeks.",
+    short: "Fast and reliable   received in less than 6 weeks.",
     text: "R-zone Cargo is fast and reliable service! I sent a bag from London to Nigeria, and my sister received it in less than six weeks. I truly enjoyed their service and will definitely keep using them.",
   },
   {
@@ -56,7 +56,7 @@ const TESTIMONIALS = [
     avatar: "AT",
     date: "1 month ago",
     stars: 5,
-    short: "Prompt, exactly 6 weeks — no hiccups at all.",
+    short: "Prompt, exactly 6 weeks   no hiccups at all.",
     text: "It was prompt, exactly 6 weeks. No hiccups. I like the cargo and shipping services.",
   },
   {
@@ -74,7 +74,7 @@ const TESTIMONIALS = [
     avatar: "JM",
     date: "1 year ago",
     stars: 5,
-    short: "Arrived earlier than expected — incredible service.",
+    short: "Arrived earlier than expected   incredible service.",
     text: "I recently used R-Zone Enterprises Ltd to send a package to my sister in Abuja, and I couldn't be more impressed with their service! The delivery arrived even earlier than expected, which was a wonderful surprise. My sister received everything in perfect condition.",
   },
   {
@@ -92,7 +92,7 @@ const TESTIMONIALS = [
     avatar: "MJ",
     date: "1 year ago",
     stars: 5,
-    short: "Very efficient and reliable — delivered in 6 weeks.",
+    short: "Very efficient and reliable   delivered in 6 weeks.",
     text: "My first time using R-Zone cargo and o must confess they are very efficient and reliable. My delivery was with 6 weeks as promised. My good were delivered straight to my house and intact. I'm really happy and impressed. Will definitely be using them and also recommend them people. 👌",
   },
   {
@@ -110,7 +110,7 @@ const TESTIMONIALS = [
     avatar: "BL",
     date: "1 year ago",
     stars: 5,
-    short: "Referred by a friend — did not disappoint us.",
+    short: "Referred by a friend   did not disappoint us.",
     text: "R-Zone Cargo and Shipping lived upto expectations, they were referred by a friend and we surely were not disappointed. Professional service from start to finish.",
   },
   {
@@ -195,7 +195,7 @@ function TestimonialCard({ t, featured = false }) {
       </div>
 
       {/* Hidden itemProp for schema */}
-      <meta itemProp="itemReviewed" content="R-Zone Enterprises — UK to Nigeria Cargo" />
+      <meta itemProp="itemReviewed" content="R-Zone Enterprises   UK to Nigeria Cargo" />
     </motion.div>
   );
 }
@@ -241,14 +241,14 @@ export default function TestimonialsSection() {
 
   return (
     <>
-      {/* AggregateRating + Review schema — powers Google star ratings in search */}
+      {/* AggregateRating + Review schema   powers Google star ratings in search */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": "https://r-zoneenterprises.com/#organization",
           "name": "R-Zone Enterprises",
-          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned.",
+          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews, organically earned.",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
@@ -265,7 +265,7 @@ export default function TestimonialsSection() {
             "name": t.short,
             "itemReviewed": {
               "@type": "Service",
-              "name": "UK to Nigeria Cargo Shipping — R-Zone Enterprises",
+              "name": "UK to Nigeria Cargo Shipping   R-Zone Enterprises",
               "provider": { "@type": "Organization", "name": "R-Zone Enterprises" },
             },
           })),
@@ -295,7 +295,7 @@ export default function TestimonialsSection() {
               <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
                 <Star size={10} className="fill-[#0818A8] text-[#0818A8]" aria-hidden="true" />
                 <span className="text-[#0818A8] text-[13px] font-bold tracking-[0.22em] uppercase">
-                  100+ Five-Star Reviews · #1 Ranked UK–Nigeria Cargo
+                  100+ Five-Star Reviews · #1 Ranked UK Nigeria Cargo
                 </span>
               </div>
             </motion.div>
@@ -316,7 +316,7 @@ export default function TestimonialsSection() {
               className="text-gray-800 text-[14px] font-normal max-w-lg mx-auto leading-relaxed">
               The{" "}
               <strong className="text-gray-900 font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-              {" "}— 100+ verified five-star reviews from real customers across the UK and Nigeria.
+              {" "}  100+ verified five-star reviews from real customers across the UK and Nigeria.
             </motion.p>
           </motion.div>
 

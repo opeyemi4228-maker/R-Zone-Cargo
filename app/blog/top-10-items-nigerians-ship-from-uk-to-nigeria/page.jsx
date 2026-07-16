@@ -98,7 +98,7 @@ export default function Page() {
           <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>
         ))}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free UK to Nigeria cargo quote</a>
           <a href={`${SITE_URL}/services`}>Our UK to Nigeria cargo services</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo UK team</a>

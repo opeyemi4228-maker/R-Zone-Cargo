@@ -1,4 +1,4 @@
-// TEMPORARY diagnostic — remove after debugging email delivery on Vercel.
+// TEMPORARY diagnostic   remove after debugging email delivery on Vercel.
 // Reports which env vars the running deployment actually sees, and the raw
 // result of a live Resend send. Does NOT leak secret values.
 import { Resend } from "resend";

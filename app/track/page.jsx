@@ -2,10 +2,10 @@
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- * R-Zone Enterprises — Track Shipment Page (Redesigned)
+ * R-Zone Enterprises   Track Shipment Page (Redesigned)
  * /track
  *
- * Design: Mission Control — dark navy operational terminal aesthetic.
+ * Design: Mission Control   dark navy operational terminal aesthetic.
  * Matches R-Zone brand palette (#00061a base, #0818A8 / #1F51FF accents).
  */
 
@@ -49,7 +49,7 @@ const MOCK_SHIPMENTS = {
     pieces: 14,
     weight: "842 kg",
     volume: "3.2 CBM",
-    description: "Electronic Components — Non-Hazardous",
+    description: "Electronic Components   Non-Hazardous",
     mawb: "MS-0847-2024-LOS",
     eta: "Mar 07, 2026",
     bookedDate: "Mar 01, 2026",
@@ -60,12 +60,12 @@ const MOCK_SHIPMENTS = {
       { date:"Mar 01, 2026", time:"09:14", status:"done",    title:"Shipment Booked",       location:"Lagos, Nigeria",            detail:"Booking confirmed. AWB generated: MS-0847-2024-LOS" },
       { date:"Mar 02, 2026", time:"11:30", status:"done",    title:"Cargo Picked Up",       location:"Ikeja, Lagos",              detail:"Cargo collected from shipper premises. 14 pieces, 842kg verified." },
       { date:"Mar 02, 2026", time:"18:45", status:"done",    title:"Accepted at Origin",    location:"Lagos Airport Cargo, LOS",  detail:"Cargo accepted at airline cargo terminal. Security screening passed." },
-      { date:"Mar 03, 2026", time:"08:20", status:"done",    title:"Departed Origin",       location:"Lagos — Flight MS447",      detail:"Cargo departed Lagos on connecting flight MS447." },
-      { date:"Mar 03, 2026", time:"23:55", status:"done",    title:"Arrived Transit Hub",   location:"Dubai, UAE — DXB",         detail:"Cargo arrived at Dubai transit facility. Held for connecting flight." },
-      { date:"Mar 04, 2026", time:"14:20", status:"active",  title:"In Transit — Dubai Hub",location:"Dubai International, UAE", detail:"Cargo processing at transit hub. On schedule for connecting flight to London." },
-      { date:"Mar 06, 2026", time:"06:00", status:"pending", title:"Departs for Destination",location:"Dubai — Flight EK003",    detail:"Scheduled departure on EK003 to London Heathrow." },
-      { date:"Mar 07, 2026", time:"07:30", status:"pending", title:"Arrives London Heathrow",location:"London, UK — LHR",        detail:"Estimated arrival. Customs pre-clearance filed." },
-      { date:"Mar 07, 2026", time:"14:00", status:"pending", title:"Customs Clearance",     location:"HMRC — Heathrow",          detail:"UK import clearance. Duties pre-paid via DDP incoterm." },
+      { date:"Mar 03, 2026", time:"08:20", status:"done",    title:"Departed Origin",       location:"Lagos   Flight MS447",      detail:"Cargo departed Lagos on connecting flight MS447." },
+      { date:"Mar 03, 2026", time:"23:55", status:"done",    title:"Arrived Transit Hub",   location:"Dubai, UAE   DXB",         detail:"Cargo arrived at Dubai transit facility. Held for connecting flight." },
+      { date:"Mar 04, 2026", time:"14:20", status:"active",  title:"In Transit   Dubai Hub",location:"Dubai International, UAE", detail:"Cargo processing at transit hub. On schedule for connecting flight to London." },
+      { date:"Mar 06, 2026", time:"06:00", status:"pending", title:"Departs for Destination",location:"Dubai   Flight EK003",    detail:"Scheduled departure on EK003 to London Heathrow." },
+      { date:"Mar 07, 2026", time:"07:30", status:"pending", title:"Arrives London Heathrow",location:"London, UK   LHR",        detail:"Estimated arrival. Customs pre-clearance filed." },
+      { date:"Mar 07, 2026", time:"14:00", status:"pending", title:"Customs Clearance",     location:"HMRC   Heathrow",          detail:"UK import clearance. Duties pre-paid via DDP incoterm." },
       { date:"Mar 07, 2026", time:"18:00", status:"pending", title:"Out for Delivery",      location:"London, UK",               detail:"Last-mile delivery to consignee address." },
     ],
   },
@@ -82,12 +82,12 @@ const MOCK_SHIPMENTS = {
     pieces: 1,
     weight: "18,500 kg",
     volume: "26.5 CBM",
-    description: "Industrial Machinery — FCL 20ft",
+    description: "Industrial Machinery   FCL 20ft",
     mawb: "BL-0612-2024-SHA",
     eta: "Feb 28, 2026",
     bookedDate: "Jan 15, 2026",
     progress: 100,
-    currentLocation: "Delivered — Apapa, Lagos",
+    currentLocation: "Delivered   Apapa, Lagos",
     nextMilestone: "Shipment Complete",
     events: [
       { date:"Jan 15, 2026", time:"10:00", status:"done", title:"Booking Confirmed",        location:"Shanghai, China",      detail:"FCL booking confirmed. Container allocated: TCKU3456781." },
@@ -95,7 +95,7 @@ const MOCK_SHIPMENTS = {
       { date:"Jan 25, 2026", time:"08:00", status:"done", title:"Vessel Departed",          location:"Port of Shanghai",     detail:"Vessel MSC ARIA departed Shanghai. ETD confirmed." },
       { date:"Feb 18, 2026", time:"16:30", status:"done", title:"Arrived Transhipment Port",location:"Tanger Med, Morocco",  detail:"Container arrived transhipment hub. Transferred to feeder vessel." },
       { date:"Feb 24, 2026", time:"11:15", status:"done", title:"Arrived Destination Port", location:"Apapa Port, Lagos",    detail:"Vessel berthed. Discharge operations commenced." },
-      { date:"Feb 25, 2026", time:"09:00", status:"done", title:"Customs Cleared",          location:"NCS — Apapa",          detail:"Import examination complete. Duty paid. Release order obtained." },
+      { date:"Feb 25, 2026", time:"09:00", status:"done", title:"Customs Cleared",          location:"NCS   Apapa",          detail:"Import examination complete. Duty paid. Release order obtained." },
       { date:"Feb 28, 2026", time:"13:40", status:"done", title:"Delivered",                location:"Amuwo-Odofin, Lagos",  detail:"Container delivered and devanned at consignee warehouse. POD signed." },
     ],
   },
@@ -112,20 +112,20 @@ const MOCK_SHIPMENTS = {
     pieces: 6,
     weight: "124 kg",
     volume: "0.8 CBM",
-    description: "Pharmaceutical Supplies — Temperature Sensitive",
+    description: "Pharmaceutical Supplies   Temperature Sensitive",
     mawb: "LH-0991-2024-FRA",
     eta: "Mar 06, 2026",
     bookedDate: "Mar 03, 2026",
     progress: 82,
-    currentLocation: "NAFDAC Inspection — Abuja Airport",
+    currentLocation: "NAFDAC Inspection   Abuja Airport",
     nextMilestone: "Release & Delivery",
     events: [
       { date:"Mar 03, 2026", time:"08:00", status:"done",    title:"Shipment Booked",       location:"Frankfurt, Germany",          detail:"Booking confirmed for temperature-controlled air freight." },
       { date:"Mar 03, 2026", time:"16:30", status:"done",    title:"Departed Frankfurt",    location:"Frankfurt Airport, FRA",      detail:"Departed on LH568 in cold chain container. Temp log active." },
-      { date:"Mar 04, 2026", time:"05:15", status:"done",    title:"Arrived Abuja",         location:"Nnamdi Azikiwe Airport, ABV", detail:"Arrived on schedule. Temperature integrity maintained: 2–8°C." },
-      { date:"Mar 04, 2026", time:"09:00", status:"done",    title:"Lodged with Customs",   location:"NCS — Abuja Airport",         detail:"Import entry filed. NAFDAC examination initiated." },
-      { date:"Mar 06, 2026", time:"10:30", status:"active",  title:"NAFDAC Inspection",     location:"NAFDAC Unit — Abuja Airport", detail:"Physical inspection by NAFDAC officers in progress." },
-      { date:"Mar 06, 2026", time:"16:00", status:"pending", title:"Release Order Expected",location:"NCS — Abuja",                 detail:"Pending NAFDAC clearance certificate and duty payment." },
+      { date:"Mar 04, 2026", time:"05:15", status:"done",    title:"Arrived Abuja",         location:"Nnamdi Azikiwe Airport, ABV", detail:"Arrived on schedule. Temperature integrity maintained: 2 8°C." },
+      { date:"Mar 04, 2026", time:"09:00", status:"done",    title:"Lodged with Customs",   location:"NCS   Abuja Airport",         detail:"Import entry filed. NAFDAC examination initiated." },
+      { date:"Mar 06, 2026", time:"10:30", status:"active",  title:"NAFDAC Inspection",     location:"NAFDAC Unit   Abuja Airport", detail:"Physical inspection by NAFDAC officers in progress." },
+      { date:"Mar 06, 2026", time:"16:00", status:"pending", title:"Release Order Expected",location:"NCS   Abuja",                 detail:"Pending NAFDAC clearance certificate and duty payment." },
       { date:"Mar 06, 2026", time:"18:00", status:"pending", title:"Out for Delivery",      location:"Abuja, Nigeria",              detail:"Temperature-controlled last-mile delivery to hospital." },
     ],
   },
@@ -487,7 +487,7 @@ export default function TrackPage() {
             initial={{ opacity:0, y:-8 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
             <div className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full">
               <Award size={12} className="text-[#1F51FF]" aria-hidden="true"/>
-              <span className="text-white text-[13px] font-bold">#1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
+              <span className="text-white text-[13px] font-bold">#1 Highest-Rated UK Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
             </div>
           </motion.div>
 
@@ -497,7 +497,7 @@ export default function TrackPage() {
             <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 px-4 py-1.5 rounded-full">
               <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
                 animate={{ scale:[1,1.7,1], opacity:[1,0.4,1] }} transition={{ duration:2, repeat:Infinity }} aria-hidden="true"/>
-              <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Real-Time UK–Nigeria Tracking</span>
+              <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Real-Time UK Nigeria Tracking</span>
             </div>
           </motion.div>
 
@@ -516,7 +516,7 @@ export default function TrackPage() {
           {/* Subtext */}
           <motion.p className="text-white/60 text-[14px] font-normal leading-relaxed max-w-md mx-auto text-center mb-10"
             initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.55, delay:0.22 }}>
-            Track your UK to Nigeria cargo shipment — air freight to Nigeria, sea freight to Nigeria from UK and door to door cargo Nigeria — by entering your R-Zone booking reference, AWB, or Bill of Lading number for live status, customs clearance progress, full milestone timeline, and cargo details.
+            Track your UK to Nigeria cargo shipment   air freight to Nigeria, sea freight to Nigeria from UK and door to door cargo Nigeria   by entering your R-Zone booking reference, AWB, or Bill of Lading number for live status, customs clearance progress, full milestone timeline, and cargo details.
           </motion.p>
 
           {/* ── SEARCH BAR ── */}
@@ -537,12 +537,12 @@ export default function TrackPage() {
                   placeholder="e.g. RZC-2024-00847  ·  AWB  ·  Bill of Lading"
                   value={query} onChange={e=>{setQuery(e.target.value);setError(null);}} onKeyDown={handleKey}
                   className="w-full h-[54px] pl-11 pr-4 bg-white/[0.07] border border-white/[0.12] border-r-0 text-white text-[14px] font-normal placeholder-white/25 focus:outline-none focus:bg-white/[0.1] focus:border-[#1F51FF]/50 transition-all duration-200 font-mono"
-                  aria-label="Enter UK–Nigeria shipment tracking number"/>
+                  aria-label="Enter UK Nigeria shipment tracking number"/>
               </div>
               <motion.button onClick={()=>handleTrack()} disabled={loading}
                 className="h-[54px] px-8 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.1em] uppercase transition-all duration-200 flex items-center gap-2 flex-shrink-0 border border-[#1F51FF]/30"
                 whileHover={{ scale:1.01 }} whileTap={{ scale:0.98 }}
-                aria-label="Track UK–Nigeria shipment">
+                aria-label="Track UK Nigeria shipment">
                 {loading
                   ? <><Loader2 size={14} className="animate-spin" aria-hidden="true"/> Scanning…</>
                   : <><Zap size={14} aria-hidden="true"/> Track Now</>
@@ -633,13 +633,13 @@ export default function TrackPage() {
             </motion.h2>
             <motion.p className="text-white/50 text-[14px] font-normal max-w-md mx-auto leading-relaxed"
               initial={{ opacity:0 }} animate={featuresInView?{ opacity:1 }:{}} transition={{ duration:0.5, delay:0.2 }}>
-              R-Zone's tracking platform gives you live status, milestone alerts, and complete documentation — for every UK–Nigeria shipment.
+              R-Zone's tracking platform gives you live status, milestone alerts, and complete documentation   for every UK Nigeria shipment.
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon:Zap,      title:"Live Status Updates",    desc:"Real-time milestone tracking from booking to proof of delivery — air or sea.",     accent:"#1F51FF" },
+              { icon:Zap,      title:"Live Status Updates",    desc:"Real-time milestone tracking from booking to proof of delivery   air or sea.",     accent:"#1F51FF" },
               { icon:Shield,   title:"Secure Reference Access",desc:"Tracking data accessible only with your unique R-Zone booking reference.",          accent:"#0818A8" },
               { icon:Globe,    title:"UK & Nigeria Coverage",  desc:"Track UK-to-Nigeria and Nigeria-to-UK shipments across air, sea, and road.",        accent:"#1F51FF" },
               { icon:FileText, title:"Document Download",      desc:"Download AWBs, packing lists, and proof of delivery directly from tracking results.", accent:"#0818A8" },
@@ -661,17 +661,17 @@ export default function TrackPage() {
 
       {/* ══ HELP STRIP ════════════════════════════════════════════════════════ */}
       <section className="relative bg-[#0818A8] overflow-hidden py-12 md:py-14"
-        aria-label="Contact R-Zone for UK–Nigeria tracking help">
+        aria-label="Contact R-Zone for UK Nigeria tracking help">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true"
           style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"44px 44px" }}/>
         <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <p className="text-white/60 text-[13px] font-bold tracking-[0.28em] uppercase mb-1">Need Help?</p>
             <h3 className="text-white font-black text-[clamp(18px,3vw,26px)] tracking-[-0.02em] uppercase mb-1">
-              Can&apos;t find your UK–Nigeria shipment?
+              Can&apos;t find your UK Nigeria shipment?
             </h3>
             <p className="text-white/60 text-[13px] font-normal">
-              Our UK-based team is available Mon–Fri 10AM–6PM · Sat 11AM–2PM to assist with any tracking query.
+              Our UK-based team is available Mon Fri 10AM 6PM · Sat 11AM 2PM to assist with any tracking query.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 flex-shrink-0">

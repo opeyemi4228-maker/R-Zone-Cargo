@@ -38,7 +38,7 @@ const nextConfig = {
     },
     // Canonicalize to the bare apex host. https://www.r-zoneenterprises.com
     // otherwise serves a full 200 duplicate of the site while every canonical
-    // tag, the sitemap, and robots.txt point at the apex — so Google has to
+    // tag, the sitemap, and robots.txt point at the apex   so Google has to
     // guess the two hosts are the same page ("Page with redirect" / duplicate
     // host noise in Search Console) and there are two separate CDN caches to
     // keep in sync. A single 301 collapses everything onto one canonical URL.

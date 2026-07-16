@@ -86,18 +86,18 @@ function FacebookIcon({ size = 13, className = "" }) {
 const CONTACT_CHANNELS = [
   {
     icon: Phone,
-    label: "Call Us — UK",
+    label: "Call Us   UK",
     value: "+44 800 772 0864",
-    sub: "Free to call · Mon–Fri 10AM–6PM, Sat 11AM–2PM",
+    sub: "Free to call · Mon Fri 10AM 6PM, Sat 11AM 2PM",
     href: "tel:+448007720864",
     accent: "#0818A8",
     cta: "Call Now",
   },
   {
     icon: Phone,
-    label: "Call Us — Nigeria",
+    label: "Call Us   Nigeria",
     value: "+234 906 680 6861",
-    sub: "Nigeria representative · Mon–Fri 9AM–5PM WAT",
+    sub: "Nigeria representative · Mon Fri 9AM 5PM WAT",
     href: "tel:+2349066806861",
     accent: "#1F51FF",
     cta: "Call Nigeria",
@@ -149,8 +149,8 @@ const OFFICES = [
     phoneHref: "tel:+448007720864",
     email: "info@r-zoneenterprises.com",
     hours: [
-      { day: "Monday – Friday", time: "10:00AM – 6:00PM" },
-      { day: "Saturday",        time: "11:00AM – 2:00PM" },
+      { day: "Monday   Friday", time: "10:00AM   6:00PM" },
+      { day: "Saturday",        time: "11:00AM   2:00PM" },
       { day: "Sunday",          time: "Closed"           },
     ],
     accent: "#0818A8",
@@ -158,14 +158,14 @@ const OFFICES = [
   {
     flag: "🇳🇬",
     country: "Nigeria",
-    role: "Operations Hub — Lagos",
+    role: "Operations Hub   Lagos",
     address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861",
     phoneHref: "tel:+2349066806861",
     email: "nigeria@r-zoneenterprises.com",
     hours: [
-      { day: "Monday – Friday", time: "9:00AM – 5:00PM WAT" },
-      { day: "Saturday",        time: "9:00AM – 1:00PM WAT" },
+      { day: "Monday   Friday", time: "9:00AM   5:00PM WAT" },
+      { day: "Saturday",        time: "9:00AM   1:00PM WAT" },
       { day: "Sunday",          time: "Closed"              },
     ],
     accent: "#1F51FF",
@@ -189,11 +189,11 @@ const ENQUIRY_TYPES = [
 const FAQS = [
   {
     q: "How quickly will you respond to my enquiry?",
-    a: "We respond to all enquiries received Monday–Friday within the same business day. Weekend messages are answered first thing Monday morning.",
+    a: "We respond to all enquiries received Monday Friday within the same business day. Weekend messages are answered first thing Monday morning.",
   },
   {
     q: "Can I get a quote over the phone?",
-    a: "Absolutely — call +44 800 772 0864 and our team will provide an instant quote based on your shipment details. It takes less than 5 minutes.",
+    a: "Absolutely   call +44 800 772 0864 and our team will provide an instant quote based on your shipment details. It takes less than 5 minutes.",
   },
   {
     q: "Do you offer collections from all UK locations?",
@@ -201,11 +201,11 @@ const FAQS = [
   },
   {
     q: "Can I visit your warehouse to drop off cargo?",
-    a: "Yes — our Upminster, Essex warehouse accepts drop-offs Monday–Friday 10AM–6PM and Saturday 11AM–2PM. Please call ahead so we can prepare for your arrival.",
+    a: "Yes   our Upminster, Essex warehouse accepts drop-offs Monday Friday 10AM 6PM and Saturday 11AM 2PM. Please call ahead so we can prepare for your arrival.",
   },
   {
     q: "Do you ship commercial / business cargo?",
-    a: "Yes — we serve both individuals and businesses. For high-volume or regular shipments, contact us to discuss tailored commercial rates and SLA agreements.",
+    a: "Yes   we serve both individuals and businesses. For high-volume or regular shipments, contact us to discuss tailored commercial rates and SLA agreements.",
   },
   {
     q: "What information do I need to get a quote?",
@@ -369,7 +369,7 @@ function Hero() {
                 className="text-white/80 text-[15px] font-normal leading-relaxed tracking-wide max-w-lg mb-9"
               >
                 No call centres. No automated emails. When you contact R-Zone Enterprises,
-                you speak directly to our UK-based logistics team — same day, every time.
+                you speak directly to our UK-based logistics team   same day, every time.
                 The highest-rated organically earned cargo company between the UK, Nigeria,
                 and across Africa.
               </motion.p>
@@ -406,7 +406,7 @@ function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT — quick contact cards */}
+          {/* RIGHT   quick contact cards */}
           <motion.div
             className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3"
             initial={{ opacity: 0, y: 20 }}
@@ -547,7 +547,7 @@ function ContactForm() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
 
-          {/* LEFT — copy */}
+          {/* LEFT   copy */}
           <div className="lg:col-span-4">
             <motion.div
               initial="hidden"
@@ -566,7 +566,7 @@ function ContactForm() {
                 className="text-white/80 text-[13.5px] font-normal leading-relaxed mt-5 mb-8"
               >
                 Fill in the form and a member of our UK team will respond within the same
-                business day — usually within a few hours.
+                business day   usually within a few hours.
               </motion.p>
 
               {/* What happens next */}
@@ -578,7 +578,7 @@ function ContactForm() {
                 {[
                   { n: "01", t: "You submit the form",      d: "Takes less than 2 minutes"  },
                   { n: "02", t: "We review your enquiry",   d: "By our UK logistics team"   },
-                  { n: "03", t: "We respond same day",      d: "Mon–Fri business hours"     },
+                  { n: "03", t: "We respond same day",      d: "Mon Fri business hours"     },
                   { n: "04", t: "We get your cargo moving", d: "From booking to delivery"   },
                 ].map((s, si) => (
                   <div key={s.n} className="flex items-start gap-3 pb-4 last:pb-0 relative">
@@ -644,7 +644,7 @@ function ContactForm() {
             </motion.div>
           </div>
 
-          {/* RIGHT — Form */}
+          {/* RIGHT   Form */}
           <motion.div
             className="lg:col-span-8"
             initial={{ opacity: 0, y: 24 }}
@@ -826,7 +826,7 @@ function ContactForm() {
                     <textarea
                       id="contact-message"
                       rows={5}
-                      placeholder="Tell us about your cargo — origin, destination, weight/size, any special requirements…"
+                      placeholder="Tell us about your cargo   origin, destination, weight/size, any special requirements…"
                       value={form.message}
                       onChange={e => handleChange("message", e.target.value)}
                       onBlur={() => handleBlur("message")}
@@ -928,7 +928,7 @@ function Offices() {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Both offices are staffed by our own people — no third-party agents, no outsourcing.
+            Both offices are staffed by our own people   no third-party agents, no outsourcing.
           </motion.p>
         </div>
 
@@ -1131,7 +1131,7 @@ function FAQ() {
             </motion.div>
           </div>
 
-          {/* Right — accordion */}
+          {/* Right   accordion */}
           <div className="lg:col-span-8">
             <dl className="space-y-0">
               {FAQS.map((item, i) => (
@@ -1286,7 +1286,7 @@ function FinalCTA() {
               </h3>
               <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-8">
                 Tell us about your shipment and we&apos;ll provide a transparent, competitive
-                quote — no hidden charges, no surprises.
+                quote   no hidden charges, no surprises.
               </p>
               <Link
                 href="/quote"
@@ -1313,8 +1313,8 @@ function FinalCTA() {
               Prefer to Call?
             </h3>
             <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-8">
-              Our UK team is available Monday–Friday 10AM–6PM and Saturday 11AM–2PM.
-              Free to call. Our Nigeria team is also available Mon–Fri 9AM–5PM WAT.
+              Our UK team is available Monday Friday 10AM 6PM and Saturday 11AM 2PM.
+              Free to call. Our Nigeria team is also available Mon Fri 9AM 5PM WAT.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -1354,7 +1354,7 @@ export default function ContactPageClient() {
             "@type": "ContactPage",
             "name": "Contact R-Zone Enterprises",
             "url": "https://r-zoneenterprises.com/contact",
-            "description": "Contact R-Zone Enterprises — the highest-rated organically earned cargo company between the UK, Nigeria, and across Africa.",
+            "description": "Contact R-Zone Enterprises   the highest-rated organically earned cargo company between the UK, Nigeria, and across Africa.",
             "mainEntity": {
               "@type": ["Organization", "LocalBusiness"],
               "name": "R-Zone Enterprises",

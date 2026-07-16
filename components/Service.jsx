@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 const FEATURED = {
   tag: "Core Service",
   title: "Door-to-Door Delivery",
-  desc: "Complete end-to-end freight management from origin pickup to final-mile delivery — across Africa and globally. One point of contact. Zero complexity.",
+  desc: "Complete end-to-end freight management from origin pickup to final-mile delivery   across Africa and globally. One point of contact. Zero complexity.",
   image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=85",
   href: "/services/door-to-door",
 };
@@ -115,7 +115,7 @@ function GridCard({ service, index }) {
           <h3 className="text-gray-900 font-black text-[14.5px] leading-snug tracking-[-0.01em] mb-3 group-hover:text-[#0818A8] transition-colors duration-200">
             {service.title}
           </h3>
-          {/* Blue underline accent — matches Emirates red line */}
+          {/* Blue underline accent   matches Emirates red line */}
           <div className="w-8 h-[2px] bg-[#0818A8] mb-3 group-hover:w-14 transition-all duration-300 rounded-full" />
           <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-500 group-hover:text-[#0818A8] transition-colors duration-200 tracking-[0.02em]">
             Learn more
@@ -137,7 +137,7 @@ export default function OurServicesSection() {
     <section
       ref={ref}
       className={`${montserrat.className} bg-[#f8f9fb] py-20 md:py-28 overflow-hidden`}
-      aria-label="R-Zone Cargo — Our Services"
+      aria-label="R-Zone Cargo   Our Services"
     >
       {/* ── Subtle dot pattern ── */}
       <div
@@ -192,12 +192,12 @@ export default function OurServicesSection() {
             className="text-gray-500 text-[13px] font-normal tracking-[0.02em] leading-relaxed max-w-xl mx-auto"
           >
             Explore R-Zone Cargo's full suite of logistics solutions and plan
-            the most efficient route for your freight — wherever in the world it
+            the most efficient route for your freight   wherever in the world it
             needs to go.
           </motion.p>
         </motion.div>
 
-        {/* ── MAIN GRID — mirrors Emirates layout exactly ── */}
+        {/* ── MAIN GRID   mirrors Emirates layout exactly ── */}
         {/*
           Desktop: Featured card (tall, left, spans 2 rows) + 2×2 grid right
           Then second row: 4 equal cards
@@ -210,7 +210,7 @@ export default function OurServicesSection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          {/* Featured card — spans 2 rows on md */}
+          {/* Featured card   spans 2 rows on md */}
           <motion.div
             className="md:row-span-2 md:col-span-1"
             initial={{ opacity: 0, x: -24 }}

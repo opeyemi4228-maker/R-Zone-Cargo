@@ -1,9 +1,9 @@
 "use client";
 // app/blog/[slug]/ArticleReader.jsx
 // ─────────────────────────────────────────────────────────────────────────────
-// CLIENT COMPONENT — handles all interactive UI for a single article page.
+// CLIENT COMPONENT   handles all interactive UI for a single article page.
 // Receives `article` and `related` as props from the server component
-// (app/blog/[slug]/page.jsx) — no data fetching here.
+// (app/blog/[slug]/page.jsx)   no data fetching here.
 //
 // Navigation:
 //   "Back to Insights" → navigates to /blog (the blog listing page)
@@ -46,7 +46,7 @@ const montserrat = Montserrat({
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ICON MAP — resolves icon string names from articles.js to Lucide components
+// ICON MAP   resolves icon string names from articles.js to Lucide components
 // ─────────────────────────────────────────────────────────────────────────────
 const ICON_MAP = {
   BookOpen, Package, FileCheck, Globe, Zap, Star,
@@ -95,7 +95,7 @@ function ArticleMeta({ article, light = false }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// RENDER BODY — converts **bold** markdown + line breaks to JSX
+// RENDER BODY   converts **bold** markdown + line breaks to JSX
 // ─────────────────────────────────────────────────────────────────────────────
 function RenderBody({ text }) {
   return (
@@ -281,7 +281,7 @@ function RelatedCard({ article, index }) {
         aria-hidden="true"
       />
 
-      {/* Use Next.js Link for real navigation — updates the URL properly */}
+      {/* Use Next.js Link for real navigation   updates the URL properly */}
       <Link
         href={`/blog/${article.slug}`}
         className="flex flex-col flex-1"
@@ -309,7 +309,7 @@ function RelatedCard({ article, index }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ARTICLE READER — main component
+// ARTICLE READER   main component
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ArticleReader({ article, related }) {
   const router = useRouter();
@@ -367,7 +367,7 @@ export default function ArticleReader({ article, related }) {
 
         {/* Hero content */}
         <div className="relative z-10 max-w-[860px] mx-auto px-5 sm:px-8 -mt-60 md:-mt-72 pb-12 md:pb-16">
-          {/* Breadcrumb — SEO internal link signal */}
+          {/* Breadcrumb   SEO internal link signal */}
           <motion.nav
             aria-label="Breadcrumb"
             className="flex items-center gap-2 mb-6"
@@ -419,7 +419,7 @@ export default function ArticleReader({ article, related }) {
               </span>
             </div>
 
-            {/* H1 — THE most important on-page SEO element */}
+            {/* H1   THE most important on-page SEO element */}
             <h1
               id="article-h1"
               className="font-black text-[clamp(22px,4.5vw,50px)] text-white leading-[0.9] tracking-[-0.03em] uppercase mb-6"
@@ -479,7 +479,7 @@ export default function ArticleReader({ article, related }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 + i * 0.07 }}
             >
-              {/* H2 — secondary keyword hierarchy */}
+              {/* H2   secondary keyword hierarchy */}
               <h2 className="font-black text-[clamp(16px,2.5vw,22px)] text-[#0b0f1a] leading-tight tracking-[-0.02em] uppercase mb-5 pl-4 border-l-[3px] border-[#0818A8]">
                 {sec.h}
               </h2>
@@ -489,7 +489,7 @@ export default function ArticleReader({ article, related }) {
         </div>
 
         {/* ── FAQ SECTION ──────────────────────────────────────────────────── */}
-        {/* Rendered visibly — Google reads this and uses it for rich results  */}
+        {/* Rendered visibly   Google reads this and uses it for rich results  */}
         {article.faqSchema && article.faqSchema.length > 0 && (
           <motion.div
             className="mt-14 pt-10 border-t border-gray-100"
@@ -507,7 +507,7 @@ export default function ArticleReader({ article, related }) {
                   className="group border border-gray-200 hover:border-[#0818A8]/30 transition-colors duration-200"
                 >
                   <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                    {/* H3 inside FAQ — proper keyword hierarchy */}
+                    {/* H3 inside FAQ   proper keyword hierarchy */}
                     <h3 className="font-bold text-[14px] text-gray-900 leading-snug group-open:text-[#0818A8] transition-colors">
                       {faq.question}
                     </h3>
@@ -593,7 +593,7 @@ export default function ArticleReader({ article, related }) {
               Ready to Ship?
             </p>
             <h3 className="text-white font-black text-[22px] md:text-[26px] tracking-[-0.015em] mb-3 leading-tight">
-              Get a free UK–Nigeria cargo quote from R-Zone.
+              Get a free UK Nigeria cargo quote from R-Zone.
             </h3>
             <p className="text-white/70 text-[13px] font-normal mb-7 max-w-lg leading-relaxed">
               Air from £5/kg · Sea from £3/kg · Weekly departures · Same-day

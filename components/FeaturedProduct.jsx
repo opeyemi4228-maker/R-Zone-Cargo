@@ -32,7 +32,7 @@ function AnimatedCounter({ target, suffix = "", prefix = "" }) {
 const METRICS = [
   { value: 12,    suffix: "+", label: "Years Operating",      sub: "Established 2012",                icon: Clock,     color: "#1F51FF" },
   { value: 50000, suffix: "+", label: "Shipments Delivered",  sub: "UK to Nigeria & beyond",          icon: Package,   color: "#0818A8" },
-  { value: 100,   suffix: "+", label: "5-Star Google Reviews",sub: "Highest-ranked UK–Nigeria cargo", icon: Star,      color: "#1F51FF" },
+  { value: 100,   suffix: "+", label: "5-Star Google Reviews",sub: "Highest-ranked UK Nigeria cargo", icon: Star,      color: "#1F51FF" },
   { value: 99,    suffix: "%", label: "Delivery Success Rate", sub: "Industry-leading reliability",   icon: TrendingUp, color: "#0818A8" },
 ];
 
@@ -40,7 +40,7 @@ const CERTIFICATIONS = [
   { icon: Shield,      label: "Fully Insured",       sub: "End-to-end cargo cover"         },
   { icon: Award,       label: "IATA Registered",     sub: "Certified air freight agent"    },
   { icon: CheckCircle, label: "NCS Compliant",       sub: "Nigeria Customs Service"        },
-  { icon: Star,        label: "#1 Ranked on Google", sub: "UK–Nigeria cargo · Organic"     },
+  { icon: Star,        label: "#1 Ranked on Google", sub: "UK Nigeria cargo · Organic"     },
   { icon: Globe,       label: "6 Continents Served", sub: "Worldwide freight reach"        },
   { icon: Users,       label: "10,000+ Customers",   sub: "Families & businesses"          },
 ];
@@ -63,13 +63,13 @@ const OFFICES = [
     flag: "🇬🇧", city: "Upminster, United Kingdom", role: "UK Primary Hub",
     address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
     phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864",
-    email: "info@r-zoneenterprises.com", hours: "Mon–Fri 10AM–6PM · Sat 11AM–2PM",
+    email: "info@r-zoneenterprises.com", hours: "Mon Fri 10AM 6PM · Sat 11AM 2PM",
   },
   {
     flag: "🇳🇬", city: "Lagos, Nigeria", role: "West Africa Hub",
     address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
     phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861",
-    email: "nigeria@r-zoneenterprises.com", hours: "Mon–Fri 9AM–5PM WAT",
+    email: "nigeria@r-zoneenterprises.com", hours: "Mon Fri 9AM 5PM WAT",
   },
 ];
 
@@ -87,17 +87,17 @@ export default function TrustAuthority() {
           "name": "R-Zone Enterprises",
           "url": "https://r-zoneenterprises.com",
           "foundingDate": "2012",
-          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
+          "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5", "reviewCount": "100", "bestRating": "5",
-            "description": "Highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews, organically earned.",
+            "description": "Highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews, organically earned.",
           },
           "award": [
             "Highest-Rated & Highest-Ranked UK-to-Nigeria Cargo Company on Google",
-            "100+ Five-Star Google Reviews — Organically Earned",
+            "100+ Five-Star Google Reviews   Organically Earned",
             "IATA Registered Air Freight Agent",
-            "NCS Compliant — Nigeria Customs Service",
+            "NCS Compliant   Nigeria Customs Service",
           ],
           "areaServed": [
             { "@type": "Country",   "name": "United Kingdom" },
@@ -136,7 +136,7 @@ export default function TrustAuthority() {
                   <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
                     animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
                   <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">
-                    #1 Ranked UK–Nigeria Cargo on Google
+                    #1 Ranked UK Nigeria Cargo on Google
                   </span>
                 </div>
                 <h2 id="trust-heading" className="text-white font-black text-[clamp(28px,5vw,58px)] leading-[0.92] tracking-[-0.025em] uppercase mb-4">
@@ -150,7 +150,7 @@ export default function TrustAuthority() {
                 <p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-lg">
                   The{" "}
                   <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
-                  {" "}— 100+ five-star reviews, organically earned. Families and businesses
+                  {" "}  100+ five-star reviews, organically earned. Families and businesses
                   across the UK trust R-Zone for air freight, weekly sea sailings, and
                   door-to-door delivery to Lagos, Abuja and all 36 Nigerian states.
                 </p>
@@ -159,7 +159,7 @@ export default function TrustAuthority() {
               <motion.div className="flex flex-wrap lg:flex-col gap-3 lg:items-end"
                 initial={{ opacity: 0, x: 16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}>
-                {["#1 Ranked on Google — UK to Nigeria", "IATA Registered Air Freight Agent", "100+ Five-Star Reviews — Organically Earned"].map(badge => (
+                {["#1 Ranked on Google   UK to Nigeria", "IATA Registered Air Freight Agent", "100+ Five-Star Reviews   Organically Earned"].map(badge => (
                   <span key={badge} className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.04] px-3.5 py-2 text-white/80 text-[13px] font-semibold tracking-[0.08em] uppercase">
                     <CheckCircle size={11} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
                     {badge}
@@ -170,7 +170,7 @@ export default function TrustAuthority() {
 
             {/* Metric cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" role="list"
-              aria-label="R-Zone key performance statistics — UK to Nigeria cargo">
+              aria-label="R-Zone key performance statistics   UK to Nigeria cargo">
               {METRICS.map((metric, i) => {
                 const Icon = metric.icon;
                 return (
@@ -244,7 +244,7 @@ export default function TrustAuthority() {
               {AIRLINE_PARTNERS.map((p, i) => (
                 <div key={i}
                   className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
-                  aria-label={`${p.name} — R-Zone airline partner for UK Nigeria air freight`}>
+                  aria-label={`${p.name}   R-Zone airline partner for UK Nigeria air freight`}>
                   <span className="font-black text-[13px] tracking-[0.14em] text-[#1F51FF] bg-[#0818A8]/22 px-2 py-0.5" aria-hidden="true">{p.code}</span>
                   <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
                   <Plane size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
@@ -269,7 +269,7 @@ export default function TrustAuthority() {
               {SEA_PARTNERS.map((p, i) => (
                 <div key={i}
                   className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
-                  aria-label={`${p.name} — R-Zone sea freight partner for UK Nigeria shipping`}>
+                  aria-label={`${p.name}   R-Zone sea freight partner for UK Nigeria shipping`}>
                   <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
                   <Ship size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -289,7 +289,7 @@ export default function TrustAuthority() {
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10" role="list"
-              aria-label="R-Zone office locations — UK and Nigeria">
+              aria-label="R-Zone office locations   UK and Nigeria">
               {OFFICES.map((office, i) => (
                 <motion.div key={office.city} role="listitem"
                   className="group relative bg-white/[0.04] border border-white/[0.08] hover:border-[#0818A8]/40 hover:bg-[#0818A8]/8 transition-all duration-300 p-6 md:p-7 overflow-hidden"
@@ -330,7 +330,7 @@ export default function TrustAuthority() {
             <motion.div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
               <p className="text-white/80 text-[13px] font-normal max-w-md leading-relaxed">
-                Our UK-based team handles every query personally — no automated responses, no call centres. Real people who care about your cargo.
+                Our UK-based team handles every query personally   no automated responses, no call centres. Real people who care about your cargo.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact"

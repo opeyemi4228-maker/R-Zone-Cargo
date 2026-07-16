@@ -107,7 +107,7 @@ export default function Page() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
 
-      {/* Server-rendered SEO content — visible to Googlebot, hidden visually */}
+      {/* Server-rendered SEO content   visible to Googlebot, hidden visually */}
       <div
         aria-hidden="true"
         style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}
@@ -125,7 +125,7 @@ export default function Page() {
           <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>
         ))}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping and business guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping and business guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free UK to Nigeria cargo quote</a>
           <a href={`${SITE_URL}/services`}>Our UK to Nigeria cargo services</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo UK team</a>

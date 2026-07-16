@@ -2,7 +2,7 @@
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- * R-Zone Enterprises — Quote Page (SEO-Optimised)
+ * R-Zone Enterprises   Quote Page (SEO-Optimised)
  * /quote
  *
  * ON-PAGE SEO SUMMARY
@@ -10,12 +10,12 @@
  * • Primary keyword : "shipping quote UK to Nigeria"
  * • Secondary       : "cargo quote Nigeria UK", "air freight quote Nigeria",
  *                     "sea freight quote UK Nigeria", "cargo Abuja Lagos"
- * • H1  → "Get a Free UK–Nigeria Shipping Quote"
+ * • H1  → "Get a Free UK Nigeria Shipping Quote"
  * • H2s → Step headings + FAQ section + Stats section
  * • JSON-LD: BreadcrumbList + WebPage + Service + FAQPage
- * • Trust claim: "#1 Highest-Rated UK–Nigeria Cargo on Google · 100+ Reviews"
- * • Sea freight = 4–6 weeks (non-negotiable)
- * • Air freight = 5–10 working days
+ * • Trust claim: "#1 Highest-Rated UK Nigeria Cargo on Google · 100+ Reviews"
+ * • Sea freight = 4 6 weeks (non-negotiable)
+ * • Air freight = 5 10 working days
  * • Internal links: /services, /track, /contact, /about, /privacy
  * • WhatsApp CTA: embedded in sidebar + contact strip
  * • FAQ section: 6 questions (Google PAA / featured snippet eligible)
@@ -69,21 +69,21 @@ const SERVICE_OPTIONS = [
     id: "air",
     label: "Air Freight",
     icon: Plane,
-    tagline: "5–10 working days · UK to Nigeria",
+    tagline: "5 10 working days · UK to Nigeria",
     rate: "from £5/kg",
     accent: "#0818A8",
     popular: false,
-    seoDesc: "Fast air cargo from the UK to Nigeria. Ideal for time-sensitive shipments — documents, electronics, and commercial merchandise delivered in 5–10 working days.",
+    seoDesc: "Fast air cargo from the UK to Nigeria. Ideal for time-sensitive shipments   documents, electronics, and commercial merchandise delivered in 5 10 working days.",
   },
   {
     id: "sea",
     label: "Sea Freight",
     icon: Ship,
-    tagline: "4–6 weeks · Weekly sailings",
+    tagline: "4 6 weeks · Weekly sailings",
     rate: "from £3/kg",
     accent: "#1F51FF",
     popular: true,
-    seoDesc: "Most cost-effective UK–Nigeria shipping for larger or heavier cargo. Weekly sailings, 4–6 weeks transit. Ideal for bulk goods, household items, and general cargo.",
+    seoDesc: "Most cost-effective UK Nigeria shipping for larger or heavier cargo. Weekly sailings, 4 6 weeks transit. Ideal for bulk goods, household items, and general cargo.",
   },
   {
     id: "door",
@@ -113,7 +113,7 @@ const SERVICE_OPTIONS = [
     rate: "POA",
     accent: "#1F51FF",
     popular: false,
-    seoDesc: "Expert customs clearance for UK–Nigeria shipments. IATA-certified team handles all documentation, duties, and clearance on both sides.",
+    seoDesc: "Expert customs clearance for UK Nigeria shipments. IATA-certified team handles all documentation, duties, and clearance on both sides.",
   },
   {
     id: "warehouse",
@@ -156,25 +156,25 @@ const CARGO_TYPES = [
 ];
 
 const TRUST_ITEMS = [
-  { icon: Award,        text: "#1 Ranked UK–Nigeria Cargo on Google" },
+  { icon: Award,        text: "#1 Ranked UK Nigeria Cargo on Google" },
   { icon: Star,         text: "100+ organically earned five-star reviews" },
-  { icon: CheckCircle,  text: "Free quote — no obligation, no pressure" },
-  { icon: Clock,        text: "Same-day response Mon–Fri" },
+  { icon: CheckCircle,  text: "Free quote   no obligation, no pressure" },
+  { icon: Clock,        text: "Same-day response Mon Fri" },
   { icon: Shield,       text: "Fully insured cargo, every shipment" },
-  { icon: Phone,        text: "UK-based human team — no call centres" },
+  { icon: Phone,        text: "UK-based human team   no call centres" },
   { icon: Globe,        text: "Delivery to all 36 Nigerian states" },
   { icon: TrendingUp,   text: "12+ years trusted by thousands of customers" },
 ];
 
-// ─── FAQ data — Google PAA / featured snippet eligible ────────────────────────
+// ─── FAQ data   Google PAA / featured snippet eligible ────────────────────────
 const FAQ_ITEMS = [
   {
     q: "How long does sea freight from the UK to Nigeria take?",
-    a: "Sea freight from the UK to Nigeria typically takes 4–6 weeks from the date of dispatch. R-Zone Enterprises operates weekly sailings, so your cargo joins the next available vessel. This is the most cost-effective method for large or heavy shipments.",
+    a: "Sea freight from the UK to Nigeria typically takes 4 6 weeks from the date of dispatch. R-Zone Enterprises operates weekly sailings, so your cargo joins the next available vessel. This is the most cost-effective method for large or heavy shipments.",
   },
   {
     q: "How long does air freight from the UK to Nigeria take?",
-    a: "Air freight from the UK to Nigeria takes 5–10 working days depending on destination state and customs clearance speed. R-Zone's IATA-certified team handles all documentation to minimise delays.",
+    a: "Air freight from the UK to Nigeria takes 5 10 working days depending on destination state and customs clearance speed. R-Zone's IATA-certified team handles all documentation to minimise delays.",
   },
   {
     q: "How much does it cost to ship cargo from the UK to Nigeria?",
@@ -185,21 +185,21 @@ const FAQ_ITEMS = [
     a: "Yes. R-Zone Enterprises delivers to all 36 Nigerian states plus the FCT (Abuja). Whether your cargo is destined for Lagos, Abuja, Rivers, Kano, or any other state, our network covers it.",
   },
   {
-    q: "What items are prohibited on UK–Nigeria cargo shipments?",
+    q: "What items are prohibited on UK Nigeria cargo shipments?",
     a: "Prohibited items include weapons, drugs, counterfeit goods, hazardous chemicals, and certain perishables without correct documentation. See our full restricted items list on our Terms & Conditions page, or ask our team during the quote process.",
   },
   {
-    q: "Why is R-Zone the best cargo company for UK–Nigeria shipping?",
-    a: "R-Zone Enterprises is the highest-rated UK-to-Nigeria cargo company on Google — with 100+ five-star reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
+    q: "Why is R-Zone the best cargo company for UK Nigeria shipping?",
+    a: "R-Zone Enterprises is the highest-rated UK-to-Nigeria cargo company on Google   with 100+ five-star reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
   },
 ];
 
 // ─── Backlink-magnet stats ─────────────────────────────────────────────────────
 const STATS = [
-  { value: "100+",   label: "Five-Star Google Reviews",    note: "Highest-rated UK–Nigeria cargo company on Google" },
+  { value: "100+",   label: "Five-Star Google Reviews",    note: "Highest-rated UK Nigeria cargo company on Google" },
   { value: "12+",    label: "Years in Operation",          note: "Trusted since our founding" },
   { value: "36",     label: "Nigerian States Covered",     note: "Including Abuja FCT, Lagos, Rivers, Kano" },
-  { value: "£3/kg",  label: "Sea Freight Starting Rate",   note: "Weekly sailings, 4–6 weeks transit" },
+  { value: "£3/kg",  label: "Sea Freight Starting Rate",   note: "Weekly sailings, 4 6 weeks transit" },
   { value: "5 days", label: "Fastest Air Freight",         note: "UK to Nigeria, subject to customs" },
   { value: "100%",   label: "Customs Clearance Handled",   note: "UK and Nigerian sides, fully managed" },
 ];
@@ -366,7 +366,7 @@ function LiveEstimateSidebar({ form }) {
                 <p className="text-white/80 text-[13px] font-normal mb-1">{est.note}</p>
                 <div className="flex items-baseline gap-1.5 mb-1">
                   <span className="text-[#1F51FF] font-black text-[28px] leading-none tracking-[-0.02em]">{est.unit}{est.low}</span>
-                  <span className="text-white/80 text-[13px]">–</span>
+                  <span className="text-white/80 text-[13px]"> </span>
                   <span className="text-white/80 font-bold text-[18px]">{est.unit}{est.high}</span>
                 </div>
                 <p className="text-white/80 text-[13px] font-normal">Based on {form.weight}kg · Final price confirmed at booking</p>
@@ -444,7 +444,7 @@ function LiveEstimateSidebar({ form }) {
                 />
               </div>
               <span className="text-[13px] text-white/80 font-normal mt-1">
-                {form.service === "sea" ? "~4–6 weeks" : "~5–10 working days"}
+                {form.service === "sea" ? "~4 6 weeks" : "~5 10 working days"}
               </span>
             </div>
             <div className="text-center">
@@ -497,7 +497,7 @@ function LiveEstimateSidebar({ form }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STEP 1 — SERVICE
+// STEP 1   SERVICE
 // ═══════════════════════════════════════════════════════════════════════════════
 function Step1({ form, setForm, errors }) {
   return (
@@ -572,11 +572,11 @@ function Step1({ form, setForm, errors }) {
         </p>
       )}
 
-      {/* Internal link — authority signal */}
+      {/* Internal link   authority signal */}
       <p className="text-white/80 text-[13px] font-normal mt-5">
         Not sure which service is right for you?{" "}
         <Link href="/services" className="text-[#1F51FF] hover:text-white underline underline-offset-2 font-semibold transition-colors">
-          Compare all UK–Nigeria shipping services →
+          Compare all UK Nigeria shipping services →
         </Link>
       </p>
     </div>
@@ -584,14 +584,14 @@ function Step1({ form, setForm, errors }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STEP 2 — SHIPMENT DETAILS
+// STEP 2   SHIPMENT DETAILS
 // ═══════════════════════════════════════════════════════════════════════════════
 function Step2({ form, setForm, errors, touched, onBlur }) {
   return (
     <div>
       <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">Tell us about your cargo</h2>
       <p className="text-white/80 text-[13px] font-normal mb-7">
-        Approximate weight and dimensions let us generate the most accurate UK–Nigeria shipping estimate.
+        Approximate weight and dimensions let us generate the most accurate UK Nigeria shipping estimate.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
@@ -623,7 +623,7 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
         <div>
           <label htmlFor="weight" className={labelClass}>
             Estimated Weight (kg) *{" "}
-            <span className="text-[13px] text-white/80 normal-case font-normal tracking-normal">— actual or volumetric</span>
+            <span className="text-[13px] text-white/80 normal-case font-normal tracking-normal">  actual or volumetric</span>
           </label>
           <div className="relative">
             <Weight size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 pointer-events-none" aria-hidden="true" />
@@ -685,7 +685,7 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
         <div>
           <label htmlFor="value" className={labelClass}>
             Declared Value (£){" "}
-            <span className="text-white/80 normal-case font-normal tracking-normal">(optional — for cargo insurance)</span>
+            <span className="text-white/80 normal-case font-normal tracking-normal">(optional   for cargo insurance)</span>
           </label>
           <div className="relative">
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/80 text-[13px] font-normal pointer-events-none">£</span>
@@ -718,12 +718,12 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
         />
       </div>
 
-      {/* Volumetric note — informational, also useful for SEO content */}
+      {/* Volumetric note   informational, also useful for SEO content */}
       <div className="mt-4 flex items-start gap-2.5 border border-[#1F51FF]/15 bg-[#0818A8]/8 px-4 py-3">
         <Info size={12} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
         <p className="text-white/80 text-[13px] font-normal leading-snug">
           <strong className="text-white font-medium">Volumetric weight</strong> = (L×W×H cm) ÷ 5,000 for air freight / ÷ 1,000 for sea freight.
-          We charge whichever is greater — actual or volumetric weight.
+          We charge whichever is greater   actual or volumetric weight.
         </p>
       </div>
     </div>
@@ -731,7 +731,7 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STEP 3 — ROUTE
+// STEP 3   ROUTE
 // ═══════════════════════════════════════════════════════════════════════════════
 function Step3({ form, setForm, errors, touched, onBlur }) {
   return (
@@ -740,7 +740,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
         Where is your cargo going?
       </h2>
       <p className="text-white/80 text-[13px] font-normal mb-7">
-        We ship to all 36 Nigerian states — including Abuja (FCT), Lagos, Rivers, Kano, and more. Collection from across the UK.
+        We ship to all 36 Nigerian states   including Abuja (FCT), Lagos, Rivers, Kano, and more. Collection from across the UK.
       </p>
 
       {/* Direction */}
@@ -847,7 +847,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
               className={`${selectClass(false)} pl-9 pr-8`}
             >
               <option value="" style={{ backgroundColor: "#0d0d22" }}>Not sure yet</option>
-              <option value="door"     style={{ backgroundColor: "#0d0d22" }}>Door collection — we come to you anywhere in the UK</option>
+              <option value="door"     style={{ backgroundColor: "#0d0d22" }}>Door collection   we come to you anywhere in the UK</option>
               <option value="drop-off" style={{ backgroundColor: "#0d0d22" }}>Drop-off at Upminster warehouse (Essex)</option>
               <option value="discuss"  style={{ backgroundColor: "#0d0d22" }}>Discuss with our team</option>
             </select>
@@ -878,7 +878,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
       <div>
         <label htmlFor="delivery-address" className={labelClass}>
           Delivery Address{" "}
-          <span className="text-white/80 normal-case font-normal tracking-normal">(optional — helps us finalise your quote)</span>
+          <span className="text-white/80 normal-case font-normal tracking-normal">(optional   helps us finalise your quote)</span>
         </label>
         <textarea
           id="delivery-address"
@@ -894,14 +894,14 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STEP 4 — CONTACT INFO
+// STEP 4   CONTACT INFO
 // ═══════════════════════════════════════════════════════════════════════════════
 function Step4({ form, setForm, errors, touched, onBlur }) {
   return (
     <div>
       <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">Your contact details</h2>
       <p className="text-white/80 text-[13px] font-normal mb-7">
-        We&apos;ll send your personalised UK–Nigeria cargo quote to the details below within the same business day.
+        We&apos;ll send your personalised UK Nigeria cargo quote to the details below within the same business day.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
@@ -1052,7 +1052,7 @@ function Step4({ form, setForm, errors, touched, onBlur }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STEP 5 — REVIEW
+// STEP 5   REVIEW
 // ═══════════════════════════════════════════════════════════════════════════════
 function Step5({ form, onEdit }) {
   const service = SERVICE_OPTIONS.find(s => s.id === form.service);
@@ -1060,27 +1060,27 @@ function Step5({ form, onEdit }) {
 
   const rows = [
     { section: "Service", items: [
-      { label: "Service Type", val: service?.label || "—" },
-      { label: "Direction",    val: DIRECTIONS.find(d => d.id === form.direction)?.label || "—" },
+      { label: "Service Type", val: service?.label || " " },
+      { label: "Direction",    val: DIRECTIONS.find(d => d.id === form.direction)?.label || " " },
     ]},
     { section: "Cargo", items: [
-      { label: "Cargo Type",     val: form.cargoType  || "—" },
-      { label: "Weight",         val: form.weight     ? `${form.weight} kg` : "—" },
-      { label: "Items / Boxes",  val: form.items       || "—" },
-      { label: "Dimensions",     val: form.dimensions || "—" },
-      { label: "Declared Value", val: form.cargoValue ? `£${form.cargoValue}` : "—" },
+      { label: "Cargo Type",     val: form.cargoType  || " " },
+      { label: "Weight",         val: form.weight     ? `${form.weight} kg` : " " },
+      { label: "Items / Boxes",  val: form.items       || " " },
+      { label: "Dimensions",     val: form.dimensions || " " },
+      { label: "Declared Value", val: form.cargoValue ? `£${form.cargoValue}` : " " },
     ]},
     { section: "Route", items: [
-      { label: "Collection From", val: form.fromCity   || "—" },
-      { label: "Delivery To",     val: form.toState    || "—" },
-      { label: "Collection",      val: form.collection || "—" },
-      { label: "Target Date",     val: form.targetDate || "—" },
+      { label: "Collection From", val: form.fromCity   || " " },
+      { label: "Delivery To",     val: form.toState    || " " },
+      { label: "Collection",      val: form.collection || " " },
+      { label: "Target Date",     val: form.targetDate || " " },
     ]},
     { section: "Contact", items: [
-      { label: "Name",    val: `${form.firstName} ${form.lastName}`.trim() || "—" },
-      { label: "Email",   val: form.email   || "—" },
-      { label: "Phone",   val: form.phone   || "—" },
-      { label: "Company", val: form.company || "—" },
+      { label: "Name",    val: `${form.firstName} ${form.lastName}`.trim() || " " },
+      { label: "Email",   val: form.email   || " " },
+      { label: "Phone",   val: form.phone   || " " },
+      { label: "Company", val: form.company || " " },
     ]},
   ];
 
@@ -1101,7 +1101,7 @@ function Step5({ form, onEdit }) {
           <div>
             <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-[#1F51FF] mb-1">Estimated Cost</p>
             <p className="text-white font-black text-[24px] leading-none tracking-[-0.02em]">
-              £{est.low}–£{est.high}
+              £{est.low} £{est.high}
             </p>
             <p className="text-white/80 text-[13px] font-normal mt-1">
               Based on {form.weight}kg · Final price confirmed by our UK team
@@ -1131,7 +1131,7 @@ function Step5({ form, onEdit }) {
               </button>
             </div>
             <div className="px-5 py-4 grid grid-cols-2 gap-x-8 gap-y-2">
-              {section.items.filter(i => i.val !== "—").map(item => (
+              {section.items.filter(i => i.val !== " ").map(item => (
                 <div key={item.label}>
                   <p className="text-white/80 text-[13px] font-normal">{item.label}</p>
                   <p className="text-white/80 text-[13px] font-medium leading-tight">{item.val}</p>
@@ -1208,7 +1208,7 @@ function SuccessState({ form }) {
       >
         Thank you, <strong className="text-white font-medium">{form.firstName}</strong>. Our UK-based team has received
         your {service?.label} quote request and will respond to{" "}
-        <strong className="text-white font-medium">{form.email}</strong> within the same business day — no automated replies, a real human.
+        <strong className="text-white font-medium">{form.email}</strong> within the same business day   no automated replies, a real human.
       </motion.p>
 
       {est && !est.poa && (
@@ -1220,7 +1220,7 @@ function SuccessState({ form }) {
         >
           <div>
             <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-[#1F51FF] mb-0.5">Your Estimate</p>
-            <p className="text-white font-black text-[22px] leading-none">£{est.low}–£{est.high}</p>
+            <p className="text-white font-black text-[22px] leading-none">£{est.low} £{est.high}</p>
           </div>
           <div className="w-px h-10 bg-white/10" aria-hidden="true" />
           <div>
@@ -1241,7 +1241,7 @@ function SuccessState({ form }) {
           What Happens Next
         </p>
         {[
-          { n: "01", t: "Personalised quote from our UK team", d: "Within the same business day — Mon to Fri" },
+          { n: "01", t: "Personalised quote from our UK team", d: "Within the same business day   Mon to Fri" },
           { n: "02", t: "Booking confirmed",                   d: "Simple, quick confirmation process"       },
           { n: "03", t: "Cargo collected or drop-off",        d: "Flexible around your schedule"            },
           { n: "04", t: "Real-time tracking starts",          d: "Track every step of your cargo's journey" },
@@ -1277,7 +1277,7 @@ function SuccessState({ form }) {
         <Link
           href="/services"
           className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200"
-          aria-label="View all UK–Nigeria shipping services"
+          aria-label="View all UK Nigeria shipping services"
         >
           View Services
         </Link>
@@ -1297,7 +1297,7 @@ function SuccessState({ form }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// FAQ SECTION — Google PAA + Featured Snippet eligible
+// FAQ SECTION   Google PAA + Featured Snippet eligible
 // ═══════════════════════════════════════════════════════════════════════════════
 function FAQSection() {
   const [open, setOpen] = useState(null);
@@ -1314,7 +1314,7 @@ function FAQSection() {
             id="faq-heading"
             className="text-white font-black text-[clamp(24px,4vw,40px)] leading-[1.05] tracking-[-0.025em] uppercase mb-4"
           >
-            UK–Nigeria Shipping{" "}
+            UK Nigeria Shipping{" "}
             <span className="text-[#1F51FF]">FAQ</span>
           </h2>
           <p className="text-white/80 text-[14px] font-normal leading-relaxed">
@@ -1387,7 +1387,7 @@ function FAQSection() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// STATS SECTION — backlink-magnet / press-citation asset
+// STATS SECTION   backlink-magnet / press-citation asset
 // ═══════════════════════════════════════════════════════════════════════════════
 function StatsSection() {
   const ref     = useRef(null);
@@ -1399,16 +1399,16 @@ function StatsSection() {
       aria-labelledby="stats-heading"
       className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pb-12"
     >
-      {/* Invisible H2 for SEO — visible heading in copy below */}
+      {/* Invisible H2 for SEO   visible heading in copy below */}
       <h2 id="stats-heading" className="sr-only">
-        R-Zone Enterprises UK–Nigeria Cargo: Key Facts &amp; Statistics
+        R-Zone Enterprises UK Nigeria Cargo: Key Facts &amp; Statistics
       </h2>
 
       <div className="border border-white/[0.07] bg-white/[0.02] overflow-hidden">
         <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
         <div className="px-6 py-8 md:px-10">
           <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 text-center mb-7">
-            R-Zone by the Numbers — UK&apos;s #1 Nigeria Cargo Company
+            R-Zone by the Numbers   UK&apos;s #1 Nigeria Cargo Company
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {STATS.map((s, i) => (
@@ -1543,7 +1543,7 @@ export default function QuotePageClient() {
               // WebPage
               {
                 "@type": "WebPage",
-                "name": "Free UK–Nigeria Shipping Quote — R-Zone Enterprises",
+                "name": "Free UK Nigeria Shipping Quote   R-Zone Enterprises",
                 "url": "https://r-zoneenterprises.com/quote",
                 "description": "Get a free UK-to-Nigeria cargo shipping quote from the highest-rated cargo company on Google. 100+ five-star reviews. Air freight from £5/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
                 "isPartOf": { "@type": "WebSite", "url": "https://r-zoneenterprises.com", "name": "R-Zone Enterprises" },
@@ -1554,7 +1554,7 @@ export default function QuotePageClient() {
                 "@type": "LocalBusiness",
                 "@id": "https://r-zoneenterprises.com/#business",
                 "name": "R-Zone Enterprises",
-                "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google — 100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
+                "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google   100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
                 "url": "https://r-zoneenterprises.com",
                 "telephone": "+448007720864",
                 "email": "info@r-zoneenterprises.com",
@@ -1573,12 +1573,12 @@ export default function QuotePageClient() {
                   "worstRating": "1",
                 },
               },
-              // Service — Air Freight
+              // Service   Air Freight
               {
                 "@type": "Service",
                 "name": "Air Freight UK to Nigeria",
                 "provider": { "@id": "https://r-zoneenterprises.com/#business" },
-                "description": "Fast air cargo shipping from any UK city to all 36 Nigerian states. 5–10 working days transit. IATA-certified customs clearance included.",
+                "description": "Fast air cargo shipping from any UK city to all 36 Nigerian states. 5 10 working days transit. IATA-certified customs clearance included.",
                 "offers": {
                   "@type": "Offer",
                   "price": "5.00",
@@ -1588,12 +1588,12 @@ export default function QuotePageClient() {
                 "areaServed": ["United Kingdom", "Nigeria"],
                 "serviceType": "Air Freight",
               },
-              // Service — Sea Freight
+              // Service   Sea Freight
               {
                 "@type": "Service",
                 "name": "Sea Freight UK to Nigeria",
                 "provider": { "@id": "https://r-zoneenterprises.com/#business" },
-                "description": "Cost-effective weekly sea freight from the UK to Nigeria. 4–6 weeks transit. Suitable for large, heavy, or bulk cargo shipments.",
+                "description": "Cost-effective weekly sea freight from the UK to Nigeria. 4 6 weeks transit. Suitable for large, heavy, or bulk cargo shipments.",
                 "offers": {
                   "@type": "Offer",
                   "price": "3.00",
@@ -1656,7 +1656,7 @@ export default function QuotePageClient() {
                 animate={heroInView ? "visible" : "hidden"}
                 variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
               >
-                {/* Trust badge — #1 claim */}
+                {/* Trust badge   #1 claim */}
                 <motion.div
                   variants={fadeUp}
                   custom={0}
@@ -1664,7 +1664,7 @@ export default function QuotePageClient() {
                 >
                   <Award size={13} className="text-[#1F51FF]" aria-hidden="true" />
                   <span className="text-white text-[13px] font-bold">
-                    Highest-Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews
+                    Highest-Ranked UK Nigeria Cargo on Google · 100+ Five-Star Reviews
                   </span>
                 </motion.div>
 
@@ -1678,7 +1678,7 @@ export default function QuotePageClient() {
                 >
                   Get Your Free<br />
                   <span className="relative inline-block text-[#1F51FF]">
-                    UK–Nigeria
+                    UK Nigeria
                     <motion.span
                       className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]"
                       aria-hidden="true"
@@ -1695,7 +1695,7 @@ export default function QuotePageClient() {
                   custom={0.2}
                   className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl"
                 >
-                  Answer 4 simple steps — our UK-based team responds with a personalised, no-obligation
+                  Answer 4 simple steps   our UK-based team responds with a personalised, no-obligation
                   cargo shipping quote within the same business day. No call centres. No automated replies.
                   Cargo to Nigeria from UK by air freight, sea freight to Nigeria from UK, door to door cargo Nigeria,
                   and Nigeria customs clearance UK across all 36 Nigerian states.
@@ -1710,9 +1710,9 @@ export default function QuotePageClient() {
                 transition={{ duration: 0.5, delay: 0.35 }}
               >
                 {[
-                  { icon: Plane, label: "Air Freight",   rate: "from £5/kg",   sub: "5–10 working days"  },
-                  { icon: Ship,  label: "Sea Freight",   rate: "from £3/kg",   sub: "4–6 weeks · Weekly sailings" },
-                  { icon: Zap,   label: "Quote Response", rate: "Same Day",    sub: "Mon–Fri, real humans" },
+                  { icon: Plane, label: "Air Freight",   rate: "from £5/kg",   sub: "5 10 working days"  },
+                  { icon: Ship,  label: "Sea Freight",   rate: "from £3/kg",   sub: "4 6 weeks · Weekly sailings" },
+                  { icon: Zap,   label: "Quote Response", rate: "Same Day",    sub: "Mon Fri, real humans" },
                 ].map(({ icon: Icon, label, rate, sub }) => (
                   <div key={label} className="border border-white/[0.08] bg-white/[0.04] px-5 py-3 flex items-center gap-3">
                     <Icon size={16} className="text-[#1F51FF]" aria-hidden="true" />
@@ -1736,7 +1736,7 @@ export default function QuotePageClient() {
         <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-start">
 
-            {/* LEFT — form */}
+            {/* LEFT   form */}
             <div className="lg:col-span-8">
               <div className="border border-white/[0.09] bg-white/[0.03] overflow-hidden">
                 <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
@@ -1807,9 +1807,9 @@ export default function QuotePageClient() {
                             type="button"
                             onClick={handleSubmit}
                             className="inline-flex items-center gap-2.5 bg-red-600 hover:bg-red-500 text-white text-[13px] font-black tracking-[0.09em] uppercase px-7 py-3 transition-all duration-200 shadow-lg shadow-red-600/30"
-                            aria-label="Submission failed — retry"
+                            aria-label="Submission failed   retry"
                           >
-                            Submission failed — Retry <Send size={12} aria-hidden="true" />
+                            Submission failed   Retry <Send size={12} aria-hidden="true" />
                           </button>
                         ) : (
                           <button
@@ -1817,7 +1817,7 @@ export default function QuotePageClient() {
                             onClick={handleSubmit}
                             disabled={status === "loading"}
                             className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.09em] uppercase px-7 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
-                            aria-label="Submit your UK–Nigeria cargo quote request"
+                            aria-label="Submit your UK Nigeria cargo quote request"
                             aria-busy={status === "loading"}
                           >
                             {status === "loading" ? (
@@ -1869,7 +1869,7 @@ export default function QuotePageClient() {
               )}
             </div>
 
-            {/* RIGHT — sidebar */}
+            {/* RIGHT   sidebar */}
             <div className="lg:col-span-4 hidden lg:block">
               <LiveEstimateSidebar form={form} />
             </div>

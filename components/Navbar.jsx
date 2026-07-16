@@ -45,7 +45,7 @@ const NAV_ITEMS = [
     ariaLabel: "R-Zone shipping and cargo services",
     dropdown: [
       { label: "All Services",             href: "/services",                          icon: Globe,     description: "Full overview of R-Zone cargo solutions" },
-      { label: "Air Freight to Nigeria",   href: "/services#air-freight",              icon: Plane,     description: "Fast UK–Nigeria air cargo, 5–10 days" },
+      { label: "Air Freight to Nigeria",   href: "/services#air-freight",              icon: Plane,     description: "Fast UK Nigeria air cargo, 5 10 days" },
       { label: "Sea Freight to Nigeria",   href: "/services#sea-freight",              icon: Ship,      description: "Affordable weekly sea freight departures" },
       { label: "Door to Door Cargo",       href: "/services#door-to-door",             icon: Truck,     description: "UK collection · Nigeria delivery" },
       { label: "Importation from Nigeria", href: "/services#importation",              icon: Package,   description: "Weekly air & sea imports handled end-to-end" },
@@ -80,7 +80,7 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "Importation",  href: "/importation", icon: Package,       description: "Importation guide" },
       { label: "Sailing Schedules",  href: "/schedulesprices", icon: Ship,       description: "Weekly sea freight departure dates" },
-      { label: "Prices & Rates",     href: "/schedulesprices#pricing",    icon: BarChart3,  description: "Transparent UK–Nigeria pricing" },
+      { label: "Prices & Rates",     href: "/schedulesprices#pricing",    icon: BarChart3,  description: "Transparent UK Nigeria pricing" },
       { label: "News & Insights",    href: "/blog",                      icon: Newspaper,  description: "Latest logistics & trade news" },
       { label: "FAQs",               href: "/support",                   icon: HelpCircle, description: "Answers to common questions" },
     ],
@@ -91,7 +91,7 @@ const NAV_ITEMS = [
     href: "/about",
     ariaLabel: "About R-Zone Enterprises",
     dropdown: [
-      { label: "About Us",          href: "/about",      icon: Globe,       description: "Our story — founded 2012, Essex UK" },
+      { label: "About Us",          href: "/about",      icon: Globe,       description: "Our story   founded 2012, Essex UK" },
       { label: "R-Zone Enterprise", href: "/rzone",      icon: ShieldCheck, description: "Why thousands of customers trust us" },
       { label: "Business Solutions", href: "/business-solutions", icon: Briefcase,   description: "B2B shipping solutions & enterprise services" },
    
@@ -271,7 +271,7 @@ function NavItem({ item, pathname, transparent }) {
     if (e.key === "Escape") setOpen(false);
   }, []);
 
-  // ── Primary CTA — "Get Quote"
+  // ── Primary CTA   "Get Quote"
   if (item.isPrimary) {
     return (
       <Link
@@ -285,7 +285,7 @@ function NavItem({ item, pathname, transparent }) {
     );
   }
 
-  // ── Track Shipment — outlined ghost
+  // ── Track Shipment   outlined ghost
   if (item.isTrack) {
     return (
       <Link
@@ -446,7 +446,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
                 href="/"
                 onClick={onClose}
                 className="flex items-center gap-2.5"
-                aria-label="R-Zone Enterprises — home"
+                aria-label="R-Zone Enterprises   home"
               >
                 <Image
                   src={assets.logo}
@@ -697,7 +697,7 @@ export default function Navbar() {
         itemType="https://schema.org/WPHeader"
       >
 
-        {/* ── ROW 1 — Logo + utility ── */}
+        {/* ── ROW 1   Logo + utility ── */}
         <div className={`border-b transition-colors duration-300 ${
           transparent ? "border-white/10" : "border-black/10"
         }`}>
@@ -706,7 +706,7 @@ export default function Navbar() {
             <Link
               href="/"
               className="flex items-center gap-2.5 group flex-shrink-0"
-              aria-label="R-Zone Enterprises — UK to Nigeria cargo specialists, home"
+              aria-label="R-Zone Enterprises   UK to Nigeria cargo specialists, home"
               itemProp="url"
             >
               <Image
@@ -731,7 +731,7 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Utility links — desktop */}
+            {/* Utility links   desktop */}
             <div className="hidden lg:flex items-center gap-5" aria-label="Utility links">
               {TOP_LINKS.map((link) => {
                 const Icon = link.icon;
@@ -775,13 +775,13 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── ROW 2 — Nav ── */}
+        {/* ── ROW 2   Nav ── */}
         <div className={`hidden lg:block border-b transition-colors duration-300 ${
           transparent ? "border-white/10" : "border-black/10"
         }`}>
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex items-center justify-between h-[50px]">
 
-            {/* Left — text nav links */}
+            {/* Left   text nav links */}
             <nav
               className="flex items-center gap-5 xl:gap-6 h-full"
               aria-label="Main navigation"
@@ -797,7 +797,7 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Right — CTA buttons */}
+            {/* Right   CTA buttons */}
             <div
               className="flex items-center gap-2 flex-shrink-0"
               role="group"

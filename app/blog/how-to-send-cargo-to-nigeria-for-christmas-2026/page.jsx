@@ -42,11 +42,11 @@ const schemas = [
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   },
-  // Event schema — Christmas 2026 seasonal relevance signal for Google
+  // Event schema   Christmas 2026 seasonal relevance signal for Google
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: "R-Zone Christmas Nigeria Cargo 2026 — Sea Freight Booking Deadline",
+    name: "R-Zone Christmas Nigeria Cargo 2026   Sea Freight Booking Deadline",
     startDate: "2026-11-07",
     endDate: "2026-12-12",
     description: "R-Zone Cargo UK-to-Nigeria Christmas shipping season 2026. Sea freight deadline: 7 November. Air freight deadline: 11 December.",
@@ -86,7 +86,7 @@ export default function Page() {
         <h2>Frequently Asked Questions</h2>
         {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free Christmas cargo quote</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo</a>
         </nav>

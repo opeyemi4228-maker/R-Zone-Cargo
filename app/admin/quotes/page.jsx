@@ -6,7 +6,7 @@ import { FileText, X, ChevronDown, ChevronUp, Search, Filter } from "lucide-reac
 import { getQuoteRequests, updateQuoteStatus } from "../../../lib/adminAuth";
 
 function fmt(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 
@@ -28,20 +28,20 @@ function StatusPill({ text }) {
 
 function DetailModal({ quote, onClose, onStatusChange }) {
   const rows = [
-    ["Service",          quote.service || "—"],
-    ["Cargo Type",       quote.cargoType || "—"],
-    ["Weight",           quote.weight ? `${quote.weight} kg` : "—"],
-    ["Items",            quote.items || "—"],
-    ["Cargo Value",      quote.cargoValue || "—"],
-    ["Direction",        quote.direction || "—"],
-    ["From",             quote.fromCity || "—"],
-    ["To State",         quote.toState || "—"],
-    ["Collection",       quote.collection || "—"],
-    ["Target Date",      quote.targetDate || "—"],
-    ["Delivery Address", quote.deliveryAddress || "—"],
-    ["Company",          quote.company || "—"],
-    ["Source",           quote.source || "—"],
-    ["Notes",            quote.notes || "—"],
+    ["Service",          quote.service || " "],
+    ["Cargo Type",       quote.cargoType || " "],
+    ["Weight",           quote.weight ? `${quote.weight} kg` : " "],
+    ["Items",            quote.items || " "],
+    ["Cargo Value",      quote.cargoValue || " "],
+    ["Direction",        quote.direction || " "],
+    ["From",             quote.fromCity || " "],
+    ["To State",         quote.toState || " "],
+    ["Collection",       quote.collection || " "],
+    ["Target Date",      quote.targetDate || " "],
+    ["Delivery Address", quote.deliveryAddress || " "],
+    ["Company",          quote.company || " "],
+    ["Source",           quote.source || " "],
+    ["Notes",            quote.notes || " "],
     ["Submitted",        fmt(quote.submittedAt)],
   ];
 
@@ -214,10 +214,10 @@ export default function QuotesPage() {
                     <p className="text-[#94a3b8] text-[11px] mt-0.5 truncate sm:hidden">{fmt(q.submittedAt)}</p>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[#374151] text-[13px] font-medium truncate">{q.service || "—"}</p>
-                    <p className="text-[#94a3b8] text-[11px] mt-0.5 truncate">{q.direction || "—"}</p>
+                    <p className="text-[#374151] text-[13px] font-medium truncate">{q.service || " "}</p>
+                    <p className="text-[#94a3b8] text-[11px] mt-0.5 truncate">{q.direction || " "}</p>
                   </div>
-                  <p className="text-[#374151] text-[13px] font-medium hidden sm:block">{q.weight ? `${q.weight} kg` : "—"}</p>
+                  <p className="text-[#374151] text-[13px] font-medium hidden sm:block">{q.weight ? `${q.weight} kg` : " "}</p>
                   <p className="text-[#94a3b8] text-[12px] font-medium hidden sm:block">{fmt(q.submittedAt)}</p>
                   <div><StatusPill text={q.status} /></div>
                 </motion.button>

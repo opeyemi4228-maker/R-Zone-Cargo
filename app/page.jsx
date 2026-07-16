@@ -26,7 +26,7 @@ const RESHOW_HOURS  = 6;
 const RESHOW_MS     = RESHOW_HOURS * 60 * 60 * 1000;
 
 const DEFAULT_PREFS = {
-  necessary:   true,   // always on — cannot be toggled
+  necessary:   true,   // always on   cannot be toggled
   analytics:   false,
   marketing:   false,
   preferences: false,
@@ -111,7 +111,7 @@ function CookieBanner() {
   const [expanded, setExpanded] = useState(false);
   const [prefs,    setPrefs]    = useState(DEFAULT_PREFS);
 
-  // Client-only mount — all localStorage access here
+  // Client-only mount   all localStorage access here
   useEffect(() => {
     const savedPrefs = safeGet(PREFS_KEY);
     const parsed     = safeJSON(savedPrefs, DEFAULT_PREFS);
@@ -184,7 +184,7 @@ function CookieBanner() {
             aria-hidden="true"
           />
 
-          {/* Banner — slides up from bottom */}
+          {/* Banner   slides up from bottom */}
           <motion.div
             role="dialog"
             aria-modal="false"
@@ -313,7 +313,7 @@ function CookieBanner() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
                         <PrefRow
                           label="Strictly Necessary"
-                          description="Core site functions — sessions, forms, and security. Cannot be disabled."
+                          description="Core site functions   sessions, forms, and security. Cannot be disabled."
                           checked={true}
                           onChange={() => {}}
                           disabled
@@ -332,7 +332,7 @@ function CookieBanner() {
                         />
                         <PrefRow
                           label="Preferences"
-                          description="Remembers your settings — language, region, and display choices."
+                          description="Remembers your settings   language, region, and display choices."
                           checked={prefs.preferences}
                           onChange={togglePref("preferences")}
                         />
@@ -377,7 +377,7 @@ const Home = () => {
         <Banner />
       </div>
 
-      {/* Cookie banner — renders on top of everything */}
+      {/* Cookie banner   renders on top of everything */}
       <CookieBanner />
     </>
   );

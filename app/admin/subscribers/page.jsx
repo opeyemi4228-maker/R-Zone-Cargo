@@ -6,7 +6,7 @@ import { Users, Search, Trash2, Download, ChevronDown, ChevronUp } from "lucide-
 import { getSubscribers, deleteSubscriber } from "../../../lib/adminAuth";
 
 function fmt(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 

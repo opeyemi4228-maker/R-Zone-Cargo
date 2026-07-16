@@ -206,7 +206,7 @@ export default function PrivacyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Privacy Policy — R-Zone Enterprises",
+        "name": "Privacy Policy   R-Zone Enterprises",
         "url": "https://r-zoneenterprises.com/privacy",
         "description": "R-Zone Enterprises Privacy Policy under UK GDPR and the Data Protection Act 2018.",
         "dateModified": "2025-01-15",
@@ -217,7 +217,7 @@ export default function PrivacyPage() {
       <div className="bg-[#0818A8]" role="complementary" aria-label="Contact bar">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
           <p className="text-white/80 text-[13px] font-medium tracking-[0.02em]">
-            R-Zone Enterprises — Legal &amp; Compliance
+            R-Zone Enterprises   Legal &amp; Compliance
           </p>
           <div className="hidden sm:flex items-center gap-6">
             <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
@@ -257,15 +257,15 @@ export default function PrivacyPage() {
                 <span className="text-[#0818A8]">Policy.</span>
               </h1>
               <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
-                We believe privacy is a right, not a checkbox. This policy explains exactly what personal data R-Zone Enterprises collects, how we use it, and the rights you hold over it — in plain language.
+                We believe privacy is a right, not a checkbox. This policy explains exactly what personal data R-Zone Enterprises collects, how we use it, and the rights you hold over it   in plain language.
               </p>
             </div>
 
-            {/* Right — meta card */}
+            {/* Right   meta card */}
             <div className="grid grid-cols-2 gap-3">
               {[
                 { label: "Last Updated",    val: "15 January 2025",          icon: Clock    },
-                { label: "Version",         val: "v3.0 — 2025",              icon: FileText },
+                { label: "Version",         val: "v3.0   2025",              icon: FileText },
                 { label: "Jurisdiction",    val: "England & Wales",          icon: Globe    },
                 { label: "Framework",       val: "UK GDPR · DPA 2018",       icon: Shield   },
               ].map(({ label, val, icon: Icon }) => (
@@ -358,7 +358,7 @@ export default function PrivacyPage() {
           {/* ── DOCUMENT CONTENT ── */}
           <main className="lg:col-span-9 xl:col-span-10 min-w-0" id="main-content">
 
-            {/* ─── S1 — WHO WE ARE ─── */}
+            {/* ─── S1   WHO WE ARE ─── */}
             <Section id="s1" num="01" title="Who We Are">
               <P>
                 R-Zone Enterprises ("<strong className="text-gray-900 font-semibold">we</strong>", "<strong className="text-gray-900 font-semibold">us</strong>", "<strong className="text-gray-900 font-semibold">our</strong>") is a UK-based freight and logistics company. We operate as <strong className="text-gray-900 font-semibold">R-Zone Enterprises Ltd</strong>, registered in England and Wales, with our registered office at:
@@ -377,32 +377,32 @@ export default function PrivacyPage() {
                 This Privacy Policy explains how we handle personal data in accordance with the <strong className="text-gray-900 font-semibold">UK General Data Protection Regulation (UK GDPR)</strong>, the <strong className="text-gray-900 font-semibold">Data Protection Act 2018</strong>, and all applicable data protection legislation.
               </P>
               <Callout type="blue">
-                <strong className="font-semibold">In plain terms:</strong> We are R-Zone Enterprises Ltd, based in Essex, UK. We're the company responsible for your personal data. This policy is written to be clear — not to hide anything. If you have questions after reading it, we'd love to hear from you.
+                <strong className="font-semibold">In plain terms:</strong> We are R-Zone Enterprises Ltd, based in Essex, UK. We're the company responsible for your personal data. This policy is written to be clear   not to hide anything. If you have questions after reading it, we'd love to hear from you.
               </Callout>
             </Section>
 
-            {/* ─── S2 — DATA WE COLLECT ─── */}
+            {/* ─── S2   DATA WE COLLECT ─── */}
             <Section id="s2" num="02" title="Data We Collect">
               <P>We collect personal data in three ways: directly from you, automatically, and from third parties.</P>
 
-              <H3>2.1 — Data You Provide Directly</H3>
+              <H3>2.1   Data You Provide Directly</H3>
               <UL>
                 <LI><strong className="text-gray-900 font-semibold">Identity data:</strong> full name, date of birth, passport or ID number (where required for customs)</LI>
                 <LI><strong className="text-gray-900 font-semibold">Contact data:</strong> email address, phone number, UK and Nigeria addresses</LI>
                 <LI><strong className="text-gray-900 font-semibold">Shipment data:</strong> cargo description, weight, dimensions, declared value, origin, destination</LI>
-                <LI><strong className="text-gray-900 font-semibold">Payment data:</strong> billing address and payment method — we do not store full card details, which are handled by PCI-DSS compliant processors</LI>
+                <LI><strong className="text-gray-900 font-semibold">Payment data:</strong> billing address and payment method   we do not store full card details, which are handled by PCI-DSS compliant processors</LI>
                 <LI><strong className="text-gray-900 font-semibold">Communication data:</strong> records of your correspondence with us by phone, email, or contact forms</LI>
                 <LI><strong className="text-gray-900 font-semibold">Account data:</strong> username, hashed password, booking history, preferences</LI>
               </UL>
 
-              <H3>2.2 — Data Collected Automatically</H3>
+              <H3>2.2   Data Collected Automatically</H3>
               <UL>
                 <LI><strong className="text-gray-900 font-semibold">Technical data:</strong> IP address, browser type and version, device identifiers, time zone</LI>
                 <LI><strong className="text-gray-900 font-semibold">Usage data:</strong> pages visited, time on page, links clicked, referral source</LI>
                 <LI><strong className="text-gray-900 font-semibold">Cookie data:</strong> see our <a href="/cookies" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Cookie Policy</a> for full details</LI>
               </UL>
 
-              <H3>2.3 — Data From Third Parties</H3>
+              <H3>2.3   Data From Third Parties</H3>
               <UL>
                 <LI>Business partners and referral sources who confirm your data may be shared</LI>
                 <LI>HMRC and Nigeria Customs Service for import/export compliance</LI>
@@ -415,7 +415,7 @@ export default function PrivacyPage() {
               </Callout>
             </Section>
 
-            {/* ─── S3 — HOW WE USE ─── */}
+            {/* ─── S3   HOW WE USE ─── */}
             <Section id="s3" num="03" title="How We Use Your Data">
               <P>We use your personal data only for legitimate business purposes. The table below sets out every use alongside the legal basis we rely on.</P>
 
@@ -442,22 +442,22 @@ export default function PrivacyPage() {
                 </table>
               </div>
 
-              <H3>3.1 — Marketing Communications</H3>
+              <H3>3.1   Marketing Communications</H3>
               <P>
-                We only send marketing emails or SMS if you have given us <strong className="text-gray-900 font-semibold">explicit consent</strong>. You can withdraw consent at any time — click "unsubscribe" in any email, text STOP to any SMS, or email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a>. We will never sell or share your contact details for others' marketing purposes.
+                We only send marketing emails or SMS if you have given us <strong className="text-gray-900 font-semibold">explicit consent</strong>. You can withdraw consent at any time   click "unsubscribe" in any email, text STOP to any SMS, or email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a>. We will never sell or share your contact details for others' marketing purposes.
               </P>
             </Section>
 
-            {/* ─── S4 — LEGAL BASIS ─── */}
+            {/* ─── S4   LEGAL BASIS ─── */}
             <Section id="s4" num="04" title="Legal Basis for Processing">
               <P>Under UK GDPR, every act of data processing must have a lawful basis. Here are the bases we rely on:</P>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 {[
-                  { basis: "Contract Performance", article: "Art. 6(1)(b)", desc: "Processing necessary to fulfil your shipping contract — booking, dispatch, delivery, invoicing.", color: "#0818A8" },
-                  { basis: "Legal Obligation",     article: "Art. 6(1)(c)", desc: "Where we are legally required to process data — customs declarations, HMRC reporting, AML checks.", color: "#1F51FF" },
+                  { basis: "Contract Performance", article: "Art. 6(1)(b)", desc: "Processing necessary to fulfil your shipping contract   booking, dispatch, delivery, invoicing.", color: "#0818A8" },
+                  { basis: "Legal Obligation",     article: "Art. 6(1)(c)", desc: "Where we are legally required to process data   customs declarations, HMRC reporting, AML checks.", color: "#1F51FF" },
                   { basis: "Legitimate Interests", article: "Art. 6(1)(f)", desc: "Fraud detection, network security, and business communications where our interests don't override yours.", color: "#0437F2" },
-                  { basis: "Consent",              article: "Art. 6(1)(a)", desc: "Marketing communications and non-essential cookies — you may withdraw consent at any time.", color: "#0818A8" },
+                  { basis: "Consent",              article: "Art. 6(1)(a)", desc: "Marketing communications and non-essential cookies   you may withdraw consent at any time.", color: "#0818A8" },
                 ].map(item => (
                   <div key={item.basis} className="border border-gray-200 bg-white p-4 hover:border-[#0818A8]/30 transition-colors">
                     <div className="flex items-center justify-between mb-2">
@@ -474,25 +474,25 @@ export default function PrivacyPage() {
               </Callout>
             </Section>
 
-            {/* ─── S5 — DATA SHARING ─── */}
+            {/* ─── S5   DATA SHARING ─── */}
             <Section id="s5" num="05" title="Data Sharing">
               <P>We share your personal data only where necessary. We never sell it.</P>
 
-              <H3>5.1 — Service Providers (Processors)</H3>
+              <H3>5.1   Service Providers (Processors)</H3>
               <UL>
-                <LI><strong className="text-gray-900 font-semibold">Airlines & carriers:</strong> British Airways, Virgin Atlantic, Emirates, Ethiopian Airlines — for booking cargo space and issuing air waybills</LI>
+                <LI><strong className="text-gray-900 font-semibold">Airlines & carriers:</strong> British Airways, Virgin Atlantic, Emirates, Ethiopian Airlines   for booking cargo space and issuing air waybills</LI>
                 <LI><strong className="text-gray-900 font-semibold">Customs agents:</strong> In Nigeria and the UK, to handle port clearance and regulatory filings</LI>
-                <LI><strong className="text-gray-900 font-semibold">Payment processors:</strong> Stripe and PayPal — PCI-DSS Level 1 compliant</LI>
-                <LI><strong className="text-gray-900 font-semibold">IT service providers:</strong> Cloud hosting, email delivery, CRM — all subject to data processing agreements</LI>
-                <LI><strong className="text-gray-900 font-semibold">Analytics:</strong> Google Analytics — anonymised and only with your cookie consent</LI>
+                <LI><strong className="text-gray-900 font-semibold">Payment processors:</strong> Stripe and PayPal   PCI-DSS Level 1 compliant</LI>
+                <LI><strong className="text-gray-900 font-semibold">IT service providers:</strong> Cloud hosting, email delivery, CRM   all subject to data processing agreements</LI>
+                <LI><strong className="text-gray-900 font-semibold">Analytics:</strong> Google Analytics   anonymised and only with your cookie consent</LI>
               </UL>
 
-              <H3>5.2 — Regulatory & Government Bodies</H3>
+              <H3>5.2   Regulatory & Government Bodies</H3>
               <UL>
-                <LI>HM Revenue & Customs (HMRC) — UK import/export compliance</LI>
-                <LI>Nigeria Customs Service (NCS) — Nigerian import/export declarations</LI>
-                <LI>UK Border Force — where required for customs inspections</LI>
-                <LI>Law enforcement agencies — where required by law or court order</LI>
+                <LI>HM Revenue & Customs (HMRC)   UK import/export compliance</LI>
+                <LI>Nigeria Customs Service (NCS)   Nigerian import/export declarations</LI>
+                <LI>UK Border Force   where required for customs inspections</LI>
+                <LI>Law enforcement agencies   where required by law or court order</LI>
               </UL>
 
               <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
@@ -518,10 +518,10 @@ export default function PrivacyPage() {
               </Callout>
             </Section>
 
-            {/* ─── S6 — INTERNATIONAL TRANSFERS ─── */}
+            {/* ─── S6   INTERNATIONAL TRANSFERS ─── */}
             <Section id="s6" num="06" title="International Transfers">
               <P>
-                Our operations span the UK and Nigeria. As part of our service, your personal data will be transferred to Nigeria — specifically to our Lagos operations hub — to facilitate customs clearance and last-mile delivery.
+                Our operations span the UK and Nigeria. As part of our service, your personal data will be transferred to Nigeria   specifically to our Lagos operations hub   to facilitate customs clearance and last-mile delivery.
               </P>
               <P>
                 Nigeria is not currently recognised by the UK as providing an adequate level of data protection under UK GDPR. Where data is transferred to Nigeria, we rely on the following safeguards:
@@ -536,7 +536,7 @@ export default function PrivacyPage() {
               </P>
             </Section>
 
-            {/* ─── S7 — RETENTION ─── */}
+            {/* ─── S7   RETENTION ─── */}
             <Section id="s7" num="07" title="Data Retention">
               <P>We keep personal data only for as long as necessary. Here is our retention schedule:</P>
 
@@ -564,9 +564,9 @@ export default function PrivacyPage() {
               <P>When data is no longer required, we securely delete or irreversibly anonymise it. We periodically review all data we hold to ensure it remains accurate and necessary.</P>
             </Section>
 
-            {/* ─── S8 — YOUR RIGHTS ─── */}
+            {/* ─── S8   YOUR RIGHTS ─── */}
             <Section id="s8" num="08" title="Your Rights">
-              <P>Under UK GDPR, you have eight rights over your personal data. Here they are — plainly.</P>
+              <P>Under UK GDPR, you have eight rights over your personal data. Here they are   plainly.</P>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
                 {RIGHTS.map((right) => {
@@ -590,10 +590,10 @@ export default function PrivacyPage() {
               </div>
 
               <H3>How to Exercise Your Rights</H3>
-              <P>Email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> or write to our registered address. We respond within <strong className="text-gray-900 font-semibold">one calendar month</strong>. Complex requests may be extended by a further two months — we will notify you.</P>
+              <P>Email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> or write to our registered address. We respond within <strong className="text-gray-900 font-semibold">one calendar month</strong>. Complex requests may be extended by a further two months   we will notify you.</P>
 
               <div className="border border-gray-200 bg-gray-50 p-5">
-                <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Right to Complain — ICO</p>
+                <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Right to Complain   ICO</p>
                 <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-3">
                   If you're not satisfied with how we've handled your data, you can complain to the Information Commissioner's Office.
                 </p>
@@ -607,7 +607,7 @@ export default function PrivacyPage() {
               </div>
             </Section>
 
-            {/* ─── S9 — COOKIES ─── */}
+            {/* ─── S9   COOKIES ─── */}
             <Section id="s9" num="09" title="Cookies">
               <P>
                 We use cookies and similar tracking technologies on our website. Non-essential cookies (analytics, marketing) are only placed on your device with your prior consent, obtained through our cookie banner.
@@ -617,7 +617,7 @@ export default function PrivacyPage() {
               </P>
             </Section>
 
-            {/* ─── S10 — SECURITY ─── */}
+            {/* ─── S10   SECURITY ─── */}
             <Section id="s10" num="10" title="Security">
               <P>We implement appropriate technical and organisational measures to protect your personal data. Our security programme includes:</P>
 
@@ -626,7 +626,7 @@ export default function PrivacyPage() {
                   "TLS/HTTPS encryption for all data in transit",
                   "AES-256 encryption for sensitive data at rest",
                   "Multi-factor authentication for staff systems",
-                  "Role-based access controls — staff see only what they need",
+                  "Role-based access controls   staff see only what they need",
                   "Regular security audits and penetration testing",
                   "Annual mandatory data protection training for all staff",
                   "Incident response plan for data breaches",
@@ -642,18 +642,18 @@ export default function PrivacyPage() {
               </div>
 
               <Callout type="green">
-                <strong className="font-semibold">Data breach notification:</strong> In the event of a personal data breach likely to risk your rights and freedoms, we will notify the ICO within 72 hours and inform you without undue delay — as required by UK GDPR Articles 33 and 34.
+                <strong className="font-semibold">Data breach notification:</strong> In the event of a personal data breach likely to risk your rights and freedoms, we will notify the ICO within 72 hours and inform you without undue delay   as required by UK GDPR Articles 33 and 34.
               </Callout>
             </Section>
 
-            {/* ─── S11 — CHILDREN ─── */}
+            {/* ─── S11   CHILDREN ─── */}
             <Section id="s11" num="11" title="Children's Privacy">
               <P>
                 Our services are intended for individuals aged 18 and over. We do not knowingly collect personal data from children under 18. If you believe your child has provided us with personal data without your consent, please email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> immediately. We will delete the data promptly and without charge.
               </P>
             </Section>
 
-            {/* ─── S12 — CHANGES ─── */}
+            {/* ─── S12   CHANGES ─── */}
             <Section id="s12" num="12" title="Changes to This Policy">
               <P>
                 We review this Privacy Policy regularly. We will notify you of material changes by email (where we hold your address) and by posting a notice on our website. The "Last Updated" date at the top of this policy will reflect any revision.
@@ -663,7 +663,7 @@ export default function PrivacyPage() {
               </P>
             </Section>
 
-            {/* ─── S13 — CONTACT & DPO ─── */}
+            {/* ─── S13   CONTACT & DPO ─── */}
             <Section id="s13" num="13" title="Contact & DPO">
               <P>For any questions, requests, or concerns about this Privacy Policy or your personal data:</P>
 
@@ -698,10 +698,10 @@ export default function PrivacyPage() {
               <div className="border border-gray-200 divide-y divide-gray-100">
                 {[
                   { q: "How do I request a copy of my data?",       a: "Email privacy@r-zoneenterprises.com with the subject line 'Subject Access Request'. Include your name and the email address associated with your account. We respond within one calendar month at no charge." },
-                  { q: "How do I delete my account and data?",       a: "Email privacy@r-zoneenterprises.com with the subject 'Erasure Request'. Note: we are legally required to retain certain records (shipment, payment) for six years under HMRC rules — we will explain what can be deleted immediately and what must be retained." },
+                  { q: "How do I delete my account and data?",       a: "Email privacy@r-zoneenterprises.com with the subject 'Erasure Request'. Note: we are legally required to retain certain records (shipment, payment) for six years under HMRC rules   we will explain what can be deleted immediately and what must be retained." },
                   { q: "How do I opt out of marketing emails?",       a: "Click 'unsubscribe' in any marketing email, or email privacy@r-zoneenterprises.com. We will process your request within 5 working days." },
                   { q: "Who do I contact if I think there's been a breach?", a: "Email privacy@r-zoneenterprises.com immediately with details of your concern. We take breach reports extremely seriously and investigate all within 24 hours." },
-                  { q: "Is my data shared with airlines?",           a: "Yes — your shipment data (name, address, cargo details) is shared with the carrier transporting your goods, as required to complete the service. This is covered under our contract performance legal basis." },
+                  { q: "Is my data shared with airlines?",           a: "Yes   your shipment data (name, address, cargo details) is shared with the carrier transporting your goods, as required to complete the service. This is covered under our contract performance legal basis." },
                 ].map((item, i) => (
                   <FAQ key={i} q={item.q} a={item.a} index={i} />
                 ))}

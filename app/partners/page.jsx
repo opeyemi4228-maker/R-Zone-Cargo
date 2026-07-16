@@ -27,7 +27,7 @@ const PARTNER_TYPES = [
     icon: Anchor,
     title: "Freight Agent",
     tagline: "Already in logistics? Grow with us.",
-    desc: "Freight agents, customs brokers, and logistics consultants who want to expand their UK–Nigeria offering. Earn competitive commission on every shipment you refer or co-handle with our team.",
+    desc: "Freight agents, customs brokers, and logistics consultants who want to expand their UK Nigeria offering. Earn competitive commission on every shipment you refer or co-handle with our team.",
     benefits: [
       "Commission from 5% on referred shipments",
       "Co-branded service documentation",
@@ -44,7 +44,7 @@ const PARTNER_TYPES = [
     icon: Users,
     title: "Referral Partner",
     tagline: "Recommend R-Zone. Earn every time.",
-    desc: "Anyone with a network of Nigerian diaspora, businesses, or importers. Whether you're a community leader, accountant, lawyer, or social media influencer — if you can refer customers, we reward you for every completed shipment.",
+    desc: "Anyone with a network of Nigerian diaspora, businesses, or importers. Whether you're a community leader, accountant, lawyer, or social media influencer   if you can refer customers, we reward you for every completed shipment.",
     benefits: [
       "Fixed referral fee per completed booking",
       "Real-time referral tracking dashboard",
@@ -61,7 +61,7 @@ const PARTNER_TYPES = [
     icon: Package,
     title: "E-commerce & Retail",
     tagline: "Sell more. Ship it with R-Zone.",
-    desc: "Online retailers, Amazon sellers, and e-commerce businesses who source from or sell to the Nigerian market. We handle the logistics so you can focus on growth — with volume rates, API integration options, and fulfilment support.",
+    desc: "Online retailers, Amazon sellers, and e-commerce businesses who source from or sell to the Nigerian market. We handle the logistics so you can focus on growth   with volume rates, API integration options, and fulfilment support.",
     benefits: [
       "Volume-discounted rates from first shipment",
       "Dedicated account manager",
@@ -78,7 +78,7 @@ const PARTNER_TYPES = [
     icon: Building2,
     title: "Corporate Account",
     tagline: "Enterprise-grade logistics. Personal service.",
-    desc: "UK businesses with regular Nigeria import/export requirements — manufacturing, retail, FMCG, media, and professional services. We offer bespoke SLAs, dedicated account management, and custom reporting.",
+    desc: "UK businesses with regular Nigeria import/export requirements   manufacturing, retail, FMCG, media, and professional services. We offer bespoke SLAs, dedicated account management, and custom reporting.",
     benefits: [
       "Bespoke SLA and KPI agreement",
       "Dedicated UK-based account manager",
@@ -112,7 +112,7 @@ const PARTNER_TYPES = [
     icon: Ship,
     title: "Nigerian Importer",
     tagline: "Source from the UK. We bring it home.",
-    desc: "Nigerian businesses and entrepreneurs importing UK goods — electronics, fashion, machinery, raw materials. We make the UK–Nigeria supply chain straightforward with transparent pricing and a trusted London-Lagos corridor.",
+    desc: "Nigerian businesses and entrepreneurs importing UK goods   electronics, fashion, machinery, raw materials. We make the UK Nigeria supply chain straightforward with transparent pricing and a trusted London-Lagos corridor.",
     benefits: [
       "UK buying agent connections available",
       "FCL & LCL container options",
@@ -135,9 +135,9 @@ const PROCESS_STEPS = [
 
 const WHY_PARTNER = [
   { icon: Star,        title: "100+ Five-Star Reviews",    body: "Your customers get a service that's already proven. Our Google rating means you're referring with confidence, not risk."                    },
-  { icon: Clock,       title: "12+ Years of Track Record", body: "Established in 2012 — we've operated through a pandemic, currency crises, and Brexit without missing a sailing."                           },
+  { icon: Clock,       title: "12+ Years of Track Record", body: "Established in 2012   we've operated through a pandemic, currency crises, and Brexit without missing a sailing."                           },
   { icon: Globe,       title: "All 36 Nigerian States",    body: "Wherever your customers need cargo to go in Nigeria, we can get it there. No off-limits destinations."                                      },
-  { icon: BarChart3,   title: "Transparent Partner Portal", body: "Real-time visibility of referred shipments, commissions earned, and payment schedules — no chasing, no guesswork."                         },
+  { icon: BarChart3,   title: "Transparent Partner Portal", body: "Real-time visibility of referred shipments, commissions earned, and payment schedules   no chasing, no guesswork."                         },
   { icon: ShieldCheck, title: "IATA & HMRC Certified",     body: "Your customers and clients trust you more when you partner with a certified, regulated operator. Our credentials reinforce yours."           },
   { icon: Award,       title: "Competitive Commissions",   body: "We pay on time, every month. No payment thresholds, no convoluted structures. Simple, reliable income from every completed referral."        },
 ];
@@ -152,10 +152,10 @@ const STATS = [
 const FAQS = [
   { q: "Is there a minimum volume requirement to join the referral programme?",  a: "No minimum at all. Whether you refer one customer per year or one hundred, you earn a commission on every completed booking." },
   { q: "How quickly do you pay partner commissions?",                             a: "Commissions are calculated at the end of each calendar month and paid by bank transfer within 5 working days of month-end." },
-  { q: "Can I be both a freight agent partner and a referral partner?",           a: "Yes — many of our partners operate across categories. We'll structure your agreement to reflect the different ways you work with us." },
+  { q: "Can I be both a freight agent partner and a referral partner?",           a: "Yes   many of our partners operate across categories. We'll structure your agreement to reflect the different ways you work with us." },
   { q: "Do NGOs need to be registered charities to access reduced rates?",        a: "No. We work with unregistered community groups and churches too. We'll ask for a brief description of the humanitarian mission." },
   { q: "Can I white-label R-Zone services under my own brand?",                   a: "Yes, for freight agent and corporate partners. We can provide co-branded documentation and operate behind your brand for customer-facing communications." },
-  { q: "Is there a partner agreement I need to sign?",                            a: "Yes — a simple 2-page agreement covering commission rates, payment terms, and confidentiality. We send it digitally via DocuSign." },
+  { q: "Is there a partner agreement I need to sign?",                            a: "Yes   a simple 2-page agreement covering commission rates, payment terms, and confidentiality. We send it digitally via DocuSign." },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -405,7 +405,7 @@ export default function PartnerPage() {
           ]},
           { "@type": "WebPage", "name": "Partner With R-Zone Enterprises",
             "url": "https://r-zoneenterprises.com/partners",
-            "description": "Explore partnership opportunities with R-Zone Enterprises — the UK's leading UK–Nigeria freight and logistics company.",
+            "description": "Explore partnership opportunities with R-Zone Enterprises   the UK's leading UK Nigeria freight and logistics company.",
           },
         ],
       })}} />
@@ -445,7 +445,7 @@ export default function PartnerPage() {
                   </span>
                 </h1>
                 <p className="text-white/70 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
-                  R-Zone Enterprises is looking for agents, referrers, businesses, and community organisations who share our belief that the UK–Nigeria corridor deserves world-class logistics. If that's you, let's build something together.
+                  R-Zone Enterprises is looking for agents, referrers, businesses, and community organisations who share our belief that the UK Nigeria corridor deserves world-class logistics. If that's you, let's build something together.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="#apply" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="Apply to become a partner">
@@ -493,7 +493,7 @@ export default function PartnerPage() {
                   </motion.div>
                   <motion.p className="text-gray-600 text-[14px] font-normal mt-4 max-w-xl mx-auto leading-relaxed"
                     initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-                    Whether you're a freight agent, a community influencer, an NGO, or a FTSE-listed importer — we have a programme structured for how you work.
+                    Whether you're a freight agent, a community influencer, an NGO, or a FTSE-listed importer   we have a programme structured for how you work.
                   </motion.p>
                 </div>
               );
@@ -655,7 +655,7 @@ export default function PartnerPage() {
           <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-              {/* Left — FAQs */}
+              {/* Left   FAQs */}
               <div className="lg:col-span-5">
                 {(() => {
                   const ref = useRef(null);
@@ -676,7 +676,7 @@ export default function PartnerPage() {
 
                       <div className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-5">
                         <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Direct Contact</p>
-                        <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon–Fri 9am–6pm.</p>
+                        <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon Fri 9am 6pm.</p>
                         <div className="space-y-2.5">
                           <a href="tel:+448007720864" className="flex items-center gap-3 text-gray-800 hover:text-[#0818A8] font-semibold text-[13px] transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
                             <Phone size={13} className="text-[#0818A8]" aria-hidden="true" /> +44 800 772 0864
@@ -691,7 +691,7 @@ export default function PartnerPage() {
                 })()}
               </div>
 
-              {/* Right — Form */}
+              {/* Right   Form */}
               <div className="lg:col-span-7">
                 {(() => {
                   const ref = useRef(null);

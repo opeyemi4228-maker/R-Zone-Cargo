@@ -75,7 +75,7 @@ export default function Page() {
         <h2>Frequently Asked Questions</h2>
         {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free electronics shipping quote</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo</a>
         </nav>

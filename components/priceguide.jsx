@@ -27,8 +27,8 @@ const GUIDE_URL = "/priceguide";
 const HIGHLIGHTS = [
   { icon: Calculator, label: "Free Calculator",   desc: "Get an instant cost estimate by weight & dimensions" },
   { icon: Package,    label: "Item Price List",   desc: "iPhone, PS5, TV, generator, clothes bale & more" },
-  { icon: Zap,        label: "Air from £5.20/kg", desc: "3× weekly flights — 5–10 working days to Lagos" },
-  { icon: TrendingUp, label: "Sea from £2.00/kg", desc: "Weekly sailings — cheapest way to ship bulk cargo" },
+  { icon: Zap,        label: "Air from £5.20/kg", desc: "3× weekly flights   5 10 working days to Lagos" },
+  { icon: TrendingUp, label: "Sea from £2.00/kg", desc: "Weekly sailings   cheapest way to ship bulk cargo" },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ export default function PriceGuidePromo() {
         {/* ── Main grid ── */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
 
-          {/* Left — headline + highlights */}
+          {/* Left   headline + highlights */}
           <div>
             <motion.h2
               id="price-guide-heading"
@@ -109,7 +109,7 @@ export default function PriceGuidePromo() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.65, delay: 0.1 }}
             >
-              UK–Nigeria<br />
+              UK Nigeria<br />
               <span className="text-[#1F51FF]">Shipping</span><br />
               Price Guide.
             </motion.h2>
@@ -121,7 +121,7 @@ export default function PriceGuidePromo() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               The only guide you need. Full cost breakdown by item type, a live
-              calculator, state-by-state delivery rates — and zero hidden fees.
+              calculator, state-by-state delivery rates   and zero hidden fees.
             </motion.p>
 
             {/* Highlight pills */}
@@ -181,7 +181,7 @@ export default function PriceGuidePromo() {
             </motion.div>
           </div>
 
-          {/* Right — feature card */}
+          {/* Right   feature card */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -220,7 +220,7 @@ export default function PriceGuidePromo() {
                 </p>
                 <h3 className="mb-3 font-black uppercase leading-[0.92] tracking-[-0.02em] text-white transition-colors group-hover:text-[#1F51FF]"
                   style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
-                  UK to Nigeria Shipping Price Guide 2026 — Full Cost Breakdown
+                  UK to Nigeria Shipping Price Guide 2026   Full Cost Breakdown
                 </h3>
                 <p className="mb-5 text-[13px] font-light leading-relaxed text-white/55">
                   Air from £5.20/kg · Sea from £2/kg · Item prices, calculator, 36-state delivery rates, hidden charge breakdown.

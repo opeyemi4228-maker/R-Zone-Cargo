@@ -54,10 +54,10 @@ const COOKIE_CATEGORIES = [
     required: false,
     desc: "Help us understand how visitors use our site. All data is anonymised.",
     cookies: [
-      { name: "_ga",     purpose: "Google Analytics — distinguishes users",    duration: "2 years"   },
-      { name: "_ga_[ID]", purpose: "Google Analytics — session state",         duration: "2 years"   },
-      { name: "_gid",    purpose: "Google Analytics — distinguishes users",    duration: "24 hours"  },
-      { name: "_gat",    purpose: "Google Analytics — request throttle",       duration: "1 minute"  },
+      { name: "_ga",     purpose: "Google Analytics   distinguishes users",    duration: "2 years"   },
+      { name: "_ga_[ID]", purpose: "Google Analytics   session state",         duration: "2 years"   },
+      { name: "_gid",    purpose: "Google Analytics   distinguishes users",    duration: "24 hours"  },
+      { name: "_gat",    purpose: "Google Analytics   request throttle",       duration: "1 minute"  },
     ],
   },
   {
@@ -81,8 +81,8 @@ const COOKIE_CATEGORIES = [
     required: false,
     desc: "Used with your consent to show relevant advertising on other sites.",
     cookies: [
-      { name: "_fbp", purpose: "Facebook Pixel — conversion tracking",     duration: "3 months" },
-      { name: "fr",   purpose: "Facebook — advertising delivery",          duration: "3 months" },
+      { name: "_fbp", purpose: "Facebook Pixel   conversion tracking",     duration: "3 months" },
+      { name: "fr",   purpose: "Facebook   advertising delivery",          duration: "3 months" },
     ],
   },
 ];
@@ -195,9 +195,9 @@ export default function CookiePolicyPage() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "WebPage",
-        "name": "Cookie Policy — R-Zone Enterprises",
+        "name": "Cookie Policy   R-Zone Enterprises",
         "url": "https://r-zoneenterprises.com/cookies",
-        "description": "R-Zone Enterprises Cookie Policy — how we use cookies and tracking technologies under UK PECR and UK GDPR.",
+        "description": "R-Zone Enterprises Cookie Policy   how we use cookies and tracking technologies under UK PECR and UK GDPR.",
         "dateModified": "2025-01-15",
         "publisher": { "@type": "Organization", "name": "R-Zone Enterprises", "url": "https://r-zoneenterprises.com" },
       })}} />
@@ -205,7 +205,7 @@ export default function CookiePolicyPage() {
       {/* Top bar */}
       <div className="bg-[#0818A8]">
         <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
-          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises — Legal &amp; Compliance</p>
+          <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises   Legal &amp; Compliance</p>
           <div className="hidden sm:flex items-center gap-6">
             <a href="tel:+448007720864" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Call R-Zone"><Phone size={10} aria-hidden="true" /> +44 800 772 0864</a>
             <a href="mailto:privacy@r-zoneenterprises.com" className="flex items-center gap-1.5 text-white/75 hover:text-white text-[13px] font-medium transition-colors" aria-label="Email privacy team"><Mail size={10} aria-hidden="true" /> privacy@r-zoneenterprises.com</a>
@@ -233,15 +233,15 @@ export default function CookiePolicyPage() {
                 Cookie<br /><span className="text-[#0818A8]">Policy.</span>
               </h1>
               <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
-                We use cookies to make our website work properly and to understand how you use it. This policy tells you exactly which cookies we use, why, and how to control them — including how to say no.
+                We use cookies to make our website work properly and to understand how you use it. This policy tells you exactly which cookies we use, why, and how to control them   including how to say no.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
                 { label: "Last Updated", val: "15 January 2025",    icon: Clock    },
-                { label: "Version",      val: "v3.0 — 2025",        icon: FileText },
-                { label: "Jurisdiction", val: "UK — PECR & UK GDPR",icon: Globe    },
-                { label: "Regulator",    val: "ICO — ico.org.uk",   icon: Shield   },
+                { label: "Version",      val: "v3.0   2025",        icon: FileText },
+                { label: "Jurisdiction", val: "UK   PECR & UK GDPR",icon: Globe    },
+                { label: "Regulator",    val: "ICO   ico.org.uk",   icon: Shield   },
               ].map(({ label, val, icon: Icon }) => (
                 <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
                   <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
@@ -332,7 +332,7 @@ export default function CookiePolicyPage() {
 
             <Section id="c1" num="01" title="What Are Cookies">
               <P>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, improve performance, and provide information to the site owner. Some are essential; others are optional and used for analytics or personalisation.</P>
-              <P>Similar technologies — such as web beacons, pixel tags, and local storage — work in comparable ways and are also covered by this policy. We refer to all of these collectively as "cookies".</P>
+              <P>Similar technologies   such as web beacons, pixel tags, and local storage   work in comparable ways and are also covered by this policy. We refer to all of these collectively as "cookies".</P>
               <Callout type="blue"><strong className="font-semibold">Legal basis:</strong> Our use of cookies is governed by the UK Privacy and Electronic Communications Regulations (PECR) and UK GDPR. Non-essential cookies require your prior consent. We obtain consent through our cookie banner, with granular category-level control.</Callout>
             </Section>
 
@@ -355,13 +355,13 @@ export default function CookiePolicyPage() {
             </Section>
 
             <Section id="c4" num="04" title="Analytics Cookies">
-              <P>These cookies allow us to count visits and understand how visitors use our website. The information is aggregated and anonymised — it does not identify you. <strong className="text-gray-900 font-semibold">These cookies are only set with your prior consent.</strong></P>
+              <P>These cookies allow us to count visits and understand how visitors use our website. The information is aggregated and anonymised   it does not identify you. <strong className="text-gray-900 font-semibold">These cookies are only set with your prior consent.</strong></P>
               <CookieTable cookies={COOKIE_CATEGORIES[1].cookies} />
               <P>We have configured Google Analytics with:</P>
               <UL>
-                <LI>IP anonymisation enabled — your IP address is never stored in full</LI>
-                <LI>Data sharing with Google disabled — analytics data stays with us</LI>
-                <LI>Advertising features disabled — no remarketing or audience reporting</LI>
+                <LI>IP anonymisation enabled   your IP address is never stored in full</LI>
+                <LI>Data sharing with Google disabled   analytics data stays with us</LI>
+                <LI>Advertising features disabled   no remarketing or audience reporting</LI>
                 <LI>Data retention set to 26 months (Google's shortest available)</LI>
               </UL>
               <P>Google's data processing terms: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors inline-flex items-center gap-1">policies.google.com <ExternalLink size={10} aria-hidden="true" /></a></P>
@@ -409,10 +409,10 @@ export default function CookiePolicyPage() {
             </Section>
 
             <Section id="c8" num="08" title="Managing Your Preferences">
-              <H3>8.1 — Cookie Banner</H3>
-              <P>When you first visit our website you will see our cookie consent banner. You can accept all cookies, refuse non-essential cookies, or manage preferences by category. You can change your preferences at any time — look for "Cookie Settings" in the footer of any page.</P>
+              <H3>8.1   Cookie Banner</H3>
+              <P>When you first visit our website you will see our cookie consent banner. You can accept all cookies, refuse non-essential cookies, or manage preferences by category. You can change your preferences at any time   look for "Cookie Settings" in the footer of any page.</P>
 
-              <H3>8.2 — Browser Settings</H3>
+              <H3>8.2   Browser Settings</H3>
               <P>Most browsers let you control cookies through their settings. However, blocking all cookies may affect website functionality. Browser cookie controls:</P>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
                 {BROWSER_LINKS.map(b => (
@@ -424,7 +424,7 @@ export default function CookiePolicyPage() {
                 ))}
               </div>
 
-              <H3>8.3 — Opt-Out Tools</H3>
+              <H3>8.3   Opt-Out Tools</H3>
               <UL>
                 <LI>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Google Analytics Opt-Out Browser Add-on</a></LI>
                 <LI>Facebook ads: <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Facebook Ad Preferences</a></LI>
@@ -437,9 +437,9 @@ export default function CookiePolicyPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
                 {[
                   { label: "Freely given",   desc: "Refusing non-essential cookies doesn't prevent you using our core services"  },
-                  { label: "Specific",       desc: "You can consent or refuse by category — analytics, marketing, functionality" },
+                  { label: "Specific",       desc: "You can consent or refuse by category   analytics, marketing, functionality" },
                   { label: "Informed",       desc: "We explain what each cookie category does before you decide"                  },
-                  { label: "Unambiguous",    desc: "Clear opt-in mechanism — no pre-ticked boxes or dark patterns"                },
+                  { label: "Unambiguous",    desc: "Clear opt-in mechanism   no pre-ticked boxes or dark patterns"                },
                   { label: "Withdrawable",   desc: "Change your preferences at any time via Cookie Settings"                     },
                   { label: "Time-limited",   desc: "Consent is stored for 12 months, then we ask for your preferences again"     },
                 ].map(item => (
@@ -458,11 +458,11 @@ export default function CookiePolicyPage() {
             </Section>
 
             <Section id="c10" num="10" title="Do Not Track">
-              <P>Some browsers include a "Do Not Track" (DNT) feature. There is currently no universal standard for how websites should respond to DNT signals. We honour DNT signals by not setting analytics or marketing cookies when we detect a DNT header — even where you have previously consented.</P>
+              <P>Some browsers include a "Do Not Track" (DNT) feature. There is currently no universal standard for how websites should respond to DNT signals. We honour DNT signals by not setting analytics or marketing cookies when we detect a DNT header   even where you have previously consented.</P>
             </Section>
 
             <Section id="c11" num="11" title="Changes">
-              <P>We review and update this Cookie Policy regularly. Material changes — such as adding new cookie categories — will be communicated via our consent banner and by posting an updated policy with a new "Last Updated" date.</P>
+              <P>We review and update this Cookie Policy regularly. Material changes   such as adding new cookie categories   will be communicated via our consent banner and by posting an updated policy with a new "Last Updated" date.</P>
             </Section>
 
             <Section id="c12" num="12" title="Contact Us">
@@ -471,7 +471,7 @@ export default function CookiePolicyPage() {
                 {[
                   { label: "Data Protection",  val: "privacy@r-zoneenterprises.com",  href: "mailto:privacy@r-zoneenterprises.com",  icon: Shield   },
                   { label: "General",          val: "info@r-zoneenterprises.com",      href: "mailto:info@r-zoneenterprises.com",      icon: Mail     },
-                  { label: "ICO (Regulator)",  val: "ico.org.uk — 0303 123 1113",      href: "https://ico.org.uk",                    icon: Globe    },
+                  { label: "ICO (Regulator)",  val: "ico.org.uk   0303 123 1113",      href: "https://ico.org.uk",                    icon: Globe    },
                   { label: "Phone",            val: "+44 800 772 0864",                href: "tel:+448007720864",                      icon: Phone    },
                 ].map(item => {
                   const Icon = item.icon;
@@ -496,7 +496,7 @@ export default function CookiePolicyPage() {
                 <div>
                   <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Questions?</p>
                   <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">We're Transparent About Cookies.</h3>
-                  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Contact our privacy team — we respond within one business day.</p>
+                  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Contact our privacy team   we respond within one business day.</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <a href="mailto:privacy@r-zoneenterprises.com" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="Email privacy team">

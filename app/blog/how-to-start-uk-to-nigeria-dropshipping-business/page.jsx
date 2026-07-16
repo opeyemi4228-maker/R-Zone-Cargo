@@ -45,16 +45,16 @@ const schemas = [
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   },
-  // HowTo Schema — boosts eligibility for Google step-by-step rich results
+  // HowTo Schema   boosts eligibility for Google step-by-step rich results
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
     name: "How to Start a UK-to-Nigeria Dropshipping Business",
     description: "Step-by-step guide to starting a UK-to-Nigeria mini importation and dropshipping business in 2026.",
     step: [
-      { "@type": "HowToStep", position: 1, name: "Choose Your Product", text: "Research profitable product categories with a strong UK–Nigeria price gap. Verify your margin after shipping costs before ordering." },
+      { "@type": "HowToStep", position: 1, name: "Choose Your Product", text: "Research profitable product categories with a strong UK Nigeria price gap. Verify your margin after shipping costs before ordering." },
       { "@type": "HowToStep", position: 2, name: "Source Products from the UK", text: "Order from UK retailers (Amazon UK, ASOS, Boots, Holland & Barrett) or wholesale suppliers. Have products delivered to R-Zone's Upminster warehouse." },
-      { "@type": "HowToStep", position: 3, name: "Ship with R-Zone Cargo", text: "Book air freight (from £5/kg, 5–10 days) or sea freight (from £3/kg, 4–6 weeks) with R-Zone. All customs clearance included." },
+      { "@type": "HowToStep", position: 3, name: "Ship with R-Zone Cargo", text: "Book air freight (from £5/kg, 5 10 days) or sea freight (from £3/kg, 4 6 weeks) with R-Zone. All customs clearance included." },
       { "@type": "HowToStep", position: 4, name: "Sell in Nigeria", text: "Sell through WhatsApp Business, Instagram Shopping, Jumia, Jiji or TikTok Shop. WhatsApp is the highest-converting channel for most import businesses." },
       { "@type": "HowToStep", position: 5, name: "Scale with Bulk Shipments", text: "Once validated, move to sea freight for bulk orders. Consolidate multiple product categories. Build a regular monthly shipping schedule with R-Zone." },
     ],
@@ -99,7 +99,7 @@ export default function Page() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
 
-      {/* Server-rendered SEO content — visible to Googlebot, hidden visually */}
+      {/* Server-rendered SEO content   visible to Googlebot, hidden visually */}
       <div
         aria-hidden="true"
         style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}
@@ -117,7 +117,7 @@ export default function Page() {
           <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>
         ))}
         <nav>
-          <a href={`${SITE_URL}/blog`}>All UK–Nigeria shipping and business guides</a>
+          <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping and business guides</a>
           <a href={`${SITE_URL}/quote`}>Get a free UK to Nigeria cargo quote</a>
           <a href={`${SITE_URL}/services`}>Our UK to Nigeria cargo services</a>
           <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo UK team</a>

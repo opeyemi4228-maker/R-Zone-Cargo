@@ -8,7 +8,7 @@ function withSubmittedAt(c) {
   return { ...c, submittedAt: c.createdAt };
 }
 
-// GET /api/contacts — admin only
+// GET /api/contacts   admin only
 export async function GET() {
   try {
     await requireAdmin();
@@ -19,7 +19,7 @@ export async function GET() {
   return Response.json(contacts.map(withSubmittedAt));
 }
 
-// POST /api/contacts — public submission
+// POST /api/contacts   public submission
 export async function POST(req) {
   let body;
   try {

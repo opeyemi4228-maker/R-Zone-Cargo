@@ -8,7 +8,7 @@ function withSubscribedAt(s) {
   return { ...s, subscribedAt: s.createdAt };
 }
 
-// GET /api/subscribers — admin only
+// GET /api/subscribers   admin only
 export async function GET() {
   try {
     await requireAdmin();
@@ -19,7 +19,7 @@ export async function GET() {
   return Response.json(subs.map(withSubscribedAt));
 }
 
-// POST /api/subscribers — public newsletter sign-up
+// POST /api/subscribers   public newsletter sign-up
 export async function POST(req) {
   let body;
   try {
@@ -33,7 +33,7 @@ export async function POST(req) {
     return Response.json({ error: "A valid email is required." }, { status: 400 });
   }
 
-  // Allow the same email to subscribe multiple times — each is its own entry.
+  // Allow the same email to subscribe multiple times   each is its own entry.
   await prisma.subscriber.create({ data: { email } });
 
   // Await email so it completes before the serverless function freezes on

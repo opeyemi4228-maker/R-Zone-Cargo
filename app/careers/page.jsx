@@ -41,13 +41,13 @@ const OPEN_ROLES = [
       "Identify and report process improvement opportunities",
     ],
     requirements: [
-      "1–3 years experience in freight forwarding, logistics, or warehousing",
+      "1 3 years experience in freight forwarding, logistics, or warehousing",
       "Strong organisational skills and attention to detail",
       "Confident written and verbal communication",
       "Experience with freight management software (preferred)",
       "Nigerian language skills (Yoruba, Igbo, or Hausa) an advantage",
     ],
-    salary: "£26,000 – £32,000",
+    salary: "£26,000   £32,000",
     urgent: false,
   },
   {
@@ -56,7 +56,7 @@ const OPEN_ROLES = [
     department: "Customer Experience",
     location: "Essex, UK (Hybrid)",
     type: "Full-time",
-    level: "Entry–Mid",
+    level: "Entry Mid",
     icon: Users,
     desc: "Be the voice of R-Zone for our customers answering enquiries, tracking shipments, resolving issues, and turning every interaction into a reason to come back. You'll work across phone, email, and WhatsApp.",
     responsibilities: [
@@ -74,7 +74,7 @@ const OPEN_ROLES = [
       "Patience and resilience: You'll handle complex situations",
       "Fluency in Yoruba, Igbo, or Pidgin English strongly preferred",
     ],
-    salary: "£23,000 – £27,000",
+    salary: "£23,000   £27,000",
     urgent: true,
   },
   {
@@ -124,11 +124,11 @@ const OPEN_ROLES = [
     requirements: [
       "2+ years B2B sales experience (logistics, freight, or related preferred)",
       "Proven track record of hitting commercial targets",
-      "Strong network in the UK–Nigerian business community an advantage",
+      "Strong network in the UK Nigerian business community an advantage",
       "Self-motivated and comfortable working independently",
       "Full UK driving licence",
     ],
-    salary: "£28,000 – £35,000 base + uncapped commission",
+    salary: "£28,000   £35,000 base + uncapped commission",
     urgent: false,
   },
   {
@@ -137,7 +137,7 @@ const OPEN_ROLES = [
     department: "Compliance",
     location: "Essex, UK",
     type: "Full-time",
-    level: "Entry–Mid",
+    level: "Entry Mid",
     icon: Shield,
     desc: "Support our customs and compliance operation preparing and filing UK export declarations, checking cargo documentation, and ensuring every shipment meets regulatory requirements before it leaves the UK.",
     responsibilities: [
@@ -155,7 +155,7 @@ const OPEN_ROLES = [
       "Ability to work to strict deadlines",
       "CILT qualification or willingness to study an advantage",
     ],
-    salary: "£22,000 – £28,000 + study support",
+    salary: "£22,000   £28,000 + study support",
     urgent: false,
   },
   {
@@ -182,7 +182,7 @@ const OPEN_ROLES = [
       "Understanding of the Nigerian diaspora audience in the UK an advantage",
       "Experience with Mailchimp, Klaviyo, or similar email platforms",
     ],
-    salary: "£27,000 – £33,000",
+    salary: "£27,000   £33,000",
     urgent: false,
   },
 ];
@@ -191,27 +191,27 @@ const DEPARTMENTS = ["All", "Operations", "Customer Experience", "Sales & Growth
 
 const VALUES = [
   { icon: Target,        title: "Own It",          body: "We give people responsibility and trust them to run with it. No micromanagement. No permission-seeking. If something needs doing, you do it."                      },
-  { icon: Users,         title: "Team First",       body: "We win as a team. Egos at the door. Whether it's a bank holiday sea freight crisis or a last-minute customer escalation — we've all got each other's backs."    },
-  { icon: TrendingUp,    title: "Keep Growing",     body: "The UK–Nigeria logistics space is changing fast. We need people who are curious, who read, who ask questions, and who bring new ideas to the table every week."   },
-  { icon: Heart,         title: "Serve Well",       body: "Every cargo shipment we handle matters to a real family or a real business. We never lose sight of that. Service isn't a department — it's who we are."         },
+  { icon: Users,         title: "Team First",       body: "We win as a team. Egos at the door. Whether it's a bank holiday sea freight crisis or a last-minute customer escalation   we've all got each other's backs."    },
+  { icon: TrendingUp,    title: "Keep Growing",     body: "The UK Nigeria logistics space is changing fast. We need people who are curious, who read, who ask questions, and who bring new ideas to the table every week."   },
+  { icon: Heart,         title: "Serve Well",       body: "Every cargo shipment we handle matters to a real family or a real business. We never lose sight of that. Service isn't a department   it's who we are."         },
 ];
 
 const BENEFITS = [
   { icon: BarChart3,     title: "Competitive Salary",    body: "Market-rate pay reviewed annually, with clear progression frameworks" },
   { icon: GraduationCap,title: "Learning Budget",        body: "£500/year personal development budget for courses, qualifications, and conferences" },
-  { icon: Coffee,        title: "Flexible Working",      body: "Hybrid options for eligible roles — we trust our people to get the work done" },
+  { icon: Coffee,        title: "Flexible Working",      body: "Hybrid options for eligible roles   we trust our people to get the work done" },
   { icon: Award,         title: "Performance Bonus",     body: "Company-wide bonus pool based on business performance, distributed fairly" },
   { icon: Laptop,        title: "Equipment Provided",    body: "Everything you need to do your best work, provided from day one" },
   { icon: Globe,         title: "Nigeria Travel",        body: "Opportunity to travel to our Lagos operations hub for relevant roles" },
   { icon: Users,         title: "Real Impact",           body: "Work for a company where your contribution is visible, valued, and consequential" },
-  { icon: Heart,         title: "Inclusive Culture",     body: "A team that reflects the community we serve — diverse, welcoming, and human" },
+  { icon: Heart,         title: "Inclusive Culture",     body: "A team that reflects the community we serve   diverse, welcoming, and human" },
 ];
 
 const PROCESS = [
-  { num: "01", title: "Apply Online",          body: "Submit your CV and a short covering note below. We review every application personally — no automated rejections.",          time: "3 min"       },
+  { num: "01", title: "Apply Online",          body: "Submit your CV and a short covering note below. We review every application personally   no automated rejections.",          time: "3 min"       },
   { num: "02", title: "Initial Phone Call",    body: "If your background looks like a fit, we'll call for a 20-minute conversation about the role and your experience.",          time: "20 min"      },
-  { num: "03", title: "Interview",             body: "A focused interview with the hiring manager — in person at our Essex office or via video call depending on the role.",     time: "45–60 min"   },
-  { num: "04", title: "Offer & Start",         body: "We move fast. Successful candidates typically receive an offer within a week of interview and can start within 2–4 weeks.", time: "1–4 weeks"   },
+  { num: "03", title: "Interview",             body: "A focused interview with the hiring manager   in person at our Essex office or via video call depending on the role.",     time: "45 60 min"   },
+  { num: "04", title: "Offer & Start",         body: "We move fast. Successful candidates typically receive an offer within a week of interview and can start within 2 4 weeks.", time: "1 4 weeks"   },
 ];
 
 const fadeUp = {
@@ -428,7 +428,7 @@ function ApplyModal({ role, onClose }) {
             </motion.div>
             <h3 className="font-black text-[22px] text-gray-900 tracking-[-0.015em] mb-3">Application Submitted!</h3>
             <p className="text-gray-600 text-[14px] font-normal leading-relaxed mb-6">
-              Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. We've received your application for <strong className="font-semibold text-gray-800">{role?.title}</strong> and will be in touch within 3–5 working days.
+              Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. We've received your application for <strong className="font-semibold text-gray-800">{role?.title}</strong> and will be in touch within 3 5 working days.
             </p>
             <button onClick={onClose} className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200" aria-label="Close modal">
               Close
@@ -586,7 +586,7 @@ export default function CareersPage() {
                     </span>
                   </h1>
                   <p className="text-white/70 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
-                    We're a small team doing big things keeping families connected, businesses supplied, and the UK – Nigeria corridor moving. If you want your work to have a real-world impact from day one, you're in the right place.
+                    We're a small team doing big things keeping families connected, businesses supplied, and the UK   Nigeria corridor moving. If you want your work to have a real-world impact from day one, you're in the right place.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a href="#open-roles" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="View open roles">
@@ -647,7 +647,7 @@ export default function CareersPage() {
                     </div>
                     <motion.p className="text-gray-600 text-[13.5px] font-normal max-w-sm"
                       initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-                      Don't see your perfect role? Email <a href="mailto:careers@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">careers@r-zoneenterprises.com</a> — we always keep speculative applications on file.
+                      Don't see your perfect role? Email <a href="mailto:careers@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">careers@r-zoneenterprises.com</a>   we always keep speculative applications on file.
                     </motion.p>
                   </div>
 
@@ -705,7 +705,7 @@ export default function CareersPage() {
                       </h2>
                       <div className="space-y-4 text-white/70 text-[14px] font-normal leading-relaxed">
                         <p>We're not a corporate. We're a tight, driven team of logistics professionals, customer experience specialists, and tech-minded operators who care about doing things properly.</p>
-                        <p>R-Zone was built to serve the UK–Nigerian community. Many of our team are part of that community, which means the work is personal. When a shipment arrives, a family gets their Christmas gifts, or a business gets its stock — and we all feel that.</p>
+                        <p>R-Zone was built to serve the UK Nigerian community. Many of our team are part of that community, which means the work is personal. When a shipment arrives, a family gets their Christmas gifts, or a business gets its stock   and we all feel that.</p>
                         <p>We believe in giving people real responsibility early. If you're good at your job and you want to grow, R-Zone is the kind of place where your career can accelerate in ways it never would at a larger company.</p>
                       </div>
                     </motion.div>
@@ -798,7 +798,7 @@ export default function CareersPage() {
                   </motion.div>
                   <motion.p className="text-gray-600 text-[14px] font-normal mt-4 max-w-xl mx-auto"
                     initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
-                    We respect your time. Our hiring process is designed to be quick, fair, and human — no endless assessments, no months-long waits.
+                    We respect your time. Our hiring process is designed to be quick, fair, and human   no endless assessments, no months-long waits.
                   </motion.p>
                 </div>
               );

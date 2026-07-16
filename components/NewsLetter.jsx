@@ -18,7 +18,7 @@ const STEPS = [
     number: "01", icon: ClipboardList,
     title: "Book Your Shipment",
     subtitle: "Online, WhatsApp or phone",
-    description: "Request a free quote online, via WhatsApp (+447915647119), or call our UK team. Tell us what you're shipping, the Nigerian destination, and your preferred service — air or sea.",
+    description: "Request a free quote online, via WhatsApp (+447915647119), or call our UK team. Tell us what you're shipping, the Nigerian destination, and your preferred service   air or sea.",
     bullets: ["Free instant quote", "Air or sea freight options", "Same-day response"],
     cta: { label: "Get a Free Quote", href: "/quote" },
     accentColor: "#1F51FF",
@@ -37,7 +37,7 @@ const STEPS = [
     title: "Cargo Dispatched UK → Nigeria",
     subtitle: "Weekly air freight & sea sailings",
     description: "Your cargo is consolidated, customs-cleared and dispatched via our partner airlines or weekly sea freight sailings to Lagos. Every milestone tracked in real time.",
-    bullets: ["Air freight: 5–10 working days", "Sea freight: 4–6 weeks", "Real-time tracking included"],
+    bullets: ["Air freight: 5 10 working days", "Sea freight: 4 6 weeks", "Real-time tracking included"],
     cta: { label: "Track a Shipment", href: "/track" },
     accentColor: "#1F51FF",
   },
@@ -45,7 +45,7 @@ const STEPS = [
     number: "04", icon: MapPin,
     title: "Delivered in Nigeria",
     subtitle: "All 36 states covered",
-    description: "Door delivery across all 36 Nigerian states — Lagos, Abuja, Port Harcourt, Kano and beyond — or collect from our Lagos hub. All Nigerian customs clearance handled by our in-house team.",
+    description: "Door delivery across all 36 Nigerian states   Lagos, Abuja, Port Harcourt, Kano and beyond   or collect from our Lagos hub. All Nigerian customs clearance handled by our in-house team.",
     bullets: ["Door delivery Nigeria-wide", "Lagos & Abuja covered", "Nigerian customs handled"],
     cta: { label: "Learn More", href: "/services" },
     accentColor: "#0818A8",
@@ -112,7 +112,7 @@ function StepCard({ step, index, isActive, onClick, inView }) {
                 </ul>
                 <Link href={step.cta.href}
                   className="inline-flex items-center gap-2 text-[13px] font-black tracking-[0.1em] uppercase text-[#1F51FF] hover:text-white transition-colors duration-200"
-                  aria-label={`${step.cta.label} — R-Zone Enterprises UK to Nigeria cargo`}
+                  aria-label={`${step.cta.label}   R-Zone Enterprises UK to Nigeria cargo`}
                   onClick={e => e.stopPropagation()}>
                   {step.cta.label} <ArrowRight size={11} aria-hidden="true" />
                 </Link>
@@ -150,13 +150,13 @@ export default function HowItWorks() {
 
   return (
     <>
-      {/* HowTo schema — targets "how to ship from UK to Nigeria" featured snippets */}
+      {/* HowTo schema   targets "how to ship from UK to Nigeria" featured snippets */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "HowTo",
-          "name": "How to Ship Cargo from UK to Nigeria — Step by Step",
-          "description": "Simple 4-step process to ship air freight or sea cargo from the UK to Nigeria with R-Zone Enterprises — the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google.",
+          "name": "How to Ship Cargo from UK to Nigeria   Step by Step",
+          "description": "Simple 4-step process to ship air freight or sea cargo from the UK to Nigeria with R-Zone Enterprises   the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google.",
           "totalTime": "PT10D",
           "estimatedCost": { "@type": "MonetaryAmount", "currency": "GBP", "value": "From £3/kg" },
           "supply": [
@@ -210,7 +210,7 @@ export default function HowItWorks() {
               </h2>
               <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-lg">
                 Four steps from booking to doorstep delivery anywhere in Nigeria.
-                Weekly air freight and sea sailings — the UK&apos;s{" "}
+                Weekly air freight and sea sailings   the UK&apos;s{" "}
                 <strong className="text-white font-semibold">#1 ranked cargo company</strong>{" "}
                 handles everything in between.
               </p>
@@ -243,13 +243,13 @@ export default function HowItWorks() {
             </div>
             <div className="hidden sm:block h-px w-12 bg-white/15" aria-hidden="true" />
             <span className="hidden sm:block text-white/80 text-[13px] font-medium">
-              Air: 5–10 working days · Sea: 4–6 weeks
+              Air: 5 10 working days · Sea: 4 6 weeks
             </span>
           </motion.div>
 
           {/* Step cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
-            role="list" aria-label="How to ship cargo from UK to Nigeria — 4 steps">
+            role="list" aria-label="How to ship cargo from UK to Nigeria   4 steps">
             {STEPS.map((step, index) => (
               <div key={step.number} role="listitem">
                 <StepCard step={step} index={index} isActive={activeStep === index}
@@ -284,7 +284,7 @@ export default function HowItWorks() {
                 Ready to ship from the UK to Nigeria?
               </p>
               <p className="text-white/80 text-[14px] font-normal max-w-sm leading-relaxed">
-                Get a free quote in under 2 minutes — our UK team responds the same day.
+                Get a free quote in under 2 minutes   our UK team responds the same day.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

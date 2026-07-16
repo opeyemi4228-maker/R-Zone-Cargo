@@ -6,12 +6,12 @@ import { MessageSquare, X, Search, Filter, ChevronDown, ChevronUp } from "lucide
 import { getContactMessages, markContactRead } from "../../../lib/adminAuth";
 
 function fmt(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 }
 
 function fmtTime(iso) {
-  if (!iso) return "—";
+  if (!iso) return " ";
   return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
 }
 
@@ -62,8 +62,8 @@ function MessageModal({ msg, onClose, onMarkRead }) {
         {/* Meta */}
         <div className="grid grid-cols-3 border-b border-[#f1f5f9] bg-[#f8fafc]">
           {[
-            ["Enquiry Type", msg.enquiryLabel || msg.enquiryType || "—"],
-            ["Subject",      msg.subject || "—"],
+            ["Enquiry Type", msg.enquiryLabel || msg.enquiryType || " "],
+            ["Subject",      msg.subject || " "],
             ["Received",     `${fmt(msg.submittedAt)} ${fmtTime(msg.submittedAt)}`],
           ].map(([label, val]) => (
             <div key={label} className="px-5 py-3.5 border-r border-[#f1f5f9] last:border-r-0">
@@ -77,7 +77,7 @@ function MessageModal({ msg, onClose, onMarkRead }) {
         <div className="px-6 py-5">
           <p className="text-[#94a3b8] text-[10px] font-bold tracking-[0.16em] uppercase mb-3">Message</p>
           <p className="text-[#374151] text-[14px] font-normal leading-relaxed whitespace-pre-wrap break-words">
-            {msg.message || "—"}
+            {msg.message || " "}
           </p>
         </div>
 
@@ -220,11 +220,11 @@ export default function ContactsPage() {
                     <p className="text-[#94a3b8] text-[11px] font-medium mt-0.5 truncate">{m.email}</p>
                   </div>
                   <div className="min-w-0 hidden sm:block">
-                    <p className="text-[#374151] text-[13px] font-medium truncate">{m.enquiryLabel || m.enquiryType || "—"}</p>
-                    <p className="text-[#94a3b8] text-[11px] mt-0.5 truncate">{m.subject || "—"}</p>
+                    <p className="text-[#374151] text-[13px] font-medium truncate">{m.enquiryLabel || m.enquiryType || " "}</p>
+                    <p className="text-[#94a3b8] text-[11px] mt-0.5 truncate">{m.subject || " "}</p>
                   </div>
                   <p className="text-[#94a3b8] text-[12px] truncate hidden sm:block leading-relaxed">
-                    {m.message ? m.message.slice(0, 55) + (m.message.length > 55 ? "…" : "") : "—"}
+                    {m.message ? m.message.slice(0, 55) + (m.message.length > 55 ? "…" : "") : " "}
                   </p>
                   <p className="text-[#94a3b8] text-[12px] font-medium hidden sm:block">{fmt(m.submittedAt)}</p>
                   <div><StatusPill text={m.status} /></div>

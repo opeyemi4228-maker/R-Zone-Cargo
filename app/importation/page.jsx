@@ -65,7 +65,7 @@ const RATES_B = [
   { state: "Ogun",         door: "5.80", col: "5.50", min: 30 },
   { state: "Ondo",         door: "6.00", col: "5.50", min: 30 },
   { state: "Osun",         door: "6.00", col: "5.50", min: 30 },
-  { state: "Oyo",          door: "6.00", col: "—",    min: 30 },
+  { state: "Oyo",          door: "6.00", col: " ",    min: 30 },
   { state: "Plateau",      door: "6.80", col: "6.50", min: 30 },
   { state: "Rivers",       door: "6.80", col: "6.50", min: 30 },
   { state: "Sokoto",       door: "6.80", col: "6.50", min: 30 },
@@ -83,7 +83,7 @@ const FOODSTUFFS = [
   "Golden Morn", "Cerelac", "Maggi (not chicken flavour)",
   "Chin Chin", "Methylated cream",
   "Body creams (no bleaching creams)",
-  "Spices — garlic, ginger, curry, thyme, tin tomatoes",
+  "Spices   garlic, ginger, curry, thyme, tin tomatoes",
   "Beans without kokoro", "Pupuru",
   "Grounded melon, Ogbono, Pepper",
   "Crayfish (must be in sealed bottle)",
@@ -93,15 +93,15 @@ const FOODSTUFFS = [
 const FAQS = [
   {
     q: "How do I send goods from Nigeria to the UK with R-Zone?",
-    a: "Contact our Lagos team or the UK office with your cargo details — weight, Nigerian state, and type of goods. Drop off at our Egbeda, Lagos office or arrange collection. We dispatch via weekly air freight (min 20kg) or monthly sea freight (min 2 bags).",
+    a: "Contact our Lagos team or the UK office with your cargo details   weight, Nigerian state, and type of goods. Drop off at our Egbeda, Lagos office or arrange collection. We dispatch via weekly air freight (min 20kg) or monthly sea freight (min 2 bags).",
   },
   {
     q: "What is the minimum weight for importation from Nigeria to the UK?",
-    a: "Air freight minimum is 20kg per shipment. Sea freight minimum is 2 bags. The minimum varies by state — Lagos, Ibadan and Akure have a 20kg minimum; all other states require a minimum of 30kg.",
+    a: "Air freight minimum is 20kg per shipment. Sea freight minimum is 2 bags. The minimum varies by state   Lagos, Ibadan and Akure have a 20kg minimum; all other states require a minimum of 30kg.",
   },
   {
     q: "How long does shipping from Nigeria to the UK take?",
-    a: "Air freight from Nigeria to the UK typically takes 5–8 working days. Sea freight takes 4–6 weeks. We operate weekly air departures and monthly sea sailings from Lagos.",
+    a: "Air freight from Nigeria to the UK typically takes 5 8 working days. Sea freight takes 4 6 weeks. We operate weekly air departures and monthly sea sailings from Lagos.",
   },
   {
     q: "Can I send African foodstuffs from Nigeria to the UK?",
@@ -125,17 +125,17 @@ const PROCESS_STEPS = [
   {
     n: "01", icon: Phone, title: "Get a Quote",
     sub: "Call, WhatsApp or email us",
-    body: "Contact our Lagos team or UK office with your cargo details — weight, state, and type of goods. We provide a transparent per-kg rate same day.",
+    body: "Contact our Lagos team or UK office with your cargo details   weight, state, and type of goods. We provide a transparent per-kg rate same day.",
   },
   {
     n: "02", icon: Warehouse, title: "Drop Off in Lagos",
-    sub: "Egbeda, Lagos — our collection office",
+    sub: "Egbeda, Lagos   our collection office",
     body: "Bring cargo to 150 Idimu Egbeda Road, by Seliat BRT Bus Stop, Egbeda, Lagos. Our team assesses, weighs and repacks where necessary.",
   },
   {
     n: "03", icon: Plane, title: "Air or Sea Dispatch",
     sub: "Weekly air · Monthly sea",
-    body: "Dispatched via our weekly air freight (min 20kg, 5–8 working days) or monthly sea freight (min 2 bags, 4–6 weeks). You choose what suits your budget and timeline.",
+    body: "Dispatched via our weekly air freight (min 20kg, 5 8 working days) or monthly sea freight (min 2 bags, 4 6 weeks). You choose what suits your budget and timeline.",
   },
   {
     n: "04", icon: MapPin, title: "Delivered to the UK",
@@ -203,7 +203,7 @@ function Hero() {
       className="relative bg-[#00061a] min-h-[80vh] flex flex-col justify-end overflow-hidden hero-section"
       aria-labelledby="importation-hero-h1"
     >
-      {/* Grid texture — identical to ServicesPageClient hero */}
+      {/* Grid texture   identical to ServicesPageClient hero */}
       <div
         className="absolute inset-0 opacity-[0.025] pointer-events-none"
         aria-hidden="true"
@@ -254,7 +254,7 @@ function Hero() {
             <div className="inline-flex items-center gap-2 border border-amber-400/35 bg-amber-400/8 px-3.5 py-1.5 rounded-full mb-4">
               <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-amber-400 text-[11px] font-black tracking-[0.22em] uppercase">
-                #1 Ranked UK–Nigeria Cargo on Google · 100+ Five-Star Reviews
+                #1 Ranked UK Nigeria Cargo on Google · 100+ Five-Star Reviews
               </span>
             </div>
           </motion.div>
@@ -308,7 +308,7 @@ function Hero() {
             transition={{ duration: 0.65, delay: 0.7 }}
           >
             R-Zone Enterprises presently offers cargo services from{" "}
-            <strong className="text-white font-semibold">Lagos to London</strong> and other UK cities —
+            <strong className="text-white font-semibold">Lagos to London</strong> and other UK cities  
             a remarkably affordable option to import from Nigeria to the UK.
             Weekly air freight and monthly sea freight services with state-by-state transparent pricing.
           </motion.p>
@@ -347,8 +347,8 @@ function Hero() {
           >
             {[
               { val: "Weekly",  label: "Air departures from Lagos" },
-              { val: "5–8",     label: "Working days (air)"        },
-              { val: "4–6 wks", label: "Sea freight transit"       },
+              { val: "5 8",     label: "Working days (air)"        },
+              { val: "4 6 wks", label: "Sea freight transit"       },
               { val: "36",      label: "Nigerian states covered"   },
             ].map(({ val, label }) => (
               <div key={label} className="flex items-baseline gap-2">
@@ -394,7 +394,7 @@ function ServiceOverview() {
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           >
             <motion.div variants={fadeUp} custom={0}>
-              <TagPill label="Import from Nigeria to UK — R-Zone Enterprises" dark={false} />
+              <TagPill label="Import from Nigeria to UK   R-Zone Enterprises" dark={false} />
             </motion.div>
 
             <motion.h2
@@ -432,13 +432,13 @@ function ServiceOverview() {
                 {
                   icon: Plane, title: "Weekly Air Freight",
                   sub: "Lagos → London",
-                  points: ["Minimum 20kg per shipment", "5–8 working days transit", "Door collection from Nigeria", "African foodstuffs accepted"],
+                  points: ["Minimum 20kg per shipment", "5 8 working days transit", "Door collection from Nigeria", "African foodstuffs accepted"],
                   accent: "#0818A8",
                 },
                 {
                   icon: Ship, title: "Monthly Sea Freight",
                   sub: "Lagos → UK Ports",
-                  points: ["Minimum 2 bags per shipment", "4–6 weeks transit time", "Bulk & heavy cargo accepted", "Best value for large volumes"],
+                  points: ["Minimum 2 bags per shipment", "4 6 weeks transit time", "Bulk & heavy cargo accepted", "Best value for large volumes"],
                   accent: "#1F51FF",
                 },
               ].map(s => {
@@ -486,7 +486,7 @@ function ServiceOverview() {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT — Lagos office card + image */}
+          {/* RIGHT   Lagos office card + image */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 24 }}
@@ -496,7 +496,7 @@ function ServiceOverview() {
             <div className="relative overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80&auto=format&fit=crop"
-                alt="Cargo warehouse — R-Zone Nigeria to UK importation service"
+                alt="Cargo warehouse   R-Zone Nigeria to UK importation service"
                 width={700}
                 height={460}
                 className="object-cover w-full aspect-[4/3]"
@@ -523,7 +523,7 @@ function ServiceOverview() {
                     Egbeda, Lagos, Nigeria
                   </p>
                   <p className="text-gray-800 text-[13px] font-normal">
-                    Drop off your cargo directly — our team assesses, weighs and repacks for safe transit.
+                    Drop off your cargo directly   our team assesses, weighs and repacks for safe transit.
                   </p>
                 </div>
               </div>
@@ -533,7 +533,7 @@ function ServiceOverview() {
             <div className="bg-[#0818A8] px-5 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Star size={11} className="text-amber-400 fill-amber-400" aria-hidden="true" />
-                <span className="text-white text-[13px] font-semibold">#1 Ranked UK–Nigeria Cargo on Google</span>
+                <span className="text-white text-[13px] font-semibold">#1 Ranked UK Nigeria Cargo on Google</span>
               </div>
               <span className="text-white/80 text-[11px] font-normal">100+ Five-Star Reviews</span>
             </div>
@@ -639,7 +639,7 @@ function RatesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
-            <TagPill label="Nigeria to UK Cargo Rates — All 36 States" dark={false} />
+            <TagPill label="Nigeria to UK Cargo Rates   All 36 States" dark={false} />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <SectionHeadline line1="Rate From Nigeria" accent="to UK." dark={false} id="rates-h2" />
@@ -662,7 +662,7 @@ function RatesSection() {
           <p className="text-amber-900 text-[13px] font-normal leading-relaxed">
             <strong className="font-semibold">Rate notice:</strong>{" "}
             All rates are per kg. Minimum weight: 20kg for Lagos, Ibadan and Akure; 30kg for all other states.
-            Prices are indicative — the final confirmed rate may vary due to daily Naira exchange rate fluctuations.
+            Prices are indicative   the final confirmed rate may vary due to daily Naira exchange rate fluctuations.
             Contact us for an exact quote before booking.
           </p>
         </motion.div>
@@ -722,8 +722,8 @@ function RatesSection() {
                     <span className="text-gray-800 text-[12px] ml-1 font-normal">/kg</span>
                   </td>
                   <td className="px-5 py-3.5">
-                    {row.col === "—" ? (
-                      <span className="text-gray-400 font-normal text-[13px]">—</span>
+                    {row.col === " " ? (
+                      <span className="text-gray-400 font-normal text-[13px]"> </span>
                     ) : (
                       <>
                         <span className="font-bold text-[15px] text-gray-800">£{row.col}</span>
@@ -761,8 +761,8 @@ function RatesSection() {
                 </div>
                 <div>
                   <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 mb-0.5">Collection Rate</p>
-                  {row.col === "—" ? (
-                    <p className="text-gray-400 font-normal text-[16px]">—</p>
+                  {row.col === " " ? (
+                    <p className="text-gray-400 font-normal text-[16px]"> </p>
                   ) : (
                     <p className="font-bold text-[17px] text-gray-800">£{row.col}<span className="text-[12px] font-normal ml-0.5">/kg</span></p>
                   )}
@@ -784,7 +784,7 @@ function RatesSection() {
           <div>
             <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Get a Confirmed Quote</p>
             <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em] mb-1">Know your exact cost before shipping.</h3>
-            <p className="text-gray-800 text-[13px] font-normal">Tell us your Nigerian state, weight and cargo type — we respond the same day.</p>
+            <p className="text-gray-800 text-[13px] font-normal">Tell us your Nigerian state, weight and cargo type   we respond the same day.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -833,10 +833,10 @@ function FoodstuffsSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-          {/* LEFT — intro + warnings */}
+          {/* LEFT   intro + warnings */}
           <div className="lg:col-span-4">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-              <TagPill label="African Foodstuffs — Accepted Items" dark />
+              <TagPill label="African Foodstuffs   Accepted Items" dark />
               <h2
                 id="food-h2"
                 className="font-black text-[clamp(24px,4vw,44px)] text-white leading-[0.92] tracking-[-0.028em] uppercase mb-5"
@@ -864,8 +864,8 @@ function FoodstuffsSection() {
               {/* Service tiles */}
               <div className="space-y-3 mb-8">
                 {[
-                  { icon: Plane, label: "Weekly Air Freight",  detail: "Lagos → London · Min 20kg · 5–8 working days", accent: "#1F51FF" },
-                  { icon: Ship,  label: "Monthly Sea Freight", detail: "Lagos → UK Ports · Min 2 bags · 4–6 weeks",    accent: "#0818A8" },
+                  { icon: Plane, label: "Weekly Air Freight",  detail: "Lagos → London · Min 20kg · 5 8 working days", accent: "#1F51FF" },
+                  { icon: Ship,  label: "Monthly Sea Freight", detail: "Lagos → UK Ports · Min 2 bags · 4 6 weeks",    accent: "#0818A8" },
                 ].map(s => {
                   const Icon = s.icon;
                   return (
@@ -922,7 +922,7 @@ function FoodstuffsSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT — approved items grid */}
+          {/* RIGHT   approved items grid */}
           <div className="lg:col-span-8">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -933,7 +933,7 @@ function FoodstuffsSection() {
                 <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
                 <div className="p-6 md:p-8">
                   <p className="text-[11px] font-black tracking-[0.35em] uppercase text-white/80 mb-7">
-                    Approved Foodstuffs — Nigeria to UK Import List
+                    Approved Foodstuffs   Nigeria to UK Import List
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1006,7 +1006,7 @@ function FAQSection() {
           {/* Left */}
           <div className="lg:col-span-4">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-              <TagPill label="Importation FAQs — Nigeria to UK" dark={false} />
+              <TagPill label="Importation FAQs   Nigeria to UK" dark={false} />
               <h2
                 id="faq-h2"
                 className="font-black text-[clamp(24px,4vw,44px)] text-[#0b0f1a] leading-[0.92] tracking-[-0.028em] uppercase mb-4"
@@ -1139,7 +1139,7 @@ function FinalCTA() {
     <section
       ref={ref}
       className="relative bg-[#00061a] overflow-hidden"
-      aria-label="Start importing from Nigeria to UK — get a free R-Zone Enterprises quote"
+      aria-label="Start importing from Nigeria to UK   get a free R-Zone Enterprises quote"
     >
       <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
@@ -1167,7 +1167,7 @@ function FinalCTA() {
             <p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-lg mb-9">
               Weekly air freight and monthly sea freight from Lagos to London and across the UK.
               Transparent state-by-state pricing. The{" "}
-              <strong className="text-white font-semibold">#1 ranked UK–Nigeria cargo company on Google</strong>.
+              <strong className="text-white font-semibold">#1 ranked UK Nigeria cargo company on Google</strong>.
               Same-day response, no hidden fees.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
@@ -1196,7 +1196,7 @@ function FinalCTA() {
             </div>
           </motion.div>
 
-          {/* Right — quick link grid */}
+          {/* Right   quick link grid */}
           <motion.div
             className="grid grid-cols-2 gap-3"
             initial={{ opacity: 0, x: 20 }}
@@ -1204,8 +1204,8 @@ function FinalCTA() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             {[
-              { icon: Plane,     title: "Weekly Air",          detail: "5–8 working days",    href: "#",              accent: "#1F51FF" },
-              { icon: Ship,      title: "Monthly Sea",         detail: "4–6 weeks transit",   href: "#",              accent: "#0818A8" },
+              { icon: Plane,     title: "Weekly Air",          detail: "5 8 working days",    href: "#",              accent: "#1F51FF" },
+              { icon: Ship,      title: "Monthly Sea",         detail: "4 6 weeks transit",   href: "#",              accent: "#0818A8" },
               { icon: MapPin,    title: "Lagos Collection",    detail: "Egbeda office",        href: "/contact",       accent: "#1F51FF" },
               { icon: Package,   title: "Foodstuffs",          detail: "View approved items",  href: "#foodstuffs",    accent: "#0818A8" },
               { icon: Globe,     title: "All 36 States",       detail: "State-by-state rates", href: "#rates",         accent: "#1F51FF" },
@@ -1259,14 +1259,14 @@ export default function ImportationPageClient() {
               },
               {
                 "@type": "Service",
-                "name": "Importation from Nigeria to UK — Cargo Services Lagos to London",
+                "name": "Importation from Nigeria to UK   Cargo Services Lagos to London",
                 "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight cargo services from Lagos, Nigeria to London and all UK cities. Affordable state-by-state rates from £4.80/kg. African foodstuffs accepted. Door-to-door service from all 36 Nigerian states. The highest-rated UK-to-Nigeria cargo company on Google.",
                 "provider": {
                   "@type": "Organization",
                   "name": "R-Zone Enterprises",
                   "@id": "https://r-zoneenterprises.com/#organization",
                 },
-                "serviceType": "Import Freight — Nigeria to UK",
+                "serviceType": "Import Freight   Nigeria to UK",
                 "areaServed": [
                   { "@type": "Country", "name": "Nigeria" },
                   { "@type": "Country", "name": "United Kingdom" },
@@ -1275,8 +1275,8 @@ export default function ImportationPageClient() {
                   "@type": "OfferCatalog",
                   "name": "Nigeria to UK Import Rates",
                   "itemListElement": [
-                    { "@type": "Offer", "name": "Lagos to UK Air Freight",     "price": "4.80", "priceCurrency": "GBP", "unitText": "KGM", "description": "Weekly air freight Lagos to London. Min 20kg. 5–8 working days." },
-                    { "@type": "Offer", "name": "Nigeria to UK Sea Freight",   "price": "3.00", "priceCurrency": "GBP", "unitText": "KGM", "description": "Monthly sea freight Lagos to UK. Min 2 bags. 4–6 weeks." },
+                    { "@type": "Offer", "name": "Lagos to UK Air Freight",     "price": "4.80", "priceCurrency": "GBP", "unitText": "KGM", "description": "Weekly air freight Lagos to London. Min 20kg. 5 8 working days." },
+                    { "@type": "Offer", "name": "Nigeria to UK Sea Freight",   "price": "3.00", "priceCurrency": "GBP", "unitText": "KGM", "description": "Monthly sea freight Lagos to UK. Min 2 bags. 4 6 weeks." },
                   ],
                 },
               },
@@ -1290,7 +1290,7 @@ export default function ImportationPageClient() {
               },
               {
                 "@type": "HowTo",
-                "name": "How to Import Goods from Nigeria to the UK — R-Zone Enterprises",
+                "name": "How to Import Goods from Nigeria to the UK   R-Zone Enterprises",
                 "description": "Step-by-step guide to importing cargo from Nigeria to the UK using R-Zone Enterprises. Air freight and sea freight options from Lagos.",
                 "step": PROCESS_STEPS.map((s, i) => ({
                   "@type": "HowToStep",
@@ -1302,8 +1302,8 @@ export default function ImportationPageClient() {
               {
                 "@type": "WebPage",
                 "url": "https://r-zoneenterprises.com/importation-from-nigeria",
-                "name": "Import from Nigeria to UK — Cargo Services Lagos to London | R-Zone Enterprises",
-                "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight from Nigeria (Lagos) to London and all UK cities. Rates from £4.80/kg. African foodstuffs accepted. All 36 Nigerian states. The highest-rated UK–Nigeria cargo company on Google — 100+ five-star reviews.",
+                "name": "Import from Nigeria to UK   Cargo Services Lagos to London | R-Zone Enterprises",
+                "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight from Nigeria (Lagos) to London and all UK cities. Rates from £4.80/kg. African foodstuffs accepted. All 36 Nigerian states. The highest-rated UK Nigeria cargo company on Google   100+ five-star reviews.",
                 "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
               },
             ],
