@@ -3,9 +3,9 @@
 import dynamic from "next/dynamic";
 
 const ToasterWrapper = dynamic(() => import("./ToasterWrapper"), {
-  ssr: false,
+ ssr: false,
 });
 
 export default function ToasterProvider() {
-  return <ToasterWrapper />;
+ return <ToasterWrapper />;
 }

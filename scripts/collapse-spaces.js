@@ -19,11 +19,11 @@ function walk(dir) {
  try {
  let s = fs.readFileSync(full, 'utf8')
  const before = s
- // Replace em dash (\u2014) and en dash (\u2013) with a single space
- s = s.replace(/\u2013|\u2014/g, ' ')
+ // Collapse runs of two or more spaces into a single space
+ s = s.replace(/ {2,}/g, ' ')
  if (s !== before) {
  fs.writeFileSync(full, s, 'utf8')
- console.log('Updated', full)
+ console.log('Collapsed spaces in', full)
  }
  } catch (err) {
  console.error('skip', full, err.message)
@@ -32,4 +32,4 @@ function walk(dir) {
 }
 
 walk(root)
-console.log('Done replacing em/en dashes.')
+console.log('Done collapsing spaces.')
