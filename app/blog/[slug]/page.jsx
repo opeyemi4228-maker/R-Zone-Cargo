@@ -60,7 +60,7 @@ export async function generateMetadata({ params }) {
 
  return {
  // ── Primary SEO tags ────────────────────────────────────────────────────
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  keywords: article.keywords,
 
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }) {
  openGraph: {
  type: "article",
  url: article.canonicalUrl,
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  siteName: SITE_NAME,
  images: [
@@ -97,7 +97,7 @@ export async function generateMetadata({ params }) {
  card: "summary_large_image",
  site: TWITTER_HANDLE,
  creator: TWITTER_HANDLE,
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  images: [ogImage],
  },

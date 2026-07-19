@@ -2,7 +2,7 @@
 // The page itself is a Client Component ("use client"), which cannot export
 // `metadata`, so it lives here instead.
 export const metadata = {
- title: "UK Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
+ title: { absolute: "UK Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises" },
  description:
  "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg, door-to-door cargo to Nigeria from UK, customs clearance, warehousing and importation from Nigeria. 100+ five-star reviews. Weekly departures. Same-day response.",
  keywords: [
