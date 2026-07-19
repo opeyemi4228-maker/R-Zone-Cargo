@@ -66,7 +66,7 @@ export const metadata = {
  url: article.canonicalUrl,
  title: { absolute: article.metaTitle },
  description: article.metaDesc,
- siteName: "R-Zone Cargo",
+ siteName: "R-Zone Enterprises",
  images: [{ url: article.ogImage, width: 1200, height: 630, alt: article.imgAlt }],
  publishedTime: article.datePublished,
  modifiedTime: article.dateModified,
