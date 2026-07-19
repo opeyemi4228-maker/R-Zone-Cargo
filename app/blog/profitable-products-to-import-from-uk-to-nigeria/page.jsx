@@ -50,14 +50,14 @@ const schemas = [
 ];
 
 export const metadata = {
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  keywords: article.keywords,
  alternates: { canonical: article.canonicalUrl },
  openGraph: {
  type: "article",
  url: article.canonicalUrl,
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  siteName: "R-Zone Cargo",
  images: [{ url: article.ogImage, width: 1200, height: 630, alt: article.imgAlt }],
@@ -68,7 +68,7 @@ export const metadata = {
  twitter: {
  card: "summary_large_image",
  site: "@RZoneCargo",
- title: article.metaTitle,
+ title: { absolute: article.metaTitle },
  description: article.metaDesc,
  images: [article.ogImage],
  },

@@ -2,7 +2,7 @@
 // The page itself is a Client Component ("use client"), which cannot export
 // `metadata`, so it lives here instead.
 export const metadata = {
- title: "Free UK Nigeria Shipping Quote | R-Zone Enterprises",
+ title: { absolute: "Free UK Nigeria Shipping Quote | R-Zone Enterprises" },
  description:
  "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Cargo to Nigeria from UK by air freight from £5/kg or sea freight from £3/kg. Same-day response. 100+ five-star reviews.",
  keywords: [
