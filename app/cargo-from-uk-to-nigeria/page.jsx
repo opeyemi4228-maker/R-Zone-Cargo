@@ -464,7 +464,7 @@ export default function Page() {
         />
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ready to ship?</p>
-          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">
+          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">
             Get your free UK to Nigeria cargo quote today
           </h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
