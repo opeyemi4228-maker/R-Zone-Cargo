@@ -251,13 +251,8 @@ export default function Page() {
       {/* ── HERO (editorial: headline + subtitle on white, then image with ── */}
       {/*    author/date overlaid bottom-left and share buttons bottom-right) ── */}
       <section className="bg-white">
-        <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-10 md:pt-14">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 text-[12.5px] font-medium text-gray-400">
-            <Link href="/" className="hover:text-[#0818A8] transition-colors">Home</Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-gray-600">Cargo from UK to Nigeria</span>
-          </nav>
-
+        {/* pt clears the fixed Navbar (taller on mobile: ~130px, ~100px on desktop) */}
+        <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[120px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
             Cargo from the UK to Nigeria: Door to Door, Air, Sea &amp; Cheap Prices
           </h1>
@@ -296,23 +291,6 @@ export default function Page() {
             <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8">
               <ShareRow url={PAGE_URL} title={TITLE} />
             </div>
-          </div>
-
-          {/* Price pills + CTA under the image */}
-          <div className="flex flex-col gap-6 mt-8">
-            <div className="flex flex-wrap gap-2.5">
-              {[
-                [Ship, "Sea from £3/kg"],
-                [Plane, "Air from £5/kg"],
-                [Truck, "Door to door from £6/kg"],
-              ].map(([Icon, label]) => (
-                <span key={label} className="inline-flex items-center gap-2 bg-[#0818A8]/6 border border-[#0818A8]/15 text-[#0818A8] text-[13.5px] font-semibold px-4 py-2.5">
-                  <Icon size={16} aria-hidden="true" />
-                  {label}
-                </span>
-              ))}
-            </div>
-            <CTAButtons />
           </div>
         </div>
       </section>
