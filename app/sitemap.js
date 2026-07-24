@@ -23,6 +23,13 @@ export default function sitemap() {
  priority: 1.0,
  },
  {
+ // Commercial landing page for the head term "cargo from UK to Nigeria".
+ url: `${SITE_URL}/cargo-from-uk-to-nigeria`,
+ lastModified: new Date(),
+ changeFrequency: "weekly",
+ priority: 1.0,
+ },
+ {
  url: `${SITE_URL}/blog`,
  lastModified: new Date(),
  changeFrequency: "daily", // new articles added frequently
