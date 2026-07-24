@@ -1,59 +1,34 @@
 // app/cargo-from-uk-to-nigeria/page.jsx
+// URL: https://r-zoneenterprises.com/cargo-from-uk-to-nigeria
 // ─────────────────────────────────────────────────────────────────────────────
-// SERVER COMPONENT — commercial landing page (money page) for the head term
-// "cargo from UK to Nigeria". Fully static HTML (no client JS) = fastest render
-// and best crawlability. Owns its own SEO metadata + JSON-LD directly.
-//
-// Heading hierarchy is deliberate: exactly ONE <h1>, section <h2>s, and <h3>
-// sub-headings / FAQ questions. Self-canonical (respects the July canonical
-// fix); title uses { absolute } to avoid the layout brand-template double-brand.
+// Commercial money page for the head term "cargo from UK to Nigeria", rendered
+// with the SAME blog-post design (ArticleReader) as every /blog article, so it
+// gets the identical hero, table of contents, sections, FAQ accordion, CTA and
+// related-articles layout. Server component: owns SEO metadata + JSON-LD and
+// passes an inline article object to the client reader.
 // Copy intentionally avoids em/en dashes.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import Link from "next/link";
-import Image from "next/image";
-import { Montserrat } from "next/font/google";
-import {
-  Plane,
-  Ship,
-  Truck,
-  PoundSterling,
-  Clock,
-  ShieldCheck,
-  Star,
-  MapPin,
-  PhoneCall,
-  MessageCircle,
-  ArrowRight,
-  Check,
-  Boxes,
-  Award,
-  Zap,
-  Globe,
-} from "lucide-react";
-import { ORGANIZATION_SCHEMA } from "../../lib/articles";
+import ArticleReader from "../blog/[slug]/ArticleReader";
+import { SITE_URL, ORGANIZATION_SCHEMA, getRelatedArticles } from "../../lib/articles";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const SITE_URL = "https://r-zoneenterprises.com";
-const PAGE_URL = `${SITE_URL}/cargo-from-uk-to-nigeria`;
-const PHONE = "+44 (0) 800 772 0864";
-const WHATSAPP = "447915647119";
+const CANONICAL = "https://r-zoneenterprises.com/cargo-from-uk-to-nigeria";
 const HERO_IMG =
-  "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1920&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1400&q=80&auto=format&fit=crop";
+const OG_IMG =
+  "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1200&q=85&auto=format&fit=crop";
 
-const TITLE =
-  "Cargo from UK to Nigeria 2026 | Door to Door, Air & Sea Freight from £3/kg";
-const DESCRIPTION =
-  "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 107+ five star reviews. Free same day quote.";
+const article = {
+  id: -1,
+  slug: "cargo-from-uk-to-nigeria",
+  category: "guides",
+  canonicalUrl: CANONICAL,
+  wordCount: 1600,
 
-export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  metaTitle:
+    "Cargo from UK to Nigeria 2026 | Door to Door, Air & Sea Freight from £3/kg",
+  metaDesc:
+    "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 107+ five star reviews. Free same day quote.",
   keywords: [
     "cargo from UK to Nigeria",
     "cargo to Nigeria from UK",
@@ -66,81 +41,134 @@ export const metadata = {
     "send cargo to Nigeria",
     "cargo company UK to Nigeria",
     "cargo prices UK to Nigeria",
-    "UK to Nigeria cargo",
   ],
-  alternates: { canonical: PAGE_URL },
-  openGraph: {
-    type: "website",
-    url: PAGE_URL,
-    title: TITLE,
-    description: DESCRIPTION,
-    siteName: "R-Zone Enterprises",
-    locale: "en_GB",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Cargo from UK to Nigeria, R-Zone Enterprises" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@RZoneCargo",
-    title: TITLE,
-    description: DESCRIPTION,
-    images: ["/og-image.jpg"],
-  },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  ogImage: OG_IMG,
+  datePublished: "2026-07-24",
+  dateModified: "2026-07-24",
+
+  title: "Cargo from the UK to Nigeria in 2026: Door to Door, Air, Sea and Cheap Prices",
+  excerpt:
+    "Send cargo from the UK to Nigeria from £3 per kg. Door to door collection and delivery, air freight and sea freight, cheap all inclusive prices and weekly departures to every state in Nigeria.",
+  author: "R-Zone Cargo Team",
+  date: "24 July 2026",
+  readTime: "8 min read",
+  img: HERO_IMG,
+  imgAlt: "Container ship loaded with cargo bound from the UK to Nigeria in 2026",
+  tags: ["Cargo", "UK to Nigeria", "Door to Door", "Air Freight", "Sea Freight", "Cheap Prices"],
+
+  relatedSlugs: [
+    "door-to-door-shipping-uk-to-nigeria",
+    "air-freight-uk-to-nigeria",
+    "sea-freight-uk-to-nigeria",
+  ],
+
+  faqSchema: [
+    {
+      question: "How much does it cost to send cargo from the UK to Nigeria?",
+      answer:
+        "Cargo from the UK to Nigeria starts from £3/kg by sea and £5/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
+    },
+    {
+      question: "What is the cheapest way to send cargo to Nigeria from the UK?",
+      answer:
+        "Sea freight from £3/kg is the cheapest way to send cargo to Nigeria, especially for large or heavy shipments. The saving over air grows with weight, so a 100kg shipment is about £300 to £450 by sea versus £500 to £700 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air.",
+    },
+    {
+      question: "How long does cargo take to reach Nigeria from the UK?",
+      answer:
+        "Air freight takes 5 to 10 working days and sea freight takes 4 to 6 weeks, each including UK handling, transit to Lagos, Nigeria customs clearance and final delivery. R-Zone runs weekly air and sea departures, so your cargo joins the next available service.",
+    },
+    {
+      question: "Do you offer door to door cargo to Nigeria?",
+      answer:
+        "Yes. Door to door means we collect from your UK address and deliver to the recipient door anywhere in Nigeria, with no depot visits. It is available on both air and sea from £6/kg, including UK collection, customs clearance and final mile delivery.",
+    },
+    {
+      question: "Which parts of Nigeria do you deliver to?",
+      answer:
+        "R-Zone delivers to Lagos, Abuja, Port Harcourt, Ibadan, Kano, Benin City and every state in Nigeria. Delivery to the main cities is included in the standard quote; remote destinations may carry a small onward delivery charge confirmed upfront at booking.",
+    },
+    {
+      question: "Do you handle Nigerian customs clearance?",
+      answer:
+        "Yes. Every price includes Nigeria customs clearance through Nigeria Customs Service, plus NAFDAC and SON clearance where applicable, handled by our own team in Lagos. Import duty is a separate government charge that most personal use household goods attract little or none of.",
+    },
+  ],
+
+  content: [
+    {
+      h: "Cargo from the UK to Nigeria, Made Simple",
+      body: "Sending cargo from the UK to Nigeria comes down to a few simple choices: air or sea, drop off or door to door, and how to pack so you are not paying for empty space. Get those right and shipping to Nigeria is straightforward and affordable.\n\nR-Zone Enterprises has been the trusted name in UK to Nigeria cargo since 2012, with over 50,000 shipments delivered, 107+ five star reviews, weekly air and sea departures, and our own teams in the UK and Lagos. The price we quote is the price you pay, with no hidden fees.\n\nThis guide covers everything: cheap prices, door to door, air freight, sea freight, transit times, customs and how to book.",
+    },
+    {
+      h: "Cheap Cargo Prices from the UK to Nigeria (2026)",
+      body: "R-Zone offers some of the cheapest all inclusive cargo prices from the UK to Nigeria, with no hidden handling fees, fuel surcharges or surprise charges.\n\n**Sea freight from £3 per kg.** The cheapest option for large or heavy cargo. Transit 4 to 6 weeks.\n\n**Air freight from £5 per kg.** The fastest option. Transit 5 to 10 working days.\n\n**Door to door from £6 per kg.** Includes UK collection and delivery to the recipient door in Nigeria.\n\n**Example, 20kg box from London to Lagos:** sea £60 to £90, air £100 to £160, door to door £120 to £180.\n\nEvery rate covers UK export documentation, transit, Nigeria customs clearance and delivery. You pay for actual or volumetric weight, whichever is greater, so packing densely keeps your price low.",
+    },
+    {
+      h: "Door to Door Shipping from the UK to Nigeria",
+      body: "Door to door is the most convenient way to send cargo to Nigeria. We collect from your UK address, home or business, anywhere in the country, and deliver directly to the recipient door in Nigeria. No depot visits, no customs queues. From **£6 per kg**, all inclusive.\n\nThe service covers UK collection, export documentation, air or sea transit, Nigeria customs clearance and final mile delivery, all managed by R-Zone with our own teams in the UK and Lagos.\n\nFor most families and businesses, door to door is worth the small premium over drop off because it removes the two hardest parts of shipping: getting cargo to a UK depot and the recipient collecting it in Nigeria.",
+    },
+    {
+      h: "Air Freight from the UK to Nigeria",
+      body: "When speed matters, air freight delivers in **5 to 10 working days** from **£5 per kg**, with weekly departures from Heathrow, Gatwick and Manchester to Lagos.\n\nAir freight is ideal for electronics, phones, documents, medicine, perfumes, fashion and gifts, where speed and security outweigh the higher per kg price. It also avoids the port congestion that can affect sea shipments.\n\nAir freight is charged on actual weight or volumetric weight (length by width by height in cm, divided by 6,000), whichever is greater. A compact, densely packed box always costs less.",
+    },
+    {
+      h: "Sea Freight from the UK to Nigeria",
+      body: "Sea freight is the cheapest way to move large or heavy cargo, from **£3 per kg**, with weekly sailings to Lagos (Apapa and Tin Can Island) and a **4 to 6 week** transit.\n\nIt is the right choice for household goods, furniture, bulk food, vehicles, relocations and commercial shipments. Ship as little as a single box (sharing a container) or book a full 20ft or 40ft container for high volume cargo.\n\nSea freight uses a volumetric divisor of 1,000, so a large, light box generates a high volumetric charge. Dense, compact packing is the single biggest lever on your sea freight cost.",
+    },
+    {
+      h: "How to Send Cargo to Nigeria in Four Steps",
+      body: "**1. Get a free quote.** Tell us what you are sending, the rough weight and your UK and Nigeria locations. We respond the same day.\n\n**2. We collect or you drop off.** We collect from your UK address for door to door, or you drop off at our depot.\n\n**3. We ship and clear customs.** Air or sea to Lagos, then Nigeria customs clearance by our own Lagos team.\n\n**4. Delivered in Nigeria.** Your cargo reaches the recipient door in Lagos, Abuja, Port Harcourt or any state.",
+    },
+    {
+      h: "Why Send Your Cargo to Nigeria with R-Zone",
+      body: "**12+ years of experience.** Shipping UK to Nigeria cargo since 2012, with 50,000+ shipments delivered.\n\n**Transparent, cheap prices.** All inclusive rates from £3 per kg. The price we quote is the price you pay.\n\n**Weekly air and sea departures.** Your cargo never waits. It joins the next available flight or sailing.\n\n**Own teams in the UK and Lagos.** We control collection, customs clearance and delivery from end to end.\n\n**107+ five star reviews.** One of the highest rated UK to Nigeria cargo companies on Google.\n\n**Every state in Nigeria.** Delivery to Lagos, Abuja, Port Harcourt, Ibadan, Kano and beyond.",
+    },
+    {
+      h: "Book Your Cargo to Nigeria Today",
+      body: "Every shipment is different, and the most accurate price always comes from a direct quote based on your specific cargo.\n\nTo get your free same day quote, call **+44 (0) 800 772 0864**, WhatsApp **+44 7915 647 119**, or use our online quote form. Tell us what you are sending and where it is going, and we will give you the cheapest way to get it to Nigeria.\n\nWith 12+ years of UK to Nigeria cargo experience, 107+ five star reviews, and our own teams in the UK and Lagos, R-Zone is the most trusted name in UK to Nigeria cargo.",
+    },
+  ],
 };
 
-// ── FAQ (rendered visibly AND emitted as FAQPage schema; no dashes) ──────────
-const FAQS = [
-  {
-    q: "How much does it cost to send cargo from the UK to Nigeria?",
-    a: "Cargo from the UK to Nigeria starts from £3/kg by sea and £5/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
-  },
-  {
-    q: "What is the cheapest way to send cargo to Nigeria from the UK?",
-    a: "Sea freight from £3/kg is the cheapest way to send cargo to Nigeria, especially for large or heavy shipments. The saving over air grows with weight: a 100kg shipment is about £300 to £450 by sea versus £500 to £700 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air.",
-  },
-  {
-    q: "How long does cargo take to reach Nigeria from the UK?",
-    a: "Air freight takes 5 to 10 working days and sea freight takes 4 to 6 weeks, each including UK handling, transit to Lagos, Nigeria customs clearance and final delivery. R-Zone runs weekly air and sea departures, so your cargo joins the next available service.",
-  },
-  {
-    q: "Do you offer door to door cargo to Nigeria?",
-    a: "Yes. Door to door means we collect from your UK address and deliver to the recipient door anywhere in Nigeria, with no depot visits. It is available on both air and sea from £6/kg, including UK collection, customs clearance and final mile delivery.",
-  },
-  {
-    q: "Which parts of Nigeria do you deliver to?",
-    a: "R-Zone delivers to Lagos, Abuja, Port Harcourt, Ibadan, Kano, Benin City and every state in Nigeria. Delivery to the main cities is included in the standard quote; remote destinations may carry a small onward delivery charge confirmed upfront at booking.",
-  },
-  {
-    q: "Do you handle Nigerian customs clearance?",
-    a: "Yes. Every price includes Nigeria customs clearance through Nigeria Customs Service, plus NAFDAC and SON clearance where applicable, handled by our own team in Lagos. Import duty is a separate government charge that most personal use household goods attract little or none of.",
-  },
-];
+const related = getRelatedArticles(article.id, article.category, article.relatedSlugs, 3);
 
 const schemas = [
   {
     "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${article.canonicalUrl}#article`,
+    headline: article.title,
+    description: article.metaDesc,
+    image: { "@type": "ImageObject", url: article.ogImage, width: 1200, height: 630 },
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: { "@type": "Organization", name: article.author, url: `${SITE_URL}/about` },
+    publisher: ORGANIZATION_SCHEMA,
+    mainEntityOfPage: { "@type": "WebPage", "@id": article.canonicalUrl },
+    keywords: article.keywords.join(", "),
+    wordCount: article.wordCount,
+    inLanguage: "en-GB",
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${PAGE_URL}#service`,
+    "@id": `${article.canonicalUrl}#service`,
     serviceType: "Cargo shipping from the UK to Nigeria",
     name: "Cargo from UK to Nigeria",
-    description: DESCRIPTION,
+    description: article.metaDesc,
     provider: ORGANIZATION_SCHEMA,
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
       { "@type": "Country", name: "Nigeria" },
     ],
-    availableChannel: {
-      "@type": "ServiceChannel",
-      serviceUrl: `${SITE_URL}/quote`,
-      servicePhone: "+44-800-772-0864",
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "UK to Nigeria cargo services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sea freight UK to Nigeria" }, priceCurrency: "GBP", price: "3", description: "From £3/kg, 4 to 6 weeks" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5", description: "From £5/kg, 5 to 10 working days" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Door to door cargo UK to Nigeria" }, priceCurrency: "GBP", price: "6", description: "From £6/kg, UK collection plus Nigeria doorstep delivery" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sea freight UK to Nigeria" }, priceCurrency: "GBP", price: "3" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Door to door cargo UK to Nigeria" }, priceCurrency: "GBP", price: "6" },
       ],
     },
   },
@@ -149,406 +177,62 @@ const schemas = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "Cargo from UK to Nigeria", item: PAGE_URL },
+      { "@type": "ListItem", position: 2, name: "Cargo from UK to Nigeria", item: article.canonicalUrl },
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQS.map((f) => ({
+    mainEntity: article.faqSchema.map((f) => ({
       "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   },
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${PAGE_URL}#webpage`,
-    url: PAGE_URL,
-    name: TITLE,
-    description: DESCRIPTION,
+    "@id": `${article.canonicalUrl}#webpage`,
+    url: article.canonicalUrl,
+    name: article.title,
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
   },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
 ];
 
-// ── Reusable bits (server safe, no client JS) ────────────────────────────────
-function CTAButtons({ light = false }) {
-  return (
-    <div className="flex flex-wrap gap-3">
-      <Link
-        href="/quote"
-        className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0a1fce] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-colors"
-      >
-        Get a Free Quote
-        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-      </Link>
-      <a
-        href="tel:+448007720864"
-        className={`inline-flex items-center gap-2 border text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors ${
-          light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#0818A8] text-gray-800 hover:text-[#0818A8]"
-        }`}
-      >
-        <PhoneCall size={13} aria-hidden="true" /> Call Us
-      </a>
-      <a
-        href={`https://wa.me/${WHATSAPP}`}
-        className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors"
-      >
-        <MessageCircle size={13} aria-hidden="true" /> WhatsApp
-      </a>
-    </div>
-  );
-}
-
-function H2({ id, eyebrow, children }) {
-  return (
-    <div className="mb-6">
-      {eyebrow && (
-        <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-3">{eyebrow}</p>
-      )}
-      <h2
-        id={id}
-        className="font-black text-[clamp(21px,3.4vw,32px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] uppercase"
-      >
-        {children}
-      </h2>
-    </div>
-  );
-}
-
-const SERVICES = [
-  {
-    icon: Truck,
-    name: "Door to Door Shipping",
-    price: "From £6/kg",
-    transit: "Air or sea",
-    href: "/blog/door-to-door-shipping-uk-to-nigeria",
-    points: [
-      "We collect from any UK address",
-      "Delivered to the recipient door in Nigeria",
-      "No depot visits, no customs queues",
-    ],
+export const metadata = {
+  title: { absolute: article.metaTitle },
+  description: article.metaDesc,
+  keywords: article.keywords,
+  alternates: { canonical: article.canonicalUrl },
+  openGraph: {
+    type: "article",
+    url: article.canonicalUrl,
+    title: article.metaTitle,
+    description: article.metaDesc,
+    siteName: "R-Zone Enterprises",
+    images: [{ url: article.ogImage, width: 1200, height: 630, alt: article.imgAlt }],
+    publishedTime: article.datePublished,
+    modifiedTime: article.dateModified,
+    tags: article.tags,
   },
-  {
-    icon: Plane,
-    name: "Air Freight",
-    price: "From £5/kg",
-    transit: "5 to 10 working days",
-    href: "/blog/air-freight-uk-to-nigeria",
-    points: [
-      "Weekly flights to Lagos",
-      "Ideal for urgent and high value goods",
-      "Electronics, documents, fashion, medicine",
-    ],
-  },
-  {
-    icon: Ship,
-    name: "Sea Freight",
-    price: "From £3/kg",
-    transit: "4 to 6 weeks",
-    href: "/blog/sea-freight-uk-to-nigeria",
-    points: [
-      "The cheapest option for heavy cargo",
-      "Weekly sailings to Lagos",
-      "Household goods, furniture, vehicles",
-    ],
-  },
-];
-
-const STEPS = [
-  ["Get a free quote", "Tell us what you are sending, the rough weight and your UK and Nigeria locations. Same day response."],
-  ["We collect or you drop off", "We collect from your UK address for door to door, or you drop off at our depot."],
-  ["We ship and clear customs", "Air or sea to Lagos, then Nigeria customs clearance by our own Lagos team."],
-  ["Delivered in Nigeria", "Your cargo reaches the recipient door in Lagos, Abuja, Port Harcourt or any state."],
-];
-
-const WHY = [
-  [Award, "12+ years of experience", "Shipping UK to Nigeria cargo since 2012, with 50,000+ shipments delivered."],
-  [PoundSterling, "Transparent, cheap prices", "All inclusive rates from £3/kg. The price we quote is the price you pay, with no hidden fees."],
-  [Zap, "Weekly air and sea departures", "Your cargo never waits. It joins the next available flight or sailing."],
-  [ShieldCheck, "Own teams in UK and Lagos", "We control collection, customs clearance and delivery from end to end."],
-  [Star, "107+ five star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
-  [Globe, "Every state in Nigeria", "Delivery to Lagos, Abuja, Port Harcourt, Ibadan, Kano and beyond."],
-];
-
-const CITIES = ["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Benin City", "Kano", "Enugu", "Kaduna", "Owerri", "Warri", "Uyo", "Every state"];
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: article.metaTitle, description: article.metaDesc, images: [article.ogImage] },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+};
 
 export default function Page() {
   return (
-    <main className={`${montserrat.className} bg-white`}>
+    <>
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
-
-      {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative isolate bg-[#000208] text-white overflow-hidden">
-        {/* Background image */}
-        <Image
-          src={HERO_IMG}
-          alt="Container ship departing a UK port with cargo bound for Nigeria"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-30 -z-10"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#000208] via-[#000208]/85 to-[#000208]/60" aria-hidden="true" />
-        <div
-          className="absolute inset-0 -z-10 opacity-[0.05] pointer-events-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-            backgroundSize: "58px 58px",
-          }}
-        />
-        <div className="absolute top-[-80px] left-1/3 -z-10 w-[620px] h-[420px] bg-[#0818A8]/25 rounded-full blur-[140px] pointer-events-none" aria-hidden="true" />
-
-        <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-7 text-[11px] font-medium text-white/50">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-white/80">Cargo from UK to Nigeria</span>
-          </nav>
-
-          <p className="inline-flex items-center gap-2 text-[10.5px] font-black tracking-[0.28em] uppercase text-white/70 border border-white/15 bg-white/5 px-3.5 py-2 mb-6">
-            <Boxes size={13} className="text-[#4d7cff]" aria-hidden="true" />
-            UK to Nigeria Cargo Experts Since 2012
-          </p>
-
-          <h1 className="font-black text-[clamp(32px,6.4vw,66px)] leading-[0.94] tracking-[-0.03em] uppercase mb-6 max-w-4xl">
-            Cargo from the <span className="text-[#5b86ff]">UK to Nigeria</span>
-          </h1>
-
-          <p className="text-white/72 text-[16px] md:text-[18px] font-light leading-relaxed mb-7 max-w-2xl">
-            Door to door, air freight and sea freight to Nigeria from{" "}
-            <strong className="font-bold text-white">£3 per kg</strong>. All inclusive prices,
-            weekly departures, and delivery to every state in Nigeria.
-          </p>
-
-          {/* Price pills */}
-          <div className="flex flex-wrap gap-2.5 mb-8">
-            {[
-              [Ship, "Sea from £3/kg"],
-              [Plane, "Air from £5/kg"],
-              [Truck, "Door to door from £6/kg"],
-            ].map(([Icon, label]) => (
-              <span key={label} className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white/90 text-[12.5px] font-semibold px-3.5 py-2">
-                <Icon size={14} className="text-[#5b86ff]" aria-hidden="true" />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          <CTAButtons light />
-
-          {/* Trust stats */}
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 border border-white/10 mt-12 max-w-3xl">
-            {[
-              ["50,000+", "Shipments delivered"],
-              ["12+", "Years of service"],
-              ["107+", "Five star reviews"],
-              ["Weekly", "Air and sea departures"],
-            ].map(([v, l]) => (
-              <div key={l} className="bg-[#000208] px-5 py-5">
-                <dt className="font-black text-[22px] md:text-[26px] text-white leading-none mb-1.5">{v}</dt>
-                <dd className="text-white/55 text-[11px] font-medium leading-tight">{l}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ── PRICES ────────────────────────────────────────────────────────── */}
-      <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <H2 id="prices" eyebrow="Cheap, all inclusive rates">Cargo Prices from UK to Nigeria (2026)</H2>
-        <p className="text-gray-700 text-[15px] leading-[1.85] mb-8 max-w-3xl">
-          R-Zone offers some of the cheapest all inclusive cargo prices from the UK to Nigeria,
-          with no hidden handling fees, fuel surcharges or surprise charges. Every rate below
-          includes UK export documentation, transit, Nigeria customs clearance and delivery.
-        </p>
-        <div className="overflow-x-auto border border-gray-200">
-          <table className="w-full text-left border-collapse min-w-[620px]">
-            <thead>
-              <tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]">
-                <th className="p-4 font-bold">Service</th>
-                <th className="p-4 font-bold">From</th>
-                <th className="p-4 font-bold">Transit time</th>
-                <th className="p-4 font-bold">Best for</th>
-              </tr>
-            </thead>
-            <tbody className="text-[14px] text-gray-800">
-              {[
-                [Ship, "Sea freight", "£3 / kg", "4 to 6 weeks", "Large, heavy or bulky cargo"],
-                [Plane, "Air freight", "£5 / kg", "5 to 10 working days", "Urgent or high value items"],
-                [Truck, "Door to door", "£6 / kg", "Air or sea", "UK collection plus Nigeria delivery"],
-              ].map(([Icon, name, price, transit, best], i) => (
-                <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
-                  <td className="p-4 font-bold">
-                    <span className="inline-flex items-center gap-2.5">
-                      <Icon size={17} className="text-[#0818A8]" aria-hidden="true" />
-                      {name}
-                    </span>
-                  </td>
-                  <td className="p-4 font-black text-[#0818A8]">{price}</td>
-                  <td className="p-4">{transit}</td>
-                  <td className="p-4">{best}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="text-gray-600 text-[13.5px] leading-relaxed mt-5 max-w-3xl">
-          <strong className="text-gray-900">Example (20kg box, London to Lagos):</strong>{" "}
-          sea £60 to £90, air £100 to £160, door to door £120 to £180. You pay for actual or
-          volumetric weight, whichever is greater, so packing densely keeps your price low.{" "}
-          <Link href="/blog/how-much-does-cargo-cost-from-uk-to-nigeria" className="text-[#0818A8] font-semibold underline">
-            See the full price breakdown
-          </Link>.
-        </p>
-      </section>
-
-      {/* ── SERVICE CARDS ─────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <H2 id="services" eyebrow="Three ways to ship">Door to Door, Air Freight and Sea Freight</H2>
-          <div className="grid gap-5 md:grid-cols-3 mt-2">
-            {SERVICES.map(({ icon: Icon, name, price, transit, href, points }) => (
-              <div key={name} className="group bg-white border border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/5 transition-all duration-300 flex flex-col">
-                <div className="p-6 pb-5 border-b border-gray-100">
-                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#0818A8]/8 text-[#0818A8] mb-4">
-                    <Icon size={22} aria-hidden="true" />
-                  </span>
-                  <h3 className="font-black text-[17px] text-gray-900 uppercase tracking-[-0.01em] mb-1">{name}</h3>
-                  <p className="text-[#0818A8] font-black text-[15px]">{price}</p>
-                  <p className="text-gray-500 text-[12px] font-medium mt-0.5">{transit}</p>
-                </div>
-                <ul className="p-6 pt-5 space-y-2.5 flex-1">
-                  {points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5 text-gray-700 text-[13.5px] leading-snug">
-                      <Check size={15} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#0818A8] text-[12px] font-black tracking-[0.06em] uppercase group-hover:bg-[#0818A8] group-hover:text-white transition-colors">
-                  Read the guide
-                  <ArrowRight size={13} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOW IT WORKS ──────────────────────────────────────────────────── */}
-      <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <H2 id="how-it-works" eyebrow="Simple and stress free">How to Send Cargo to Nigeria in 4 Steps</H2>
-        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 mt-2">
-          {STEPS.map(([t, d], i) => (
-            <li key={t} className="relative border border-gray-200 p-6">
-              <div className="font-black text-[#0818A8]/15 text-[46px] leading-none absolute top-3 right-4 select-none" aria-hidden="true">
-                {i + 1}
-              </div>
-              <h3 className="font-bold text-gray-900 text-[14px] mb-2 relative">{t}</h3>
-              <p className="text-gray-600 text-[13px] leading-relaxed relative">{d}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ── WHY R-ZONE ────────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <H2 id="why-r-zone" eyebrow="Trusted by 100+ customers">Why Send Your Cargo to Nigeria with R-Zone</H2>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
-            {WHY.map(([Icon, t, d]) => (
-              <li key={t} className="bg-white border border-gray-200 p-6">
-                <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4">
-                  <Icon size={20} aria-hidden="true" />
-                </span>
-                <h3 className="font-bold text-gray-900 text-[14px] mb-2">{t}</h3>
-                <p className="text-gray-600 text-[13px] leading-relaxed">{d}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ── DESTINATIONS ──────────────────────────────────────────────────── */}
-      <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <H2 id="destinations" eyebrow="Nationwide coverage">Cargo Delivery Across Nigeria</H2>
-        <p className="text-gray-700 text-[15px] leading-[1.85] mb-7 max-w-3xl">
-          We deliver cargo from the UK to every state in Nigeria. Delivery to the major cities is
-          included in your quote; remote destinations carry a small onward delivery charge that we
-          confirm before you book.
-        </p>
-        <ul className="flex flex-wrap gap-2.5">
-          {CITIES.map((c) => (
-            <li key={c} className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 text-[13px] font-semibold px-3.5 py-2">
-              <MapPin size={13} className="text-[#0818A8]" aria-hidden="true" />
-              {c}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* ── FAQ (native accordion, no client JS) ──────────────────────────── */}
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-[860px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <H2 id="faq" eyebrow="Everything you need to know">Cargo from UK to Nigeria FAQs</H2>
-          <div className="space-y-3 mt-2">
-            {FAQS.map((f) => (
-              <details key={f.q} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
-                <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[14.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{f.q}</h3>
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform">
-                      <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" />
-                    </svg>
-                  </span>
-                </summary>
-                <p className="px-5 pb-5 text-gray-600 text-[14px] leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0818A8] text-white overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.07] pointer-events-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-            backgroundSize: "46px 46px",
-          }}
-        />
-        <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ready to ship?</p>
-          <h2 className="font-black text-[clamp(24px,4vw,38px)] tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">
-            Get your free UK to Nigeria cargo quote today
-          </h2>
-          <p className="text-white/75 text-[14.5px] mb-8 max-w-2xl leading-relaxed">
-            Sea from £3/kg, air from £5/kg, door to door from £6/kg. Weekly departures, same day
-            response and 107+ five star reviews. Tell us what you are sending and we will give you
-            the cheapest way to get it to Nigeria.
-          </p>
-          <CTAButtons light />
-
-          <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
-            <Link href="/services" className="hover:text-white transition-colors">Our Shipping Services</Link>
-            <Link href="/schedulesprices" className="hover:text-white transition-colors">Schedules and Prices</Link>
-            <Link href="/track" className="hover:text-white transition-colors">Track a Shipment</Link>
-            <Link href="/blog/shipping-to-nigeria-from-uk-2026-guide" className="hover:text-white transition-colors">Complete Shipping Guide</Link>
-            <Link href="/blog" className="hover:text-white transition-colors">All Shipping Guides</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
-          </nav>
-        </div>
-      </section>
-    </main>
+      <div aria-hidden="true" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
+        <h1>{article.title}</h1><p>{article.excerpt}</p>
+        {article.content.map((s, i) => <div key={i}><h2>{s.h}</h2><p>{s.body.replace(/\*\*(.*?)\*\*/g, "$1")}</p></div>)}
+        <h2>Frequently Asked Questions</h2>
+        {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
+      </div>
+      <ArticleReader article={article} related={related} />
+    </>
   );
 }
