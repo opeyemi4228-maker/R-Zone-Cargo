@@ -251,8 +251,8 @@ export default function Page() {
       {/* ── HERO (editorial: headline + subtitle on white, then image with ── */}
       {/*    author/date overlaid bottom-left and share buttons bottom-right) ── */}
       <section className="bg-white">
-        {/* pt clears the fixed Navbar (taller on mobile: ~130px, ~100px on desktop) */}
-        <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[120px]">
+        {/* pt clears the fixed Navbar (row1 80px mobile / 50px + 50px desktop) with breathing room */}
+        <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
             Cargo from the UK to Nigeria: Door to Door, Air, Sea &amp; Cheap Prices
           </h1>
