@@ -25,12 +25,12 @@ import {
   MessageCircle,
   ArrowRight,
   Check,
-  Boxes,
   Award,
   Zap,
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../lib/articles";
+import ShareRow from "./ShareRow";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -248,74 +248,72 @@ export default function Page() {
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
 
-      {/* ── HERO (matches the /blog post hero) ────────────────────────────── */}
-      <section className="relative bg-[#000208] text-white overflow-hidden">
-        {/* Grid texture */}
-        <div
-          className="absolute inset-0 opacity-[0.025] pointer-events-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-        {/* Glow blobs */}
-        <div className="absolute top-0 left-1/3 w-[600px] h-[400px] bg-[#0818A8]/15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
-
-        {/* Faint image band */}
-        <div className="relative h-[340px] md:h-[440px] overflow-hidden">
-          <Image
-            src={HERO_IMG}
-            alt="Container ship loaded with cargo bound from the UK to Nigeria"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000208] via-[#000208]/80 to-[#000208]/40" aria-hidden="true" />
-        </div>
-
-        {/* Content pulled up into the dark zone */}
-        <div className="relative z-10 max-w-[900px] mx-auto px-5 sm:px-8 -mt-56 md:-mt-72 pb-14 md:pb-16">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 text-[12px] font-medium text-white/55">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+      {/* ── HERO (editorial: headline + subtitle on white, then image with ── */}
+      {/*    author/date overlaid bottom-left and share buttons bottom-right) ── */}
+      <section className="bg-white">
+        <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-10 md:pt-14">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-6 text-[12.5px] font-medium text-gray-400">
+            <Link href="/" className="hover:text-[#0818A8] transition-colors">Home</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-white/85">Cargo from UK to Nigeria</span>
+            <span className="text-gray-600">Cargo from UK to Nigeria</span>
           </nav>
 
-          <div className="flex items-center gap-3 mb-5 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-black tracking-[0.2em] uppercase px-2.5 py-1.5 border border-[#1F51FF]/30 bg-[#1F51FF]/10 text-[#5b86ff]">
-              <Boxes size={12} aria-hidden="true" /> Cargo Guide
-            </span>
-            <span className="text-white/45 text-[12px] font-medium">UK to Nigeria Experts Since 2012</span>
-          </div>
-
-          <h1 className="font-black text-[clamp(28px,5.2vw,54px)] text-white leading-[0.95] tracking-[-0.03em] uppercase mb-6">
-            Cargo from the <span className="text-[#5b86ff]">UK to Nigeria</span>
+          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
+            Cargo from the UK to Nigeria: Door to Door, Air, Sea &amp; Cheap Prices
           </h1>
 
-          <p className="text-white/72 text-[16px] md:text-[18px] font-light leading-relaxed mb-8 max-w-2xl">
+          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
             Door to door, air freight and sea freight to Nigeria from{" "}
-            <strong className="font-bold text-white">£3 per kg</strong>. All inclusive prices,
-            weekly departures, and delivery to every state in Nigeria.
+            <strong className="font-semibold text-gray-700">£3 per kg</strong>. All inclusive
+            prices, weekly departures, and delivery to every state in Nigeria.
           </p>
 
-          <div className="flex flex-wrap gap-2.5 mb-9">
-            {[
-              [Ship, "Sea from £3/kg"],
-              [Plane, "Air from £5/kg"],
-              [Truck, "Door to door from £6/kg"],
-            ].map(([Icon, label]) => (
-              <span key={label} className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white text-[13.5px] font-semibold px-4 py-2.5">
-                <Icon size={16} className="text-[#5b86ff]" aria-hidden="true" />
-                {label}
-              </span>
-            ))}
+          {/* Feature image with overlaid meta + share */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
+            <Image
+              src={HERO_IMG}
+              alt="Container ship loaded with cargo bound from the UK to Nigeria"
+              fill
+              priority
+              sizes="(max-width: 940px) 100vw, 940px"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
+
+            {/* Meta — bottom left */}
+            <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-8 flex gap-8 sm:gap-10">
+              <div>
+                <p className="text-white/65 text-[11px] font-medium mb-1">Written by</p>
+                <p className="text-white text-[14px] font-bold">R-Zone Cargo Team</p>
+              </div>
+              <div>
+                <p className="text-white/65 text-[11px] font-medium mb-1">Published on</p>
+                <p className="text-white text-[14px] font-bold">24 July 2026</p>
+              </div>
+            </div>
+
+            {/* Share — bottom right */}
+            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8">
+              <ShareRow url={PAGE_URL} title={TITLE} />
+            </div>
           </div>
 
-          <CTAButtons light />
+          {/* Price pills + CTA under the image */}
+          <div className="flex flex-col gap-6 mt-8">
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                [Ship, "Sea from £3/kg"],
+                [Plane, "Air from £5/kg"],
+                [Truck, "Door to door from £6/kg"],
+              ].map(([Icon, label]) => (
+                <span key={label} className="inline-flex items-center gap-2 bg-[#0818A8]/6 border border-[#0818A8]/15 text-[#0818A8] text-[13.5px] font-semibold px-4 py-2.5">
+                  <Icon size={16} aria-hidden="true" />
+                  {label}
+                </span>
+              ))}
+            </div>
+            <CTAButtons />
+          </div>
         </div>
       </section>
 
