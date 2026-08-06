@@ -283,7 +283,7 @@ export default function Page() {
               </div>
               <div>
                 <p className="text-white/65 text-[11px] font-medium mb-1">Published on</p>
-                <p className="text-white text-[14px] font-bold">6 August 2026</p>
+                <p className="text-white text-[14px] font-bold">24 July 2026</p>
               </div>
             </div>
 
