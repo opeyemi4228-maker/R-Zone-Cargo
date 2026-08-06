@@ -81,6 +81,7 @@ const COMPANY = [
 
 const QUICK = [
  { label: "Cargo from UK to Nigeria", href: "/cargo-from-uk-to-nigeria" },
+ { label: "Car Shipping to Nigeria", href: "/blog/car-shipping-uk-to-nigeria" },
  { label: "Request a Quote", href: "/quote" },
  { label: "Track Shipment", href: "/track" },
  { label: "Weekly Sailing Schedule", href: "/schedulesprices#schedules" },

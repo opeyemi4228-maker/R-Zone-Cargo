@@ -101,8 +101,8 @@ const TESTIMONIALS = [
  avatar: "BO",
  date: "1 year ago",
  stars: 5,
- short: "Highly coordinated with swift and organized delivery.",
- text: "Rzone as a Company is highly coordinated and I'm always impressed by their swift delivery services. Through their organized timetable, u get to have an insight of when your goods will arrive. I highly recommend.",
+ short: "Highly coordinated with swift and organised delivery.",
+ text: "Rzone as a Company is highly coordinated and I'm always impressed by their swift delivery services. Through their organised timetable, u get to have an insight of when your goods will arrive. I highly recommend.",
  },
  {
  id: 11,
