@@ -83,7 +83,7 @@ export const metadata = {
 const FAQS = [
   {
     q: "How much does it cost to ship a car from the UK to Nigeria?",
-    a: "Car shipping from the UK to Nigeria starts from around £650 by RORO for a standard saloon and from around £1,300 for shared-container shipping. Larger vehicles such as 4x4s, SUVs and vans cost more. These are indicative 2026 prices; your exact cost depends on the car, the UK collection point, the destination port and the season, so ask R-Zone for a free quote.",
+    a: "Car shipping from the UK to Nigeria starts from around £960 by RORO for a standard saloon and from around £1,800 for shared-container shipping. Larger vehicles such as 4x4s, SUVs and vans cost more. These are indicative 2026 prices; your exact cost depends on the car, the UK collection point, the destination port and the season, so ask R-Zone for a free quote.",
   },
   {
     q: "What is the maximum age of car I can import into Nigeria?",
@@ -102,8 +102,12 @@ const FAQS = [
     a: "Shipping a car from the UK to Nigeria takes about 4 to 6 weeks by RORO and 5 to 7 weeks by container, including the sailing to Lagos and Nigeria customs clearance. R-Zone runs regular sailings so your car joins the next available departure.",
   },
   {
+    q: "Do I need an MOT to ship my car to Nigeria?",
+    a: "Yes. All vehicles shipped to Nigeria must now have a valid roadworthiness certificate, which for a UK car means a current MOT, at the point of shipment. We cannot load a car without one, so make sure the MOT is in date before your collection or drop-off date.",
+  },
+  {
     q: "What documents do I need to ship my car?",
-    a: "You will need the V5C logbook (proof of ownership), photo ID, and the car keys. For clearance in Nigeria the recipient needs valid ID and their Tax Identification Number. R-Zone prepares the export and shipping documentation and guides you through the Nigerian requirements.",
+    a: "You will need a valid roadworthiness certificate (a current MOT), the V5C logbook (proof of ownership), photo ID, and the car keys. For clearance in Nigeria the recipient needs valid ID and their Tax Identification Number. R-Zone prepares the export and shipping documentation and guides you through the Nigerian requirements.",
   },
   {
     q: "Can I put belongings inside the car?",
@@ -192,9 +196,9 @@ function H2({ id, eyebrow, children }) {
 }
 
 const METHODS = [
-  { icon: Ship, name: "RORO Shipping", price: "From £650", transit: "4 to 6 weeks", href: "/quote",
+  { icon: Ship, name: "RORO Shipping", price: "From £960", transit: "4 to 6 weeks", href: "/quote",
     points: ["Cheapest way to ship a running car", "Car is driven on and off the vessel", "Ideal for a single saloon or hatchback"] },
-  { icon: Package, name: "Container Shipping", price: "From £1,300", transit: "5 to 7 weeks", href: "/quote",
+  { icon: Package, name: "Container Shipping", price: "From £1,800", transit: "5 to 7 weeks", href: "/quote",
     points: ["Extra security and weather protection", "Suits non-running or high-value cars", "Ship personal effects inside (customs rules apply)"] },
   { icon: Truck, name: "Door to Door Add-on", price: "On request", transit: "Air or sea", href: "/quote",
     points: ["We collect the car from your UK address", "Delivery to the recipient in Nigeria", "Full customs clearance handled for you"] },
@@ -231,7 +235,7 @@ export default function Page() {
           </h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
             Ship your car from the UK to Nigeria by RORO or container from around{" "}
-            <strong className="font-semibold text-gray-700">£650</strong>. Indicative prices, the
+            <strong className="font-semibold text-gray-700">£960</strong>. Indicative prices, the
             15-year import age limit, customs duty and the full process, explained.
           </p>
 
@@ -275,9 +279,9 @@ export default function Page() {
             </thead>
             <tbody className="text-[15px] text-gray-800">
               {[
-                [Ship, "RORO (saloon / hatchback)", "£650", "4 to 6 weeks", "Cheapest for a single running car"],
-                [Ship, "RORO (4x4 / SUV / van)", "£900", "4 to 6 weeks", "Larger running vehicles"],
-                [Package, "Shared container", "£1,300", "5 to 7 weeks", "Extra security plus personal effects"],
+                [Ship, "RORO (saloon / hatchback)", "£960", "4 to 6 weeks", "Cheapest for a single running car"],
+                [Ship, "RORO (4x4 / SUV / van)", "£1,280", "4 to 6 weeks", "Larger running vehicles"],
+                [Package, "Shared container", "£1,800", "5 to 7 weeks", "Extra security plus personal effects"],
                 [Package, "Sole-use container", "On request", "5 to 7 weeks", "Multiple cars or high-value vehicles"],
               ].map(([Icon, name, price, transit, best], i) => (
                 <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
@@ -350,9 +354,17 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <p className="text-gray-600 text-[14px] leading-relaxed mt-6 max-w-3xl">
-          You will need the <strong className="text-gray-900">V5C logbook</strong>, photo ID and the
-          car keys to ship. R-Zone prepares the export and shipping paperwork and guides the
+        <div className="mt-6 max-w-3xl border-l-[4px] border-[#0818A8] bg-[#0818A8]/[0.04] p-5">
+          <p className="text-gray-800 text-[14.5px] leading-relaxed">
+            <strong className="text-gray-900">New requirement:</strong> all vehicles shipped to
+            Nigeria must now have a valid roadworthiness certificate (a current{" "}
+            <strong className="text-gray-900">MOT</strong>) at the point of shipment. We cannot load
+            a car without one.
+          </p>
+        </div>
+        <p className="text-gray-600 text-[14px] leading-relaxed mt-5 max-w-3xl">
+          You will also need the <strong className="text-gray-900">V5C logbook</strong>, photo ID
+          and the car keys to ship. R-Zone prepares the export and shipping paperwork and guides the
           recipient through the Nigerian clearance requirements.
         </p>
       </section>
@@ -414,7 +426,7 @@ export default function Page() {
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ready to ship your car?</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get your free UK to Nigeria car shipping quote</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
-            RORO from £650, container from £1,300, regular sailings and our own clearing team in
+            RORO from £960, container from £1,800, regular sailings and our own clearing team in
             Lagos. Send us your car&apos;s make, model and year and we will confirm eligibility and a
             firm price the same day.
           </p>
