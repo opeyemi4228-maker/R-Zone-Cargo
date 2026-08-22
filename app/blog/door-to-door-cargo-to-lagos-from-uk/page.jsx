@@ -13,6 +13,7 @@ import {
   Check, ArrowRight, PhoneCall, MessageCircle, MapPin,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
+import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["300","400","500","600","700","800","900"], display: "swap" });
@@ -26,12 +27,12 @@ const TITLE = "Door to Door Cargo to Lagos from the UK 2026: Prices & Times | R-
 const DESCRIPTION = "Door to door cargo to Lagos from the UK from £6/kg. We collect from your UK address and deliver to any door in Lagos. Air 5 to 10 days, sea 4 to 6 weeks. Free same-day quote from R-Zone.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: ["door to door cargo to Lagos","door to door shipping to Lagos from UK","cargo to Lagos from UK","send cargo to Lagos door to door","UK to Lagos door to door delivery","shipping to Lagos from UK","Lagos cargo delivery UK"],
   alternates: { canonical: PAGE_URL },
-  openGraph: { type: "article", url: PAGE_URL, title: { absolute: TITLE }, description: DESCRIPTION, siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Cargo delivered door to door in Lagos after shipping from the UK" }] },
-  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: TITLE }, description: DESCRIPTION, images: [HERO_IMG] },
+  openGraph: { type: "article", url: PAGE_URL, title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Cargo delivered door to door in Lagos after shipping from the UK" }] },
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
@@ -44,7 +45,7 @@ const FAQS = [
 ];
 
 const schemas = [
-  { "@context": "https://schema.org", "@type": "Article", "@id": `${PAGE_URL}#article`, headline: TITLE, description: DESCRIPTION, image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 }, datePublished: "2026-08-22", dateModified: "2026-08-22", author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` }, publisher: ORGANIZATION_SCHEMA, mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL }, inLanguage: "en-GB" },
+  { "@context": "https://schema.org", "@type": "Article", "@id": `${PAGE_URL}#article`, headline: freshYear(TITLE), description: freshYear(DESCRIPTION), image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 }, datePublished: "2026-08-22", dateModified: "2026-08-22", author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` }, publisher: ORGANIZATION_SCHEMA, mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL }, inLanguage: "en-GB" },
   { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: "Door to Door Cargo to Lagos from the UK", item: PAGE_URL } ] },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
@@ -95,7 +96,7 @@ export default function Page() {
       {/* HERO */}
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">Door to Door Cargo to Lagos from the UK in 2026: Prices, Times and How It Works</h1>
+          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">Door to Door Cargo to Lagos from the UK in {CURRENT_YEAR}: Prices, Times and How It Works</h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Sending to Lagos? Door to door cargo from the UK from <strong className="font-semibold text-gray-700">£6/kg</strong>, collected from your address and delivered to any door in Lagos. Here are the prices, transit times and how it works.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="Cargo delivered door to door in Lagos after shipping from the UK" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />

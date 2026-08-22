@@ -31,6 +31,7 @@ import {
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
+import { freshYear } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({
@@ -51,8 +52,8 @@ const DESCRIPTION =
   "Ship your car from the UK to Nigeria by RORO or container. Indicative 2026 prices, the 15-year import age limit, Nigeria customs duty, transit times to Lagos and the full process explained. Free same-day quote from R-Zone.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: [
     "car shipping from UK to Nigeria",
     "car shipping UK to Nigeria",
@@ -70,13 +71,13 @@ export const metadata = {
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: TITLE,
-    description: DESCRIPTION,
+    title: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     siteName: "R-Zone Enterprises",
     locale: "en_GB",
     images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Car being prepared for shipping from the UK to Nigeria" }],
   },
-  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: TITLE, description: DESCRIPTION, images: [HERO_IMG] },
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: freshYear(TITLE), description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
@@ -122,7 +123,7 @@ const schemas = [
     "@id": `${PAGE_URL}#service`,
     serviceType: "Car shipping from the UK to Nigeria",
     name: "Car Shipping from UK to Nigeria",
-    description: DESCRIPTION,
+    description: freshYear(DESCRIPTION),
     provider: ORGANIZATION_SCHEMA,
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -156,8 +157,8 @@ const schemas = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}#article`,
-    headline: TITLE,
-    description: DESCRIPTION,
+    headline: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 },
     datePublished: "2026-08-06",
     dateModified: "2026-08-06",

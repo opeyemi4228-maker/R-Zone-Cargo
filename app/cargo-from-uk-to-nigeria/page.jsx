@@ -30,6 +30,7 @@ import {
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../lib/articles";
+import { freshYear } from "../../lib/year";
 import ShareRow from "./ShareRow";
 
 const montserrat = Montserrat({
@@ -50,8 +51,8 @@ const DESCRIPTION =
   "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 107+ five star reviews. Free same day quote.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: [
     "cargo from UK to Nigeria",
     "cargo to Nigeria from UK",
@@ -70,8 +71,8 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: TITLE,
-    description: DESCRIPTION,
+    title: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     siteName: "R-Zone Enterprises",
     locale: "en_GB",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Cargo from UK to Nigeria, R-Zone Enterprises" }],
@@ -79,8 +80,8 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@RZoneCargo",
-    title: TITLE,
-    description: DESCRIPTION,
+    title: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     images: ["/og-image.jpg"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
@@ -120,7 +121,7 @@ const schemas = [
     "@id": `${PAGE_URL}#service`,
     serviceType: "Cargo shipping from the UK to Nigeria",
     name: "Cargo from UK to Nigeria",
-    description: DESCRIPTION,
+    description: freshYear(DESCRIPTION),
     provider: ORGANIZATION_SCHEMA,
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -163,8 +164,8 @@ const schemas = [
     "@type": "WebPage",
     "@id": `${PAGE_URL}#webpage`,
     url: PAGE_URL,
-    name: TITLE,
-    description: DESCRIPTION,
+    name: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
   },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },

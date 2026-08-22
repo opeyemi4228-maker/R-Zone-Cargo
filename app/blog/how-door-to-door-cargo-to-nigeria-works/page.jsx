@@ -29,6 +29,7 @@ import {
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
+import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({
@@ -49,8 +50,8 @@ const DESCRIPTION =
   "How does door to door cargo to Nigeria work? Step by step from UK collection to Nigerian doorstep delivery in 2026, with transit times, customs and prices from £6/kg. Free same-day quote from R-Zone.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: [
     "how door to door cargo to Nigeria works",
     "door to door cargo to Nigeria process",
@@ -63,13 +64,13 @@ export const metadata = {
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: { absolute: TITLE },
-    description: DESCRIPTION,
+    title: { absolute: freshYear(TITLE) },
+    description: freshYear(DESCRIPTION),
     siteName: "R-Zone Enterprises",
     locale: "en_GB",
     images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Courier collecting a parcel for door to door shipping from the UK to Nigeria" }],
   },
-  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: TITLE }, description: DESCRIPTION, images: [HERO_IMG] },
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
@@ -101,8 +102,8 @@ const schemas = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}#article`,
-    headline: TITLE,
-    description: DESCRIPTION,
+    headline: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 },
     datePublished: "2026-08-17",
     dateModified: "2026-08-17",
@@ -193,7 +194,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
-            How Door to Door Cargo to Nigeria Works in 2026: From Collection to Delivery
+            How Door to Door Cargo to Nigeria Works in {CURRENT_YEAR}: From Collection to Delivery
           </h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
             No depot visits, no customs queues. Here is exactly how door to door cargo to Nigeria

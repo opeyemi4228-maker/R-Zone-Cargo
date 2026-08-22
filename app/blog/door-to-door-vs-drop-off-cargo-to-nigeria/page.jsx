@@ -29,6 +29,7 @@ import {
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
+import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({
@@ -49,8 +50,8 @@ const DESCRIPTION =
   "Door to door or drop-off cargo to Nigeria in 2026? We compare the real cost, convenience and speed so you can choose. Door to door from £6/kg with UK collection and delivery to any door in Nigeria. Free same-day quote.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: [
     "door to door vs drop off cargo Nigeria",
     "door to door cargo to Nigeria",
@@ -64,13 +65,13 @@ export const metadata = {
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    title: { absolute: TITLE },
-    description: DESCRIPTION,
+    title: { absolute: freshYear(TITLE) },
+    description: freshYear(DESCRIPTION),
     siteName: "R-Zone Enterprises",
     locale: "en_GB",
     images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Cargo boxes packed for door to door shipping from the UK to Nigeria" }],
   },
-  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: TITLE }, description: DESCRIPTION, images: [HERO_IMG] },
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
@@ -102,8 +103,8 @@ const schemas = [
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}#article`,
-    headline: TITLE,
-    description: DESCRIPTION,
+    headline: freshYear(TITLE),
+    description: freshYear(DESCRIPTION),
     image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 },
     datePublished: "2026-08-17",
     dateModified: "2026-08-17",
@@ -131,7 +132,7 @@ const schemas = [
     "@type": "WebPage",
     "@id": `${PAGE_URL}#webpage`,
     url: PAGE_URL,
-    name: TITLE,
+    name: freshYear(TITLE),
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
   },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
@@ -199,7 +200,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
-            Door to Door vs Drop-Off Cargo to Nigeria: Which Is Cheaper and Better in 2026?
+            Door to Door vs Drop-Off Cargo to Nigeria: Which Is Cheaper and Better in {CURRENT_YEAR}?
           </h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
             Drop-off looks cheaper on paper, but door to door often wins once you count the hidden

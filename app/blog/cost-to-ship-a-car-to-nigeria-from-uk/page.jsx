@@ -14,6 +14,7 @@ import {
   Check, ArrowRight, PhoneCall, MessageCircle, MapPin,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
+import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["300","400","500","600","700","800","900"], display: "swap" });
@@ -27,12 +28,12 @@ const TITLE = "How Much to Ship a Car to Nigeria from the UK? 2026 Prices | R-Zo
 const DESCRIPTION = "How much does it cost to ship a car to Nigeria from the UK in 2026? RORO from £960, container from £1,800, plus customs duty, the 15-year age limit and MOT rule explained. Free quote from R-Zone.";
 
 export const metadata = {
-  title: { absolute: TITLE },
-  description: DESCRIPTION,
+  title: { absolute: freshYear(TITLE) },
+  description: freshYear(DESCRIPTION),
   keywords: ["cost to ship a car to Nigeria","how much to ship a car to Nigeria from UK","car shipping cost UK to Nigeria","RORO car shipping price Nigeria","container car shipping cost Nigeria","ship a car to Lagos cost","Nigeria car import duty cost"],
   alternates: { canonical: PAGE_URL },
-  openGraph: { type: "article", url: PAGE_URL, title: { absolute: TITLE }, description: DESCRIPTION, siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "A car being prepared for shipping from the UK to Nigeria" }] },
-  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: TITLE }, description: DESCRIPTION, images: [HERO_IMG] },
+  openGraph: { type: "article", url: PAGE_URL, title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "A car being prepared for shipping from the UK to Nigeria" }] },
+  twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
@@ -45,7 +46,7 @@ const FAQS = [
 ];
 
 const schemas = [
-  { "@context": "https://schema.org", "@type": "Article", "@id": `${PAGE_URL}#article`, headline: TITLE, description: DESCRIPTION, image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 }, datePublished: "2026-08-22", dateModified: "2026-08-22", author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` }, publisher: ORGANIZATION_SCHEMA, mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL }, inLanguage: "en-GB" },
+  { "@context": "https://schema.org", "@type": "Article", "@id": `${PAGE_URL}#article`, headline: freshYear(TITLE), description: freshYear(DESCRIPTION), image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 }, datePublished: "2026-08-22", dateModified: "2026-08-22", author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` }, publisher: ORGANIZATION_SCHEMA, mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL }, inLanguage: "en-GB" },
   { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: "Cost to Ship a Car to Nigeria from the UK", item: PAGE_URL } ] },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
@@ -92,7 +93,7 @@ export default function Page() {
       {/* HERO */}
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">How Much Does It Cost to Ship a Car to Nigeria from the UK in 2026?</h1>
+          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">How Much Does It Cost to Ship a Car to Nigeria from the UK in {CURRENT_YEAR}?</h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">RORO from <strong className="font-semibold text-gray-700">£960</strong>, container from £1,800, plus customs duty on arrival. Here is the full 2026 cost of shipping a car to Nigeria, including the age limit and the new MOT rule.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="A car being prepared for shipping from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
