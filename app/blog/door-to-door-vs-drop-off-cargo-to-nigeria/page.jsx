@@ -125,7 +125,7 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    mainEntity: FAQS.map((f) => ({ "@type": "Question", name: freshYear(f.q), acceptedAnswer: { "@type": "Answer", text: freshYear(f.a) } })),
   },
   {
     "@context": "https://schema.org",
@@ -368,14 +368,14 @@ export default function Page() {
           <H2 id="faq" eyebrow="Everything you need to know">Door to Door vs Drop-Off FAQs</H2>
           <div className="space-y-3 mt-2">
             {FAQS.map((f) => (
-              <details key={f.q} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
+              <details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
                 <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{f.q}</h3>
+                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3>
                   <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg>
                   </span>
                 </summary>
-                <p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{f.a}</p>
+                <p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{freshYear(f.a)}</p>
               </details>
             ))}
           </div>

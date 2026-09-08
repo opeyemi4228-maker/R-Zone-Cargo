@@ -31,7 +31,7 @@ import {
   Globe,
 } from "lucide-react";
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
-import { freshYear } from "../../../lib/year";
+import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
 
 const montserrat = Montserrat({
@@ -149,8 +149,8 @@ const schemas = [
     "@type": "FAQPage",
     mainEntity: FAQS.map((f) => ({
       "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      name: freshYear(f.q),
+      acceptedAnswer: { "@type": "Answer", text: freshYear(f.a) },
     })),
   },
   {
@@ -262,7 +262,7 @@ export default function Page() {
 
       {/* ── PRICES ────────────────────────────────────────────────────────── */}
       <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <H2 id="prices" eyebrow="Indicative 2026 rates">Car Shipping Prices from the UK to Nigeria</H2>
+        <H2 id="prices" eyebrow={`Indicative ${CURRENT_YEAR} rates`}>Car Shipping Prices from the UK to Nigeria</H2>
         <p className="text-gray-700 text-[16.5px] leading-[1.85] mb-8 max-w-3xl">
           The cost of shipping a car from the UK to Nigeria depends on the method, the size of the
           car and the destination port. RORO is the most affordable option for a single running
@@ -337,7 +337,7 @@ export default function Page() {
             <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">The 15-Year Age Limit</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">
               Nigeria does not allow the import of cars older than <strong>15 years from their year
-              of manufacture</strong>. In 2026 that generally means cars made in 2011 or earlier
+              of manufacture</strong>. In {CURRENT_YEAR} that generally means cars made in {CURRENT_YEAR - 15} or earlier
               cannot be imported. Rules can shift with ECOWAS and national policy, so we confirm
               your car&apos;s eligibility before you book, and never ship a car that would be turned
               away at the port.
@@ -406,14 +406,14 @@ export default function Page() {
           <H2 id="faq" eyebrow="Everything you need to know">Car Shipping to Nigeria FAQs</H2>
           <div className="space-y-3 mt-2">
             {FAQS.map((f) => (
-              <details key={f.q} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
+              <details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
                 <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{f.q}</h3>
+                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3>
                   <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg>
                   </span>
                 </summary>
-                <p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{f.a}</p>
+                <p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{freshYear(f.a)}</p>
               </details>
             ))}
           </div>

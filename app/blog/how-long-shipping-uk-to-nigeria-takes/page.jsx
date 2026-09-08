@@ -47,7 +47,7 @@ const FAQS = [
 const schemas = [
   { "@context": "https://schema.org", "@type": "Article", "@id": `${PAGE_URL}#article`, headline: freshYear(TITLE), description: freshYear(DESCRIPTION), image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 }, datePublished: "2026-08-22", dateModified: "2026-08-22", author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` }, publisher: ORGANIZATION_SCHEMA, mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL }, inLanguage: "en-GB" },
   { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: "How Long Does Shipping from the UK to Nigeria Take", item: PAGE_URL } ] },
-  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: freshYear(f.q), acceptedAnswer: { "@type": "Answer", text: freshYear(f.a) } })) },
   { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
 ];
 
@@ -101,7 +101,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">How Long Does Shipping from the UK to Nigeria Take in {CURRENT_YEAR}?</h1>
-          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Air freight in <strong className="font-semibold text-gray-700">5 to 10 working days</strong>, sea freight in 4 to 6 weeks. Here are the real 2026 transit times, what affects them, and how to make sure your cargo arrives on time.</p>
+          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Air freight in <strong className="font-semibold text-gray-700">5 to 10 working days</strong>, sea freight in 4 to 6 weeks. Here are the real {CURRENT_YEAR} transit times, what affects them, and how to make sure your cargo arrives on time.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="Cargo aircraft representing air freight transit time from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
@@ -116,7 +116,7 @@ export default function Page() {
 
       {/* TRANSIT TABLE */}
       <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-        <H2 id="transit-times" eyebrow="At a glance">UK to Nigeria Transit Times (2026)</H2>
+        <H2 id="transit-times" eyebrow="At a glance">UK to Nigeria Transit Times ({CURRENT_YEAR})</H2>
         <p className="text-gray-700 text-[16.5px] leading-[1.85] mb-8 max-w-3xl">These windows include everything: UK handling, the journey to Lagos, Nigeria customs clearance and final delivery. R-Zone runs weekly departures, so cargo joins the next available service.</p>
         <div className="overflow-x-auto border border-gray-200">
           <table className="w-full text-left border-collapse min-w-[560px]">
@@ -165,7 +165,7 @@ export default function Page() {
       <section className="max-w-[860px] mx-auto px-5 sm:px-8 py-16 md:py-20">
         <H2 id="faq" eyebrow="Everything you need to know">Transit Time FAQs</H2>
         <div className="space-y-3 mt-2">
-          {FAQS.map((f)=>(<details key={f.q} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors"><summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none"><h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{f.q}</h3><span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg></span></summary><p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{f.a}</p></details>))}
+          {FAQS.map((f)=>(<details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors"><summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none"><h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3><span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg></span></summary><p className="px-5 pb-5 text-gray-600 text-[15px] leading-relaxed">{freshYear(f.a)}</p></details>))}
         </div>
       </section>
 
