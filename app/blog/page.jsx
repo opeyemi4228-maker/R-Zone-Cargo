@@ -247,7 +247,7 @@ export default function BlogPage() {
  <p>
  Expert shipping guides, customs tips, industry news and logistics
  insights for UK Nigeria cargo shippers. R-Zone Cargo the UK's
- highest-rated Nigeria shipping company with 107+ five-star Google
+ highest-rated Nigeria shipping company with 120+ five-star Google
  reviews.
  </p>
 

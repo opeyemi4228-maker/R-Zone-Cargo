@@ -78,7 +78,7 @@ const STEPS = [
 ];
 
 const WHY = [
-  [Award, "12+ years of experience", "Delivering to Lagos since 2012, with 50,000+ shipments and 107+ five-star reviews."],
+  [Award, "12+ years of experience", "Delivering to Lagos since 2012, with 50,000+ shipments and 120+ five-star reviews."],
   [ShieldCheck, "Own team in Lagos", "We clear customs at Apapa and Tin Can Island ourselves, so cargo keeps moving."],
   [PoundSterling, "Transparent pricing", "From £6/kg all inclusive, with no hidden fees. The price we quote is the price you pay."],
   [Zap, "Weekly departures", "Air and sea services to Lagos every week, so your cargo never waits long."],

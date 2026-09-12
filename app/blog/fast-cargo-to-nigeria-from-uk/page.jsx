@@ -80,7 +80,7 @@ const WHY = [
   [Zap, "5 to 10 working days", "Express air freight is the fastest route to Nigeria, with weekly flights from Heathrow, Gatwick and Manchester."],
   [ShieldCheck, "Own clearing team in Lagos", "We clear customs on arrival so your cargo is not left waiting at the airport."],
   [Clock, "Same-day booking", "Tell us your deadline and we will route your cargo on the fastest available service."],
-  [Award, "12+ years of experience", "50,000+ shipments delivered since 2012, with 107+ five-star reviews."],
+  [Award, "12+ years of experience", "50,000+ shipments delivered since 2012, with 120+ five-star reviews."],
 ];
 
 export default function Page() {

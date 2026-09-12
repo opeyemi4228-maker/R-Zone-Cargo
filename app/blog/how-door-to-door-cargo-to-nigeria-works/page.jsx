@@ -180,7 +180,7 @@ const WHY = [
   [PoundSterling, "Transparent pricing", "From £6/kg all inclusive, with no hidden fees. The price we quote is the price you pay."],
   [Zap, "Weekly departures", "Your cargo joins the next available air or sea service, with no long waits."],
   [Globe, "Every state in Nigeria", "Lagos, Abuja, Port Harcourt, Ibadan, Kano and beyond, delivered to the door."],
-  [ShieldCheck, "107+ five-star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
+  [ShieldCheck, "120+ five-star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
 ];
 
 export default function Page() {
@@ -228,7 +228,7 @@ export default function Page() {
           next time anyone touches it is the recipient at their door. R-Zone collects from your UK
           address, handles export paperwork, ships by air or sea, clears Nigeria customs with our
           own Lagos team, and delivers to the door. We have run door to door UK to Nigeria cargo
-          since 2012, with 50,000+ shipments delivered and 107+ five-star reviews.
+          since 2012, with 50,000+ shipments delivered and 120+ five-star reviews.
         </p>
       </section>
 

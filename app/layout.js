@@ -93,7 +93,7 @@ export const metadata = {
  locale: "en_GB",
  title: "R-Zone Enterprises | Door to Door Cargo to Nigeria from UK",
  description:
- "Shipping services to Nigeria by air freight and sea freight. Door to door cargo, car shipping, and importation from Nigeria. Over 10 years experience. 100+ 5-star reviews.",
+ "Shipping services to Nigeria by air freight and sea freight. Door to door cargo, car shipping, and importation from Nigeria. Over 12 years experience. 120+ 5-star reviews.",
  images: [
  {
  url: "/og-image.jpg", // Place a 1200×630 image at /public/og-image.jpg
@@ -368,7 +368,7 @@ export default function RootLayout({ children }) {
  "aggregateRating": {
  "@type": "AggregateRating",
  "ratingValue": "5",
- "reviewCount": "100",
+ "reviewCount": "120",
  "bestRating": "5",
  "worstRating": "1",
  },

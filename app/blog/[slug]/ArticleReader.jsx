@@ -597,7 +597,7 @@ export default function ArticleReader({ article, related }) {
  </h3>
  <p className="text-white/70 text-[13px] font-normal mb-7 max-w-lg leading-relaxed">
  Air from £5/kg · Sea from £3/kg · Weekly departures · Same-day
- response · 107+ five-star reviews · #1 on Google.
+ response · 120+ five-star reviews · #1 on Google.
  </p>
  <div className="flex flex-wrap gap-3">
  <Link

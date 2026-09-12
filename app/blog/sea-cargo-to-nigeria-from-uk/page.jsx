@@ -80,7 +80,7 @@ const WHY = [
   [PoundSterling, "Cheapest for big loads", "From £3/kg, sea is the most economical way to move large or heavy cargo to Nigeria."],
   [ShieldCheck, "Own team in Lagos", "We clear customs at Apapa and Tin Can Island ourselves, so your container is not stuck at the port."],
   [Zap, "Weekly sailings", "Your cargo joins the next sailing, not a queue, so it never waits long to depart."],
-  [Award, "12+ years of experience", "50,000+ shipments delivered since 2012, with 107+ five-star reviews."],
+  [Award, "12+ years of experience", "50,000+ shipments delivered since 2012, with 120+ five-star reviews."],
 ];
 
 export default function Page() {

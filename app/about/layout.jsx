@@ -7,12 +7,12 @@
 export const metadata = {
   title: { absolute: "About R-Zone Enterprises | UK to Nigeria Cargo Since 2012" },
   description:
-    "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 107+ five-star reviews. Air, sea and door to door freight.",
+    "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 120+ five-star reviews. Air, sea and door to door freight.",
   alternates: { canonical: "https://r-zoneenterprises.com/about" },
   openGraph: {
     title: "About R-Zone Enterprises | UK to Nigeria Cargo Since 2012",
     description:
-      "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 107+ five-star reviews. Air, sea and door to door freight.",
+      "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 120+ five-star reviews. Air, sea and door to door freight.",
     url: "https://r-zoneenterprises.com/about",
     siteName: "R-Zone Enterprises",
   },

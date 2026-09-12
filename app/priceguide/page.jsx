@@ -344,7 +344,7 @@ function CTABox() {
  Get a free UK Nigeria cargo quote from R-Zone.
  </h3>
  <p className="text-white/70 text-[13px] font-normal mb-7 max-w-xl leading-relaxed">
- Air from £5/kg · Sea from £2/kg · Weekly departures · Same-day response · 107+ five-star reviews · #1 on Google.
+ Air from £5/kg · Sea from £2/kg · Weekly departures · Same-day response · 120+ five-star reviews · #1 on Google.
  </p>
  <div className="flex flex-wrap gap-3">
  <a href="https://r-zoneenterprises.com/quote" target="_blank" rel="noopener noreferrer"

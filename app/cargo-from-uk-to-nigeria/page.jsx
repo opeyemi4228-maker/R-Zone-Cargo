@@ -48,7 +48,7 @@ const HERO_IMG =
 const TITLE =
   "Cargo from UK to Nigeria 2026 | Door to Door, Air & Sea Freight from £3/kg";
 const DESCRIPTION =
-  "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 107+ five star reviews. Free same day quote.";
+  "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 120+ five star reviews. Free same day quote.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },
@@ -236,7 +236,7 @@ const WHY = [
   [PoundSterling, "Transparent, cheap prices", "All inclusive rates from £3/kg. The price we quote is the price you pay, with no hidden fees."],
   [Zap, "Weekly air and sea departures", "Your cargo never waits. It joins the next available flight or sailing."],
   [ShieldCheck, "Own teams in UK and Lagos", "We control collection, customs clearance and delivery from end to end."],
-  [Star, "107+ five star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
+  [Star, "120+ five star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
   [Globe, "Every state in Nigeria", "Delivery to Lagos, Abuja, Port Harcourt, Ibadan, Kano and beyond."],
 ];
 
@@ -470,7 +470,7 @@ export default function Page() {
           </h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
             Sea from £3/kg, air from £5/kg, door to door from £6/kg. Weekly departures, same day
-            response and 107+ five star reviews. Tell us what you are sending and we will give you
+            response and 120+ five star reviews. Tell us what you are sending and we will give you
             the cheapest way to get it to Nigeria.
           </p>
           <CTAButtons light />

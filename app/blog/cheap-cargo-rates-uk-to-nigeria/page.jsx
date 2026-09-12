@@ -77,7 +77,7 @@ const TIPS = [
 
 const WHY = [
   [PoundSterling, "Transparent, all-inclusive", "No hidden handling fees, fuel surcharges or surprise charges. The price we quote is the price you pay."],
-  [Award, "12+ years of experience", "Shipping UK to Nigeria cargo since 2012, with 50,000+ shipments and 107+ five-star reviews."],
+  [Award, "12+ years of experience", "Shipping UK to Nigeria cargo since 2012, with 50,000+ shipments and 120+ five-star reviews."],
   [ShieldCheck, "Own team in Lagos", "We clear customs ourselves, so cheap rates still mean your cargo is not stuck at the port."],
   [Zap, "Weekly departures", "Air and sea services every week, so your cargo never waits long for the next service."],
 ];
