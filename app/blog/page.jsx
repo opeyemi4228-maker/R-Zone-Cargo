@@ -27,13 +27,14 @@ import {
  TWITTER_HANDLE,
 } from "../../lib/articles";
 import BlogList from "./BlogList";
+import { freshYear } from "@/lib/year";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // METADATA
 // ─────────────────────────────────────────────────────────────────────────────
 export const metadata = {
  // ── Primary SEO ────────────────────────────────────────────────────────────
- title: "UK to Nigeria Shipping Blog 2026: Guides, Tips & News | R-Zone Cargo",
+ title: { absolute: freshYear("UK to Nigeria Shipping Blog 2026: Guides, Tips & News | R-Zone Cargo") },
  description:
  "Expert shipping guides, customs tips, industry news and logistics insights for UK Nigeria cargo. Air freight, sea freight, NAFDAC, Apapa port and more R-Zone Cargo blog.",
  keywords: [
@@ -58,7 +59,7 @@ export const metadata = {
  openGraph: {
  type: "website",
  url: `${SITE_URL}/blog`,
- title: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
+ title: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
  description:
  "Expert guides, customs tips and logistics news for UK Nigeria cargo shippers. Trusted by 10,000+ customers. R-Zone Cargo the UK's #1 Nigeria shipping company.",
  siteName: SITE_NAME,
@@ -77,7 +78,7 @@ export const metadata = {
  card: "summary_large_image",
  site: TWITTER_HANDLE,
  creator: TWITTER_HANDLE,
- title: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
+ title: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
  description:
  "Expert guides, customs tips and logistics news for UK Nigeria shippers. R-Zone Cargo.",
  images: [DEFAULT_OG_IMAGE],
@@ -108,7 +109,7 @@ function buildBlogPageSchemas(articles) {
  "@type": "WebPage",
  "@id": `${SITE_URL}/blog#webpage`,
  url: `${SITE_URL}/blog`,
- name: "UK to Nigeria Shipping Blog 2026 | R-Zone Cargo",
+ name: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
  description:
  "Expert shipping guides, customs tips and logistics insights for UK Nigeria cargo shippers.",
  isPartOf: {
@@ -226,76 +227,6 @@ export default function BlogPage() {
  dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
  />
  ))}
-
- {/* ── Server-Rendered SEO Content ──────────────────────────────────────── */}
- {/* Fully crawlable HTML Googlebot reads every article title, excerpt */}
- {/* and link even with JavaScript disabled. Hidden visually. */}
- <div
- aria-hidden="true"
- style={{
- position: "absolute",
- width: "1px",
- height: "1px",
- overflow: "hidden",
- clip: "rect(0,0,0,0)",
- whiteSpace: "nowrap",
- }}
- >
- {/* Page H1 primary keyword signal for the /blog page */}
- <h1>UK to Nigeria Shipping Blog Guides, Tips &amp; News 2026</h1>
-
- <p>
- Expert shipping guides, customs tips, industry news and logistics
- insights for UK Nigeria cargo shippers. R-Zone Cargo the UK's
- highest-rated Nigeria shipping company with 120+ five-star Google
- reviews.
- </p>
-
- {/* Category navigation internal links to filtered views */}
- <nav aria-label="Blog categories">
- <p>Browse by topic:</p>
- {CATEGORIES.filter((c) => c.id !== "all").map((cat) => (
- <a key={cat.id} href={`${SITE_URL}/blog?category=${cat.id}`}>
- {cat.label}
- </a>
- ))}
- </nav>
-
- {/* Full article list every article is a real link at /blog/{slug} */}
- {/* This is the key difference from the old hash URL system. */}
- <nav aria-label="All blog articles">
- <p>
- All {articles.length} UK Nigeria shipping articles from R-Zone
- Cargo:
- </p>
- {articles.map((article) => (
- <article key={article.id}>
- <h2>
- <a href={`${SITE_URL}/blog/${article.slug}`}>
- {article.title}
- </a>
- </h2>
- <p>
- {article.author} · {article.date} · {article.readTime}
- </p>
- <p>{article.metaDesc || article.excerpt}</p>
- <p>Topics: {article.tags.join(", ")}</p>
- </article>
- ))}
- </nav>
-
- {/* Internal links key pages of the site */}
- <nav aria-label="R-Zone services">
- <a href={`${SITE_URL}/`}>R-Zone Cargo UK to Nigeria Shipping</a>
- <a href={`${SITE_URL}/quote`}>
- Get a free UK to Nigeria shipping quote
- </a>
- <a href={`${SITE_URL}/services`}>
- Our UK to Nigeria cargo services
- </a>
- <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo</a>
- </nav>
- </div>
 
  {/* ── Interactive Blog UI (Client Component) ───────────────────────────── */}
  {/* BlogList handles all filtering, search, animations and navigation. */}

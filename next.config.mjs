@@ -52,6 +52,25 @@ const nextConfig = {
  // redirects and give the clearest canonicalization signal.
  statusCode: 301,
  },
+ // Old blog URLs from the previous blog, kept alive so their rankings
+ // and backlinks pass to the current articles.
+ { source: "/blog/air-freight-vs-sea-freight-ultimate-guide", destination: "/blog/air-freight-vs-sea-freight-nigeria", permanent: true },
+ { source: "/blog/apapa-port-what-shippers-need-to-know", destination: "/blog/apapa-port-delays-nigeria-shipping", permanent: true },
+ { source: "/blog/how-to-pack-cargo-nigeria-professionally", destination: "/blog/how-to-pack-cargo-for-shipping-to-nigeria", permanent: true },
+ { source: "/blog/nigeria-customs-duty-complete-guide-2026", destination: "/blog/nigeria-customs-duty-guide", permanent: true },
+ { source: "/blog/rzone-expanded-air-schedule-2026", destination: "/blog/r-zone-cargo-air-freight-schedule-uk-nigeria", permanent: true },
+ { source: "/blog/rzone-107-five-star-reviews-milestone", destination: "/blog/r-zone-cargo-reviews-uk-nigeria-shipping", permanent: true },
+ { source: "/blog/nigerian-diaspora-shipping-guide-uk", destination: "/blog/sending-cargo-to-nigeria-from-uk", permanent: true },
+ { source: "/blog/nafdac-requirements-food-exports-nigeria", destination: "/blog/sending-food-from-uk-to-nigeria-nafdac", permanent: true },
+ { source: "/blog/uk-to-lagos-cargo-complete-guide", destination: "/blog/shipping-from-uk-to-lagos-nigeria", permanent: true },
+ { source: "/blog/volumetric-weight-explained", destination: "/blog/what-is-volumetric-weight-freight-nigeria", permanent: true },
+ {
+ // Retired duplicate: it rendered the cargo-to-nigeria-from-uk article
+ // under a second URL. Send its traffic to the live tracking page.
+ source: "/blog/uk-to-nigeria-cargo-tracking-guide",
+ destination: "/track",
+ permanent: true,
+ },
  ];
  },
  images: {

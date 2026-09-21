@@ -141,10 +141,6 @@ function FeaturedCard({ article, categories, onOpen }) {
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.7 }}
- role="button"
- tabIndex={0}
- onKeyDown={(e) => e.key === "Enter" && onOpen(article)}
- aria-label={`Read article: ${article.title}`}
  >
  <div className="relative h-[340px] lg:h-[480px] overflow-hidden">
  <motion.div
@@ -180,7 +176,7 @@ function FeaturedCard({ article, categories, onOpen }) {
  <CategoryBadge cat={article.category} categories={categories} />
  </div>
  <h2 className="font-black text-[clamp(22px,3.5vw,38px)] text-white leading-[0.92] tracking-[-0.025em] uppercase mb-4">
- {article.title}
+ <Link href={`/blog/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
  </h2>
  <p className="text-white/65 text-[14px] font-light leading-relaxed max-w-2xl mb-6">
  {article.excerpt}
@@ -224,10 +220,6 @@ function ArticleCard({ article, index, categories, onOpen }) {
  initial={{ opacity: 0, y: 28 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: index * 0.07 }}
- role="button"
- tabIndex={0}
- onKeyDown={(e) => e.key === "Enter" && onOpen(article)}
- aria-label={`Read article: ${article.title}`}
  >
  <div
  className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
@@ -254,7 +246,7 @@ function ArticleCard({ article, index, categories, onOpen }) {
  <CategoryBadge cat={article.category} categories={categories} />
  </div>
  <h3 className="font-black text-[15px] text-gray-900 leading-snug tracking-[-0.015em] mb-3 group-hover:text-[#0818A8] transition-colors line-clamp-3">
- {article.title}
+ <Link href={`/blog/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
  </h3>
  <p className="text-gray-600 text-[13px] font-light leading-relaxed mb-4 line-clamp-3 flex-1">
  {article.excerpt}
@@ -289,10 +281,6 @@ function ArticleRow({ article, index, categories, onOpen }) {
  initial={{ opacity: 0, y: 28 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: index * 0.08 }}
- role="button"
- tabIndex={0}
- onKeyDown={(e) => e.key === "Enter" && onOpen(article)}
- aria-label={`Read article: ${article.title}`}
  >
  <div
  className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
@@ -323,7 +311,7 @@ function ArticleRow({ article, index, categories, onOpen }) {
  </div>
  <div className={`flex flex-col justify-center p-7 md:p-9 ${!isEven ? "md:order-1" : ""}`}>
  <h3 className="font-black text-[clamp(17px,2vw,22px)] text-gray-900 leading-[0.92] tracking-[-0.02em] uppercase mb-4 group-hover:text-[#0818A8] transition-colors">
- {article.title}
+ <Link href={`/blog/${article.slug}`} onClick={(e) => e.stopPropagation()}>{article.title}</Link>
  </h3>
  <p className="text-gray-600 text-[13.5px] font-light leading-relaxed mb-6">
  {article.excerpt}
@@ -379,10 +367,11 @@ function TrendingList({ articles, onOpen }) {
  </div>
  <div className="space-y-5">
  {trending.map((a, i) => (
- <motion.button
+ <motion.a
  key={a.id}
+ href={`/blog/${a.slug}`}
  className="group flex items-start gap-3 w-full text-left"
- onClick={() => onOpen(a)}
+ onClick={(e) => { e.preventDefault(); onOpen(a); }}
  initial={{ opacity: 0, x: 12 }}
  animate={inView ? { opacity: 1, x: 0 } : {}}
  transition={{ duration: 0.45, delay: i * 0.08 }}
@@ -399,7 +388,7 @@ function TrendingList({ articles, onOpen }) {
  {a.readTime}
  </span>
  </div>
- </motion.button>
+ </motion.a>
  ))}
  </div>
  </div>
@@ -603,7 +592,9 @@ export default function BlogList({ articles, featured, categories }) {
  router.push(`/blog/${article.slug}`);
  };
 
- const secondaryArticles = articles.filter((a) => !a.featured);
+ // Exclude only the article shown in the featured slot; any other article
+ // flagged `featured` must still appear in the grid.
+ const secondaryArticles = articles.filter((a) => a.id !== featured?.id);
 
  const filtered = useMemo(() => {
  let list =
@@ -710,6 +701,9 @@ export default function BlogList({ articles, featured, categories }) {
  animate={heroInView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.7, delay: 0.1 }}
  >
+ <span className="block text-[clamp(13px,1.5vw,17px)] tracking-[0.14em] text-white/60 mb-4">
+ UK to Nigeria Shipping Blog
+ </span>
  Insights &amp;
  <br />
  <span className="relative inline-block">

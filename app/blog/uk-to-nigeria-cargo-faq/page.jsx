@@ -19,9 +19,9 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["300","400","500","
 const SITE_URL = "https://r-zoneenterprises.com";
 const PAGE_URL = `${SITE_URL}/blog/uk-to-nigeria-cargo-faq`;
 const WHATSAPP = "447915647119";
-const HERO_IMG = "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1600&q=80&auto=format&fit=crop";
+const HERO_IMG = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "UK to Nigeria Cargo FAQs 2026: 30+ Questions Answered | R-Zone Enterprises";
+const TITLE = "UK to Nigeria Cargo FAQs 2026: 34 Questions Answered | R-Zone Enterprises";
 const DESCRIPTION = "Every question about sending cargo from the UK to Nigeria answered: prices, transit times, door to door, customs and duty, packing, prohibited items, insurance, cars and tracking. Free quote.";
 
 export const metadata = {
@@ -29,7 +29,7 @@ export const metadata = {
   description: freshYear(DESCRIPTION),
   keywords: ["UK to Nigeria cargo FAQ","shipping to Nigeria questions","cargo to Nigeria help","how to send cargo to Nigeria","Nigeria customs questions","cargo to Nigeria answers"],
   alternates: { canonical: PAGE_URL },
-  openGraph: { type: "article", url: PAGE_URL, title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Cargo questions answered for shipping from the UK to Nigeria" }] },
+  openGraph: { type: "article", url: PAGE_URL, title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), siteName: "R-Zone Enterprises", locale: "en_GB", images: [{ url: HERO_IMG, width: 1200, height: 630, alt: "Warehouse of packed cargo boxes ready for shipping from the UK to Nigeria" }] },
   twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: freshYear(TITLE) }, description: freshYear(DESCRIPTION), images: [HERO_IMG] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
@@ -117,7 +117,7 @@ export default function Page() {
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">UK to Nigeria Cargo FAQs: {ALL.length} Questions Answered in {CURRENT_YEAR}</h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Prices, transit times, door to door, customs and duty, packing, prohibited items, insurance, cars and tracking. Every common question about shipping cargo from the UK to Nigeria, answered by a team that has done it since 2012.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
-            <Image src={HERO_IMG} alt="Cargo questions answered for shipping from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
+            <Image src={HERO_IMG} alt="Warehouse of packed cargo boxes ready for shipping from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
             <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-8 flex gap-8 sm:gap-10">
               <div><p className="text-white/65 text-[11px] font-medium mb-1">Written by</p><p className="text-white text-[14px] font-bold">R-Zone Cargo Team</p></div>

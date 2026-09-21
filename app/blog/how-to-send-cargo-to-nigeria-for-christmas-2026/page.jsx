@@ -80,18 +80,6 @@ export default function Page() {
  return (
  <>
  {schemas.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
- <div aria-hidden="true" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
- <h1>{article.title}</h1><p>{article.excerpt}</p>
- {article.content.map((s, i) => <div key={i}><h2>{s.h}</h2><p>{s.body.replace(/\*\*(.*?)\*\*/g, "$1")}</p></div>)}
- <h2>Frequently Asked Questions</h2>
- {article.faqSchema.map((f, i) => <div key={i}><h3>{f.question}</h3><p>{f.answer}</p></div>)}
- <nav>
- <a href={`${SITE_URL}/blog`}>All UK Nigeria shipping guides</a>
- <a href={`${SITE_URL}/quote`}>Get a free Christmas cargo quote</a>
- <a href={`${SITE_URL}/contact`}>Contact R-Zone Cargo</a>
- </nav>
- {related.map((r) => <a key={r.id} href={`${SITE_URL}/blog/${r.slug}`}>{r.title}</a>)}
- </div>
  <ArticleReader article={article} related={related} />
  </>
  );
