@@ -1,10 +1,10 @@
-// app/blog/uk-cargo-collection-areas-for-nigeria/page.jsx
-// URL: https://r-zoneenterprises.com/blog/uk-cargo-collection-areas-for-nigeria
+// app/blog/cargo-to-nigeria-from-london-and-england/page.jsx
+// URL: https://r-zoneenterprises.com/blog/cargo-to-nigeria-from-london-and-england
 
 import ArticleReader from "../[slug]/ArticleReader";
 import { SITE_URL, ORGANIZATION_SCHEMA, getArticleBySlug, getRelatedArticles } from "../../../lib/articles";
 
-const article = getArticleBySlug("uk-cargo-collection-areas-for-nigeria");
+const article = getArticleBySlug("cargo-to-nigeria-from-london-and-england");
 const related = getRelatedArticles(article.id, article.category, article.relatedSlugs, 3);
 
 const schemas = [

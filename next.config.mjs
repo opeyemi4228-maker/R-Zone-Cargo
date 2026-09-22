@@ -62,6 +62,7 @@ const nextConfig = {
  { source: "/blog/rzone-107-five-star-reviews-milestone", destination: "/blog/r-zone-cargo-reviews-uk-nigeria-shipping", permanent: true },
  { source: "/blog/nigerian-diaspora-shipping-guide-uk", destination: "/blog/sending-cargo-to-nigeria-from-uk", permanent: true },
  { source: "/blog/nafdac-requirements-food-exports-nigeria", destination: "/blog/sending-food-from-uk-to-nigeria-nafdac", permanent: true },
+ { source: "/blog/uk-cargo-collection-areas-for-nigeria", destination: "/blog/cargo-to-nigeria-from-london-and-england", permanent: true },
  { source: "/blog/uk-to-lagos-cargo-complete-guide", destination: "/blog/shipping-from-uk-to-lagos-nigeria", permanent: true },
  { source: "/blog/volumetric-weight-explained", destination: "/blog/what-is-volumetric-weight-freight-nigeria", permanent: true },
  {
