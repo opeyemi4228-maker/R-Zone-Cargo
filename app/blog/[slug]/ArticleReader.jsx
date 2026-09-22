@@ -85,6 +85,12 @@ function ArticleMeta({ article, light = false }) {
  <Calendar size={10} aria-hidden="true" />
  {article.date}
  </span>
+ {article.dateModified && article.dateModified !== article.datePublished && formatDate(article.dateModified) && (
+ <>
+ <span className="opacity-30" aria-hidden="true">·</span>
+ <span>Updated {formatDate(article.dateModified)}</span>
+ </>
+ )}
  <span className="opacity-30" aria-hidden="true">·</span>
  <span className="flex items-center gap-1.5">
  <Clock size={10} aria-hidden="true" />
@@ -95,29 +101,165 @@ function ArticleMeta({ article, light = false }) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// RENDER BODY converts **bold** markdown + line breaks to JSX
+// RENDER BODY converts a light markdown subset in articles.js to JSX.
+// Blocks are separated by a blank line ("\n\n"):
+//   ### Heading          → h3 subheading
+//   - item / - item      → bullet list (every line starts with "- ")
+//   1. item / 2. item    → numbered list (every line starts with "N. ")
+//   | a | b | rows       → table (first row is the header, "|---|" rows skipped)
+//   > text               → highlighted callout / tip box
+//   anything else        → paragraph (single "\n" becomes a line break)
+// Inline: **bold** and [link text](/path or https://...).
 // ─────────────────────────────────────────────────────────────────────────────
+const INLINE_RE = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g;
+
+function renderInline(text) {
+ return text.split(INLINE_RE).map((part, idx) => {
+ if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+ return (
+ <strong key={idx} className="font-bold text-gray-900">
+ {part.slice(2, -2)}
+ </strong>
+ );
+ }
+ const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+ if (link) {
+ const [, label, href] = link;
+ const cls = "text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#1F51FF]";
+ return href.startsWith("/") ? (
+ <Link key={idx} href={href} className={cls}>{label}</Link>
+ ) : (
+ <a key={idx} href={href} className={cls} target="_blank" rel="noopener">{label}</a>
+ );
+ }
+ return part;
+ });
+}
+
+function renderLines(text) {
+ const lines = text.split("\n");
+ return lines.map((line, i) => (
+ <span key={i}>
+ {renderInline(line)}
+ {i < lines.length - 1 && <br />}
+ </span>
+ ));
+}
+
+function splitRow(line) {
+ return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+}
+
+function RenderBlock({ block }) {
+ const lines = block.split("\n").filter((l) => l.trim() !== "");
+ const every = (re) => lines.length > 0 && lines.every((l) => re.test(l.trim()));
+
+ if (block.startsWith("### ")) {
+ return (
+ <h3 className="font-black text-[16px] md:text-[17px] text-[#0b0f1a] leading-snug tracking-[-0.01em] pt-2">
+ {renderInline(block.slice(4).trim())}
+ </h3>
+ );
+ }
+
+ if (every(/^\|/)) {
+ const rows = lines.filter((l) => !/^\|?\s*:?-{2,}/.test(l.trim())).map(splitRow);
+ const [head, ...body] = rows;
+ return (
+ <div className="overflow-x-auto border border-gray-200 -mx-1 sm:mx-0">
+ <table className="w-full text-left border-collapse min-w-[520px]">
+ <thead>
+ <tr className="bg-[#0818A8] text-white text-[11.5px] uppercase tracking-[0.06em]">
+ {head.map((c, ci) => (
+ <th key={ci} scope="col" className="p-3.5 font-bold">{renderInline(c)}</th>
+ ))}
+ </tr>
+ </thead>
+ <tbody className="text-[14px] text-gray-800">
+ {body.map((r, ri) => (
+ <tr key={ri} className={ri % 2 ? "bg-gray-50" : ""}>
+ {r.map((c, ci) => (
+ <td key={ci} className={`p-3.5 align-top ${ci === 0 ? "font-bold text-gray-900" : ""}`}>
+ {renderInline(c)}
+ </td>
+ ))}
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ );
+ }
+
+ if (every(/^- /)) {
+ return (
+ <ul className="space-y-2.5">
+ {lines.map((l, li) => (
+ <li key={li} className="flex items-start gap-3 text-gray-700 text-[15px] leading-[1.7]">
+ <Check size={15} className="text-emerald-600 flex-shrink-0 mt-1" aria-hidden="true" />
+ <span>{renderInline(l.trim().slice(2))}</span>
+ </li>
+ ))}
+ </ul>
+ );
+ }
+
+ if (every(/^\d+\. /)) {
+ return (
+ <ol className="space-y-3">
+ {lines.map((l, li) => (
+ <li key={li} className="flex items-start gap-3.5 text-gray-700 text-[15px] leading-[1.7]">
+ <span className="flex-shrink-0 w-7 h-7 flex items-center justify-center bg-[#0818A8] text-white text-[12px] font-black mt-0.5" aria-hidden="true">
+ {li + 1}
+ </span>
+ <span>{renderInline(l.trim().replace(/^\d+\. /, ""))}</span>
+ </li>
+ ))}
+ </ol>
+ );
+ }
+
+ if (every(/^> ?/)) {
+ return (
+ <div className="border-l-[3px] border-emerald-600 bg-emerald-50/70 px-5 py-4 text-gray-800 text-[14.5px] leading-[1.75]">
+ {renderLines(lines.map((l) => l.trim().replace(/^> ?/, "")).join("\n"))}
+ </div>
+ );
+ }
+
+ return (
+ <p className="text-gray-700 text-[15px] font-normal leading-[1.85]">
+ {renderLines(block)}
+ </p>
+ );
+}
+
 function RenderBody({ text }) {
  return (
  <div className="space-y-4">
- {text.split("\n\n").map((para, pi) => (
- <p
- key={pi}
- className="text-gray-700 text-[15px] font-normal leading-[1.85]"
- >
- {para.split(/\*\*(.*?)\*\*/g).map((part, idx) =>
- idx % 2 === 1 ? (
- <strong key={idx} className="font-bold text-gray-900">
- {part}
- </strong>
- ) : (
- part
- )
- )}
- </p>
+ {text.split("\n\n").map((block, bi) => (
+ <RenderBlock key={bi} block={block} />
  ))}
  </div>
  );
+}
+
+// Stable anchor ids so the table of contents can jump to each section (and
+// Google can show "jump to" links in results).
+function sectionId(h) {
+ return h
+ .toLowerCase()
+ .replace(/&/g, " and ")
+ .replace(/[^a-z0-9]+/g, "-")
+ .replace(/^-+|-+$/g, "")
+ .slice(0, 70);
+}
+
+function formatDate(iso) {
+ if (!iso) return null;
+ const d = new Date(`${iso}T12:00:00Z`);
+ if (Number.isNaN(d.getTime())) return null;
+ return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -428,7 +570,7 @@ export default function ArticleReader({ article, related }) {
  </h1>
 
  {/* Excerpt */}
- <p className="text-white/65 text-[15px] font-light leading-relaxed mb-8 max-w-2xl">
+ <p className="article-excerpt text-white/65 text-[15px] font-light leading-relaxed mb-8 max-w-2xl">
  {article.excerpt}
  </p>
 
@@ -443,6 +585,31 @@ export default function ArticleReader({ article, related }) {
 
  {/* ── ARTICLE BODY ─────────────────────────────────────────────────────── */}
  <div className="max-w-[860px] mx-auto px-5 sm:px-8 py-12 md:py-16">
+
+ {/* Quick answer: a direct 40 to 60 word answer to the headline query,
+ placed first so Google can lift it as a featured snippet. */}
+ {article.quickAnswer && (
+ <div className="article-quick-answer border-l-[4px] border-[#0818A8] bg-[#0818A8]/[0.04] px-6 py-5 mb-10">
+ <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-2.5">
+ Quick Answer
+ </p>
+ <p className="text-gray-900 text-[15.5px] leading-[1.75]">
+ {renderInline(article.quickAnswer)}
+ </p>
+ </div>
+ )}
+
+ {/* Key facts strip */}
+ {article.keyFacts && article.keyFacts.length > 0 && (
+ <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mb-12">
+ {article.keyFacts.map((f) => (
+ <div key={f.label} className="bg-white p-4">
+ <dt className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-gray-500 mb-1.5">{f.label}</dt>
+ <dd className="font-black text-[16px] text-[#0818A8] leading-tight">{f.value}</dd>
+ </div>
+ ))}
+ </dl>
+ )}
 
  {/* Table of contents */}
  {article.content.length > 2 && (
@@ -461,9 +628,12 @@ export default function ArticleReader({ article, related }) {
  <span className="font-black text-[#0818A8]/35 text-[12px] flex-shrink-0 w-5 mt-0.5">
  {i + 1}.
  </span>
- <span className="text-[13px] font-semibold text-gray-800 leading-snug">
+ <a
+ href={`#${sectionId(sec.h)}`}
+ className="text-[13px] font-semibold text-gray-800 leading-snug hover:text-[#0818A8] hover:underline"
+ >
  {sec.h}
- </span>
+ </a>
  </li>
  ))}
  </ol>
@@ -480,7 +650,10 @@ export default function ArticleReader({ article, related }) {
  transition={{ duration: 0.55, delay: 0.1 + i * 0.07 }}
  >
  {/* H2 secondary keyword hierarchy */}
- <h2 className="font-black text-[clamp(16px,2.5vw,22px)] text-[#0b0f1a] leading-tight tracking-[-0.02em] uppercase mb-5 pl-4 border-l-[3px] border-[#0818A8]">
+ <h2
+ id={sectionId(sec.h)}
+ className="scroll-mt-28 font-black text-[clamp(16px,2.5vw,22px)] text-[#0b0f1a] leading-tight tracking-[-0.02em] uppercase mb-5 pl-4 border-l-[3px] border-[#0818A8]"
+ >
  {sec.h}
  </h2>
  <RenderBody text={sec.body} />
@@ -497,48 +670,21 @@ export default function ArticleReader({ article, related }) {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.55, delay: 0.3 }}
  >
- <h2 className="font-black text-[clamp(18px,2.5vw,26px)] text-[#0b0f1a] tracking-[-0.02em] uppercase mb-8 pl-4 border-l-[3px] border-[#0818A8]">
+ <h2 id="faq" className="scroll-mt-28 font-black text-[clamp(18px,2.5vw,26px)] text-[#0b0f1a] tracking-[-0.02em] uppercase mb-8 pl-4 border-l-[3px] border-[#0818A8]">
  Frequently Asked Questions
  </h2>
- <div className="space-y-6">
+ <div className="divide-y divide-gray-100 border-y border-gray-100">
  {article.faqSchema.map((faq, i) => (
- <details
- key={i}
- className="group border border-gray-200 hover:border-[#0818A8]/30 transition-colors duration-200"
- >
- <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
- {/* H3 inside FAQ proper keyword hierarchy */}
- <h3 className="font-bold text-[14px] text-gray-900 leading-snug group-open:text-[#0818A8] transition-colors">
+ <div key={i} className="py-5">
+ {/* H3 question + visible answer: no collapsed accordion, so the
+ answer text is in view for readers and Google alike */}
+ <h3 className="font-bold text-[15px] text-gray-900 leading-snug mb-2">
  {faq.question}
  </h3>
- <span
- className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-all duration-200 rounded-full"
- aria-hidden="true"
- >
- <svg
- width="10"
- height="10"
- viewBox="0 0 10 10"
- fill="none"
- className="group-open:rotate-180 transition-transform duration-200"
- >
- <path
- d="M2 3.5L5 6.5L8 3.5"
- stroke="currentColor"
- strokeWidth="1.5"
- strokeLinecap="round"
- strokeLinejoin="round"
- className="group-open:stroke-white stroke-gray-500"
- />
- </svg>
- </span>
- </summary>
- <div className="px-5 pb-5 pt-1">
- <p className="text-gray-600 text-[14px] font-normal leading-relaxed">
+ <p className="text-gray-600 text-[14.5px] font-normal leading-relaxed">
  {faq.answer}
  </p>
  </div>
- </details>
  ))}
  </div>
  </motion.div>

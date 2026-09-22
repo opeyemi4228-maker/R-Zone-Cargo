@@ -56,7 +56,7 @@ const schemas = [
  description: article.metaDesc,
  speakable: {
  "@type": "SpeakableSpecification",
- cssSelector: ["h1", "h2", ".article-excerpt"],
+ cssSelector: ["h1", ".article-quick-answer", ".article-excerpt"],
  },
  breadcrumb: {
  "@type": "BreadcrumbList",

@@ -247,7 +247,7 @@ export default function RootLayout({ children }) {
  "email": "info@r-zoneenterprises.com",
  "priceRange": "££",
  "currenciesAccepted": "GBP",
- "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+ "paymentAccepted": "Bank Transfer, Credit Card, Debit Card, PayPal",
  "openingHoursSpecification": [
  {
  "@type": "OpeningHoursSpecification",

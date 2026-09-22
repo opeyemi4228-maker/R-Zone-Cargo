@@ -51,7 +51,7 @@ const schemas = [
  name: article.title,
  speakable: {
  "@type": "SpeakableSpecification",
- cssSelector: ["h1", ".article-excerpt", "h2"],
+ cssSelector: ["h1", ".article-quick-answer", ".article-excerpt"],
  },
  },
  { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },

@@ -1,10 +1,10 @@
-// app/blog/door-to-door-shipping-uk-to-nigeria/page.jsx
-// URL: https://r-zoneenterprises.com/blog/door-to-door-shipping-uk-to-nigeria
+// app/blog/prohibited-items-shipping-to-nigeria-from-uk/page.jsx
+// URL: https://r-zoneenterprises.com/blog/prohibited-items-shipping-to-nigeria-from-uk
 
 import ArticleReader from "../[slug]/ArticleReader";
 import { SITE_URL, ORGANIZATION_SCHEMA, getArticleBySlug, getRelatedArticles } from "../../../lib/articles";
 
-const article = getArticleBySlug("door-to-door-shipping-uk-to-nigeria");
+const article = getArticleBySlug("prohibited-items-shipping-to-nigeria-from-uk");
 const related = getRelatedArticles(article.id, article.category, article.relatedSlugs, 3);
 
 const schemas = [
