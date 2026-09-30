@@ -759,7 +759,7 @@ function FinalCTA() {
  </h2>
  <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
  Join over 10,000 customers who trust R-Zone for UK Nigeria cargo.
- Air freight from £5/kg · Sea freight from £3/kg · Weekly departures.
+ Air freight from £5.50/kg · Sea freight from £3/kg · Weekly departures.
  Free quote in under 2 minutes.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-4 mb-10">

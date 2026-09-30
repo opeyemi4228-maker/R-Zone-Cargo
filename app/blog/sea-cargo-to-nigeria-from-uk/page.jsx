@@ -38,7 +38,7 @@ const FAQS = [
   { q: "How long does sea cargo to Nigeria take?", a: "Sea cargo to Nigeria takes 4 to 6 weeks, including the sailing to Lagos (Apapa and Tin Can Island) and Nigeria customs clearance. R-Zone runs weekly sailings so your cargo joins the next departure." },
   { q: "What is the difference between LCL and full container?", a: "LCL (Less than Container Load) means your cargo shares a container and you pay only for the space you use, ideal for roughly 50kg to 2,000kg. FCL (Full Container Load) means you book a whole 20ft or 40ft container, ideal for relocations, vehicles and high-volume cargo." },
   { q: "What can I ship by sea to Nigeria?", a: "Sea cargo suits large, heavy and bulky goods: household goods and appliances, furniture, bulk and packaged food, clothing in quantity, building materials, car parts, vehicles and commercial merchandise." },
-  { q: "Why is sea cargo cheaper than air?", a: "Sea cargo is cheaper because a vessel carries far more weight and volume per journey than a plane. From £3/kg versus £5/kg by air, and the saving grows with weight, which is why sea is the go-to for big loads." },
+  { q: "Why is sea cargo cheaper than air?", a: "Sea cargo is cheaper because a vessel carries far more weight and volume per journey than a plane. From £3/kg versus £5.50/kg by air, and the saving grows with weight, which is why sea is the go-to for big loads." },
 ];
 
 const schemas = [

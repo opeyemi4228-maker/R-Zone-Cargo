@@ -56,7 +56,7 @@ const SERVICES = [
  imgAlt: "Cargo aircraft being loaded at UK airport for Nigeria air freight service",
  faq: [
  { q: "How long does air freight to Nigeria take?", a: "Typically 5 10 working days from the UK to Lagos, Abuja, Port Harcourt and all major Nigerian cities. Weekly departures guarantee no long waits." },
- { q: "How much does air freight to Nigeria cost per kg?", a: <>Air freight from the UK to Nigeria starts from £5 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#0818A8] hover:underline">Price List</Link></> },
+ { q: "How much does air freight to Nigeria cost per kg?", a: <>Air freight from the UK to Nigeria starts from £5.50 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#0818A8] hover:underline">Price List</Link></> },
  { q: "What items can I send by air to Nigeria?", a: "We accept clothing, electronics, foodstuffs, documents, personal effects and most general cargo. Contact us for a full list of accepted and prohibited items." },
  ],
  },
@@ -65,7 +65,7 @@ const SERVICES = [
  slug: "sea-shipping-to-nigeria",
  nav: "Sea Shipping",
  icon: Ship,
- badge: "Best Value from <£5/kg depending on the State. Check Pricing",
+ badge: "Best Value from <£5.50/kg depending on the State. Check Pricing",
  badgeColor: "bg-emerald-50 text-emerald-700",
  title: "Sea Freight to Nigeria",
  tagline: "Weekly sea freight sailings. The cheapest way to ship to Nigeria.",
@@ -684,7 +684,7 @@ function FinalCTA() {
  Ready to Ship from the UK to{" "}<span className="text-[#1F51FF]">Nigeria?</span>
  </h2>
  <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
- Air freight from £5/kg · Sea freight from £3/kg · Weekly departures.
+ Air freight from £5.50/kg · Sea freight from £3/kg · Weekly departures.
  Free quote in under 2 minutes our UK team responds the same day.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-4 mb-10">

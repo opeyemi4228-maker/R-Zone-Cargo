@@ -54,7 +54,7 @@ const schemas = [
  step: [
  { "@type": "HowToStep", position: 1, name: "Choose Your Product", text: "Research profitable product categories with a strong UK Nigeria price gap. Verify your margin after shipping costs before ordering." },
  { "@type": "HowToStep", position: 2, name: "Source Products from the UK", text: "Order from UK retailers (Amazon UK, ASOS, Boots, Holland & Barrett) or wholesale suppliers. Have products delivered to R-Zone's Upminster warehouse." },
- { "@type": "HowToStep", position: 3, name: "Ship with R-Zone Cargo", text: "Book air freight (from £5/kg, 5 10 days) or sea freight (from £3/kg, 4 6 weeks) with R-Zone. All customs clearance included." },
+ { "@type": "HowToStep", position: 3, name: "Ship with R-Zone Cargo", text: "Book air freight (from £5.50/kg, 5 10 days) or sea freight (from £3/kg, 4 6 weeks) with R-Zone. All customs clearance included." },
  { "@type": "HowToStep", position: 4, name: "Sell in Nigeria", text: "Sell through WhatsApp Business, Instagram Shopping, Jumia, Jiji or TikTok Shop. WhatsApp is the highest-converting channel for most import businesses." },
  { "@type": "HowToStep", position: 5, name: "Scale with Bulk Shipments", text: "Once validated, move to sea freight for bulk orders. Consolidate multiple product categories. Build a regular monthly shipping schedule with R-Zone." },
  ],

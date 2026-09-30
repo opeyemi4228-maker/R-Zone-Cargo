@@ -25,7 +25,7 @@ const ARTICLE = {
  category: "guides",
  title: "UK to Nigeria Shipping Price Guide 2026 Full Cost Breakdown",
  excerpt:
- "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5/kg. Sea from £2/kg. Full breakdown by item type, weight, and destination plus a free shipping calculator.",
+ "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5.50/kg. Sea from £2/kg. Full breakdown by item type, weight, and destination plus a free shipping calculator.",
  author: "R-Zone Operations Team",
  date: "12 May 2026",
  readTime: "14 min read",
@@ -44,28 +44,28 @@ const ARTICLE = {
 // ─── Price Data ───────────────────────────────────────────────────────────────
 const ITEM_PRICES = [
  { name: "iPhone (latest)", weight: 0.5, category: "Electronics", airTotal: 3, seaTotal: 2, note: "Minimum charges apply" },
- { name: "MacBook / Laptop", weight: 2.5, category: "Electronics", airTotal: 13, seaTotal: 7, note: "Includes packaging" },
- { name: "PS5 Console", weight: 5, category: "Electronics", airTotal: 26, seaTotal: 15, note: "Box adds volume weight" },
+ { name: "MacBook / Laptop", weight: 2.5, category: "Electronics", airTotal: 14, seaTotal: 7, note: "Includes packaging" },
+ { name: "PS5 Console", weight: 5, category: "Electronics", airTotal: 28, seaTotal: 15, note: "Box adds volume weight" },
  { name: "50\" LED TV", weight: 18, category: "Electronics", airTotal: 120, seaTotal: 55, note: "Volumetric may apply" },
  { name: "Generator (small)", weight: 30, category: "Machinery", airTotal: 180, seaTotal: 75, note: "Sea recommended" },
  { name: "Pair of Sneakers", weight: 1, category: "Fashion", airTotal: 6, seaTotal: 4, note: "Standard box size" },
- { name: "20kg Clothes Bale", weight: 20, category: "Fashion", airTotal: 104, seaTotal: 48, note: "Vacuum pack saves cost" },
+ { name: "20kg Clothes Bale", weight: 20, category: "Fashion", airTotal: 110, seaTotal: 48, note: "Vacuum pack saves cost" },
  { name: "Perfume (100ml)", weight: 0.3, category: "Beauty", airTotal: 3, seaTotal: 2, note: "Min charge applies" },
- { name: "Car Parts (20kg)", weight: 20, category: "Auto", airTotal: 104, seaTotal: 48, note: "Varies by item" },
+ { name: "Car Parts (20kg)", weight: 20, category: "Auto", airTotal: 110, seaTotal: 48, note: "Varies by item" },
  { name: "Food Items (20kg)", weight: 20, category: "Food", airTotal: 110, seaTotal: 50, note: "Min 20kg for food" },
 ];
 
 const STATE_RATES = [
- { state: "Lagos", door: "£6.00", office: "£5.70", minKg: 10, days: 7 },
- { state: "Abuja (FCT)", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Anambra", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Rivers / PH", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Kano", door: "£7.00", office: "£7.00", minKg: 30, days: 10 },
- { state: "Ogun", door: "£6.20", office: "£5.90", minKg: 20, days: 8 },
- { state: "Delta", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Enugu", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Imo", door: "£6.50", office: "£6.20", minKg: 20, days: 10 },
- { state: "Kaduna", door: "£7.00", office: "£7.00", minKg: 30, days: 10 },
+ { state: "Lagos", door: "£5.80", office: "£5.50", minKg: 10, days: "5 to 7" },
+ { state: "Abuja (FCT)", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Anambra", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Rivers / PH", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Kano", door: "£6.80", office: "£6.50", minKg: 20, days: "12" },
+ { state: "Ogun", door: "£6.30", office: "£6.30", minKg: 20, days: "10" },
+ { state: "Delta", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Enugu", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Imo", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
+ { state: "Kaduna", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
 ];
 
 const FAQS = [
@@ -75,7 +75,7 @@ const FAQS = [
  },
  {
  q: "Is air freight or sea freight cheaper?",
- a: "Sea freight is always cheaper per kg from £2/kg vs air at £5.20/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4 6 weeks.",
+ a: "Sea freight is always cheaper per kg from £2/kg vs air at £5.50/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4 6 weeks.",
  },
  {
  q: "Are there hidden charges?",
@@ -201,7 +201,7 @@ function ShippingCalculator() {
  const chargeableAir = Math.max(weight, volAir);
  const chargeableSea = Math.max(weight, volSea);
 
- const ratePerKgAir = 5.20;
+ const ratePerKgAir = 5.50;
  const ratePerKgSea = 2.00;
  const deliveryAdd = state === "Lagos" ? 20 : state === "Abuja (FCT)" ? 30 : 35;
 
@@ -283,7 +283,7 @@ function ShippingCalculator() {
  </div>
  <div className="flex justify-between text-[12px]">
  <span className="text-gray-500">Rate</span>
- <span className="font-semibold text-gray-800">£{method === "air" ? "5.20" : "2.00"}/kg</span>
+ <span className="font-semibold text-gray-800">£{method === "air" ? "5.50" : "2.00"}/kg</span>
  </div>
  <div className="flex justify-between text-[12px]">
  <span className="text-gray-500">Delivery ({state})</span>
@@ -344,7 +344,7 @@ function CTABox() {
  Get a free UK Nigeria cargo quote from R-Zone.
  </h3>
  <p className="text-white/70 text-[13px] font-normal mb-7 max-w-xl leading-relaxed">
- Air from £5/kg · Sea from £2/kg · Weekly departures · Same-day response · 120+ five-star reviews · #1 on Google.
+ Air from £5.50/kg · Sea from £2/kg · Weekly departures · Same-day response · 120+ five-star reviews · #1 on Google.
  </p>
  <div className="flex flex-wrap gap-3">
  <a href="https://r-zoneenterprises.com/quote" target="_blank" rel="noopener noreferrer"
@@ -464,7 +464,7 @@ export default function PriceGuideArticle() {
  <div className="max-w-[860px] mx-auto px-5 sm:px-8">
  <div className="flex flex-wrap gap-6 md:gap-10">
  {[
- ["Air Freight from", "£5.20/kg"],
+ ["Air Freight from", "£5.50/kg"],
  ["Sea Freight from", "£2.00/kg"],
  ["Air Transit", "7 days (Fri Fri)"],
  ["Sea Transit", "4 6 weeks"],
@@ -504,7 +504,7 @@ export default function PriceGuideArticle() {
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
  {[
- { icon: "✈", mode: "Air Freight", rate: "from £5.20/kg", transit: "7 working days (Friday to Friday)", best: "Electronics, clothing, documents, urgent shipments", color: "#0818A8" },
+ { icon: "✈", mode: "Air Freight", rate: "from £5.50/kg", transit: "7 working days (Friday to Friday)", best: "Electronics, clothing, documents, urgent shipments", color: "#0818A8" },
  { icon: "🚢", mode: "Sea Freight", rate: "from £2.00/kg", transit: "4 6 weeks", best: "Household goods, furniture, bulk clothing, machinery", color: "#0437F2" },
  ].map(s => (
  <div key={s.mode} className="border-2 border-[#0818A8]/20 bg-white p-5 relative overflow-hidden">
@@ -554,9 +554,9 @@ export default function PriceGuideArticle() {
  </thead>
  <tbody>
  {[
- ["Air Freight (standard)", "£5.20/kg", "7 working days (Fri Fri)", "Friday", "UK docs + customs + tracking"],
- ["Air Freight + UK Collection", "£5.20/kg + £25+", "7 working days (Fri Fri)", "Friday", "Door-to-UK warehouse"],
- ["Air Door-to-Door", "£6.00+/kg", "10 working days (Fri Fri + delivery)", "Friday", "UK door + NG delivery"],
+ ["Air Freight (standard)", "£5.50/kg", "7 working days (Fri Fri)", "Friday", "UK docs + customs + tracking"],
+ ["Air Freight + UK Collection", "£5.50/kg + £20+", "7 working days (Fri Fri)", "Friday", "Door-to-UK warehouse"],
+ ["Air Door-to-Door", "£5.80+/kg", "10 working days (Fri Fri + delivery)", "Friday", "UK door + NG delivery"],
  ].map((row, i) => (
  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
  {row.map((cell, j) => (

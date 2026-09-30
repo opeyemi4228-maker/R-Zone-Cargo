@@ -90,7 +90,7 @@ export const metadata = {
 const FAQS = [
   {
     q: "How much does it cost to send cargo from the UK to Nigeria?",
-    a: "Cargo from the UK to Nigeria starts from £3/kg by sea and £5/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
+    a: "Cargo from the UK to Nigeria starts from £3/kg by sea and £5.50/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
   },
   {
     q: "What is the cheapest way to send cargo to Nigeria from the UK?",
@@ -137,7 +137,7 @@ const schemas = [
       name: "UK to Nigeria cargo services",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sea freight UK to Nigeria" }, priceCurrency: "GBP", price: "3", description: "From £3/kg, 4 to 6 weeks" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5", description: "From £5/kg, 5 to 10 working days" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5", description: "From £5.50/kg, 5 to 10 working days" },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Door to door cargo UK to Nigeria" }, priceCurrency: "GBP", price: "6", description: "From £6/kg, UK collection plus Nigeria doorstep delivery" },
       ],
     },
@@ -218,7 +218,7 @@ function H2({ id, eyebrow, children }) {
 const SERVICES = [
   { icon: Truck, name: "Door to Door Shipping", price: "From £6/kg", transit: "Air or sea", href: "/blog/door-to-door-shipping-uk-to-nigeria",
     points: ["We collect from any UK address", "Delivered to the recipient door in Nigeria", "No depot visits, no customs queues"] },
-  { icon: Plane, name: "Air Freight", price: "From £5/kg", transit: "5 to 10 working days", href: "/blog/air-freight-uk-to-nigeria",
+  { icon: Plane, name: "Air Freight", price: "From £5.50/kg", transit: "5 to 10 working days", href: "/blog/air-freight-uk-to-nigeria",
     points: ["Weekly flights to Lagos", "Ideal for urgent and high value goods", "Electronics, documents, fashion, medicine"] },
   { icon: Ship, name: "Sea Freight", price: "From £3/kg", transit: "4 to 6 weeks", href: "/blog/sea-freight-uk-to-nigeria",
     points: ["The cheapest option for heavy cargo", "Weekly sailings to Lagos", "Household goods, furniture, vehicles"] },
@@ -301,7 +301,7 @@ export default function Page() {
         <H2 id="prices" eyebrow="Cheap, all inclusive rates">Cargo Prices from UK to Nigeria ({CURRENT_YEAR})</H2>
         <p className="text-gray-700 text-[16.5px] leading-[1.85] mb-8 max-w-3xl">
           R-Zone offers some of the cheapest all inclusive cargo prices from the UK to Nigeria,
-          with no hidden handling fees, fuel surcharges or surprise charges. Every rate below
+          with no fuel surcharges or surprise charges. Air shipments carry a single £20 handling fee, shown on your quote. Every rate below
           includes UK export documentation, transit, Nigeria customs clearance and delivery.
         </p>
         <div className="overflow-x-auto border border-gray-200">
@@ -317,7 +317,7 @@ export default function Page() {
             <tbody className="text-[15px] text-gray-800">
               {[
                 [Ship, "Sea freight", "£3 / kg", "4 to 6 weeks", "Large, heavy or bulky cargo"],
-                [Plane, "Air freight", "£5 / kg", "5 to 10 working days", "Urgent or high value items"],
+                [Plane, "Air freight", "£5.50 / kg", "5 to 10 working days", "Urgent or high value items"],
                 [Truck, "Door to door", "£6 / kg", "Air or sea", "UK collection plus Nigeria delivery"],
               ].map(([Icon, name, price, transit, best], i) => (
                 <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
@@ -469,7 +469,7 @@ export default function Page() {
             Get your free UK to Nigeria cargo quote today
           </h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
-            Sea from £3/kg, air from £5/kg, door to door from £6/kg. Weekly departures, same day
+            Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. Weekly departures, same day
             response and 120+ five star reviews. Tell us what you are sending and we will give you
             the cheapest way to get it to Nigeria.
           </p>

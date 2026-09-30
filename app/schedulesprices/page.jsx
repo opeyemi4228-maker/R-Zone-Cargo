@@ -88,7 +88,7 @@ const AIR_SCHEDULES = [
 
 
 const AIR_RATES = [
- { range: "All weights", rate: "£5.20", per: "per kg", note: "Plus £20 handling fee" },
+ { range: "All weights", rate: "£5.50", per: "per kg", note: "Plus £20 handling fee" },
 ];
 
 const SEA_RATES = [
@@ -96,42 +96,42 @@ const SEA_RATES = [
 ];
 
 const STATE_RATES = [
- { state: "Abia", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Abuja (FCT)", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Adamawa", doorToDoor: "7.00", collection: "7.00", minWeight: "30", minWeightNote: null, days: "10" },
- { state: "Akwa Ibom", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Anambra", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Bauchi", doorToDoor: null, collection: "7.00", minWeight: "30", minWeightNote: null, days: "10" },
- { state: "Bayelsa", doorToDoor: "7.00", collection: "7.00", minWeight: "30", minWeightNote: null, days: "10" },
- { state: "Borno", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Cross River", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Delta", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Ebonyi", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Edo", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Ekiti", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Enugu", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Gombe", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Imo", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Jigawa", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Kaduna", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Kano", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "12" },
- { state: "Katsina", doorToDoor: null, collection: "7.00", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Kebbi", doorToDoor: null, collection: "7.00", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Kogi", doorToDoor: "6.50", collection: "6.20", minWeight: "30", minWeightNote: null, days: "15" },
- { state: "Kwara", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Lagos", doorToDoor: "5.50", collection: "5.20", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 7" },
- { state: "Nasarawa", doorToDoor: "7.00", collection: "7.00", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Niger", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Ogun", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Ondo", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Osun", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Oyo", doorToDoor: "6.00", collection: "6.00", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Plateau", doorToDoor: "6.50", collection: "6.20", minWeight: "30", minWeightNote: null, days: "15" },
- { state: "Rivers", doorToDoor: "6.50", collection: "6.20", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Sokoto", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "10" },
- { state: "Taraba", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Yobe", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Zamfara", doorToDoor: null, collection: "7.50", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Abia", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Abuja (FCT)", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Adamawa", doorToDoor: "7.30", collection: "7.30", minWeight: "30", minWeightNote: null, days: "10" },
+ { state: "Akwa Ibom", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Anambra", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Bauchi", doorToDoor: null, collection: "7.30", minWeight: "30", minWeightNote: null, days: "10" },
+ { state: "Bayelsa", doorToDoor: "7.30", collection: "7.30", minWeight: "30", minWeightNote: null, days: "10" },
+ { state: "Borno", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Cross River", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Delta", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Ebonyi", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Edo", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Ekiti", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Enugu", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Gombe", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Imo", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Jigawa", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Kaduna", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Kano", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "12" },
+ { state: "Katsina", doorToDoor: null, collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Kebbi", doorToDoor: null, collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Kogi", doorToDoor: "6.80", collection: "6.50", minWeight: "30", minWeightNote: null, days: "15" },
+ { state: "Kwara", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Lagos", doorToDoor: "5.80", collection: "5.50", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 7" },
+ { state: "Nasarawa", doorToDoor: "7.30", collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Niger", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Ogun", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Ondo", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Osun", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Oyo", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Plateau", doorToDoor: "6.80", collection: "6.50", minWeight: "30", minWeightNote: null, days: "15" },
+ { state: "Rivers", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Sokoto", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "10" },
+ { state: "Taraba", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Yobe", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
+ { state: "Zamfara", doorToDoor: null, collection: "7.80", minWeight: "20", minWeightNote: null, days: "15" },
 ];
 
 const FIXED_ITEM_RATES = [
@@ -175,13 +175,13 @@ const DOOR_SURCHARGES = [
 const PRICING_TIERS = [
  {
  name: "Personal", icon: Package, tagline: "For individuals & families",
- accent: "#0818A8", featured: false, airRate: "from £5.20/kg", seaRate: "from £2/kg",
+ accent: "#0818A8", featured: false, airRate: "from £5.50/kg", seaRate: "from £2/kg",
  includes: ["Air & sea options", "UK door collection", "Nigeria door delivery", "Real-time tracking", "Customs clearance", "SMS & email notifications"],
  cta: "Get a Quote", href: "/quote",
  },
  {
  name: "Business", icon: BarChart3, tagline: "For SMEs & commercial shippers",
- accent: "#0818A8", featured: true, airRate: "from £5.20/kg", seaRate: "from £2/kg",
+ accent: "#0818A8", featured: true, airRate: "from £5.50/kg", seaRate: "from £2/kg",
  includes: ["Discounted bulk rates", "Dedicated account manager", "Priority customs handling", "Weekly reporting", "SLA guarantee", "Credit terms available", "Volume discount schedule"],
  cta: "Contact Sales", href: "/contact",
  },
@@ -203,11 +203,11 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
  {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
- a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 6 weeks transit). Air freight starts from £5.20 per kg plus £25 handling fee (7 days departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
+ a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 6 weeks transit). Air freight starts from £5.50 per kg plus £20 handling fee (7 days departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
  },
  {
  q: "What is the cheapest way to ship from the UK to Nigeria?",
- a: "Sea freight is the cheapest option from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 6 weeks. For time-sensitive cargo, air freight from £5.20/kg departs every Friday from LHR, arriving Lagos the following Friday.",
+ a: "Sea freight is the cheapest option from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 6 weeks. For time-sensitive cargo, air freight from £5.50/kg departs every Friday from LHR, arriving Lagos the following Friday.",
  },
  {
  q: "Are there any hidden fees?",
@@ -316,7 +316,7 @@ function Hero() {
  <motion.p variants={fadeUp} custom={0.2} className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
  Full {YEAR} UK Nigeria sailing and flight schedules alongside fully transparent
  pricing no hidden fees, no surprises.{" "}
- <strong className="text-white font-semibold">Sea freight from £2/kg · Air freight from £5/kg.</strong>
+ <strong className="text-white font-semibold">Sea freight from £2/kg · Air freight from £5.50/kg.</strong>
  {" "}Weekly departures on both routes.
  </motion.p>
  <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
@@ -608,7 +608,7 @@ function SectionDivider() {
  <div className="flex flex-wrap gap-x-10 gap-y-3">
  {[
  { val: "£2/kg", label: "Sea freight from UK to Nigeria" },
- { val: "£5/kg", label: "Air freight from UK to Nigeria" },
+ { val: "£5.50/kg", label: "Air freight from UK to Nigeria" },
  { val: "0", label: "Hidden fees" },
  { val: "Weekly", label: "Sailings & departures" },
  ].map(({ val, label }) => (
@@ -651,7 +651,7 @@ function PricingSection() {
  <motion.p className="text-gray-800 text-[14px] font-normal mt-4 max-w-xl mx-auto"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
  No surprises. No hidden extras.{" "}
- <strong className="text-gray-900 font-semibold">Sea freight from £2/kg · Air freight from £5/kg.</strong>
+ <strong className="text-gray-900 font-semibold">Sea freight from £2/kg · Air freight from £5.50/kg.</strong>
  {" "}Volume discounts and business rates available on request.
  </motion.p>
  </div>
@@ -1084,7 +1084,7 @@ const SCHEMA_LD = {
  "name": "Air Freight UK to Nigeria Weekly Departures",
  "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
  "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday arrives Lagos the following Friday. 7 days transit.",
- "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.00", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5 per kg" },
+ "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.00", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5.50 per kg" },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Air Freight",
  },
@@ -1092,7 +1092,7 @@ const SCHEMA_LD = {
  "@type": "WebPage",
  "url": "https://r-zoneenterprises.com/schedules-prices",
  "name": "UK to Nigeria Cargo Schedules & Prices R-Zone Enterprises",
- "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates sea freight from £2/kg, air freight from £5/kg. No hidden fees.",
+ "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates sea freight from £2/kg, air freight from £5.50/kg. No hidden fees.",
  "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
  },
  ],

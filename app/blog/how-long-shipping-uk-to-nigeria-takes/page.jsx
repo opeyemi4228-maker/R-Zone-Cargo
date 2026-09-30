@@ -38,7 +38,7 @@ export const metadata = {
 
 const FAQS = [
   { q: "How long does shipping from the UK to Nigeria take?", a: "Air freight from the UK to Nigeria takes 5 to 10 working days, and sea freight takes 4 to 6 weeks. Both timelines include UK handling, transit to Lagos, Nigeria customs clearance and final delivery. R-Zone runs weekly air and sea departures so cargo joins the next available service." },
-  { q: "What is the fastest way to ship to Nigeria from the UK?", a: "Air freight is the fastest way to ship to Nigeria, arriving in 5 to 10 working days from £5/kg. It is best for urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
+  { q: "What is the fastest way to ship to Nigeria from the UK?", a: "Air freight is the fastest way to ship to Nigeria, arriving in 5 to 10 working days from £5.50/kg. It is best for urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
   { q: "Why does sea freight to Nigeria take longer?", a: "Sea freight takes 4 to 6 weeks because the vessel sails a much longer physical route to Lagos, and containers are consolidated and cleared on arrival. In exchange it is far cheaper per kilogram, from £3/kg, which is why it suits large or heavy cargo." },
   { q: "What can delay shipping to Nigeria?", a: "The main factors are the flight or sailing schedule, port and customs conditions in Lagos, seasonal peaks such as Christmas, and how complete your paperwork is. R-Zone clears customs with our own Lagos team to keep cargo moving and avoid port delays." },
   { q: "How can I make my cargo arrive faster?", a: "Choose air freight for speed, book early rather than at the last minute, provide a clear contents list to speed customs, and avoid the busiest seasonal peaks where possible. R-Zone's weekly departures mean your cargo never waits long for the next service." },
@@ -122,7 +122,7 @@ export default function Page() {
           <table className="w-full text-left border-collapse min-w-[560px]">
             <thead><tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]"><th className="p-4 font-bold">Service</th><th className="p-4 font-bold">Transit time</th><th className="p-4 font-bold">From</th><th className="p-4 font-bold">Best for</th></tr></thead>
             <tbody className="text-[15px] text-gray-800">
-              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Air freight</span></td><td className="p-4 font-black text-[#0818A8]">5 to 10 working days</td><td className="p-4">£5/kg</td><td className="p-4">Urgent or high-value cargo</td></tr>
+              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Air freight</span></td><td className="p-4 font-black text-[#0818A8]">5 to 10 working days</td><td className="p-4">£5.50/kg</td><td className="p-4">Urgent or high-value cargo</td></tr>
               <tr className="bg-gray-50"><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Ship size={17} className="text-[#0818A8]" aria-hidden="true" />Sea freight</span></td><td className="p-4 font-black text-[#0818A8]">4 to 6 weeks</td><td className="p-4">£3/kg</td><td className="p-4">Large or heavy cargo</td></tr>
               <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Truck size={17} className="text-[#0818A8]" aria-hidden="true" />Door to door</span></td><td className="p-4 font-black text-[#0818A8]">Same, air or sea</td><td className="p-4">£6/kg</td><td className="p-4">Collection plus doorstep delivery</td></tr>
             </tbody>
@@ -175,7 +175,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">On a deadline?</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Ship to Nigeria on time with R-Zone</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Air 5 to 10 working days from £5/kg. Sea 4 to 6 weeks from £3/kg. Door to door from £6/kg. Weekly departures. Tell us your deadline and we will recommend the best service to meet it.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Air 5 to 10 working days from £5.50/kg. Sea 4 to 6 weeks from £3/kg. Door to door from £6/kg. Weekly departures. Tell us your deadline and we will recommend the best service to meet it.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/shipping-to-nigeria-from-uk-2026-guide" className="hover:text-white transition-colors">Complete Shipping Guide</Link>

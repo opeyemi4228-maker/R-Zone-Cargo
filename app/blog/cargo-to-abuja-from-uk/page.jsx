@@ -56,7 +56,7 @@ const schemas = [
  ],
  offers: {
  "@type": "Offer",
- description: "Air freight from £5/kg. Sea freight from £3/kg. Door-to-door from £6/kg. All-inclusive with customs clearance.",
+ description: "Air freight from £5.50/kg. Sea freight from £3/kg. Door-to-door from £6/kg. All-inclusive with customs clearance.",
  },
  },
  { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },

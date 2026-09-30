@@ -22,7 +22,7 @@ const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&q=80&auto=format&fit=crop";
 
 const TITLE = "Cheap Cargo Rates to Nigeria from the UK 2026: Lowest Prices | R-Zone Enterprises";
-const DESCRIPTION = "The cheapest cargo rates to Nigeria from the UK in 2026: sea from £3/kg, air from £5/kg, door to door from £6/kg, all inclusive with no hidden fees. Plus how to pay even less. Free quote.";
+const DESCRIPTION = "The cheapest cargo rates to Nigeria from the UK in 2026: sea from £3/kg, air from £5.50/kg, door to door from £6/kg, all inclusive with no hidden fees. Plus how to pay even less. Free quote.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },
@@ -35,7 +35,7 @@ export const metadata = {
 };
 
 const FAQS = [
-  { q: "What are the cheapest cargo rates to Nigeria from the UK?", a: "The cheapest cargo rates to Nigeria from the UK are R-Zone's sea freight from £3/kg, air freight from £5/kg and door to door from £6/kg, all inclusive of documentation, transit, Nigeria customs clearance and delivery, with no hidden fees." },
+  { q: "What are the cheapest cargo rates to Nigeria from the UK?", a: "The cheapest cargo rates to Nigeria from the UK are R-Zone's sea freight from £3/kg, air freight from £5.50/kg and door to door from £6/kg, all inclusive of documentation, transit, Nigeria customs clearance and delivery, with no hidden fees." },
   { q: "What is the cheapest way to send cargo to Nigeria?", a: "Sea freight from £3/kg is the cheapest way, especially for large or heavy loads. The saving over air grows with weight, so a 100kg shipment is about £300 to £450 by sea versus £500 to £700 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air." },
   { q: "How can I make my cargo to Nigeria even cheaper?", a: "Ship by sea for large or heavy loads, pack densely so you are not paying for empty space, consolidate small boxes into fewer large ones, and book ahead rather than at the last minute. R-Zone prices every option so you can pick the cheapest." },
   { q: "Are there any hidden fees?", a: "No. R-Zone's rates are all inclusive of UK documentation, transit, Nigeria customs clearance and delivery, with no fuel surcharges or surprise charges. The price we quote is the price you pay." },
@@ -76,7 +76,7 @@ const TIPS = [
 ];
 
 const WHY = [
-  [PoundSterling, "Transparent, all-inclusive", "No hidden handling fees, fuel surcharges or surprise charges. The price we quote is the price you pay."],
+  [PoundSterling, "Transparent, all-inclusive", "No fuel surcharges or surprise charges, just one £20 handling fee on air shipments. The price we quote is the price you pay."],
   [Award, "12+ years of experience", "Shipping UK to Nigeria cargo since 2012, with 50,000+ shipments and 120+ five-star reviews."],
   [ShieldCheck, "Own team in Lagos", "We clear customs ourselves, so cheap rates still mean your cargo is not stuck at the port."],
   [Zap, "Weekly departures", "Air and sea services every week, so your cargo never waits long for the next service."],
@@ -91,7 +91,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">Cheap Cargo Rates to Nigeria from the UK in {CURRENT_YEAR}: The Lowest All-Inclusive Prices</h1>
-          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Sea from <strong className="font-semibold text-gray-700">£3/kg</strong>, air from £5/kg, door to door from £6/kg, all inclusive with no hidden fees. Here are R-Zone's cheap cargo rates to Nigeria, and how to pay even less.</p>
+          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Sea from <strong className="font-semibold text-gray-700">£3/kg</strong>, air from £5.50/kg, door to door from £6/kg, all inclusive with no hidden fees. Here are R-Zone's cheap cargo rates to Nigeria, and how to pay even less.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="Cargo boxes priced for cheap shipping from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
@@ -113,7 +113,7 @@ export default function Page() {
             <thead><tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]"><th className="p-4 font-bold">Service</th><th className="p-4 font-bold">From</th><th className="p-4 font-bold">20kg example</th><th className="p-4 font-bold">Best for</th></tr></thead>
             <tbody className="text-[15px] text-gray-800">
               <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Ship size={17} className="text-[#0818A8]" aria-hidden="true" />Sea freight</span></td><td className="p-4 font-black text-[#0818A8]">£3 / kg</td><td className="p-4">£60 to £90</td><td className="p-4">Cheapest for large or heavy loads</td></tr>
-              <tr className="bg-gray-50"><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Air freight</span></td><td className="p-4 font-black text-[#0818A8]">£5 / kg</td><td className="p-4">£100 to £160</td><td className="p-4">Faster, urgent items</td></tr>
+              <tr className="bg-gray-50"><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Air freight</span></td><td className="p-4 font-black text-[#0818A8]">£5.50 / kg</td><td className="p-4">£100 to £160</td><td className="p-4">Faster, urgent items</td></tr>
               <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Truck size={17} className="text-[#0818A8]" aria-hidden="true" />Door to door</span></td><td className="p-4 font-black text-[#0818A8]">£6 / kg</td><td className="p-4">£80 to £180</td><td className="p-4">Collection plus doorstep delivery</td></tr>
             </tbody>
           </table>
@@ -155,7 +155,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Want the cheapest rate?</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get your cheapest cargo quote today</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5/kg, door to door from £6/kg. Weekly departures, delivery to every state, and no hidden fees. Tell us what you are sending and we will price the cheapest way.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. Weekly departures, delivery to every state, and no hidden fees. Tell us what you are sending and we will price the cheapest way.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/how-much-does-cargo-cost-from-uk-to-nigeria" className="hover:text-white transition-colors">Full Price Guide</Link>

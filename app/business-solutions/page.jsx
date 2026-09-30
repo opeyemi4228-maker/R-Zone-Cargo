@@ -9,7 +9,7 @@
  * export const metadata = {
  * title: "UK Nigeria Business Cargo & Logistics Solutions | R-Zone Enterprises",
  * description:
- * "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5/kg, sea freight from £3/kg. Door-to-door, customs clearance, warehousing and importation. 100+ five-star reviews. Weekly departures. Same-day response.",
+ * "The highest-rated UK-to-Nigeria cargo company on Google. Air freight from £5.50/kg, sea freight from £3/kg. Door-to-door, customs clearance, warehousing and importation. 100+ five-star reviews. Weekly departures. Same-day response.",
  * keywords: [
  * "UK Nigeria cargo company","air freight Nigeria","sea freight Nigeria UK",
  * "door to door cargo Nigeria","customs clearance Nigeria UK",
@@ -72,7 +72,7 @@ const SOLUTIONS = [
  problemBody:"Delayed stock means lost revenue. Time-sensitive shipments cannot wait weeks at sea. Your business needs a reliable, fast air corridor from the UK to Nigeria with guaranteed weekly departures.",
  solutionTitle:"Air Freight UK to Nigeria.",
  solutionBody:"Weekly air freight from London Heathrow, Gatwick and Manchester direct to Lagos and Abuja. IATA-certified handling on every consignment. Air cargo from the UK to Nigeria in 5 10 working days.",
- sub:"5 10 working days UK to Nigeria", rate:"from £5/kg", accent:"#0818A8",
+ sub:"5 10 working days UK to Nigeria", rate:"from £5.50/kg", accent:"#0818A8",
  img:IMGS.airFreight, imgAlt:"Cargo aircraft loaded at Heathrow for air freight to Nigeria",
  points:["5 10 working days UK to Nigeria","Weekly departures Heathrow, Gatwick, Manchester","All 36 Nigerian states covered","UK door collection available","Real-time tracking on every shipment","IATA-certified cargo handling"],
  metric:{ val:"5 10", unit:"working days", label:"UK to Nigeria air freight" },
@@ -108,7 +108,7 @@ const SOLUTIONS = [
  problemBody:"Getting goods out of Nigeria is complex port clearance, NCS compliance, UK customs, VAT. Without the right partner your goods sit in Lagos for weeks.",
  solutionTitle:"Importation from Nigeria to the UK, Solved.",
  solutionBody:"Weekly air and sea services bringing Nigerian goods to the UK. African foodstuffs, textiles, commercial merchandise our Lagos team handles collection from anywhere in Nigeria and delivers to your UK door, customs cleared.",
- sub:"Weekly air · Weekly sea · Nigeria to UK", rate:"from £5/kg", accent:"#0818A8",
+ sub:"Weekly air · Weekly sea · Nigeria to UK", rate:"from £5.50/kg", accent:"#0818A8",
  img:IMGS.importation, imgAlt:"Nigerian goods prepared for importation to UK with R-Zone Enterprises",
  points:["Weekly air cargo collections from Lagos","Weekly sea departures from Apapa port","African foodstuffs accepted","Full UK customs clearance included","Collection from all 36 Nigerian states","Commercial & personal cargo both welcome"],
  metric:{ val:"Weekly", unit:"departures", label:"Nigeria to UK" },
@@ -878,7 +878,7 @@ export default function BusinessSolutionsClient() {
  {
  "@type":"LocalBusiness","@id":"https://r-zoneenterprises.com/#business",
  "name":"R-Zone Enterprises",
- "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews organically earned. Air freight from £5/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
+ "description":"The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews organically earned. Air freight from £5.50/kg, sea freight from £3/kg, door-to-door delivery to all 36 Nigerian states. 12+ years trusted by businesses and families.",
  "url":"https://r-zoneenterprises.com","telephone":"+448007720864","email":"info@r-zoneenterprises.com",
  "address":{ "@type":"PostalAddress","addressLocality":"Upminster","addressRegion":"Essex","addressCountry":"GB" },
  "areaServed":["United Kingdom","Nigeria"],

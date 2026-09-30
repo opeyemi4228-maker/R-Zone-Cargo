@@ -200,7 +200,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ship protected</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Add cargo insurance to your next shipment</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Declare your value and we will arrange transit cover warehouse to door, with the premium confirmed on your quote. Air from £5/kg, sea from £3/kg, door to door from £6/kg.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Declare your value and we will arrange transit cover warehouse to door, with the premium confirmed on your quote. Air from £5.50/kg, sea from £3/kg, door to door from £6/kg.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/marine-cargo-insurance-uk-to-nigeria" className="hover:text-white transition-colors">How Marine Insurance Works</Link>

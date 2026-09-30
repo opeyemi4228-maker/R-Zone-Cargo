@@ -21,7 +21,7 @@ const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format&fit=crop";
 
 const TITLE = "Fast Cargo to Nigeria from the UK 2026: Express Air Freight in 5 to 10 Days | R-Zone Enterprises";
-const DESCRIPTION = "Need it there fast? Express air cargo to Nigeria from the UK in 5 to 10 working days from £5/kg, with weekly flights and our own Lagos clearing team. Free same-day quote from R-Zone.";
+const DESCRIPTION = "Need it there fast? Express air cargo to Nigeria from the UK in 5 to 10 working days from £5.50/kg, with weekly flights and our own Lagos clearing team. Free same-day quote from R-Zone.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },
@@ -34,9 +34,9 @@ export const metadata = {
 };
 
 const FAQS = [
-  { q: "What is the fastest way to send cargo to Nigeria from the UK?", a: "The fastest way is express air freight, which arrives in 5 to 10 working days from £5/kg with R-Zone. It is ideal for urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
+  { q: "What is the fastest way to send cargo to Nigeria from the UK?", a: "The fastest way is express air freight, which arrives in 5 to 10 working days from £5.50/kg with R-Zone. It is ideal for urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
   { q: "How fast can you deliver cargo to Nigeria?", a: "Air cargo to Nigeria is delivered in 5 to 10 working days, including UK collection, the flight to Lagos, Nigeria customs clearance and doorstep delivery. R-Zone runs weekly flights so your cargo joins the next departure." },
-  { q: "How much does fast air cargo to Nigeria cost?", a: "Express air cargo starts from £5/kg, all inclusive. A 20kg box is roughly £100 to £160, or £120 to £180 with door to door collection and delivery. There are no hidden fees." },
+  { q: "How much does fast air cargo to Nigeria cost?", a: "Express air cargo starts from £5.50/kg, all inclusive. A 20kg box is roughly £100 to £160, or £120 to £180 with door to door collection and delivery. There are no hidden fees." },
   { q: "What can I send by fast air cargo?", a: "Air cargo suits compact, valuable and urgent items: electronics, phones, documents, medicine, fashion and gifts. Batteries, aerosols and liquids have specific air rules, so check with R-Zone if you are unsure." },
   { q: "How do you keep customs fast in Lagos?", a: "R-Zone has its own clearing team in Lagos that clears your cargo through Nigeria Customs on arrival, so it is not left waiting at the airport. That is a big part of what keeps the 5 to 10 day window reliable." },
 ];
@@ -92,7 +92,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
           <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">Fast Cargo to Nigeria from the UK in {CURRENT_YEAR}: Express Air Freight in 5 to 10 Days</h1>
-          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">When it has to get there fast, express air cargo to Nigeria arrives in <strong className="font-semibold text-gray-700">5 to 10 working days</strong> from £5/kg, with weekly flights and our own Lagos clearing team to avoid port delays.</p>
+          <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">When it has to get there fast, express air cargo to Nigeria arrives in <strong className="font-semibold text-gray-700">5 to 10 working days</strong> from £5.50/kg, with weekly flights and our own Lagos clearing team to avoid port delays.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="Cargo aircraft for fast air freight from the UK to Nigeria" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
@@ -113,7 +113,7 @@ export default function Page() {
           <table className="w-full text-left border-collapse min-w-[560px]">
             <thead><tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]"><th className="p-4 font-bold">Service</th><th className="p-4 font-bold">Speed</th><th className="p-4 font-bold">From</th><th className="p-4 font-bold">Best for</th></tr></thead>
             <tbody className="text-[15px] text-gray-800">
-              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Express air freight</span></td><td className="p-4 font-black text-[#0818A8]">5 to 10 working days</td><td className="p-4">£5/kg</td><td className="p-4">Urgent, high-value cargo</td></tr>
+              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#0818A8]" aria-hidden="true" />Express air freight</span></td><td className="p-4 font-black text-[#0818A8]">5 to 10 working days</td><td className="p-4">£5.50/kg</td><td className="p-4">Urgent, high-value cargo</td></tr>
               <tr className="bg-gray-50"><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Truck size={17} className="text-[#0818A8]" aria-hidden="true" />Door to door by air</span></td><td className="p-4 font-black text-[#0818A8]">5 to 10 working days</td><td className="p-4">£6/kg</td><td className="p-4">Collected and delivered fast</td></tr>
             </tbody>
           </table>
@@ -156,7 +156,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">On the clock?</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get your fast cargo to Nigeria moving today</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Express air from £5/kg, delivered in 5 to 10 working days. Weekly flights, own clearing team in Lagos, and same-day booking. Tell us your deadline and we will make it.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Express air from £5.50/kg, delivered in 5 to 10 working days. Weekly flights, own clearing team in Lagos, and same-day booking. Tell us your deadline and we will make it.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/air-freight-uk-to-nigeria" className="hover:text-white transition-colors">Air Freight Guide</Link>

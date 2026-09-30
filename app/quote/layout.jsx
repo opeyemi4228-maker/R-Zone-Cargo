@@ -4,7 +4,7 @@
 export const metadata = {
  title: { absolute: "Free UK Nigeria Shipping Quote | R-Zone Enterprises" },
  description:
- "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Cargo to Nigeria from UK by air freight from £5/kg or sea freight from £3/kg. Same-day response. 100+ five-star reviews.",
+ "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Cargo to Nigeria from UK by air freight from £5.50/kg or sea freight from £3/kg. Same-day response. 100+ five-star reviews.",
  keywords: [
  "shipping quote UK to Nigeria",
  "cargo quote Nigeria UK",

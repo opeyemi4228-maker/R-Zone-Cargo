@@ -82,7 +82,7 @@ const FAQS = [
   },
   {
     q: "How much more does door to door cost than drop-off?",
-    a: "Door to door starts from £6/kg versus about £5/kg by air for drop-off, so on a 20kg box you are typically paying around £20 to £30 more. That premium covers collection from your UK address and final delivery to the door in Nigeria, which usually costs more than that to arrange yourself.",
+    a: "Door to door starts from £6/kg versus about £5.50/kg by air for drop-off, so on a 20kg box you are typically paying around £20 to £30 more. That premium covers collection from your UK address and final delivery to the door in Nigeria, which usually costs more than that to arrange yourself.",
   },
   {
     q: "What is the difference between door to door and drop-off cargo?",
@@ -165,7 +165,7 @@ function H2({ id, eyebrow, children }) {
 }
 
 const COMPARE = [
-  ["Price from", "Air £5/kg, sea £3/kg", "From £6/kg", false],
+  ["Price from", "Air £5.50/kg, sea £3/kg", "From £6/kg", false],
   ["UK first mile", "You deliver to a depot", "We collect from your address", true],
   ["Nigeria last mile", "Recipient collects it", "We deliver to the door", true],
   ["Your effort", "Depot run, your time and fuel", "None, we handle it", true],
@@ -174,7 +174,7 @@ const COMPARE = [
 ];
 
 const OPTIONS = [
-  { icon: Package, name: "Drop-Off", price: "Air from £5/kg", href: "/quote",
+  { icon: Package, name: "Drop-Off", price: "Air from £5.50/kg", href: "/quote",
     points: ["Lowest headline price per kg", "You deliver cargo to a UK depot", "Recipient collects it in Nigeria", "Best if you both live near a point"] },
   { icon: Truck, name: "Door to Door", price: "From £6/kg", href: "/quote",
     points: ["We collect from your UK address", "We deliver to the recipient's door", "No depot runs at either end", "Best for heavy cargo and busy families"] },
@@ -389,7 +389,7 @@ export default function Page() {
           <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Not sure which to pick?</p>
           <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get both options priced in one free quote</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
-            Door to door from £6/kg. Drop-off air from £5/kg, sea from £3/kg. Weekly departures and
+            Door to door from £6/kg. Drop-off air from £5.50/kg, sea from £3/kg. Weekly departures and
             delivery to every state in Nigeria. Tell us what you are sending and we will price both
             so you can choose.
           </p>
