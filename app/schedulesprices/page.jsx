@@ -119,7 +119,7 @@ const STATE_RATES = [
  { state: "Kebbi", doorToDoor: null, collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Kogi", doorToDoor: "6.80", collection: "6.50", minWeight: "30", minWeightNote: null, days: "15" },
  { state: "Kwara", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Lagos", doorToDoor: "5.80", collection: "5.50", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 7" },
+ { state: "Lagos", doorToDoor: "5.80", collection: "5.50", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 to 7" },
  { state: "Nasarawa", doorToDoor: "7.30", collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Niger", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Ogun", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
