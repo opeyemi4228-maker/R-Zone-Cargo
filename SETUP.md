@@ -108,6 +108,13 @@ Then:
 3. The build runs `prisma generate` automatically (see `package.json` → `build`).
 4. Run `npm run db:push` once against the production database (or use
  `prisma migrate deploy` in your pipeline).
+5. **The production build uses webpack (`next build --webpack`), not Turbopack.**
+ On the shared host, Turbopack's build panics while spawning the PostCSS
+ worker for `app/globals.css` ("node process exited before we could connect
+ to it"), which is the host's process/memory limit, not a code error. Webpack
+ builds the same output with fewer worker processes. `npm run dev` still uses
+ Turbopack, which is unaffected. If a host build ever fails this way again,
+ lower the build parallelism before changing app code.
 
 ---
 
