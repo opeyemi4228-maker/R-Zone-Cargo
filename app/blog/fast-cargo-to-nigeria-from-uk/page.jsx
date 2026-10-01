@@ -4,7 +4,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import {
   Plane, Truck, Zap, Clock, ShieldCheck, Award, Globe, PoundSterling,
   Check, ArrowRight, PhoneCall, MessageCircle,
@@ -12,8 +11,7 @@ import {
 import { ORGANIZATION_SCHEMA } from "../../../lib/articles";
 import { freshYear, CURRENT_YEAR } from "../../../lib/year";
 import ShareRow from "../../cargo-from-uk-to-nigeria/ShareRow";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["300","400","500","600","700","800","900"], display: "swap" });
+import { montserrat } from "../../../lib/fonts";
 
 const SITE_URL = "https://r-zoneenterprises.com";
 const PAGE_URL = `${SITE_URL}/blog/fast-cargo-to-nigeria-from-uk`;

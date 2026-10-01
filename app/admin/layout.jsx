@@ -3,20 +3,13 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import {
  LayoutDashboard, FileText, MessageSquare, Users, LogOut,
  Menu, X, ShieldCheck, ChevronRight,
 } from "lucide-react";
 import { isAdminAuthenticated, adminLogout } from "../../lib/adminAuth";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../../lib/fonts";
 
 const NAV = [
  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },

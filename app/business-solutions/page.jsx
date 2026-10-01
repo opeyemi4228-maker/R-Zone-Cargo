@@ -21,10 +21,10 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { montserrat } from "../../lib/fonts";
 import {
  motion, useInView, useScroll, useTransform, AnimatePresence,
 } from "framer-motion";
@@ -38,13 +38,6 @@ import {
  TrendingUp, Users, Zap, Globe, Briefcase,
  Award, MessageSquare,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300","400","500","600","700","800","900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 const IMGS = {
  airFreight: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80&auto=format&fit=crop",

@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat, Outfit } from "next/font/google";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { montserrat, outfit } from "../../lib/fonts";
 import {
  ArrowRight, MapPin, Phone, Mail, Globe,
  ChevronRight, Shield, Award, Users, Package,
@@ -11,20 +11,6 @@ import {
  CheckCircle, Quote, Plane, Ship, Truck,
  Building2, Target, Eye, Handshake,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
-
-const outfit = Outfit({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600"],
- variable: "--font-outfit",
- display: "swap",
-});
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const STATS = [

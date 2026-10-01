@@ -1,15 +1,10 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
+import { montserrat } from "../lib/fonts";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 

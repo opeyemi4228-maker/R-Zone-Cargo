@@ -22,14 +22,13 @@
  * • Stats block: linkable asset for backlinks / press citations
  */
 
-import { Montserrat, Outfit } from "next/font/google";
-
 // SEO metadata for this route lives in ./layout.jsx (a Server Component),
 // because a Client Component ("use client") cannot export `metadata`.
 
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat, outfit } from "../../lib/fonts";
 import {
  Plane, Ship, Truck, Package, ArrowRight,
  ArrowLeft, ChevronRight, CheckCircle, User,
@@ -42,18 +41,6 @@ import {
 } from "lucide-react";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
-const outfit = Outfit({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600"],
- variable: "--font-outfit",
- display: "swap",
-});
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const STEPS = [

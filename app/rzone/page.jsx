@@ -12,13 +12,11 @@
  * };
  */
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Globe, MapPin, ChevronRight, Shield, TrendingUp, Users, Building2, Package, Home, Star, Calendar, Briefcase, Zap, Clock, CheckCircle, Phone, Mail, Instagram, ExternalLink, BarChart3, Layers, Target, Award, MessageSquare } from "lucide-react";
-
-const montserrat = Montserrat({ subsets:["latin"], weight:["300","400","500","600","700","800","900"], variable:"--font-mont", display:"swap" });
+import { montserrat } from "../../lib/fonts";
 
 const SUBSIDIARIES = [
  {
@@ -185,7 +183,7 @@ function Hero(){
  <motion.div className="w-52 h-52 border border-white/[0.06] rounded-full flex items-center justify-center" animate={{rotate:360}} transition={{duration:40,repeat:Infinity,ease:"linear"}}>
  <svg viewBox="0 0 200 200" className="w-full h-full absolute inset-0">
  <path id="circle-text" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none"/>
- <text style={{fontSize:10.5,fontFamily:"var(--font-mont)",fontWeight:500,letterSpacing:"0.2em",fill:"rgba(255,255,255,0.6)"}}>
+ <text style={{fontSize:10.5,fontFamily:"var(--font-montserrat)",fontWeight:500,letterSpacing:"0.2em",fill:"rgba(255,255,255,0.6)"}}>
  <textPath href="#circle-text">R-ZONE INTERNATIONAL · FOUNDED 2012 · UK NIGERIA · </textPath>
  </text>
  </svg>
@@ -739,7 +737,7 @@ export default function RZoneInternationalClient(){
  return (
  <>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(SCHEMA)}}/>
- <div className={`${montserrat.variable} font-[family-name:var(--font-mont)] w-full`}>
+ <div className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] w-full`}>
  <CursorGlow/>
  
  <main>

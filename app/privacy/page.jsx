@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Shield, ChevronRight, ArrowLeft, Phone,
  Mail, ExternalLink, Check, ChevronDown,
@@ -11,13 +11,6 @@ import {
  Clock, AlertCircle, Users, FileText,
  ArrowRight, Menu, X,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Table of contents ────────────────────────────────────────────────────────
 const TOC = [

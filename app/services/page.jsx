@@ -1,23 +1,16 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Plane, Ship, Truck, Package, FileCheck,
  Warehouse, Anchor, ArrowRight, Check,
  ChevronRight, MapPin, Clock, Shield,
  BarChart3, Phone, MessageSquare, Star,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // SEO metadata for this route lives in ./layout.jsx (a Server Component),
 // because a Client Component ("use client") cannot export `metadata`.

@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Search, Phone, Mail, MessageSquare, MapPin,
  ChevronRight, ChevronDown, ArrowRight, Check,
@@ -14,13 +14,6 @@ import {
  Globe, ExternalLink,
  TrendingUp, Hash,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── WhatsApp icon ─────────────────────────────────────────────────────────────
 function WhatsAppIcon({ size = 18, className = "" }) {

@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat, Outfit } from "next/font/google";
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat, outfit } from "../../lib/fonts";
 import {
  Phone, Mail, MapPin, Clock, ArrowRight,
  ChevronRight, CheckCircle, Send, User,
@@ -15,18 +15,6 @@ import {
 } from "lucide-react";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
-const outfit = Outfit({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600"],
- variable: "--font-outfit",
- display: "swap",
-});
 
 // ─── WhatsApp icon ─────────────────────────────────────────────────────────────
 function WhatsAppIcon({ size = 13, className = "" }) {

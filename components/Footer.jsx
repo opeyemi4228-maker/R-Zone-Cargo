@@ -1,6 +1,5 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { useState, useRef, useCallback } from "react";
 import {
@@ -11,13 +10,7 @@ import {
  Navigation, Zap, Star, MessageSquare, Facebook,
 } from "lucide-react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../lib/fonts";
 
 // ─── Instagram icon (not in lucide-react) ─────────────────────────────────────
 function InstagramIcon({ size = 14, className = "" }) {

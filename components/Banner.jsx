@@ -1,16 +1,9 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../lib/fonts";
 
 // ─── Real verified customer reviews ───────────────────────────────────────────
 const TESTIMONIALS = [

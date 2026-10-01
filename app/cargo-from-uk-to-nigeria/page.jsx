@@ -12,7 +12,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import {
   Plane,
   Ship,
@@ -32,12 +31,7 @@ import {
 import { ORGANIZATION_SCHEMA } from "../../lib/articles";
 import { freshYear, CURRENT_YEAR } from "../../lib/year";
 import ShareRow from "./ShareRow";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
+import { montserrat } from "../../lib/fonts";
 
 const SITE_URL = "https://r-zoneenterprises.com";
 const PAGE_URL = `${SITE_URL}/cargo-from-uk-to-nigeria`;

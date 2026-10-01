@@ -35,15 +35,8 @@ import {
  Link2,
  ChevronRight,
 } from "lucide-react";
-import { Montserrat } from "next/font/google";
 import { CATEGORIES, SITE_URL } from "../../../lib/articles";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../../../lib/fonts";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ICON MAP resolves icon string names from articles.js to Lucide components

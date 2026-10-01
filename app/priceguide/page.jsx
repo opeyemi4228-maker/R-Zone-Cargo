@@ -1,23 +1,16 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  ArrowRight, ArrowLeft, Clock, User, Calendar,
  Share2, Check, Link2, ChevronRight, TrendingUp,
  Package, Zap, AlertCircle, CheckCircle,
  Calculator, ChevronDown, ChevronUp, Phone, Mail,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Article Data ─────────────────────────────────────────────────────────────
 const ARTICLE = {

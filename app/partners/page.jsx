@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Handshake, ArrowRight, ChevronRight, Phone, Mail,
  Check, Star, Globe, Users, TrendingUp, Zap,
@@ -12,13 +12,6 @@ import {
  Send, User, ChevronDown, MapPin, Briefcase,
  Plane, Ship, Anchor, Target, Heart,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const PARTNER_TYPES = [

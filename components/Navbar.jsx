@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,14 +13,9 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { assets } from "@/assets/assets";
+import { montserrat } from "../lib/fonts";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Top utility bar ──────────────────────────────────────────────────────────
 const TOP_LINKS = [

@@ -1,19 +1,12 @@
 import React from 'react';
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import { AppContextProvider } from "@/context/AppContext";
 import ConditionalShell from "@/components/ConditionalShell";
 import BodyCleanup from "@/components/BodyCleanup";
 import ToasterProvider from "@/components/ToasterProvider";
+import { outfit } from "../lib/fonts";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
-const outfit = Outfit({
- subsets: ["latin"],
- weight: ["300", "400", "500"],
- display: "swap", // Prevents invisible text during font load (CLS)
- preload: true,
- variable: "--font-outfit",
-});
 
 // ─── Site-wide constants ──────────────────────────────────────────────────────
 const SITE_URL = "https://r-zoneenterprises.com";
@@ -196,8 +189,8 @@ export default function RootLayout({ children }) {
  <head>
  {React.Children.toArray([
  /* ── DNS prefetch & preconnect speeds up third-party resources ── */
- <link key="preconnect-google" rel="preconnect" href="https://fonts.googleapis.com" />,
- <link key="preconnect-gstatic" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />,
+ /* No Google Fonts preconnect: Montserrat and Outfit are self-hosted
+ (see lib/fonts.js) and preloaded from /_next/static/media. */
  <link key="dns-google-analytics" rel="dns-prefetch" href="//www.google-analytics.com" />,
  <link key="dns-gtm" rel="dns-prefetch" href="//www.googletagmanager.com" />,
  <link key="dns-maps" rel="dns-prefetch" href="//maps.googleapis.com" />,

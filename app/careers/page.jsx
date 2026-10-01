@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Briefcase, ArrowRight, ChevronRight, Phone, Mail,
  Check, Star, Globe, Users, MapPin, Clock,
@@ -13,13 +13,6 @@ import {
  Package, Truck, BarChart3, Target,
  Coffee, Laptop, GraduationCap,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const OPEN_ROLES = [

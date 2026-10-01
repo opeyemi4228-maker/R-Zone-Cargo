@@ -1,22 +1,15 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { montserrat } from "../lib/fonts";
 import {
  Shield, Award, Globe, Clock, Package,
  CheckCircle, Warehouse, Plane, Star,
  TrendingUp, Users, MapPin, Phone, MessageSquare,
  Ship,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 function AnimatedCounter({ target, suffix = "", prefix = "" }) {
  const ref = useRef(null);

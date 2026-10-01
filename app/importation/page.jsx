@@ -1,23 +1,16 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Plane, Ship, Truck, Package, MapPin, Phone,
  ArrowRight, ChevronRight, Check, CheckCircle,
  AlertTriangle, Star, Clock, Shield, MessageCircle,
  Globe, Warehouse, X, ChevronDown, Info, Zap,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── WhatsApp SVG ─────────────────────────────────────────────────────────────
 function WhatsAppIcon({ size = 16 }) {

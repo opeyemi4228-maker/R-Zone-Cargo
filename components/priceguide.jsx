@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import { motion, useInView } from "framer-motion";
+import { montserrat } from "../lib/fonts";
 import {
  ArrowRight,
  Calculator,
@@ -14,12 +14,6 @@ import {
 } from "lucide-react";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const GUIDE_URL = "/priceguide";

@@ -1,17 +1,10 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ClipboardList, PackageCheck, Plane, MapPin, ArrowRight, ChevronRight, Check } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../lib/fonts";
 
 const STEPS = [
  {

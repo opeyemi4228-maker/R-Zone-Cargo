@@ -1,20 +1,15 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Cookie, ChevronRight, ArrowLeft, Phone, Mail, ArrowRight,
  ChevronDown, Check, Shield, ToggleLeft, ToggleRight,
  Clock, Globe, FileText, ExternalLink, Info,
  Eye, BarChart3, Megaphone, Lock,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"], weight: ["300","400","500","600","700","800","900"],
- variable: "--font-montserrat", display: "swap",
-});
 
 const TOC = [
  { id: "c1", label: "What Are Cookies", num: "01" },

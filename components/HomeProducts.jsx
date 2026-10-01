@@ -2,17 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Montserrat } from "next/font/google";
 import { Plane, Ship, Truck, Package, ShoppingBag, User } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import FeaturedProduct from "@/components/FeaturedProduct";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../lib/fonts";
 
 const SERVICE_CARDS = [
  {

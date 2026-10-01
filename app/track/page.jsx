@@ -9,14 +9,13 @@
  * Matches R-Zone brand palette (#00061a base, #0818A8 / #1F51FF accents).
  */
 
-import { Montserrat } from "next/font/google";
-
 // SEO metadata for this route lives in ./layout.jsx (a Server Component),
 // because a Client Component ("use client") cannot export `metadata`.
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  Search, Package, MapPin, Clock, CheckCircle,
  Circle, Truck, Plane, Ship, Warehouse,
@@ -26,13 +25,6 @@ import {
  Shield, Globe, Zap, BarChart3, Award,
  MessageSquare, ChevronDown, Loader2,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-mont",
- display: "swap",
-});
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
 const MOCK_SHIPMENTS = {
@@ -448,7 +440,7 @@ export default function TrackPage() {
  const handleKey = (e) => { if (e.key==="Enter") handleTrack(); };
 
  return (
- <main className={`${montserrat.variable} font-[family-name:var(--font-mont)] bg-[#00061a] min-h-screen`}>
+ <main className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-[#00061a] min-h-screen`}>
 
  {/* ══ HERO ═════════════════════════════════════════════════════════════ */}
  <section className="relative overflow-hidden" aria-labelledby="track-hero-heading">

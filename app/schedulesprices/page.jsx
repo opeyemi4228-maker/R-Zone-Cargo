@@ -1,9 +1,9 @@
 "use client";
 
-import { Montserrat, Outfit } from "next/font/google";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat, outfit } from "../../lib/fonts";
 import {
  Plane, Ship, ChevronRight, ArrowRight,
  Calendar, Clock, MapPin, Package,
@@ -12,19 +12,6 @@ import {
  Info, Download, BarChart3, Truck,
  Zap, TrendingDown, Weight,
 } from "lucide-react";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
-const outfit = Outfit({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600"],
- variable: "--font-outfit",
- display: "swap",
-});
 
 const YEAR = String(new Date().getFullYear());
 
@@ -84,8 +71,6 @@ const SEA_SCHEDULES = getCurrentMonthSeaSchedules();
 const AIR_SCHEDULES = [
  { day: "Friday", departure: "LHR", airline: "Multiple Carriers", transit: "7 days · Arrives next Friday", frequency: "Weekly" },
 ];
-
-
 
 const AIR_RATES = [
  { range: "All weights", rate: "£5.50", per: "per kg", note: "Plus £20 handling fee" },
@@ -590,7 +575,6 @@ function SchedulesSection() {
  </Link>
  </motion.div>
  )}
-
 
  </AnimatePresence>
  </div>

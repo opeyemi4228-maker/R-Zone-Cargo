@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { Montserrat } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Settings, ChevronDown, ShieldCheck } from "lucide-react";
 import Link from "next/link";
@@ -10,13 +9,7 @@ import HomeProducts from "@/components/HomeProducts";
 import Banner from "@/components/Banner";
 import NewsLetter from "@/components/NewsLetter";
 import Priceguide from "@/components/priceguide";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../lib/fonts";
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 const STORAGE_KEY = "rzone_cookie_consent"; // "accepted" | "declined" | "custom"

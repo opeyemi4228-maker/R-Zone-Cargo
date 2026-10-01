@@ -14,6 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { montserrat } from "../../lib/fonts";
 import {
  ArrowRight,
  ChevronRight,
@@ -36,14 +37,6 @@ import {
  Send,
  CheckCircle,
 } from "lucide-react";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ICON MAP

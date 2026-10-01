@@ -2,17 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Montserrat } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, EyeOff, Lock, Mail, AlertCircle, ShieldCheck } from "lucide-react";
 import { adminLogin } from "../../../lib/adminAuth";
-
-const montserrat = Montserrat({
- subsets: ["latin"],
- weight: ["300", "400", "500", "600", "700", "800", "900"],
- variable: "--font-montserrat",
- display: "swap",
-});
+import { montserrat } from "../../../lib/fonts";
 
 export default function AdminLoginPage() {
  const router = useRouter();
