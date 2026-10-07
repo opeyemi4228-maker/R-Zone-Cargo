@@ -60,7 +60,7 @@ const BUSINESS_PROBLEMS = [
 
 const SOLUTIONS = [
  {
- id:"air-freight", slug:"/air-freight", icon:Plane, label:"Air Freight", badge:"Fastest Option",
+ id:"air-freight", slug:"/services#air-freight", icon:Plane, label:"Air Freight", badge:"Fastest Option",
  problemTitle:"Need cargo in Nigeria fast from the UK?",
  problemBody:"Delayed stock means lost revenue. Time-sensitive shipments cannot wait weeks at sea. Your business needs a reliable, fast air corridor from the UK to Nigeria with guaranteed weekly departures.",
  solutionTitle:"Air Freight UK to Nigeria.",
@@ -72,7 +72,7 @@ const SOLUTIONS = [
  airlines:["British Airways","Virgin Atlantic","Emirates","Ethiopian Airlines"],
  },
  {
- id:"sea-freight", slug:"/sea-shipping-to-nigeria", icon:Ship, label:"Sea Freight", badge:"Best Value",
+ id:"sea-freight", slug:"/services#sea-shipping-to-nigeria", icon:Ship, label:"Sea Freight", badge:"Best Value",
  problemTitle:"High UK Nigeria shipping costs eating your margins?",
  problemBody:"Air freight at scale is not viable for bulk goods, vehicles or machinery. You need an affordable, reliable sea corridor between the UK and Nigeria without hidden charges.",
  solutionTitle:"Weekly Sea Freight UK to Nigeria.",
@@ -84,7 +84,7 @@ const SOLUTIONS = [
  airlines:[],
  },
  {
- id:"door-to-door", slug:"/door-to-door-cargo", icon:Truck, label:"Door to Door", badge:"Most Popular",
+ id:"door-to-door", slug:"/services#door-to-door-cargo", icon:Truck, label:"Door to Door", badge:"Most Popular",
  problemTitle:"Managing UK Nigeria logistics from two countries?",
  problemBody:"Coordinating UK collections, Nigerian customs, and last-mile delivery through multiple providers is a management nightmare. One mistake and your shipment stalls.",
  solutionTitle:"Complete Door-to-Door UK Nigeria Cargo.",
@@ -96,7 +96,7 @@ const SOLUTIONS = [
  airlines:[],
  },
  {
- id:"importation", slug:"/importation-from-nigeria", icon:Package, label:"Import from Nigeria", badge:"Two-Way",
+ id:"importation", slug:"/importation", icon:Package, label:"Import from Nigeria", badge:"Two-Way",
  problemTitle:"Importing goods from Nigeria to the UK?",
  problemBody:"Getting goods out of Nigeria is complex port clearance, NCS compliance, UK customs, VAT. Without the right partner your goods sit in Lagos for weeks.",
  solutionTitle:"Importation from Nigeria to the UK, Solved.",
@@ -108,7 +108,7 @@ const SOLUTIONS = [
  airlines:[],
  },
  {
- id:"customs", slug:"/customs-clearance", icon:FileCheck, label:"Customs Clearance", badge:"Specialist",
+ id:"customs", slug:"/services#customs-clearance", icon:FileCheck, label:"Customs Clearance", badge:"Specialist",
  problemTitle:"Cargo held at UK or Nigerian customs again?",
  problemBody:"Incorrect documentation, wrong HS codes, missed compliance checks customs errors cost businesses thousands in demurrage and delays. UK Nigeria customs requires specialists who know both systems inside out.",
  solutionTitle:"UK & Nigeria Customs Clearance, Handled.",
@@ -120,7 +120,7 @@ const SOLUTIONS = [
  airlines:[],
  },
  {
- id:"warehousing", slug:"/warehousing", icon:Warehouse, label:"Warehousing", badge:"UK & Nigeria",
+ id:"warehousing", slug:"/services#warehousing", icon:Warehouse, label:"Warehousing", badge:"UK & Nigeria",
  problemTitle:"No storage solution at the UK or Nigerian end?",
  problemBody:"Without a trusted warehouse partner at both ends of the UK Nigeria corridor, your stock sits untracked, uninsured, and managed by third parties who do not understand your cargo.",
  solutionTitle:"Secure UK & Nigeria Warehousing.",
@@ -884,7 +884,7 @@ export default function BusinessSolutionsClient() {
  "itemListElement":SOLUTIONS.map((s,i) => ({
  "@type":"ListItem","position":i+1,
  "item":{ "@type":"Service","name":s.label,"description":s.solutionBody,
- "url":`https://r-zoneenterprises.com${s.slug}`,
+ "url":`https://r-zoneenterprises.com${s.slug.split("#")[0]}`,
  "provider":{ "@type":"Organization","name":"R-Zone Enterprises","@id":"https://r-zoneenterprises.com/#business" },
  "offers":{ "@type":"Offer","priceCurrency":"GBP","description":s.rate },
  "areaServed":["United Kingdom","Nigeria"],

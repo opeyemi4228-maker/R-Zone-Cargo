@@ -64,9 +64,9 @@ const SERVICES = [
 
 const COMPANY = [
  { label: "About Us", href: "/about" },
- { label: "Why R-Zone", href: "/why-rzone" },
- { label: "Industries Served", href: "/industries" },
- { label: "News & Insights", href: "/news" },
+ { label: "Why R-Zone", href: "/about" },
+ { label: "Industries Served", href: "/business-solutions" },
+ { label: "News & Insights", href: "/blog" },
  { label: "Careers", href: "/careers" },
  {label: "Blog", href:"/blog" },
  { label: "Contact Us", href: "/contact" },

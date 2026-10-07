@@ -1,0 +1,29 @@
+{
+  "name": "R-Zone Cargo: UK to Nigeria Shipping",
+  "short_name": "R-Zone Cargo",
+  "description": "Door to door cargo to Nigeria from the UK: air freight, sea freight, car shipping and importation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0818A8",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
