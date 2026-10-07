@@ -2,9 +2,8 @@
 // The page itself is a Client Component ("use client"), which cannot export
 // `metadata`, so it lives here instead.
 export const metadata = {
- title: { absolute: "UK Nigeria Cargo Services | R-Zone Enterprises" },
- description:
- "Air freight to Nigeria, sea freight to Nigeria from UK, door to door cargo Nigeria and customs clearance by R-Zone Enterprises. Weekly departures and UK-wide collection.",
+ title: { absolute: "UK to Nigeria Cargo Services: Air, Sea and Door to Door" },
+ description: "Air freight, sea freight, door to door cargo and Nigeria customs clearance from R-Zone, with weekly departures and collection across the UK.",
  keywords: [
  "UK Nigeria cargo services",
  "air freight to Nigeria",
@@ -18,9 +17,8 @@ export const metadata = {
  ],
  alternates: { canonical: "https://r-zoneenterprises.com/services" },
  openGraph: {
- title: "UK Nigeria Cargo Services | R-Zone Enterprises",
- description:
- "Air freight to Nigeria, sea freight to Nigeria from UK, door to door cargo Nigeria and customs clearance by R-Zone Enterprises. Weekly departures and UK-wide collection.",
+ title: "UK to Nigeria Cargo Services: Air, Sea and Door to Door",
+ description: "Air freight, sea freight, door to door cargo and Nigeria customs clearance from R-Zone, with weekly departures and collection across the UK.",
  url: "https://r-zoneenterprises.com/services",
  siteName: "R-Zone Enterprises",
  },

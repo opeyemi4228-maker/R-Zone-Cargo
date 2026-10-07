@@ -875,7 +875,6 @@ export default function BusinessSolutionsClient() {
  "url":"https://r-zoneenterprises.com","telephone":"+448007720864","email":"info@r-zoneenterprises.com",
  "address":{ "@type":"PostalAddress","addressLocality":"Upminster","addressRegion":"Essex","addressCountry":"GB" },
  "areaServed":["United Kingdom","Nigeria"],
- "aggregateRating":{ "@type":"AggregateRating","ratingValue":"5","reviewCount":"100","bestRating":"5" },
  },
  {
  "@type":"ItemList",

@@ -19,8 +19,8 @@ const PAGE_URL = `${SITE_URL}/blog/uk-to-nigeria-cargo-faq`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "UK to Nigeria Cargo FAQs 2026: 34 Questions Answered | R-Zone Enterprises";
-const DESCRIPTION = "Every question about sending cargo from the UK to Nigeria answered: prices, transit times, door to door, customs and duty, packing, prohibited items, insurance, cars and tracking. Free quote.";
+const TITLE = "UK to Nigeria Cargo FAQ: 34 Questions Answered";
+const DESCRIPTION = "Prices, transit times, door to door, customs, packing, insurance, cars and booking: the questions we are asked most, answered in one place.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

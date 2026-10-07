@@ -363,7 +363,7 @@ export default function Footer() {
  "@type": "Organization",
  "name": "R-Zone Enterprises",
  "url": "https://r-zoneenterprises.com",
- "logo": "https://r-zoneenterprises.com/wp-content/uploads/2022/09/Logo-colour-112.png",
+ "logo": "https://r-zoneenterprises.com/images/rzone-logo.png",
  "description": "The highest-rated organically earned cargo and logistics company operating between the UK, Nigeria, and across Africa.",
  "contactPoint": [
  {

@@ -21,8 +21,8 @@ const PAGE_URL = `${SITE_URL}/blog/marine-cargo-insurance-uk-to-nigeria`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Marine Cargo & Transit Insurance for Shipping to Nigeria 2026 | R-Zone Enterprises";
-const DESCRIPTION = "A complete guide to marine cargo and transit insurance for shipping from the UK to Nigeria: Institute Cargo Clauses A, B and C, carrier liability limits, General Average, how to value cover and how to claim.";
+const TITLE = "Marine Cargo Insurance for UK to Nigeria Shipping";
+const DESCRIPTION = "How marine transit cover works, what it costs, what it excludes and how much to declare, so a loss on the way to Nigeria does not fall on you.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

@@ -19,8 +19,8 @@ const PAGE_URL = `${SITE_URL}/blog/bulk-shipping-uk-to-nigeria`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Bulk Shipping from the UK to Nigeria 2026: LCL, FCL & Pallets | R-Zone Enterprises";
-const DESCRIPTION = "The complete guide to bulk shipping from the UK to Nigeria: LCL vs full container (FCL), 20ft and 40ft capacities, pallet loads, cost per kg, packaging, customs and compliance for commercial cargo. Free quote.";
+const TITLE = "Bulk Shipping from the UK to Nigeria: Containers";
+const DESCRIPTION = "Move pallets, part loads and full containers to Nigeria from £3/kg, with LCL and FCL options, customs clearance and nationwide delivery.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

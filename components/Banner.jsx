@@ -242,13 +242,6 @@ export default function TestimonialsSection() {
  "@id": "https://r-zoneenterprises.com/#organization",
  "name": "R-Zone Enterprises",
  "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned.",
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "5",
- "reviewCount": "100",
- "bestRating": "5",
- "worstRating": "1",
- },
  "review": TESTIMONIALS.map(t => ({
  "@type": "Review",
  "author": { "@type": "Person", "name": t.name },

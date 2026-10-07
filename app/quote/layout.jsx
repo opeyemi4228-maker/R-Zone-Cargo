@@ -2,9 +2,8 @@
 // The page itself is a Client Component ("use client"), which cannot export
 // `metadata`, so it lives here instead.
 export const metadata = {
- title: { absolute: "Free UK Nigeria Shipping Quote | R-Zone Enterprises" },
- description:
- "Get a free cargo shipping quote from the #1 highest-rated UK-to-Nigeria cargo company on Google. Cargo to Nigeria from UK by air freight from £5.50/kg or sea freight from £3/kg. Same-day response. 100+ five-star reviews.",
+ title: { absolute: "Free UK to Nigeria Cargo Quote: Air, Sea, Door to Door" },
+ description: "Get a free UK to Nigeria cargo quote: air from £5.50/kg, sea from £3/kg, door to door from £6/kg. Same-day reply, customs clearance included.",
  keywords: [
  "shipping quote UK to Nigeria",
  "cargo quote Nigeria UK",
@@ -16,9 +15,8 @@ export const metadata = {
  ],
  alternates: { canonical: "https://r-zoneenterprises.com/quote" },
  openGraph: {
- title: "Free UK Nigeria Shipping Quote | R-Zone Enterprises",
- description:
- "The #1 highest-rated UK-to-Nigeria cargo company on Google. Get your free quote in 4 steps. Same-day response.",
+ title: "Free UK to Nigeria Cargo Quote: Air, Sea, Door to Door",
+ description: "Get a free UK to Nigeria cargo quote: air from £5.50/kg, sea from £3/kg, door to door from £6/kg. Same-day reply, customs clearance included.",
  url: "https://r-zoneenterprises.com/quote",
  siteName: "R-Zone Enterprises",
  },

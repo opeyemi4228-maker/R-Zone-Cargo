@@ -629,25 +629,12 @@ export default function Navbar() {
 
  return (
  <>
- {/* ── SEO schemas ── */}
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{
- __html: JSON.stringify({
- "@context": "https://schema.org",
- "@type": "SiteLinksSearchBox",
- "url": "https://r-zoneenterprises.com",
- "potentialAction": {
- "@type": "SearchAction",
- "target": {
- "@type": "EntryPoint",
- "urlTemplate": "https://r-zoneenterprises.com/search?q={search_term_string}",
- },
- "query-input": "required name=search_term_string",
- },
- }),
- }}
- />
+ {/* ── SEO schemas ──
+ No sitelinks-searchbox markup here: "SiteLinksSearchBox" is not a
+ schema.org type (the valid form is WebSite + potentialAction), and the
+ site has no /search page for the target URL to point at. Invalid types
+ and search targets that 404 are reported as errors in the Rich Results
+ Test, so the block was removed rather than corrected. */}
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{

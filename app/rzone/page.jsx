@@ -721,7 +721,6 @@ const SCHEMA = {
  "subOrganization":[
  {"@type":"LocalBusiness","name":"R-Zone Cargo","url":"https://r-zoneenterprises.com",
  "description":"The #1 highest-rated UK-to-Nigeria cargo company on Google. Air freight 5 10 working days, sea freight 4 6 weeks transit. Delivery to all 36 Nigerian states. 100+ five-star reviews organically earned since 2012.",
- "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"100","bestRating":"5"},
  "telephone":"+448007720864","areaServed":["United Kingdom","Nigeria"]},
  {"@type":"Organization","name":"R-Zone Homes","description":"Nigerian residential and commercial real estate for the UK diaspora. Off-plan properties and property management in Lagos and Abuja."},
  {"@type":"Organization","name":"R-Zone Shortlets","description":"Premium serviced short-term apartments in Lagos and Abuja for business travellers and the Nigerian diaspora."},

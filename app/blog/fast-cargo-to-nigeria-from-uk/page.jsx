@@ -18,8 +18,8 @@ const PAGE_URL = `${SITE_URL}/blog/fast-cargo-to-nigeria-from-uk`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Fast Cargo to Nigeria from the UK 2026: Express Air Freight in 5 to 10 Days | R-Zone Enterprises";
-const DESCRIPTION = "Need it there fast? Express air cargo to Nigeria from the UK in 5 to 10 working days from £5.50/kg, with weekly flights and our own Lagos clearing team. Free same-day quote from R-Zone.";
+const TITLE = "Fast Cargo to Nigeria from the UK: 5 to 10 Days";
+const DESCRIPTION = "Express air freight to Nigeria in 5 to 10 working days from £5.50/kg, with weekly departures, customs clearance and door delivery included.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

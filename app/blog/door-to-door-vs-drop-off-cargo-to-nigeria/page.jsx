@@ -38,10 +38,8 @@ const WHATSAPP = "447915647119";
 const HERO_IMG =
   "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE =
-  "Door to Door vs Drop-Off Cargo to Nigeria 2026: Which Is Cheaper? | R-Zone Enterprises";
-const DESCRIPTION =
-  "Door to door or drop-off cargo to Nigeria in 2026? We compare the real cost, convenience and speed so you can choose. Door to door from £6/kg with UK collection and delivery to any door in Nigeria. Free same-day quote.";
+const TITLE = "Door to Door vs Drop-Off Cargo to Nigeria";
+const DESCRIPTION = "Which is cheaper and which is easier? Compare door to door collection with dropping off at our Essex warehouse, including prices and timings.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

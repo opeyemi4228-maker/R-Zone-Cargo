@@ -40,9 +40,8 @@ const HERO_IMG =
   "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1600&q=80&auto=format&fit=crop";
 
 const TITLE =
-  "Cargo from UK to Nigeria 2026 | Door to Door, Air & Sea Freight from £3/kg";
-const DESCRIPTION =
-  "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air freight (5 to 10 days) and sea freight (4 to 6 weeks) to Lagos, Abuja, Port Harcourt and every state. Cheap all inclusive prices, weekly departures, 120+ five star reviews. Free same day quote.";
+  "Cargo from UK to Nigeria 2026: Door to Door from £3/kg";
+const DESCRIPTION = "Send cargo from the UK to Nigeria from £3/kg. Door to door collection and delivery, air in 5 to 10 days, sea in 4 to 6 weeks, to every state.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

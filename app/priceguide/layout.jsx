@@ -5,19 +5,36 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "UK to Nigeria Shipping Price Guide 2026 | R-Zone Enterprises" },
-  description:
-    "R-Zone's UK to Nigeria shipping price guide: air freight from £5.50/kg, sea freight from £3/kg, door to door from £6/kg. Transparent, all-inclusive 2026 cargo rates with no hidden fees.",
+  title: { absolute: "UK to Nigeria Shipping Prices 2026: Full Cost Guide" },
+  description: "Air freight from £5.50/kg, sea from £3/kg, door to door from £6/kg. Transparent, all-inclusive UK to Nigeria rates with no hidden charges.",
   alternates: { canonical: "https://r-zoneenterprises.com/priceguide" },
   openGraph: {
-    title: "UK to Nigeria Shipping Price Guide 2026 | R-Zone Enterprises",
-    description:
-      "R-Zone's UK to Nigeria shipping price guide: air freight from £5.50/kg, sea freight from £3/kg, door to door from £6/kg. Transparent, all-inclusive 2026 cargo rates with no hidden fees.",
+    title: "UK to Nigeria Shipping Prices 2026: Full Cost Guide",
+    description: "Air freight from £5.50/kg, sea from £3/kg, door to door from £6/kg. Transparent, all-inclusive UK to Nigeria rates with no hidden charges.",
     url: "https://r-zoneenterprises.com/priceguide",
     siteName: "R-Zone Enterprises",
   },
 };
 
+// BreadcrumbList so Google can show the page's place in the site hierarchy
+// in search results instead of a bare URL.
+const BREADCRUMB = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: "https://r-zoneenterprises.com/" },
+ { "@type": "ListItem", position: 2, name: "Price Guide", item: "https://r-zoneenterprises.com/priceguide" },
+ ],
+};
+
 export default function PriceGuideLayout({ children }) {
-  return children;
+ return (
+ <>
+ <script
+ type="application/ld+json"
+ dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}
+ />
+ {children}
+ </>
+ );
 }

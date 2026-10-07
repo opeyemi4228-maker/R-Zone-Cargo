@@ -5,14 +5,12 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Importation From Nigeria to the UK | R-Zone Enterprises" },
-  description:
-    "R-Zone's importation service between Nigeria and the UK covering sourcing, freight, customs clearance and delivery. Air and sea freight for personal and commercial imports.",
+  title: { absolute: "Importation from Nigeria to the UK: Air and Sea Freight" },
+  description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
   alternates: { canonical: "https://r-zoneenterprises.com/importation" },
   openGraph: {
-    title: "Importation From Nigeria to the UK | R-Zone Enterprises",
-    description:
-      "R-Zone's importation service between Nigeria and the UK covering sourcing, freight, customs clearance and delivery. Air and sea freight for personal and commercial imports.",
+    title: "Importation from Nigeria to the UK: Air and Sea Freight",
+    description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
     url: "https://r-zoneenterprises.com/importation",
     siteName: "R-Zone Enterprises",
   },

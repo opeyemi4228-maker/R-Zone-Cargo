@@ -18,8 +18,8 @@ const PAGE_URL = `${SITE_URL}/blog/r-zone-cargo-insurance-plan`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "R-Zone Cargo Insurance Plan 2026: Protect Your Shipment to Nigeria | R-Zone Enterprises";
-const DESCRIPTION = "R-Zone's cargo insurance plan protects your UK to Nigeria shipment warehouse to door. How cover works, what it protects, how to value your goods and how to add it to your booking. Free quote.";
+const TITLE = "R-Zone Cargo Insurance Plan: Cover Explained";
+const DESCRIPTION = "What the R-Zone cover protects, how to value goods at CIF plus 10 percent, what is excluded, and how to add it to a booking or make a claim.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

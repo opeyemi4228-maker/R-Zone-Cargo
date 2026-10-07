@@ -1552,13 +1552,6 @@ export default function QuotePageClient() {
  "addressCountry": "GB",
  },
  "areaServed": ["United Kingdom", "Nigeria"],
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "5",
- "reviewCount": "100",
- "bestRating": "5",
- "worstRating": "1",
- },
  },
  // Service Air Freight
  {

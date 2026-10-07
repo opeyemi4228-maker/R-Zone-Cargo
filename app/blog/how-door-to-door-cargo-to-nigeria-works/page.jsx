@@ -38,10 +38,8 @@ const WHATSAPP = "447915647119";
 const HERO_IMG =
   "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE =
-  "How Door to Door Cargo to Nigeria Works 2026: Collection to Delivery | R-Zone Enterprises";
-const DESCRIPTION =
-  "How does door to door cargo to Nigeria work? Step by step from UK collection to Nigerian doorstep delivery in 2026, with transit times, customs and prices from £6/kg. Free same-day quote from R-Zone.";
+const TITLE = "How Door to Door Cargo to Nigeria Works";
+const DESCRIPTION = "Every stage from UK collection to the Nigerian doorstep: booking, packing, flights and sailings, customs clearance and final delivery, explained.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

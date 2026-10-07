@@ -21,8 +21,8 @@ const PAGE_URL = `${SITE_URL}/blog/how-long-shipping-uk-to-nigeria-takes`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "How Long Does Shipping from the UK to Nigeria Take? 2026 Transit Times | R-Zone Enterprises";
-const DESCRIPTION = "How long does shipping from the UK to Nigeria take in 2026? Air freight 5 to 10 working days, sea freight 4 to 6 weeks, plus what affects transit time and how to send faster. Free quote from R-Zone.";
+const TITLE = "How Long Does Shipping to Nigeria Take?";
+const DESCRIPTION = "Air takes 5 to 10 working days and sea 4 to 6 weeks. A stage by stage breakdown of transit, customs clearance and final delivery times.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

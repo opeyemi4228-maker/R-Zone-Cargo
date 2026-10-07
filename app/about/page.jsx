@@ -811,7 +811,6 @@ export default function AboutPageClient() {
  { "@type": "City", "name": "London" },
  { "@type": "Continent", "name": "Africa" },
  ],
- "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "100", "bestRating": "5", "worstRating": "1", "description": "Highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned." },
  "award": ["#1 Ranked UK-to-Nigeria Cargo Company on Google", "100+ Five-Star Google Reviews Organically Earned", "IATA Certified Air Freight Agent", "NCS Compliant Freight Operator", "HMRC Registered UK Customs Agent"],
  "numberOfEmployees": { "@type": "QuantitativeValue", "value": "15" },
  "hasOfferCatalog": {

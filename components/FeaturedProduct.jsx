@@ -81,11 +81,6 @@ export default function TrustAuthority() {
  "url": "https://r-zoneenterprises.com",
  "foundingDate": "2012",
  "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "5", "reviewCount": "100", "bestRating": "5",
- "description": "Highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned.",
- },
  "award": [
  "Highest-Rated & Highest-Ranked UK-to-Nigeria Cargo Company on Google",
  "100+ Five-Star Google Reviews Organically Earned",

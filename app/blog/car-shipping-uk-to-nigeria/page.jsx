@@ -40,10 +40,8 @@ const WHATSAPP = "447915647119";
 const HERO_IMG =
   "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE =
-  "Car Shipping from the UK to Nigeria 2026 | RORO & Container Shipping";
-const DESCRIPTION =
-  "Ship your car from the UK to Nigeria by RORO or container. Indicative 2026 prices, the 15-year import age limit, Nigeria customs duty, transit times to Lagos and the full process explained. Free same-day quote from R-Zone.";
+const TITLE = "Car Shipping from the UK to Nigeria: Costs and Steps";
+const DESCRIPTION = "Ship a car from the UK to Nigeria: container options, import duty, documents and timelines, with real costs and a free quote from R-Zone.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

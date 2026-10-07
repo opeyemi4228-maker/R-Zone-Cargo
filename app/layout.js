@@ -11,7 +11,7 @@ import { outfit } from "../lib/fonts";
 // ─── Site-wide constants ──────────────────────────────────────────────────────
 const SITE_URL = "https://r-zoneenterprises.com";
 const SITE_NAME = "R-Zone Enterprises";
-const LOGO_URL = `${SITE_URL}/wp-content/uploads/2022/09/Logo-colour-112.png`;
+const LOGO_URL = `${SITE_URL}/images/rzone-logo.png`;
 
 // ─── Root metadata all real data from r-zoneenterprises.com ────────────────
 export const metadata = {
@@ -26,7 +26,7 @@ export const metadata = {
  template: "%s | R-Zone Enterprises",
  },
  description:
- "R-Zone Enterprises offers door to door cargo to Nigeria from the UK, air freight to Nigeria, sea shipping, car shipping, and importation from Nigeria. Trusted by 100+ customers. Call: +44 800 772 0864.",
+ "Door to door cargo to Nigeria from the UK: air freight, sea freight, car shipping and importation. Weekly departures, all 36 states, free quote.",
 
  // ── Keyword targeting real services from the site ───────────────────────
  keywords: [
@@ -229,8 +229,8 @@ export default function RootLayout({ children }) {
  "logo": {
  "@type": "ImageObject",
  "url": LOGO_URL,
- "width": 300,
- "height": 100,
+ "width": 512,
+ "height": 512,
  },
  "image": LOGO_URL,
  "description":
@@ -273,20 +273,12 @@ export default function RootLayout({ children }) {
  "hasMap": "https://maps.app.goo.gl/QXnmYSxB8CeZ7hmv8",
 
  // Real service areas
+ // Only the corridors R-Zone actually operates. Claiming countries we
+ // cannot collect in or deliver to misrepresents the business and makes
+ // the entity harder for Google to classify.
  "areaServed": [
  { "@type": "Country", "name": "United Kingdom" },
  { "@type": "Country", "name": "Nigeria" },
- { "@type": "Country", "name": "Ghana" },
- { "@type": "Country", "name": "Uganda" },
- { "@type": "Country", "name": "South Africa" },
- { "@type": "Country", "name": "United States" },
- { "@type": "Country", "name": "Canada" },
- { "@type": "Continent", "name": "Africa" },
- { "@type": "Continent", "name": "Asia" },
- { "@type": "Continent", "name": "Europe" },
- { "@type": "Continent", "name": "North America" },
- { "@type": "Continent", "name": "South America" },
- { "@type": "Continent", "name": "Australasia" },
  ],
 
  // Real services from the site
@@ -300,7 +292,7 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Air Freight to Nigeria from UK",
  "description": "Cost-effective air freight from the UK to Lagos, Abuja, Port Harcourt, and all 36 Nigerian states. Door to door delivery available.",
- "url": `${SITE_URL}/air-freight/`,
+ "url": `${SITE_URL}/services`,
  "areaServed": "Nigeria",
  },
  },
@@ -310,7 +302,7 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Door to Door Cargo to Nigeria",
  "description": "Professional door to door cargo service to Nigeria using both air and sea freight. Collection from your address in the UK.",
- "url": `${SITE_URL}/door-to-door-cargo/`,
+ "url": `${SITE_URL}/cargo-from-uk-to-nigeria`,
  "areaServed": "Nigeria",
  },
  },
@@ -320,7 +312,7 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Sea Shipping to Nigeria",
  "description": "Monthly sea freight service from the UK to Nigeria. Ideal for heavy or bulk cargo shipments at affordable rates.",
- "url": `${SITE_URL}/sea-shipping-to-nigeria/`,
+ "url": `${SITE_URL}/services`,
  "areaServed": "Nigeria",
  },
  },
@@ -330,7 +322,7 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Car Shipping to Nigeria",
  "description": "Vehicle shipping from the UK to Nigeria and other African destinations. Full customs clearance assistance included.",
- "url": `${SITE_URL}/prices/`,
+ "url": `${SITE_URL}/schedulesprices`,
  "areaServed": ["Nigeria", "Africa"],
  },
  },
@@ -340,7 +332,7 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Importation from Nigeria to UK",
  "description": "Weekly air freight and monthly sea freight for importing African foodstuffs and goods from Nigeria to the UK. Minimum 20kg.",
- "url": `${SITE_URL}/importation-from-nigeria/`,
+ "url": `${SITE_URL}/importation`,
  "areaServed": "United Kingdom",
  },
  },
@@ -350,45 +342,17 @@ export default function RootLayout({ children }) {
  "@type": "Service",
  "name": "Freight to Nigeria",
  "description": "General freight and cargo shipping services to Nigeria from the UK. Competitive rates for all cargo types.",
- "url": `${SITE_URL}/naija-shipping/`,
+ "url": `${SITE_URL}/cargo-from-uk-to-nigeria`,
  "areaServed": "Nigeria",
  },
  },
  ],
  },
 
- // Real reviews
- "aggregateRating": {
- "@type": "AggregateRating",
- "ratingValue": "5",
- "reviewCount": "120",
- "bestRating": "5",
- "worstRating": "1",
- },
-
- "review": [
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Oluwatobi Odewumi" },
- "reviewBody":
- "Best cargo service with rest assurance of safety delivery without any damage, have been using for over 6 years.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Duyiro Soba Felix" },
- "reviewBody":
- "All my shipment arrived safely. Door to door service is brilliant even to the NorthEast they delivered on time. They can deliver everywhere in Nigeria.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
- },
- {
- "@type": "Review",
- "author": { "@type": "Person", "name": "Liz" },
- "reviewBody":
- "The delivery was swift and intact. Nothing missing, nothing damaged. Very pleased with the service.",
- "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
- },
- ],
+ // NOTE: no aggregateRating/review here. Google's review snippet policy
+ // excludes "self-serving" reviews (a business marking up reviews of
+ // itself on its own site); star ratings in search come from the Google
+ // Business Profile instead, and self-markup risks a manual action.
 
  "contactPoint": {
  "@type": "ContactPoint",
@@ -419,14 +383,6 @@ export default function RootLayout({ children }) {
  "Door to door cargo to Nigeria from the UK. Air freight, sea shipping, car shipping, and importation services.",
  "publisher": { "@id": `${SITE_URL}/#organization` },
  "inLanguage": "en-GB",
- "potentialAction": {
- "@type": "SearchAction",
- "target": {
- "@type": "EntryPoint",
- "urlTemplate": `${SITE_URL}/search?q={search_term_string}`,
- },
- "query-input": "required name=search_term_string",
- },
  },
 
  ], // end @graph

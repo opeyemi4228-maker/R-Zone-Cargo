@@ -5,14 +5,12 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "About R-Zone Enterprises | UK to Nigeria Cargo Since 2012" },
-  description:
-    "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 120+ five-star reviews. Air, sea and door to door freight.",
+  title: { absolute: "About R-Zone: UK to Nigeria Cargo Since 2012" },
+  description: "R-Zone has shipped between the UK and Nigeria since 2012: 50,000+ shipments, 120+ five-star reviews, and our own teams in Britain and Lagos.",
   alternates: { canonical: "https://r-zoneenterprises.com/about" },
   openGraph: {
-    title: "About R-Zone Enterprises | UK to Nigeria Cargo Since 2012",
-    description:
-      "Learn about R-Zone Enterprises, a trusted UK to Nigeria cargo and shipping company since 2012 with 50,000+ shipments delivered and 120+ five-star reviews. Air, sea and door to door freight.",
+    title: "About R-Zone: UK to Nigeria Cargo Since 2012",
+    description: "R-Zone has shipped between the UK and Nigeria since 2012: 50,000+ shipments, 120+ five-star reviews, and our own teams in Britain and Lagos.",
     url: "https://r-zoneenterprises.com/about",
     siteName: "R-Zone Enterprises",
   },

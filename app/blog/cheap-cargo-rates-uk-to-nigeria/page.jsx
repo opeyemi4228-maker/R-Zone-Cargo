@@ -19,8 +19,8 @@ const PAGE_URL = `${SITE_URL}/blog/cheap-cargo-rates-uk-to-nigeria`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Cheap Cargo Rates to Nigeria from the UK 2026: Lowest Prices | R-Zone Enterprises";
-const DESCRIPTION = "The cheapest cargo rates to Nigeria from the UK in 2026: sea from £3/kg, air from £5.50/kg, door to door from £6/kg, all inclusive with no hidden fees. Plus how to pay even less. Free quote.";
+const TITLE = "Cheap Cargo Rates to Nigeria from the UK";
+const DESCRIPTION = "All-inclusive cargo rates from £3/kg by sea and £5.50/kg by air with no surprise charges, plus practical ways to cut your shipping bill.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

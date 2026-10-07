@@ -5,19 +5,36 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Shipping Compliance | R-Zone Enterprises UK to Nigeria" },
-  description:
-    "R-Zone Enterprises shipping compliance: Nigeria Customs Service, NAFDAC and SON clearance for UK to Nigeria cargo. Ship compliantly with expert guidance on regulated goods.",
+  title: { absolute: "Shipping Compliance: Nigeria Customs, NAFDAC and SON" },
+  description: "How R-Zone meets Nigeria Customs Service, NAFDAC and SON requirements, and what you must declare when shipping regulated goods from the UK.",
   alternates: { canonical: "https://r-zoneenterprises.com/compliance" },
   openGraph: {
-    title: "Shipping Compliance | R-Zone Enterprises UK to Nigeria",
-    description:
-      "R-Zone Enterprises shipping compliance: Nigeria Customs Service, NAFDAC and SON clearance for UK to Nigeria cargo. Ship compliantly with expert guidance on regulated goods.",
+    title: "Shipping Compliance: Nigeria Customs, NAFDAC and SON",
+    description: "How R-Zone meets Nigeria Customs Service, NAFDAC and SON requirements, and what you must declare when shipping regulated goods from the UK.",
     url: "https://r-zoneenterprises.com/compliance",
     siteName: "R-Zone Enterprises",
   },
 };
 
+// BreadcrumbList so Google can show the page's place in the site hierarchy
+// in search results instead of a bare URL.
+const BREADCRUMB = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: "https://r-zoneenterprises.com/" },
+ { "@type": "ListItem", position: 2, name: "Compliance", item: "https://r-zoneenterprises.com/compliance" },
+ ],
+};
+
 export default function ComplianceLayout({ children }) {
-  return children;
+ return (
+ <>
+ <script
+ type="application/ld+json"
+ dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}
+ />
+ {children}
+ </>
+ );
 }

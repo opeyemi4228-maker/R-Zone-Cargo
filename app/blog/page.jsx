@@ -34,9 +34,8 @@ import { freshYear } from "@/lib/year";
 // ─────────────────────────────────────────────────────────────────────────────
 export const metadata = {
  // ── Primary SEO ────────────────────────────────────────────────────────────
- title: { absolute: freshYear("UK to Nigeria Shipping Blog 2026: Guides, Tips & News | R-Zone Cargo") },
- description:
- "Expert shipping guides, customs tips, industry news and logistics insights for UK Nigeria cargo. Air freight, sea freight, NAFDAC, Apapa port and more R-Zone Cargo blog.",
+ title: { absolute: freshYear("UK to Nigeria Shipping Blog: Guides, Tips and News") },
+ description: "Shipping guides, customs tips and industry news for UK to Nigeria cargo: air freight, sea freight, NAFDAC, Apapa port and practical how-tos.",
  keywords: [
  "UK to Nigeria shipping guide",
  "UK Nigeria cargo blog",
@@ -59,9 +58,8 @@ export const metadata = {
  openGraph: {
  type: "website",
  url: `${SITE_URL}/blog`,
- title: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
- description:
- "Expert guides, customs tips and logistics news for UK Nigeria cargo shippers. Trusted by 10,000+ customers. R-Zone Cargo the UK's #1 Nigeria shipping company.",
+ title: freshYear("UK to Nigeria Shipping Blog: Guides and Tips"),
+ description: "Shipping guides, customs tips and industry news for UK to Nigeria cargo: air freight, sea freight, NAFDAC, Apapa port and practical how-tos.",
  siteName: SITE_NAME,
  images: [
  {
@@ -78,9 +76,8 @@ export const metadata = {
  card: "summary_large_image",
  site: TWITTER_HANDLE,
  creator: TWITTER_HANDLE,
- title: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
- description:
- "Expert guides, customs tips and logistics news for UK Nigeria shippers. R-Zone Cargo.",
+ title: freshYear("UK to Nigeria Shipping Blog: Guides and Tips"),
+ description: "Shipping guides, customs tips and industry news for UK to Nigeria cargo: air freight, sea freight, NAFDAC, Apapa port and practical how-tos.",
  images: [DEFAULT_OG_IMAGE],
  },
 
@@ -109,9 +106,8 @@ function buildBlogPageSchemas(articles) {
  "@type": "WebPage",
  "@id": `${SITE_URL}/blog#webpage`,
  url: `${SITE_URL}/blog`,
- name: freshYear("UK to Nigeria Shipping Blog 2026 | R-Zone Cargo"),
- description:
- "Expert shipping guides, customs tips and logistics insights for UK Nigeria cargo shippers.",
+ name: freshYear("UK to Nigeria Shipping Blog: Guides and Tips"),
+ description: "Shipping guides, customs tips and industry news for UK to Nigeria cargo: air freight, sea freight, NAFDAC, Apapa port and practical how-tos.",
  isPartOf: {
  "@type": "WebSite",
  "@id": `${SITE_URL}/#website`,
@@ -131,8 +127,7 @@ function buildBlogPageSchemas(articles) {
  "@id": `${SITE_URL}/blog#blog`,
  name: "R-Zone Cargo Insights & News",
  url: `${SITE_URL}/blog`,
- description:
- "UK to Nigeria shipping guides, customs tips, industry news and logistics insights from R-Zone Cargo.",
+ description: "Shipping guides, customs tips and industry news for UK to Nigeria cargo: air freight, sea freight, NAFDAC, Apapa port and practical how-tos.",
  publisher: ORGANIZATION_SCHEMA,
  inLanguage: "en-GB",
  blogPost: articles.map((a) => ({

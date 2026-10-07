@@ -93,7 +93,7 @@ const schema = {
  name: "R-Zone Enterprises",
  alternateName: ["R-Zone Cargo", "RZE Cargo", "R-Zone Shipping"],
  url: "https://r-zoneenterprises.com",
- logo: "https://r-zoneenterprises.com/wp-content/uploads/2022/09/Logo-colour-112.png",
+ logo: "https://r-zoneenterprises.com/images/rzone-logo.png",
  description:
  "R-Zone Enterprises provides air freight, sea freight, customs clearance and door-to-door cargo services between the UK and Nigeria.",
  foundingDate: "2012",
@@ -106,13 +106,6 @@ const schema = {
  { "@type": "City", name: "Lagos" },
  { "@type": "City", name: "Abuja" },
  ],
- aggregateRating: {
- "@type": "AggregateRating",
- ratingValue: "5",
- reviewCount: "100",
- bestRating: "5",
- worstRating: "1",
- },
  contactPoint: [
  {
  "@type": "ContactPoint",

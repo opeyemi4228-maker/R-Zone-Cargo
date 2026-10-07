@@ -18,8 +18,8 @@ const PAGE_URL = `${SITE_URL}/blog/sea-cargo-to-nigeria-from-uk`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Sea Cargo to Nigeria from the UK 2026: Cheapest Way to Ship Big Loads | R-Zone Enterprises";
-const DESCRIPTION = "Sea cargo to Nigeria from the UK from £3/kg, the cheapest way to ship large or heavy loads. Weekly sailings to Lagos, LCL and full-container options, 4 to 6 week transit. Free quote from R-Zone.";
+const TITLE = "Sea Cargo to Nigeria from the UK: Cheapest Option";
+const DESCRIPTION = "Sea cargo from £3/kg is the cheapest way to send big loads: weekly sailings to Lagos, LCL and full containers, and 4 to 6 week transit.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

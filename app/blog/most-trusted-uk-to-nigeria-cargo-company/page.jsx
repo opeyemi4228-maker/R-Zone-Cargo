@@ -21,8 +21,8 @@ const PAGE_URL = `${SITE_URL}/blog/most-trusted-uk-to-nigeria-cargo-company`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "The Most Trusted UK to Nigeria Cargo Company 2026: 120+ Reviews, 12+ Years | R-Zone Enterprises";
-const DESCRIPTION = "Why R-Zone is the most trusted name in UK to Nigeria cargo: 120+ five star Google reviews, 12+ years of experience, 50,000+ shipments delivered, and our own teams in the UK and Lagos.";
+const TITLE = "The Most Trusted UK to Nigeria Cargo Company";
+const DESCRIPTION = "12+ years in the corridor, 50,000+ shipments and 120+ five-star reviews, plus a checklist for judging any UK to Nigeria cargo company.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

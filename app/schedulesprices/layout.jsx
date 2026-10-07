@@ -5,14 +5,12 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "UK to Nigeria Shipping Schedules & Prices 2026 | R-Zone Enterprises" },
-  description:
-    "Weekly UK to Nigeria air and sea freight schedules and 2026 prices from R-Zone Enterprises. Plan your shipment with departure times and all-inclusive rates to Lagos, Abuja and beyond.",
+  title: { absolute: "UK to Nigeria Schedules and Prices: Rates by State" },
+  description: "Weekly air and sea departures with per-state rates, minimum weights and delivery times for all 36 Nigerian states. Plan and price your shipment.",
   alternates: { canonical: "https://r-zoneenterprises.com/schedulesprices" },
   openGraph: {
-    title: "UK to Nigeria Shipping Schedules & Prices 2026 | R-Zone Enterprises",
-    description:
-      "Weekly UK to Nigeria air and sea freight schedules and 2026 prices from R-Zone Enterprises. Plan your shipment with departure times and all-inclusive rates to Lagos, Abuja and beyond.",
+    title: "UK to Nigeria Schedules and Prices: Rates by State",
+    description: "Weekly air and sea departures with per-state rates, minimum weights and delivery times for all 36 Nigerian states. Plan and price your shipment.",
     url: "https://r-zoneenterprises.com/schedulesprices",
     siteName: "R-Zone Enterprises",
   },

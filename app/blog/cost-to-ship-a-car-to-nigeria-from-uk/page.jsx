@@ -22,8 +22,8 @@ const PAGE_URL = `${SITE_URL}/blog/cost-to-ship-a-car-to-nigeria-from-uk`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "How Much to Ship a Car to Nigeria from the UK? 2026 Prices | R-Zone Enterprises";
-const DESCRIPTION = "How much does it cost to ship a car to Nigeria from the UK in 2026? RORO from £960, container from £1,800, plus customs duty, the 15-year age limit and MOT rule explained. Free quote from R-Zone.";
+const TITLE = "Cost to Ship a Car to Nigeria from the UK";
+const DESCRIPTION = "What it costs to ship a car to Nigeria: freight, import duty, clearance and delivery, with worked examples for saloons, SUVs and vans.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

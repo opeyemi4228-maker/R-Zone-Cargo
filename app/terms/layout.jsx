@@ -18,6 +18,25 @@ export const metadata = {
   },
 };
 
+// BreadcrumbList so Google can show the page's place in the site hierarchy
+// in search results instead of a bare URL.
+const BREADCRUMB = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: "https://r-zoneenterprises.com/" },
+ { "@type": "ListItem", position: 2, name: "Terms & Conditions", item: "https://r-zoneenterprises.com/terms" },
+ ],
+};
+
 export default function TermsLayout({ children }) {
-  return children;
+ return (
+ <>
+ <script
+ type="application/ld+json"
+ dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}
+ />
+ {children}
+ </>
+ );
 }

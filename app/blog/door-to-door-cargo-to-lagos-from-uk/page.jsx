@@ -21,8 +21,8 @@ const PAGE_URL = `${SITE_URL}/blog/door-to-door-cargo-to-lagos-from-uk`;
 const WHATSAPP = "447915647119";
 const HERO_IMG = "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80&auto=format&fit=crop";
 
-const TITLE = "Door to Door Cargo to Lagos from the UK 2026: Prices & Times | R-Zone Enterprises";
-const DESCRIPTION = "Door to door cargo to Lagos from the UK from £6/kg. We collect from your UK address and deliver to any door in Lagos. Air 5 to 10 days, sea 4 to 6 weeks. Free same-day quote from R-Zone.";
+const TITLE = "Door to Door Cargo to Lagos from the UK";
+const DESCRIPTION = "Door to door cargo to Lagos from £6/kg: UK collection, air in 5 to 10 working days or sea in 4 to 6 weeks, customs clearance and delivery.";
 
 export const metadata = {
   title: { absolute: freshYear(TITLE) },

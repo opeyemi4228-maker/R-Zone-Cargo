@@ -5,14 +5,12 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Customer Support | R-Zone Enterprises UK to Nigeria Cargo" },
-  description:
-    "R-Zone Enterprises customer support for UK to Nigeria cargo and shipping. Track shipments, get help with bookings, customs and delivery. Same-day response, every day.",
+  title: { absolute: "Customer Support: UK to Nigeria Cargo Help" },
+  description: "Help with bookings, tracking, customs and delivery for UK to Nigeria cargo. Call, WhatsApp or email R-Zone support for a same-day reply.",
   alternates: { canonical: "https://r-zoneenterprises.com/support" },
   openGraph: {
-    title: "Customer Support | R-Zone Enterprises UK to Nigeria Cargo",
-    description:
-      "R-Zone Enterprises customer support for UK to Nigeria cargo and shipping. Track shipments, get help with bookings, customs and delivery. Same-day response, every day.",
+    title: "Customer Support: UK to Nigeria Cargo Help",
+    description: "Help with bookings, tracking, customs and delivery for UK to Nigeria cargo. Call, WhatsApp or email R-Zone support for a same-day reply.",
     url: "https://r-zoneenterprises.com/support",
     siteName: "R-Zone Enterprises",
   },
