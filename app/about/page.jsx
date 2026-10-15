@@ -538,20 +538,19 @@ function Testimonials() {
  className={`relative border p-8 ${i === 1 ? "border-[#0818A8] bg-[#0818A8] shadow-2xl shadow-[#0818A8]/20" : "border-gray-200 bg-gray-50"}`}
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: i * 0.12 }}
- itemScope itemType="https://schema.org/Review">
+>
  <Quote size={28} className={`mb-5 ${i === 1 ? "text-white/40" : "text-[#0818A8]/15"}`} aria-hidden="true" />
  <div className="flex gap-0.5 mb-4" aria-label={`${t.stars} stars`}
- itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
- <meta itemProp="ratingValue" content={t.stars} />
+>
  {Array.from({ length: t.stars }).map((_, si) => (
  <Star key={si} size={12} className={i === 1 ? "text-white fill-white" : "text-[#0818A8] fill-[#0818A8]"} aria-hidden="true" />
  ))}
  </div>
  <p className={`text-[13.5px] font-normal leading-relaxed mb-6 ${i === 1 ? "text-white" : "text-gray-800"}`}
- itemProp="reviewBody">&ldquo;{t.text}&rdquo;</p>
+>&ldquo;{t.text}&rdquo;</p>
  <footer>
- <cite className="not-italic" itemProp="author" itemScope itemType="https://schema.org/Person">
- <p className={`font-bold text-[13px] ${i === 1 ? "text-white" : "text-gray-800"}`} itemProp="name">{t.author}</p>
+ <cite className="not-italic">
+ <p className={`font-bold text-[13px] ${i === 1 ? "text-white" : "text-gray-800"}`}>{t.author}</p>
  <p className={`text-[11px] font-normal flex items-center gap-1.5 mt-0.5 ${i === 1 ? "text-white/80" : "text-gray-800"}`}>
  <MapPin size={10} aria-hidden="true" />{t.location}
  </p>
@@ -684,12 +683,12 @@ function OurOffices() {
  <motion.div key={office.country} className="group relative border border-gray-200 bg-gray-50 p-8 hover:border-[#0818A8]/40 hover:shadow-lg transition-all duration-300 overflow-hidden"
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: i * 0.15 }}
- itemScope itemType="https://schema.org/LocalBusiness">
+>
  <div className="absolute top-0 left-0 right-0 h-[3px] w-0 group-hover:w-full transition-all duration-500" style={{ backgroundColor: office.accent }} aria-hidden="true" />
  <div className="flex items-start justify-between mb-6">
  <div>
  <p className="text-4xl mb-2" aria-hidden="true">{office.flag}</p>
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]" itemProp="addressCountry">{office.country}</h3>
+ <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">{office.country}</h3>
  <p className="text-[11px] font-bold tracking-[0.2em] uppercase mt-0.5" style={{ color: office.accent }}>{office.role}</p>
  </div>
  <div className="w-10 h-10 rounded-sm flex items-center justify-center" style={{ backgroundColor: `${office.accent}12` }} aria-hidden="true">
@@ -699,21 +698,21 @@ function OurOffices() {
  <div className="space-y-3.5">
  <div className="flex items-start gap-3">
  <MapPin size={13} className="flex-shrink-0 mt-0.5 text-gray-800" aria-hidden="true" />
- <p className="text-gray-800 text-[13px] font-normal leading-snug" itemProp="address" dangerouslySetInnerHTML={{ __html: office.address }}></p>
+ <p className="text-gray-800 text-[13px] font-normal leading-snug" dangerouslySetInnerHTML={{ __html: office.address }}></p>
  </div>
  <div className="flex items-center gap-3">
  <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
  <a href={office.phoneHref} className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
- itemProp="telephone" aria-label={`Call R-Zone ${office.country}: ${office.phone}`}>{office.phone}</a>
+ aria-label={`Call R-Zone ${office.country}: ${office.phone}`}>{office.phone}</a>
  </div>
  <div className="flex items-center gap-3">
  <Mail size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
  <a href={`mailto:${office.email}`} className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
- itemProp="email" aria-label={`Email R-Zone ${office.country}: ${office.email}`}>{office.email}</a>
+ aria-label={`Email R-Zone ${office.country}: ${office.email}`}>{office.email}</a>
  </div>
  <div className="flex items-center gap-3">
  <Clock size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
- <p className="text-gray-800 text-[13px] font-normal" itemProp="openingHours">{office.hours}</p>
+ <p className="text-gray-800 text-[13px] font-normal">{office.hours}</p>
  </div>
  </div>
  </motion.div>

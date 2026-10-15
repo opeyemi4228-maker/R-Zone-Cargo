@@ -140,8 +140,6 @@ function TestimonialCard({ t, featured = false }) {
  : "bg-white border-gray-200 hover:border-[#0818A8]/30 hover:shadow-lg hover:shadow-[#0818A8]/8 p-6"
  }`}
  whileHover={{ y: -4, transition: { duration: 0.25 } }}
- itemScope
- itemType="https://schema.org/Review"
  >
  <div className={`absolute top-5 right-5 ${featured ? "opacity-20" : "opacity-[0.08]"}`} aria-hidden="true">
  <Quote size={28} className={featured ? "text-white" : "text-[#0818A8]"} />
@@ -150,9 +148,7 @@ function TestimonialCard({ t, featured = false }) {
  {/* Stars */}
  <div className="mb-4">
  <div className="flex items-center gap-0.5" aria-label={`${t.stars} out of 5 stars`}
- itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
- <meta itemProp="ratingValue" content={t.stars} />
- <meta itemProp="bestRating" content="5" />
+>
  {Array.from({ length: t.stars }).map((_, i) => (
  <Star key={i} size={11} className={featured ? "fill-white text-white" : "fill-[#0818A8] text-[#0818A8]"} aria-hidden="true" />
  ))}
@@ -161,34 +157,32 @@ function TestimonialCard({ t, featured = false }) {
 
  {/* Pull quote */}
  <p className={`font-bold leading-snug mb-3 tracking-[-0.01em] ${featured ? "text-white text-[16px] md:text-[17px]" : "text-gray-900 text-[13.5px] md:text-[14px]"}`}
- itemProp="name">
+>
  &ldquo;{t.short}&rdquo;
  </p>
 
  {/* Full review text */}
  <p className={`font-normal leading-relaxed flex-1 mb-6 text-[13px] ${featured ? "text-white/80" : "text-gray-800"}`}
- itemProp="reviewBody">
+>
  {t.text}
  </p>
 
  {/* Author */}
  <div className={`flex items-center gap-3 pt-4 border-t ${featured ? "border-white/20" : "border-gray-100"}`}
- itemProp="author" itemScope itemType="https://schema.org/Person">
+>
  <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-black ${featured ? "bg-white/20 text-white" : "bg-[#0818A8] text-white"}`}
  aria-hidden="true">
  {t.avatar}
  </div>
  <div>
  <p className={`font-semibold text-[13px] tracking-[0.02em] ${featured ? "text-white" : "text-gray-900"}`}
- itemProp="name">{t.name}</p>
+>{t.name}</p>
  <p className={`text-[11px] font-normal tracking-[0.04em] ${featured ? "text-white/80" : "text-gray-800"}`}>
  Verified Customer · {t.date}
  </p>
  </div>
  </div>
 
- {/* Hidden itemProp for schema */}
- <meta itemProp="itemReviewed" content="R-Zone Enterprises UK to Nigeria Cargo" />
  </motion.div>
  );
 }
@@ -234,36 +228,17 @@ export default function TestimonialsSection() {
 
  return (
  <>
- {/* AggregateRating + Review schema powers Google star ratings in search */}
- <script type="application/ld+json" dangerouslySetInnerHTML={{
- __html: JSON.stringify({
- "@context": "https://schema.org",
- "@type": "LocalBusiness",
- "@id": "https://r-zoneenterprises.com/#organization",
- "name": "R-Zone Enterprises",
- "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned.",
- "review": TESTIMONIALS.map(t => ({
- "@type": "Review",
- "author": { "@type": "Person", "name": t.name },
- "datePublished": t.date,
- "reviewRating": { "@type": "Rating", "ratingValue": t.stars, "bestRating": "5" },
- "reviewBody": t.text,
- "name": t.short,
- "itemReviewed": {
- "@type": "Service",
- "name": "UK to Nigeria Cargo Shipping R-Zone Enterprises",
- "provider": { "@type": "Organization", "name": "R-Zone Enterprises" },
- },
- })),
- }),
- }} />
+ {/* No Review/AggregateRating markup here. Google's review snippet policy
+ excludes "self-serving" reviews (a business marking up reviews of itself
+ on its own site), and review markup without an aggregateRating triggers
+ "Multiple reviews without aggregateRating object" in Search Console.
+ The testimonials below stay visible to readers; stars in search come
+ from the Google Business Profile. */}
 
  <section
  ref={ref}
  className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative bg-white overflow-hidden py-20 md:py-28`}
  aria-labelledby="testimonials-heading"
- itemScope
- itemType="https://schema.org/ItemList"
  >
  {/* Backgrounds */}
  <div className="absolute inset-0 opacity-[0.035] pointer-events-none" aria-hidden="true"
@@ -314,30 +289,30 @@ export default function TestimonialsSection() {
  <motion.div
  key={`${testimonial.id}-${currentIndex}-${index}`}
  className={`flex-shrink-0 transition-all duration-700 ${
- testimonial.isCenter 
- ? 'w-full max-w-[400px] md:max-w-[420px] z-10' 
+ testimonial.isCenter
+ ? 'w-full max-w-[400px] md:max-w-[420px] z-10'
  : 'w-full max-w-[350px] md:max-w-[380px]'
  }`}
- initial={{ 
- scale: 0.8, 
- opacity: 0, 
+ initial={{
+ scale: 0.8,
+ opacity: 0,
  x: index === 0 ? -200 : index === 2 ? 200 : 0,
  y: 20
  }}
- animate={{ 
+ animate={{
  scale: testimonial.isCenter ? 1.08 : 0.92,
  opacity: testimonial.isCenter ? 1 : 0.8,
  x: 0,
  y: testimonial.isCenter ? -10 : 0
  }}
- exit={{ 
- scale: 0.8, 
- opacity: 0, 
+ exit={{
+ scale: 0.8,
+ opacity: 0,
  x: index === 0 ? -200 : index === 2 ? 200 : 0,
  y: 20
  }}
- transition={{ 
- duration: 0.8, 
+ transition={{
+ duration: 0.8,
  ease: [0.25, 0.46, 0.45, 0.94],
  scale: { duration: 1.0, ease: "easeOut" }
  }}
@@ -353,14 +328,14 @@ export default function TestimonialsSection() {
 
  {/* Navigation Buttons */}
  <div className="flex items-center justify-center gap-4 mt-8">
- <button 
+ <button
  onClick={prevSlide}
  className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
  aria-label="Previous testimonials"
  >
  <ChevronLeft size={20} />
  </button>
- 
+
  {/* Dots indicator */}
  <div className="flex items-center gap-2">
  {Array.from({ length: total }).map((_, i) => (
@@ -368,16 +343,16 @@ export default function TestimonialsSection() {
  key={i}
  onClick={() => setCurrentIndex(i)}
  className={`rounded-full transition-all duration-300 ${
- i === currentIndex 
- ? 'w-8 h-3 bg-[#0818A8]' 
+ i === currentIndex
+ ? 'w-8 h-3 bg-[#0818A8]'
  : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
  }`}
  aria-label={`Go to testimonial ${i + 1}`}
  />
  ))}
  </div>
- 
- <button 
+
+ <button
  onClick={nextSlide}
  className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
  aria-label="Next testimonials"
