@@ -6,10 +6,9 @@ import Image from "next/image";
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { montserrat } from "../../lib/fonts";
 import {
- Plane, Ship, Truck, Package, MapPin, Phone,
- ArrowRight, ChevronRight, Check, CheckCircle,
- AlertTriangle, Star, Clock, Shield, MessageCircle,
- Globe, Warehouse, X, ChevronDown, Info, Zap,
+ Plane, Ship, Package, MapPin, Phone,
+ ArrowRight, ChevronRight, Check, CheckCircle, Shield,
+ Globe, Warehouse, X, ChevronDown, Info,
 } from "lucide-react";
 
 // ─── WhatsApp SVG ─────────────────────────────────────────────────────────────
@@ -94,7 +93,7 @@ const FAQS = [
  },
  {
  q: "How long does shipping from Nigeria to the UK take?",
- a: "Air freight from Nigeria to the UK typically takes 5 8 working days. Sea freight takes 4 6 weeks. We operate weekly air departures and monthly sea sailings from Lagos.",
+ a: "Air freight from Nigeria to the UK typically takes 5 to 8 working days. Sea freight takes 4 to 6 weeks. We operate weekly air departures and monthly sea sailings from Lagos.",
  },
  {
  q: "Can I send African foodstuffs from Nigeria to the UK?",
@@ -128,7 +127,7 @@ const PROCESS_STEPS = [
  {
  n: "03", icon: Plane, title: "Air or Sea Dispatch",
  sub: "Weekly air · Monthly sea",
- body: "Dispatched via our weekly air freight (min 20kg, 5 8 working days) or monthly sea freight (min 2 bags, 4 6 weeks). You choose what suits your budget and timeline.",
+ body: "Dispatched via our weekly air freight (min 20kg, 5 to 8 working days) or monthly sea freight (min 2 bags, 4 to 6 weeks). You choose what suits your budget and timeline.",
  },
  {
  n: "04", icon: MapPin, title: "Delivered to the UK",
@@ -149,15 +148,15 @@ const fadeUp = {
 function TagPill({ label, dark = true }) {
  return (
  <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-6 ${
- dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"
+ dark ? "border-[#0000FF]/30 bg-[#000f89]/14" : "border-[#000f89]/20 bg-[#000f89]/6"
  }`}>
  <motion.span
- className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
+ className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#0000FF]" : "bg-[#000f89]"}`}
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
  transition={{ duration: 2.2, repeat: Infinity }}
  aria-hidden="true"
  />
- <span className={`text-[13px] font-bold tracking-[0.28em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>
+ <span className={`text-[13px] font-semibold ${dark ? "text-[#4D4DFF]" : "text-[#000f89]"}`}>
  {label}
  </span>
  </div>
@@ -168,12 +167,12 @@ function SectionHeadline({ line1, accent, dark = true, id }) {
  const ref = useRef(null);
  const inView = useInView(ref, { once: true, margin: "-60px" });
  return (
- <h2 id={id} ref={ref} className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${dark ? "text-white" : "text-[#0b0f1a]"}`}>
+ <h2 id={id} ref={ref} className={`font-extrabold text-[clamp(26px,4.5vw,52px)] leading-[1.06] tracking-[-0.03em] ${dark ? "text-white" : "text-[#00112E]"}`}>
  {line1}{" "}
- <span className="relative inline-block" style={{ color: "#1F51FF" }}>
+ <span className="relative inline-block" style={{ color: "#0000FF" }}>
  {accent}
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#1F51FF]"
+ className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0000FF]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -193,7 +192,7 @@ function Hero() {
 
  return (
  <section
- className="relative bg-[#00061a] min-h-[80vh] flex flex-col justify-end overflow-hidden hero-section"
+ className="relative bg-[#00112E] overflow-hidden hero-section"
  aria-labelledby="importation-hero-h1"
  >
  {/* Grid texture identical to ServicesPageClient hero */}
@@ -208,15 +207,15 @@ function Hero() {
 
  {/* Atmospheric blue glows */}
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-0 left-1/3 w-[700px] h-[400px] bg-[#0818A8]/15 rounded-full blur-[120px]" />
- <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[100px]" />
- <div className="absolute top-[-10%] left-[20%] w-[600px] h-[500px] bg-[#0818A8]/12 rounded-full blur-[140px]" />
+ <div className="absolute top-0 left-1/3 w-[700px] h-[400px] bg-[#000f89]/15 rounded-full blur-[120px]" />
+ <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#0000FF]/10 rounded-full blur-[100px]" />
+ <div className="absolute top-[-10%] left-[20%] w-[600px] h-[500px] bg-[#000f89]/12 rounded-full blur-[140px]" />
  </div>
 
  {/* Diagonal accent line */}
  <div
  className="absolute top-0 right-0 w-px h-full opacity-[0.08] pointer-events-none"
- style={{ background: "linear-gradient(to bottom, transparent, #1F51FF 40%, transparent)" }}
+ style={{ background: "linear-gradient(to bottom, transparent, #0000FF 40%, transparent)" }}
  aria-hidden="true"
  />
 
@@ -225,7 +224,7 @@ function Hero() {
  {/* Breadcrumb */}
  <motion.nav
  aria-label="Breadcrumb"
- className="flex items-center gap-2 mb-10"
+ className="flex items-center gap-2 mb-10 lg:-mt-[6px] max-lg:-mt-[33px]"
  initial={{ opacity: 0 }}
  animate={inView ? { opacity: 1 } : {}}
  transition={{ duration: 0.4 }}
@@ -237,123 +236,110 @@ function Hero() {
  <span className="text-white text-[13px] font-medium" aria-current="page">Importation from Nigeria</span>
  </motion.nav>
 
- <div className="max-w-[820px]">
- {/* Authority badge */}
- <motion.div
- initial={{ opacity: 0, x: -12 }}
- animate={inView ? { opacity: 1, x: 0 } : {}}
- transition={{ duration: 0.5, delay: 0.1 }}
- >
- <div className="inline-flex items-center gap-2 border border-amber-400/35 bg-amber-400/8 px-3.5 py-1.5 rounded-full mb-4">
- <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
- <span className="text-amber-400 text-[11px] font-black tracking-[0.22em] uppercase">
- #1 Ranked UK Nigeria Cargo on Google · 100+ Five-Star Reviews
- </span>
- </div>
- </motion.div>
-
  <motion.div
  initial={{ opacity: 0 }}
  animate={inView ? { opacity: 1 } : {}}
- transition={{ duration: 0.5, delay: 0.18 }}
+ transition={{ duration: 0.5, delay: 0.1 }}
  >
  <TagPill label="Shipping Services from Nigeria to UK" dark />
  </motion.div>
 
- {/* Stacked animated headline */}
- <h1
+ {/* Headline left, intro + actions right (same composition as the homepage hero) */}
+ <div className="mt-2 grid items-end gap-8 lg:grid-cols-12 lg:gap-12">
+ <motion.h1
  id="importation-hero-h1"
- className="font-black text-[clamp(44px,8vw,96px)] leading-[0.83] tracking-[-0.04em] uppercase mb-8"
- >
- {[
- { word: "Nigeria", delay: 0.25, color: "text-white" },
- { word: "UK Cargo.", delay: 0.38, color: "text-[#1F51FF]", underline: true },
- ].map(({ word, delay, color, outline, underline }) => (
- <motion.span
- key={word}
- className={`block ${color} ${outline ? "[-webkit-text-stroke:1.5px_rgba(255,255,255,0.18)]" : ""}`}
- style={outline ? { WebkitTextFillColor: "transparent" } : {}}
- initial={{ x: -80, opacity: 0 }}
- animate={inView ? { x: 0, opacity: 1 } : {}}
- transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
- >
- {underline ? (
- <span className="relative inline-block">
- {word}
- <motion.span
- className="absolute -bottom-1 left-0 h-[5px] rounded-full"
- style={{ background: "linear-gradient(to right, #0818A8, #1F51FF)" }}
- aria-hidden="true"
- initial={{ width: 0 }}
- animate={inView ? { width: "100%" } : {}}
- transition={{ duration: 0.7, delay: 1.3 }}
- />
- </span>
- ) : word}
- </motion.span>
- ))}
- </h1>
-
- <motion.p
- className="text-white/80 text-[15px] font-normal leading-relaxed max-w-[580px] mb-10"
- initial={{ opacity: 0, y: 14 }}
+ className="font-extrabold text-white text-[clamp(44px,7.4vw,104px)] leading-[0.95] tracking-[-0.045em] lg:col-span-7"
+ initial={{ opacity: 0, y: 18 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.65, delay: 0.7 }}
+ transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
  >
- R-Zone Enterprises presently offers cargo services from{" "}
- <strong className="text-white font-semibold">Lagos to London</strong> and other UK cities 
- a remarkably affordable option to import from Nigeria to the UK.
- Weekly air freight and monthly sea freight services with state-by-state transparent pricing.
- </motion.p>
+ Nigeria
+ <br />
+ <span className="relative inline-block text-[#4D4DFF]">
+ UK Cargo
+ <span className="absolute -bottom-[0.06em] left-0 h-[0.07em] w-full rounded-full bg-[#0000FF]" aria-hidden="true" />
+ </span>
+ <span className="text-white">.</span>
+ </motion.h1>
 
  <motion.div
- className="flex flex-wrap gap-3 mb-12"
- initial={{ opacity: 0, y: 14 }}
+ className="lg:col-span-5 lg:pb-3"
+ initial={{ opacity: 0, y: 18 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.55, delay: 0.82 }}
+ transition={{ duration: 0.7, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
  >
+ <p className="max-w-[44ch] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-[1.65] text-white/70">
+ Send cargo from{" "}<strong className="font-semibold text-white">Lagos to London</strong>{" "}
+ and the rest of the UK. Weekly air freight, monthly sea freight, and clear prices
+ for every Nigerian state.
+ </p>
+ <div className="mt-8 flex flex-wrap items-center gap-3">
  <Link
  href="/quote"
- className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-2xl shadow-[#0818A8]/50"
+ className="group inline-flex min-h-[54px] items-center gap-2.5 rounded-full bg-[#0000CD] px-7 text-[15.5px] font-bold text-white shadow-[0_12px_32px_-10px_rgba(0,0,255,0.75)] transition-colors duration-200 hover:bg-[#000f89]"
  aria-label="Get a free Nigeria to UK importation quote"
  >
- Get a Free Quote
- <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+ Get a free quote
+ <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
  </Link>
  <a
  href="https://wa.me/447915647119"
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-2.5 border border-emerald-500/35 bg-emerald-500/8 hover:bg-emerald-500/15 text-emerald-400 hover:text-emerald-300 text-[13px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200"
+ className="inline-flex min-h-[54px] items-center gap-2.5 rounded-full border border-white/25 bg-white/[0.05] px-7 text-[15.5px] font-semibold text-white transition-colors duration-200 hover:border-white/50 hover:bg-white/[0.1]"
  aria-label="WhatsApp R-Zone about importing from Nigeria"
  >
- <WhatsAppIcon size={14} /> WhatsApp Us
+ <span className="text-[#25D366]"><WhatsAppIcon size={17} /></span> WhatsApp us
  </a>
+ </div>
  </motion.div>
+ </div>
 
- {/* Stats strip */}
- <motion.div
- className="flex flex-wrap gap-x-10 gap-y-3 pt-8 border-t border-white/[0.07]"
- initial={{ opacity: 0 }}
- animate={inView ? { opacity: 1 } : {}}
- transition={{ duration: 0.5, delay: 1.0 }}
+ {/* The stage: one photograph, framed, with the key facts on a solid block */}
+ <motion.figure
+ className="relative mt-[clamp(2.5rem,5vw,4.5rem)] overflow-hidden rounded-[20px] bg-[#030f3a] ring-1 ring-white/10 sm:rounded-[28px]"
+ initial={{ opacity: 0, y: 18 }}
+ animate={inView ? { opacity: 1, y: 0 } : {}}
+ transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
  >
+ <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9]">
+ <Image
+ src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=2000&q=80&auto=format&fit=crop"
+ alt="Cargo aircraft being loaded for air freight from Lagos to the UK"
+ fill
+ priority
+ sizes="(max-width: 1400px) 100vw, 1320px"
+ className="object-cover"
+ />
+ <div className="absolute inset-0 bg-gradient-to-t from-[#00112E]/60 via-transparent to-transparent" aria-hidden="true" />
+ </div>
+
+ <figcaption className="absolute inset-x-4 bottom-4 overflow-hidden rounded-[16px] bg-[#000f89] text-white ring-1 ring-white/10 sm:inset-x-auto sm:left-6 sm:bottom-6 sm:rounded-[20px]">
+ <span
+ className="absolute inset-0 opacity-[0.07] pointer-events-none"
+ style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "32px 32px" }}
+ aria-hidden="true"
+ />
+ <dl className="relative grid grid-cols-2 sm:grid-cols-4 divide-white/15 sm:divide-x">
  {[
- { val: "Weekly", label: "Air departures from Lagos" },
- { val: "5 8", label: "Working days (air)" },
- { val: "4 6 wks", label: "Sea freight transit" },
- { val: "36", label: "Nigerian states covered" },
+ { val: "Weekly", label: "Air from Lagos" },
+ { val: "5 to 8", label: "Working days by air" },
+ { val: "4 to 6", label: "Weeks by sea" },
+ { val: "36", label: "States covered" },
  ].map(({ val, label }) => (
- <div key={label} className="flex items-baseline gap-2">
- <span className="text-white font-black text-[clamp(18px,2.2vw,24px)] leading-none tracking-[-0.02em]">{val}</span>
- <span className="text-white/80 text-[11px] font-medium tracking-[0.12em] uppercase">{label}</span>
+ <div key={label} className="px-5 py-4 sm:px-7 sm:py-5">
+ <dt className="sr-only">{label}</dt>
+ <dd>
+ <span className="block text-[clamp(1.25rem,2.2vw,1.75rem)] font-extrabold leading-none tracking-[-0.03em]">{val}</span>
+ <span className="mt-1.5 block text-[12px] font-semibold uppercase tracking-[0.1em] text-white/75">{label}</span>
+ </dd>
  </div>
  ))}
- </motion.div>
- </div>
+ </dl>
+ </figcaption>
+ </motion.figure>
  </div>
 
- <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none z-10" aria-hidden="true" />
  </section>
  );
 }
@@ -374,7 +360,7 @@ function ServiceOverview() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -394,13 +380,13 @@ function ServiceOverview() {
  id="overview-h2"
  variants={fadeUp}
  custom={0.05}
- className="font-black text-[clamp(26px,4.5vw,52px)] text-[#0b0f1a] leading-[0.92] tracking-[-0.028em] uppercase mb-5"
+ className="font-extrabold text-[clamp(26px,4.5vw,52px)] text-[#00112E] leading-[1.06] tracking-[-0.03em] mb-5"
  >
  Shipping Services<br />
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  from Nigeria to London.
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0818A8]"
+ className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#000f89]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -409,14 +395,9 @@ function ServiceOverview() {
  </span>
  </motion.h2>
 
- <motion.p variants={fadeUp} custom={0.15} className="text-gray-800 text-[14px] font-normal leading-relaxed mb-4">
- R-Zone Enterprises presently offers cargo services from Lagos to London and other cities,
- providing a remarkably affordable option to transport items to import from Nigeria to the UK.
- If this service has piqued your interest, feel free to contact us for a quote.
- </motion.p>
- <motion.p variants={fadeUp} custom={0.2} className="text-gray-800 text-[14px] font-normal leading-relaxed mb-8">
- While the price list below provides an idea of our standard rates, the final rate may vary
- due to daily exchange rate fluctuations. Please note that the Naira rate may also be subject to change.
+ <motion.p variants={fadeUp} custom={0.15} className="text-gray-700 text-[16px] font-normal leading-[1.75] mb-8 max-w-[56ch]">
+ Drop your cargo at our Egbeda office in Lagos. We weigh it, repack it if needed, fly or sail it to the UK,
+ clear UK customs and deliver it to the door.
  </motion.p>
 
  {/* Service option tiles */}
@@ -425,33 +406,33 @@ function ServiceOverview() {
  {
  icon: Plane, title: "Weekly Air Freight",
  sub: "Lagos → London",
- points: ["Minimum 20kg per shipment", "5 8 working days transit", "Door collection from Nigeria", "African foodstuffs accepted"],
- accent: "#0818A8",
+ points: ["Minimum 20kg per shipment", "5 to 8 working days transit", "Door collection from Nigeria", "African foodstuffs accepted"],
+ accent: "#000f89",
  },
  {
  icon: Ship, title: "Monthly Sea Freight",
  sub: "Lagos → UK Ports",
- points: ["Minimum 2 bags per shipment", "4 6 weeks transit time", "Bulk & heavy cargo accepted", "Best value for large volumes"],
- accent: "#1F51FF",
+ points: ["Minimum 2 bags per shipment", "4 to 6 weeks transit time", "Bulk & heavy cargo accepted", "Best value for large volumes"],
+ accent: "#0000FF",
  },
  ].map(s => {
  const Icon = s.icon;
  return (
  <div
  key={s.title}
- className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/40 hover:bg-white hover:shadow-md transition-all duration-300 group relative overflow-hidden"
+ className="border border-gray-200 bg-gray-50 p-5 hover:border-[#000f89]/40 hover:bg-white hover:shadow-md transition-all duration-300 group relative overflow-hidden rounded-[20px]"
  >
- <div className="absolute top-0 left-0 right-0 h-[3px] w-0 group-hover:w-full transition-all duration-400" style={{ background: `linear-gradient(to right, ${s.accent}, #1F51FF)` }} aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-[3px] w-0 group-hover:w-full transition-all duration-400" style={{ background: `linear-gradient(to right, ${s.accent}, #0000FF)` }} aria-hidden="true" />
  <div className="w-10 h-10 flex items-center justify-center mb-4" style={{ backgroundColor: `${s.accent}12` }} aria-hidden="true">
  <Icon size={18} style={{ color: s.accent }} />
  </div>
- <p className="font-black text-[14px] text-gray-900 mb-0.5">{s.title}</p>
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase mb-3" style={{ color: s.accent }}>{s.sub}</p>
+ <p className="font-black text-[16px] text-gray-900 mb-0.5">{s.title}</p>
+ <p className="mb-3 text-[13px] font-semibold" style={{ color: s.accent }}>{s.sub}</p>
  <ul className="space-y-1.5">
  {s.points.map(p => (
  <li key={p} className="flex items-center gap-2">
  <Check size={9} style={{ color: s.accent }} aria-hidden="true" />
- <span className="text-gray-800 text-[13px] font-normal">{p}</span>
+ <span className="text-gray-700 text-[14.5px] font-normal">{p}</span>
  </li>
  ))}
  </ul>
@@ -463,7 +444,7 @@ function ServiceOverview() {
  <motion.div variants={fadeUp} custom={0.32} className="flex flex-wrap gap-3">
  <Link
  href="/quote"
- className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ className="group inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Get a free importation from Nigeria to UK quote"
  >
  Get a Free Quote
@@ -471,7 +452,7 @@ function ServiceOverview() {
  </Link>
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2 border border-gray-300 text-gray-800 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-gray-300 text-gray-800 hover:border-[#000f89] hover:text-[#000f89] text-[13px] font-bold px-7 py-3.5 transition-all duration-200 rounded-full"
  aria-label="Call R-Zone UK: +44 800 772 0864"
  >
  <Phone size={13} aria-hidden="true" /> +44 800 772 0864
@@ -494,23 +475,23 @@ function ServiceOverview() {
  height={460}
  className="object-cover w-full aspect-[4/3]"
  />
- <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  {/* Overlay badge */}
- <div className="absolute top-4 right-4 border border-white/20 bg-[#00061a]/85 backdrop-blur-md px-3.5 py-2">
- <p className="text-[11px] font-black tracking-[0.22em] uppercase text-[#1F51FF]">Nigeria → UK</p>
+ <div className="absolute top-4 right-4 border border-white/20 bg-[#00112E]/85 backdrop-blur-md px-3.5 py-2">
+ <p className="text-[#4D4DFF] text-[13px] font-semibold">Nigeria → UK</p>
  <p className="text-white font-bold text-[13px]">Weekly Departures</p>
  </div>
  </div>
 
  {/* Lagos office info card */}
- <div className="border border-gray-200 bg-white p-6 relative overflow-hidden group hover:border-[#0818A8]/40 transition-all duration-300">
- <div className="absolute top-0 left-0 right-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-gray-200 bg-white p-6 relative overflow-hidden group hover:border-[#000f89]/40 transition-all duration-300 rounded-[20px]">
+ <div className="absolute top-0 left-0 right-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="flex items-start gap-4">
- <div className="w-11 h-11 bg-[#0818A8]/8 flex items-center justify-center flex-shrink-0" aria-hidden="true">
- <MapPin size={18} className="text-[#0818A8]" />
+ <div className="w-11 h-11 bg-[#000f89]/8 flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
+ <MapPin size={18} className="text-[#000f89]" />
  </div>
  <div>
- <p className="text-[11px] font-black tracking-[0.28em] uppercase text-[#0818A8] mb-1">Our Lagos Collection Office</p>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Our Lagos Collection Office</p>
  <p className="text-gray-900 font-semibold text-[14px] leading-snug mb-1">
  150 Idimu Egbeda Road, by Seliat BRT Bus Stop,
  Egbeda, Lagos, Nigeria
@@ -522,14 +503,6 @@ function ServiceOverview() {
  </div>
  </div>
 
- {/* Trust line */}
- <div className="bg-[#0818A8] px-5 py-3 flex items-center justify-between">
- <div className="flex items-center gap-2">
- <Star size={11} className="text-amber-400 fill-amber-400" aria-hidden="true" />
- <span className="text-white text-[13px] font-semibold">#1 Ranked UK Nigeria Cargo on Google</span>
- </div>
- <span className="text-white/80 text-[11px] font-normal">100+ Five-Star Reviews</span>
- </div>
  </motion.div>
  </div>
  </div>
@@ -547,13 +520,13 @@ function HowItWorks() {
  return (
  <section
  ref={ref}
- className="relative bg-[#00061a] overflow-hidden"
+ className="relative bg-[#00112E] overflow-hidden"
  aria-labelledby="process-h2"
  >
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#0818A8]/10 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#000f89]/10 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="text-center mb-14">
@@ -577,24 +550,24 @@ function HowItWorks() {
  return (
  <motion.div
  key={step.n}
- className="relative border border-white/[0.07] bg-white/[0.03] p-7 group hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 overflow-hidden"
+ className="relative border border-white/[0.07] bg-white/[0.03] p-7 group hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 overflow-hidden rounded-[20px]"
  initial={{ opacity: 0, y: 24 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: i * 0.1 }}
  >
- <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="flex items-start justify-between mb-5">
  <span className="font-black leading-none text-white/[0.06] select-none" style={{ fontSize: "clamp(48px,6vw,72px)" }} aria-hidden="true">{step.n}</span>
- <div className="w-11 h-11 bg-[#0818A8]/20 group-hover:bg-[#0818A8]/30 flex items-center justify-center flex-shrink-0 transition-colors" aria-hidden="true">
- <Icon size={18} className="text-[#1F51FF]" />
+ <div className="w-11 h-11 bg-[#000f89]/20 group-hover:bg-[#000f89]/30 flex items-center justify-center flex-shrink-0 transition-colors rounded-full" aria-hidden="true">
+ <Icon size={18} className="text-[#4D4DFF]" />
  </div>
  </div>
- <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#1F51FF] mb-2">{step.sub}</p>
- <h3 className="text-white font-black text-[15px] tracking-[-0.01em] mb-3">{step.title}</h3>
+ <p className="mb-2 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-white/[0.08] text-[#A6A6FF]">{step.sub}</p>
+ <h3 className="text-white font-extrabold text-[15px] tracking-[-0.03em] mb-3">{step.title}</h3>
  <p className="text-white/80 text-[13px] font-normal leading-relaxed">{step.body}</p>
  {/* Connector line (desktop only) */}
  {i < 3 && (
- <div className="hidden lg:block absolute -right-[10px] top-1/2 -translate-y-1/2 z-20 w-5 h-px bg-gradient-to-r from-[#0818A8]/40 to-transparent" aria-hidden="true" />
+ <div className="hidden lg:block absolute -right-[10px] top-1/2 -translate-y-1/2 z-20 w-5 h-px bg-gradient-to-r from-[#000f89]/40 to-transparent" aria-hidden="true" />
  )}
  </motion.div>
  );
@@ -625,7 +598,7 @@ function RatesSection() {
  aria-labelledby="rates-h2"
  >
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
 
@@ -641,14 +614,13 @@ function RatesSection() {
  className="text-gray-800 text-[14px] font-normal mt-4 max-w-2xl mx-auto"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
  >
- State-by-state door-to-door and collection rates per kg. While the list below provides an idea of our standard rates,
- the final rate may vary due to daily exchange rate fluctuations. The Naira rate is also subject to change.
+ Door to door and collection rates per kg, for every Nigerian state.
  </motion.p>
  </div>
 
  {/* Exchange rate notice */}
  <motion.div
- className="flex items-start gap-3 border border-amber-200 bg-amber-50 px-5 py-4 mb-8"
+ className="flex items-start gap-3 border border-amber-200 bg-amber-50 px-5 py-4 mb-8 rounded-[20px]"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.25 }}
  >
  <Info size={14} className="text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -670,7 +642,7 @@ function RatesSection() {
  placeholder="Filter by state name…"
  value={search}
  onChange={e => setSearch(e.target.value)}
- className="w-full border border-gray-300 focus:border-[#0818A8] text-gray-900 text-[13px] pl-4 pr-4 py-2.5 outline-none transition-all duration-200 bg-white"
+ className="w-full border border-gray-300 focus:border-[#000f89] text-gray-900 text-[13px] pl-4 pr-4 py-2.5 outline-none transition-all duration-200 bg-white rounded-xl"
  aria-label="Search Nigerian states"
  />
  {search && (
@@ -686,12 +658,12 @@ function RatesSection() {
 
  {/* DESKTOP TABLE */}
  <motion.div
- className="hidden md:block overflow-hidden border border-gray-200 mb-5"
+ className="hidden md:block overflow-hidden border border-gray-200 mb-5 rounded-[20px]"
  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.35 }}
  >
  <table className="w-full" aria-label="Nigeria to UK importation rates by Nigerian state">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  {["Nigerian State", "Door-to-Door Rate (£/kg)", "Collection Rate (£/kg)", "Min. Weight"].map(h => (
  <th key={h} scope="col" className="px-5 py-3.5 text-left text-[11px] font-bold tracking-[0.2em] uppercase text-white/80">{h}</th>
  ))}
@@ -707,11 +679,11 @@ function RatesSection() {
  ) : filtered.map((row, i) => (
  <tr
  key={row.state}
- className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}
+ className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#000f89]/4 transition-colors`}
  >
- <td className="px-5 py-3.5 font-semibold text-[13px] text-[#0b0f1a]">{row.state}</td>
+ <td className="px-5 py-3.5 font-semibold text-[13px] text-[#00112E]">{row.state}</td>
  <td className="px-5 py-3.5">
- <span className="text-[#0818A8] font-black text-[16px]">£{row.door}</span>
+ <span className="text-[#000f89] font-black text-[16px]">£{row.door}</span>
  <span className="text-gray-800 text-[12px] ml-1 font-normal">/kg</span>
  </td>
  <td className="px-5 py-3.5">
@@ -740,7 +712,7 @@ function RatesSection() {
  {filtered.map((row, i) => (
  <motion.div
  key={row.state}
- className="border border-gray-200 bg-white p-4"
+ className="border border-gray-200 bg-white p-4 rounded-[20px]"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.5) }}
  >
  <div className="flex items-center justify-between mb-3">
@@ -749,11 +721,11 @@ function RatesSection() {
  </div>
  <div className="grid grid-cols-2 gap-3">
  <div>
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 mb-0.5">Door-to-Door</p>
- <p className="text-[#0818A8] font-black text-[18px]">£{row.door}<span className="text-gray-800 text-[12px] font-normal ml-0.5">/kg</span></p>
+ <p className="text-gray-800 mb-0.5 text-[13px] font-semibold">Door-to-Door</p>
+ <p className="text-[#000f89] font-black text-[18px]">£{row.door}<span className="text-gray-800 text-[12px] font-normal ml-0.5">/kg</span></p>
  </div>
  <div>
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800 mb-0.5">Collection Rate</p>
+ <p className="text-gray-800 mb-0.5 text-[13px] font-semibold">Collection Rate</p>
  {row.col === " " ? (
  <p className="text-gray-400 font-normal text-[16px]"> </p>
  ) : (
@@ -771,18 +743,18 @@ function RatesSection() {
 
  {/* CTA below table */}
  <motion.div
- className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-6 md:p-9 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+ className="border border-[#000f89]/15 bg-[#000f89]/4 p-6 md:p-9 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-[20px]"
  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.5 }}
  >
  <div>
- <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Get a Confirmed Quote</p>
- <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em] mb-1">Know your exact cost before shipping.</h3>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Get a Confirmed Quote</p>
+ <h3 className="text-gray-900 font-extrabold text-[20px] tracking-[-0.03em] mb-1">Know your exact cost before shipping.</h3>
  <p className="text-gray-800 text-[13px] font-normal">Tell us your Nigerian state, weight and cargo type we respond the same day.</p>
  </div>
  <div className="flex flex-wrap gap-3">
  <Link
  href="/quote"
- className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ className="group inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Get a Nigeria to UK importation quote"
  >
  Get a Quote <ArrowRight size={12} aria-hidden="true" />
@@ -791,7 +763,7 @@ function RatesSection() {
  href="https://wa.me/447915647119"
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-2 border border-gray-300 hover:border-emerald-500 text-gray-800 hover:text-emerald-600 text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-gray-300 hover:border-emerald-500 text-gray-800 hover:text-emerald-600 text-[13px] font-bold px-7 py-3.5 transition-all duration-200 rounded-full"
  aria-label="WhatsApp R-Zone for a quote"
  >
  <WhatsAppIcon size={13} /> WhatsApp
@@ -814,14 +786,14 @@ function FoodstuffsSection() {
  <section
  id="foodstuffs"
  ref={ref}
- className="relative bg-[#00061a] overflow-hidden scroll-mt-20"
+ className="relative bg-[#00112E] overflow-hidden scroll-mt-20"
  aria-labelledby="food-h2"
  >
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
  <div className="absolute top-0 right-0 w-[700px] h-[500px] rounded-full pointer-events-none"
- style={{ background: "radial-gradient(circle, rgba(31,81,255,0.1) 0%, transparent 65%)", transform: "translate(25%,-20%)" }} aria-hidden="true" />
+ style={{ background: "radial-gradient(circle, rgba(0,0,255,0.1) 0%, transparent 65%)", transform: "translate(25%,-20%)" }} aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -832,13 +804,13 @@ function FoodstuffsSection() {
  <TagPill label="African Foodstuffs Accepted Items" dark />
  <h2
  id="food-h2"
- className="font-black text-[clamp(24px,4vw,44px)] text-white leading-[0.92] tracking-[-0.028em] uppercase mb-5"
+ className="font-extrabold text-[clamp(24px,4vw,44px)] text-white leading-[1.06] tracking-[-0.03em] mb-5"
  >
  What Can You{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Import?
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#1F51FF]"
+ className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0000FF]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -847,53 +819,19 @@ function FoodstuffsSection() {
  </span>
  </h2>
 
- <p className="text-white/80 text-[14px] font-normal leading-relaxed mb-6">
- African foodstuffs are allowed into the UK either by our{" "}
- <strong className="text-white font-semibold">weekly air freight from Nigeria (minimum 20kg)</strong>{" "}
- or our{" "}
- <strong className="text-white font-semibold">monthly sea freight service from Nigeria (minimum 2 bags)</strong>.
+ <p className="text-white/75 text-[16px] font-normal leading-[1.75] mb-8">
+ These Nigerian foodstuffs can travel by{" "}
+ <strong className="text-white font-semibold">weekly air (minimum 20kg)</strong> or{" "}
+ <strong className="text-white font-semibold">monthly sea (minimum 2 bags)</strong>. Pack them well before drop-off:
+ we check and repack everything at our warehouse.
  </p>
-
- {/* Service tiles */}
- <div className="space-y-3 mb-8">
- {[
- { icon: Plane, label: "Weekly Air Freight", detail: "Lagos → London · Min 20kg · 5 8 working days", accent: "#1F51FF" },
- { icon: Ship, label: "Monthly Sea Freight", detail: "Lagos → UK Ports · Min 2 bags · 4 6 weeks", accent: "#0818A8" },
- ].map(s => {
- const Icon = s.icon;
- return (
- <div key={s.label} className="flex items-center gap-3 border border-white/[0.08] bg-white/[0.04] px-4 py-3.5">
- <Icon size={14} style={{ color: s.accent }} aria-hidden="true" />
- <div>
- <p className="text-white font-semibold text-[13px]">{s.label}</p>
- <p className="text-white/80 text-[12px] font-normal">{s.detail}</p>
- </div>
- </div>
- );
- })}
- </div>
-
- {/* Packing advisory */}
- <div className="border border-amber-400/30 bg-amber-400/8 p-5 mb-6">
- <div className="flex items-start gap-3">
- <AlertTriangle size={14} className="text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
- <div>
- <p className="text-amber-400 font-black text-[11px] tracking-[0.2em] uppercase mb-2">Important Advisory</p>
- <p className="text-white/80 text-[13px] font-normal leading-relaxed">
- We strongly advise that items are{" "}
- <strong className="text-white font-semibold">well packed before getting to our warehouse</strong>{" "}
- for assessment and repacking. Clients are advised to follow recommended products as listed.
- </p>
- </div>
- </div>
- </div>
 
  {/* Not permitted */}
- <div className="border border-red-500/20 bg-red-500/5 p-5">
+ <div className="border border-red-500/20 bg-red-500/5 p-5 rounded-[20px]">
  <div className="flex items-start gap-3">
  <X size={14} className="text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
  <div>
- <p className="text-red-400 font-black text-[11px] tracking-[0.2em] uppercase mb-2">Not Permitted</p>
+ <p className="text-red-400 mb-2 text-[13px] font-semibold">Not Permitted</p>
  <ul className="space-y-1">
  {[
  "Bleaching creams",
@@ -905,7 +843,7 @@ function FoodstuffsSection() {
  ].map(item => (
  <li key={item} className="flex items-center gap-2">
  <X size={8} className="text-red-400 flex-shrink-0" aria-hidden="true" />
- <span className="text-white/80 text-[13px] font-normal">{item}</span>
+ <span className="text-white/80 text-[14px] font-normal">{item}</span>
  </li>
  ))}
  </ul>
@@ -922,50 +860,21 @@ function FoodstuffsSection() {
  animate={inView ? { opacity: 1, x: 0 } : {}}
  transition={{ duration: 0.7, delay: 0.25 }}
  >
- <div className="border border-white/[0.08] bg-white/[0.03] overflow-hidden">
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-white/[0.08] bg-white/[0.03] overflow-hidden rounded-[20px]">
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="p-6 md:p-8">
- <p className="text-[11px] font-black tracking-[0.35em] uppercase text-white/80 mb-7">
- Approved Foodstuffs Nigeria to UK Import List
+ <p className="text-white mb-6 text-[15px] font-semibold">
+ Approved foodstuffs, Nigeria to UK
  </p>
 
- <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
- {FOODSTUFFS.map((item, i) => (
- <motion.div
- key={i}
- className="flex items-start gap-3 border border-white/[0.05] bg-white/[0.025] px-4 py-3 group hover:border-[#0818A8]/40 hover:bg-[#0818A8]/8 transition-all duration-200"
- initial={{ opacity: 0, y: 8 }}
- animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.3, delay: 0.3 + i * 0.025 }}
- >
- <span
- className="w-4 h-4 rounded-full bg-[#0818A8]/25 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#0818A8]/40 transition-colors"
- aria-hidden="true"
- >
- <Check size={8} className="text-[#1F51FF]" />
- </span>
- <span className="text-white/80 text-[13px] font-normal leading-snug group-hover:text-white transition-colors">
+ <ul className="flex flex-wrap gap-2.5">
+ {FOODSTUFFS.map((item) => (
+ <li key={item} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[14px] text-white/85">
  {item}
- </span>
- </motion.div>
+ </li>
  ))}
- </div>
+ </ul>
 
- {/* Advisory banner */}
- <motion.div
- className="mt-8 border border-[#0818A8]/30 bg-[#0818A8]/15 px-5 py-4"
- initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.1 }}
- >
- <div className="flex items-start gap-3">
- <Shield size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
- <p className="text-white/80 text-[13px] font-normal leading-relaxed">
- <strong className="text-white font-semibold uppercase tracking-[0.05em]">
- We strongly advise that items are well packed before getting to our warehouse for assessment and repacking.
- Clients are advised to follow recommended products as listed above.
- </strong>
- </p>
- </div>
- </motion.div>
  </div>
  </div>
  </motion.div>
@@ -991,7 +900,7 @@ function FAQSection() {
  aria-labelledby="faq-h2"
  >
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -1002,13 +911,13 @@ function FAQSection() {
  <TagPill label="Importation FAQs Nigeria to UK" dark={false} />
  <h2
  id="faq-h2"
- className="font-black text-[clamp(24px,4vw,44px)] text-[#0b0f1a] leading-[0.92] tracking-[-0.028em] uppercase mb-4"
+ className="font-extrabold text-[clamp(24px,4vw,44px)] text-[#00112E] leading-[1.06] tracking-[-0.03em] mb-4"
  >
  Common{" "}
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  Questions.
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0818A8]"
+ className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#000f89]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -1020,15 +929,15 @@ function FAQSection() {
  Everything you need to know about importing goods from Nigeria to the UK with R-Zone Enterprises.
  </p>
 
- <div className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-6">
- <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#0818A8] mb-3">Still need help?</p>
+ <div className="border border-[#000f89]/15 bg-[#000f89]/4 p-6 rounded-[20px]">
+ <p className="mb-3 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Still need help?</p>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-5">
  Our UK team responds the same day. No bots, no call centres.
  </p>
  <div className="flex flex-col gap-3">
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors"
+ className="inline-flex items-center gap-2 text-[13px] font-bold text-[#000f89] hover:text-[#0000CD] transition-colors"
  aria-label="Call R-Zone UK"
  >
  <Phone size={12} aria-hidden="true" /> +44 (0) 800 772 0864
@@ -1054,8 +963,8 @@ function FAQSection() {
  animate={inView ? { opacity: 1, x: 0 } : {}}
  transition={{ duration: 0.65, delay: 0.2 }}
  >
- <div className="border border-gray-200 overflow-hidden">
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-gray-200 overflow-hidden rounded-[20px]">
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <dl>
  {FAQS.map((item, i) => (
  <div
@@ -1072,7 +981,7 @@ function FAQSection() {
  >
  <span
  className={`text-[13.5px] font-semibold leading-snug transition-colors duration-150 ${
- open === i ? "text-[#0818A8]" : "text-gray-800 group-hover:text-[#0818A8]"
+ open === i ? "text-[#000f89]" : "text-gray-800 group-hover:text-[#000f89]"
  }`}
  itemProp="name"
  >
@@ -1084,7 +993,7 @@ function FAQSection() {
  className="flex-shrink-0 mt-0.5"
  aria-hidden="true"
  >
- <ChevronDown size={15} className={open === i ? "text-[#0818A8]" : "text-gray-800"} />
+ <ChevronDown size={15} className={open === i ? "text-[#000f89]" : "text-gray-800"} />
  </motion.div>
  </button>
  </dt>
@@ -1131,7 +1040,7 @@ function FinalCTA() {
  return (
  <section
  ref={ref}
- className="relative bg-[#00061a] overflow-hidden"
+ className="relative bg-[#00112E] overflow-hidden"
  aria-label="Start importing from Nigeria to UK get a free R-Zone Enterprises quote"
  >
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
@@ -1139,9 +1048,9 @@ function FinalCTA() {
  <div
  className="absolute inset-0 pointer-events-none"
  aria-hidden="true"
- style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(8,24,168,0.28) 0%, transparent 70%)" }}
+ style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,15,137,0.28) 0%, transparent 70%)" }}
  />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -1153,20 +1062,20 @@ function FinalCTA() {
  transition={{ duration: 0.65 }}
  >
  <TagPill label="Start Importing from Nigeria to UK" dark />
- <h2 className="font-black text-[clamp(30px,5.5vw,62px)] text-white leading-[0.88] tracking-[-0.03em] uppercase mb-6">
+ <h2 className="font-extrabold text-[clamp(30px,5.5vw,62px)] text-white leading-[1.06] tracking-[-0.03em] mb-6">
  Ready to Import<br />
- <span className="text-[#1F51FF]">from Nigeria?</span>
+ <span className="text-[#4D4DFF]">from Nigeria?</span>
  </h2>
  <p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-lg mb-9">
  Weekly air freight and monthly sea freight from Lagos to London and across the UK.
- Transparent state-by-state pricing. The{" "}
- <strong className="text-white font-semibold">#1 ranked UK Nigeria cargo company on Google</strong>.
+ Transparent state-by-state pricing and{" "}
+ <strong className="text-white font-semibold">120+ five-star Google reviews</strong>.
  Same-day response, no hidden fees.
  </p>
  <div className="flex flex-wrap gap-4 mb-10">
  <Link
  href="/quote"
- className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-2xl shadow-[#0818A8]/40"
+ className="group inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-8 py-4 transition-all duration-200 shadow-2xl shadow-[#000f89]/40 rounded-full"
  aria-label="Get a free Nigeria to UK importation quote from R-Zone"
  >
  Get a Free Quote
@@ -1174,16 +1083,16 @@ function FinalCTA() {
  </Link>
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200"
+ className="inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold px-8 py-4 transition-all duration-200 rounded-full"
  aria-label="Call R-Zone UK: +44 800 772 0864"
  >
  <Phone size={13} aria-hidden="true" /> +44 800 772 0864
  </a>
  </div>
  <div className="flex flex-wrap gap-5">
- {["Free Quote", "Same-Day Response", "All 36 Nigerian States", "Weekly Air Service", "#1 on Google"].map(t => (
+ {["Free Quote", "Same-Day Response", "All 36 Nigerian States", "Weekly Air Service", "120+ Google Reviews"].map(t => (
  <span key={t} className="flex items-center gap-2 text-white/80 text-[13px] font-normal">
- <CheckCircle size={11} className="text-[#1F51FF]" aria-hidden="true" />{t}
+ <CheckCircle size={11} className="text-[#4D4DFF]" aria-hidden="true" />{t}
  </span>
  ))}
  </div>
@@ -1197,12 +1106,12 @@ function FinalCTA() {
  transition={{ duration: 0.7, delay: 0.3 }}
  >
  {[
- { icon: Plane, title: "Weekly Air", detail: "5 8 working days", href: "#", accent: "#1F51FF" },
- { icon: Ship, title: "Monthly Sea", detail: "4 6 weeks transit", href: "#", accent: "#0818A8" },
- { icon: MapPin, title: "Lagos Collection", detail: "Egbeda office", href: "/contact", accent: "#1F51FF" },
- { icon: Package, title: "Foodstuffs", detail: "View approved items", href: "#foodstuffs", accent: "#0818A8" },
- { icon: Globe, title: "All 36 States", detail: "State-by-state rates", href: "#rates", accent: "#1F51FF" },
- { icon: Shield, title: "Customs Included", detail: "HMRC UK clearance", href: "/services", accent: "#0818A8" },
+ { icon: Plane, title: "Weekly Air", detail: "5 to 8 working days", href: "#", accent: "#0000FF" },
+ { icon: Ship, title: "Monthly Sea", detail: "4 to 6 weeks transit", href: "#", accent: "#000f89" },
+ { icon: MapPin, title: "Lagos Collection", detail: "Egbeda office", href: "/contact", accent: "#0000FF" },
+ { icon: Package, title: "Foodstuffs", detail: "View approved items", href: "#foodstuffs", accent: "#000f89" },
+ { icon: Globe, title: "All 36 States", detail: "State-by-state rates", href: "#rates", accent: "#0000FF" },
+ { icon: Shield, title: "Customs Included", detail: "HMRC UK clearance", href: "/services", accent: "#000f89" },
  ].map((item, i) => {
  const Icon = item.icon;
  return (
@@ -1253,7 +1162,7 @@ export default function ImportationPageClient() {
  {
  "@type": "Service",
  "name": "Importation from Nigeria to UK Cargo Services Lagos to London",
- "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight cargo services from Lagos, Nigeria to London and all UK cities. Affordable state-by-state rates from £4.80/kg. African foodstuffs accepted. Door-to-door service from all 36 Nigerian states. The highest-rated UK-to-Nigeria cargo company on Google.",
+ "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight cargo services from Lagos, Nigeria to London and all UK cities. Affordable state-by-state rates from £4.80/kg. African foodstuffs accepted. Door-to-door service from all 36 Nigerian states. 120+ five-star Google reviews.",
  "provider": {
  "@type": "Organization",
  "name": "R-Zone Enterprises",
@@ -1268,8 +1177,8 @@ export default function ImportationPageClient() {
  "@type": "OfferCatalog",
  "name": "Nigeria to UK Import Rates",
  "itemListElement": [
- { "@type": "Offer", "name": "Lagos to UK Air Freight", "price": "4.80", "priceCurrency": "GBP", "unitText": "KGM", "description": "Weekly air freight Lagos to London. Min 20kg. 5 8 working days." },
- { "@type": "Offer", "name": "Nigeria to UK Sea Freight", "price": "3.00", "priceCurrency": "GBP", "unitText": "KGM", "description": "Monthly sea freight Lagos to UK. Min 2 bags. 4 6 weeks." },
+ { "@type": "Offer", "name": "Lagos to UK Air Freight", "price": "4.80", "priceCurrency": "GBP", "unitText": "KGM", "description": "Weekly air freight Lagos to London. Min 20kg. 5 to 8 working days." },
+ { "@type": "Offer", "name": "Nigeria to UK Sea Freight", "price": "3.00", "priceCurrency": "GBP", "unitText": "KGM", "description": "Monthly sea freight Lagos to UK. Min 2 bags. 4 to 6 weeks." },
  ],
  },
  },
@@ -1296,7 +1205,7 @@ export default function ImportationPageClient() {
  "@type": "WebPage",
  "url": "https://r-zoneenterprises.com/importation-from-nigeria",
  "name": "Import from Nigeria to UK Cargo Services Lagos to London | R-Zone Enterprises",
- "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight from Nigeria (Lagos) to London and all UK cities. Rates from £4.80/kg. African foodstuffs accepted. All 36 Nigerian states. The highest-rated UK Nigeria cargo company on Google 100+ five-star reviews.",
+ "description": "R-Zone Enterprises offers weekly air freight and monthly sea freight from Nigeria (Lagos) to London and all UK cities. Rates from £4.80/kg. African foodstuffs accepted. All 36 Nigerian states. 120+ five-star Google reviews.",
  "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
  },
  ],

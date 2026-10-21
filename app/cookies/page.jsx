@@ -31,7 +31,7 @@ const COOKIE_CATEGORIES = [
  id: "strictly",
  icon: Lock,
  title: "Strictly Necessary",
- color: "#0818A8",
+ color: "#000f89",
  required: true,
  desc: "Essential for the website to function. Cannot be disabled.",
  cookies: [
@@ -45,7 +45,7 @@ const COOKIE_CATEGORIES = [
  id: "analytics",
  icon: BarChart3,
  title: "Analytics",
- color: "#1F51FF",
+ color: "#0000FF",
  required: false,
  desc: "Help us understand how visitors use our site. All data is anonymised.",
  cookies: [
@@ -59,7 +59,7 @@ const COOKIE_CATEGORIES = [
  id: "functionality",
  icon: Eye,
  title: "Functionality",
- color: "#0437F2",
+ color: "#0000CD",
  required: false,
  desc: "Enable enhanced features and personalisation on our site.",
  cookies: [
@@ -72,7 +72,7 @@ const COOKIE_CATEGORIES = [
  id: "marketing",
  icon: Megaphone,
  title: "Marketing",
- color: "#0818A8",
+ color: "#000f89",
  required: false,
  desc: "Used with your consent to show relevant advertising on other sites.",
  cookies: [
@@ -98,19 +98,19 @@ const THIRD_PARTIES = [
 
 // ─── Shared components ────────────────────────────────────────────────────────
 function P({ children }) { return <p className="text-gray-700 text-[14px] font-normal leading-relaxed mb-4">{children}</p>; }
-function H3({ children }) { return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.1em] uppercase mb-3 mt-6 first:mt-0">{children}</h3>; }
+function H3({ children }) { return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.1em] mb-3 mt-6 first:mt-0">{children}</h3>; }
 function UL({ children }) { return <ul className="space-y-2.5 mb-5">{children}</ul>; }
 function LI({ children }) {
  return (
  <li className="flex items-start gap-3">
- <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.48em]" aria-hidden="true" />
+ <span className="w-1.5 h-1.5 rounded-full bg-[#000f89] flex-shrink-0 mt-[0.48em]" aria-hidden="true" />
  <span className="text-gray-700 text-[13.5px] font-normal leading-relaxed">{children}</span>
  </li>
  );
 }
 function Callout({ type = "blue", children }) {
  const s = {
- blue: "border-l-[3px] border-[#0818A8] bg-[#0818A8]/4 text-gray-800",
+ blue: "border-l-[3px] border-[#000f89] bg-[#000f89]/4 text-gray-800",
  green: "border-l-[3px] border-emerald-600 bg-emerald-50 text-emerald-900",
  amber: "border-l-[3px] border-amber-500 bg-amber-50 text-amber-900",
  };
@@ -119,10 +119,10 @@ function Callout({ type = "blue", children }) {
 
 function CookieTable({ cookies }) {
  return (
- <div className="overflow-x-auto mb-5 border border-gray-200">
+ <div className="overflow-x-auto mb-5 border border-gray-200 rounded-[20px]">
  <table className="w-full" style={{ minWidth: 460 }} aria-label="Cookie details">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  {["Cookie Name","Purpose","Duration"].map(h => (
  <th key={h} className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">{h}</th>
  ))}
@@ -130,7 +130,7 @@ function CookieTable({ cookies }) {
  </thead>
  <tbody>
  {cookies.map((c, i) => (
- <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
+ <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#000f89]/3 transition-colors`}>
  <td className="px-5 py-3">
  <code className="text-[13px] font-semibold text-gray-900 bg-gray-100 px-2 py-0.5">{c.name}</code>
  </td>
@@ -153,10 +153,10 @@ function Section({ id, num, title, children }) {
  initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}>
  <div className="flex items-start gap-5 mb-7">
- <div className="w-10 h-10 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-10 h-10 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
  <span className="text-white font-black text-[13px] tracking-[0.06em]">{num}</span>
  </div>
- <h2 id={`${id}-h`} className="font-black text-[clamp(18px,2.8vw,25px)] text-gray-900 leading-tight tracking-[-0.02em] pt-1.5">{title}</h2>
+ <h2 id={`${id}-h`} className="font-extrabold text-[clamp(18px,2.8vw,25px)] text-gray-900 leading-tight tracking-[-0.03em] pt-1.5">{title}</h2>
  </div>
  <div className="pl-[60px]">{children}</div>
  </motion.section>
@@ -198,7 +198,7 @@ export default function CookiePolicyPage() {
  })}} />
 
  {/* Top bar */}
- <div className="bg-[#0818A8]">
+ <div className="bg-[#000f89]">
  <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
  <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises Legal &amp; Compliance</p>
  <div className="hidden sm:flex items-center gap-6">
@@ -219,13 +219,13 @@ export default function CookiePolicyPage() {
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
  <div>
  <div className="flex items-center gap-3 mb-5">
- <div className="w-12 h-12 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-12 h-12 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
  <Cookie size={20} className="text-white" />
  </div>
- <div className="h-px flex-1 bg-gradient-to-r from-[#0818A8]/30 to-transparent" aria-hidden="true" />
+ <div className="h-px flex-1 bg-gradient-to-r from-[#000f89]/30 to-transparent" aria-hidden="true" />
  </div>
- <h1 className="font-black text-[clamp(32px,6vw,64px)] text-gray-900 leading-[0.88] tracking-[-0.035em] uppercase mb-5">
- Cookie<br /><span className="text-[#0818A8]">Policy.</span>
+ <h1 className="font-extrabold text-[clamp(32px,6vw,64px)] text-gray-900 leading-[1.06] tracking-[-0.035em] mb-5">
+ Cookie<br /><span className="text-[#000f89]">Policy.</span>
  </h1>
  <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
  We use cookies to make our website work properly and to understand how you use it. This policy tells you exactly which cookies we use, why, and how to control them including how to say no.
@@ -238,9 +238,9 @@ export default function CookiePolicyPage() {
  { label: "Jurisdiction", val: "UK PECR & UK GDPR",icon: Globe },
  { label: "Regulator", val: "ICO ico.org.uk", icon: Shield },
  ].map(({ label, val, icon: Icon }) => (
- <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
- <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
+ <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
+ <Icon size={13} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="text-gray-500 mb-0.5 text-[13px] font-semibold">{label}</p>
  <p className="text-gray-800 font-semibold text-[13px] leading-snug">{val}</p>
  </div>
  ))}
@@ -252,15 +252,15 @@ export default function CookiePolicyPage() {
  {COOKIE_CATEGORIES.map(cat => {
  const Icon = cat.icon;
  return (
- <div key={cat.id} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/30 transition-colors">
+ <div key={cat.id} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#000f89]/30 transition-colors rounded-[20px]">
  <div className="flex items-center justify-between mb-3">
- <div className="w-8 h-8 bg-[#0818A8]/8 flex items-center justify-center" aria-hidden="true">
- <Icon size={14} className="text-[#0818A8]" />
+ <div className="w-8 h-8 bg-[#000f89]/8 flex items-center justify-center rounded-full" aria-hidden="true">
+ <Icon size={14} className="text-[#000f89]" />
  </div>
  {cat.required ? (
- <span className="text-[13px] font-bold tracking-[0.15em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5">Always On</span>
+ <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 text-[13px] font-semibold">Always On</span>
  ) : (
- <span className="text-[13px] font-bold tracking-[0.15em] uppercase text-gray-500 bg-white border border-gray-200 px-2 py-0.5">Optional</span>
+ <span className="text-gray-500 bg-white border border-gray-200 px-2 py-0.5 text-[13px] font-semibold">Optional</span>
  )}
  </div>
  <p className="text-gray-900 font-bold text-[13px]">{cat.title}</p>
@@ -284,7 +284,7 @@ export default function CookiePolicyPage() {
  <div className="grid grid-cols-2 gap-0">
  {TOC.map(item => (
  <a key={item.id} href={`#${item.id}`} onClick={() => setTocMobile(false)}
- className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 ${activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-700 hover:bg-gray-50"}`}>
+ className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 rounded-full ${activeId === item.id ? "bg-[#000f89]/5 text-[#000f89] font-semibold" : "text-gray-700 hover:bg-gray-50"}`}>
  <span className="text-[13px] font-black text-gray-400">{item.num}</span>
  <span className="leading-snug">{item.label}</span>
  </a>
@@ -304,19 +304,19 @@ export default function CookiePolicyPage() {
  {/* Sidebar */}
  <aside className="hidden lg:block lg:col-span-3 xl:col-span-2" aria-label="Table of contents">
  <div className="sticky top-[74px]">
- <p className="text-[13px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
+ <p className="text-gray-400 mb-4 px-1 text-[13px] font-semibold">Contents</p>
  <nav aria-label="Section navigation">
  {TOC.map(item => (
  <a key={item.id} href={`#${item.id}`}
- className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 ${activeId === item.id ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4" : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"}`}>
- <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>{item.num}</span>
+ className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 rounded-full ${activeId === item.id ? "border-[#000f89] text-[#000f89] font-semibold bg-[#000f89]/4" : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"}`}>
+ <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#000f89]" : "text-gray-400"}`}>{item.num}</span>
  {item.label}
  </a>
  ))}
  </nav>
- <div className="mt-6 border border-[#0818A8]/15 bg-[#0818A8]/4 p-4">
- <Cookie size={14} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">Manage Cookies</p>
+ <div className="mt-6 border border-[#000f89]/15 bg-[#000f89]/4 p-4 rounded-[20px]">
+ <Cookie size={14} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="mb-2 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Manage Cookies</p>
  <p className="text-gray-700 text-[13px] font-normal leading-snug">Change your preferences anytime via our cookie banner or browser settings.</p>
  </div>
  </div>
@@ -359,7 +359,7 @@ export default function CookiePolicyPage() {
  <LI>Advertising features disabled no remarketing or audience reporting</LI>
  <LI>Data retention set to 26 months (Google's shortest available)</LI>
  </UL>
- <P>Google's data processing terms: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors inline-flex items-center gap-1">policies.google.com <ExternalLink size={10} aria-hidden="true" /></a></P>
+ <P>Google's data processing terms: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors inline-flex items-center gap-1">policies.google.com <ExternalLink size={10} aria-hidden="true" /></a></P>
  </Section>
 
  <Section id="c5" num="05" title="Functionality Cookies">
@@ -376,10 +376,10 @@ export default function CookiePolicyPage() {
 
  <Section id="c7" num="07" title="Third-Party Cookies">
  <P>Some cookies are set by third-party services and governed by their own privacy and cookie policies. Third-party services we use that may set cookies:</P>
- <div className="overflow-x-auto mb-6 border border-gray-200">
+ <div className="overflow-x-auto mb-6 border border-gray-200 rounded-[20px]">
  <table className="w-full" style={{ minWidth: 520 }} aria-label="Third-party services">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  {["Service","Purpose","Privacy Policy","Notes"].map(h => (
  <th key={h} className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">{h}</th>
  ))}
@@ -387,11 +387,11 @@ export default function CookiePolicyPage() {
  </thead>
  <tbody>
  {THIRD_PARTIES.map((tp, i) => (
- <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
+ <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#000f89]/3 transition-colors`}>
  <td className="px-5 py-3 text-[13px] text-gray-800 font-semibold">{tp.name}</td>
  <td className="px-5 py-3 text-[13px] text-gray-700 font-normal">{tp.purpose}</td>
  <td className="px-5 py-3">
- <a href={tp.policy} target="_blank" rel="noopener noreferrer" className="text-[#0818A8] text-[13px] font-semibold hover:text-[#0437F2] transition-colors inline-flex items-center gap-1">
+ <a href={tp.policy} target="_blank" rel="noopener noreferrer" className="text-[#000f89] text-[13px] font-semibold hover:text-[#0000CD] transition-colors inline-flex items-center gap-1">
  View <ExternalLink size={9} aria-hidden="true" />
  </a>
  </td>
@@ -412,18 +412,18 @@ export default function CookiePolicyPage() {
  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
  {BROWSER_LINKS.map(b => (
  <a key={b.name} href={b.href} target="_blank" rel="noopener noreferrer"
- className="border border-gray-200 bg-gray-50 p-3 text-center hover:border-[#0818A8]/40 hover:bg-[#0818A8]/4 transition-colors group">
- <p className="text-gray-800 font-semibold text-[13px] group-hover:text-[#0818A8] transition-colors">{b.name}</p>
- <p className="text-[#0818A8] text-[13px] font-semibold mt-1 flex items-center justify-center gap-1">Cookie Guide <ExternalLink size={8} aria-hidden="true" /></p>
+ className="border border-gray-200 bg-gray-50 p-3 text-center hover:border-[#000f89]/40 hover:bg-[#000f89]/4 transition-colors group">
+ <p className="text-gray-800 font-semibold text-[13px] group-hover:text-[#000f89] transition-colors">{b.name}</p>
+ <p className="text-[#000f89] text-[13px] font-semibold mt-1 flex items-center justify-center gap-1">Cookie Guide <ExternalLink size={8} aria-hidden="true" /></p>
  </a>
  ))}
  </div>
 
  <H3>8.3 Opt-Out Tools</H3>
  <UL>
- <LI>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Google Analytics Opt-Out Browser Add-on</a></LI>
- <LI>Facebook ads: <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Facebook Ad Preferences</a></LI>
- <LI>All UK online advertising: <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">youronlinechoices.com</a></LI>
+ <LI>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Google Analytics Opt-Out Browser Add-on</a></LI>
+ <LI>Facebook ads: <a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Facebook Ad Preferences</a></LI>
+ <LI>All UK online advertising: <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">youronlinechoices.com</a></LI>
  </UL>
  </Section>
 
@@ -438,8 +438,8 @@ export default function CookiePolicyPage() {
  { label: "Withdrawable", desc: "Change your preferences at any time via Cookie Settings" },
  { label: "Time-limited", desc: "Consent is stored for 12 months, then we ask for your preferences again" },
  ].map(item => (
- <div key={item.label} className="flex items-start gap-3 border border-gray-100 bg-gray-50 p-4">
- <div className="w-5 h-5 bg-[#0818A8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
+ <div key={item.label} className="flex items-start gap-3 border border-gray-100 bg-gray-50 p-4 rounded-[20px]">
+ <div className="w-5 h-5 bg-[#000f89] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
  <Check size={9} className="text-white" />
  </div>
  <div>
@@ -471,14 +471,14 @@ export default function CookiePolicyPage() {
  ].map(item => {
  const Icon = item.icon;
  return (
- <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/25 transition-colors">
+ <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
  <div className="flex items-center gap-2 mb-2">
- <Icon size={13} className="text-[#0818A8]" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
+ <Icon size={13} className="text-[#000f89]" aria-hidden="true" />
+ <p className="text-gray-500 text-[13px] font-semibold">{item.label}</p>
  </div>
  <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined}
  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
- className="text-gray-800 font-semibold text-[13px] hover:text-[#0818A8] transition-colors break-all">{item.val}</a>
+ className="text-gray-800 font-semibold text-[13px] hover:text-[#000f89] transition-colors break-all">{item.val}</a>
  </div>
  );
  })}
@@ -486,18 +486,18 @@ export default function CookiePolicyPage() {
  </Section>
 
  {/* Footer CTA */}
- <div className="mt-12 border border-[#0818A8]/20 bg-[#0818A8]/4 p-7 md:p-9">
+ <div className="mt-12 border border-[#000f89]/20 bg-[#000f89]/4 p-7 md:p-9 rounded-[20px]">
  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
  <div>
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Questions?</p>
- <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">We're Transparent About Cookies.</h3>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Questions?</p>
+ <h3 className="text-gray-900 font-extrabold text-[20px] tracking-[-0.03em]">We're Transparent About Cookies.</h3>
  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Contact our privacy team we respond within one business day.</p>
  </div>
  <div className="flex flex-wrap gap-3">
- <a href="mailto:privacy@r-zoneenterprises.com" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="Email privacy team">
+ <a href="mailto:privacy@r-zoneenterprises.com" className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full" aria-label="Email privacy team">
  <Mail size={12} aria-hidden="true" /> Email Privacy Team
  </a>
- <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200" aria-label="Back to site">
+ <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#000f89] hover:text-[#000f89] text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full" aria-label="Back to site">
  <ArrowLeft size={11} aria-hidden="true" /> Back to Site
  </Link>
  </div>

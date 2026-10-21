@@ -25,12 +25,12 @@ function StatCard({ label, value, sub, subColor, icon: Icon, iconBg, iconColor, 
  <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.45, delay, ease: [0.25, 0.46, 0.45, 0.94] }}>
  <Link href={href}
- className="group flex flex-col gap-5 bg-white border border-[#e2e8f0] hover:border-[#0818A8]/30 hover:shadow-md shadow-sm p-6 rounded-sm transition-all duration-200">
+ className="group flex flex-col gap-5 bg-white border border-[#e2e8f0] hover:border-[#000f89]/30 hover:shadow-md shadow-sm p-6 rounded-sm transition-all duration-200">
  <div className="flex items-start justify-between">
  <div className={`w-10 h-10 flex items-center justify-center rounded-sm ${iconBg}`}>
  <Icon size={18} className={iconColor} />
  </div>
- <ChevronRight size={14} className="text-[#cbd5e1] group-hover:text-[#0818A8] transition-colors mt-1" aria-hidden="true" />
+ <ChevronRight size={14} className="text-[#cbd5e1] group-hover:text-[#000f89] transition-colors mt-1" aria-hidden="true" />
  </div>
  <div>
  <p className="text-[#0f172a] font-black text-[34px] leading-none tracking-[-0.03em] tabular-nums">
@@ -97,8 +97,8 @@ export default function AdminDashboard() {
  {/* Header */}
  <motion.div className="mb-8" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
  <div className="flex items-center gap-2 mb-1">
- <Activity size={13} className="text-[#0818A8]" aria-hidden="true" />
- <span className="text-[#0818A8] text-[11px] font-bold tracking-[0.2em] uppercase">Live Overview</span>
+ <Activity size={13} className="text-[#000f89]" aria-hidden="true" />
+ <span className="text-[#000f89] text-[11px] font-bold tracking-[0.2em] uppercase">Live Overview</span>
  </div>
  <h1 className="text-[#0f172a] font-black text-[28px] sm:text-[32px] tracking-[-0.02em] uppercase leading-none">
  Dashboard
@@ -116,7 +116,7 @@ export default function AdminDashboard() {
  <StatCard delay={0.05} label="Quote Requests" value={quotes.length}
  sub={newQuotes > 0 ? `${newQuotes} new` : "All reviewed"}
  subColor={newQuotes > 0 ? "text-blue-600" : "text-[#94a3b8]"}
- icon={FileText} iconBg="bg-blue-50" iconColor="text-[#0818A8]" href="/admin/quotes" />
+ icon={FileText} iconBg="bg-blue-50" iconColor="text-[#000f89]" href="/admin/quotes" />
  <StatCard delay={0.1} label="Contact Messages" value={contacts.length}
  sub={unreadMsgs > 0 ? `${unreadMsgs} unread` : "All read"}
  subColor={unreadMsgs > 0 ? "text-amber-600" : "text-[#94a3b8]"}
@@ -135,10 +135,10 @@ export default function AdminDashboard() {
  initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.2 }}>
  <div className="flex items-center justify-between px-5 py-4 border-b border-[#f1f5f9]">
  <h2 className="text-[#0f172a] font-black text-[13px] tracking-[0.08em] uppercase flex items-center gap-2">
- <FileText size={13} className="text-[#0818A8]" aria-hidden="true" />
+ <FileText size={13} className="text-[#000f89]" aria-hidden="true" />
  Recent Quotes
  </h2>
- <Link href="/admin/quotes" className="text-[#0818A8] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0437F2] transition-colors flex items-center gap-1">
+ <Link href="/admin/quotes" className="text-[#000f89] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0000CD] transition-colors flex items-center gap-1">
  View all <ChevronRight size={10} />
  </Link>
  </div>
@@ -174,7 +174,7 @@ export default function AdminDashboard() {
  <MessageSquare size={13} className="text-amber-500" aria-hidden="true" />
  Recent Messages
  </h2>
- <Link href="/admin/contacts" className="text-[#0818A8] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0437F2] transition-colors flex items-center gap-1">
+ <Link href="/admin/contacts" className="text-[#000f89] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0000CD] transition-colors flex items-center gap-1">
  View all <ChevronRight size={10} />
  </Link>
  </div>
@@ -212,7 +212,7 @@ export default function AdminDashboard() {
  <Users size={13} className="text-emerald-500" aria-hidden="true" />
  Recent Subscribers
  </h2>
- <Link href="/admin/subscribers" className="text-[#0818A8] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0437F2] transition-colors flex items-center gap-1">
+ <Link href="/admin/subscribers" className="text-[#000f89] text-[11px] font-bold tracking-[0.1em] uppercase hover:text-[#0000CD] transition-colors flex items-center gap-1">
  View all <ChevronRight size={10} />
  </Link>
  </div>

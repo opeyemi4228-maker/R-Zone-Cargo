@@ -85,7 +85,7 @@ function MessageModal({ msg, onClose, onMarkRead }) {
  <div className="mx-6 mb-6 bg-blue-50 border border-blue-100 px-4 py-3 rounded-sm">
  <p className="text-[#475569] text-[12px] font-medium">
  Reply to:{" "}
- <a href={`mailto:${msg.email}`} className="text-[#0818A8] hover:text-[#0437F2] font-semibold transition-colors">
+ <a href={`mailto:${msg.email}`} className="text-[#000f89] hover:text-[#0000CD] font-semibold transition-colors">
  {msg.email}
  </a>
  </p>
@@ -166,7 +166,7 @@ export default function ContactsPage() {
  <Search size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94a3b8] pointer-events-none" aria-hidden="true" />
  <input type="search" placeholder="Search by name, email, subject…" value={search}
  onChange={e => setSearch(e.target.value)}
- className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#0818A8] focus:ring-2 focus:ring-[#0818A8]/10 rounded-sm transition-all duration-200 shadow-sm" />
+ className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#000f89] focus:ring-2 focus:ring-[#000f89]/10 rounded-sm transition-all duration-200 shadow-sm" />
  </div>
  <div className="flex items-center gap-2">
  <Filter size={13} className="text-[#94a3b8]" aria-hidden="true" />
@@ -174,7 +174,7 @@ export default function ContactsPage() {
  <button key={s} onClick={() => setFilter(s)}
  className={`px-3.5 py-2 text-[11px] font-bold tracking-[0.08em] uppercase rounded-sm transition-all duration-200 ${
  filter === s
- ? "bg-[#0818A8] text-white shadow-sm"
+ ? "bg-[#000f89] text-white shadow-sm"
  : "bg-white border border-[#e2e8f0] text-[#64748b] hover:text-[#0f172a] hover:border-[#cbd5e1] shadow-sm"
  }`}>
  {s}

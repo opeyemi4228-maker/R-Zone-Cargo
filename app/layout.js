@@ -172,7 +172,7 @@ export const viewport = {
  maximumScale: 5, // Allow pinch-zoom (accessibility)
  userScalable: true,
  themeColor: [
- { media: "(prefers-color-scheme: light)", color: "#0818A8" },
+ { media: "(prefers-color-scheme: light)", color: "#000f89" },
  { media: "(prefers-color-scheme: dark)", color: "#00061a" },
  ],
  colorScheme: "light dark",
@@ -354,11 +354,12 @@ export default function RootLayout({ children }) {
  // itself on its own site); star ratings in search come from the Google
  // Business Profile instead, and self-markup risks a manual action.
 
- "contactPoint": {
+ "contactPoint": [
+ {
  "@type": "ContactPoint",
  "telephone": "+44-800-772-0864",
  "contactType": "customer service",
- "areaServed": ["GB", "NG"],
+ "areaServed": "GB",
  "availableLanguage": "English",
  "hoursAvailable": {
  "@type": "OpeningHoursSpecification",
@@ -367,9 +368,48 @@ export default function RootLayout({ children }) {
  "closes": "18:00",
  },
  },
+ {
+ "@type": "ContactPoint",
+ "telephone": "+234-906-680-6861",
+ "contactType": "customer service",
+ "areaServed": "NG",
+ "availableLanguage": "English",
+ },
+ ],
 
  "sameAs": [
  "https://www.instagram.com/rzoneenterprise",
+ "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr",
+ ],
+ },
+
+ // ── Lagos branch ──────────────────────────────────────────────────
+ // The Nigeria office used to be declared in a second Organization block
+ // inside the footer, which gave the same company two competing entities.
+ // It is a branch of this business, so it belongs in this one graph.
+ {
+ "@type": "LocalBusiness",
+ "@id": `${SITE_URL}/#lagos`,
+ "name": "R-Zone Cargo Lagos",
+ "parentOrganization": { "@id": `${SITE_URL}/#organization` },
+ "url": `${SITE_URL}/contact`,
+ "image": LOGO_URL,
+ "telephone": "+234-906-680-6861",
+ "email": "info@r-zoneenterprises.com",
+ "address": {
+ "@type": "PostalAddress",
+ "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange",
+ "addressLocality": "Lagos",
+ "addressCountry": "NG",
+ },
+ "areaServed": { "@type": "Country", "name": "Nigeria" },
+ "openingHoursSpecification": [
+ {
+ "@type": "OpeningHoursSpecification",
+ "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+ "opens": "09:00",
+ "closes": "17:00",
+ },
  ],
  },
 
@@ -411,7 +451,7 @@ export default function RootLayout({ children }) {
  */}
  <a
  href="#main-content"
- className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#0818A8] focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-bold focus:outline-none focus:ring-2 focus:ring-white"
+ className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-[#000f89] focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-bold focus:outline-none focus:ring-2 focus:ring-white"
  >
  Skip to main content
  </a>

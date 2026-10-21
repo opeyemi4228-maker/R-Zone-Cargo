@@ -13,9 +13,9 @@
  * • H1 → "Get a Free UK Nigeria Shipping Quote"
  * • H2s → Step headings + FAQ section + Stats section
  * • JSON-LD: BreadcrumbList + WebPage + Service + FAQPage
- * • Trust claim: "#1 Highest-Rated UK Nigeria Cargo on Google · 100+ Reviews"
- * • Sea freight = 4 6 weeks (non-negotiable)
- * • Air freight = 5 10 working days
+ * • Trust claim: "120+ Five-Star Google Reviews" (no ranking claims; Google policy)
+ * • Sea freight = 4 to 6 weeks (non-negotiable)
+ * • Air freight = 5 to 10 working days
  * • Internal links: /services, /track, /contact, /about, /privacy
  * • WhatsApp CTA: embedded in sidebar + contact strip
  * • FAQ section: 6 questions (Google PAA / featured snippet eligible)
@@ -56,21 +56,21 @@ const SERVICE_OPTIONS = [
  id: "air",
  label: "Air Freight",
  icon: Plane,
- tagline: "5 10 working days · UK to Nigeria",
+ tagline: "5 to 10 working days · UK to Nigeria",
  rate: "from £5.50/kg",
- accent: "#0818A8",
+ accent: "#000f89",
  popular: false,
- seoDesc: "Fast air cargo from the UK to Nigeria. Ideal for time-sensitive shipments documents, electronics, and commercial merchandise delivered in 5 10 working days.",
+ seoDesc: "Fast air cargo from the UK to Nigeria. Ideal for time-sensitive shipments documents, electronics, and commercial merchandise delivered in 5 to 10 working days.",
  },
  {
  id: "sea",
  label: "Sea Freight",
  icon: Ship,
- tagline: "4 6 weeks · Weekly sailings",
+ tagline: "4 to 6 weeks · Weekly sailings",
  rate: "from £3/kg",
- accent: "#1F51FF",
+ accent: "#0000FF",
  popular: true,
- seoDesc: "Most cost-effective UK Nigeria shipping for larger or heavier cargo. Weekly sailings, 4 6 weeks transit. Ideal for bulk goods, household items, and general cargo.",
+ seoDesc: "Most cost-effective UK Nigeria shipping for larger or heavier cargo. Weekly sailings, 4 to 6 weeks transit. Ideal for bulk goods, household items, and general cargo.",
  },
  {
  id: "door",
@@ -78,7 +78,7 @@ const SERVICE_OPTIONS = [
  icon: Truck,
  tagline: "Collection & delivery to your address",
  rate: "from £6/kg",
- accent: "#0437F2",
+ accent: "#0000CD",
  popular: false,
  seoDesc: "Full door-to-door cargo service from any UK address to any Nigerian state. We handle collection, customs clearance, and final-mile delivery.",
  },
@@ -88,7 +88,7 @@ const SERVICE_OPTIONS = [
  icon: Package,
  tagline: "Nigeria → UK · All 36 states",
  rate: "from £5.50/kg",
- accent: "#0818A8",
+ accent: "#000f89",
  popular: false,
  seoDesc: "Reliable cargo import service from Nigeria to the UK. We collect from all 36 Nigerian states and deliver to any UK address.",
  },
@@ -98,7 +98,7 @@ const SERVICE_OPTIONS = [
  icon: FileCheck,
  tagline: "UK & Nigerian customs handled for you",
  rate: "POA",
- accent: "#1F51FF",
+ accent: "#0000FF",
  popular: false,
  seoDesc: "Expert customs clearance for UK Nigeria shipments. IATA-certified team handles all documentation, duties, and clearance on both sides.",
  },
@@ -108,7 +108,7 @@ const SERVICE_OPTIONS = [
  icon: Warehouse,
  tagline: "Secure UK & Nigeria storage",
  rate: "POA",
- accent: "#0437F2",
+ accent: "#0000CD",
  popular: false,
  seoDesc: "Secure short- and long-term warehousing available at our Upminster (UK) and Nigerian facilities. Ideal for businesses managing stock between both countries.",
  },
@@ -143,10 +143,10 @@ const CARGO_TYPES = [
 ];
 
 const TRUST_ITEMS = [
- { icon: Award, text: "#1 Ranked UK Nigeria Cargo on Google" },
- { icon: Star, text: "100+ organically earned five-star reviews" },
+ { icon: Award, text: "120+ Five-Star Google Reviews" },
+ { icon: Star, text: "120+ organically earned five-star reviews" },
  { icon: CheckCircle, text: "Free quote no obligation, no pressure" },
- { icon: Clock, text: "Same-day response Mon Fri" },
+ { icon: Clock, text: "Same-day response Mon to Fri" },
  { icon: Shield, text: "Fully insured cargo, every shipment" },
  { icon: Phone, text: "UK-based human team no call centres" },
  { icon: Globe, text: "Delivery to all 36 Nigerian states" },
@@ -157,11 +157,11 @@ const TRUST_ITEMS = [
 const FAQ_ITEMS = [
  {
  q: "How long does sea freight from the UK to Nigeria take?",
- a: "Sea freight from the UK to Nigeria typically takes 4 6 weeks from the date of dispatch. R-Zone Enterprises operates weekly sailings, so your cargo joins the next available vessel. This is the most cost-effective method for large or heavy shipments.",
+ a: "Sea freight from the UK to Nigeria typically takes 4 to 6 weeks from the date of dispatch. R-Zone Enterprises operates weekly sailings, so your cargo joins the next available vessel. This is the most cost-effective method for large or heavy shipments.",
  },
  {
  q: "How long does air freight from the UK to Nigeria take?",
- a: "Air freight from the UK to Nigeria takes 5 10 working days depending on destination state and customs clearance speed. R-Zone's IATA-certified team handles all documentation to minimise delays.",
+ a: "Air freight from the UK to Nigeria takes 5 to 10 working days depending on destination state and customs clearance speed. R-Zone's IATA-certified team handles all documentation to minimise delays.",
  },
  {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
@@ -176,17 +176,17 @@ const FAQ_ITEMS = [
  a: "Prohibited items include weapons, drugs, counterfeit goods, hazardous chemicals, and certain perishables without correct documentation. See our full restricted items list on our Terms & Conditions page, or ask our team during the quote process.",
  },
  {
- q: "Why is R-Zone the best cargo company for UK Nigeria shipping?",
- a: "R-Zone Enterprises is the highest-rated UK-to-Nigeria cargo company on Google with 100+ five-star reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
+ q: "Why choose R-Zone for UK to Nigeria shipping?",
+ a: "R-Zone Enterprises is a UK to Nigeria cargo company with 120+ five-star Google reviews organically earned over 12+ years. We offer a UK-based human team, full customs clearance, real-time tracking, and door-to-door delivery across all Nigerian states.",
  },
 ];
 
 // ─── Backlink-magnet stats ─────────────────────────────────────────────────────
 const STATS = [
- { value: "100+", label: "Five-Star Google Reviews", note: "Highest-rated UK Nigeria cargo company on Google" },
+ { value: "120+", label: "Five-Star Google Reviews", note: "Organically earned on Google" },
  { value: "12+", label: "Years in Operation", note: "Trusted since our founding" },
  { value: "36", label: "Nigerian States Covered", note: "Including Abuja FCT, Lagos, Rivers, Kano" },
- { value: "£3/kg", label: "Sea Freight Starting Rate", note: "Weekly sailings, 4 6 weeks transit" },
+ { value: "£3/kg", label: "Sea Freight Starting Rate", note: "Weekly sailings, 4 to 6 weeks transit" },
  { value: "5 days", label: "Fastest Air Freight", note: "UK to Nigeria, subject to customs" },
  { value: "100%", label: "Customs Clearance Handled", note: "UK and Nigerian sides, fully managed" },
 ];
@@ -235,13 +235,13 @@ const labelClass = "block text-[13px] font-bold tracking-[0.2em] uppercase text-
 const inputClass = (err) =>
  `w-full bg-white/[0.06] border text-white text-[13.5px] font-normal placeholder-white/60
  px-4 py-3.5 outline-none transition-all duration-200 rounded-sm
- focus:bg-white/[0.09] focus:border-[#1F51FF]/60 focus:ring-1 focus:ring-[#1F51FF]/20
+ focus:bg-white/[0.09] focus:border-[#0000FF]/60 focus:ring-1 focus:ring-[#0000FF]/20
  ${err ? "border-red-400/50 bg-red-400/5" : "border-white/[0.1] hover:border-white/[0.2]"}`;
 
 const selectClass = (err) =>
  `w-full bg-[#0d0d22] border text-white text-[13.5px] font-normal
  px-4 py-3.5 outline-none transition-all duration-200 rounded-sm appearance-none cursor-pointer
- focus:border-[#1F51FF]/60 focus:ring-1 focus:ring-[#1F51FF]/20
+ focus:border-[#0000FF]/60 focus:ring-1 focus:ring-[#0000FF]/20
  ${err ? "border-red-400/50" : "border-white/[0.1] hover:border-white/[0.2]"}`;
 
 function FieldError({ msg, id }) {
@@ -255,14 +255,14 @@ function FieldError({ msg, id }) {
 
 function TagPill({ label }) {
  return (
- <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/30 bg-[#0818A8]/14 px-4 py-1.5 rounded-full mb-5">
+ <div className="inline-flex items-center gap-2.5 border border-[#0000FF]/30 bg-[#000f89]/14 px-4 py-1.5 rounded-full mb-5">
  <motion.span
- className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
+ className="w-1.5 h-1.5 rounded-full bg-[#0000FF]"
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
  transition={{ duration: 2, repeat: Infinity }}
  aria-hidden="true"
  />
- <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">{label}</span>
+ <span className="text-[#4D4DFF] text-[13px] font-semibold">{label}</span>
  </div>
  );
 }
@@ -282,10 +282,10 @@ function StepIndicator({ current }) {
  <motion.div
  className={`w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-black border-2 transition-all duration-300 ${
  done || active
- ? "border-[#1F51FF] bg-[#0818A8]"
+ ? "border-[#0000FF] bg-[#000f89]"
  : "border-white/[0.12] bg-white/[0.04]"
  }`}
- animate={active ? { boxShadow: ["0 0 0 0 rgba(31,81,255,0)", "0 0 0 8px rgba(31,81,255,0.15)", "0 0 0 0 rgba(31,81,255,0)"] } : {}}
+ animate={active ? { boxShadow: ["0 0 0 0 rgba(0,0,255,0)", "0 0 0 8px rgba(0,0,255,0.15)", "0 0 0 0 rgba(0,0,255,0)"] } : {}}
  transition={{ duration: 2, repeat: Infinity }}
  aria-current={active ? "step" : undefined}
  >
@@ -302,7 +302,7 @@ function StepIndicator({ current }) {
  </div>
  {i < STEPS.length - 1 && (
  <div
- className={`flex-1 h-px mx-2 transition-all duration-500 ${done ? "bg-[#1F51FF]/50" : "bg-white/[0.08]"}`}
+ className={`flex-1 h-px mx-2 transition-all duration-500 ${done ? "bg-[#0000FF]/50" : "bg-white/[0.08]"}`}
  aria-hidden="true"
  />
  )}
@@ -324,10 +324,10 @@ function LiveEstimateSidebar({ form }) {
  <div className="sticky top-[108px] space-y-4">
 
  {/* Estimate card */}
- <div className="border border-white/[0.09] bg-white/[0.04] overflow-hidden">
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-white/[0.09] bg-white/[0.04] overflow-hidden rounded-[20px]">
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="p-5">
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-4">Live Estimate</p>
+ <p className="text-white/80 mb-4 text-[13px] font-semibold">Live Estimate</p>
 
  <AnimatePresence mode="wait">
  {!form.service && (
@@ -352,16 +352,16 @@ function LiveEstimateSidebar({ form }) {
  <motion.div key="estimate" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
  <p className="text-white/80 text-[13px] font-normal mb-1">{est.note}</p>
  <div className="flex items-baseline gap-1.5 mb-1">
- <span className="text-[#1F51FF] font-black text-[28px] leading-none tracking-[-0.02em]">{est.unit}{est.low}</span>
+ <span className="text-[#4D4DFF] font-black text-[28px] leading-none tracking-[-0.02em]">{est.unit}{est.low}</span>
  <span className="text-white/80 text-[13px]"> </span>
  <span className="text-white/80 font-bold text-[18px]">{est.unit}{est.high}</span>
  </div>
  <p className="text-white/80 text-[13px] font-normal">Based on {form.weight}kg · Final price confirmed at booking</p>
  <div className="mt-4 pt-4 border-t border-white/[0.07]">
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-2">Estimate includes</p>
+ <p className="text-white/80 mb-2 text-[13px] font-semibold">Estimate includes</p>
  {["Customs clearance (UK & Nigeria)", "Real-time shipment tracking", "UK-based support team"].map(item => (
  <div key={item} className="flex items-center gap-2 mb-1.5">
- <CheckCircle size={9} className="text-[#1F51FF]" aria-hidden="true" />
+ <CheckCircle size={9} className="text-[#4D4DFF]" aria-hidden="true" />
  <span className="text-white/80 text-[13px] font-normal">{item}</span>
  </div>
  ))}
@@ -385,9 +385,9 @@ function LiveEstimateSidebar({ form }) {
  key={selectedService.id}
  initial={{ opacity: 0, y: 8 }}
  animate={{ opacity: 1, y: 0 }}
- className="border border-white/[0.08] bg-white/[0.03] p-5"
+ className="border border-white/[0.08] bg-white/[0.03] p-5 rounded-[20px]"
  >
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-white/80 mb-3">Selected Service</p>
+ <p className="text-white/80 mb-3 text-[13px] font-semibold">Selected Service</p>
  <div className="flex items-center gap-3 mb-3">
  <div
  className="w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0"
@@ -403,7 +403,7 @@ function LiveEstimateSidebar({ form }) {
  </div>
  <div className="flex items-center justify-between border-t border-white/[0.07] pt-3">
  <span className="text-white/80 text-[13px] font-normal">Starting rate</span>
- <span className="text-[#1F51FF] font-black text-[14px]">{selectedService.rate}</span>
+ <span className="text-[#4D4DFF] font-black text-[14px]">{selectedService.rate}</span>
  </div>
  </motion.div>
  )}
@@ -413,25 +413,25 @@ function LiveEstimateSidebar({ form }) {
  <motion.div
  initial={{ opacity: 0, y: 8 }}
  animate={{ opacity: 1, y: 0 }}
- className="border border-white/[0.08] bg-white/[0.03] p-5"
+ className="border border-white/[0.08] bg-white/[0.03] p-5 rounded-[20px]"
  >
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-white/80 mb-3">Your Route</p>
+ <p className="text-white/80 mb-3 text-[13px] font-semibold">Your Route</p>
  <div className="flex items-center gap-2">
  <div className="text-center">
  <p className="text-[18px] leading-none mb-0.5" aria-hidden="true">🇬🇧</p>
  <p className="text-white/80 text-[13px] font-medium">{form.fromCity || "UK"}</p>
  </div>
  <div className="flex-1 flex flex-col items-center">
- <div className="h-px w-full bg-gradient-to-r from-[#0818A8]/40 to-[#1F51FF]/40 relative" aria-hidden="true">
+ <div className="h-px w-full bg-gradient-to-r from-[#000f89]/40 to-[#0000FF]/40 relative" aria-hidden="true">
  <motion.div
- className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#1F51FF]"
+ className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#0000FF]"
  animate={{ x: ["-50%", "calc(100% + 50%)", "-50%"] }}
  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
  aria-hidden="true"
  />
  </div>
  <span className="text-[13px] text-white/80 font-normal mt-1">
- {form.service === "sea" ? "~4 6 weeks" : "~5 10 working days"}
+ {form.service === "sea" ? "~4 to 6 weeks" : "~5 to 10 working days"}
  </span>
  </div>
  <div className="text-center">
@@ -447,10 +447,10 @@ function LiveEstimateSidebar({ form }) {
  href="https://wa.me/448007720864?text=Hello%2C%20I%27d%20like%20a%20shipping%20quote%20for%20UK%20to%20Nigeria%20cargo."
  target="_blank"
  rel="noopener noreferrer"
- className="flex items-center gap-3 border border-[#25D366]/30 bg-[#25D366]/08 hover:bg-[#25D366]/14 p-4 transition-all duration-200 group"
+ className="flex items-center gap-3 border border-[#25D366]/30 bg-[#25D366]/08 hover:bg-[#25D366]/14 p-4 transition-all duration-200 group rounded-[20px]"
  aria-label="Chat with R-Zone on WhatsApp for a shipping quote"
  >
- <div className="w-8 h-8 bg-[#25D366]/20 rounded-sm flex items-center justify-center flex-shrink-0">
+ <div className="w-8 h-8 bg-[#25D366]/20 flex items-center justify-center flex-shrink-0 rounded-full">
  <MessageSquare size={14} className="text-[#25D366]" aria-hidden="true" />
  </div>
  <div>
@@ -461,19 +461,19 @@ function LiveEstimateSidebar({ form }) {
  </a>
 
  {/* Trust block */}
- <div className="border border-white/[0.07] bg-white/[0.02] p-5">
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-white/80 mb-3">Why R-Zone?</p>
+ <div className="border border-white/[0.07] bg-white/[0.02] p-5 rounded-[20px]">
+ <p className="text-white/80 mb-3 text-[13px] font-semibold">Why R-Zone?</p>
  <div className="space-y-2">
  {TRUST_ITEMS.map(({ icon: Icon, text }) => (
  <div key={text} className="flex items-start gap-2.5">
- <Icon size={11} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
+ <Icon size={11} className="text-[#4D4DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
  <span className="text-white/80 text-[13px] font-normal leading-snug">{text}</span>
  </div>
  ))}
  </div>
  <Link
  href="/about"
- className="inline-flex items-center gap-1.5 text-[#1F51FF] text-[13px] font-bold mt-4 hover:text-white transition-colors"
+ className="inline-flex items-center gap-1.5 text-[#4D4DFF] text-[13px] font-bold mt-4 hover:text-white transition-colors"
  aria-label="Learn more about R-Zone Enterprises"
  >
  About R-Zone <ChevronRight size={11} aria-hidden="true" />
@@ -489,7 +489,7 @@ function LiveEstimateSidebar({ form }) {
 function Step1({ form, setForm, errors }) {
  return (
  <div>
- <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">
+ <h2 className="text-white font-extrabold text-[22px] tracking-[-0.03em] mb-2">
  What shipping service do you need?
  </h2>
  <p className="text-white/80 text-[13px] font-normal mb-7">
@@ -510,20 +510,20 @@ function Step1({ form, setForm, errors }) {
  onClick={() => setForm(f => ({ ...f, service: opt.id }))}
  className={`relative text-left border p-5 transition-all duration-200 group ${
  checked
- ? "border-[#1F51FF]/60 bg-[#0818A8]/20"
+ ? "border-[#0000FF]/60 bg-[#000f89]/20"
  : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.18] hover:bg-white/[0.06]"
  }`}
  whileHover={{ scale: 1.01 }}
  whileTap={{ scale: 0.99 }}
  >
  {opt.popular && (
- <div className="absolute -top-px left-4 bg-[#0818A8] px-2.5 py-0.5 text-[13px] font-bold tracking-[0.18em] uppercase text-white">
+ <div className="absolute -top-px left-4 bg-[#000f89] px-2.5 py-0.5 text-white text-[13px] font-semibold">
  Most Popular
  </div>
  )}
  <div
  className={`absolute top-0 left-0 right-0 h-[2px] transition-all duration-300 ${checked ? "opacity-100" : "opacity-0 group-hover:opacity-40"}`}
- style={{ background: `linear-gradient(to right, ${opt.accent}, #1F51FF)` }}
+ style={{ background: `linear-gradient(to right, ${opt.accent}, #0000FF)` }}
  aria-hidden="true"
  />
  <div
@@ -543,10 +543,10 @@ function Step1({ form, setForm, errors }) {
  {opt.tagline}
  </p>
  <div className="flex items-center justify-between">
- <span className={`text-[13px] font-bold ${checked ? "text-[#1F51FF]" : "text-white/80"}`}>
+ <span className={`text-[13px] font-bold ${checked ? "text-[#4D4DFF]" : "text-white/80"}`}>
  {opt.rate}
  </span>
- {checked && <CheckCircle size={14} className="text-[#1F51FF]" aria-hidden="true" />}
+ {checked && <CheckCircle size={14} className="text-[#4D4DFF]" aria-hidden="true" />}
  </div>
  </motion.button>
  );
@@ -562,7 +562,7 @@ function Step1({ form, setForm, errors }) {
  {/* Internal link authority signal */}
  <p className="text-white/80 text-[13px] font-normal mt-5">
  Not sure which service is right for you?{" "}
- <Link href="/services" className="text-[#1F51FF] hover:text-white underline underline-offset-2 font-semibold transition-colors">
+ <Link href="/services" className="text-[#4D4DFF] hover:text-white underline underline-offset-2 font-semibold transition-colors">
  Compare all UK Nigeria shipping services →
  </Link>
  </p>
@@ -576,7 +576,7 @@ function Step1({ form, setForm, errors }) {
 function Step2({ form, setForm, errors, touched, onBlur }) {
  return (
  <div>
- <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">Tell us about your cargo</h2>
+ <h2 className="text-white font-extrabold text-[22px] tracking-[-0.03em] mb-2">Tell us about your cargo</h2>
  <p className="text-white/80 text-[13px] font-normal mb-7">
  Approximate weight and dimensions let us generate the most accurate UK Nigeria shipping estimate.
  </p>
@@ -706,8 +706,8 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
  </div>
 
  {/* Volumetric note informational, also useful for SEO content */}
- <div className="mt-4 flex items-start gap-2.5 border border-[#1F51FF]/15 bg-[#0818A8]/8 px-4 py-3">
- <Info size={12} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
+ <div className="mt-4 flex items-start gap-2.5 border border-[#0000FF]/15 bg-[#000f89]/8 px-4 py-3">
+ <Info size={12} className="text-[#4D4DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-white/80 text-[13px] font-normal leading-snug">
  <strong className="text-white font-medium">Volumetric weight</strong> = (L×W×H cm) ÷ 5,000 for air freight / ÷ 1,000 for sea freight.
  We charge whichever is greater actual or volumetric weight.
@@ -723,7 +723,7 @@ function Step2({ form, setForm, errors, touched, onBlur }) {
 function Step3({ form, setForm, errors, touched, onBlur }) {
  return (
  <div>
- <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">
+ <h2 className="text-white font-extrabold text-[22px] tracking-[-0.03em] mb-2">
  Where is your cargo going?
  </h2>
  <p className="text-white/80 text-[13px] font-normal mb-7">
@@ -745,7 +745,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
  onClick={() => setForm(f => ({ ...f, direction: d.id }))}
  className={`flex items-center gap-3 border p-4 transition-all duration-200 ${
  checked
- ? "border-[#1F51FF]/60 bg-[#0818A8]/20"
+ ? "border-[#0000FF]/60 bg-[#000f89]/20"
  : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.18]"
  }`}
  >
@@ -754,7 +754,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
  <p className={`font-bold text-[13.5px] ${checked ? "text-white" : "text-white/80"}`}>{d.label}</p>
  <p className="text-white/80 text-[13px] font-normal">{d.from} → {d.to}</p>
  </div>
- {checked && <CheckCircle size={14} className="text-[#1F51FF] ml-auto flex-shrink-0" aria-hidden="true" />}
+ {checked && <CheckCircle size={14} className="text-[#4D4DFF] ml-auto flex-shrink-0" aria-hidden="true" />}
  </button>
  );
  })}
@@ -886,7 +886,7 @@ function Step3({ form, setForm, errors, touched, onBlur }) {
 function Step4({ form, setForm, errors, touched, onBlur }) {
  return (
  <div>
- <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">Your contact details</h2>
+ <h2 className="text-white font-extrabold text-[22px] tracking-[-0.03em] mb-2">Your contact details</h2>
  <p className="text-white/80 text-[13px] font-normal mb-7">
  We&apos;ll send your personalised UK Nigeria cargo quote to the details below within the same business day.
  </p>
@@ -1073,7 +1073,7 @@ function Step5({ form, onEdit }) {
 
  return (
  <div>
- <h2 className="text-white font-black text-[22px] tracking-[-0.015em] mb-2">Review your quote request</h2>
+ <h2 className="text-white font-extrabold text-[22px] tracking-[-0.03em] mb-2">Review your quote request</h2>
  <p className="text-white/80 text-[13px] font-normal mb-7">
  Check everything looks correct. Our team will send a personalised quote within the same business day.
  </p>
@@ -1081,12 +1081,12 @@ function Step5({ form, onEdit }) {
  {/* Estimate banner */}
  {est && !est.poa && (
  <motion.div
- className="border border-[#1F51FF]/30 bg-[#0818A8]/15 p-5 mb-6 flex items-center justify-between"
+ className="border border-[#0000FF]/30 bg-[#000f89]/15 p-5 mb-6 flex items-center justify-between rounded-[20px]"
  initial={{ opacity: 0, y: 8 }}
  animate={{ opacity: 1, y: 0 }}
  >
  <div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-[#1F51FF] mb-1">Estimated Cost</p>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-white/[0.08] text-[#A6A6FF]">Estimated Cost</p>
  <p className="text-white font-black text-[24px] leading-none tracking-[-0.02em]">
  £{est.low} £{est.high}
  </p>
@@ -1095,7 +1095,7 @@ function Step5({ form, onEdit }) {
  </p>
  </div>
  <div className="text-right">
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">Service</p>
+ <p className="text-white/80 mb-1 text-[13px] font-semibold">Service</p>
  <p className="text-white/80 font-semibold text-[13px]">{service?.label}</p>
  <p className="text-white/80 text-[13px] font-normal">{service?.tagline}</p>
  </div>
@@ -1105,13 +1105,13 @@ function Step5({ form, onEdit }) {
  {/* Review rows */}
  <div className="space-y-4">
  {rows.map((section, si) => (
- <div key={section.section} className="border border-white/[0.08] bg-white/[0.03] overflow-hidden">
+ <div key={section.section} className="border border-white/[0.08] bg-white/[0.03] overflow-hidden rounded-[20px]">
  <div className="flex items-center justify-between px-5 py-3 border-b border-white/[0.06] bg-white/[0.03]">
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80">{section.section}</p>
+ <p className="text-white/80 text-[13px] font-semibold">{section.section}</p>
  <button
  type="button"
  onClick={() => onEdit(si + 1)}
- className="text-[13px] font-bold text-[#1F51FF] hover:text-white transition-colors tracking-[0.06em] uppercase"
+ className="text-[13px] font-bold text-[#4D4DFF] hover:text-white transition-colors tracking-[0.06em] uppercase"
  aria-label={`Edit ${section.section} details`}
  >
  Edit
@@ -1130,8 +1130,8 @@ function Step5({ form, onEdit }) {
  </div>
 
  {form.notes && (
- <div className="mt-4 border border-white/[0.08] bg-white/[0.03] px-5 py-4">
- <p className="text-white/80 text-[13px] font-bold tracking-[0.2em] uppercase mb-1.5">Special Requirements</p>
+ <div className="mt-4 border border-white/[0.08] bg-white/[0.03] px-5 py-4 rounded-[20px]">
+ <p className="text-white/80 mb-1.5 text-[13px] font-semibold">Special Requirements</p>
  <p className="text-white/80 text-[13px] font-normal">{form.notes}</p>
  </div>
  )}
@@ -1163,13 +1163,13 @@ function SuccessState({ form }) {
  >
  <div className="relative w-20 h-20 mx-auto mb-7">
  <motion.div
- className="absolute inset-0 rounded-full bg-[#0818A8]/20"
+ className="absolute inset-0 rounded-full bg-[#000f89]/20"
  animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
  transition={{ duration: 2.5, repeat: Infinity }}
  aria-hidden="true"
  />
  <motion.div
- className="w-20 h-20 bg-[#0818A8] rounded-full flex items-center justify-center relative z-10"
+ className="w-20 h-20 bg-[#000f89] rounded-full flex items-center justify-center relative z-10"
  initial={{ scale: 0 }}
  animate={{ scale: 1 }}
  transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.1 }}
@@ -1179,7 +1179,7 @@ function SuccessState({ form }) {
  </div>
 
  <motion.h2
- className="text-white font-black text-[28px] tracking-[-0.02em] mb-3"
+ className="text-white font-extrabold text-[28px] tracking-[-0.03em] mb-3"
  initial={{ opacity: 0, y: 12 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ delay: 0.3 }}
@@ -1200,18 +1200,18 @@ function SuccessState({ form }) {
 
  {est && !est.poa && (
  <motion.div
- className="inline-flex items-center gap-4 border border-[#1F51FF]/25 bg-[#0818A8]/14 px-6 py-4 mb-8"
+ className="inline-flex items-center gap-4 border border-[#0000FF]/25 bg-[#000f89]/14 px-6 py-4 mb-8 rounded-[20px]"
  initial={{ opacity: 0, y: 8 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ delay: 0.5 }}
  >
  <div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-[#1F51FF] mb-0.5">Your Estimate</p>
+ <p className="mb-0.5 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-white/[0.08] text-[#A6A6FF]">Your Estimate</p>
  <p className="text-white font-black text-[22px] leading-none">£{est.low} £{est.high}</p>
  </div>
  <div className="w-px h-10 bg-white/10" aria-hidden="true" />
  <div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-0.5">Weight</p>
+ <p className="text-white/80 mb-0.5 text-[13px] font-semibold">Weight</p>
  <p className="text-white/80 font-semibold">{form.weight} kg</p>
  </div>
  </motion.div>
@@ -1219,12 +1219,12 @@ function SuccessState({ form }) {
 
  {/* What happens next */}
  <motion.div
- className="border border-white/[0.08] bg-white/[0.03] p-6 text-left mb-8 max-w-lg mx-auto"
+ className="border border-white/[0.08] bg-white/[0.03] p-6 text-left mb-8 max-w-lg mx-auto rounded-[20px]"
  initial={{ opacity: 0, y: 12 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ delay: 0.55 }}
  >
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-5 text-center">
+ <p className="text-white/80 mb-5 text-center text-[13px] font-semibold">
  What Happens Next
  </p>
  {[
@@ -1237,7 +1237,7 @@ function SuccessState({ form }) {
  {i < 3 && (
  <div className="absolute left-[11px] top-[26px] w-px h-[calc(100%-12px)] bg-white/[0.07]" aria-hidden="true" />
  )}
- <div className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[13px] font-black text-[#1F51FF]">
+ <div className="w-6 h-6 rounded-full bg-[#000f89]/30 border border-[#000f89]/40 flex items-center justify-center flex-shrink-0 text-[13px] font-black text-[#4D4DFF]">
  {s.n}
  </div>
  <div>
@@ -1256,14 +1256,14 @@ function SuccessState({ form }) {
  >
  <Link
  href="/track"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
+ className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/30 rounded-full"
  aria-label="Track your shipment with R-Zone"
  >
  Track Shipment
  </Link>
  <Link
  href="/services"
- className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="View all UK Nigeria shipping services"
  >
  View Services
@@ -1272,7 +1272,7 @@ function SuccessState({ form }) {
  href="https://wa.me/448007720864"
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-2 border border-[#25D366]/30 hover:border-[#25D366]/60 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-[#25D366]/30 hover:border-[#25D366]/60 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="Chat with R-Zone on WhatsApp"
  >
  <MessageSquare size={12} aria-hidden="true" />
@@ -1299,15 +1299,15 @@ function FAQSection() {
  <TagPill label="Common Questions" />
  <h2
  id="faq-heading"
- className="text-white font-black text-[clamp(24px,4vw,40px)] leading-[1.05] tracking-[-0.025em] uppercase mb-4"
+ className="text-white font-extrabold text-[clamp(24px,4vw,40px)] leading-[1.05] tracking-[-0.03em] mb-4"
  >
  UK Nigeria Shipping{" "}
- <span className="text-[#1F51FF]">FAQ</span>
+ <span className="text-[#4D4DFF]">FAQ</span>
  </h2>
  <p className="text-white/80 text-[14px] font-normal leading-relaxed">
  Everything you need to know about shipping cargo between the UK and Nigeria.
  Can&apos;t find your answer?{" "}
- <Link href="/contact" className="text-[#1F51FF] hover:text-white underline underline-offset-2 font-semibold transition-colors">
+ <Link href="/contact" className="text-[#4D4DFF] hover:text-white underline underline-offset-2 font-semibold transition-colors">
  Contact our team
  </Link>.
  </p>
@@ -1317,7 +1317,7 @@ function FAQSection() {
  {FAQ_ITEMS.map((item, i) => (
  <div
  key={i}
- className="border border-white/[0.09] bg-white/[0.03] overflow-hidden"
+ className="border border-white/[0.09] bg-white/[0.03] overflow-hidden rounded-[20px]"
  itemScope
  itemProp="mainEntity"
  itemType="https://schema.org/Question"
@@ -1337,7 +1337,7 @@ function FAQSection() {
  </span>
  <ChevronDown
  size={14}
- className={`text-[#1F51FF] flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
+ className={`text-[#4D4DFF] flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
  aria-hidden="true"
  />
  </button>
@@ -1391,11 +1391,11 @@ function StatsSection() {
  R-Zone Enterprises UK Nigeria Cargo: Key Facts &amp; Statistics
  </h2>
 
- <div className="border border-white/[0.07] bg-white/[0.02] overflow-hidden">
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-white/[0.07] bg-white/[0.02] overflow-hidden rounded-[20px]">
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="px-6 py-8 md:px-10">
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 text-center mb-7">
- R-Zone by the Numbers UK&apos;s #1 Nigeria Cargo Company
+ <p className="text-white/80 text-center mb-7 text-[13px] font-semibold">
+ R-Zone by the Numbers
  </p>
  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
  {STATS.map((s, i) => (
@@ -1406,10 +1406,10 @@ function StatsSection() {
  transition={{ duration: 0.5, delay: i * 0.07 }}
  className="text-center"
  >
- <p className="text-[#1F51FF] font-black text-[26px] leading-none tracking-[-0.02em] mb-1">
+ <p className="text-[#4D4DFF] font-black text-[26px] leading-none tracking-[-0.02em] mb-1">
  {s.value}
  </p>
- <p className="text-white/80 text-[12px] font-bold tracking-[0.15em] uppercase mb-1 leading-tight">
+ <p className="text-white/80 mb-1 leading-tight text-[13px] font-semibold">
  {s.label}
  </p>
  <p className="text-white/80 text-[12px] font-normal leading-snug hidden lg:block">
@@ -1532,7 +1532,7 @@ export default function QuotePageClient() {
  "@type": "WebPage",
  "name": "Free UK Nigeria Shipping Quote R-Zone Enterprises",
  "url": "https://r-zoneenterprises.com/quote",
- "description": "Get a free UK-to-Nigeria cargo shipping quote from the highest-rated cargo company on Google. 100+ five-star reviews. Air freight from £5.50/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
+ "description": "Get a free UK-to-Nigeria cargo shipping quote from a cargo company with 120+ five-star Google reviews. Air freight from £5.50/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
  "isPartOf": { "@type": "WebSite", "url": "https://r-zoneenterprises.com", "name": "R-Zone Enterprises" },
  "breadcrumb": { "@type": "BreadcrumbList" },
  },
@@ -1541,7 +1541,7 @@ export default function QuotePageClient() {
  "@type": "LocalBusiness",
  "@id": "https://r-zoneenterprises.com/#business",
  "name": "R-Zone Enterprises",
- "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews organically earned. Air freight from £5.50/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
+ "description": "UK to Nigeria cargo company with 120+ five-star Google reviews. organically earned. Air freight from £5.50/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
  "url": "https://r-zoneenterprises.com",
  "telephone": "+448007720864",
  "email": "info@r-zoneenterprises.com",
@@ -1558,7 +1558,7 @@ export default function QuotePageClient() {
  "@type": "Service",
  "name": "Air Freight UK to Nigeria",
  "provider": { "@id": "https://r-zoneenterprises.com/#business" },
- "description": "Fast air cargo shipping from any UK city to all 36 Nigerian states. 5 10 working days transit. IATA-certified customs clearance included.",
+ "description": "Fast air cargo shipping from any UK city to all 36 Nigerian states. 5 to 10 working days transit. IATA-certified customs clearance included.",
  "offers": {
  "@type": "Offer",
  "price": "5.00",
@@ -1573,7 +1573,7 @@ export default function QuotePageClient() {
  "@type": "Service",
  "name": "Sea Freight UK to Nigeria",
  "provider": { "@id": "https://r-zoneenterprises.com/#business" },
- "description": "Cost-effective weekly sea freight from the UK to Nigeria. 4 6 weeks transit. Suitable for large, heavy, or bulk cargo shipments.",
+ "description": "Cost-effective weekly sea freight from the UK to Nigeria. 4 to 6 weeks transit. Suitable for large, heavy, or bulk cargo shipments.",
  "offers": {
  "@type": "Offer",
  "price": "3.00",
@@ -1600,7 +1600,7 @@ export default function QuotePageClient() {
  }}
  />
 
- <div className={`${montserrat.variable} ${outfit.variable} font-[family-name:var(--font-montserrat)] min-h-screen bg-[#00061a]`}>
+ <div className={`${montserrat.variable} ${outfit.variable} font-[family-name:var(--font-montserrat)] min-h-screen bg-[#00112E] hero-section`}>
 
  {/* ── HERO ── */}
  <section className="relative overflow-hidden" aria-labelledby="quote-hero-heading">
@@ -1610,15 +1610,15 @@ export default function QuotePageClient() {
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-20%] left-[5%] w-[700px] h-[500px] bg-[#0818A8]/15 rounded-full blur-[140px]" />
- <div className="absolute top-[20%] right-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/8 rounded-full blur-[120px]" />
+ <div className="absolute top-[-20%] left-[5%] w-[700px] h-[500px] bg-[#000f89]/15 rounded-full blur-[140px]" />
+ <div className="absolute top-[20%] right-[-5%] w-[500px] h-[400px] bg-[#0000FF]/8 rounded-full blur-[120px]" />
  </div>
 
  <div ref={heroRef} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-[120px] pb-12 md:pb-14">
  {/* Breadcrumb nav */}
  <motion.nav
  aria-label="Breadcrumb"
- className="flex items-center gap-2 mb-9"
+ className="flex items-center gap-2 mb-9 lg:mt-[4px] max-lg:-mt-[23px]"
  initial={{ opacity: 0 }}
  animate={heroInView ? { opacity: 1 } : {}}
  transition={{ duration: 0.4 }}
@@ -1637,30 +1637,19 @@ export default function QuotePageClient() {
  variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
  >
  {/* Trust badge #1 claim */}
- <motion.div
- variants={fadeUp}
- custom={0}
- className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full mb-4"
- >
- <Award size={13} className="text-[#1F51FF]" aria-hidden="true" />
- <span className="text-white text-[13px] font-bold">
- Highest-Ranked UK Nigeria Cargo on Google · 100+ Five-Star Reviews
- </span>
- </motion.div>
-
  <motion.div variants={fadeUp} custom={0.05}><TagPill label="Free Quote · No Obligation · Same-Day Response" /></motion.div>
 
  <motion.h1
  id="quote-hero-heading"
  variants={fadeUp}
  custom={0.1}
- className="text-white font-black text-[clamp(32px,6vw,72px)] leading-[0.88] tracking-[-0.035em] uppercase mb-4"
+ className="text-white font-extrabold text-[clamp(32px,6vw,72px)] leading-[1.06] tracking-[-0.035em] mb-4"
  >
  Get Your Free<br />
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  UK Nigeria
  <motion.span
- className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]"
+ className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#0000FF]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={heroInView ? { width: "100%" } : {}}
@@ -1675,10 +1664,8 @@ export default function QuotePageClient() {
  custom={0.2}
  className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl"
  >
- Answer 4 simple steps our UK-based team responds with a personalised, no-obligation
- cargo shipping quote within the same business day. No call centres. No automated replies.
- Cargo to Nigeria from UK by air freight, sea freight to Nigeria from UK, door to door cargo Nigeria,
- and Nigeria customs clearance UK across all 36 Nigerian states.
+ Answer four quick questions and our UK team sends a personal, no-obligation
+ quote the same business day. Air, sea and door to door, to all 36 Nigerian states.
  </motion.p>
  </motion.div>
 
@@ -1690,14 +1677,14 @@ export default function QuotePageClient() {
  transition={{ duration: 0.5, delay: 0.35 }}
  >
  {[
- { icon: Plane, label: "Air Freight", rate: "from £5.50/kg", sub: "5 10 working days" },
- { icon: Ship, label: "Sea Freight", rate: "from £3/kg", sub: "4 6 weeks · Weekly sailings" },
- { icon: Zap, label: "Quote Response", rate: "Same Day", sub: "Mon Fri, real humans" },
+ { icon: Plane, label: "Air Freight", rate: "from £5.50/kg", sub: "5 to 10 working days" },
+ { icon: Ship, label: "Sea Freight", rate: "from £3/kg", sub: "4 to 6 weeks · Weekly sailings" },
+ { icon: Zap, label: "Quote Response", rate: "Same Day", sub: "Mon to Fri, real humans" },
  ].map(({ icon: Icon, label, rate, sub }) => (
- <div key={label} className="border border-white/[0.08] bg-white/[0.04] px-5 py-3 flex items-center gap-3">
- <Icon size={16} className="text-[#1F51FF]" aria-hidden="true" />
+ <div key={label} className="border border-white/[0.08] bg-white/[0.04] px-5 py-3 flex items-center gap-3 rounded-[20px]">
+ <Icon size={16} className="text-[#4D4DFF]" aria-hidden="true" />
  <div>
- <p className="text-[13px] font-bold tracking-[0.18em] uppercase text-white/80">{label}</p>
+ <p className="text-white/80 text-[13px] font-semibold">{label}</p>
  <p className="text-white font-black text-[16px] leading-none">{rate}</p>
  <p className="text-white/80 text-[13px] font-normal">{sub}</p>
  </div>
@@ -1706,7 +1693,7 @@ export default function QuotePageClient() {
  </motion.div>
  </div>
  </div>
- <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#00112E] to-transparent pointer-events-none" aria-hidden="true" />
  </section>
 
  {/* ── STATS BAR ── */}
@@ -1718,8 +1705,8 @@ export default function QuotePageClient() {
 
  {/* LEFT form */}
  <div className="lg:col-span-8">
- <div className="border border-white/[0.09] bg-white/[0.03] overflow-hidden">
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-white/[0.09] bg-white/[0.03] overflow-hidden rounded-[20px]">
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
 
  <div className="p-6 md:p-9">
  {status !== "success" && <StepIndicator current={step} />}
@@ -1758,7 +1745,7 @@ export default function QuotePageClient() {
  <button
  type="button"
  onClick={goPrev}
- className="inline-flex items-center gap-2 border border-white/[0.15] hover:border-white/35 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-white/[0.15] hover:border-white/35 text-white/80 hover:text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="Go to previous step"
  >
  <ArrowLeft size={12} aria-hidden="true" />
@@ -1776,7 +1763,7 @@ export default function QuotePageClient() {
  <button
  type="button"
  onClick={goNext}
- className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.09em] uppercase px-7 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
+ className="inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-7 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/30 rounded-full"
  aria-label="Continue to next step"
  >
  Continue
@@ -1796,7 +1783,7 @@ export default function QuotePageClient() {
  type="button"
  onClick={handleSubmit}
  disabled={status === "loading"}
- className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.09em] uppercase px-7 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
+ className="inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-bold px-7 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/30 rounded-full"
  aria-label="Submit your UK Nigeria cargo quote request"
  aria-busy={status === "loading"}
  >
@@ -1815,7 +1802,7 @@ export default function QuotePageClient() {
 
  {/* Direct contact strip */}
  {step <= 5 && status !== "success" && (
- <div className="mt-4 border border-white/[0.06] bg-white/[0.02] px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+ <div className="mt-4 border border-white/[0.06] bg-white/[0.02] px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-[20px]">
  <p className="text-white/80 text-[13px] font-normal">Prefer to speak to someone right now?</p>
  <div className="flex flex-wrap gap-4">
  <a
@@ -1823,7 +1810,7 @@ export default function QuotePageClient() {
  className="flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-semibold transition-colors"
  aria-label="Call R-Zone Enterprises: +44 800 772 0864"
  >
- <Phone size={12} className="text-[#1F51FF]" aria-hidden="true" />
+ <Phone size={12} className="text-[#4D4DFF]" aria-hidden="true" />
  +44 800 772 0864
  </a>
  <a
@@ -1841,7 +1828,7 @@ export default function QuotePageClient() {
  className="flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-semibold transition-colors"
  aria-label="Email R-Zone Enterprises"
  >
- <Mail size={12} className="text-[#1F51FF]" aria-hidden="true" />
+ <Mail size={12} className="text-[#4D4DFF]" aria-hidden="true" />
  info@r-zoneenterprises.com
  </a>
  </div>

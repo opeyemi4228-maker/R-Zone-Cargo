@@ -106,6 +106,10 @@ const FAQS = [
     q: "Can I put belongings inside the car?",
     a: "Only with container shipping, and only within Nigeria customs rules; personal effects must be declared. RORO shipping does not allow loose items inside the car. Ask R-Zone what you can safely include before you pack the vehicle.",
   },
+  {
+    q: "How can I keep the cost of shipping my car down?",
+    a: "Choose RORO for a single running car, since it is the cheapest method by a clear margin. Ship a car comfortably within Nigeria's 15-year age limit so it is never rejected at the port, get the Nigeria customs duty confirmed before it sails, and have the MOT, V5C, ID and keys ready so there are no storage charges at either end.",
+  },
 ];
 
 const schemas = [
@@ -153,7 +157,7 @@ const schemas = [
     description: freshYear(DESCRIPTION),
     image: { "@type": "ImageObject", url: HERO_IMG, width: 1200, height: 630 },
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-10-19",
     author: { "@type": "Organization", name: "R-Zone Cargo Team", url: `${SITE_URL}/about` },
     publisher: ORGANIZATION_SCHEMA,
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
@@ -165,14 +169,14 @@ const schemas = [
 function CTAButtons({ light = false }) {
   return (
     <div className="flex flex-wrap gap-3">
-      <Link href="/quote" className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0a1fce] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-colors">
+      <Link href="/quote" className={`group inline-flex items-center gap-2 ${light ? "bg-white text-[#000f89] hover:bg-[#E8EEFF]" : "bg-[#000f89] hover:bg-[#000f89] text-white"} text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full`}>
         Get a Free Quote
         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
-      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#0818A8] text-gray-800 hover:text-[#0818A8]"}`}>
+      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#000f89] text-gray-800 hover:text-[#000f89]"}`}>
         <PhoneCall size={13} aria-hidden="true" /> Call Us
       </a>
-      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors">
+      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full">
         <MessageCircle size={13} aria-hidden="true" /> WhatsApp
       </a>
     </div>
@@ -182,8 +186,8 @@ function CTAButtons({ light = false }) {
 function H2({ id, eyebrow, children }) {
   return (
     <div className="mb-7">
-      {eyebrow && <p className="text-[12px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-3">{eyebrow}</p>}
-      <h2 id={id} className="font-black text-[clamp(26px,4.2vw,40px)] text-[#0b0f1a] leading-[1.03] tracking-[-0.02em] uppercase">{children}</h2>
+      {eyebrow && <p className="mb-3 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">{eyebrow}</p>}
+      <h2 id={id} className="font-extrabold text-[clamp(26px,4.2vw,40px)] text-[#00112E] leading-[1.03] tracking-[-0.03em]">{children}</h2>
     </div>
   );
 }
@@ -223,7 +227,7 @@ export default function Page() {
       {/* ── HERO (editorial) ──────────────────────────────────────────────── */}
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
+          <h1 className="font-extrabold text-[clamp(30px,5.4vw,55px)] text-[#00112E] leading-[1.05] tracking-[-0.03em] mb-5">
             Car Shipping from the UK to Nigeria: RORO, Container, Age Limit &amp; Duty
           </h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
@@ -241,11 +245,11 @@ export default function Page() {
                 <p className="text-white text-[14px] font-bold">R-Zone Cargo Team</p>
               </div>
               <div>
-                <p className="text-white/65 text-[11px] font-medium mb-1">Published on</p>
-                <p className="text-white text-[14px] font-bold">6 August 2026</p>
+                <p className="text-white/65 text-[11px] font-medium mb-1">Updated on</p>
+                <p className="text-white text-[14px] font-bold">19 October 2026</p>
               </div>
             </div>
-            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8">
+            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8 hidden sm:block">
               <ShareRow url={PAGE_URL} title={TITLE} />
             </div>
           </div>
@@ -260,10 +264,10 @@ export default function Page() {
           car and the destination port. RORO is the most affordable option for a single running
           car; container shipping costs more but adds security and lets you include personal effects.
         </p>
-        <div className="overflow-x-auto border border-gray-200">
+        <div className="overflow-x-auto border border-gray-200 rounded-[20px]">
           <table className="w-full text-left border-collapse min-w-[620px]">
             <thead>
-              <tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]">
+              <tr className="bg-[#000f89] text-white text-[12px] uppercase tracking-[0.06em]">
                 <th className="p-4 font-bold">Method</th>
                 <th className="p-4 font-bold">From</th>
                 <th className="p-4 font-bold">Transit time</th>
@@ -278,8 +282,8 @@ export default function Page() {
                 [Package, "Sole-use container", "On request", "5 to 7 weeks", "Multiple cars or high-value vehicles"],
               ].map(([Icon, name, price, transit, best], i) => (
                 <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
-                  <td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Icon size={17} className="text-[#0818A8]" aria-hidden="true" />{name}</span></td>
-                  <td className="p-4 font-black text-[#0818A8]">{price}</td>
+                  <td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Icon size={17} className="text-[#000f89]" aria-hidden="true" />{name}</span></td>
+                  <td className="p-4 font-black text-[#000f89]">{price}</td>
                   <td className="p-4">{transit}</td>
                   <td className="p-4">{best}</td>
                 </tr>
@@ -291,7 +295,7 @@ export default function Page() {
           <strong className="text-gray-900">Please note:</strong> these are indicative 2026 shipping
           prices and do not include Nigeria customs duty, which is paid on arrival. Your exact price
           depends on the car, the UK collection point, the destination port and the season.{" "}
-          <Link href="/quote" className="text-[#0818A8] font-semibold underline">Get a free quote</Link> for a firm figure.
+          <Link href="/quote" className="text-[#000f89] font-semibold underline">Get a free quote</Link> for a firm figure.
         </p>
       </section>
 
@@ -301,11 +305,11 @@ export default function Page() {
           <H2 id="methods" eyebrow="How your car travels">RORO, Container and Door to Door</H2>
           <div className="grid gap-5 md:grid-cols-3 mt-2">
             {METHODS.map(({ icon: Icon, name, price, transit, href, points }) => (
-              <div key={name} className="group bg-white border border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/5 transition-all duration-300 flex flex-col">
+              <div key={name} className="group bg-white border border-gray-200 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/5 transition-all duration-300 flex flex-col">
                 <div className="p-6 pb-5 border-b border-gray-100">
-                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Icon size={22} aria-hidden="true" /></span>
-                  <h3 className="font-black text-[18.5px] text-gray-900 uppercase tracking-[-0.01em] mb-1">{name}</h3>
-                  <p className="text-[#0818A8] font-black text-[16px]">{price}</p>
+                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Icon size={22} aria-hidden="true" /></span>
+                  <h3 className="font-extrabold text-[18.5px] text-gray-900 tracking-[-0.03em] mb-1">{name}</h3>
+                  <p className="text-[#000f89] font-black text-[16px]">{price}</p>
                   <p className="text-gray-500 text-[12.5px] font-medium mt-0.5">{transit}</p>
                 </div>
                 <ul className="p-6 pt-5 space-y-2.5 flex-1">
@@ -313,7 +317,7 @@ export default function Page() {
                     <li key={pt} className="flex items-start gap-2.5 text-gray-700 text-[14.5px] leading-snug"><Check size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{pt}</li>
                   ))}
                 </ul>
-                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#0818A8] text-[12px] font-black tracking-[0.06em] uppercase group-hover:bg-[#0818A8] group-hover:text-white transition-colors">Get a quote<ArrowRight size={13} aria-hidden="true" /></Link>
+                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#000f89] text-[14px] font-bold group-hover:bg-[#000f89] group-hover:text-white transition-colors rounded-full">Get a quote<ArrowRight size={13} aria-hidden="true" /></Link>
               </div>
             ))}
           </div>
@@ -324,9 +328,9 @@ export default function Page() {
       <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
         <H2 id="age-limit-duty" eyebrow="Know before you ship">Nigeria Car Import Age Limit and Duty</H2>
         <div className="grid gap-5 md:grid-cols-2 mt-2">
-          <div className="border border-[#0818A8]/15 bg-[#0818A8]/[0.03] p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8] text-white mb-4"><Calendar size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">The 15-Year Age Limit</h3>
+          <div className="border border-[#000f89]/15 bg-[#000f89]/[0.03] p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89] text-white mb-4 rounded-full"><Calendar size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">The 15-Year Age Limit</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">
               Nigeria does not allow the import of cars older than <strong>15 years from their year
               of manufacture</strong>. In {CURRENT_YEAR} that generally means cars made in {CURRENT_YEAR - 15} or earlier
@@ -335,9 +339,9 @@ export default function Page() {
               away at the port.
             </p>
           </div>
-          <div className="border border-gray-200 p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><PoundSterling size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">Import Duty in Nigeria</h3>
+          <div className="border border-gray-200 p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><PoundSterling size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">Import Duty in Nigeria</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">
               Nigeria customs duty on a used car is typically around <strong>35% of the assessed
               value</strong> once duty and levy are combined, plus port and clearing charges, and is
@@ -347,7 +351,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="mt-6 max-w-3xl border-l-[4px] border-[#0818A8] bg-[#0818A8]/[0.04] p-5">
+        <div className="mt-6 max-w-3xl border-l-[4px] border-[#000f89] bg-[#000f89]/[0.04] p-5">
           <p className="text-gray-800 text-[14.5px] leading-relaxed">
             <strong className="text-gray-900">New requirement:</strong> all vehicles shipped to
             Nigeria must now have a valid roadworthiness certificate (a current{" "}
@@ -368,8 +372,8 @@ export default function Page() {
           <H2 id="how-it-works" eyebrow="Simple and stress free">How to Ship Your Car to Nigeria in 4 Steps</H2>
           <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 mt-2">
             {STEPS.map(([t, d], i) => (
-              <li key={t} className="relative bg-white border border-gray-200 p-6">
-                <div className="font-black text-[#0818A8]/15 text-[46px] leading-none absolute top-3 right-4 select-none" aria-hidden="true">{i + 1}</div>
+              <li key={t} className="relative bg-white border border-gray-200 p-6 rounded-[20px]">
+                <div className="font-black text-[#000f89]/15 text-[46px] leading-none absolute top-3 right-4 select-none" aria-hidden="true">{i + 1}</div>
                 <h3 className="font-bold text-gray-900 text-[15px] mb-2 relative">{t}</h3>
                 <p className="text-gray-600 text-[14px] leading-relaxed relative">{d}</p>
               </li>
@@ -383,8 +387,8 @@ export default function Page() {
         <H2 id="why-r-zone" eyebrow="Trusted by 100+ customers">Why Ship Your Car with R-Zone</H2>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
           {WHY.map(([Icon, t, d]) => (
-            <li key={t} className="border border-gray-200 p-6">
-              <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Icon size={20} aria-hidden="true" /></span>
+            <li key={t} className="border border-gray-200 p-6 rounded-[20px]">
+              <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Icon size={20} aria-hidden="true" /></span>
               <h3 className="font-bold text-gray-900 text-[15px] mb-2">{t}</h3>
               <p className="text-gray-600 text-[14px] leading-relaxed">{d}</p>
             </li>
@@ -398,10 +402,10 @@ export default function Page() {
           <H2 id="faq" eyebrow="Everything you need to know">Car Shipping to Nigeria FAQs</H2>
           <div className="space-y-3 mt-2">
             {FAQS.map((f) => (
-              <details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
+              <details key={freshYear(f.q)} className="rounded-[16px] group bg-white border border-gray-200 open:border-[#000f89]/40 transition-colors">
                 <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3>
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
+                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#000f89] transition-colors">{freshYear(f.q)}</h3>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#000f89] group-open:bg-[#000f89] transition-colors" aria-hidden="true">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg>
                   </span>
                 </summary>
@@ -413,11 +417,11 @@ export default function Page() {
       </section>
 
       {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0818A8] text-white overflow-hidden">
+      <section className="relative bg-[#000f89] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "46px 46px" }} />
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ready to ship your car?</p>
-          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get your free UK to Nigeria car shipping quote</h2>
+          <p className="text-white/60 mb-3 text-[13px] font-semibold">Ready to ship your car?</p>
+          <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">Get your free UK to Nigeria car shipping quote</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
             RORO from £960, container from £1,800, regular sailings and our own clearing team in
             Lagos. Send us your car&apos;s make, model and year and we will confirm eligibility and a

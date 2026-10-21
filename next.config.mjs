@@ -52,6 +52,19 @@ const nextConfig = {
  // redirects and give the clearest canonicalization signal.
  statusCode: 301,
  },
+ // Consolidated 2026-10-19. These posts competed with a stronger page for
+ // the same searches (keyword cannibalisation), so Google kept swapping
+ // between them and both lost clicks. Each one's unique content was folded
+ // into the page it now redirects to.
+ { source: "/blog/cargo-from-uk-to-nigeria", destination: "/cargo-from-uk-to-nigeria", permanent: true },
+ { source: "/blog/sending-cargo-to-nigeria-from-uk", destination: "/cargo-from-uk-to-nigeria", permanent: true },
+ { source: "/blog/cargo-to-nigeria-from-uk", destination: "/blog/how-long-shipping-uk-to-nigeria-takes", permanent: true },
+ { source: "/blog/sea-cargo-to-nigeria-from-uk", destination: "/blog/sea-freight-uk-to-nigeria", permanent: true },
+ { source: "/blog/cheap-cargo-rates-uk-to-nigeria", destination: "/blog/cheapest-cargo-company-uk-to-nigeria", permanent: true },
+ { source: "/blog/fast-cargo-to-nigeria-from-uk", destination: "/blog/air-freight-uk-to-nigeria", permanent: true },
+ { source: "/blog/how-door-to-door-cargo-to-nigeria-works", destination: "/blog/door-to-door-shipping-uk-to-nigeria", permanent: true },
+ { source: "/blog/cost-to-ship-a-car-to-nigeria-from-uk", destination: "/blog/car-shipping-uk-to-nigeria", permanent: true },
+ { source: "/blog/r-zone-cargo-insurance-plan", destination: "/blog/marine-cargo-insurance-uk-to-nigeria", permanent: true },
  // Old blog URLs from the previous blog, kept alive so their rankings
  // and backlinks pass to the current articles.
  { source: "/blog/air-freight-vs-sea-freight-ultimate-guide", destination: "/blog/air-freight-vs-sea-freight-nigeria", permanent: true },
@@ -60,7 +73,7 @@ const nextConfig = {
  { source: "/blog/nigeria-customs-duty-complete-guide-2026", destination: "/blog/nigeria-customs-duty-guide", permanent: true },
  { source: "/blog/rzone-expanded-air-schedule-2026", destination: "/blog/r-zone-cargo-air-freight-schedule-uk-nigeria", permanent: true },
  { source: "/blog/rzone-107-five-star-reviews-milestone", destination: "/blog/r-zone-cargo-reviews-uk-nigeria-shipping", permanent: true },
- { source: "/blog/nigerian-diaspora-shipping-guide-uk", destination: "/blog/sending-cargo-to-nigeria-from-uk", permanent: true },
+ { source: "/blog/nigerian-diaspora-shipping-guide-uk", destination: "/cargo-from-uk-to-nigeria", permanent: true },
  { source: "/blog/nafdac-requirements-food-exports-nigeria", destination: "/blog/sending-food-from-uk-to-nigeria-nafdac", permanent: true },
  { source: "/blog/uk-cargo-collection-areas-for-nigeria", destination: "/blog/cargo-to-nigeria-from-london-and-england", permanent: true },
 

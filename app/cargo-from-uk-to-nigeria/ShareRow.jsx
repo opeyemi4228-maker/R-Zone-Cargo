@@ -27,7 +27,7 @@ export default function ShareRow({ url, title }) {
     <div className="flex items-center gap-2">
       <button
         onClick={copy}
-        className="inline-flex items-center gap-1.5 border border-white/40 hover:bg-white/15 text-white text-[12px] font-semibold px-3 h-9 rounded-md transition-colors"
+        className="inline-flex items-center gap-1.5 border border-white/40 hover:bg-white/15 text-white text-[14px] font-semibold px-3 h-9 transition-colors rounded-full"
         aria-label="Copy link to this page"
       >
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

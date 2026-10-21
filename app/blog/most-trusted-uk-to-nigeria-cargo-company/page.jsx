@@ -53,9 +53,9 @@ const schemas = [
 function CTAButtons({ light = false }) {
   return (
     <div className="flex flex-wrap gap-3">
-      <Link href="/quote" className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0a1fce] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-colors">Get a Free Quote<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" /></Link>
-      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#0818A8] text-gray-800 hover:text-[#0818A8]"}`}><PhoneCall size={13} aria-hidden="true" /> Call Us</a>
-      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors"><MessageCircle size={13} aria-hidden="true" /> WhatsApp</a>
+      <Link href="/quote" className={`group inline-flex items-center gap-2 ${light ? "bg-white text-[#000f89] hover:bg-[#E8EEFF]" : "bg-[#000f89] hover:bg-[#000f89] text-white"} text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full`}>Get a Free Quote<ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" /></Link>
+      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#000f89] text-gray-800 hover:text-[#000f89]"}`}><PhoneCall size={13} aria-hidden="true" /> Call Us</a>
+      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full"><MessageCircle size={13} aria-hidden="true" /> WhatsApp</a>
     </div>
   );
 }
@@ -63,8 +63,8 @@ function CTAButtons({ light = false }) {
 function H2({ id, eyebrow, children }) {
   return (
     <div className="mb-7">
-      {eyebrow && <p className="text-[12px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-3">{eyebrow}</p>}
-      <h2 id={id} className="font-black text-[clamp(26px,4.2vw,40px)] text-[#0b0f1a] leading-[1.03] tracking-[-0.02em] uppercase">{children}</h2>
+      {eyebrow && <p className="mb-3 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">{eyebrow}</p>}
+      <h2 id={id} className="font-extrabold text-[clamp(26px,4.2vw,40px)] text-[#00112E] leading-[1.03] tracking-[-0.03em]">{children}</h2>
     </div>
   );
 }
@@ -102,7 +102,7 @@ export default function Page() {
       {/* HERO */}
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">The Most Trusted UK to Nigeria Cargo Company: 120+ Reviews and 12+ Years of Experience</h1>
+          <h1 className="font-extrabold text-[clamp(30px,5.4vw,55px)] text-[#00112E] leading-[1.05] tracking-[-0.03em] mb-5">The Most Trusted UK to Nigeria Cargo Company: 120+ Reviews and 12+ Years of Experience</h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">Trust is earned shipment by shipment. Here is the record behind R-Zone: <strong className="font-semibold text-gray-700">120+ five star Google reviews</strong>, 12+ years in the UK to Nigeria corridor, 50,000+ shipments delivered, and our own teams at both ends.</p>
           <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5]">
             <Image src={HERO_IMG} alt="R-Zone team handling UK to Nigeria cargo with over 12 years of experience" fill priority sizes="(max-width: 940px) 100vw, 940px" className="object-cover object-center" />
@@ -111,7 +111,7 @@ export default function Page() {
               <div><p className="text-white/65 text-[11px] font-medium mb-1">Written by</p><p className="text-white text-[14px] font-bold">R-Zone Cargo Team</p></div>
               <div><p className="text-white/65 text-[11px] font-medium mb-1">Published on</p><p className="text-white text-[14px] font-bold">12 September 2026</p></div>
             </div>
-            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8"><ShareRow url={PAGE_URL} title={freshYear(TITLE)} /></div>
+            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8 hidden sm:block"><ShareRow url={PAGE_URL} title={freshYear(TITLE)} /></div>
           </div>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Page() {
       <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
         <H2 id="record" eyebrow="The numbers behind the name">Our Record in One Glance</H2>
         <dl className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-2">
-          {STATS.map(([v,l])=>(<div key={l} className="border border-gray-200 p-6"><dt className="font-black text-[34px] md:text-[42px] text-[#0818A8] leading-none mb-2">{v}</dt><dd className="text-gray-600 text-[14px] font-medium leading-snug">{l}</dd></div>))}
+          {STATS.map(([v,l])=>(<div key={l} className="border border-gray-200 p-6 rounded-[20px]"><dt className="font-black text-[34px] md:text-[42px] text-[#000f89] leading-none mb-2">{v}</dt><dd className="text-gray-600 text-[14px] font-medium leading-snug">{l}</dd></div>))}
         </dl>
         <p className="text-gray-600 text-[14.5px] leading-relaxed mt-6 max-w-3xl">Those reviews were not bought in a burst. They accumulated one delivered shipment at a time since 2012, which is exactly what makes them worth reading. You can see them on our Google Business Profile.</p>
       </section>
@@ -130,7 +130,7 @@ export default function Page() {
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <H2 id="pillars" eyebrow="What trust actually looks like">Six Reasons Customers Stay With Us</H2>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
-            {PILLARS.map(([Icon,t,d])=>(<li key={t} className="bg-white border border-gray-200 p-6"><span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Icon size={20} aria-hidden="true" /></span><h3 className="font-bold text-gray-900 text-[15px] mb-2">{t}</h3><p className="text-gray-600 text-[14px] leading-relaxed">{d}</p></li>))}
+            {PILLARS.map(([Icon,t,d])=>(<li key={t} className="bg-white border border-gray-200 p-6 rounded-[20px]"><span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Icon size={20} aria-hidden="true" /></span><h3 className="font-bold text-gray-900 text-[15px] mb-2">{t}</h3><p className="text-gray-600 text-[14px] leading-relaxed">{d}</p></li>))}
           </ul>
         </div>
       </section>
@@ -139,14 +139,14 @@ export default function Page() {
       <section className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
         <H2 id="experience" eyebrow="Why a decade in one lane matters">Specialists, Not Generalists</H2>
         <div className="grid gap-5 md:grid-cols-2 mt-2">
-          <div className="border border-[#0818A8]/15 bg-[#0818A8]/[0.03] p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8] text-white mb-4"><Clock size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">One corridor since 2012</h3>
+          <div className="border border-[#000f89]/15 bg-[#000f89]/[0.03] p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89] text-white mb-4 rounded-full"><Clock size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">One corridor since 2012</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">R-Zone does not ship everywhere. We ship the <strong>UK to Nigeria corridor</strong>, and have done since 2012. That focus is why we know which goods need NAFDAC, how Apapa behaves in peak season, and what actually gets cargo cleared quickly.</p>
           </div>
-          <div className="border border-gray-200 p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><MapPin size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">Feet on the ground in Lagos</h3>
+          <div className="border border-gray-200 p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><MapPin size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">Feet on the ground in Lagos</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">Plenty of companies sell UK to Nigeria freight. Far fewer have <strong>their own team in Lagos</strong> clearing it. When something needs chasing at the port, we are chasing it ourselves rather than emailing an agent and hoping.</p>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Page() {
           <H2 id="checklist" eyebrow="Shop around with confidence">How to Judge Any Cargo Company</H2>
           <p className="text-gray-700 text-[16.5px] leading-[1.85] mb-7 max-w-3xl">We would rather you chose carefully than chose blindly. Whoever you ship with, hold them to this list. We are happy to be measured by it.</p>
           <ul className="grid gap-3 sm:grid-cols-2 max-w-4xl">
-            {CHECKLIST.map((c)=>(<li key={c} className="flex items-start gap-2.5 text-gray-700 text-[15px] leading-snug bg-white border border-gray-200 p-4"><Check size={17} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{c}</li>))}
+            {CHECKLIST.map((c)=>(<li key={c} className="flex items-start gap-2.5 text-gray-700 text-[15px] leading-snug bg-white border border-gray-200 p-4 rounded-[20px]"><Check size={17} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{c}</li>))}
           </ul>
         </div>
       </section>
@@ -175,17 +175,17 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-[#0818A8] text-white overflow-hidden">
+      <section className="relative bg-[#000f89] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "46px 46px" }} />
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Join 120+ happy customers</p>
-          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Ship with the team that has done this since 2012</h2>
+          <p className="text-white/60 mb-3 text-[13px] font-semibold">Join 120+ happy customers</p>
+          <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">Ship with the team that has done this since 2012</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. All-inclusive pricing, weekly departures, our own clearing team in Lagos, and 120+ five star reviews behind us.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/r-zone-cargo-reviews-uk-nigeria-shipping" className="hover:text-white transition-colors">Customer Reviews</Link>
             <Link href="/blog/uk-to-nigeria-cargo-faq" className="hover:text-white transition-colors">Cargo FAQs</Link>
-            <Link href="/blog/r-zone-cargo-insurance-plan" className="hover:text-white transition-colors">Insurance Plan</Link>
+            <Link href="/blog/marine-cargo-insurance-uk-to-nigeria" className="hover:text-white transition-colors">Insurance Plan</Link>
             <Link href="/cargo-from-uk-to-nigeria" className="hover:text-white transition-colors">Cargo from UK to Nigeria</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
           </nav>

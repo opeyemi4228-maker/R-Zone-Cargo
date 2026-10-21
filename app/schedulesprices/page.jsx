@@ -5,12 +5,9 @@ import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { montserrat, outfit } from "../../lib/fonts";
 import {
- Plane, Ship, ChevronRight, ArrowRight,
- Calendar, Clock, MapPin, Package,
- CheckCircle, Phone, AlertCircle,
- ChevronDown, Anchor, Star, Shield,
- Info, Download, BarChart3, Truck,
- Zap, TrendingDown, Weight,
+ Plane, Ship, ChevronRight, ArrowRight, Calendar, MapPin,
+ Package, CheckCircle, Phone, AlertCircle, ChevronDown, Anchor,
+ Shield, Info, Download, BarChart3, Truck, Search,
 } from "lucide-react";
 
 const YEAR = String(new Date().getFullYear());
@@ -160,19 +157,19 @@ const DOOR_SURCHARGES = [
 const PRICING_TIERS = [
  {
  name: "Personal", icon: Package, tagline: "For individuals & families",
- accent: "#0818A8", featured: false, airRate: "from £5.50/kg", seaRate: "from £2/kg",
+ accent: "#000f89", featured: false, airRate: "from £5.50/kg", seaRate: "from £2/kg",
  includes: ["Air & sea options", "UK door collection", "Nigeria door delivery", "Real-time tracking", "Customs clearance", "SMS & email notifications"],
  cta: "Get a Quote", href: "/quote",
  },
  {
  name: "Business", icon: BarChart3, tagline: "For SMEs & commercial shippers",
- accent: "#0818A8", featured: true, airRate: "from £5.50/kg", seaRate: "from £2/kg",
+ accent: "#000f89", featured: true, airRate: "from £5.50/kg", seaRate: "from £2/kg",
  includes: ["Discounted bulk rates", "Dedicated account manager", "Priority customs handling", "Weekly reporting", "SLA guarantee", "Credit terms available", "Volume discount schedule"],
  cta: "Contact Sales", href: "/contact",
  },
  {
  name: "Enterprise", icon: Anchor, tagline: "For importers, exporters & volume",
- accent: "#0437F2", featured: false, airRate: "Custom", seaRate: "Custom",
+ accent: "#0000CD", featured: false, airRate: "Custom", seaRate: "Custom",
  includes: ["Container rates (FCL/LCL)", "Full supply chain management", "Bespoke SLA & KPIs", "C-suite account access", "Port-to-port or D2D", "Multi-currency invoicing", "Priority boarding"],
  cta: "Talk to Us", href: "/contact",
  },
@@ -188,15 +185,15 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
  {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
- a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 6 weeks transit). Air freight starts from £5.50 per kg plus £20 handling fee (7 days departs every Friday, arrives following Friday). Door-to-door cargo pricing varies by Nigerian state from £4.80/kg collection rate to £6.80/kg door-to-door. Get a free quote from R-Zone.",
+ a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 to 6 weeks transit). Air freight starts from £5.50 per kg plus a £20 handling fee per shipment, departing every Friday. Air rates vary by state, from £5.50/kg (Lagos, office collection) to £7.80/kg; see the state table on this page.",
  },
  {
  q: "What is the cheapest way to ship from the UK to Nigeria?",
- a: "Sea freight is the cheapest option from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 6 weeks. For time-sensitive cargo, air freight from £5.50/kg departs every Friday from LHR, arriving Lagos the following Friday.",
+ a: "Sea freight is the cheapest option from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 to 6 weeks. For time-sensitive cargo, air freight from £5.50/kg departs every Friday from LHR, arriving Lagos the following Friday.",
  },
  {
- q: "Are there any hidden fees?",
- a: "No. R-Zone's rates are fully transparent. The price you are quoted is the price you pay. Any optional extras collection, delivery, insurance are quoted upfront before you commit.",
+ q: "Are there any extra fees?",
+ a: "Air shipments carry a £20 handling fee on top of the per-kg rate. Optional extras such as UK collection, out-of-state delivery, packing and insurance are listed on this page and shown on your quote before you pay. The price you are quoted is the price you pay.",
  },
  {
  q: "How is cargo weight calculated?",
@@ -212,7 +209,7 @@ const FAQS_PRICING = [
  },
  {
  q: "What payment methods does R-Zone accept?",
- a: "We accept bank transfer (BACS/Faster Payments), debit/credit card, and PayPal. Business accounts can apply for 14 or 30-day payment terms.",
+ a: "We accept bank transfer (BACS/Faster Payments), debit and credit card, and PayPal. We do not accept cash.",
  },
 ];
 
@@ -223,10 +220,10 @@ const fadeUp = {
 
 function TagPill({ label, dark = true }) {
  return (
- <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-6 ${dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"}`}>
- <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
+ <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-6 ${dark ? "border-[#0000FF]/30 bg-[#000f89]/14" : "border-[#000f89]/20 bg-[#000f89]/6"}`}>
+ <motion.span className="w-1.5 h-1.5 rounded-full bg-[#0000FF] flex-shrink-0"
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 2.2, repeat: Infinity }} aria-hidden="true" />
- <span className={`text-[13px] font-bold tracking-[0.28em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
+ <span className={`text-[13px] font-semibold ${dark ? "text-[#4D4DFF]" : "text-[#000f89]"}`}>{label}</span>
  </div>
  );
 }
@@ -235,11 +232,11 @@ function SectionHeading({ line1, accent, dark = true, id }) {
  const ref = useRef(null);
  const inView = useInView(ref, { once: true, margin: "-60px" });
  return (
- <h2 id={id} ref={ref} className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${dark ? "text-white" : "text-[#0b0f1a]"}`}>
+ <h2 id={id} ref={ref} className={`font-extrabold text-[clamp(26px,4.5vw,52px)] leading-[1.06] tracking-[-0.03em] ${dark ? "text-white" : "text-[#00112E]"}`}>
  {line1}{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  {accent}
- <motion.span className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#1F51FF]" aria-hidden="true"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0000FF]" aria-hidden="true"
  initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
  </span>
  </h2>
@@ -254,96 +251,104 @@ const STATUS_CONFIG = {
 };
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
+// Same composition as the homepage and importation heroes: headline left,
+// intro and actions right, then one panel with the four facts people come for.
+const HERO_FACTS = [
+ { icon: Plane, val: "Every Friday", label: "Air departures" },
+ { icon: Ship, val: "Weekly", label: "Sea sailings" },
+ { icon: Plane, val: "£5.50/kg", label: "Air freight from" },
+ { icon: Ship, val: "£2/kg", label: "Sea freight from" },
+];
+
 function Hero() {
  const ref = useRef(null);
  const inView = useInView(ref, { once: true });
+ const rise = (d) => ({ initial: { opacity: 0, y: 18 }, animate: inView ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: d, ease: [0.22, 1, 0.36, 1] } });
  return (
- <section className="relative bg-[#00061a] overflow-hidden hero-section"
- aria-labelledby="sp-hero-heading">
- <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
+ <section className="relative bg-[#00112E] overflow-hidden hero-section" aria-labelledby="sp-hero-heading">
+ <div className="absolute inset-0 opacity-[0.035] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-15%] left-[10%] w-[700px] h-[500px] bg-[#0818A8]/16 rounded-full blur-[140px]" />
- <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/10 rounded-full blur-[120px]" />
- </div>
- <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-[120px] pb-14 md:pb-16">
- <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10"
+ <div className="absolute top-[-15%] left-[5%] w-[760px] h-[520px] bg-[#000f89]/25 rounded-full blur-[150px] pointer-events-none" aria-hidden="true" />
+
+ <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-[120px] pb-16 md:pb-20">
+ <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10 lg:mt-[4px] max-lg:-mt-[23px]"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
  <Link href="/" className="text-white/80 text-[13px] font-medium hover:text-white transition-colors">Home</Link>
  <ChevronRight size={11} className="text-white/80" aria-hidden="true" />
  <span className="text-white text-[13px] font-medium" aria-current="page">Schedules &amp; Prices</span>
  </motion.nav>
 
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
- <motion.div initial="hidden" animate={inView ? "visible" : "hidden"}
- variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
- <motion.div variants={fadeUp} custom={0}>
- {/* Authority pill */}
- <div className="inline-flex items-center gap-2 border border-amber-400/35 bg-amber-400/8 px-3.5 py-1.5 rounded-full mb-4">
- <Star size={10} className="text-amber-400 fill-amber-400 flex-shrink-0" aria-hidden="true" />
- <span className="text-amber-400 text-[11px] font-black tracking-[0.22em] uppercase">
- #1 Ranked UK Nigeria Cargo on Google
- </span>
- </div>
- </motion.div>
- <motion.div variants={fadeUp} custom={0.05}>
- <TagPill label={`${YEAR} Schedules & Rates UK to Nigeria`} dark />
- </motion.div>
- <motion.h1 id="sp-hero-heading" variants={fadeUp} custom={0.1}
- className="text-white font-black text-[clamp(34px,6.5vw,76px)] leading-[0.88] tracking-[-0.035em] uppercase mb-6">
- UK Nigeria Cargo<br />Schedules &amp;{" "}
- <span className="relative inline-block text-[#1F51FF]">
- Prices.
- <motion.span className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]" aria-hidden="true"
- initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.6, delay: 0.8 }} />
- </span>
- </motion.h1>
- <motion.p variants={fadeUp} custom={0.2} className="text-white/80 text-[15px] font-normal leading-relaxed max-w-xl mb-9">
- Full {YEAR} UK Nigeria sailing and flight schedules alongside fully transparent
- pricing no hidden fees, no surprises.{" "}
- <strong className="text-white font-semibold">Sea freight from £2/kg · Air freight from £5.50/kg.</strong>
- {" "}Weekly departures on both routes.
- </motion.p>
- <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-3">
- <a href="#schedules" className="group inline-flex items-center gap-2 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[13px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 transition-all duration-200"
- aria-label="View UK to Nigeria sailing and flight schedules">
- <Calendar size={12} aria-hidden="true" />View Schedules
- </a>
- <a href="#pricing" className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/30"
- aria-label="View UK to Nigeria shipping prices">
- <BarChart3 size={12} aria-hidden="true" />View Prices
- <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
- </a>
- </motion.div>
+ <motion.div {...rise(0.05)}>
+ <TagPill label={`${YEAR} schedules and rates, UK to Nigeria`} dark />
  </motion.div>
 
- <motion.div className="grid grid-cols-2 gap-3"
- initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.3 }}>
- {[
- { icon: Plane, label: "Air Freight", val1: "Every", val2: "Friday", sub: "Departs LHR weekly", accent: "#0818A8" },
- { icon: Ship, label: "Sea Freight", val1: "Weekly", val2: "sailings", sub: "4 6 weeks transit", accent: "#1F51FF" },
- { icon: Zap, label: "Air Transit", val1: "7", val2: "days", sub: "Friday to Friday", accent: "#0437F2" },
- { icon: TrendingDown, label: "Sea From", val1: "£2", val2: "/kg", sub: "Cheapest option", accent: "#0818A8" },
- ].map(({ icon: Icon, label, val1, val2, sub, accent }, i) => (
- <motion.div key={label}
- className="group border border-white/[0.08] bg-white/[0.04] p-5 relative overflow-hidden hover:border-white/[0.2] hover:bg-white/[0.07] transition-all duration-300"
- initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.45 + i * 0.07 }}>
- <div className="absolute top-0 left-0 w-0 h-[2px] group-hover:w-full transition-all duration-500" style={{ backgroundColor: accent }} aria-hidden="true" />
- <div className="w-8 h-8 rounded-sm flex items-center justify-center mb-3" style={{ backgroundColor: `${accent}20` }} aria-hidden="true">
- <Icon size={14} style={{ color: accent }} />
- </div>
- <p className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{label}</p>
- <p className="text-white font-black text-[22px] leading-none tracking-[-0.02em]">
- {val1}<span className="text-white/80 text-[13px] font-normal ml-1">{val2}</span>
+ <div className="grid items-end gap-8 lg:grid-cols-12 lg:gap-12">
+ <motion.h1 id="sp-hero-heading" {...rise(0.12)}
+ className="text-white font-extrabold text-[clamp(40px,5.6vw,80px)] leading-[0.98] tracking-[-0.045em] lg:col-span-7">
+ UK Nigeria Cargo Schedules &amp;{" "}
+ <span className="text-[#4D4DFF]">Prices.</span>
+ </motion.h1>
+
+ <motion.div {...rise(0.24)} className="lg:col-span-5 lg:pb-2">
+ <p className="max-w-[46ch] text-[clamp(1.05rem,1.4vw,1.2rem)] font-medium leading-[1.6] text-white/75">
+ Weekly air and sea departures, and per-kg prices for all 36 Nigerian states,
+ so you can plan and price your shipment before you book.
  </p>
- <p className="text-white/80 text-[13px] font-normal mt-1">{sub}</p>
+ <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+ <a href="#rates" className="group inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full bg-[#0000CD] px-7 text-[15.5px] font-bold text-white shadow-[0_14px_36px_-12px_rgba(0,0,205,0.85)] transition-colors hover:bg-[#000f89]"
+ aria-label="See UK to Nigeria prices by state">
+ See prices by state
+ <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+ </a>
+ <a href="#schedules" className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.06] px-7 text-[15.5px] font-bold text-white transition-colors hover:border-white/50 hover:bg-white/[0.12]"
+ aria-label="See UK to Nigeria sailing and flight schedules">
+ <Calendar size={16} aria-hidden="true" /> Sailing dates
+ </a>
+ </div>
  </motion.div>
+ </div>
+
+ <motion.dl {...rise(0.36)} className="mt-12 grid grid-cols-2 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.04] lg:grid-cols-4">
+ {HERO_FACTS.map(({ icon: Icon, val, label }, i) => (
+ <div key={label} className={`px-6 py-6 md:px-8 md:py-7 ${i % 2 === 1 ? "border-l border-white/10" : ""} ${i >= 2 ? "border-t border-white/10 lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
+ <dt className="flex items-center gap-2 text-[13px] font-semibold text-white/60">
+ <Icon size={14} className="text-[#8C8CFF]" aria-hidden="true" />{label}
+ </dt>
+ <dd className="mt-2 text-[clamp(22px,2.4vw,32px)] font-extrabold leading-none tracking-[-0.03em] text-white">{val}</dd>
+ </div>
  ))}
- </motion.div>
+ </motion.dl>
  </div>
- </div>
- <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none" aria-hidden="true" />
  </section>
+ );
+}
+
+// ─── JUMP NAV ─────────────────────────────────────────────────────────────────
+// A long page with six distinct answers; let people go straight to theirs.
+const JUMPS = [
+ { href: "#schedules", label: "Schedules", icon: Calendar },
+ { href: "#rates", label: "Rates by state", icon: MapPin },
+ { href: "#electronics", label: "Electronics", icon: Package },
+ { href: "#vehicles", label: "Cars & containers", icon: Truck },
+ { href: "#extras", label: "Extras", icon: CheckCircle },
+ { href: "#faq", label: "FAQs", icon: Info },
+];
+
+function JumpNav() {
+ return (
+ <nav aria-label="On this page" className="sticky top-[73px] lg:top-[65px] z-20 w-full border-b border-gray-200 bg-white/95 backdrop-blur">
+ <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
+ <ul className="flex items-center gap-1 overflow-x-auto no-scrollbar">
+ {JUMPS.map(({ href, label, icon: Icon }) => (
+ <li key={href} className="flex-shrink-0">
+ <a href={href} className="flex items-center gap-2 whitespace-nowrap rounded-full px-3.5 py-2.5 my-1.5 text-[14px] font-semibold text-gray-700 transition-colors hover:bg-[#F2F4FA] hover:text-[#00112E]">
+ <Icon size={15} className="text-[#0000CD]" aria-hidden="true" />{label}
+ </a>
+ </li>
+ ))}
+ </ul>
+ </div>
+ </nav>
  );
 }
 
@@ -358,11 +363,11 @@ function SchedulesSection() {
  ];
 
  return (
- <section id="schedules" ref={ref} className="relative bg-[#00061a] overflow-hidden scroll-mt-20"
+ <section id="schedules" ref={ref} className="relative bg-[#00112E] overflow-hidden scroll-mt-20"
  aria-labelledby="schedules-heading">
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/50 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/50 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
@@ -398,7 +403,7 @@ function SchedulesSection() {
  return (
  <button key={tab.id} role="tab" aria-selected={isActive} aria-controls={`tab-panel-${tab.id}`} id={`tab-${tab.id}`}
  onClick={() => setActiveTab(tab.id)}
- className={`flex items-center gap-2 px-6 py-3.5 text-[13px] font-semibold tracking-[0.04em] whitespace-nowrap border-b-2 transition-all duration-200 flex-shrink-0 ${isActive ? "border-[#1F51FF] text-white" : "border-transparent text-white/80 hover:text-white hover:border-white/25"}`}>
+ className={`flex items-center gap-2 px-6 py-3.5 text-[13px] font-semibold whitespace-nowrap border-b-2 transition-all duration-200 flex-shrink-0 rounded-full ${isActive ? "border-[#0000FF] text-white" : "border-transparent text-white/80 hover:text-white hover:border-white/25"}`}>
  <Icon size={13} aria-hidden="true" />{tab.label}
  </button>
  );
@@ -410,15 +415,15 @@ function SchedulesSection() {
  {activeTab === "sea" && (
  <motion.div key="sea" id="tab-panel-sea" role="tabpanel" aria-labelledby="tab-sea"
  initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
- <div className="flex items-start gap-3 border border-[#1F51FF]/20 bg-[#0818A8]/12 px-5 py-3.5 mb-6">
- <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
+ <div className="flex items-start gap-3 border border-[#0000FF]/20 bg-[#000f89]/12 px-5 py-3.5 mb-6 rounded-[20px]">
+ <Info size={14} className="text-[#4D4DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-white/80 text-[13px] font-normal leading-snug">
  <strong className="text-white font-semibold">Cut-off date</strong> is the last day to drop off at our Upminster warehouse or arrange UK door collection.
- The vessel sails 5 days after cut-off. ETA to Lagos is typically 4 6 weeks.
+ The vessel sails 5 days after cut-off. ETA to Lagos is typically 4 to 6 weeks.
  </p>
  </div>
  {/* Desktop table */}
- <div className="hidden md:block overflow-hidden border border-white/[0.07]">
+ <div className="hidden md:block overflow-hidden border border-white/[0.07] rounded-[20px]">
  <table className="w-full" aria-label="Sea freight sailing schedule UK to Nigeria 2025">
  <thead>
  <tr className="border-b border-white/[0.08] bg-white/[0.04]">
@@ -438,7 +443,7 @@ function SchedulesSection() {
  <td className="px-4 py-3.5"><span className={`font-bold text-[13px] ${isOpen ? "text-white" : "text-white/80"}`}>{row.month}</span></td>
  <td className="px-4 py-3.5"><span className="text-[13px] font-medium text-white/80">{row.cutoff}</span></td>
  <td className="px-4 py-3.5"><span className="text-[13px] font-medium text-white/80">{row.sailing}</span></td>
- <td className="px-4 py-3.5"><span className={`text-[13px] font-medium ${isOpen ? "text-[#1F51FF]" : "text-white/80"}`}>{row.eta}</span></td>
+ <td className="px-4 py-3.5"><span className={`text-[13px] font-medium ${isOpen ? "text-[#4D4DFF]" : "text-white/80"}`}>{row.eta}</span></td>
  <td className="px-4 py-3.5"><span className="text-[13px] font-normal text-white/80">{row.vessel}</span></td>
  <td className="px-4 py-3.5"><span className="text-[13px] font-normal text-white/80">{row.port}</span></td>
  <td className="px-4 py-3.5">
@@ -448,7 +453,7 @@ function SchedulesSection() {
  </td>
  <td className="px-4 py-3.5">
  {isOpen && (
- <Link href="/quote" className="inline-flex items-center gap-1 text-[13px] font-bold text-[#1F51FF] hover:text-white transition-colors"
+ <Link href="/quote" className="inline-flex items-center gap-1 text-[13px] font-bold text-[#4D4DFF] hover:text-white transition-colors"
  aria-label={`Book ${row.month} sea freight sailing to Nigeria`}>
  Book <ArrowRight size={9} aria-hidden="true" />
  </Link>
@@ -467,7 +472,7 @@ function SchedulesSection() {
  const isOpen = row.status === "open" || row.status === "upcoming";
  return (
  <motion.div key={row.id}
- className={`border p-4 ${isOpen ? "border-white/[0.12] bg-white/[0.04]" : "border-white/[0.05] bg-white/[0.015]"}`}
+ className={`border p-4 rounded-[20px] ${isOpen ? "border-white/[0.12] bg-white/[0.04]" : "border-white/[0.05] bg-white/[0.015]"}`}
  initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: i * 0.04 }}>
  <div className="flex items-center justify-between mb-3">
  <span className={`font-black text-[16px] ${isOpen ? "text-white" : "text-white/80"}`}>{row.month} {YEAR}</span>
@@ -478,11 +483,11 @@ function SchedulesSection() {
  <div className="grid grid-cols-2 gap-2 text-[13px]">
  <div><span className="text-white/80 font-normal">Cut-off</span><br /><span className="text-white/80 font-medium">{row.cutoff}</span></div>
  <div><span className="text-white/80 font-normal">Sailing</span><br /><span className="text-white/80 font-medium">{row.sailing}</span></div>
- <div><span className="text-white/80 font-normal">ETA Lagos</span><br /><span className={isOpen ? "text-[#1F51FF] font-medium" : "text-white/80"}>{row.eta}</span></div>
+ <div><span className="text-white/80 font-normal">ETA Lagos</span><br /><span className={isOpen ? "text-[#4D4DFF] font-medium" : "text-white/80"}>{row.eta}</span></div>
  <div><span className="text-white/80 font-normal">Port</span><br /><span className="text-white/80">{row.port}</span></div>
  </div>
  {isOpen && (
- <Link href="/quote" className="mt-3 flex items-center gap-1.5 text-[13px] font-bold text-[#1F51FF] hover:text-white transition-colors"
+ <Link href="/quote" className="mt-3 flex items-center gap-1.5 text-[13px] font-bold text-[#4D4DFF] hover:text-white transition-colors"
  aria-label={`Book ${row.month} sea freight to Nigeria`}>
  Book this sailing <ArrowRight size={9} aria-hidden="true" />
  </Link>
@@ -492,11 +497,11 @@ function SchedulesSection() {
  })}
  </div>
  <div className="mt-8 flex flex-wrap gap-4">
- <button className="inline-flex items-center gap-2.5 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/15 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 transition-all duration-200"
+ <button className="inline-flex items-center gap-2.5 border border-white/25 hover:border-[#000f89] hover:bg-[#000f89]/15 text-white/80 hover:text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="Download 2025 UK to Nigeria sea freight schedule PDF">
  <Download size={12} aria-hidden="true" />Download {YEAR} Schedule PDF
  </button>
- <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Book sea freight from UK to Nigeria">
  Book Sea Freight <ArrowRight size={11} aria-hidden="true" />
  </Link>
@@ -508,8 +513,8 @@ function SchedulesSection() {
  {activeTab === "air" && (
  <motion.div key="air" id="tab-panel-air" role="tabpanel" aria-labelledby="tab-air"
  initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
- <div className="flex items-start gap-3 border border-[#1F51FF]/20 bg-[#0818A8]/12 px-5 py-3.5 mb-8">
- <Info size={14} className="text-[#1F51FF] flex-shrink-0 mt-0.5" aria-hidden="true" />
+ <div className="flex items-start gap-3 border border-[#0000FF]/20 bg-[#000f89]/12 px-5 py-3.5 mb-8 rounded-[20px]">
+ <Info size={14} className="text-[#4D4DFF] flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-white/80 text-[13px] font-normal leading-snug">
  Air freight to Nigeria departs <strong className="text-white font-semibold">every Friday</strong> from London Heathrow (LHR) to Lagos (LOS).
  Cargo must be received by <strong className="text-white font-semibold">12pm Friday</strong> for same-day dispatch arrives Lagos the <strong className="text-white font-semibold">following Friday</strong>.
@@ -517,22 +522,22 @@ function SchedulesSection() {
  </div>
  <div className="flex justify-center mb-10">
  {AIR_SCHEDULES.map((sched, i) => (
- <motion.div key={sched.day} className="w-full max-w-lg border border-white/[0.1] bg-white/[0.04] p-8 relative overflow-hidden group hover:border-[#0818A8]/50 hover:bg-[#0818A8]/10 transition-all duration-300"
+ <motion.div key={sched.day} className="w-full max-w-lg border border-white/[0.1] bg-white/[0.04] p-8 relative overflow-hidden group hover:border-[#000f89]/50 hover:bg-[#000f89]/10 transition-all duration-300 rounded-[20px]"
  initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }}>
- <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
- <div className="w-10 h-10 bg-[#0818A8]/20 rounded-sm flex items-center justify-center mb-4" aria-hidden="true">
- <Plane size={16} className="text-[#1F51FF]" />
+ <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF] w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
+ <div className="w-10 h-10 bg-[#000f89]/20 flex items-center justify-center mb-4 rounded-full" aria-hidden="true">
+ <Plane size={16} className="text-[#4D4DFF]" />
  </div>
- <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-white/80 mb-1">{sched.frequency} Departure</p>
+ <p className="text-white/80 mb-1 text-[13px] font-semibold">{sched.frequency} Departure</p>
  <p className="text-white font-black text-[20px] leading-none tracking-[-0.01em] mb-1">{sched.day}</p>
  <p className="text-white/80 text-[13px] font-normal mb-3">{sched.departure}</p>
  <div className="flex items-center justify-between gap-6 border-t border-white/[0.07] pt-4">
  <div className="min-w-0">
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80 mb-0.5">Transit</p>
- <p className="text-[#1F51FF] font-bold text-[14px] whitespace-nowrap">{sched.transit}</p>
+ <p className="text-white/80 mb-0.5 text-[13px] font-semibold">Transit</p>
+ <p className="text-[#4D4DFF] font-bold text-[14px] whitespace-nowrap">{sched.transit}</p>
  </div>
  <div className="text-right shrink-0">
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/80 mb-0.5">Carrier</p>
+ <p className="text-white/80 mb-0.5 text-[13px] font-semibold">Carrier</p>
  <p className="text-white/80 text-[14px] font-normal">{sched.airline}</p>
  </div>
  </div>
@@ -540,8 +545,8 @@ function SchedulesSection() {
  ))}
  </div>
  {/* Journey steps */}
- <div className="border border-white/[0.08] bg-white/[0.03] p-7 md:p-9 mb-8">
- <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-white/80 mb-7">
+ <div className="border border-white/[0.08] bg-white/[0.03] p-7 md:p-9 mb-8 rounded-[20px]">
+ <p className="text-white/80 mb-7 text-[13px] font-semibold">
  Typical Air Freight Journey UK to Nigeria
  </p>
  <div className="flex items-center gap-0 overflow-x-auto">
@@ -556,20 +561,20 @@ function SchedulesSection() {
  return (
  <div key={si} className="flex items-center flex-shrink-0">
  <div className="text-center px-4">
- <div className="w-10 h-10 rounded-full bg-[#0818A8]/25 border border-[#0818A8]/40 flex items-center justify-center mx-auto mb-2" aria-label={step.title}>
- <Icon size={14} className="text-[#1F51FF]" aria-hidden="true" />
+ <div className="w-10 h-10 rounded-full bg-[#000f89]/25 border border-[#000f89]/40 flex items-center justify-center mx-auto mb-2" aria-label={step.title}>
+ <Icon size={14} className="text-[#4D4DFF]" aria-hidden="true" />
  </div>
- <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#1F51FF] mb-0.5">{step.label}</p>
+ <p className="mb-0.5 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-white/[0.08] text-[#A6A6FF]">{step.label}</p>
  <p className="text-white/80 font-semibold text-[13px] leading-tight">{step.title}</p>
  <p className="text-white/80 text-[12px] font-normal mt-0.5">{step.sub}</p>
  </div>
- {si < 4 && <div className="h-px w-8 bg-gradient-to-r from-[#0818A8]/50 to-[#1F51FF]/50 flex-shrink-0" aria-hidden="true" />}
+ {si < 4 && <div className="h-px w-8 bg-gradient-to-r from-[#000f89]/50 to-[#0000FF]/50 flex-shrink-0" aria-hidden="true" />}
  </div>
  );
  })}
  </div>
  </div>
- <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Book air freight from UK to Nigeria">
  Book Air Freight <ArrowRight size={11} aria-hidden="true" />
  </Link>
@@ -583,452 +588,226 @@ function SchedulesSection() {
 }
 
 // ─── DIVIDER ──────────────────────────────────────────────────────────────────
-function SectionDivider() {
+
+// ─── PRICING ──────────────────────────────────────────────────────────────────
+// One idea per block, in the order people ask: what does it cost, what does it
+// cost to my state, fixed prices for electronics, vehicles, extras, questions.
+const SUMMARY = [
+ { icon: Plane, name: "Air freight", price: "£5.50", unit: "/kg", from: true, lines: ["Departs every Friday", "Plus £20 handling per shipment"] },
+ { icon: Ship, name: "Sea freight", price: "£2", unit: "/kg", from: true, lines: ["Weekly sailings to Lagos", "4 to 6 weeks transit"] },
+ { icon: Truck, name: "Door to door, Lagos", price: "£5.80", unit: "/kg", from: false, lines: ["Air, delivered to your door", "Other states in the table below"] },
+];
+
+function BlockHeading({ id, eyebrow, title, intro }) {
  return (
- <div className="bg-[#0818A8] relative overflow-hidden" role="region" aria-label="R-Zone key shipping rates">
- <div className="absolute inset-0 opacity-[0.07]" aria-hidden="true"
- style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "44px 44px" }} />
- <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
- <div className="flex flex-wrap gap-x-10 gap-y-3">
- {[
- { val: "£2/kg", label: "Sea freight from UK to Nigeria" },
- { val: "£5.50/kg", label: "Air freight from UK to Nigeria" },
- { val: "0", label: "Hidden fees" },
- { val: "Weekly", label: "Sailings & departures" },
- ].map(({ val, label }) => (
- <div key={label} className="flex items-baseline gap-2">
- <span className="text-white font-black text-[20px] leading-none tracking-[-0.02em]">{val}</span>
- <span className="text-white/80 text-[13px] font-normal">{label}</span>
- </div>
- ))}
- </div>
- <Link href="/quote" className="inline-flex items-center gap-2 bg-white text-[#0818A8] text-[13px] font-black tracking-[0.08em] uppercase px-6 py-2.5 hover:bg-white/90 transition-colors flex-shrink-0"
- aria-label="Get a free UK to Nigeria cargo quote">
- Get Free Quote <ArrowRight size={11} aria-hidden="true" />
- </Link>
- </div>
+ <div className="mb-8 max-w-3xl">
+ {eyebrow && <p className="mb-3 inline-flex rounded-full bg-[#000f89]/[0.07] px-3.5 py-1.5 text-[13px] font-semibold text-[#000f89]">{eyebrow}</p>}
+ <h3 id={id} className="text-[#00112E] font-extrabold text-[clamp(24px,3vw,34px)] leading-[1.1] tracking-[-0.03em]">{title}</h3>
+ {intro && <p className="mt-3 text-[16px] leading-[1.7] text-gray-600">{intro}</p>}
  </div>
  );
 }
 
-// ─── PRICING ──────────────────────────────────────────────────────────────────
 function PricingSection() {
- const ref = useRef(null);
- const inView = useInView(ref, { once: true, margin: "-60px" });
- const [activeRateTab, setActiveRateTab] = useState("air");
- const [openFaq, setOpenFaq] = useState(null);
+ const [query, setQuery] = useState("");
+ const q = query.trim().toLowerCase();
+ const rows = q ? STATE_RATES.filter((r) => r.state.toLowerCase().includes(q)) : STATE_RATES;
 
  return (
- <section id="pricing" ref={ref} className="relative bg-white overflow-hidden scroll-mt-20"
- aria-labelledby="pricing-heading">
- <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
- <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
+ <section id="pricing" className="relative bg-white scroll-mt-32" aria-labelledby="pricing-heading">
+ <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
 
- <div className="text-center mb-14">
- <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
- <TagPill label="UK Nigeria Cargo Rates Transparent Pricing" dark={false} />
- </motion.div>
- <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
- <SectionHeading line1="Clear, Fair" accent="Pricing." dark={false} id="pricing-heading" />
- </motion.div>
- <motion.p className="text-gray-800 text-[14px] font-normal mt-4 max-w-xl mx-auto"
- initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
- No surprises. No hidden extras.{" "}
- <strong className="text-gray-900 font-semibold">Sea freight from £2/kg · Air freight from £5.50/kg.</strong>
- {" "}Volume discounts and business rates available on request.
- </motion.p>
+ {/* Headline prices */}
+ <div className="mb-10 max-w-4xl">
+ <TagPill label="Prices" dark={false} />
+ <h2 id="pricing-heading" className="text-[#00112E] font-extrabold text-[clamp(32px,4.6vw,56px)] leading-[1.04] tracking-[-0.035em]">
+ Clear prices, <span className="text-[#0000CD]">before you book.</span>
+ </h2>
+ <p className="mt-4 text-[17px] leading-[1.7] text-gray-600">
+ Rates are per kilo. You pay on actual or volumetric weight, whichever is greater,
+ and customs clearance is included.
+ </p>
  </div>
 
- {/* Tier cards */}
- <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16" role="list">
- {PRICING_TIERS.map((tier, i) => {
- const Icon = tier.icon;
- return (
- <motion.div key={tier.name} role="listitem"
- className={`relative border overflow-hidden flex flex-col ${tier.featured ? "border-[#0818A8] bg-[#00061a] shadow-2xl shadow-[#0818A8]/25 scale-[1.02]" : "border-gray-200 bg-white hover:border-[#0818A8]/40 hover:shadow-lg transition-all duration-300"}`}
- initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.65, delay: i * 0.1 }}>
- <div className={`h-[3px] ${tier.featured ? "bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" : "bg-gray-100"}`} aria-hidden="true" />
- {tier.featured && (
- <div className="bg-[#0818A8] text-center py-1.5">
- <span className="text-white text-[11px] font-bold tracking-[0.25em] uppercase">Most Popular</span>
- </div>
- )}
- <div className="p-7 flex flex-col flex-1">
- <div className={`w-10 h-10 rounded-sm flex items-center justify-center mb-5 ${tier.featured ? "bg-[#0818A8]/30" : "bg-[#0818A8]/8"}`} aria-hidden="true">
- <Icon size={17} className={tier.featured ? "text-[#1F51FF]" : "text-[#0818A8]"} />
- </div>
- <p className={`text-[11px] font-bold tracking-[0.22em] uppercase mb-1 ${tier.featured ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{tier.tagline}</p>
- <h3 className={`font-black text-[24px] tracking-[-0.015em] mb-5 ${tier.featured ? "text-white" : "text-[#0b0f1a]"}`}>{tier.name}</h3>
- <div className={`border p-4 mb-6 ${tier.featured ? "border-white/[0.1] bg-white/[0.04]" : "border-gray-100 bg-gray-50"}`}>
- {[["Air", Plane, tier.airRate], ["Sea", Ship, tier.seaRate]].map(([label, IIcon, rate]) => (
- <div key={label} className={`flex justify-between items-center ${label === "Air" ? "mb-2" : ""}`}>
- <div className="flex items-center gap-1.5">
- <IIcon size={11} className={tier.featured ? "text-[#1F51FF]" : "text-[#0818A8]"} aria-hidden="true" />
- <span className={`text-[13px] font-medium ${tier.featured ? "text-white/80" : "text-gray-800"}`}>{label} to Nigeria</span>
- </div>
- <span className={`text-[13px] font-black ${tier.featured ? "text-white" : "text-[#0b0f1a]"}`}>{rate}</span>
- </div>
- ))}
- </div>
- <ul className="space-y-2.5 mb-7 flex-1" role="list" aria-label={`${tier.name} plan features`}>
- {tier.includes.map(feat => (
- <li key={feat} className="flex items-center gap-2.5">
- <CheckCircle size={12} className={tier.featured ? "text-[#1F51FF]" : "text-[#0818A8]"} aria-hidden="true" />
- <span className={`text-[13px] font-normal ${tier.featured ? "text-white/80" : "text-gray-800"}`}>{feat}</span>
+ <div className="grid gap-5 md:grid-cols-3">
+ {SUMMARY.map(({ icon: Icon, name, price, unit, from, lines }, i) => (
+ <div key={name} className={`relative overflow-hidden rounded-[24px] p-7 md:p-8 ${i === 0 ? "bg-[#000f89] text-white" : "bg-[#F6FAFF] ring-1 ring-[#E3EAF7]"}`}>
+ {i === 0 && <span className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "32px 32px" }} aria-hidden="true" />}
+ <p className={`relative flex items-center gap-2 text-[15px] font-bold ${i === 0 ? "text-white" : "text-[#00112E]"}`}>
+ <span className={`flex h-9 w-9 items-center justify-center rounded-full ${i === 0 ? "bg-white/15" : "bg-[#0000CD]/10"}`} aria-hidden="true">
+ <Icon size={16} className={i === 0 ? "text-white" : "text-[#0000CD]"} />
+ </span>
+ {name}
+ </p>
+ <p className="relative mt-6 leading-none">
+ {from && <span className={`mr-1.5 text-[14px] font-semibold ${i === 0 ? "text-white/70" : "text-gray-500"}`}>from</span>}
+ <span className={`text-[clamp(40px,4.4vw,56px)] font-extrabold tracking-[-0.04em] ${i === 0 ? "text-white" : "text-[#00112E]"}`}>{price}</span>
+ <span className={`ml-1 text-[16px] font-semibold ${i === 0 ? "text-white/70" : "text-gray-500"}`}>{unit}</span>
+ </p>
+ <ul className="relative mt-6 space-y-2">
+ {lines.map((l) => (
+ <li key={l} className={`flex items-center gap-2 text-[15px] ${i === 0 ? "text-white/85" : "text-gray-700"}`}>
+ <CheckCircle size={15} className={i === 0 ? "text-white/70" : "text-[#0000CD]"} aria-hidden="true" />{l}
  </li>
  ))}
  </ul>
- <Link href={tier.href}
- className={`w-full text-center text-[13px] font-black tracking-[0.09em] uppercase py-3.5 transition-all duration-200 ${tier.featured ? "bg-[#0818A8] hover:bg-[#0437F2] text-white shadow-lg shadow-[#0818A8]/30" : "border-2 border-[#0818A8]/25 text-[#0818A8] hover:bg-[#0818A8] hover:text-white hover:border-[#0818A8]"}`}
- aria-label={`${tier.cta} ${tier.name} UK to Nigeria cargo`}>{tier.cta}
- </Link>
  </div>
- </motion.div>
- );
- })}
+ ))}
+ </div>
+ <p className="mt-4 text-[14px] text-gray-500">
+ Volumetric weight: air L×W×H (cm) ÷ 6,000, sea ÷ 1,000. Rates are indicative and confirmed on your quote.
+ </p>
+
+ {/* Rates by state */}
+ <div id="rates" className="mt-20 scroll-mt-36">
+ <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+ <BlockHeading eyebrow="All 36 states and the FCT" title="Air rates by state"
+ intro="Door to door delivery or office collection, per kilo. Office only means collection from our office in that state." />
+ <label className="relative mb-8 block w-full lg:w-[320px]">
+ <span className="sr-only">Find your state</span>
+ <Search size={17} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+ <input value={query} onChange={(e) => setQuery(e.target.value)} type="search" placeholder="Find your state, e.g. Rivers"
+ className="h-[52px] w-full rounded-full border border-gray-300 bg-white pl-11 pr-4 text-[15px] text-[#00112E] placeholder:text-gray-400 focus:border-[#0000CD] focus:outline-none focus:ring-2 focus:ring-[#0000CD]/20" />
+ </label>
  </div>
 
- {/* Rate tables */}
- <motion.div className="mb-16" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}>
- <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
- <div>
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Rate Tables UK to Nigeria</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">Standard published rates. Heavier shipments attract lower per-kg rates.</p>
- </div>
- <div className="flex border border-gray-200 overflow-hidden" role="tablist" aria-label="Air or sea rate table">
- {[{ id: "air", label: "Air", icon: Plane }, { id: "sea", label: "Sea", icon: Ship }].map(t => {
- const Icon = t.icon;
+ <div className="overflow-hidden rounded-[24px] ring-1 ring-[#E3EAF7]">
+ <div className="max-h-[640px] overflow-auto">
+ <table className="w-full min-w-[640px] text-left" aria-label="Air cargo rates by Nigerian state">
+ <thead className="sticky top-0 z-10 bg-[#00112E] text-white">
+ <tr>
+ {["State", "Door to door", "Office collection", "Min. weight", "Delivery"].map((h) => (
+ <th key={h} scope="col" className="px-5 py-4 text-[13px] font-semibold">{h}</th>
+ ))}
+ </tr>
+ </thead>
+ <tbody className="text-[15px]">
+ {rows.map((row) => {
+ const lagos = row.state === "Lagos";
  return (
- <button key={t.id} role="tab" aria-selected={activeRateTab === t.id} onClick={() => setActiveRateTab(t.id)}
- className={`flex items-center gap-1.5 px-5 py-2.5 text-[13px] font-bold transition-all duration-150 ${activeRateTab === t.id ? "bg-[#0818A8] text-white" : "bg-white text-gray-800 hover:text-gray-900"}`}>
- <Icon size={12} aria-hidden="true" /> {t.label}
- </button>
+ <tr key={row.state} className={`border-t border-[#EEF2F9] ${lagos ? "bg-[#0000CD]/[0.05]" : "hover:bg-[#F6FAFF]"}`}>
+ <th scope="row" className="px-5 py-3.5 font-semibold text-[#00112E]">
+ {row.state}
+ {lagos && <span className="ml-2 rounded-full bg-[#0000CD] px-2 py-0.5 text-[11px] font-bold text-white">Lowest</span>}
+ </th>
+ <td className="px-5 py-3.5">
+ {row.doorToDoor
+ ? <span className="font-bold text-[#00112E]">£{row.doorToDoor}<span className="font-normal text-gray-500">/kg</span></span>
+ : <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[13px] font-semibold text-amber-700">Office only</span>}
+ </td>
+ <td className="px-5 py-3.5 font-bold text-[#00112E]">£{row.collection}<span className="font-normal text-gray-500">/kg</span></td>
+ <td className="px-5 py-3.5 text-gray-600">
+ {row.minWeight}kg
+ {row.minWeightNote && <span className="block text-[12.5px] text-gray-500">{row.minWeightNote}</span>}
+ </td>
+ <td className="px-5 py-3.5 text-gray-600">{row.days} days</td>
+ </tr>
  );
  })}
- </div>
- </div>
- <AnimatePresence mode="wait">
- <motion.div key={activeRateTab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
- <div className="overflow-hidden border border-gray-200">
- <table className="w-full" aria-label={`${activeRateTab === "air" ? "Air freight" : "Sea freight"} rates UK to Nigeria per kg`}>
- <thead>
- <tr className="bg-[#0818A8]">
- {["Weight Range","Rate Per Kg","Note",""].map(h => (
- <th key={h} scope="col" className={`px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80 ${h === "Note" ? "hidden sm:table-cell" : ""}`}>{h}</th>
- ))}
- </tr>
- </thead>
- <tbody>
- {(activeRateTab === "air" ? AIR_RATES : SEA_RATES).map((row, i) => (
- <tr key={row.range} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
- <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.range}</td>
- <td className="px-5 py-3.5">
- <span className="text-[#0818A8] font-black text-[16px]">{row.rate}</span>
- {row.per && <span className="text-gray-800 text-[13px] ml-1 font-normal">{row.per}</span>}
- </td>
- <td className="px-5 py-3.5 hidden sm:table-cell text-gray-800 text-[13px] font-normal">{row.note}</td>
- <td className="px-5 py-3.5 text-right">
- <Link href="/quote" className="text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors"
- aria-label={`Get a quote for ${row.range} ${activeRateTab === "air" ? "air" : "sea"} freight UK to Nigeria`}>Quote →</Link>
- </td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- <p className="text-gray-800 text-[13px] font-normal mt-3">
- * Rates are indicative and subject to fuel surcharge. Final price confirmed at booking.
- Volumetric weight applies where greater than actual weight: air freight L×W×H÷6,000 · sea freight L×W×H÷1,000.
- </p>
- </motion.div>
- </AnimatePresence>
- </motion.div>
-
- {/* Surcharges */}
- <motion.div className="mb-16" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.5 }}>
- <div className="mb-6">
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Additional Services</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">Optional add-on charges all quoted transparently at booking, before you commit.</p>
- </div>
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
- {DOOR_SURCHARGES.map((item, i) => (
- <motion.div key={item.item}
- className="flex items-start justify-between border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/30 hover:bg-[#0818A8]/3 transition-all duration-200 group"
- initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.5 + i * 0.06 }}>
- <div>
- <div className="flex items-center gap-2 mb-1">
- <Truck size={11} className="text-[#0818A8] group-hover:text-[#0437F2] transition-colors" aria-hidden="true" />
- <p className="text-[#0b0f1a] font-semibold text-[13px]">{item.item}</p>
- </div>
- <p className="text-gray-800 text-[13px] font-normal">{item.note}</p>
- </div>
- <span className="text-[#0818A8] font-black text-[14px] flex-shrink-0 ml-4">{item.price}</span>
- </motion.div>
- ))}
- </div>
- </motion.div>
-
- {/* Always included */}
- <motion.div className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-7 md:p-9 mb-14"
- initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.55 }}>
- <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
- <div>
- <p className="text-[11px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Always Included</p>
- <h3 className="text-[#0b0f1a] font-black text-[18px]">Every R-Zone UK Nigeria shipment includes</h3>
- </div>
- <div className="grid grid-cols-2 gap-4">
- {INCLUDED_ALWAYS.map(({ icon: Icon, label }) => (
- <div key={label} className="flex items-center gap-2.5">
- <Icon size={13} className="text-[#0818A8] flex-shrink-0" aria-hidden="true" />
- <span className="text-gray-800 text-[13px] font-medium">{label}</span>
- </div>
- ))}
- </div>
- </div>
- </motion.div>
-
- {/* State-by-state rates */}
- <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.55 }}>
- <div className="mb-6">
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">State-by-State Cargo Rates Nigeria</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">Door-to-door and office collection rates to all Nigerian states. Rates are per kg.</p>
- </div>
- <div className="overflow-hidden border border-gray-200 bg-white">
- <div className="overflow-x-auto">
- <table className="w-full min-w-[700px]" aria-label="Cargo freight rates by Nigerian state">
- <thead>
- <tr className="bg-[#0818A8]">
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">State</th>
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Door-to-Door (£/kg)</th>
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Office Collection (£/kg)</th>
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Min Weight (kg)</th>
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Delivery (Days)</th>
- </tr>
- </thead>
- <tbody>
- {STATE_RATES.map((row, i) => (
- <tr key={row.state} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
- <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.state}</td>
- <td className="px-5 py-3.5 text-[13px] font-bold">
- {row.doorToDoor
- ? <span className="text-[#0818A8]">£{row.doorToDoor}/kg</span>
- : <span className="text-orange-600 font-semibold">Office Only</span>}
- </td>
- <td className="px-5 py-3.5 text-[13px] font-bold text-[#0818A8]">£{row.collection}/kg</td>
- <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">
- {row.minWeight}kg
- {row.minWeightNote && <span className="ml-1 text-[11px] text-gray-600">({row.minWeightNote})</span>}
- </td>
- <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.days}</td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- </div>
- <p className="text-gray-800 text-[13px] font-normal mt-3">
- * All rates are per kg. Minimum weight requirements apply. "Office Only" states do not offer door-to-door delivery office collection rate applies.
- All shipments subject to a £20 handling charge.
- </p>
- </motion.div>
-
- {/* Fixed item rates */}
- <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.58 }}>
- <div className="mb-6">
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Fixed-Price Items Door to Door (Lagos)</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">
- Flat-rate door-to-door pricing for electronics to Lagos. Rates for other destinations vary contact us for a quote.
- </p>
- </div>
- <div className="overflow-hidden border border-gray-200 bg-white">
- <div className="overflow-x-auto">
- <table className="w-full min-w-[400px]" aria-label="Fixed price door-to-door rates for electronics to Lagos Nigeria">
- <thead>
- <tr className="bg-[#0818A8]">
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Item Description</th>
- <th scope="col" className="px-5 py-3 text-left text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Price (£)</th>
- <th scope="col" className="px-5 py-3 text-right text-[11px] font-bold tracking-[0.22em] uppercase text-white/80"></th>
- </tr>
- </thead>
- <tbody>
- {FIXED_ITEM_RATES.map((row, i) => (
- <tr key={row.item} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
- <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.item}</td>
- <td className="px-5 py-3.5 text-[16px] font-black text-[#0818A8]">£{row.price}</td>
- <td className="px-5 py-3.5 text-right">
- <a href="/quote" className="text-[13px] font-bold text-[#0818A8] hover:text-[#0437F2] transition-colors">Book →</a>
- </td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- </div>
- <div className="flex items-start gap-3 border border-amber-200 bg-amber-50 px-5 py-3.5 mt-4">
- <AlertCircle size={14} className="text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
- <p className="text-amber-900 text-[13px] font-normal leading-snug">
- <strong className="font-semibold">Important:</strong> You are responsible for proper packaging of all items. R-Zone does not accept liability for improperly packed consignments.
- Rates above apply to Plasma and LCD TVs, computers and laptops to <strong className="font-semibold">Lagos only</strong>. For other destinations, contact us for a quote.
- </p>
- </div>
- </motion.div>
-
- {/* Vehicle & container rates */}
- <motion.div className="mb-14" initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.61 }}>
- <div className="mb-6">
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Car & Container Shipping to Nigeria</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">
- RORO (Roll-on/Roll-off) vehicle shipping and container rates to Tin Can Island / Apapa, Lagos.
- Prices are port-to-port only loading, haulage and clearing costs are not included.
- </p>
- </div>
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
- {/* Vehicle RORO */}
- <div className="overflow-hidden border border-gray-200 bg-white">
- <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
- <Truck size={13} className="text-white/80" aria-hidden="true" />
- <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Vehicle RORO Shipping Lagos</span>
- </div>
- <table className="w-full" aria-label="RORO vehicle shipping prices to Lagos Nigeria">
- <thead>
- <tr className="border-b border-gray-100 bg-gray-50">
- <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Vehicle Type</th>
- <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">RORO Price</th>
- <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Note</th>
- </tr>
- </thead>
- <tbody>
- {VEHICLE_RATES.map((row, i) => (
- <tr key={row.type} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
- <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.type}</td>
- <td className="px-5 py-3.5 text-[14px] font-black text-[#0818A8]">{row.roro}</td>
- <td className="px-5 py-3.5 text-[13px] font-normal text-gray-800">{row.note ?? " "}</td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- {/* Container */}
- <div className="overflow-hidden border border-gray-200 bg-white">
- <div className="px-5 py-3.5 bg-[#0818A8] flex items-center gap-2">
- <Anchor size={13} className="text-white/80" aria-hidden="true" />
- <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/80">Container Shipping Lagos</span>
- </div>
- <table className="w-full" aria-label="Container shipping prices to Lagos Nigeria">
- <thead>
- <tr className="border-b border-gray-100 bg-gray-50">
- <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Container Type</th>
- <th scope="col" className="px-5 py-2.5 text-left text-[11px] font-bold tracking-[0.18em] uppercase text-gray-800">Price</th>
- </tr>
- </thead>
- <tbody>
- {CONTAINER_RATES.map((row, i) => (
- <tr key={row.type} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/70"} hover:bg-[#0818A8]/4 transition-colors`}>
- <td className="px-5 py-3.5 text-[13px] font-semibold text-[#0b0f1a]">{row.type}</td>
- <td className="px-5 py-3.5 text-[14px] font-black text-[#0818A8]">{row.price}</td>
- </tr>
- ))}
- </tbody>
- </table>
- <div className="px-5 py-4 border-t border-gray-100">
- <a href="/contact" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200">
- Request Container Quote <ArrowRight size={11} aria-hidden="true" />
- </a>
- </div>
- </div>
- </div>
- <p className="text-gray-800 text-[13px] font-normal mt-4">
- * All vehicle and container prices are port-to-port (Tin Can Island / Apapa, Lagos) only. Loading, haulage and clearing charges are not included.
- Contact us to request a full door-to-door quote including all extras.
- </p>
- </motion.div>
-
- {/* Pricing FAQs SEO high-value */}
- <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.6 }}>
- <div className="mb-6">
- <h3 className="text-[#0b0f1a] font-black text-[20px] tracking-[-0.01em]">Shipping Costs Frequently Asked Questions</h3>
- <p className="text-gray-800 text-[13px] font-normal mt-1">Common questions about UK Nigeria cargo prices and shipping costs.</p>
- </div>
- <dl className="border border-gray-200 overflow-hidden">
- {FAQS_PRICING.map((item, i) => (
- <div key={i} className="border-b border-gray-100 last:border-0" itemScope itemType="https://schema.org/Question">
- <dt>
- <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
- className="w-full flex items-start justify-between gap-4 px-6 py-4 text-left group hover:bg-gray-50 transition-colors"
- aria-expanded={openFaq === i} aria-controls={`pfaq-${i}`}>
- <span className={`text-[13.5px] font-semibold transition-colors duration-150 ${openFaq === i ? "text-[#0818A8]" : "text-[#0b0f1a] group-hover:text-[#0818A8]"}`}
- itemProp="name">{item.q}</span>
- <motion.div animate={{ rotate: openFaq === i ? 180 : 0 }} transition={{ duration: 0.2 }} className="flex-shrink-0 mt-0.5" aria-hidden="true">
- <ChevronDown size={15} className={openFaq === i ? "text-[#0818A8]" : "text-gray-800"} />
- </motion.div>
- </button>
- </dt>
- <AnimatePresence>
- {openFaq === i && (
- <motion.dd id={`pfaq-${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
- exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }} className="overflow-hidden"
- itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
- <p className="text-gray-800 text-[13px] font-normal leading-relaxed px-6 pb-5 pr-12" itemProp="text">{item.a}</p>
- </motion.dd>
+ {rows.length === 0 && (
+ <tr><td colSpan={5} className="px-5 py-10 text-center text-gray-500">No state matches “{query}”.</td></tr>
  )}
- </AnimatePresence>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ <p className="mt-4 text-[14px] text-gray-500">Every air shipment carries a £20 handling fee. Minimum weights apply per shipment.</p>
+ </div>
+
+ {/* Electronics */}
+ <div id="electronics" className="mt-20 scroll-mt-36">
+ <BlockHeading eyebrow="Fixed prices, door to door in Lagos" title="TVs, laptops and phones"
+ intro="One flat price per item, delivered to a Lagos address. For other states, ask for a quote." />
+ <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+ {FIXED_ITEM_RATES.map((row) => (
+ <li key={row.item} className="flex flex-col justify-between rounded-[18px] bg-[#F6FAFF] p-5 ring-1 ring-[#E3EAF7]">
+ <span className="text-[14.5px] font-semibold text-gray-700">{row.item}</span>
+ <span className="mt-3 text-[26px] font-extrabold tracking-[-0.03em] text-[#00112E]">£{row.price}</span>
+ </li>
+ ))}
+ </ul>
+ <p className="mt-4 flex items-start gap-2 text-[14px] text-gray-600">
+ <AlertCircle size={16} className="mt-0.5 flex-shrink-0 text-amber-600" aria-hidden="true" />
+ Items must be properly packed; we cannot accept liability for poorly packed goods.
+ </p>
+ </div>
+
+ {/* Cars and containers */}
+ <div id="vehicles" className="mt-20 scroll-mt-36">
+ <BlockHeading eyebrow="Port to port, Tin Can Island or Apapa" title="Cars and containers"
+ intro="Prices cover the sea passage only. Loading, haulage and clearing are quoted separately." />
+ <div className="grid gap-5 lg:grid-cols-2">
+ <div className="rounded-[24px] p-7 ring-1 ring-[#E3EAF7]">
+ <p className="flex items-center gap-2 text-[16px] font-bold text-[#00112E]"><Truck size={18} className="text-[#0000CD]" aria-hidden="true" />Vehicles (RoRo)</p>
+ <dl className="mt-5 divide-y divide-[#EEF2F9]">
+ {VEHICLE_RATES.map((row) => (
+ <div key={row.type} className="flex items-baseline justify-between gap-4 py-3.5">
+ <dt className="text-[15px] text-gray-700">{row.type}{row.note && <span className="ml-2 text-[13px] text-gray-500">{row.note}</span>}</dt>
+ <dd className={`text-[16px] font-bold ${row.roro.startsWith("£") ? "text-[#00112E]" : "text-gray-500"}`}>{row.roro}</dd>
  </div>
  ))}
  </dl>
- </motion.div>
  </div>
- </section>
- );
-}
+ <div className="flex flex-col rounded-[24px] p-7 ring-1 ring-[#E3EAF7]">
+ <p className="flex items-center gap-2 text-[16px] font-bold text-[#00112E]"><Anchor size={18} className="text-[#0000CD]" aria-hidden="true" />Containers</p>
+ <dl className="mt-5 divide-y divide-[#EEF2F9]">
+ {CONTAINER_RATES.map((row) => (
+ <div key={row.type} className="flex items-baseline justify-between gap-4 py-3.5">
+ <dt className="text-[15px] text-gray-700">{row.type} container</dt>
+ <dd className="text-[16px] font-bold text-gray-500">{row.price}</dd>
+ </div>
+ ))}
+ </dl>
+ <Link href="/contact" className="group mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-[#0000CD] px-6 py-3 text-[15px] font-bold text-white transition-colors hover:bg-[#000f89]">
+ Request a container quote <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+ </Link>
+ </div>
+ </div>
+ </div>
 
-// ─── FINAL CTA ────────────────────────────────────────────────────────────────
-function FinalCTA() {
- const ref = useRef(null);
- const inView = useInView(ref, { once: true, margin: "-40px" });
- return (
- <section ref={ref} className="relative bg-[#00061a] overflow-hidden"
- aria-label="Book UK to Nigeria sea or air freight R-Zone Enterprises">
- <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
- style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
- style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(8,24,168,0.22) 0%, transparent 70%)" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
- <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-16 md:py-20">
- <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
- <motion.div className="border border-white/[0.1] bg-white/[0.04] p-8 relative overflow-hidden group hover:border-[#0818A8]/50 transition-all duration-300"
- initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
- <Calendar size={22} className="text-[#1F51FF] mb-5" aria-hidden="true" />
- <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Book the Next Sailing to Nigeria</h3>
- <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6">
- May and June {YEAR} sailings are now open. Secure your cargo space weekly cut-off dates apply.
- Sea freight to Lagos from £2/kg.
- </p>
- <Link href="/quote" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
- aria-label="Book sea freight from UK to Nigeria">
- Book Sea Freight <ArrowRight size={11} aria-hidden="true" />
- </Link>
- </motion.div>
- <motion.div className="border border-white/[0.1] bg-white/[0.04] p-8 relative overflow-hidden group hover:border-[#0818A8]/50 transition-all duration-300"
- initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.12 }}>
- <div className="h-[2px] bg-gradient-to-r from-[#1F51FF] to-[#0437F2] absolute top-0 left-0 w-0 group-hover:w-full transition-all duration-500" aria-hidden="true" />
- <BarChart3 size={22} className="text-[#1F51FF] mb-5" aria-hidden="true" />
- <h3 className="text-white font-black text-[20px] tracking-[-0.01em] mb-3">Get a Free Quote UK to Nigeria</h3>
- <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-6">
- Tell us about your cargo and we&apos;ll give you a precise price air or sea, personal or commercial. Same-day response.
- </p>
- <div className="flex flex-wrap gap-3">
- <Link href="/quote" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 hover:border-white/40 text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
- aria-label="Get a free UK to Nigeria cargo quote from R-Zone">
- Get Free Quote
- </Link>
- <a href="tel:+448007720864" className="inline-flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.07em] uppercase px-4 py-3 transition-colors"
- aria-label="Call R-Zone UK: +44 800 772 0864">
- <Phone size={12} aria-hidden="true" />Call Us
- </a>
+ {/* Extras */}
+ <div id="extras" className="mt-20 scroll-mt-36">
+ <BlockHeading eyebrow="Optional, shown on your quote" title="Extras, and what is always included" />
+ <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
+ <dl className="divide-y divide-[#EEF2F9] rounded-[24px] px-7 py-2 ring-1 ring-[#E3EAF7]">
+ {DOOR_SURCHARGES.map((item) => (
+ <div key={item.item} className="flex items-baseline justify-between gap-4 py-4">
+ <dt>
+ <span className="block text-[15.5px] font-semibold text-[#00112E]">{item.item}</span>
+ <span className="block text-[14px] text-gray-500">{item.note}</span>
+ </dt>
+ <dd className="whitespace-nowrap text-[16px] font-bold text-[#00112E]">{item.price}</dd>
  </div>
- </motion.div>
+ ))}
+ </dl>
+ <div className="rounded-[24px] bg-[#00112E] p-7 text-white">
+ <p className="text-[16px] font-bold text-white">Included with every shipment</p>
+ <ul className="mt-5 space-y-3.5">
+ {INCLUDED_ALWAYS.map(({ icon: Icon, label }) => (
+ <li key={label} className="flex items-center gap-3 text-[15px] text-white/85">
+ <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10" aria-hidden="true"><Icon size={15} className="text-[#A6A6FF]" /></span>
+ {label}
+ </li>
+ ))}
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ {/* FAQs: answers are always in the page (FAQPage schema must match visible content) */}
+ <div id="faq" className="mt-20 scroll-mt-36 max-w-4xl">
+ <BlockHeading eyebrow="Prices and payment" title="Common questions" />
+ <div className="space-y-3">
+ {FAQS_PRICING.map((item) => (
+ <details key={item.q} className="group rounded-[18px] bg-white ring-1 ring-[#E3EAF7] open:ring-[#0000CD]/30">
+ <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-[#00112E] [&::-webkit-details-marker]:hidden">
+ {item.q}
+ <ChevronDown size={18} className="flex-shrink-0 text-gray-400 transition-transform group-open:rotate-180" aria-hidden="true" />
+ </summary>
+ <p className="px-6 pb-6 text-[15.5px] leading-[1.75] text-gray-600">{item.a}</p>
+ </details>
+ ))}
+ </div>
  </div>
  </div>
  </section>
@@ -1043,7 +822,7 @@ const SCHEMA_LD = {
  "@type": "BreadcrumbList",
  "itemListElement": [
  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://r-zoneenterprises.com" },
- { "@type": "ListItem", "position": 2, "name": "Schedules & Prices", "item": "https://r-zoneenterprises.com/schedules-prices" },
+ { "@type": "ListItem", "position": 2, "name": "Schedules & Prices", "item": "https://r-zoneenterprises.com/schedulesprices" },
  ],
  },
  {
@@ -1058,7 +837,7 @@ const SCHEMA_LD = {
  "@type": "Service",
  "name": "Sea Freight UK to Nigeria Weekly Sailings",
  "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
- "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4 6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria from £2/kg.",
+ "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4 to 6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria from £2/kg.",
  "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "2.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £2 per kg" },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Sea Freight",
@@ -1068,15 +847,15 @@ const SCHEMA_LD = {
  "name": "Air Freight UK to Nigeria Weekly Departures",
  "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
  "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday arrives Lagos the following Friday. 7 days transit.",
- "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.00", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5.50 per kg" },
+ "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.50", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5.50 per kg, plus a £20 handling fee per shipment" },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Air Freight",
  },
  {
  "@type": "WebPage",
- "url": "https://r-zoneenterprises.com/schedules-prices",
+ "url": "https://r-zoneenterprises.com/schedulesprices",
  "name": "UK to Nigeria Cargo Schedules & Prices R-Zone Enterprises",
- "description": "Full 2025 UK to Nigeria sea freight sailing schedule and air freight departure dates. Transparent cargo rates sea freight from £2/kg, air freight from £5.50/kg. No hidden fees.",
+ "description": "Weekly UK to Nigeria sea sailings and Friday air departures, with per-kg rates for all 36 states. Sea freight from £2/kg, air freight from £5.50/kg.",
  "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
  },
  ],
@@ -1088,10 +867,9 @@ export default function SchedulesPricesClient() {
  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_LD) }} />
  <div className={`${montserrat.variable} ${outfit.variable} font-[family-name:var(--font-montserrat)] w-full`}>
  <Hero />
+ <JumpNav />
  <SchedulesSection />
- <SectionDivider />
  <PricingSection />
- <FinalCTA />
  </div>
  </>
  );

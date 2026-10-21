@@ -1,10 +1,10 @@
-// app/blog/cargo-to-nigeria-from-uk/page.jsx
-// URL: https://r-zoneenterprises.com/blog/cargo-to-nigeria-from-uk
+// app/blog/cargo-to-enugu-and-south-east-nigeria-from-uk/page.jsx
+// URL: https://r-zoneenterprises.com/blog/cargo-to-enugu-and-south-east-nigeria-from-uk
 
 import ArticleReader from "../[slug]/ArticleReader";
 import { SITE_URL, ORGANIZATION_SCHEMA, getArticleBySlug, getRelatedArticles } from "../../../lib/articles";
 
-const article = getArticleBySlug("cargo-to-nigeria-from-uk");
+const article = getArticleBySlug("cargo-to-enugu-and-south-east-nigeria-from-uk");
 const related = getRelatedArticles(article.id, article.category, article.relatedSlugs, 3);
 
 const schemas = [
@@ -42,18 +42,6 @@ const schemas = [
  acceptedAnswer: { "@type": "Answer", text: f.answer },
  })),
  },
- // Speakable voice search optimisation for transit time questions
- {
- "@context": "https://schema.org",
- "@type": "WebPage",
- "@id": `${article.canonicalUrl}#webpage`,
- url: article.canonicalUrl,
- name: article.title,
- speakable: {
- "@type": "SpeakableSpecification",
- cssSelector: ["h1", ".article-quick-answer", ".article-excerpt"],
- },
- },
  { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
 ];
 
@@ -73,14 +61,25 @@ export const metadata = {
  modifiedTime: article.dateModified,
  tags: article.tags,
  },
- twitter: { card: "summary_large_image", site: "@RZoneCargo", title: { absolute: article.metaTitle }, description: article.metaDesc, images: [article.ogImage] },
- robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+ twitter: {
+ card: "summary_large_image",
+ site: "@RZoneCargo",
+ title: { absolute: article.metaTitle },
+ description: article.metaDesc,
+ images: [article.ogImage],
+ },
+ robots: {
+ index: true, follow: true,
+ googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+ },
 };
 
 export default function Page() {
  return (
  <>
- {schemas.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
+ {schemas.map((s, i) => (
+ <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+ ))}
  <ArticleReader article={article} related={related} />
  </>
  );

@@ -17,9 +17,19 @@ import { montserrat } from "../lib/fonts";
 
 // ─── Font ─────────────────────────────────────────────────────────────────────
 
-// ─── Top utility bar ──────────────────────────────────────────────────────────
+// ─── Header ───────────────────────────────────────────────────────────────────
+// Modelled on Manuport, Labour and BitLayerX, which all open the same way:
+//  • A slim utility strip on a pale tint (small uppercase links), which folds
+//    away once the reader scrolls.
+//  • One solid white bar: logo left, a few readable links, and two solid pill
+//    actions (dark "Track", blue "Get a quote"), like Labour's Join / Donate.
+//  • Never see-through. A solid bar reads the same over every hero, and the
+//    navy hero below gets a clean edge to start from.
+//
+// Heights stay within what page heroes already pad for (80px mobile, 101px
+// desktop): 72px on mobile; 36px strip + 64px bar + 1px rule on desktop.
+// ─── Top utility strip ────────────────────────────────────────────────────────
 const TOP_LINKS = [
- { label: "EN", icon: Globe, href: "#", ariaLabel: "Select language" },
  { label: "+44 800 772 0864", icon: Phone, href: "tel:+448007720864", ariaLabel: "Call R-Zone UK office: +44 800 772 0864" },
  { label: "Support", icon: HelpCircle, href: "/support", ariaLabel: "Get support from R-Zone" },
  { label: "Contact Us", icon: MessageSquare, href: "/contact", ariaLabel: "Contact R-Zone Enterprises" },
@@ -39,7 +49,7 @@ const NAV_ITEMS = [
  ariaLabel: "R-Zone shipping and cargo services",
  dropdown: [
  { label: "All Services", href: "/services", icon: Globe, description: "Full overview of R-Zone cargo solutions" },
- { label: "Air Freight to Nigeria", href: "/services#air-freight", icon: Plane, description: "Fast UK Nigeria air cargo, 5 10 days" },
+ { label: "Air Freight to Nigeria", href: "/services#air-freight", icon: Plane, description: "Fast UK Nigeria air cargo, 5 to 10 days" },
  { label: "Sea Freight to Nigeria", href: "/services#sea-freight", icon: Ship, description: "Affordable weekly sea freight departures" },
  { label: "Door to Door Cargo", href: "/services#door-to-door", icon: Truck, description: "UK collection · Nigeria delivery" },
  { label: "Importation from Nigeria", href: "/services#importation", icon: Package, description: "Weekly air & sea imports handled end-to-end" },
@@ -106,9 +116,7 @@ const NAV_ITEMS = [
 ];
 
 // ─── Dropdown ─────────────────────────────────────────────────────────────────
-function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
- const wide = !!featured;
-
+function DropdownMenu({ items, isOpen, menuId, featured }) {
  return (
  <AnimatePresence>
  {isOpen && (
@@ -116,25 +124,16 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
  id={menuId}
  role="menu"
  aria-label="Submenu"
- className={`
- absolute top-full left-0 mt-0 shadow-2xl z-50 overflow-hidden border
- ${wide ? "w-[460px]" : "w-60"}
- ${transparent
- ? "bg-[#0c0c1e] border-white/10 shadow-black/60"
- : "bg-white border-gray-200 shadow-gray-300/40"
- }
- `}
- initial={{ opacity: 0, y: -6 }}
+ className={`absolute top-full left-0 z-50 overflow-hidden rounded-b-[18px] bg-white ring-1 ring-black/[0.06] shadow-[0_28px_60px_-24px_rgba(0,17,46,0.4)] ${
+ featured ? "w-[580px]" : "w-[320px]"
+ }`}
+ initial={{ opacity: 0, y: -4 }}
  animate={{ opacity: 1, y: 0 }}
- exit={{ opacity: 0, y: -6 }}
- transition={{ duration: 0.14, ease: "easeOut" }}
+ exit={{ opacity: 0, y: -4 }}
+ transition={{ duration: 0.16, ease: "easeOut" }}
  >
- {/* Accent line */}
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
-
- <div className={wide ? "flex" : ""}>
- {/* Items */}
- <div className={`flex flex-col ${wide ? "flex-1" : "w-full"}`}>
+ <div className={featured ? "flex" : ""}>
+ <div className="flex-1 p-2">
  {items.map((item) => {
  const Icon = item.icon;
  return (
@@ -142,96 +141,51 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
  key={item.href + item.label}
  href={item.href}
  role="menuitem"
- className={`
- flex items-start gap-3 px-4 py-2.5 text-[13px]
- transition-colors duration-100 group border-b last:border-0
- ${transparent
- ? "text-white hover:bg-[#0818A8]/75 hover:text-white border-white/5"
- : "text-gray-800 hover:bg-[#0818A8] hover:text-white border-gray-100"
- }
- `}
+ className="group flex items-start gap-3 rounded-[12px] px-3 py-2.5 transition-colors duration-150 hover:bg-[#F3F6FF] focus-visible:bg-[#F3F6FF] focus-visible:outline-none"
  >
  {Icon && (
- <Icon
- size={13}
- className={`flex-shrink-0 mt-0.5 transition-colors ${
- transparent
- ? "text-[#1F51FF] group-hover:text-white"
- : "text-[#0818A8] group-hover:text-white"
- }`}
- aria-hidden="true"
- />
- )}
- <div>
- <span className="block font-semibold leading-tight">{item.label}</span>
- {item.description && (
- <span className={`block text-[13px] font-normal mt-0.5 leading-snug ${
- transparent
- ? "text-white/80 group-hover:text-white"
- : "text-gray-800 group-hover:text-white/80"
- }`}>
- {item.description}
+ <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[10px] bg-[#0000CD]/[0.08] text-[#4D4DFF] transition-colors duration-150 group-hover:bg-[#000f89] group-hover:text-white" aria-hidden="true">
+ <Icon size={15} />
  </span>
  )}
- </div>
+ <span>
+ <span className="block text-[15px] font-semibold leading-tight text-[#00112E]">{item.label}</span>
+ {item.description && (
+ <span className="mt-0.5 block text-[13.5px] leading-snug text-gray-500">{item.description}</span>
+ )}
+ </span>
  </Link>
  );
  })}
  </div>
 
- {/* Featured panel */}
+ {/* Featured panel: the hero's navy and grid, in miniature */}
  {featured && (
- <div className={`w-44 flex-shrink-0 flex flex-col justify-between border-l p-4 ${
- transparent
- ? "border-white/10 bg-[#0818A8]/14"
- : "border-gray-200 bg-[#0818A8]/5"
- }`}>
- <div>
- <p className={`text-[13px] font-bold tracking-[0.24em] uppercase mb-3 ${
- transparent ? "text-[#1F51FF]" : "text-[#0818A8]"
- }`}>
- Featured
- </p>
+ <div className="relative w-[200px] flex-shrink-0 overflow-hidden bg-[#00112E] p-5 text-white">
+ <span
+ className="absolute inset-0 opacity-[0.05] pointer-events-none"
+ style={{
+ backgroundImage:
+ "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
+ backgroundSize: "32px 32px",
+ }}
+ aria-hidden="true"
+ />
+ <div className="relative flex h-full flex-col">
+ <span className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#0000FF]" aria-hidden="true">
+ <featured.icon size={18} />
+ </span>
+ <p className="mt-4 text-[15px] font-bold leading-snug text-white">{featured.label}</p>
+ <p className="mt-1.5 text-[12.5px] leading-relaxed text-white/65">{featured.sub}</p>
  <Link
  href={featured.href}
  role="menuitem"
- className={`group block p-3 transition-colors duration-200 rounded-sm ${
- transparent ? "hover:bg-white/8" : "hover:bg-[#0818A8]/8"
- }`}
+ className="group mt-auto inline-flex w-fit items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-[#00112E] transition-colors hover:bg-[#000f89] hover:text-white"
  >
- <div
- className={`w-8 h-8 rounded-sm flex items-center justify-center mb-2.5 ${
- transparent ? "bg-[#0818A8]/40" : "bg-[#0818A8]/12"
- }`}
- aria-hidden="true"
- >
- <featured.icon
- size={14}
- className={transparent ? "text-[#1F51FF]" : "text-[#0818A8]"}
- />
- </div>
- <p className={`font-bold text-[13px] leading-snug mb-1 ${
- transparent ? "text-white" : "text-gray-800"
- }`}>
- {featured.label}
- </p>
- <p className={`text-[13px] font-normal leading-relaxed ${
- transparent ? "text-white/80" : "text-gray-800"
- }`}>
- {featured.sub}
- </p>
+ Track now
+ <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
  </Link>
  </div>
- <Link
- href={featured.href}
- className={`flex items-center gap-1.5 text-[13px] font-bold tracking-[0.1em] uppercase mt-4 transition-colors duration-200 ${
- transparent
- ? "text-[#1F51FF] hover:text-white"
- : "text-[#0818A8] hover:text-[#0437F2]"
- }`}
- >
- Track Now <ArrowRight size={9} aria-hidden="true" />
- </Link>
  </div>
  )}
  </div>
@@ -242,7 +196,7 @@ function DropdownMenu({ items, isOpen, transparent, menuId, featured }) {
 }
 
 // ─── NavItem ──────────────────────────────────────────────────────────────────
-function NavItem({ item, pathname, transparent }) {
+function NavItem({ item, pathname }) {
  const [open, setOpen] = useState(false);
  const ref = useRef(null);
  const menuId = `nav-menu-${item.label.toLowerCase().replace(/\s+/g, "-")}`;
@@ -250,85 +204,53 @@ function NavItem({ item, pathname, transparent }) {
  const isActive =
  item.href === "/"
  ? pathname === "/"
- : pathname === item.href || pathname.startsWith(item.href + "/");
-
- const handleOutside = useCallback((e) => {
- if (ref.current && !ref.current.contains(e.target)) setOpen(false);
- }, []);
+ : pathname === item.href ||
+ pathname.startsWith(item.href + "/") ||
+ !!item.dropdown?.some((d) => pathname === d.href.split("#")[0]);
 
  useEffect(() => {
- document.addEventListener("mousedown", handleOutside);
- return () => document.removeEventListener("mousedown", handleOutside);
- }, [handleOutside]);
+ if (!open) return;
+ const outside = (e) => {
+ if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+ };
+ document.addEventListener("mousedown", outside);
+ return () => document.removeEventListener("mousedown", outside);
+ }, [open]);
 
- const handleKeyDown = useCallback((e) => {
- if (e.key === "Escape") setOpen(false);
- }, []);
+ useEffect(() => { setOpen(false); }, [pathname]);
 
- // ── Primary CTA "Get Quote"
- if (item.isPrimary) {
- return (
- <Link
- href={item.href}
- aria-label={item.ariaLabel}
- className="flex items-center gap-1.5 text-[13px] font-black tracking-[0.07em] uppercase bg-[#0818A8] hover:bg-[#0437F2] text-white px-4 py-[5px] rounded-sm transition-all duration-200 shadow-sm shadow-[#0818A8]/30"
- >
- {item.label}
- <ArrowRight size={10} aria-hidden="true" />
- </Link>
- );
- }
-
- // ── Track Shipment outlined ghost
- if (item.isTrack) {
- return (
- <Link
- href={item.href}
- aria-label={item.ariaLabel}
- className={`flex items-center gap-1.5 text-[13px] font-semibold px-4 py-[5px] border rounded-sm transition-all duration-200 ${
- transparent
- ? "border-white/40 text-white hover:border-white hover:text-white"
- : "border-gray-800 text-gray-800 hover:border-[#0818A8] hover:text-[#0818A8] bg-white"
- }`}
- >
- <MapPin size={11} aria-hidden="true" />
- {item.label}
- </Link>
- );
- }
-
- // ── Standard text link
- const textBase = transparent
- ? isActive ? "text-white font-semibold" : "text-white hover:text-white"
- : isActive ? "text-black font-semibold" : "text-black hover:text-black";
-
- const underlineBg = transparent ? "bg-white" : "bg-[#0818A8]";
-
- const baseClass = `
- relative flex items-center gap-1 text-[13px] font-normal
- tracking-normal transition-colors duration-150 py-1 group
- ${textBase}
- `;
-
- const underline = (
+ // The marker sits on the bar's bottom edge, so it reads as "you are in this
+ // section" rather than as a link underline.
+ const marker = (
  <span
- className={`absolute -bottom-[17px] left-0 h-[2px] ${underlineBg} transition-all duration-200 ${
- isActive ? "w-full" : "w-0 group-hover:w-full"
- }`}
  aria-hidden="true"
+ className={`absolute inset-x-4 -bottom-px h-[2px] rounded-full bg-[#0000CD] transition-opacity duration-200 ${
+ isActive ? "opacity-100" : "opacity-0"
+ }`}
  />
  );
+
+ // Soft pill on hover/open, a blue-tinted pill for the current section, plus
+ // a short rule on the bar's edge so "you are here" reads at a glance.
+ const linkClass = `group relative flex h-full items-center px-1 focus-visible:outline-none`;
+ const pillClass = `flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-[15px] font-semibold tracking-[-0.01em] transition-colors duration-150 group-focus-visible:ring-2 group-focus-visible:ring-[#0000FF] xl:px-4 xl:text-[15.5px] ${
+ isActive
+ ? "bg-[#0000CD]/[0.07] text-[#0000CD]"
+ : open
+ ? "bg-[#F2F4FA] text-[#00112E]"
+ : "text-[#00112E] hover:bg-[#F2F4FA]"
+ }`;
 
  if (!item.dropdown) {
  return (
  <Link
  href={item.href}
- className={baseClass}
+ className={linkClass}
  aria-label={item.ariaLabel}
  aria-current={isActive ? "page" : undefined}
  >
- {item.label}
- {underline}
+ <span className={pillClass}>{item.label}</span>
+ {marker}
  </Link>
  );
  }
@@ -336,34 +258,85 @@ function NavItem({ item, pathname, transparent }) {
  return (
  <div
  ref={ref}
- className="relative"
+ className="relative h-full"
  onMouseEnter={() => setOpen(true)}
  onMouseLeave={() => setOpen(false)}
- onKeyDown={handleKeyDown}
+ onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
  >
  <button
- className={baseClass}
+ type="button"
+ className={linkClass}
+ onClick={() => setOpen((v) => !v)}
  aria-expanded={open}
  aria-haspopup="true"
  aria-controls={menuId}
  aria-label={item.ariaLabel}
  >
+ <span className={pillClass}>
  {item.label}
  <ChevronDown
- size={12}
- className={`mt-px transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+ size={15}
+ className={`mt-px flex-shrink-0 opacity-55 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
  aria-hidden="true"
  />
- {underline}
+ </span>
+ {marker}
  </button>
  <DropdownMenu
  items={item.dropdown}
  isOpen={open}
- transparent={transparent}
  menuId={menuId}
  featured={item.featured}
  />
  </div>
+ );
+}
+
+// ─── Pill actions (shared by the bar and the drawer) ──────────────────────────
+function TrackPill({ className = "", onClick }) {
+ return (
+ <Link
+ href="/track"
+ onClick={onClick}
+ aria-label="Track your R-Zone cargo shipment"
+ className={`inline-flex flex-shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#00112E]/15 bg-white px-4 py-2.5 text-[15px] font-semibold text-[#00112E] transition-colors duration-200 hover:border-[#00112E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000FF] focus-visible:ring-offset-2 ${className}`}
+ >
+ <MapPin size={14} aria-hidden="true" />
+ Track
+ </Link>
+ );
+}
+
+function QuotePill({ className = "", onClick }) {
+ return (
+ <Link
+ href="/quote"
+ onClick={onClick}
+ aria-label="Get a free shipping quote from R-Zone"
+ className={`group inline-flex flex-shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-[#0000CD] px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_8px_20px_-8px_rgba(0,0,205,0.6)] transition-colors duration-200 hover:bg-[#000f89] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000FF] focus-visible:ring-offset-2 ${className}`}
+ >
+ Get a quote
+ <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
+ </Link>
+ );
+}
+
+function Wordmark({ size = 19 }) {
+ return (
+ <span className="flex items-center gap-3">
+ <Image
+ src={assets.logo}
+ alt=""
+ width={size + 21}
+ height={size + 21}
+ className="flex-shrink-0 rounded-[10px] ring-1 ring-black/[0.06]"
+ aria-hidden="true"
+ />
+ <span className="flex items-baseline gap-[0.3em] leading-none" style={{ fontSize: size }} itemProp="name">
+ <span className="font-black tracking-[0.02em] text-[#00112E]">R-ZONE</span>
+ <span className="font-black tracking-[0.02em] text-[#0000CD]">CARGO</span>
+ </span>
+ </span>
  );
 }
 
@@ -408,7 +381,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
  {isOpen && (
  <>
  <motion.div
- className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+ className="fixed inset-0 z-40 bg-[#00112E]/50 backdrop-blur-sm lg:hidden"
  initial={{ opacity: 0 }}
  animate={{ opacity: 1 }}
  exit={{ opacity: 0 }}
@@ -418,108 +391,58 @@ function MobileMenu({ isOpen, onClose, pathname }) {
 
  <motion.div
  ref={menuRef}
+ id="mobile-menu"
  role="dialog"
  aria-modal="true"
  aria-label="Navigation menu"
- className={`
- ${montserrat.variable} font-[family-name:var(--font-montserrat)]
- fixed top-0 right-0 h-full w-[300px] max-w-full
- bg-[#0d0d1f] border-l border-white/10 flex flex-col z-50 lg:hidden
- `}
+ className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] fixed top-0 right-0 z-50 flex h-full w-full max-w-[380px] flex-col bg-white shadow-[-8px_0_40px_rgba(0,17,46,0.18)] lg:hidden`}
  initial={{ x: "100%" }}
  animate={{ x: 0 }}
  exit={{ x: "100%" }}
- transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+ transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
  >
- {/* Top accent */}
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
-
- {/* Header */}
- <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
- <Link
- href="/"
- onClick={onClose}
- className="flex items-center gap-2.5"
- aria-label="R-Zone Enterprises home"
- >
- <Image
- src={assets.logo}
- alt=""
- width={30}
- height={30}
- className="rounded-sm flex-shrink-0"
- aria-hidden="true"
- />
- <div className="flex items-baseline gap-1.5">
- <span className="font-black text-white text-[14px] tracking-[0.08em] uppercase">
- R-ZONE
- </span>
- <span className="font-normal text-white text-[14px] uppercase">
- CARGO
- </span>
- </div>
+ <div className="flex h-[72px] items-center justify-between border-b border-black/[0.08] px-5">
+ <Link href="/" onClick={onClose} aria-label="R-Zone Enterprises home">
+ <Wordmark size={16} />
  </Link>
  <button
  onClick={onClose}
- className="p-1.5 hover:bg-white/10 rounded transition-colors"
+ className="rounded-full p-2 transition-colors hover:bg-black/[0.05]"
  aria-label="Close navigation menu"
  >
- <X size={17} className="text-white" aria-hidden="true" />
+ <X size={20} className="text-[#00112E]/70" aria-hidden="true" />
  </button>
  </div>
 
- {/* Quick action strip */}
- <div className="px-5 py-3 border-b border-white/10 flex gap-2">
- <Link
- href="/track"
- onClick={onClose}
- className="flex-1 flex items-center justify-center gap-1.5 border border-white/20 text-white text-[13px] font-bold py-2 rounded-sm hover:bg-white/8 transition-colors"
- aria-label="Track your shipment"
- >
- <MapPin size={11} className="text-[#1F51FF]" aria-hidden="true" />
- Track Shipment
- </Link>
- <Link
- href="/quote"
- onClick={onClose}
- className="flex-1 flex items-center justify-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black py-2 rounded-sm transition-colors tracking-[0.05em] uppercase"
- aria-label="Get a shipping quote"
- >
- Get Quote
- <ArrowRight size={10} aria-hidden="true" />
- </Link>
- </div>
-
- {/* Nav items */}
- <nav className="flex-1 overflow-y-auto" aria-label="Mobile navigation">
- {mobileNavItems.map((item) => (
- <div key={item.label} className="border-b border-white/8">
+ <nav className="flex-1 overflow-y-auto px-5 py-2" aria-label="Mobile navigation">
+ {mobileNavItems.map((item) => {
+ const active = pathname === item.href;
+ return (
+ <div key={item.label} className="border-b border-black/[0.06]">
  {item.dropdown ? (
  <>
  <button
  onClick={() => setExpanded(expanded === item.label ? null : item.label)}
- className="w-full flex items-center justify-between px-5 py-3.5 text-[13px] text-white hover:text-white transition-colors"
+ className="flex w-full items-center justify-between px-1 py-4 text-[17px] font-medium tracking-[-0.01em] text-[#00112E]"
  aria-expanded={expanded === item.label}
- aria-haspopup="true"
  >
  {item.label}
  <ChevronDown
- size={12}
- className={`transition-transform duration-200 text-white ${
- expanded === item.label ? "rotate-180" : ""
- }`}
+ size={18}
+ className={`text-[#00112E]/40 transition-transform duration-200 ${expanded === item.label ? "rotate-180" : ""}`}
  aria-hidden="true"
  />
  </button>
- <AnimatePresence>
+ <AnimatePresence initial={false}>
  {expanded === item.label && (
  <motion.div
  initial={{ height: 0 }}
  animate={{ height: "auto" }}
  exit={{ height: 0 }}
  transition={{ duration: 0.2 }}
- className="overflow-hidden bg-white/[0.03]"
+ className="overflow-hidden"
  >
+ <div className="pb-3">
  {item.dropdown.map((sub) => {
  const Icon = sub.icon;
  return (
@@ -527,19 +450,18 @@ function MobileMenu({ isOpen, onClose, pathname }) {
  key={sub.href + sub.label}
  href={sub.href}
  onClick={onClose}
- className="flex items-center gap-3 pl-8 pr-5 py-2.5 text-[13px] text-white hover:text-white hover:bg-white/5 transition-colors border-t border-white/5"
+ className="flex items-center gap-3 rounded-[12px] px-2 py-2.5 text-[15px] text-[#00112E]/80 transition-colors hover:bg-[#F3F6FF] hover:text-[#00112E]"
  >
  {Icon && (
- <Icon
- size={11}
- className="text-[#1F51FF] flex-shrink-0"
- aria-hidden="true"
- />
+ <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[10px] bg-[#0000FF]/[0.08] text-[#4D4DFF]" aria-hidden="true">
+ <Icon size={15} />
+ </span>
  )}
  {sub.label}
  </Link>
  );
  })}
+ </div>
  </motion.div>
  )}
  </AnimatePresence>
@@ -548,40 +470,32 @@ function MobileMenu({ isOpen, onClose, pathname }) {
  <Link
  href={item.href}
  onClick={onClose}
- aria-current={pathname === item.href ? "page" : undefined}
- className={`block px-5 py-3.5 text-[13px] transition-colors ${
- pathname === item.href
- ? "text-white font-semibold"
- : "text-white hover:text-white"
+ aria-current={active ? "page" : undefined}
+ className={`flex items-center justify-between px-1 py-4 text-[17px] font-medium tracking-[-0.01em] transition-colors ${
+ active ? "text-[#4D4DFF]" : "text-[#00112E] hover:text-[#4D4DFF]"
  }`}
  >
  {item.label}
+ <span aria-hidden="true" className="text-[#00112E]/30">›</span>
  </Link>
  )}
  </div>
- ))}
+ );
+ })}
  </nav>
 
- {/* Contact strip */}
- <div className="px-5 pt-4 pb-2 border-t border-white/10">
+ <div className="space-y-2.5 border-t border-black/[0.08] px-5 py-5">
+ <QuotePill onClick={onClose} className="w-full py-3.5 text-[15px]" />
+ <TrackPill onClick={onClose} className="w-full py-3.5 text-[15px]" />
  <a
  href="tel:+448007720864"
- className="flex items-center gap-2 text-white hover:text-white text-[13px] transition-colors mb-1.5"
+ className="flex items-center justify-center gap-2 pt-1 text-[13.5px] text-gray-500 transition-colors hover:text-[#4D4DFF]"
  aria-label="Call R-Zone UK: +44 800 772 0864"
  >
- <Phone size={11} className="text-[#1F51FF]" aria-hidden="true" />
+ <Phone size={13} aria-hidden="true" />
  +44 (0) 800 772 0864
  </a>
- <a
- href="mailto:info@r-zoneenterprises.com"
- className="flex items-center gap-2 text-white hover:text-white text-[13px] transition-colors"
- aria-label="Email R-Zone"
- >
- <MessageSquare size={11} className="text-[#1F51FF]" aria-hidden="true" />
- info@r-zoneenterprises.com
- </a>
  </div>
- <div className="pb-6" />
  </motion.div>
  </>
  )}
@@ -594,29 +508,23 @@ export default function Navbar() {
  const pathname = usePathname();
  const [mobileOpen, setMobileOpen] = useState(false);
  const [scrolled, setScrolled] = useState(false);
- const [hasHero, setHasHero] = useState(false);
-
- const isHome = pathname === "/";
 
  useEffect(() => {
- if (typeof window === "undefined") return;
- const check = () => setHasHero(!!document.querySelector(".hero-section"));
- check();
- const obs = new MutationObserver(check);
- obs.observe(document.body, { childList: true, subtree: true });
- return () => obs.disconnect();
- }, [pathname]);
-
- const transparent = (isHome || hasHero) && !scrolled;
-
- useEffect(() => {
- const onScroll = () => setScrolled(window.scrollY > 80);
+ let frame = null;
+ const onScroll = () => {
+ if (frame) return;
+ frame = requestAnimationFrame(() => {
+ setScrolled(window.scrollY > 8);
+ frame = null;
+ });
+ };
  window.addEventListener("scroll", onScroll, { passive: true });
  onScroll();
- return () => window.removeEventListener("scroll", onScroll);
+ return () => {
+ window.removeEventListener("scroll", onScroll);
+ if (frame) cancelAnimationFrame(frame);
+ };
  }, []);
-
- useEffect(() => { setScrolled(window.scrollY > 80); }, [pathname]);
 
  useEffect(() => {
  document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -626,6 +534,7 @@ export default function Navbar() {
  useEffect(() => { setMobileOpen(false); }, [pathname]);
 
  const closeMobile = useCallback(() => setMobileOpen(false), []);
+ const barItems = NAV_ITEMS.filter((i) => !i.isTrack && !i.isPrimary && i.href !== "/");
 
  return (
  <>
@@ -663,141 +572,92 @@ export default function Navbar() {
  }}
  />
 
- <motion.header
+ <header
  className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] fixed top-0 left-0 right-0 z-30 w-full`}
- animate={{
- backgroundColor: transparent ? "rgba(0,6,26,0)" : "#ffffff",
- boxShadow: transparent
- ? "none"
- : "0 1px 0 rgba(0,0,0,0.08), 0 2px 16px rgba(0,0,0,0.07)",
- }}
- transition={{ duration: 0.3, ease: "easeInOut" }}
  role="banner"
  aria-label="R-Zone Enterprises site navigation"
  itemScope
  itemType="https://schema.org/WPHeader"
  >
-
- {/* ── ROW 1 Logo + utility ── */}
- <div className={`border-b transition-colors duration-300 ${
- transparent ? "border-white/10" : "border-black/10"
- }`}>
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex items-center justify-between h-[80px] md:h-[50px]">
-
- <Link
- href="/"
- className="flex items-center gap-2.5 group flex-shrink-0"
- aria-label="R-Zone Enterprises UK to Nigeria cargo specialists, home"
- itemProp="url"
+ {/* ── Utility strip (desktop): folds away once the reader scrolls ── */}
+ <div
+ className="hidden overflow-hidden bg-[#F3F6FF] lg:block"
+ style={{
+ maxHeight: scrolled ? 0 : 36,
+ transition: "max-height 0.3s cubic-bezier(0.22,1,0.36,1)",
+ }}
  >
- <Image
- src={assets.logo}
- alt=""
- width={34}
- height={34}
- className="flex-shrink-0 rounded-sm group-hover:opacity-90 transition-opacity"
- aria-hidden="true"
- />
- <div className="flex items-baseline gap-1.5" itemProp="name">
- <span className={`font-black text-[18px] tracking-[0.06em] uppercase leading-none transition-colors duration-300 ${
- transparent ? "text-white" : "text-black"
- }`}>
- R-ZONE
- </span>
- <span className={`font-normal text-[18px] tracking-wide uppercase leading-none transition-colors duration-300 ${
- transparent ? "text-white" : "text-black"
- }`}>
- CARGO
- </span>
- </div>
- </Link>
-
- {/* Utility links desktop */}
- <div className="hidden lg:flex items-center gap-5" aria-label="Utility links">
+ <div className="mx-auto flex h-9 max-w-[1400px] items-center justify-between px-5 sm:px-8 xl:px-10">
+ <p className="text-[13px] font-medium text-[#00112E]/65">
+ Air &amp; sea freight, UK ⇄ Nigeria, since 2012
+ </p>
+ <ul className="flex items-center divide-x divide-[#000f89]/15" aria-label="Utility links">
  {TOP_LINKS.map((link) => {
  const Icon = link.icon;
  return (
+ <li key={link.label} className="px-4 last:pr-0">
  <Link
- key={link.label}
  href={link.href}
  aria-label={link.ariaLabel}
- className={`flex items-center gap-1.5 text-[13px] font-normal transition-colors duration-200 ${
- transparent
- ? "text-white hover:text-white"
- : "text-black hover:text-[#0818A8]"
- }`}
+ className="flex items-center gap-1.5 text-[12.5px] font-semibold uppercase tracking-[0.08em] text-[#000f89] transition-colors hover:text-[#4D4DFF]"
  >
- <Icon size={12} strokeWidth={1.6} aria-hidden="true" />
+ <Icon size={12} strokeWidth={2} aria-hidden="true" />
  {link.label}
  </Link>
+ </li>
  );
  })}
+ </ul>
+ </div>
  </div>
 
- {/* Mobile hamburger */}
+ {/* ── Main bar: solid white, always ── */}
+ <div
+ className="border-b border-black/[0.08] bg-white transition-shadow duration-300"
+ style={{ boxShadow: scrolled ? "0 8px 30px -12px rgba(0,17,46,0.18)" : "none" }}
+ >
+ <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between gap-6 px-5 sm:px-8 lg:h-[64px] xl:px-10">
+ <Link
+ href="/"
+ className="flex-shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000FF] focus-visible:ring-offset-2"
+ aria-label="R-Zone Enterprises UK to Nigeria cargo specialists, home"
+ itemProp="url"
+ >
+ <Wordmark />
+ </Link>
+
+ {/* The logo is the route home, so "Home" is not repeated here */}
+ <nav
+ className="hidden h-full flex-1 items-stretch justify-center lg:flex"
+ aria-label="Main navigation"
+ >
+ {barItems.map((item) => (
+ <div
+ key={item.label}
+ className={`h-full ${item.href === "/business-solutions" || item.href === "/contact" ? "hidden xl:block" : ""}`}
+ >
+ <NavItem item={item} pathname={pathname} />
+ </div>
+ ))}
+ </nav>
+
+ <div className="flex items-center gap-2">
+ <TrackPill className="hidden lg:inline-flex" />
+ <QuotePill className="hidden sm:inline-flex" />
  <button
  onClick={() => setMobileOpen(true)}
- className={`lg:hidden p-2 rounded transition-colors ${
- transparent ? "hover:bg-white/10" : "hover:bg-gray-100"
- }`}
+ className="rounded-full p-2.5 transition-colors hover:bg-black/[0.05] lg:hidden"
  aria-label="Open navigation menu"
  aria-expanded={mobileOpen}
  aria-controls="mobile-menu"
  aria-haspopup="true"
  >
- <Menu
- size={21}
- className={`transition-colors duration-300 ${
- transparent ? "text-white" : "text-black"
- }`}
- aria-hidden="true"
- />
+ <Menu size={22} className="text-[#00112E]" aria-hidden="true" />
  </button>
  </div>
  </div>
-
- {/* ── ROW 2 Nav ── */}
- <div className={`hidden lg:block border-b transition-colors duration-300 ${
- transparent ? "border-white/10" : "border-black/10"
- }`}>
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex items-center justify-between h-[50px]">
-
- {/* Left text nav links */}
- <nav
- className="flex items-center gap-5 xl:gap-6 h-full"
- aria-label="Main navigation"
- role="navigation"
- >
- {NAV_ITEMS.filter((i) => !i.isTrack && !i.isPrimary).map((item) => (
- <NavItem
- key={item.label}
- item={item}
- pathname={pathname}
- transparent={transparent}
- />
- ))}
- </nav>
-
- {/* Right CTA buttons */}
- <div
- className="flex items-center gap-2 flex-shrink-0"
- role="group"
- aria-label="Primary actions"
- >
- {NAV_ITEMS.filter((i) => i.isTrack || i.isPrimary).map((item) => (
- <NavItem
- key={item.label}
- item={item}
- pathname={pathname}
- transparent={transparent}
- />
- ))}
  </div>
-
- </div>
- </div>
-
- </motion.header>
+ </header>
 
  <MobileMenu isOpen={mobileOpen} onClose={closeMobile} pathname={pathname} />
  </>

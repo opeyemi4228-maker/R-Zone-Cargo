@@ -103,7 +103,7 @@ export default function SubscribersPage() {
  {monthEntries.map(([month, count]) => (
  <div key={month} className="flex-1 flex flex-col items-center">
  <motion.div
- className="w-full bg-[#0818A8]/20 hover:bg-[#0818A8]/50 transition-colors duration-200 rounded-sm"
+ className="w-full bg-[#000f89]/20 hover:bg-[#000f89]/50 transition-colors duration-200 rounded-sm"
  initial={{ height: 0 }}
  animate={{ height: `${(count / maxMonthVal) * 100}%` }}
  transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -131,11 +131,11 @@ export default function SubscribersPage() {
  <Search size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94a3b8] pointer-events-none" aria-hidden="true" />
  <input type="search" placeholder="Search email address…" value={search}
  onChange={e => setSearch(e.target.value)}
- className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#0818A8] focus:ring-2 focus:ring-[#0818A8]/10 rounded-sm transition-all duration-200 shadow-sm" />
+ className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#000f89] focus:ring-2 focus:ring-[#000f89]/10 rounded-sm transition-all duration-200 shadow-sm" />
  </div>
  {filtered.length > 0 && (
  <button onClick={handleExport}
- className="flex items-center gap-2 bg-white border border-[#e2e8f0] hover:border-[#0818A8]/40 hover:text-[#0818A8] text-[#475569] text-[12px] font-bold tracking-[0.08em] uppercase px-4 py-2.5 rounded-sm shadow-sm transition-all duration-200">
+ className="flex items-center gap-2 bg-white border border-[#e2e8f0] hover:border-[#000f89]/40 hover:text-[#000f89] text-[#475569] text-[12px] font-bold tracking-[0.08em] uppercase px-4 py-2.5 rounded-sm shadow-sm transition-all duration-200">
  <Download size={12} aria-hidden="true" />
  Export CSV
  </button>

@@ -34,7 +34,7 @@ const OPEN_ROLES = [
  "Identify and report process improvement opportunities",
  ],
  requirements: [
- "1 3 years experience in freight forwarding, logistics, or warehousing",
+ "1 to 3 years experience in freight forwarding, logistics, or warehousing",
  "Strong organisational skills and attention to detail",
  "Confident written and verbal communication",
  "Experience with freight management software (preferred)",
@@ -204,7 +204,7 @@ const PROCESS = [
  { num: "01", title: "Apply Online", body: "Submit your CV and a short covering note below. We review every application personally no automated rejections.", time: "3 min" },
  { num: "02", title: "Initial Phone Call", body: "If your background looks like a fit, we'll call for a 20-minute conversation about the role and your experience.", time: "20 min" },
  { num: "03", title: "Interview", body: "A focused interview with the hiring manager in person at our Essex office or via video call depending on the role.", time: "45 60 min" },
- { num: "04", title: "Offer & Start", body: "We move fast. Successful candidates typically receive an offer within a week of interview and can start within 2 4 weeks.", time: "1 4 weeks" },
+ { num: "04", title: "Offer & Start", body: "We move fast. Successful candidates typically receive an offer within a week of interview and can start within 2 to 4 weeks.", time: "1 to 4 weeks" },
 ];
 
 const fadeUp = {
@@ -215,11 +215,11 @@ const fadeUp = {
 function TagPill({ label, dark = false }) {
  return (
  <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-5 ${
- dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"
+ dark ? "border-[#0000FF]/30 bg-[#000f89]/14" : "border-[#000f89]/20 bg-[#000f89]/6"
  }`}>
- <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
+ <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#0000FF]" : "bg-[#000f89]"}`}
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
- <span className={`text-[13px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
+ <span className={`text-[13px] font-semibold ${dark ? "text-[#4D4DFF]" : "text-[#000f89]"}`}>{label}</span>
  </div>
  );
 }
@@ -228,11 +228,11 @@ function SectionHeading({ line1, accent, dark = false, id }) {
  const ref = useRef(null);
  const inView = useInView(ref, { once: true, margin: "-60px" });
  return (
- <h2 id={id} ref={ref} className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${dark ? "text-white" : "text-gray-900"}`}>
+ <h2 id={id} ref={ref} className={`font-extrabold text-[clamp(26px,4.5vw,52px)] leading-[1.06] tracking-[-0.03em] ${dark ? "text-white" : "text-gray-900"}`}>
  {line1}{" "}
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  {accent}
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#000f89] rounded-full" aria-hidden="true"
  initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
  </span>
  </h2>
@@ -249,27 +249,27 @@ function JobCard({ role, onApply }) {
  return (
  <motion.article
  ref={ref}
- className={`border bg-white overflow-hidden transition-all duration-300 ${role.urgent ? "border-[#0818A8]" : "border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8"}`}
+ className={`border bg-white overflow-hidden transition-all duration-300 rounded-[20px] ${role.urgent ? "border-[#000f89]" : "border-gray-200 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8"}`}
  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
  itemScope itemType="https://schema.org/JobPosting"
  >
  {role.urgent && (
- <div className="bg-[#0818A8] px-5 py-1.5 flex items-center gap-2">
+ <div className="bg-[#000f89] px-5 py-1.5 flex items-center gap-2">
  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" aria-hidden="true" />
- <span className="text-white text-[13px] font-bold tracking-[0.25em] uppercase">Urgently Hiring</span>
+ <span className="text-white text-[13px] font-semibold">Urgently Hiring</span>
  </div>
  )}
- <div className={`h-[2px] ${!role.urgent ? "bg-gradient-to-r from-gray-100 to-gray-100 group-hover:from-[#0818A8] group-hover:to-[#1F51FF]" : "bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"}`} aria-hidden="true" />
+ <div className={`h-[2px] ${!role.urgent ? "bg-gradient-to-r from-gray-100 to-gray-100 group-hover:from-[#000f89] group-hover:to-[#0000FF]" : "bg-gradient-to-r from-[#000f89] to-[#0000FF]"}`} aria-hidden="true" />
 
  <div className="p-6 md:p-7">
  {/* Header */}
  <div className="flex items-start justify-between gap-4 mb-5">
  <div className="flex items-start gap-4">
- <div className="w-11 h-11 bg-[#0818A8]/8 flex items-center justify-center flex-shrink-0" aria-hidden="true">
- <Icon size={18} className="text-[#0818A8]" />
+ <div className="w-11 h-11 bg-[#000f89]/8 flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
+ <Icon size={18} className="text-[#000f89]" />
  </div>
  <div>
- <h3 className="text-gray-900 font-black text-[17px] tracking-[-0.015em] mb-1" itemProp="title">{role.title}</h3>
+ <h3 className="text-gray-900 font-extrabold text-[17px] tracking-[-0.03em] mb-1" itemProp="title">{role.title}</h3>
  <div className="flex flex-wrap items-center gap-3">
  <span className="flex items-center gap-1.5 text-[13px] text-gray-600 font-normal">
  <Building2 size={11} className="text-gray-400" aria-hidden="true" />{role.department}
@@ -286,8 +286,8 @@ function JobCard({ role, onApply }) {
  </div>
  </div>
  <div className="text-right flex-shrink-0">
- <p className="text-[13px] font-bold tracking-[0.18em] uppercase text-gray-400 mb-0.5">Salary</p>
- <p className="text-[#0818A8] font-bold text-[13px] leading-tight" itemProp="baseSalary">{role.salary}</p>
+ <p className="text-gray-400 mb-0.5 text-[13px] font-semibold">Salary</p>
+ <p className="text-[#000f89] font-bold text-[13px] leading-tight" itemProp="baseSalary">{role.salary}</p>
  </div>
  </div>
 
@@ -297,7 +297,7 @@ function JobCard({ role, onApply }) {
  {/* Expand/collapse */}
  <button
  onClick={() => setExpanded(o => !o)}
- className="flex items-center gap-2 text-[13px] font-semibold text-[#0818A8] hover:text-[#0437F2] transition-colors mb-5"
+ className="flex items-center gap-2 text-[13px] font-semibold text-[#000f89] hover:text-[#0000CD] transition-colors mb-5"
  aria-expanded={expanded}>
  {expanded ? "Show Less" : "View Full Job Description"}
  <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.2 }} aria-hidden="true">
@@ -311,22 +311,22 @@ function JobCard({ role, onApply }) {
  exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-gray-100 mb-5">
  <div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Responsibilities</p>
+ <p className="text-gray-500 mb-3 text-[13px] font-semibold">Responsibilities</p>
  <ul className="space-y-2">
  {role.responsibilities.map((r, i) => (
  <li key={i} className="flex items-start gap-2.5">
- <CheckCircle size={11} className="text-[#0818A8] flex-shrink-0 mt-0.5" aria-hidden="true" />
+ <CheckCircle size={11} className="text-[#000f89] flex-shrink-0 mt-0.5" aria-hidden="true" />
  <span className="text-gray-700 text-[13px] font-normal leading-snug">{r}</span>
  </li>
  ))}
  </ul>
  </div>
  <div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-500 mb-3">Requirements</p>
+ <p className="text-gray-500 mb-3 text-[13px] font-semibold">Requirements</p>
  <ul className="space-y-2">
  {role.requirements.map((r, i) => (
  <li key={i} className="flex items-start gap-2.5">
- <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
+ <span className="w-1.5 h-1.5 rounded-full bg-[#000f89] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
  <span className="text-gray-700 text-[13px] font-normal leading-snug">{r}</span>
  </li>
  ))}
@@ -339,12 +339,12 @@ function JobCard({ role, onApply }) {
 
  {/* Level badge + Apply */}
  <div className="flex items-center justify-between">
- <span className="text-[13px] font-bold tracking-[0.15em] uppercase px-2.5 py-1 bg-[#0818A8]/8 text-[#0818A8]">
+ <span className="px-2.5 py-1 bg-[#000f89]/8 text-[#000f89] text-[13px] font-semibold">
  {role.level}
  </span>
  <button
  onClick={() => onApply(role)}
- className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-2.5 transition-all duration-200 shadow-md shadow-[#0818A8]/20"
+ className="group inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-2.5 transition-all duration-200 shadow-md shadow-[#000f89]/20 rounded-full"
  aria-label={`Apply for ${role.title}`}>
  Apply Now <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
  </button>
@@ -398,7 +398,7 @@ function ApplyModal({ role, onClose }) {
 
  const inputCls = (field) =>
  `w-full border text-gray-900 text-[13.5px] font-normal placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200
- focus:border-[#0818A8] focus:ring-1 focus:ring-[#0818A8]/20 bg-white
+ focus:border-[#000f89] focus:ring-1 focus:ring-[#000f89]/20 bg-white
  ${errors[field] && touched[field] ? "border-red-400 bg-red-50/30" : "border-gray-300 hover:border-gray-400"}`;
 
  const labelCls = "block text-[13px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
@@ -411,19 +411,19 @@ function ApplyModal({ role, onClose }) {
  className="relative bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto"
  initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}
  role="dialog" aria-modal="true" aria-labelledby="modal-title">
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
 
  {status === "success" ? (
  <div className="p-10 text-center">
- <motion.div className="w-14 h-14 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-5"
+ <motion.div className="w-14 h-14 bg-[#000f89] rounded-full flex items-center justify-center mx-auto mb-5"
  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}>
  <CheckCircle size={24} className="text-white" aria-hidden="true" />
  </motion.div>
- <h3 className="font-black text-[22px] text-gray-900 tracking-[-0.015em] mb-3">Application Submitted!</h3>
+ <h3 className="font-extrabold text-[22px] text-gray-900 tracking-[-0.03em] mb-3">Application Submitted!</h3>
  <p className="text-gray-600 text-[14px] font-normal leading-relaxed mb-6">
- Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. We've received your application for <strong className="font-semibold text-gray-800">{role?.title}</strong> and will be in touch within 3 5 working days.
+ Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. We've received your application for <strong className="font-semibold text-gray-800">{role?.title}</strong> and will be in touch within 3 to 5 working days.
  </p>
- <button onClick={onClose} className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200" aria-label="Close modal">
+ <button onClick={onClose} className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full" aria-label="Close modal">
  Close
  </button>
  </div>
@@ -431,7 +431,7 @@ function ApplyModal({ role, onClose }) {
  <div className="p-7 md:p-8">
  <div className="flex items-start justify-between mb-6">
  <div>
- <h3 id="modal-title" className="font-black text-[18px] text-gray-900 tracking-[-0.015em]">Apply: {role?.title}</h3>
+ <h3 id="modal-title" className="font-extrabold text-[18px] text-gray-900 tracking-[-0.03em]">Apply: {role?.title}</h3>
  <p className="text-gray-600 text-[13px] font-normal mt-0.5">{role?.location} · {role?.type}</p>
  </div>
  <button onClick={onClose} className="p-1.5 hover:bg-gray-100 transition-colors" aria-label="Close application form">
@@ -493,11 +493,11 @@ function ApplyModal({ role, onClose }) {
  </div>
 
  <p className="text-gray-500 text-[13px] font-normal leading-relaxed mb-5">
- Your data will be used only for recruitment purposes. See our <Link href="/privacy" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Privacy Policy</Link>.
+ Your data will be used only for recruitment purposes. See our <Link href="/privacy" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Privacy Policy</Link>.
  </p>
 
  <button onClick={handleSubmit} disabled={status === "loading"}
- className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25 w-full justify-center"
+ className="inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#000f89]/25 w-full justify-center rounded-full"
  aria-label="Submit application" aria-busy={status === "loading"}>
  {status === "loading"
  ? <><Loader2 size={13} className="animate-spin" aria-hidden="true" /> Submitting…</>
@@ -550,16 +550,16 @@ export default function CareersPage() {
  <div className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-white min-h-screen`}>
 
  {/* ── HERO ── */}
- <section className="relative bg-[#00061a] overflow-hidden" aria-labelledby="careers-hero-heading">
+ <section className="relative bg-[#00112E] overflow-hidden hero-section" aria-labelledby="careers-hero-heading">
  <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-20%] right-[5%] w-[700px] h-[600px] bg-[#0818A8]/16 rounded-full blur-[140px]" />
- <div className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/10 rounded-full blur-[120px]" />
+ <div className="absolute top-[-20%] right-[5%] w-[700px] h-[600px] bg-[#000f89]/16 rounded-full blur-[140px]" />
+ <div className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[400px] bg-[#0000FF]/10 rounded-full blur-[120px]" />
  </div>
 
  <div ref={heroRef} className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 pt-[100px] pb-16 md:pb-20">
- <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10"
+ <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10 pt-3.5 lg:mt-[11px] max-lg:-mt-[16px]"
  initial={{ opacity: 0 }} animate={heroInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
  <Link href="/" className="text-white/60 text-[13px] font-medium hover:text-white transition-colors">Home</Link>
  <ChevronRight size={11} className="text-white/30" aria-hidden="true" />
@@ -570,11 +570,11 @@ export default function CareersPage() {
  <div className="lg:col-span-7">
  <motion.div initial={{ opacity: 0, y: 24 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
  <TagPill label={`${OPEN_ROLES.length} Open Roles`} dark />
- <h1 id="careers-hero-heading" className="font-black text-[clamp(38px,7vw,78px)] text-white leading-[0.88] tracking-[-0.035em] uppercase mb-6">
+ <h1 id="careers-hero-heading" className="font-extrabold text-[clamp(38px,7vw,78px)] text-white leading-[1.06] tracking-[-0.035em] mb-6">
  Build Something<br />
  <span className="relative inline-block">
- <span className="text-[#1F51FF]">That Matters.</span>
- <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <span className="text-[#4D4DFF]">That Matters.</span>
+ <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width: 0 }} animate={heroInView ? { width: "100%" } : {}} transition={{ duration: 0.6, delay: 0.8 }} />
  </span>
  </h1>
@@ -582,10 +582,10 @@ export default function CareersPage() {
  We're a small team doing big things keeping families connected, businesses supplied, and the UK Nigeria corridor moving. If you want your work to have a real-world impact from day one, you're in the right place.
  </p>
  <div className="flex flex-wrap gap-4">
- <a href="#open-roles" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="View open roles">
+ <a href="#open-roles" className="group inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#000f89]/35 rounded-full" aria-label="View open roles">
  View Open Roles <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
  </a>
- <a href="#culture" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="Learn about our culture">
+ <a href="#culture" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 rounded-full" aria-label="Learn about our culture">
  Our Culture
  </a>
  </div>
@@ -603,11 +603,11 @@ export default function CareersPage() {
  ].map((s, i) => {
  const Icon = s.icon;
  return (
- <motion.div key={s.label} className="border border-white/[0.08] bg-white/[0.05] p-5 hover:border-white/[0.18] hover:bg-white/[0.08] transition-all duration-300"
+ <motion.div key={s.label} className="border border-white/[0.08] bg-white/[0.05] p-5 hover:border-white/[0.18] hover:bg-white/[0.08] transition-all duration-300 rounded-[20px]"
  initial={{ opacity: 0, y: 12 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.45 + i * 0.08 }}>
- <Icon size={15} className="text-[#1F51FF] mb-3" aria-hidden="true" />
+ <Icon size={15} className="text-[#4D4DFF] mb-3" aria-hidden="true" />
  <p className="text-white font-black text-[22px] leading-none tracking-[-0.02em]">{s.val}</p>
- <p className="text-white/70 text-[13px] font-semibold tracking-[0.06em] uppercase mt-0.5">{s.label}</p>
+ <p className="text-white/70 font-semibold mt-0.5 text-[13px]">{s.label}</p>
  <p className="text-white/45 text-[13px] font-normal mt-0.5">{s.sub}</p>
  </motion.div>
  );
@@ -621,7 +621,7 @@ export default function CareersPage() {
  {/* ── OPEN ROLES ── */}
  <section id="open-roles" className="relative bg-white scroll-mt-20" aria-labelledby="open-roles-heading">
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -640,7 +640,7 @@ export default function CareersPage() {
  </div>
  <motion.p className="text-gray-600 text-[13.5px] font-normal max-w-sm"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}>
- Don't see your perfect role? Email <a href="mailto:careers@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">careers@r-zoneenterprises.com</a> we always keep speculative applications on file.
+ Don't see your perfect role? Email <a href="mailto:careers@r-zoneenterprises.com" className="text-[#000f89] font-semibold hover:text-[#0000CD] transition-colors">careers@r-zoneenterprises.com</a> we always keep speculative applications on file.
  </motion.p>
  </div>
 
@@ -648,8 +648,8 @@ export default function CareersPage() {
  <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by department">
  {DEPARTMENTS.map(dept => (
  <button key={dept} onClick={() => setFilter(dept)}
- className={`px-4 py-2 text-[13px] font-semibold tracking-[0.04em] border transition-all duration-150 ${
- filter === dept ? "border-[#0818A8] bg-[#0818A8] text-white" : "border-gray-200 text-gray-600 hover:border-[#0818A8]/40 hover:text-[#0818A8] bg-white"
+ className={`px-4 py-2 text-[13px] font-semibold border transition-all duration-150 rounded-full ${
+ filter === dept ? "border-[#000f89] bg-[#000f89] text-white" : "border-gray-200 text-gray-600 hover:border-[#000f89]/40 hover:text-[#000f89] bg-white"
  }`}
  aria-pressed={filter === dept}>
  {dept}
@@ -674,10 +674,10 @@ export default function CareersPage() {
  </section>
 
  {/* ── CULTURE ── */}
- <section id="culture" className="relative bg-[#00061a] scroll-mt-20 overflow-hidden" aria-labelledby="culture-heading">
+ <section id="culture" className="relative bg-[#00112E] scroll-mt-20 overflow-hidden" aria-labelledby="culture-heading">
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -688,11 +688,11 @@ export default function CareersPage() {
  return (
  <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
  <TagPill label="Life at R-Zone" dark />
- <h2 id="culture-heading" className="font-black text-[clamp(26px,4.5vw,50px)] text-white leading-[0.92] tracking-[-0.028em] uppercase mb-6">
+ <h2 id="culture-heading" className="font-extrabold text-[clamp(26px,4.5vw,50px)] text-white leading-[1.06] tracking-[-0.03em] mb-6">
  Small Team.<br />
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Real Impact.
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
  </span>
  </h2>
@@ -713,13 +713,13 @@ export default function CareersPage() {
  const Icon = v.icon;
  return (
  <motion.div key={v.title} ref={ref}
- className="group border border-white/[0.07] bg-white/[0.04] p-6 hover:border-white/[0.18] hover:bg-white/[0.07] transition-all duration-300 relative overflow-hidden"
+ className="group border border-white/[0.07] bg-white/[0.04] p-6 hover:border-white/[0.18] hover:bg-white/[0.07] transition-all duration-300 relative overflow-hidden rounded-[20px]"
  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}>
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
- <div className="w-9 h-9 bg-[#0818A8]/25 flex items-center justify-center mb-4" aria-hidden="true">
- <Icon size={15} className="text-[#1F51FF]" />
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
+ <div className="w-9 h-9 bg-[#000f89]/25 flex items-center justify-center mb-4 rounded-full" aria-hidden="true">
+ <Icon size={15} className="text-[#4D4DFF]" />
  </div>
- <h3 className="text-white font-black text-[15px] tracking-[-0.01em] mb-2">{v.title}</h3>
+ <h3 className="text-white font-extrabold text-[15px] tracking-[-0.03em] mb-2">{v.title}</h3>
  <p className="text-white/65 text-[13px] font-normal leading-relaxed">{v.body}</p>
  </motion.div>
  );
@@ -732,7 +732,7 @@ export default function CareersPage() {
  {/* ── BENEFITS ── */}
  <section className="relative bg-white overflow-hidden" aria-labelledby="benefits-heading">
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -757,11 +757,11 @@ export default function CareersPage() {
  const Icon = b.icon;
  return (
  <motion.div key={b.title} ref={ref}
- className="border border-gray-200 bg-gray-50 p-6 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 group relative overflow-hidden"
+ className="border border-gray-200 bg-gray-50 p-6 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 group relative overflow-hidden rounded-[20px]"
  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.06 }}>
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#0818A8]" aria-hidden="true" />
- <div className="w-10 h-10 bg-[#0818A8]/8 flex items-center justify-center mb-4" aria-hidden="true">
- <Icon size={16} className="text-[#0818A8]" />
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#000f89]" aria-hidden="true" />
+ <div className="w-10 h-10 bg-[#000f89]/8 flex items-center justify-center mb-4 rounded-full" aria-hidden="true">
+ <Icon size={16} className="text-[#000f89]" />
  </div>
  <h3 className="text-gray-900 font-bold text-[14px] mb-2">{b.title}</h3>
  <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{b.body}</p>
@@ -775,7 +775,7 @@ export default function CareersPage() {
  {/* ── PROCESS ── */}
  <section className="relative bg-gray-50 overflow-hidden" aria-labelledby="process-heading">
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -804,17 +804,17 @@ export default function CareersPage() {
  const Icon = step.icon;
  return (
  <motion.div key={step.num} ref={ref}
- className="relative border border-gray-200 bg-white p-7 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 group"
+ className="relative border border-gray-200 bg-white p-7 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 group rounded-[20px]"
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}>
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#0818A8]" aria-hidden="true" />
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#000f89]" aria-hidden="true" />
  <div className="flex items-center justify-between mb-6">
- <span className="font-black text-[48px] text-[#0818A8]/8 leading-none tracking-[-0.02em]" aria-hidden="true">{step.num}</span>
- <div className="flex items-center gap-1.5 border border-[#0818A8]/15 bg-[#0818A8]/5 px-2.5 py-1">
- <Clock size={9} className="text-[#0818A8]" aria-hidden="true" />
- <span className="text-[13px] font-bold text-[#0818A8] tracking-[0.1em]">{step.time}</span>
+ <span className="font-black text-[48px] text-[#000f89]/8 leading-none tracking-[-0.02em]" aria-hidden="true">{step.num}</span>
+ <div className="flex items-center gap-1.5 border border-[#000f89]/15 bg-[#000f89]/5 px-2.5 py-1">
+ <Clock size={9} className="text-[#000f89]" aria-hidden="true" />
+ <span className="text-[13px] font-bold text-[#000f89] tracking-[0.1em]">{step.time}</span>
  </div>
  </div>
- <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-3">{step.title}</h3>
+ <h3 className="text-gray-900 font-extrabold text-[16px] tracking-[-0.03em] mb-3">{step.title}</h3>
  <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{step.body}</p>
  </motion.div>
  );
@@ -824,12 +824,12 @@ export default function CareersPage() {
  </section>
 
  {/* ── FINAL CTA ── */}
- <section className="relative bg-[#00061a] overflow-hidden" aria-label="Apply to join R-Zone">
+ <section className="relative bg-[#00112E] overflow-hidden" aria-label="Apply to join R-Zone">
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
- style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(8,24,168,0.22) 0%, transparent 70%)" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,15,137,0.22) 0%, transparent 70%)" }} />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 text-center">
  {(() => {
@@ -838,26 +838,26 @@ export default function CareersPage() {
  return (
  <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.65 }}>
  <TagPill label="Join the Team" dark />
- <h2 className="font-black text-[clamp(28px,5.5vw,58px)] text-white leading-[0.9] tracking-[-0.03em] uppercase mb-5">
- Don't See Your Role?<br /><span className="text-[#1F51FF]">Apply Anyway.</span>
+ <h2 className="font-extrabold text-[clamp(28px,5.5vw,58px)] text-white leading-[1.06] tracking-[-0.03em] mb-5">
+ Don't See Your Role?<br /><span className="text-[#4D4DFF]">Apply Anyway.</span>
  </h2>
  <p className="text-white/70 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
  We keep all speculative applications on file and contact strong candidates when the right opportunity opens. Email your CV and a covering note to our team.
  </p>
  <div className="flex flex-wrap justify-center gap-4 mb-10">
  <a href="mailto:careers@r-zoneenterprises.com"
- className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
+ className="group inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-8 py-4 transition-all duration-200 shadow-xl shadow-[#000f89]/30 rounded-full"
  aria-label="Email careers team">
  <Mail size={13} aria-hidden="true" /> careers@r-zoneenterprises.com
  </a>
- <a href="#open-roles" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-8 py-4 transition-all duration-200" aria-label="View all open roles">
+ <a href="#open-roles" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold px-8 py-4 transition-all duration-200 rounded-full" aria-label="View all open roles">
  View Open Roles
  </a>
  </div>
  <div className="flex flex-wrap justify-center gap-6">
  {["No closing dates", "Personal applications read by humans", "Response within 5 working days", "Inclusive employer"].map(t => (
  <span key={t} className="flex items-center gap-2 text-white/60 text-[13px] font-normal">
- <Check size={11} className="text-[#1F51FF]" aria-hidden="true" />{t}
+ <Check size={11} className="text-[#4D4DFF]" aria-hidden="true" />{t}
  </span>
  ))}
  </div>

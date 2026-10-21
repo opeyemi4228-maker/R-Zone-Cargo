@@ -53,7 +53,7 @@ function CategoryBadge({ cat }) {
  const found = CATEGORIES.find((c) => c.id === cat) || CATEGORIES[1];
  return (
  <span
- className="inline-flex items-center gap-1.5 text-[9.5px] font-black tracking-[0.2em] uppercase px-2.5 py-1.5 border"
+ className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 border text-[13px] font-semibold"
  style={{
  color: found.color,
  borderColor: `${found.color}30`,
@@ -118,7 +118,7 @@ function renderInline(text) {
  const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
  if (link) {
  const [, label, href] = link;
- const cls = "text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#1F51FF]";
+ const cls = "text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#4D4DFF]";
  return href.startsWith("/") ? (
  <Link key={idx} href={href} className={cls}>{label}</Link>
  ) : (
@@ -149,7 +149,7 @@ function RenderBlock({ block }) {
 
  if (block.startsWith("### ")) {
  return (
- <h3 className="font-black text-[16px] md:text-[17px] text-[#0b0f1a] leading-snug tracking-[-0.01em] pt-2">
+ <h3 className="font-extrabold text-[16px] md:text-[17px] text-[#00112E] leading-snug tracking-[-0.03em] pt-2">
  {renderInline(block.slice(4).trim())}
  </h3>
  );
@@ -159,10 +159,10 @@ function RenderBlock({ block }) {
  const rows = lines.filter((l) => !/^\|?\s*:?-{2,}/.test(l.trim())).map(splitRow);
  const [head, ...body] = rows;
  return (
- <div className="overflow-x-auto border border-gray-200 -mx-1 sm:mx-0">
+ <div className="overflow-x-auto border border-gray-200 -mx-1 sm:mx-0 rounded-[20px]">
  <table className="w-full text-left border-collapse min-w-[520px]">
  <thead>
- <tr className="bg-[#0818A8] text-white text-[11.5px] uppercase tracking-[0.06em]">
+ <tr className="bg-[#000f89] text-white text-[11.5px] uppercase tracking-[0.06em]">
  {head.map((c, ci) => (
  <th key={ci} scope="col" className="p-3.5 font-bold">{renderInline(c)}</th>
  ))}
@@ -202,7 +202,7 @@ function RenderBlock({ block }) {
  <ol className="space-y-3">
  {lines.map((l, li) => (
  <li key={li} className="flex items-start gap-3.5 text-gray-700 text-[15px] leading-[1.7]">
- <span className="flex-shrink-0 w-7 h-7 flex items-center justify-center bg-[#0818A8] text-white text-[12px] font-black mt-0.5" aria-hidden="true">
+ <span className="flex-shrink-0 w-7 h-7 flex items-center justify-center bg-[#000f89] text-white text-[12px] font-black mt-0.5 rounded-full" aria-hidden="true">
  {li + 1}
  </span>
  <span>{renderInline(l.trim().replace(/^\d+\. /, ""))}</span>
@@ -320,7 +320,7 @@ function SharePanel({ article }) {
  <button
  onClick={() => setOpen((o) => !o)}
  aria-expanded={open}
- className="inline-flex items-center gap-2 border border-gray-300 hover:border-[#0818A8] hover:text-[#0818A8] text-gray-700 text-[11px] font-bold tracking-[0.08em] uppercase px-4 py-2.5 transition-all duration-200 bg-white"
+ className="inline-flex items-center gap-2 border border-gray-300 hover:border-[#000f89] hover:text-[#000f89] text-gray-700 text-[14px] font-bold px-4 py-2.5 transition-all duration-200 bg-white rounded-full"
  >
  <Share2 size={12} aria-hidden="true" /> Share Article
  </button>
@@ -331,14 +331,14 @@ function SharePanel({ article }) {
  animate={{ opacity: 1, y: 0, scale: 1 }}
  exit={{ opacity: 0, y: 8, scale: 0.96 }}
  transition={{ duration: 0.18 }}
- className="absolute top-full left-0 mt-2 z-50 bg-white border border-gray-200 shadow-2xl min-w-[230px] overflow-hidden"
+ className="absolute top-full left-0 mt-2 z-50 bg-white border border-gray-200 shadow-2xl min-w-[230px] overflow-hidden rounded-[20px]"
  >
  {/* URL preview */}
  <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
- <p className="text-[9px] font-black tracking-[0.2em] uppercase text-gray-400 mb-1">
+ <p className="text-gray-400 mb-1 text-[13px] font-semibold">
  Direct Article Link
  </p>
- <p className="text-[10.5px] font-mono text-[#0818A8] truncate max-w-[200px]">
+ <p className="text-[10.5px] font-mono text-[#000f89] truncate max-w-[200px]">
  r-zoneenterprises.com/blog/{article.slug}
  </p>
  </div>
@@ -346,7 +346,7 @@ function SharePanel({ article }) {
  {/* Copy link */}
  <button
  onClick={copy}
- className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#0818A8] transition-colors text-left border-b border-gray-100"
+ className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#000f89] transition-colors text-left border-b border-gray-100"
  >
  {copied ? (
  <Check size={14} className="text-emerald-500 flex-shrink-0" />
@@ -359,7 +359,7 @@ function SharePanel({ article }) {
  {/* X / Twitter */}
  <button
  onClick={shareX}
- className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#0818A8] transition-colors text-left border-b border-gray-100"
+ className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#000f89] transition-colors text-left border-b border-gray-100"
  >
  <svg width={14} height={14} viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -370,7 +370,7 @@ function SharePanel({ article }) {
  {/* Facebook */}
  <button
  onClick={shareFb}
- className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#0818A8] transition-colors text-left border-b border-gray-100"
+ className="w-full flex items-center gap-3 px-4 py-3 text-[12px] font-semibold text-gray-800 hover:bg-gray-50 hover:text-[#000f89] transition-colors text-left border-b border-gray-100"
  >
  <svg width={14} height={14} viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -408,11 +408,11 @@ function RelatedCard({ article, index }) {
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.5, delay: index * 0.08 }}
- className="group flex flex-col border border-gray-200 bg-white hover:border-[#0818A8]/35 hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 overflow-hidden relative"
+ className="group flex flex-col border border-gray-200 bg-white hover:border-[#000f89]/35 hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 overflow-hidden relative rounded-[20px]"
  >
  {/* Top accent bar */}
  <div
- className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
+ className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]"
  aria-hidden="true"
  />
 
@@ -433,7 +433,7 @@ function RelatedCard({ article, index }) {
  </div>
  <div className="p-5 flex-1 flex flex-col">
  <CategoryBadge cat={article.category} />
- <p className="font-black text-[13.5px] text-gray-900 leading-snug tracking-[-0.01em] mt-2 mb-3 group-hover:text-[#0818A8] transition-colors line-clamp-2">
+ <p className="font-black text-[13.5px] text-gray-900 leading-snug tracking-[-0.01em] mt-2 mb-3 group-hover:text-[#000f89] transition-colors line-clamp-2">
  {article.title}
  </p>
  <ArticleMeta article={article} />
@@ -465,116 +465,81 @@ export default function ArticleReader({ article, related }) {
  className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-white min-h-screen`}
  aria-labelledby="article-h1"
  >
- {/* ── HERO ────────────────────────────────────────────────────────────── */}
- <div className="relative bg-[#000208] overflow-hidden">
- {/* Grid background */}
- <div
- className="absolute inset-0 opacity-[0.025] pointer-events-none"
- aria-hidden="true"
- style={{
- backgroundImage:
- "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
- backgroundSize: "64px 64px",
- }}
- />
+ {/* ── HERO: white editorial, same as the custom-built guides ─────────── */}
+ {/* Title and intro on white, then the photo large and rounded with the
+ byline over it (as on /blog/marine-cargo-insurance-uk-to-nigeria). */}
+ <header className="bg-white">
+ <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[97px] lg:pt-[124px]">
+ <motion.nav
+ aria-label="Breadcrumb"
+ className="flex items-center gap-2 text-[13px] font-medium"
+ initial={{ opacity: 0 }}
+ animate={{ opacity: 1 }}
+ transition={{ duration: 0.4 }}
+ >
+ <Link href="/" className="text-gray-500 hover:text-[#000f89] transition-colors">Home</Link>
+ <ChevronRight size={12} className="text-gray-300 flex-shrink-0" aria-hidden="true" />
+ <Link href="/blog" className="text-gray-500 hover:text-[#000f89] transition-colors">Blog</Link>
+ <ChevronRight size={12} className="text-gray-300 flex-shrink-0" aria-hidden="true" />
+ <span className="text-gray-800 line-clamp-1" aria-current="page">{article.title}</span>
+ </motion.nav>
 
- {/* Glow blobs */}
- <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-0 left-1/3 w-[600px] h-[400px] bg-[#0818A8]/15 rounded-full blur-[120px]" />
- <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[100px]" />
+ <motion.div
+ initial={{ opacity: 0, y: 18 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+ >
+ <div className="mt-8 flex items-center justify-between gap-4 flex-wrap">
+ <div className="flex items-center gap-3 flex-wrap">
+ <CategoryBadge cat={article.category} />
+ <span className="flex items-center gap-1.5 text-[13px] font-medium text-gray-500">
+ <Clock size={13} aria-hidden="true" />{article.readTime}
+ </span>
+ </div>
+ <SharePanel article={article} />
  </div>
 
- {/* Hero image */}
- <div className="relative h-[360px] md:h-[460px] overflow-hidden">
+ {/* H1: the most important on-page SEO element */}
+ <h1
+ id="article-h1"
+ className="mt-6 font-extrabold text-[clamp(30px,5.4vw,55px)] text-[#00112E] leading-[1.05] tracking-[-0.03em]"
+ >
+ {article.title}
+ </h1>
+
+ <p className="article-excerpt mt-5 max-w-3xl text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed">
+ {article.excerpt}
+ </p>
+ </motion.div>
+
+ <motion.div
+ className="relative mt-8 rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/7.5] bg-[#F6FAFF]"
+ initial={{ opacity: 0, y: 18 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+ >
  <Image
  src={article.img}
  alt={article.imgAlt}
  fill
  priority
- sizes="100vw"
- className="object-cover opacity-20"
+ sizes="(max-width: 940px) 100vw, 940px"
+ className="object-cover object-center"
  />
- <div
- className="absolute inset-0 bg-gradient-to-t from-[#00061a] via-[#00061a]/55 to-[#00061a]/20"
- aria-hidden="true"
- />
+ <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-8 flex gap-8 sm:gap-10">
+ <div>
+ <p className="text-white/65 text-[11px] font-medium mb-1">Written by</p>
+ <p className="text-white text-[14px] font-bold">{article.author}</p>
  </div>
-
- {/* Hero content */}
- <div className="relative z-10 max-w-[860px] mx-auto px-5 sm:px-8 -mt-60 md:-mt-72 pb-12 md:pb-16">
- {/* Breadcrumb SEO internal link signal */}
- <motion.nav
- aria-label="Breadcrumb"
- className="flex items-center gap-2 mb-6"
- initial={{ opacity: 0, x: -12 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.4 }}
- >
- <Link
- href="/"
- className="text-white/50 hover:text-white text-[11px] font-medium transition-colors"
- >
- Home
- </Link>
- <ChevronRight size={10} className="text-white/25" aria-hidden="true" />
- <Link
- href="/blog"
- className="text-white/50 hover:text-white text-[11px] font-medium transition-colors"
- >
- Blog
- </Link>
- <ChevronRight size={10} className="text-white/25" aria-hidden="true" />
- <span className="text-white/80 text-[11px] font-medium line-clamp-1">
- {article.title}
- </span>
- </motion.nav>
-
- {/* Back button */}
- <motion.button
- onClick={handleBack}
- className="flex items-center gap-2 text-white/60 hover:text-white text-[12px] font-bold tracking-[0.08em] uppercase mb-8 transition-colors"
- initial={{ opacity: 0, x: -12 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ duration: 0.4, delay: 0.05 }}
- aria-label="Back to all articles"
- >
- <ArrowLeft size={14} aria-hidden="true" /> Back to Insights
- </motion.button>
-
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.6, delay: 0.1 }}
- >
- {/* Category + read time */}
- <div className="flex items-center gap-3 mb-5 flex-wrap">
- <CategoryBadge cat={article.category} />
- <span className="text-white/40 text-[11px] font-medium">
- {article.readTime}
- </span>
+ <div>
+ <p className="text-white/65 text-[11px] font-medium mb-1">{article.dateModified && article.dateModified !== article.datePublished ? "Updated on" : "Published on"}</p>
+ <p className="text-white text-[14px] font-bold">{formatDate(article.dateModified || article.datePublished) || article.date}</p>
  </div>
-
- {/* H1 THE most important on-page SEO element */}
- <h1
- id="article-h1"
- className="font-black text-[clamp(22px,4.5vw,50px)] text-white leading-[0.9] tracking-[-0.03em] uppercase mb-6"
- >
- {article.title}
- </h1>
-
- {/* Excerpt */}
- <p className="article-excerpt text-white/65 text-[15px] font-light leading-relaxed mb-8 max-w-2xl">
- {article.excerpt}
- </p>
-
- {/* Meta + share */}
- <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-white/[0.08]">
- <ArticleMeta article={article} light />
- <SharePanel article={article} />
  </div>
  </motion.div>
  </div>
- </div>
+ </header>
 
  {/* ── ARTICLE BODY ─────────────────────────────────────────────────────── */}
  <div className="max-w-[860px] mx-auto px-5 sm:px-8 py-12 md:py-16">
@@ -582,8 +547,8 @@ export default function ArticleReader({ article, related }) {
  {/* Quick answer: a direct 40 to 60 word answer to the headline query,
  placed first so Google can lift it as a featured snippet. */}
  {article.quickAnswer && (
- <div className="article-quick-answer border-l-[4px] border-[#0818A8] bg-[#0818A8]/[0.04] px-6 py-5 mb-10">
- <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-2.5">
+ <div className="article-quick-answer border-l-[4px] border-[#000f89] bg-[#000f89]/[0.04] px-6 py-5 mb-10">
+ <p className="mb-2.5 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">
  Quick Answer
  </p>
  <p className="text-gray-900 text-[15.5px] leading-[1.75]">
@@ -598,7 +563,7 @@ export default function ArticleReader({ article, related }) {
  {article.keyFacts.map((f) => (
  <div key={f.label} className="bg-white p-4">
  <dt className="text-[10.5px] font-bold tracking-[0.12em] uppercase text-gray-500 mb-1.5">{f.label}</dt>
- <dd className="font-black text-[16px] text-[#0818A8] leading-tight">{f.value}</dd>
+ <dd className="font-black text-[16px] text-[#000f89] leading-tight">{f.value}</dd>
  </div>
  ))}
  </dl>
@@ -607,23 +572,23 @@ export default function ArticleReader({ article, related }) {
  {/* Table of contents */}
  {article.content.length > 2 && (
  <motion.div
- className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-6 mb-12"
+ className="border border-[#000f89]/15 bg-[#000f89]/4 p-6 mb-12 rounded-[20px]"
  initial={{ opacity: 0, y: 16 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.5 }}
  >
- <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-4">
+ <p className="mb-4 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">
  In This Article
  </p>
  <ol className="space-y-2.5">
  {article.content.map((sec, i) => (
  <li key={i} className="flex items-start gap-3">
- <span className="font-black text-[#0818A8]/35 text-[12px] flex-shrink-0 w-5 mt-0.5">
+ <span className="font-black text-[#000f89]/35 text-[12px] flex-shrink-0 w-5 mt-0.5">
  {i + 1}.
  </span>
  <a
  href={`#${sectionId(sec.h)}`}
- className="text-[13px] font-semibold text-gray-800 leading-snug hover:text-[#0818A8] hover:underline"
+ className="text-[13px] font-semibold text-gray-800 leading-snug hover:text-[#000f89] hover:underline"
  >
  {sec.h}
  </a>
@@ -645,7 +610,7 @@ export default function ArticleReader({ article, related }) {
  {/* H2 secondary keyword hierarchy */}
  <h2
  id={sectionId(sec.h)}
- className="scroll-mt-28 font-black text-[clamp(16px,2.5vw,22px)] text-[#0b0f1a] leading-tight tracking-[-0.02em] uppercase mb-5 pl-4 border-l-[3px] border-[#0818A8]"
+ className="scroll-mt-28 font-extrabold text-[clamp(16px,2.5vw,22px)] text-[#00112E] leading-tight tracking-[-0.03em] mb-5 pl-4 border-l-[3px] border-[#000f89]"
  >
  {sec.h}
  </h2>
@@ -663,7 +628,7 @@ export default function ArticleReader({ article, related }) {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.55, delay: 0.3 }}
  >
- <h2 id="faq" className="scroll-mt-28 font-black text-[clamp(18px,2.5vw,26px)] text-[#0b0f1a] tracking-[-0.02em] uppercase mb-8 pl-4 border-l-[3px] border-[#0818A8]">
+ <h2 id="faq" className="scroll-mt-28 font-extrabold text-[clamp(18px,2.5vw,26px)] text-[#00112E] tracking-[-0.03em] mb-8 pl-4 border-l-[3px] border-[#000f89]">
  Frequently Asked Questions
  </h2>
  <div className="divide-y divide-gray-100 border-y border-gray-100">
@@ -688,7 +653,7 @@ export default function ArticleReader({ article, related }) {
  {article.tags.map((t) => (
  <span
  key={t}
- className="text-[10px] font-semibold text-gray-500 border border-gray-200 px-3 py-1.5 hover:border-[#0818A8] hover:text-[#0818A8] transition-colors"
+ className="text-[10px] font-semibold text-gray-500 border border-gray-200 px-3 py-1.5 hover:border-[#000f89] hover:text-[#000f89] transition-colors"
  >
  #{t}
  </span>
@@ -709,7 +674,7 @@ export default function ArticleReader({ article, related }) {
  <SharePanel article={article} />
  <button
  onClick={handleBack}
- className="inline-flex items-center gap-2 border border-gray-200 hover:border-[#0818A8] text-gray-600 hover:text-[#0818A8] text-[11px] font-bold tracking-[0.08em] uppercase px-4 py-2.5 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-gray-200 hover:border-[#000f89] text-gray-600 hover:text-[#000f89] text-[14px] font-bold px-4 py-2.5 transition-all duration-200 rounded-full"
  >
  <ArrowLeft size={11} aria-hidden="true" /> All Articles
  </button>
@@ -717,7 +682,7 @@ export default function ArticleReader({ article, related }) {
  </div>
 
  {/* ── CTA BANNER ───────────────────────────────────────────────────── */}
- <div className="mt-12 bg-[#0818A8] p-7 md:p-10 relative overflow-hidden">
+ <div className="mt-12 bg-[#000f89] p-7 md:p-10 relative overflow-hidden">
  <div
  className="absolute inset-0 opacity-[0.07] pointer-events-none"
  aria-hidden="true"
@@ -728,20 +693,20 @@ export default function ArticleReader({ article, related }) {
  }}
  />
  <div className="relative z-10">
- <p className="text-white/60 text-[10px] font-black tracking-[0.3em] uppercase mb-2">
+ <p className="text-white/60 mb-2 text-[13px] font-semibold">
  Ready to Ship?
  </p>
- <h3 className="text-white font-black text-[22px] md:text-[26px] tracking-[-0.015em] mb-3 leading-tight">
+ <h3 className="text-white font-extrabold text-[22px] md:text-[26px] tracking-[-0.03em] mb-3 leading-tight">
  Get a free UK Nigeria cargo quote from R-Zone.
  </h3>
  <p className="text-white/70 text-[13px] font-normal mb-7 max-w-lg leading-relaxed">
  Air from £5.50/kg · Sea from £3/kg · Weekly departures · Same-day
- response · 120+ five-star reviews · #1 on Google.
+ response · 120+ five-star reviews.
  </p>
  <div className="flex flex-wrap gap-3">
  <Link
  href="/quote"
- className="group inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0818A8] text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-all duration-200"
+ className="group inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#000f89] text-[14px] font-bold px-6 py-3.5 transition-all duration-200 rounded-full"
  >
  Get a Free Quote{" "}
  <ArrowRight
@@ -752,7 +717,7 @@ export default function ArticleReader({ article, related }) {
  </Link>
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white text-[14px] font-bold px-6 py-3.5 transition-all duration-200 rounded-full"
  >
  Call +44 800 772 0864
  </a>
@@ -763,7 +728,7 @@ export default function ArticleReader({ article, related }) {
  {/* ── INTERNAL LINKS BLOCK ─────────────────────────────────────────── */}
  {/* Distributes SEO authority to other key pages on every article view */}
  <div className="mt-10 pt-8 border-t border-gray-100">
- <p className="text-[10px] font-black tracking-[0.3em] uppercase text-gray-400 mb-4">
+ <p className="text-gray-400 mb-4 text-[13px] font-semibold">
  Explore R-Zone Services
  </p>
  <div className="flex flex-wrap gap-3">
@@ -776,7 +741,7 @@ export default function ArticleReader({ article, related }) {
  <Link
  key={link.href}
  href={link.href}
- className="inline-flex items-center gap-1.5 text-[11.5px] font-semibold text-gray-600 hover:text-[#0818A8] border border-gray-200 hover:border-[#0818A8]/40 px-4 py-2 transition-all duration-200"
+ className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-gray-600 hover:text-[#000f89] border border-gray-200 hover:border-[#000f89]/40 px-4 py-2 transition-all duration-200 rounded-full"
  >
  {link.label}
  <ArrowRight size={10} aria-hidden="true" />
@@ -791,7 +756,7 @@ export default function ArticleReader({ article, related }) {
  <div className="bg-gray-50 border-t border-gray-100 py-14 md:py-16">
  <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10">
  <div className="flex items-center gap-4 mb-9">
- <p className="text-[10px] font-black tracking-[0.35em] uppercase text-gray-400">
+ <p className="text-gray-400 text-[13px] font-semibold">
  More to Read
  </p>
  <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
@@ -804,7 +769,7 @@ export default function ArticleReader({ article, related }) {
  <div className="text-center mt-10">
  <Link
  href="/blog"
- className="group inline-flex items-center gap-2 border-2 border-[#0818A8]/20 hover:border-[#0818A8] text-[#0818A8] text-[12px] font-black tracking-[0.1em] uppercase px-8 py-3.5 hover:bg-[#0818A8] hover:text-white transition-all duration-200"
+ className="group inline-flex items-center gap-2 border-2 border-[#000f89]/20 hover:border-[#000f89] text-[#000f89] text-[14px] font-bold px-8 py-3.5 hover:bg-[#000f89] hover:text-white transition-all duration-200 rounded-full"
  >
  <ArrowLeft
  size={12}

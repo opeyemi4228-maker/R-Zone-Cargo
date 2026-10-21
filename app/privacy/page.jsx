@@ -72,11 +72,11 @@ function FAQ({ q, a, index }) {
  className="w-full flex items-start justify-between gap-4 py-5 text-left group"
  aria-expanded={open}
  >
- <span className={`text-[14px] font-semibold leading-snug transition-colors duration-150 ${open ? "text-[#0818A8]" : "text-gray-800 group-hover:text-[#0818A8]"}`}>
+ <span className={`text-[14px] font-semibold leading-snug transition-colors duration-150 ${open ? "text-[#000f89]" : "text-gray-800 group-hover:text-[#000f89]"}`}>
  {q}
  </span>
  <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="flex-shrink-0 mt-0.5" aria-hidden="true">
- <ChevronDown size={16} className={open ? "text-[#0818A8]" : "text-gray-400"} />
+ <ChevronDown size={16} className={open ? "text-[#000f89]" : "text-gray-400"} />
  </motion.div>
  </button>
  <AnimatePresence>
@@ -110,12 +110,12 @@ function Section({ id, num, title, children }) {
  >
  {/* Section header */}
  <div className="flex items-start gap-5 mb-7">
- <div className="flex-shrink-0 w-10 h-10 bg-[#0818A8] flex items-center justify-center" aria-hidden="true">
+ <div className="flex-shrink-0 w-10 h-10 bg-[#000f89] flex items-center justify-center rounded-full" aria-hidden="true">
  <span className="text-white font-black text-[13px] tracking-[0.06em]">{num}</span>
  </div>
  <h2
  id={`${id}-heading`}
- className="font-black text-[clamp(18px,2.8vw,26px)] text-gray-900 leading-tight tracking-[-0.02em] pt-1.5"
+ className="font-extrabold text-[clamp(18px,2.8vw,26px)] text-gray-900 leading-tight tracking-[-0.03em] pt-1.5"
  >
  {title}
  </h2>
@@ -130,7 +130,7 @@ function Section({ id, num, title, children }) {
 // ─── Inline callout ───────────────────────────────────────────────────────────
 function Callout({ type = "blue", children }) {
  const styles = {
- blue: "border-l-[3px] border-[#0818A8] bg-[#0818A8]/4 text-gray-800",
+ blue: "border-l-[3px] border-[#000f89] bg-[#000f89]/4 text-gray-800",
  amber: "border-l-[3px] border-amber-500 bg-amber-50 text-amber-900",
  green: "border-l-[3px] border-emerald-600 bg-emerald-50 text-emerald-900",
  };
@@ -147,7 +147,7 @@ function P({ children, className = "" }) {
 }
 
 function H3({ children }) {
- return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.08em] uppercase mb-3 mt-6">{children}</h3>;
+ return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.08em] mb-3 mt-6">{children}</h3>;
 }
 
 function UL({ children }) {
@@ -157,7 +157,7 @@ function UL({ children }) {
 function LI({ children }) {
  return (
  <li className="flex items-start gap-3">
- <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
+ <span className="w-1.5 h-1.5 rounded-full bg-[#000f89] flex-shrink-0 mt-[0.45em]" aria-hidden="true" />
  <span className="text-gray-700 text-[13.5px] font-normal leading-relaxed">{children}</span>
  </li>
  );
@@ -207,7 +207,7 @@ export default function PrivacyPage() {
  })}} />
 
  {/* ── TOP UTILITY BAR ── */}
- <div className="bg-[#0818A8]" role="complementary" aria-label="Contact bar">
+ <div className="bg-[#000f89]" role="complementary" aria-label="Contact bar">
  <div className="max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
  <p className="text-white/80 text-[13px] font-medium tracking-[0.02em]">
  R-Zone Enterprises Legal &amp; Compliance
@@ -239,15 +239,15 @@ export default function PrivacyPage() {
  {/* Left */}
  <div>
  <div className="flex items-center gap-3 mb-5">
- <div className="w-12 h-12 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-12 h-12 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
  <Shield size={20} className="text-white" />
  </div>
- <div className="h-px flex-1 bg-gradient-to-r from-[#0818A8]/30 to-transparent" aria-hidden="true" />
+ <div className="h-px flex-1 bg-gradient-to-r from-[#000f89]/30 to-transparent" aria-hidden="true" />
  </div>
- <h1 className="font-black text-[clamp(32px,6vw,64px)] text-gray-900 leading-[0.88] tracking-[-0.035em] uppercase mb-5">
+ <h1 className="font-extrabold text-[clamp(32px,6vw,64px)] text-gray-900 leading-[1.06] tracking-[-0.035em] mb-5">
  Privacy
  <br />
- <span className="text-[#0818A8]">Policy.</span>
+ <span className="text-[#000f89]">Policy.</span>
  </h1>
  <p className="text-gray-600 text-[15px] font-normal leading-relaxed max-w-lg">
  We believe privacy is a right, not a checkbox. This policy explains exactly what personal data R-Zone Enterprises collects, how we use it, and the rights you hold over it in plain language.
@@ -262,9 +262,9 @@ export default function PrivacyPage() {
  { label: "Jurisdiction", val: "England & Wales", icon: Globe },
  { label: "Framework", val: "UK GDPR · DPA 2018", icon: Shield },
  ].map(({ label, val, icon: Icon }) => (
- <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
- <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-0.5">{label}</p>
+ <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
+ <Icon size={13} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="text-gray-500 mb-0.5 text-[13px] font-semibold">{label}</p>
  <p className="text-gray-800 font-semibold text-[13px] leading-snug">{val}</p>
  </div>
  ))}
@@ -293,8 +293,8 @@ export default function PrivacyPage() {
  {TOC.map(item => (
  <a key={item.id} href={`#${item.id}`}
  onClick={() => setTocMobile(false)}
- className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 ${
- activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-700 hover:bg-gray-50"
+ className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 rounded-full ${
+ activeId === item.id ? "bg-[#000f89]/5 text-[#000f89] font-semibold" : "text-gray-700 hover:bg-gray-50"
  }`}>
  <span className="text-[13px] font-black text-gray-400 font-[family-name:var(--font-montserrat)]">{item.num}</span>
  {item.label}
@@ -315,18 +315,18 @@ export default function PrivacyPage() {
  {/* ── STICKY SIDEBAR TOC ── */}
  <aside className="hidden lg:block lg:col-span-3 xl:col-span-2" aria-label="Table of contents">
  <div className="sticky top-[74px]">
- <p className="text-[13px] font-black tracking-[0.35em] uppercase text-gray-400 mb-4 px-1">Contents</p>
+ <p className="text-gray-400 mb-4 px-1 text-[13px] font-semibold">Contents</p>
  <nav aria-label="Section navigation">
  {TOC.map(item => (
  <a key={item.id} href={`#${item.id}`}
- className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 ${
+ className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 rounded-full ${
  activeId === item.id
- ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4"
+ ? "border-[#000f89] text-[#000f89] font-semibold bg-[#000f89]/4"
  : "border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"
  }`}
  aria-current={activeId === item.id ? "true" : undefined}
  >
- <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-400"}`}>
+ <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#000f89]" : "text-gray-400"}`}>
  {item.num}
  </span>
  {item.label}
@@ -335,11 +335,11 @@ export default function PrivacyPage() {
  </nav>
 
  {/* Contact card */}
- <div className="mt-6 border border-[#0818A8]/15 bg-[#0818A8]/4 p-4">
- <Shield size={14} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">DPO Contact</p>
+ <div className="mt-6 border border-[#000f89]/15 bg-[#000f89]/4 p-4 rounded-[20px]">
+ <Shield size={14} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="mb-2 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">DPO Contact</p>
  <a href="mailto:privacy@r-zoneenterprises.com"
- className="text-[13px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all"
+ className="text-[13px] font-semibold text-gray-800 hover:text-[#000f89] transition-colors block leading-snug break-all"
  aria-label="Email privacy team">
  privacy@r-zoneenterprises.com
  </a>
@@ -356,7 +356,7 @@ export default function PrivacyPage() {
  <P>
  R-Zone Enterprises ("<strong className="text-gray-900 font-semibold">we</strong>", "<strong className="text-gray-900 font-semibold">us</strong>", "<strong className="text-gray-900 font-semibold">our</strong>") is a UK-based freight and logistics company. We operate as <strong className="text-gray-900 font-semibold">R-Zone Enterprises Ltd</strong>, registered in England and Wales, with our registered office at:
  </P>
- <div className="border border-gray-200 bg-gray-50 px-5 py-4 mb-5 inline-block">
+ <div className="border border-gray-200 bg-gray-50 px-5 py-4 mb-5 inline-block rounded-[20px]">
  <p className="text-gray-800 text-[13.5px] font-medium leading-relaxed">
  Unit 9 Moorhen Yard, Elms Lane<br />
  Upminster, Essex RM14 3TS<br />
@@ -364,7 +364,7 @@ export default function PrivacyPage() {
  </p>
  </div>
  <P>
- We are the <strong className="text-gray-900 font-semibold">data controller</strong> for personal data collected through our website at <a href="https://r-zoneenterprises.com" target="_blank" rel="noopener noreferrer" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">r-zoneenterprises.com</a>, our mobile applications, and through our cargo and logistics services.
+ We are the <strong className="text-gray-900 font-semibold">data controller</strong> for personal data collected through our website at <a href="https://r-zoneenterprises.com" target="_blank" rel="noopener noreferrer" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">r-zoneenterprises.com</a>, our mobile applications, and through our cargo and logistics services.
  </P>
  <P>
  This Privacy Policy explains how we handle personal data in accordance with the <strong className="text-gray-900 font-semibold">UK General Data Protection Regulation (UK GDPR)</strong>, the <strong className="text-gray-900 font-semibold">Data Protection Act 2018</strong>, and all applicable data protection legislation.
@@ -392,7 +392,7 @@ export default function PrivacyPage() {
  <UL>
  <LI><strong className="text-gray-900 font-semibold">Technical data:</strong> IP address, browser type and version, device identifiers, time zone</LI>
  <LI><strong className="text-gray-900 font-semibold">Usage data:</strong> pages visited, time on page, links clicked, referral source</LI>
- <LI><strong className="text-gray-900 font-semibold">Cookie data:</strong> see our <a href="/cookies" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Cookie Policy</a> for full details</LI>
+ <LI><strong className="text-gray-900 font-semibold">Cookie data:</strong> see our <a href="/cookies" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Cookie Policy</a> for full details</LI>
  </UL>
 
  <H3>2.3 Data From Third Parties</H3>
@@ -412,10 +412,10 @@ export default function PrivacyPage() {
  <Section id="s3" num="03" title="How We Use Your Data">
  <P>We use your personal data only for legitimate business purposes. The table below sets out every use alongside the legal basis we rely on.</P>
 
- <div className="overflow-x-auto mb-6 border border-gray-200">
+ <div className="overflow-x-auto mb-6 border border-gray-200 rounded-[20px]">
  <table className="w-full" style={{ minWidth: "520px" }} aria-label="Data processing purposes and legal bases">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">Purpose</th>
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Data Used</th>
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Legal Basis</th>
@@ -423,11 +423,11 @@ export default function PrivacyPage() {
  </thead>
  <tbody>
  {DATA_TABLE.map((row, i) => (
- <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
+ <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#000f89]/3 transition-colors`}>
  <td className="px-5 py-3 text-[13px] text-gray-700 font-normal leading-snug">{row.purpose}</td>
  <td className="px-5 py-3 text-[13px] text-gray-600 font-normal hidden sm:table-cell">{row.data}</td>
  <td className="px-5 py-3">
- <span className="inline-block text-[13px] font-semibold text-[#0818A8] bg-[#0818A8]/8 px-2.5 py-1 whitespace-nowrap">{row.basis}</span>
+ <span className="inline-block text-[13px] font-semibold text-[#000f89] bg-[#000f89]/8 px-2.5 py-1 whitespace-nowrap">{row.basis}</span>
  </td>
  </tr>
  ))}
@@ -437,7 +437,7 @@ export default function PrivacyPage() {
 
  <H3>3.1 Marketing Communications</H3>
  <P>
- We only send marketing emails or SMS if you have given us <strong className="text-gray-900 font-semibold">explicit consent</strong>. You can withdraw consent at any time click "unsubscribe" in any email, text STOP to any SMS, or email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a>. We will never sell or share your contact details for others' marketing purposes.
+ We only send marketing emails or SMS if you have given us <strong className="text-gray-900 font-semibold">explicit consent</strong>. You can withdraw consent at any time click "unsubscribe" in any email, text STOP to any SMS, or email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">privacy@r-zoneenterprises.com</a>. We will never sell or share your contact details for others' marketing purposes.
  </P>
  </Section>
 
@@ -447,15 +447,15 @@ export default function PrivacyPage() {
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
  {[
- { basis: "Contract Performance", article: "Art. 6(1)(b)", desc: "Processing necessary to fulfil your shipping contract booking, dispatch, delivery, invoicing.", color: "#0818A8" },
- { basis: "Legal Obligation", article: "Art. 6(1)(c)", desc: "Where we are legally required to process data customs declarations, HMRC reporting, AML checks.", color: "#1F51FF" },
- { basis: "Legitimate Interests", article: "Art. 6(1)(f)", desc: "Fraud detection, network security, and business communications where our interests don't override yours.", color: "#0437F2" },
- { basis: "Consent", article: "Art. 6(1)(a)", desc: "Marketing communications and non-essential cookies you may withdraw consent at any time.", color: "#0818A8" },
+ { basis: "Contract Performance", article: "Art. 6(1)(b)", desc: "Processing necessary to fulfil your shipping contract booking, dispatch, delivery, invoicing.", color: "#000f89" },
+ { basis: "Legal Obligation", article: "Art. 6(1)(c)", desc: "Where we are legally required to process data customs declarations, HMRC reporting, AML checks.", color: "#0000FF" },
+ { basis: "Legitimate Interests", article: "Art. 6(1)(f)", desc: "Fraud detection, network security, and business communications where our interests don't override yours.", color: "#0000CD" },
+ { basis: "Consent", article: "Art. 6(1)(a)", desc: "Marketing communications and non-essential cookies you may withdraw consent at any time.", color: "#000f89" },
  ].map(item => (
- <div key={item.basis} className="border border-gray-200 bg-white p-4 hover:border-[#0818A8]/30 transition-colors">
+ <div key={item.basis} className="border border-gray-200 bg-white p-4 hover:border-[#000f89]/30 transition-colors rounded-[20px]">
  <div className="flex items-center justify-between mb-2">
  <p className="text-gray-900 font-bold text-[13px]">{item.basis}</p>
- <span className="text-[13px] font-bold text-[#0818A8] bg-[#0818A8]/8 px-2 py-0.5">{item.article}</span>
+ <span className="text-[13px] font-bold text-[#000f89] bg-[#000f89]/8 px-2 py-0.5">{item.article}</span>
  </div>
  <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{item.desc}</p>
  </div>
@@ -488,8 +488,8 @@ export default function PrivacyPage() {
  <LI>Law enforcement agencies where required by law or court order</LI>
  </UL>
 
- <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Our Three Absolute Rules</p>
+ <div className="border border-gray-200 bg-gray-50 p-5 mb-5 rounded-[20px]">
+ <p className="text-gray-500 mb-3 text-[13px] font-semibold">Our Three Absolute Rules</p>
  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
  {[
  "We never sell your personal data to any third party",
@@ -497,7 +497,7 @@ export default function PrivacyPage() {
  "We never allow third parties to use your data for their marketing",
  ].map((rule, i) => (
  <div key={i} className="flex items-start gap-2.5">
- <div className="w-5 h-5 bg-[#0818A8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
+ <div className="w-5 h-5 bg-[#000f89] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
  <Check size={10} className="text-white" />
  </div>
  <p className="text-gray-700 text-[13px] font-normal leading-snug">{rule}</p>
@@ -525,7 +525,7 @@ export default function PrivacyPage() {
  <LI><strong className="text-gray-900 font-semibold">Explicit consent:</strong> For any other transfers where you have been informed and agreed</LI>
  </UL>
  <P>
- To receive a copy of the safeguards we apply, contact <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a>.
+ To receive a copy of the safeguards we apply, contact <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">privacy@r-zoneenterprises.com</a>.
  </P>
  </Section>
 
@@ -533,10 +533,10 @@ export default function PrivacyPage() {
  <Section id="s7" num="07" title="Data Retention">
  <P>We keep personal data only for as long as necessary. Here is our retention schedule:</P>
 
- <div className="overflow-x-auto mb-5 border border-gray-200">
+ <div className="overflow-x-auto mb-5 border border-gray-200 rounded-[20px]">
  <table className="w-full" style={{ minWidth: "480px" }} aria-label="Data retention periods">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white">Data Category</th>
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white whitespace-nowrap">Retention Period</th>
  <th className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white hidden sm:table-cell">Reason</th>
@@ -544,7 +544,7 @@ export default function PrivacyPage() {
  </thead>
  <tbody>
  {RETENTION_TABLE.map((row, i) => (
- <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
+ <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#000f89]/3 transition-colors`}>
  <td className="px-5 py-3 text-[13px] text-gray-700 font-normal">{row.category}</td>
  <td className="px-5 py-3 text-[13px] text-gray-800 font-semibold whitespace-nowrap">{row.period}</td>
  <td className="px-5 py-3 text-[13px] text-gray-600 font-normal hidden sm:table-cell">{row.reason}</td>
@@ -566,11 +566,11 @@ export default function PrivacyPage() {
  const Icon = right.icon;
  return (
  <div key={right.title}
- className="group border border-gray-200 bg-white p-5 hover:border-[#0818A8]/40 hover:shadow-md hover:shadow-[#0818A8]/8 transition-all duration-200 relative overflow-hidden">
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#0818A8]" aria-hidden="true" />
+ className="group border border-gray-200 bg-white p-5 hover:border-[#000f89]/40 hover:shadow-md hover:shadow-[#000f89]/8 transition-all duration-200 relative overflow-hidden rounded-[20px]">
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#000f89]" aria-hidden="true" />
  <div className="flex items-start gap-3.5">
- <div className="w-8 h-8 bg-[#0818A8]/8 flex items-center justify-center flex-shrink-0" aria-hidden="true">
- <Icon size={14} className="text-[#0818A8]" />
+ <div className="w-8 h-8 bg-[#000f89]/8 flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
+ <Icon size={14} className="text-[#000f89]" />
  </div>
  <div>
  <p className="text-gray-900 font-bold text-[13px] mb-1.5">{right.title}</p>
@@ -583,15 +583,15 @@ export default function PrivacyPage() {
  </div>
 
  <H3>How to Exercise Your Rights</H3>
- <P>Email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> or write to our registered address. We respond within <strong className="text-gray-900 font-semibold">one calendar month</strong>. Complex requests may be extended by a further two months we will notify you.</P>
+ <P>Email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">privacy@r-zoneenterprises.com</a> or write to our registered address. We respond within <strong className="text-gray-900 font-semibold">one calendar month</strong>. Complex requests may be extended by a further two months we will notify you.</P>
 
- <div className="border border-gray-200 bg-gray-50 p-5">
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-3">Right to Complain ICO</p>
+ <div className="border border-gray-200 bg-gray-50 p-5 rounded-[20px]">
+ <p className="text-gray-500 mb-3 text-[13px] font-semibold">Right to Complain ICO</p>
  <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-3">
  If you're not satisfied with how we've handled your data, you can complain to the Information Commissioner's Office.
  </p>
  <div className="flex flex-wrap gap-x-8 gap-y-2">
- <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#0818A8] text-[13px] font-semibold hover:text-[#0437F2] transition-colors" aria-label="Visit ICO website">
+ <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[#000f89] text-[13px] font-semibold hover:text-[#0000CD] transition-colors" aria-label="Visit ICO website">
  ico.org.uk <ExternalLink size={10} aria-hidden="true" />
  </a>
  <span className="text-gray-700 text-[13px] font-normal">0303 123 1113</span>
@@ -606,7 +606,7 @@ export default function PrivacyPage() {
  We use cookies and similar tracking technologies on our website. Non-essential cookies (analytics, marketing) are only placed on your device with your prior consent, obtained through our cookie banner.
  </P>
  <P>
- For full details of every cookie we use, how long they last, and how to manage your preferences, read our dedicated <a href="/cookies" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Cookie Policy</a>.
+ For full details of every cookie we use, how long they last, and how to manage your preferences, read our dedicated <a href="/cookies" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Cookie Policy</a>.
  </P>
  </Section>
 
@@ -626,7 +626,7 @@ export default function PrivacyPage() {
  "Physical access controls at our warehouse facilities",
  ].map((item, i) => (
  <div key={i} className="flex items-center gap-3 border border-gray-100 bg-gray-50 px-4 py-3">
- <div className="w-5 h-5 bg-[#0818A8] rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-5 h-5 bg-[#000f89] rounded-full flex items-center justify-center flex-shrink-0" aria-hidden="true">
  <Check size={9} className="text-white" />
  </div>
  <p className="text-gray-700 text-[13px] font-normal leading-tight">{item}</p>
@@ -642,7 +642,7 @@ export default function PrivacyPage() {
  {/* ─── S11 CHILDREN ─── */}
  <Section id="s11" num="11" title="Children's Privacy">
  <P>
- Our services are intended for individuals aged 18 and over. We do not knowingly collect personal data from children under 18. If you believe your child has provided us with personal data without your consent, please email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">privacy@r-zoneenterprises.com</a> immediately. We will delete the data promptly and without charge.
+ Our services are intended for individuals aged 18 and over. We do not knowingly collect personal data from children under 18. If you believe your child has provided us with personal data without your consent, please email <a href="mailto:privacy@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">privacy@r-zoneenterprises.com</a> immediately. We will delete the data promptly and without charge.
  </P>
  </Section>
 
@@ -669,13 +669,13 @@ export default function PrivacyPage() {
  ].map(item => {
  const Icon = item.icon;
  return (
- <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/25 transition-colors">
+ <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
  <div className="flex items-center gap-2 mb-2">
- <Icon size={13} className="text-[#0818A8]" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-500">{item.label}</p>
+ <Icon size={13} className="text-[#000f89]" aria-hidden="true" />
+ <p className="text-gray-500 text-[13px] font-semibold">{item.label}</p>
  </div>
  {item.href ? (
- <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#0818A8] transition-colors break-all">
+ <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#000f89] transition-colors break-all">
  {item.val}
  </a>
  ) : (
@@ -702,21 +702,21 @@ export default function PrivacyPage() {
  </Section>
 
  {/* ── FOOTER CTA ── */}
- <div className="mt-12 border border-[#0818A8]/20 bg-[#0818A8]/4 p-7 md:p-9">
+ <div className="mt-12 border border-[#000f89]/20 bg-[#000f89]/4 p-7 md:p-9 rounded-[20px]">
  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
  <div>
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Still Have Questions?</p>
- <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">We're Here to Help.</h3>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Still Have Questions?</p>
+ <h3 className="text-gray-900 font-extrabold text-[20px] tracking-[-0.03em]">We're Here to Help.</h3>
  <p className="text-gray-600 text-[13.5px] font-normal mt-1">Our team responds to privacy enquiries within one business day.</p>
  </div>
  <div className="flex flex-wrap gap-3">
  <a href="mailto:privacy@r-zoneenterprises.com"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Email privacy team">
  <Mail size={12} aria-hidden="true" /> Email Privacy Team
  </a>
  <Link href="/"
- className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#000f89] hover:text-[#000f89] text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="Back to R-Zone Enterprises">
  <ArrowLeft size={11} aria-hidden="true" /> Back to Site
  </Link>

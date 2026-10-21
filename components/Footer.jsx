@@ -1,16 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useCallback } from "react";
 import {
- Package, Phone, Mail, MapPin, ArrowRight,
- Plane, Ship, Truck, Warehouse, FileCheck, Anchor,
- Globe, Clock, Shield, Award, ChevronUp,
- Send, CheckCircle, AlertCircle, ExternalLink,
- Navigation, Zap, Star, MessageSquare, Facebook,
+ Phone, Mail, ArrowRight, Plane, Ship, Truck, FileCheck, Anchor, Clock, ChevronUp, Send, CheckCircle, AlertCircle, ExternalLink, Navigation, Facebook,
 } from "lucide-react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { montserrat } from "../lib/fonts";
+import { assets } from "@/assets/assets";
 
 // ─── Instagram icon (not in lucide-react) ─────────────────────────────────────
 function InstagramIcon({ size = 14, className = "" }) {
@@ -58,58 +56,48 @@ const SERVICES = [
  { label: "Door to Door Cargo", href: "/services#door-to-door-cargo", icon: Truck },
  { label: "Car & Vehicle Shipping", href: "/services#vehicles", icon: Truck },
  { label: "Customs Clearance", href: "/services#customs-clearance", icon: FileCheck },
- { label: "Warehousing", href: "/services#warehousing", icon: Warehouse },
- { label: "Cargo Handling", href: "/services#cargo-handling", icon: Anchor },
+ { label: "Importation from Nigeria", href: "/importation", icon: Anchor },
 ];
 
 const COMPANY = [
  { label: "About Us", href: "/about" },
- { label: "Why R-Zone", href: "/about" },
- { label: "Industries Served", href: "/business-solutions" },
- { label: "News & Insights", href: "/blog" },
+ { label: "Business Solutions", href: "/business-solutions" },
+ { label: "Shipping Blog", href: "/blog" },
  { label: "Careers", href: "/careers" },
- {label: "Blog", href:"/blog" },
  { label: "Contact Us", href: "/contact" },
 ];
 
-const QUICK = [
- { label: "Cargo from UK to Nigeria", href: "/cargo-from-uk-to-nigeria" },
- { label: "Car Shipping to Nigeria", href: "/blog/car-shipping-uk-to-nigeria" },
+const SUPPORT = [
  { label: "Request a Quote", href: "/quote" },
  { label: "Track Shipment", href: "/track" },
- { label: "Weekly Sailing Schedule", href: "/schedulesprices#schedules" },
- { label: "Prices & Rates", href: "/schedulesprices#prices" },
- { label: "Importation from Nigeria", href: "/services#importation-from-nigeria" },
+ { label: "Prices & Schedules", href: "/schedulesprices" },
+ { label: "Cargo FAQs", href: "/blog/uk-to-nigeria-cargo-faq" },
+ { label: "Help & Support", href: "/support" },
  { label: "Partner With Us", href: "/partners" },
-];
-
-const TRUST_BADGES = [
- { icon: Shield, label: "Secure Shipping", sub: "End-to-end insured" },
- { icon: Award, label: "IATA Registered", sub: "Certified air cargo" },
- { icon: Globe, label: "Global Network", sub: "UK · Nigeria · Africa" },
- { icon: Clock, label: "24/7 Support", sub: "+44 800 772 0864" },
- { icon: Star, label: "Highest Rated", sub: "Organic · UK to Nigeria" },
- { icon: Zap, label: "Weekly Sailings", sub: "Every week, no delays" },
 ];
 
 const OFFICES = [
  {
- flag: "🇬🇧",
- city: "Upminster, UK",
- label: "UK Office",
- address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, United Kingdom, RM14 3TS",
+ flag: "\u{1F1EC}\u{1F1E7}",
+ label: "UK Head Office & Warehouse",
+ city: "Upminster, Essex",
+ address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
  phone: "+44 (0) 800 772 0864",
- hours: "Mon Fri: 10AM 6PM · Sat: 11AM 2PM",
+ phoneHref: "tel:+448007720864",
+ hours: "Mon to Fri 10am to 6pm · Sat 11am to 2pm",
+ note: "Drop-offs welcome. Please call ahead.",
  mapsUrl: "https://maps.app.goo.gl/QXnmYSxB8CeZ7hmv8",
  },
  {
- flag: "🇳🇬",
- city: "Lagos, Nigeria",
- label: "Nigeria Warehouse",
- address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
+ flag: "\u{1F1F3}\u{1F1EC}",
+ label: "Nigeria Office & Warehouse",
+ city: "Lagos",
+ address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos",
  phone: "+234 906 680 6861",
- hours: "Mon Fri: 9AM 5PM",
- mapsUrl: "https://maps.google.com",
+ phoneHref: "tel:+2349066806861",
+ hours: "Mon to Fri 9am to 5pm",
+ note: "Collection points: Egbeda, Surulere, Ajah and Ibadan.",
+ mapsUrl: "https://maps.google.com/?q=Queens+Park+Estate+II+Shagam+Interchange+Lagos",
  },
 ];
 
@@ -155,16 +143,9 @@ const staggerContainer = {
 function ColHeader({ children }) {
  return (
  <div className="mb-5">
- <h3 className="text-white font-black text-[13px] tracking-[0.22em] uppercase mb-2.5">
+ <h3 className="text-white font-bold text-[15px] tracking-[-0.01em]">
  {children}
  </h3>
- <motion.div
- className="h-[2px] bg-[#0818A8] rounded-full"
- initial={{ width: 0 }}
- whileInView={{ width: 24 }}
- viewport={{ once: true }}
- transition={{ duration: 0.5, ease: "easeOut" }}
- />
  </div>
  );
 }
@@ -182,13 +163,13 @@ function FooterLink({ href, children, icon: Icon, external = false }) {
  <li role="listitem">
  <Tag
  {...extraProps}
- className="group flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-normal tracking-[0.02em] py-[3px] transition-all duration-300"
+ className="group flex items-center gap-2 text-white/70 hover:text-white text-[14px] font-normal py-[3px] transition-colors duration-200"
  aria-label={isExternal ? `${children} (opens in new tab)` : undefined}
  >
  {Icon && (
  <Icon
- size={10}
- className="text-[#1F51FF] flex-shrink-0 group-hover:opacity-100 transition-opacity"
+ size={12}
+ className="text-[#A6A6FF] flex-shrink-0 group-hover:opacity-100 transition-opacity"
  aria-hidden="true"
  />
  )}
@@ -237,9 +218,6 @@ function NewsletterForm() {
 
  return (
  <div>
- <p className="text-white font-bold text-[13px] tracking-[0.18em] uppercase mb-3">
- Stay Updated
- </p>
  <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-4">
  Shipping updates, pricing alerts &amp; logistics insights delivered weekly.
  </p>
@@ -248,7 +226,7 @@ function NewsletterForm() {
  {state === "success" ? (
  <motion.div
  key="success"
- className="flex items-center gap-2.5 bg-green-500/10 border border-green-500/25 px-4 py-3 rounded-sm"
+ className="flex items-center gap-2.5 bg-green-500/10 border border-green-500/25 px-4 py-3 rounded-full"
  initial={{ opacity: 0, scale: 0.95 }}
  animate={{ opacity: 1, scale: 1 }}
  exit={{ opacity: 0 }}
@@ -278,13 +256,13 @@ function NewsletterForm() {
  aria-required="true"
  aria-invalid={state === "error"}
  className={`
- w-full bg-white/[0.05] border-y border-l text-white
+ w-full bg-white/[0.06] border-y border-l text-white
  placeholder-white/60 text-[13px] px-3.5 py-2.5 outline-none
  focus:bg-white/[0.08] transition-all duration-200 min-w-0
- rounded-l-sm
+ rounded-l-full pl-5
  ${state === "error"
  ? "border-red-500/50 focus:border-red-500/70"
- : "border-white/10 focus:border-[#0818A8]"
+ : "border-white/10 focus:border-[#000f89]"
  }
  `}
  />
@@ -299,7 +277,7 @@ function NewsletterForm() {
  <motion.button
  type="submit"
  disabled={state === "loading"}
- className="bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white px-4 py-2.5 rounded-r-sm transition-colors duration-200 flex-shrink-0 flex items-center justify-center min-w-[42px]"
+ className="bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 text-white px-5 py-2.5 rounded-r-full transition-colors duration-200 flex-shrink-0 flex items-center justify-center min-w-[42px]"
  whileHover={{ scale: 1.02 }}
  whileTap={{ scale: 0.97 }}
  aria-label="Subscribe to newsletter"
@@ -347,511 +325,328 @@ export default function Footer() {
  return (
  <footer
  ref={footerRef}
- className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-[#00061a] relative overflow-hidden`}
+ className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-[#00112E] relative isolate overflow-hidden`}
  aria-label="R-Zone Enterprises site footer"
  role="contentinfo"
  itemScope
  itemType="https://schema.org/WPFooter"
  >
 
- {/* ── SEO: Organisation schema ──────────────────────────────────── */}
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{
- __html: JSON.stringify({
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "R-Zone Enterprises",
- "url": "https://r-zoneenterprises.com",
- "logo": "https://r-zoneenterprises.com/images/rzone-logo.png",
- "description": "The highest-rated organically earned cargo and logistics company operating between the UK, Nigeria, and across Africa.",
- "contactPoint": [
- {
- "@type": "ContactPoint",
- "telephone": "+44-800-772-0864",
- "contactType": "customer service",
- "areaServed": "GB",
- "availableLanguage": "English",
- "hoursAvailable": "Mo-Fr 10:00-18:00"
- },
- {
- "@type": "ContactPoint",
- "telephone": "+234-906-680-6861",
- "contactType": "customer service",
- "areaServed": "NG",
- "availableLanguage": "English"
- }
- ],
- "address": [
- {
- "@type": "PostalAddress",
- "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan",
- "addressLocality": "Upminster",
- "postalCode": "RM14 3TS",
- "addressCountry": "GB"
- },
- {
- "@type": "PostalAddress",
- "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange",
- "addressLocality": "Lagos",
- "addressCountry": "NG",
- "description": "<strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan"
- }
- ],
- "sameAs": [
- "https://www.instagram.com/rzoneenterprises",
- "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr"
- ]
- }),
- }}
- />
+      {/* No Organization schema here: app/layout.js already declares the
+          business once, for every page, including the Lagos branch. Repeating
+          it in the footer created a second, competing entity for the same
+          company. */}
 
- {/* ── Background decorations ────────────────────────────────────── */}
- <div
- className="absolute inset-0 opacity-[0.022] pointer-events-none select-none"
- aria-hidden="true"
- style={{
- backgroundImage: `
- linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
- linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)
- `,
- backgroundSize: "60px 60px",
- }}
- />
- <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#0818A8]/14 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
- <div className="absolute -bottom-24 right-0 w-80 h-80 bg-[#1F51FF]/8 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
- <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-[#0818A8]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      {/* Same ground as the homepage hero: navy, a faint 64px grid, two soft brand lights */}
+      <div
+        className="absolute inset-0 -z-10 opacity-[0.035] pointer-events-none"
+        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
+        aria-hidden="true"
+      />
+      <div className="absolute -top-40 left-1/4 -z-10 h-[460px] w-[760px] rounded-full bg-[#000f89]/25 blur-[130px] pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 right-0 -z-10 h-[360px] w-[560px] rounded-full bg-[#0000FF]/12 blur-[120px] pointer-events-none" aria-hidden="true" />
+      {/* ══ ROW 1 · CTA ════════════════════════════════════════════════ */}
+      <motion.div
+        className="relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-14 md:pt-16 pb-4">
+          <div className="relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-8 rounded-[28px] bg-[#000f89] px-7 py-10 md:px-12 md:py-12">
+            <div
+              className="absolute inset-0 opacity-[0.07] pointer-events-none"
+              style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "40px 40px" }}
+              aria-hidden="true"
+            />
+            <div className="relative max-w-xl">
+              <h2 className="text-white font-extrabold text-[clamp(26px,3.4vw,42px)] leading-[1.05] tracking-[-0.035em]">
+                Ready to ship to Nigeria?
+              </h2>
+              <p className="text-white/80 text-[16px] font-normal leading-relaxed mt-3">
+                Tell us what you are sending and we will quote the cheapest way
+                to move it, the same day.
+              </p>
+            </div>
 
- {/* ══ SECTION 1 CTA BAND ═════════════════════════════════════════ */}
- <motion.div
- className="relative border-b border-white/[0.07]"
- initial={{ opacity: 0 }}
- whileInView={{ opacity: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 0.6 }}
- >
- <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0818A8] via-[#1F51FF] to-transparent" aria-hidden="true" />
+            <div className="relative flex flex-wrap gap-3 flex-shrink-0">
+              <Link
+                href="/quote"
+                className="group inline-flex min-h-[52px] items-center gap-2.5 bg-white hover:bg-[#E8EEFF] text-[#00112E] text-[15px] font-bold px-7 rounded-full transition-colors duration-200"
+                aria-label="Request a shipping quote from R-Zone Enterprises"
+              >
+                Request a quote
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+              </Link>
 
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
- <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <a
+                href="https://wa.me/447915647119"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-[52px] items-center gap-2.5 border border-white/30 hover:border-white/60 hover:bg-white/[0.08] text-white text-[15px] font-semibold px-7 rounded-full transition-colors duration-200"
+                aria-label="Chat with R-Zone on WhatsApp (opens in new tab)"
+              >
+                <WhatsAppIcon size={16} className="text-[#25D366]" />
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
- {/* Left headline */}
- <div className="max-w-2xl">
- <div className="flex items-center gap-2.5 mb-3">
- <motion.span
- className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
- animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }}
- transition={{ duration: 2, repeat: Infinity }}
- />
- <span className="text-white/80 text-[13px] font-bold tracking-[0.22em] uppercase">
- Ready to Ship?
- </span>
- </div>
+      {/* ══ ROW 2 · BRAND + LINKS ══════════════════════════════════════ */}
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-16">
+        <motion.div
+          className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-12 lg:gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          {/* Brand + contact */}
+          <motion.div className="col-span-2 lg:col-span-4 lg:pr-8" variants={fadeUp} custom={0}>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3 mb-5 group"
+              aria-label="R-Zone Enterprises home"
+            >
+              <Image
+                src={assets.logo}
+                alt=""
+                width={44}
+                height={44}
+                className="flex-shrink-0 rounded-sm group-hover:opacity-90 transition-opacity duration-200"
+                aria-hidden="true"
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-black text-white text-[17px] tracking-[0.1em] uppercase">R-Zone</span>
+                <span className="font-normal text-white text-[17px] tracking-[0.06em] uppercase">Cargo</span>
+              </div>
+            </Link>
 
- <h2 className="text-white font-black text-[clamp(24px,3.8vw,46px)] leading-[0.9] tracking-[-0.025em] uppercase">
- Move Your Cargo{" "}
- <span className="relative inline-block text-[#1F51FF]">
- With Confidence
- <motion.span
- className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"
- aria-hidden="true"
- initial={{ width: 0 }}
- whileInView={{ width: "100%" }}
- viewport={{ once: true }}
- transition={{ duration: 0.6, delay: 0.4 }}
- />
- </span>
- .
- </h2>
+            <p className="text-white/70 text-[13.5px] font-normal leading-[1.8] mb-7 max-w-[300px]">
+              Air freight, sea freight and door to door cargo between the UK and
+              Nigeria since 2012, with customs clearance handled by our own teams
+              at both ends.
+            </p>
 
- <p className="text-white/80 text-[13px] font-normal leading-relaxed mt-3 max-w-lg">
- Door-to-door cargo from the UK to Nigeria air freight, sea freight
- &amp; weekly sailings. The highest-rated organically earned cargo and
- logistics company between the UK, Nigeria, and across Africa.
- Get a quote in minutes.
- </p>
- </div>
+            <div className="flex flex-col gap-3 mb-7">
+              <a
+                href="tel:+448007720864"
+                className="group flex items-center gap-3 text-white/75 hover:text-white text-[13.5px] transition-colors duration-200"
+                aria-label="Call R-Zone UK: +44 800 772 0864"
+              >
+                <span className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#000f89]/60 group-hover:border-[#000f89] transition-all duration-200" aria-hidden="true">
+                  <Phone size={12} className="text-[#A6A6FF]" />
+                </span>
+                +44 (0) 800 772 0864
+              </a>
 
- {/* Right CTAs */}
- <div className="flex flex-wrap gap-3 flex-shrink-0">
- <Link
- href="/quote"
- className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/25 hover:shadow-[#0437F2]/30"
- aria-label="Request a shipping quote from R-Zone Enterprises"
- >
- Request a Quote
- <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
- </Link>
+              <a
+                href="mailto:info@r-zoneenterprises.com"
+                className="group flex items-center gap-3 text-white/75 hover:text-white text-[13.5px] transition-colors duration-200"
+                aria-label="Email R-Zone: info@r-zoneenterprises.com"
+              >
+                <span className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#000f89]/60 group-hover:border-[#000f89] transition-all duration-200" aria-hidden="true">
+                  <Mail size={12} className="text-[#A6A6FF]" />
+                </span>
+                info@r-zoneenterprises.com
+              </a>
+            </div>
 
- <Link
- href="/track"
- className="group inline-flex items-center gap-2.5 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 rounded-sm transition-all duration-200"
- aria-label="Track your R-Zone shipment in real time"
- >
- Track Shipment
- <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
- </Link>
+            <div className="flex items-center gap-2.5" role="list" aria-label="Social media links">
+              {SOCIAL_LINKS.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="listitem"
+                    aria-label={`Follow R-Zone on ${social.label} (opens in new tab)`}
+                    className="w-10 h-10 bg-white/[0.06] border border-white/10 rounded-full flex items-center justify-center text-white/75 hover:text-white hover:bg-[#000f89] hover:border-[#000f89] transition-all duration-200"
+                    whileHover={{ scale: 1.08, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon size={14} />
+                  </motion.a>
+                );
+              })}
 
- <a
- href="https://wa.me/447915647119"
- target="_blank"
- rel="noopener noreferrer"
- className="group inline-flex items-center gap-2.5 border border-[#25D366]/30 hover:border-[#25D366]/60 bg-[#25D366]/8 hover:bg-[#25D366]/15 text-[#25D366] text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 rounded-sm transition-all duration-200"
- aria-label="Chat with R-Zone on WhatsApp (opens in new tab)"
- >
- <WhatsAppIcon size={13} />
- WhatsApp
- </a>
- </div>
+              <motion.a
+                href="https://wa.me/447915647119"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message R-Zone on WhatsApp (opens in new tab)"
+                className="w-10 h-10 border border-[#25D366]/30 rounded-full flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/15 hover:border-[#25D366]/60 transition-all duration-200"
+                whileHover={{ scale: 1.08, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <WhatsAppIcon size={14} />
+              </motion.a>
+            </div>
+          </motion.div>
 
- </div>
- </div>
- </motion.div>
+          {/* Services */}
+          <motion.div className="lg:col-span-3" variants={fadeUp} custom={0.1}>
+            <ColHeader>Services</ColHeader>
+            <ul className="flex flex-col gap-1" role="list" aria-label="R-Zone services">
+              {SERVICES.map((item) => (
+                <FooterLink key={item.label} href={item.href} icon={item.icon}>
+                  {item.label}
+                </FooterLink>
+              ))}
+            </ul>
+          </motion.div>
 
- {/* ══ SECTION 2 TRUST BADGES ═════════════════════════════════════ */}
- <motion.div
- className="relative border-b border-white/[0.06]"
- initial={{ opacity: 0, y: 12 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 0.5 }}
- >
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-5">
- <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4" role="list" aria-label="Trust credentials">
- {TRUST_BADGES.map((item, i) => {
- const Icon = item.icon;
- return (
- <motion.div
- key={i}
- className="flex items-center gap-2.5 group"
- role="listitem"
- initial={{ opacity: 0, y: 10 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ delay: i * 0.07, duration: 0.4 }}
- >
- <div
- className="w-8 h-8 bg-[#0818A8]/15 border border-[#0818A8]/25 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-200"
- aria-hidden="true"
- >
- <Icon size={13} className="text-[#1F51FF] group-hover:text-white transition-colors duration-200" />
- </div>
- <div>
- <p className="text-white font-bold text-[13px] tracking-[0.04em] leading-none mb-0.5">
- {item.label}
- </p>
- <p className="text-white/80 text-[13px] font-normal leading-none">
- {item.sub}
- </p>
- </div>
- </motion.div>
- );
- })}
- </div>
- </div>
- </motion.div>
+          {/* Company */}
+          <motion.div className="lg:col-span-2" variants={fadeUp} custom={0.18}>
+            <ColHeader>Company</ColHeader>
+            <ul className="flex flex-col gap-1" role="list" aria-label="Company links">
+              {COMPANY.map((item) => (
+                <FooterLink key={item.label} href={item.href}>
+                  {item.label}
+                </FooterLink>
+              ))}
+            </ul>
+          </motion.div>
 
- {/* ══ SECTION 3 MAIN LINK GRID ═══════════════════════════════════ */}
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-18">
- <motion.div
- className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8"
- variants={staggerContainer}
- initial="hidden"
- whileInView="visible"
- viewport={{ once: true, margin: "-60px" }}
- >
+          {/* Support */}
+          <motion.div className="lg:col-span-3" variants={fadeUp} custom={0.26}>
+            <ColHeader>Support</ColHeader>
+            <ul className="flex flex-col gap-1" role="list" aria-label="Support links">
+              {SUPPORT.map((item) => (
+                <FooterLink key={item.label} href={item.href}>
+                  {item.label}
+                </FooterLink>
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+      </div>
 
- {/* ── Brand Column ── */}
- <motion.div className="sm:col-span-2 lg:col-span-4" variants={fadeUp} custom={0}>
+      {/* ══ ROW 3 · LOCATIONS + NEWSLETTER ═════════════════════════════ */}
+      <div className="relative border-t border-white/[0.07]">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-16">
+          <motion.div
+            className="grid gap-10 lg:grid-cols-12 lg:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            <motion.div className="lg:col-span-8" variants={fadeUp} custom={0}>
+              <ColHeader>Where to find us</ColHeader>
 
- <Link
- href="/"
- className="inline-flex items-center gap-3 mb-5 group"
- aria-label="R-Zone Enterprises home"
- >
- <div
- className="w-10 h-10 bg-[#0818A8] rounded-sm flex items-center justify-center group-hover:bg-[#0437F2] transition-colors duration-200 shadow-lg shadow-[#0818A8]/30"
- aria-hidden="true"
- >
- <Package size={18} className="text-white" />
- </div>
- <div className="flex items-baseline gap-1.5">
- <span className="font-black text-white text-[17px] tracking-[0.1em] uppercase">R-Zone</span>
- <span className="font-normal text-white text-[17px] tracking-[0.06em] uppercase">Cargo</span>
- </div>
- </Link>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {OFFICES.map((office) => (
+                  <address
+                    key={office.label}
+                    className="not-italic rounded-[20px] bg-white/[0.05] ring-1 ring-white/[0.08] p-6 md:p-7 transition-colors duration-200 hover:bg-white/[0.08]"
+                  >
+                    <p className="flex items-center gap-2 text-white font-bold text-[14px] tracking-[0.02em]">
+                      <span aria-hidden="true">{office.flag}</span>
+                      {office.city}
+                    </p>
+                    <p className="text-[#A6A6FF] text-[13px] font-semibold mt-1">
+                      {office.label}
+                    </p>
 
- {/* Authority claim */}
- <p className="text-white/80 text-[13px] font-semibold leading-relaxed mb-2 max-w-[280px] text-[#1F51FF]">
- The highest-rated organically earned cargo &amp; logistics company UK to Nigeria &amp; across Africa.
- </p>
+                    <p className="text-white/75 text-[13.5px] font-normal leading-[1.7] mt-4">
+                      {office.address}
+                    </p>
 
- <p className="text-white/80 text-[13px] font-normal leading-[1.8] mb-6 max-w-[280px]">
- Your trusted cargo specialist from the UK to Nigeria. Air freight,
- sea freight &amp; door-to-door delivery with weekly sailings.
- </p>
+                    <p className="flex items-start gap-2.5 text-white/60 text-[13px] font-normal leading-snug mt-3">
+                      <Clock size={12} className="text-[#A6A6FF] flex-shrink-0 mt-[3px]" aria-hidden="true" />
+                      {office.hours}
+                    </p>
 
- {/* Contact block */}
- <address
- className="not-italic flex flex-col gap-3 mb-6"
- itemScope
- itemType="https://schema.org/Organization"
- >
- {/* UK Phone */}
- <a
- href="tel:+448007720864"
- className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
- aria-label="Call R-Zone UK: +44 800 772 0864"
- itemProp="telephone"
- >
- <div
- className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/60 group-hover:border-[#0818A8] transition-all duration-200"
- aria-hidden="true"
- >
- <Phone size={11} className="text-[#1F51FF]" />
- </div>
- <div>
- <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇬🇧 UK</span>
- <span>+44 (0) 800 772 0864</span>
- </div>
- </a>
+                    <p className="text-white/50 text-[12.5px] font-normal leading-snug mt-2">
+                      {office.note}
+                    </p>
 
- {/* Nigeria Phone */}
- <a
- href="tel:+2349066806861"
- className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
- aria-label="Call R-Zone Nigeria: +234 906 680 6861"
- >
- <div
- className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/60 group-hover:border-[#0818A8] transition-all duration-200"
- aria-hidden="true"
- >
- <Phone size={11} className="text-[#1F51FF]" />
- </div>
- <div>
- <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">🇳🇬 Nigeria</span>
- <span>+234 906 680 6861</span>
- </div>
- </a>
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 pt-5 border-t border-white/[0.07]">
+                      <a
+                        href={office.phoneHref}
+                        className="inline-flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-semibold transition-colors duration-200"
+                        aria-label={`Call R-Zone ${office.city}: ${office.phone}`}
+                      >
+                        <Phone size={12} className="text-[#A6A6FF]" aria-hidden="true" />
+                        {office.phone}
+                      </a>
 
- {/* Email */}
- <a
- href="mailto:info@r-zoneenterprises.com"
- className="group flex items-center gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
- aria-label="Email R-Zone: info@r-zoneenterprises.com"
- itemProp="email"
- >
- <div
- className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/60 group-hover:border-[#0818A8] transition-all duration-200"
- aria-hidden="true"
- >
- <Mail size={11} className="text-[#1F51FF]" />
- </div>
- <span>info@r-zoneenterprises.com</span>
- </a>
+                      <a
+                        href={office.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 rounded-full bg-white/[0.08] px-3.5 py-1.5 text-white hover:bg-white hover:text-[#00112E] text-[13px] font-semibold transition-colors duration-200"
+                        aria-label={`Open ${office.city} office in Google Maps (opens in new tab)`}
+                      >
+                        <Navigation size={11} aria-hidden="true" />
+                        Directions
+                      </a>
+                    </div>
+                  </address>
+                ))}
+              </div>
+            </motion.div>
 
- {/* Office addresses */}
- {OFFICES.map((office, i) => (
- <a
- key={i}
- href={office.mapsUrl}
- target="_blank"
- rel="noopener noreferrer"
- className="group flex items-start gap-3 text-white/80 hover:text-white text-[13px] font-normal transition-colors duration-200"
- aria-label={`${office.label} ${office.address} (opens Google Maps)`}
- >
- <div
- className="w-7 h-7 bg-white/[0.05] border border-white/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#0818A8]/60 group-hover:border-[#0818A8] transition-all duration-200"
- aria-hidden="true"
- >
- <Navigation size={10} className="text-[#1F51FF]" />
- </div>
- <div>
- <span className="text-white/80 text-[13px] font-bold tracking-[0.12em] uppercase block mb-0.5">
- {office.flag} {office.label}
- </span>
- <span className="leading-snug block" dangerouslySetInnerHTML={{ __html: office.address }}></span>
- <span className="text-white/80 text-[13px] font-normal block mt-0.5">{office.hours}</span>
- </div>
- </a>
- ))}
- </address>
+            <motion.div className="lg:col-span-4 lg:pl-4" variants={fadeUp} custom={0.12}>
+              <ColHeader>Stay updated</ColHeader>
+              <NewsletterForm />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
- {/* Social links */}
- <div className="flex items-center gap-2.5" role="list" aria-label="Social media links">
- {SOCIAL_LINKS.map((s) => {
- const Icon = s.icon;
- return (
- <motion.a
- key={s.label}
- href={s.href}
- target="_blank"
- rel="noopener noreferrer"
- role="listitem"
- aria-label={`Follow R-Zone on ${s.label} (opens in new tab)`}
- className="w-9 h-9 bg-white/[0.05] border border-white/10 rounded-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-[#0818A8] hover:border-[#0818A8] transition-all duration-200"
- whileHover={{ scale: 1.08, y: -2 }}
- whileTap={{ scale: 0.95 }}
- >
- <Icon size={14} />
- </motion.a>
- );
- })}
+      {/* ══ ROW 4 · BOTTOM BAR ═════════════════════════════════════════ */}
+      <div className="relative border-t border-white/[0.07]">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-white/55 text-[12.5px] font-normal tracking-[0.03em] text-center sm:text-left">
+              © {year}{" "}
+              <a
+                href="https://r-zoneenterprises.com"
+                className="hover:text-white transition-colors duration-200"
+                rel="noopener"
+              >
+                R-Zone Enterprises
+              </a>
+              . All rights reserved. Registered in England &amp; Wales.
+            </p>
 
- {/* WhatsApp */}
- <motion.a
- href="https://wa.me/447915647119"
- target="_blank"
- rel="noopener noreferrer"
- aria-label="Message R-Zone on WhatsApp (opens in new tab)"
- className="w-9 h-9 border border-[#25D366]/30 rounded-sm flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/15 hover:border-[#25D366]/60 transition-all duration-200"
- whileHover={{ scale: 1.08, y: -2 }}
- whileTap={{ scale: 0.95 }}
- >
- <WhatsAppIcon size={14} />
- </motion.a>
- </div>
- </motion.div>
+            <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+              {LEGAL_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-white/55 hover:text-white text-[12.5px] tracking-[0.03em] transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
- {/* ── Services ── */}
- <motion.div className="lg:col-span-3" variants={fadeUp} custom={0.1}>
- <ColHeader>Our Services</ColHeader>
- <ul className="flex flex-col gap-0.5" role="list" aria-label="R-Zone services">
- {SERVICES.map((s) => (
- <FooterLink key={s.href} href={s.href} icon={s.icon}>
- {s.label}
- </FooterLink>
- ))}
- </ul>
- </motion.div>
-
- {/* ── Company ── */}
- <motion.div className="lg:col-span-2" variants={fadeUp} custom={0.2}>
- <ColHeader>Company</ColHeader>
- <ul className="flex flex-col gap-0.5" role="list" aria-label="Company links">
- {COMPANY.map((c) => (
- <FooterLink key={c.href} href={c.href}>
- {c.label}
- </FooterLink>
- ))}
- </ul>
- </motion.div>
-
- {/* ── Quick Links + Newsletter ── */}
- <motion.div className="lg:col-span-3" variants={fadeUp} custom={0.3}>
- <ColHeader>Quick Links</ColHeader>
- <ul className="flex flex-col gap-0.5 mb-8" role="list" aria-label="Quick links">
- {QUICK.map((q) => (
- <FooterLink key={q.href} href={q.href}>
- {q.label}
- </FooterLink>
- ))}
- </ul>
-
- <div className="w-full h-px bg-white/[0.07] mb-7" aria-hidden="true" />
-
- <NewsletterForm />
- </motion.div>
-
- </motion.div>
- </div>
-
- {/* ══ SECTION 4 OFFICE HOURS BAND ════════════════════════════════ */}
- <motion.div
- className="relative border-t border-white/[0.06] border-b border-b-white/[0.06]"
- initial={{ opacity: 0 }}
- whileInView={{ opacity: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 0.5 }}
- >
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-5">
- <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
- <div className="flex items-center gap-2.5">
- <Clock size={12} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
- <span className="text-white font-bold text-[13px] tracking-[0.14em] uppercase">
- Operating Hours
- </span>
- </div>
- {[
- { label: "UK Office", hours: "Mon Fri 10AM 6PM · Sat 11AM 2PM · Closed Sunday" },
- { label: "Nigeria Office", hours: "Mon Fri 9AM 5PM" },
- { label: "Support Line", hours: "24/7 via WhatsApp & Email" },
- ].map((item, i) => (
- <div key={i} className="flex items-center gap-2">
- <span className="text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase">
- {item.label}:
- </span>
- <span className="text-white/80 text-[13px] font-normal">{item.hours}</span>
- </div>
- ))}
- </div>
- </div>
- </motion.div>
-
- {/* ══ SECTION 5 BOTTOM BAR ═══════════════════════════════════════ */}
- <motion.div
- className="relative"
- initial={{ opacity: 0 }}
- whileInView={{ opacity: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 0.5, delay: 0.1 }}
- >
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-5">
- <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-
- {/* Copyright */}
- <p
- className="text-white/80 text-[13px] font-normal tracking-[0.04em] text-center sm:text-left"
- itemProp="copyrightYear"
- >
- © {year}{" "}
- <a
- href="https://r-zoneenterprises.com"
- className="hover:text-white transition-colors duration-200"
- rel="noopener"
- >
- R-Zone Enterprises
- </a>
- . All rights reserved. Registered in England &amp; Wales.
- </p>
-
- {/* Legal links */}
- <nav aria-label="Legal links" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
- {LEGAL_LINKS.map((l, i) => (
- <span key={l.href} className="flex items-center gap-4">
- <Link
- href={l.href}
- className="text-white/80 hover:text-white text-[13px] tracking-[0.03em] transition-colors duration-200"
- >
- {l.label}
- </Link>
- {i < LEGAL_LINKS.length - 1 && (
- <span className="text-white/80 text-[13px]" aria-hidden="true">·</span>
- )}
- </span>
- ))}
- </nav>
-
- {/* Back to top */}
- <motion.button
- onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
- className="flex items-center gap-2 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.1em] uppercase transition-colors duration-200 group flex-shrink-0"
- whileHover={{ y: -2 }}
- whileTap={{ scale: 0.95 }}
- aria-label="Scroll back to top of page"
- >
- Back to Top
- <div
- className="w-6 h-6 border border-white/25 group-hover:border-white/60 group-hover:bg-white/[0.06] rounded-sm flex items-center justify-center transition-all duration-200"
- aria-hidden="true"
- >
- <ChevronUp size={11} />
- </div>
- </motion.button>
-
- </div>
- </div>
- </motion.div>
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center gap-2 text-white/55 hover:text-white text-[13px] font-semibold transition-colors duration-200 group flex-shrink-0"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Scroll back to top of page"
+            >
+              Back to top
+              <span
+                className="w-7 h-7 border border-white/25 group-hover:border-white/60 group-hover:bg-white/[0.06] rounded-full flex items-center justify-center transition-all duration-200"
+                aria-hidden="true"
+              >
+                <ChevronUp size={11} />
+              </span>
+            </motion.button>
+          </div>
+        </div>
+      </div>
 
  </footer>
  );

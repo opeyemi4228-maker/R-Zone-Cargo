@@ -33,8 +33,8 @@ const TOC = [
 ];
 
 const SERVICES_LIST = [
- { icon: "✈", title: "Air Freight", desc: "Weekly air cargo from LHR, LGW, MAN to Lagos (LOS) and Abuja (ABV). Transit typically 5 10 working days." },
- { icon: "🚢", title: "Sea Freight", desc: "Weekly consolidated sea freight from UK ports to Apapa and Tin Can Island, Lagos. Transit 4 6 weeks." },
+ { icon: "✈", title: "Air Freight", desc: "Weekly air cargo from LHR, LGW, MAN to Lagos (LOS) and Abuja (ABV). Transit typically 5 to 10 working days." },
+ { icon: "🚢", title: "Sea Freight", desc: "Weekly consolidated sea freight from UK ports to Apapa and Tin Can Island, Lagos. Transit 4 to 6 weeks." },
  { icon: "🚚", title: "Door-to-Door Cargo", desc: "Collection from your UK address with delivery to any Nigerian address, via air or sea." },
  { icon: "📦", title: "Import from Nigeria", desc: "Air and sea import services bringing goods from Nigeria to the United Kingdom." },
  { icon: "📋", title: "Customs Clearance", desc: "End-to-end customs brokerage and clearance at UK and Nigerian ports. Included on all shipments." },
@@ -62,17 +62,17 @@ const RESTRICTED = [
 ];
 
 const TRANSIT_TABLE = [
- { service: "Air Freight", typical: "5 10 working days", note: "LHR/LGW/MAN to LOS/ABV excludes customs" },
- { service: "Sea Freight", typical: "4 6 weeks", note: "UK ports to Apapa/Tin Can Island, Lagos" },
- { service: "Door-to-Door (Air)", typical: "7 14 working days", note: "Includes UK collection and Nigeria delivery" },
- { service: "Door-to-Door (Sea)", typical: "5 8 weeks", note: "Includes UK collection and Nigeria delivery" },
- { service: "Importation (Air)", typical: "5 8 working days", note: "LOS/ABV to LHR excludes customs" },
- { service: "Importation (Sea)", typical: "4 6 weeks", note: "Apapa/Lagos to UK ports" },
+ { service: "Air Freight", typical: "5 to 10 working days", note: "LHR/LGW/MAN to LOS/ABV excludes customs" },
+ { service: "Sea Freight", typical: "4 to 6 weeks", note: "UK ports to Apapa/Tin Can Island, Lagos" },
+ { service: "Door-to-Door (Air)", typical: "7 to 14 working days", note: "Includes UK collection and Nigeria delivery" },
+ { service: "Door-to-Door (Sea)", typical: "5 to 8 weeks", note: "Includes UK collection and Nigeria delivery" },
+ { service: "Importation (Air)", typical: "5 to 8 working days", note: "LOS/ABV to LHR excludes customs" },
+ { service: "Importation (Sea)", typical: "4 to 6 weeks", note: "Apapa/Lagos to UK ports" },
 ];
 
 const CANCELLATION_TABLE = [
  { timing: "More than 5 working days before sailing/dispatch", refund: "Full refund minus £25 administration fee" },
- { timing: "2 5 working days before sailing/dispatch", refund: "50% refund" },
+ { timing: "2 to 5 working days before sailing/dispatch", refund: "50% refund" },
  { timing: "Less than 2 working days / cargo received", refund: "No refund" },
  { timing: "After customs declaration filed", refund: "No refund customs costs remain payable" },
 ];
@@ -82,20 +82,20 @@ function P({ children }) {
  return <p className="text-gray-800 text-[14px] font-normal leading-relaxed mb-4">{children}</p>;
 }
 function H3({ children }) {
- return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.1em] uppercase mb-3 mt-6 first:mt-0">{children}</h3>;
+ return <h3 className="text-gray-900 font-bold text-[13px] tracking-[0.1em] mb-3 mt-6 first:mt-0">{children}</h3>;
 }
 function UL({ children }) { return <ul className="space-y-2.5 mb-5">{children}</ul>; }
 function LI({ children }) {
  return (
  <li className="flex items-start gap-3">
- <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8] flex-shrink-0 mt-[0.48em]" aria-hidden="true" />
+ <span className="w-1.5 h-1.5 rounded-full bg-[#000f89] flex-shrink-0 mt-[0.48em]" aria-hidden="true" />
  <span className="text-gray-800 text-[13.5px] font-normal leading-relaxed">{children}</span>
  </li>
  );
 }
 function Callout({ type = "blue", children }) {
  const s = {
- blue: "border-l-[3px] border-[#0818A8] bg-[#0818A8]/4 text-gray-800",
+ blue: "border-l-[3px] border-[#000f89] bg-[#000f89]/4 text-gray-800",
  amber: "border-l-[3px] border-amber-500 bg-amber-50 text-amber-900",
  green: "border-l-[3px] border-emerald-600 bg-emerald-50 text-emerald-900",
  red: "border-l-[3px] border-red-500 bg-red-50 text-red-900",
@@ -104,10 +104,10 @@ function Callout({ type = "blue", children }) {
 }
 function BlueTable({ headers, rows, minWidth = 500 }) {
  return (
- <div className="overflow-x-auto mb-6 border border-gray-200">
+ <div className="overflow-x-auto mb-6 border border-gray-200 rounded-[20px]">
  <table className="w-full" style={{ minWidth }} aria-label="Data table">
  <thead>
- <tr className="bg-[#0818A8]">
+ <tr className="bg-[#000f89]">
  {headers.map(h => (
  <th key={h} className="px-5 py-3 text-left text-[13px] font-bold tracking-[0.18em] uppercase text-white/80">{h}</th>
  ))}
@@ -115,7 +115,7 @@ function BlueTable({ headers, rows, minWidth = 500 }) {
  </thead>
  <tbody>
  {rows.map((row, i) => (
- <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#0818A8]/3 transition-colors`}>
+ <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"} hover:bg-[#000f89]/3 transition-colors`}>
  {row.map((cell, j) => (
  <td key={j} className="px-5 py-3 text-[13px] text-gray-800 font-normal leading-snug">{cell}</td>
  ))}
@@ -141,10 +141,10 @@ function Section({ id, num, title, children }) {
  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
  >
  <div className="flex items-start gap-5 mb-7">
- <div className="w-10 h-10 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-10 h-10 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
  <span className="text-white font-black text-[13px] tracking-[0.06em]">{num}</span>
  </div>
- <h2 id={`${id}-h`} className="font-black text-[clamp(18px,2.8vw,25px)] text-gray-900 leading-tight tracking-[-0.02em] pt-1.5">{title}</h2>
+ <h2 id={`${id}-h`} className="font-extrabold text-[clamp(18px,2.8vw,25px)] text-gray-900 leading-tight tracking-[-0.03em] pt-1.5">{title}</h2>
  </div>
  <div className="pl-[60px]">{children}</div>
  </motion.section>
@@ -160,11 +160,11 @@ function FAQ({ q, a }) {
  className="w-full flex items-start justify-between gap-4 py-4 text-left group"
  aria-expanded={open}
  >
- <span className={`text-[13.5px] font-semibold leading-snug transition-colors ${open ? "text-[#0818A8]" : "text-gray-800 group-hover:text-[#0818A8]"}`}>
+ <span className={`text-[13.5px] font-semibold leading-snug transition-colors ${open ? "text-[#000f89]" : "text-gray-800 group-hover:text-[#000f89]"}`}>
  {q}
  </span>
  <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="flex-shrink-0 mt-0.5" aria-hidden="true">
- <ChevronDown size={15} className={open ? "text-[#0818A8]" : "text-gray-800"} />
+ <ChevronDown size={15} className={open ? "text-[#000f89]" : "text-gray-800"} />
  </motion.div>
  </button>
  <AnimatePresence>
@@ -223,7 +223,7 @@ export default function TermsPage() {
  />
 
  {/* ── Top bar ── */}
- <div className="bg-[#0818A8]">
+ <div className="bg-[#000f89]">
  <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 h-9 flex items-center justify-between">
  <p className="text-white/80 text-[13px] font-medium">R-Zone Enterprises Legal &amp; Compliance</p>
  <div className="hidden sm:flex items-center gap-6">
@@ -249,13 +249,13 @@ export default function TermsPage() {
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
  <div>
  <div className="flex items-center gap-3 mb-5">
- <div className="w-12 h-12 bg-[#0818A8] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+ <div className="w-12 h-12 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-full" aria-hidden="true">
  <Scale size={20} className="text-white" />
  </div>
- <div className="h-px flex-1 bg-gradient-to-r from-[#0818A8]/30 to-transparent" aria-hidden="true" />
+ <div className="h-px flex-1 bg-gradient-to-r from-[#000f89]/30 to-transparent" aria-hidden="true" />
  </div>
- <h1 className="font-black text-[clamp(32px,6vw,64px)] text-gray-900 leading-[0.88] tracking-[-0.035em] uppercase mb-5">
- Terms of<br /><span className="text-[#0818A8]">Service.</span>
+ <h1 className="font-extrabold text-[clamp(32px,6vw,64px)] text-gray-900 leading-[1.06] tracking-[-0.035em] mb-5">
+ Terms of<br /><span className="text-[#000f89]">Service.</span>
  </h1>
  <p className="text-gray-800 text-[15px] font-normal leading-relaxed max-w-lg">
  The legal agreement between you and R-Zone Enterprises Ltd governing use of our UK Nigeria freight and logistics services. Written clearly no legal jargon without plain-English explanation.
@@ -268,9 +268,9 @@ export default function TermsPage() {
  { label: "Jurisdiction", val: "England & Wales", icon: Globe },
  { label: "Governed By", val: "English Law", icon: Scale },
  ].map(({ label, val, icon: Icon }) => (
- <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/25 transition-colors">
- <Icon size={13} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-800 mb-0.5">{label}</p>
+ <div key={label} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
+ <Icon size={13} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="text-gray-800 mb-0.5 text-[13px] font-semibold">{label}</p>
  <p className="text-gray-800 font-semibold text-[13px] leading-snug">{val}</p>
  </div>
  ))}
@@ -278,7 +278,7 @@ export default function TermsPage() {
  </div>
 
  {/* Important notice */}
- <div className="mt-8 border border-amber-200 bg-amber-50 px-5 py-4 flex items-start gap-3">
+ <div className="mt-8 border border-amber-200 bg-amber-50 px-5 py-4 flex items-start gap-3 rounded-[20px]">
  <AlertTriangle size={16} className="text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
  <p className="text-amber-900 text-[13px] font-normal leading-relaxed">
  <strong className="font-semibold">Important:</strong> By booking a shipment, dropping off cargo, or using our website, you agree to these Terms in their entirety. Please read them carefully. If you do not agree, please do not use our services.
@@ -311,8 +311,8 @@ export default function TermsPage() {
  key={item.id}
  href={`#${item.id}`}
  onClick={() => setTocMobile(false)}
- className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 ${
- activeId === item.id ? "bg-[#0818A8]/5 text-[#0818A8] font-semibold" : "text-gray-800 hover:bg-gray-50"
+ className={`flex items-center gap-2.5 px-4 py-3 border-b border-r border-gray-100 text-[13px] transition-colors odd:border-r even:border-r-0 rounded-full ${
+ activeId === item.id ? "bg-[#000f89]/5 text-[#000f89] font-semibold" : "text-gray-800 hover:bg-gray-50"
  }`}
  >
  <span className="text-[13px] font-black text-gray-800">{item.num}</span>
@@ -334,29 +334,29 @@ export default function TermsPage() {
  {/* Sidebar */}
  <aside className="hidden lg:block lg:col-span-3 xl:col-span-2" aria-label="Table of contents">
  <div className="sticky top-[74px]">
- <p className="text-[13px] font-black tracking-[0.35em] uppercase text-gray-800 mb-4 px-1">Contents</p>
+ <p className="text-gray-800 mb-4 px-1 text-[13px] font-semibold">Contents</p>
  <nav aria-label="Section navigation">
  {TOC.map(item => (
  <a
  key={item.id}
  href={`#${item.id}`}
- className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 ${
+ className={`group flex items-center gap-3 px-3 py-2.5 text-[13px] border-l-2 transition-all duration-150 rounded-full ${
  activeId === item.id
- ? "border-[#0818A8] text-[#0818A8] font-semibold bg-[#0818A8]/4"
+ ? "border-[#000f89] text-[#000f89] font-semibold bg-[#000f89]/4"
  : "border-transparent text-gray-800 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50"
  }`}
  >
- <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#0818A8]" : "text-gray-800"}`}>
+ <span className={`text-[13px] font-black flex-shrink-0 ${activeId === item.id ? "text-[#000f89]" : "text-gray-800"}`}>
  {item.num}
  </span>
  {item.label}
  </a>
  ))}
  </nav>
- <div className="mt-6 border border-[#0818A8]/15 bg-[#0818A8]/4 p-4">
- <Scale size={14} className="text-[#0818A8] mb-2" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0818A8] mb-2">Legal Enquiries</p>
- <a href="mailto:legal@r-zoneenterprises.com" className="text-[13px] font-semibold text-gray-800 hover:text-[#0818A8] transition-colors block leading-snug break-all">
+ <div className="mt-6 border border-[#000f89]/15 bg-[#000f89]/4 p-4 rounded-[20px]">
+ <Scale size={14} className="text-[#000f89] mb-2" aria-hidden="true" />
+ <p className="mb-2 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Legal Enquiries</p>
+ <a href="mailto:legal@r-zoneenterprises.com" className="text-[13px] font-semibold text-gray-800 hover:text-[#000f89] transition-colors block leading-snug break-all">
  legal@r-zoneenterprises.com
  </a>
  <p className="text-gray-800 text-[13px] font-normal mt-1">Responds within 1 business day</p>
@@ -393,7 +393,7 @@ export default function TermsPage() {
  <P>R-Zone Enterprises provides the following freight and logistics services between the United Kingdom and Nigeria:</P>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
  {SERVICES_LIST.map(s => (
- <div key={s.title} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#0818A8]/30 transition-colors">
+ <div key={s.title} className="border border-gray-200 bg-gray-50 p-4 hover:border-[#000f89]/30 transition-colors rounded-[20px]">
  <p className="text-gray-900 font-bold text-[13.5px] mb-1">{s.icon} {s.title}</p>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed">{s.desc}</p>
  </div>
@@ -421,10 +421,10 @@ export default function TermsPage() {
  {/* ── 04 ── */}
  <Section id="t4" num="04" title="Cargo Restrictions">
  <H3>4.1 Prohibited Items (Absolute No Exceptions)</H3>
- <div className="border border-red-100 bg-red-50/60 p-5 mb-5">
+ <div className="border border-red-100 bg-red-50/60 p-5 mb-5 rounded-[20px]">
  <div className="flex items-center gap-2 mb-3">
  <Ban size={14} className="text-red-600" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-red-600">We will not carry these under any circumstances</p>
+ <p className="text-red-600 text-[13px] font-semibold">We will not carry these under any circumstances</p>
  </div>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
  {PROHIBITED.map((item, i) => (
@@ -480,21 +480,21 @@ export default function TermsPage() {
  <H3>7.1 Quotations</H3>
  <P>All quotes are valid for 7 calendar days from the date of issue. Rates may change due to fuel surcharges, currency fluctuations, or carrier tariff changes. We will notify you of any changes before confirming. RZE reserves the right to implement corresponding price increases where taxes or transport costs change significantly for reasons outside our control.</P>
  <H3>7.2 Volumetric Weight</H3>
- <div className="border border-gray-200 bg-gray-50 p-5 mb-5">
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-800 mb-3">Volumetric Weight Formula (per RZE Tariff)</p>
+ <div className="border border-gray-200 bg-gray-50 p-5 mb-5 rounded-[20px]">
+ <p className="text-gray-800 mb-3 text-[13px] font-semibold">Volumetric Weight Formula (per RZE Tariff)</p>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
- <div className="bg-white border border-gray-200 p-4">
+ <div className="bg-white border border-gray-200 p-4 rounded-[20px]">
  <div className="flex items-center gap-2 mb-1.5">
- <div className="w-5 h-5 bg-[#0818A8] flex items-center justify-center" aria-hidden="true">
+ <div className="w-5 h-5 bg-[#000f89] flex items-center justify-center" aria-hidden="true">
  <span className="text-white text-[13px]">✈</span>
  </div>
  <p className="text-gray-900 font-bold text-[13px]">Air Freight</p>
  </div>
  <p className="text-gray-800 text-[13px] font-normal">L × W × H (cm) ÷ <strong className="text-gray-900 font-semibold">6,000</strong></p>
  </div>
- <div className="bg-white border border-gray-200 p-4">
+ <div className="bg-white border border-gray-200 p-4 rounded-[20px]">
  <div className="flex items-center gap-2 mb-1.5">
- <div className="w-5 h-5 bg-[#0818A8] flex items-center justify-center" aria-hidden="true">
+ <div className="w-5 h-5 bg-[#000f89] flex items-center justify-center" aria-hidden="true">
  <span className="text-white text-[13px]">🚢</span>
  </div>
  <p className="text-gray-900 font-bold text-[13px]">Sea Freight</p>
@@ -563,7 +563,7 @@ export default function TermsPage() {
  <LI>Consequential losses, loss of profit, or indirect losses of any kind</LI>
  </UL>
  <H3>9.5 Claims Procedure</H3>
- <P>Submit all claims in writing to <a href="mailto:claims@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">claims@r-zoneenterprises.com</a> within <strong className="text-gray-900 font-semibold">7 days of delivery</strong> (damage) or <strong className="text-gray-900 font-semibold">14 days of expected delivery date</strong> (loss). Include: booking reference, description of goods, photographs, packing list, and estimated value. RZE will respond within 2 working days and complete its investigation within 10 14 working days.</P>
+ <P>Submit all claims in writing to <a href="mailto:claims@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">claims@r-zoneenterprises.com</a> within <strong className="text-gray-900 font-semibold">7 days of delivery</strong> (damage) or <strong className="text-gray-900 font-semibold">14 days of expected delivery date</strong> (loss). Include: booking reference, description of goods, photographs, packing list, and estimated value. RZE will respond within 2 working days and complete its investigation within 10 to 14 working days.</P>
  <Callout type="blue">
  <strong className="font-semibold">Recommendation:</strong> Our carrier liability limits may be significantly lower than the actual value of your goods. We strongly recommend taking out cargo insurance on all shipments especially high-value cargo. See Section 10.
  </Callout>
@@ -591,8 +591,8 @@ export default function TermsPage() {
 
  {/* ── 12 ── */}
  <Section id="t12" num="12" title="Loss, Damage & Delay">
- <P>In the event your cargo is lost, damaged, or significantly delayed, contact us immediately at <a href="tel:+448007720864" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">+44 800 772 0864</a> or <a href="mailto:info@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">info@r-zoneenterprises.com</a>.</P>
- <P>We investigate all reported incidents thoroughly. Our internal investigation typically completes within 10 14 working days. Where cargo cannot be located within <strong className="text-gray-900 font-semibold">30 days</strong> of the expected delivery date, it will be treated as lost and any valid claim processed per Section 9.</P>
+ <P>In the event your cargo is lost, damaged, or significantly delayed, contact us immediately at <a href="tel:+448007720864" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">+44 800 772 0864</a> or <a href="mailto:info@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">info@r-zoneenterprises.com</a>.</P>
+ <P>We investigate all reported incidents thoroughly. Our internal investigation typically completes within 10 to 14 working days. Where cargo cannot be located within <strong className="text-gray-900 font-semibold">30 days</strong> of the expected delivery date, it will be treated as lost and any valid claim processed per Section 9.</P>
  <P>RZE shall not be liable in respect of any consignment where any person has been fraudulent or dishonest in any way, or misrepresents authority to receive a consignment on the addressee&apos;s or Customer&apos;s behalf.</P>
  <Callout type="amber">
  <strong className="font-semibold">Non-delivery process:</strong> RZE will attempt to deliver once. After an unsuccessful delivery attempt, the addressee may request redelivery, redirection, or collection subject to additional charges. If unclaimed after 10 working days of attempted delivery notification, the consignment will be returned to our warehouse. Free storage applies for 21 days, after which daily charges apply.
@@ -644,7 +644,7 @@ export default function TermsPage() {
  {/* ── 17 ── */}
  <Section id="t17" num="17" title="Governing Law">
  <P>These Terms are governed by and construed in accordance with the laws of <strong className="text-gray-900 font-semibold">England and Wales</strong>. Each party irrevocably agrees to submit to the exclusive jurisdiction of the courts of England and Wales over any claim or matter arising under or in connection with this agreement.</P>
- <P>Before commencing legal proceedings, we encourage resolution through our complaints process: <a href="mailto:complaints@r-zoneenterprises.com" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">complaints@r-zoneenterprises.com</a>. We aim to resolve all complaints within <strong className="text-gray-900 font-semibold">14 working days</strong>.</P>
+ <P>Before commencing legal proceedings, we encourage resolution through our complaints process: <a href="mailto:complaints@r-zoneenterprises.com" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">complaints@r-zoneenterprises.com</a>. We aim to resolve all complaints within <strong className="text-gray-900 font-semibold">14 working days</strong>.</P>
  <H3>17.1 Severability</H3>
  <P>If any provision of these Terms is found by any court or administrative body of competent jurisdiction to be invalid or unenforceable, such invalidity shall not affect the remaining provisions, which shall remain in full force and effect.</P>
  <H3>17.2 VAT</H3>
@@ -663,12 +663,12 @@ export default function TermsPage() {
  ].map(item => {
  const Icon = item.icon;
  return (
- <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#0818A8]/25 transition-colors">
+ <div key={item.label} className="border border-gray-200 bg-gray-50 p-5 hover:border-[#000f89]/25 transition-colors rounded-[20px]">
  <div className="flex items-center gap-2 mb-2">
- <Icon size={13} className="text-[#0818A8]" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-800">{item.label}</p>
+ <Icon size={13} className="text-[#000f89]" aria-hidden="true" />
+ <p className="text-gray-800 text-[13px] font-semibold">{item.label}</p>
  </div>
- <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#0818A8] transition-colors break-all">
+ <a href={item.href} className="text-gray-800 font-semibold text-[13px] hover:text-[#000f89] transition-colors break-all">
  {item.val}
  </a>
  </div>
@@ -677,8 +677,8 @@ export default function TermsPage() {
  </div>
 
  {/* Registered address */}
- <div className="border border-gray-200 bg-gray-50 p-5 mb-7">
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-800 mb-2">Registered Office</p>
+ <div className="border border-gray-200 bg-gray-50 p-5 mb-7 rounded-[20px]">
+ <p className="text-gray-800 mb-2 text-[13px] font-semibold">Registered Office</p>
  <p className="text-gray-800 text-[13px] font-semibold">R-Zone Enterprises Ltd</p>
  <p className="text-gray-800 text-[13px] font-normal">Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS, United Kingdom</p>
  <p className="text-gray-800 text-[13px] font-normal mt-1">Registered in England and Wales</p>
@@ -696,7 +696,7 @@ export default function TermsPage() {
  },
  {
  q: "How do I make a claim for lost cargo?",
- a: "Email claims@r-zoneenterprises.com within 14 days of the expected delivery date with your booking reference, full description and packing list of goods, and declared value. We will respond within 2 working days and complete our investigation within 10 14 working days.",
+ a: "Email claims@r-zoneenterprises.com within 14 days of the expected delivery date with your booking reference, full description and packing list of goods, and declared value. We will respond within 2 working days and complete our investigation within 10 to 14 working days.",
  },
  {
  q: "What is the maximum weight per bag or box?",
@@ -711,24 +711,24 @@ export default function TermsPage() {
  </Section>
 
  {/* Footer CTA */}
- <div className="mt-12 border border-[#0818A8]/20 bg-[#0818A8]/4 p-7 md:p-9">
+ <div className="mt-12 border border-[#000f89]/20 bg-[#000f89]/4 p-7 md:p-9 rounded-[20px]">
  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
  <div>
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-1">Ready to Ship?</p>
- <h3 className="text-gray-900 font-black text-[20px] tracking-[-0.01em]">Get a Free Quote Today.</h3>
+ <p className="mb-1 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Ready to Ship?</p>
+ <h3 className="text-gray-900 font-extrabold text-[20px] tracking-[-0.03em]">Get a Free Quote Today.</h3>
  <p className="text-gray-800 text-[13.5px] font-normal mt-1">Same-day response from our UK-based team.</p>
  </div>
  <div className="flex flex-wrap gap-3">
  <Link
  href="/quote"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
+ className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full"
  aria-label="Get a free shipping quote"
  >
  <Package size={12} aria-hidden="true" /> Get a Quote
  </Link>
  <Link
  href="/"
- className="inline-flex items-center gap-2 border border-gray-300 text-gray-800 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold tracking-[0.06em] uppercase px-6 py-3 transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-gray-300 text-gray-800 hover:border-[#000f89] hover:text-[#000f89] text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="Back to R-Zone Enterprises"
  >
  <ArrowLeft size={11} aria-hidden="true" /> Back to Site

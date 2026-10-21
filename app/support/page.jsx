@@ -41,7 +41,7 @@ const FAQ_CATEGORIES = [
  id: "shipping",
  icon: Package,
  label: "Shipping & Booking",
- color: "#0818A8",
+ color: "#000f89",
  faqs: [
  { q: "How do I book a shipment with R-Zone?", a: "You can book online via our Get a Quote form, call us on +44 800 772 0864, email info@r-zoneenterprises.com, or visit our Upminster, Essex warehouse in person. We confirm all bookings in writing with a unique reference number." },
  { q: "What items can I ship to Nigeria?", a: "We accept most general cargo including clothing, electronics, foodstuffs, household goods, documents, and personal effects. Some items require prior approval (dangerous goods, pharmaceuticals, high-value items). Contact us to check a specific item." },
@@ -55,7 +55,7 @@ const FAQ_CATEGORIES = [
  id: "tracking",
  icon: Zap,
  label: "Tracking & Updates",
- color: "#1F51FF",
+ color: "#0000FF",
  faqs: [
  { q: "How do I track my shipment?", a: "Use our Track Shipment tool at r-zoneenterprises.com/track with your booking reference number (format: RZC-XXXX-XXXXX). You can also call +44 800 772 0864 or WhatsApp +44 7915 647 119 for a live update." },
  { q: "When will I receive my tracking number?", a: "Air freight tracking numbers are issued within 24 hours of cargo acceptance. Sea freight booking references are issued at booking confirmation, with vessel tracking details available after the sailing date." },
@@ -68,13 +68,13 @@ const FAQ_CATEGORIES = [
  id: "customs",
  icon: FileCheck,
  label: "Customs & Duties",
- color: "#0437F2",
+ color: "#0000CD",
  faqs: [
  { q: "Do I need to pay customs duty in Nigeria?", a: "Import duties may apply depending on the type and value of your goods. Duties are levied by the Nigeria Customs Service (NCS) and are payable by the recipient in Nigeria. We calculate expected duties and inform you at booking." },
  { q: "What documents do I need for customs?", a: "Typically: a completed packing list, commercial invoice (for business goods), and the recipient's address in Nigeria. We provide guidance on additional documents (NAFDAC, SON certificates) based on your cargo type." },
  { q: "Why is my cargo held at customs?", a: "Common reasons include: missing or incorrect documentation, prohibited item queries, undervalued declarations, or random inspection. Contact us immediately if you receive a customs hold notification we handle clearance on your behalf." },
  { q: "Can R-Zone handle customs clearance for me?", a: "Yes customs clearance is included in all our shipments. Our in-house customs team handles UK export declarations and our Lagos team manages Nigeria Customs Service (NCS) clearance." },
- { q: "How long does customs clearance take in Nigeria?", a: "Standard clearance takes 2 5 working days at Apapa or Tin Can Island ports. We apply for expedited clearance where available. Delays can occur during public holidays, port congestion, or if documentation is incomplete." },
+ { q: "How long does customs clearance take in Nigeria?", a: "Standard clearance takes 2 to 5 working days at Apapa or Tin Can Island ports. We apply for expedited clearance where available. Delays can occur during public holidays, port congestion, or if documentation is incomplete." },
  { q: "Can I declare a lower value to avoid customs duty?", a: "No misdeclaration is a criminal offence in both the UK and Nigeria. R-Zone Enterprises will not file inaccurate customs declarations. We can advise on legitimate duty relief schemes." },
  ],
  },
@@ -82,10 +82,10 @@ const FAQ_CATEGORIES = [
  id: "delivery",
  icon: Truck,
  label: "Delivery & Collection",
- color: "#0818A8",
+ color: "#000f89",
  faqs: [
- { q: "Do you collect from my home in the UK?", a: "Yes we offer door collection across the entire UK for an additional fee based on your location. Our Upminster, Essex warehouse also accepts drop-offs Mon Fri 10AM 6PM and Sat 11AM 2PM." },
- { q: "How long does door delivery in Nigeria take after customs clearance?", a: "Lagos and surrounding areas: 1 3 working days. Other southern states: 3 5 working days. Northern states: 5 7 working days. We use our own delivery network in Lagos and trusted partners nationally." },
+ { q: "Do you collect from my home in the UK?", a: "Yes we offer door collection across the entire UK for an additional fee based on your location. Our Upminster, Essex warehouse also accepts drop-offs Mon to Fri 10AM to 6PM and Sat 11AM to 2PM." },
+ { q: "How long does door delivery in Nigeria take after customs clearance?", a: "Lagos and surrounding areas: 1 to 3 working days. Other southern states: 3 to 5 working days. Northern states: 5 to 7 working days. We use our own delivery network in Lagos and trusted partners nationally." },
  { q: "What happens if the recipient isn't home for delivery?", a: "Our Nigeria delivery team will call the recipient ahead of delivery. If they are unavailable, the cargo is held at our Lagos facility for up to 5 working days at no charge. After 5 days, storage charges may apply." },
  { q: "Can I collect my cargo from your Lagos warehouse?", a: "Yes recipients can collect from our Shagam Interchange, Lagos facility. Bring a valid ID and your booking reference. Call our Lagos team on arrival to arrange assisted collection." },
  { q: "Do you deliver to all 36 Nigerian states?", a: "Yes we deliver to all 36 states and the FCT Abuja. Transit times vary by state. Some remote areas require the recipient to collect from a nearby town; our team advises at booking." },
@@ -95,11 +95,11 @@ const FAQ_CATEGORIES = [
  id: "payments",
  icon: Shield,
  label: "Payments & Pricing",
- color: "#1F51FF",
+ color: "#0000FF",
  faqs: [
  { q: "What payment methods do you accept?", a: "Bank transfer (BACS/Faster Payments), debit/credit card, and PayPal. Business accounts with regular shipments can apply for 14 or 30-day credit terms. We do not accept cash." },
  { q: "When do I need to pay?", a: "Individual customers: full payment is required before cargo is accepted. Business account customers: payment is due within the agreed credit period after invoice date." },
- { q: "Can I get a refund if I cancel my shipment?", a: "Cancellations more than 5 working days before sailing/dispatch: full refund minus £25 admin fee. 2 5 days before: 50% refund. Within 2 days or cargo received: no refund. See our Terms of Service for full details." },
+ { q: "Can I get a refund if I cancel my shipment?", a: "Cancellations more than 5 working days before sailing/dispatch: full refund minus £25 admin fee. 2 to 5 days before: 50% refund. Within 2 days or cargo received: no refund. See our Terms of Service for full details." },
  { q: "How is the shipping cost calculated?", a: "Charges are based on the greater of actual weight or volumetric weight. Volumetric weight = (Length × Width × Height in cm) ÷ 5,000 for air freight, ÷ 1,000 for sea freight." },
  { q: "Are there any hidden fees?", a: "No. Our quotes include customs clearance, standard packaging, and standard delivery. Additional charges (door collection, out-of-state delivery, insurance, packing service) are quoted separately and transparently at booking." },
  ],
@@ -108,7 +108,7 @@ const FAQ_CATEGORIES = [
  id: "claims",
  icon: AlertCircle,
  label: "Claims & Complaints",
- color: "#0437F2",
+ color: "#0000CD",
  faqs: [
  { q: "My cargo arrived damaged what do I do?", a: "Report damage within 7 days of delivery to claims@r-zoneenterprises.com. Include your booking reference, photos of the damage, photos of the packaging, and an estimate of the value affected. We respond within 2 working days." },
  { q: "My cargo hasn't arrived what do I do?", a: "If your cargo hasn't arrived within 14 days of the expected delivery date, contact us immediately. We will investigate with the carrier and our Nigeria team. Cargo missing for more than 30 days is classified as lost and a claim can be submitted." },
@@ -125,10 +125,10 @@ const CONTACT_CHANNELS = [
  title: "Call Us UK",
  desc: "Speak directly to our UK team",
  value: "+44 (0) 800 772 0864",
- sub: "Free to call · Mon Fri 10AM 6PM · Sat 11AM 2PM",
+ sub: "Free to call · Mon to Fri 10AM to 6PM · Sat 11AM to 2PM",
  href: "tel:+448007720864",
  action: "Call Now",
- color: "#0818A8",
+ color: "#000f89",
  badge: "Fastest",
  },
  {
@@ -150,7 +150,7 @@ const CONTACT_CHANNELS = [
  sub: "Same-day response on weekdays",
  href: "mailto:info@r-zoneenterprises.com",
  action: "Send Email",
- color: "#0437F2",
+ color: "#0000CD",
  badge: null,
  },
  {
@@ -161,7 +161,7 @@ const CONTACT_CHANNELS = [
  sub: "Active daily Mon to Sat",
  href: "https://instagram.com/rzoneenterprises",
  action: "Open Instagram",
- color: "#0818A8",
+ color: "#000f89",
  badge: null,
  },
 ];
@@ -170,7 +170,7 @@ const STATUS_ITEMS = [
  { label: "UK Air Departures", status: "operational", detail: "Mon · Wed · Fri on schedule" },
  { label: "Sea Freight Sailings", status: "operational", detail: "Weekly sailings spaces available" },
  { label: "Nigeria Deliveries", status: "operational", detail: "Lagos deliveries running normally" },
- { label: "Customs Clearance", status: "delayed", detail: "Minor delays at Apapa +1 2 days est." },
+ { label: "Customs Clearance", status: "delayed", detail: "Minor delays at Apapa +1 to 2 days est." },
  { label: "UK Customer Support", status: "operational", detail: "Lines open · +44 800 772 0864" },
  { label: "Online Tracking", status: "operational", detail: "System fully operational" },
 ];
@@ -235,15 +235,15 @@ const fadeUp = {
 function TagPill({ label, dark = false }) {
  return (
  <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-5 ${
- dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"
+ dark ? "border-[#0000FF]/30 bg-[#000f89]/14" : "border-[#000f89]/20 bg-[#000f89]/6"
  }`}>
  <motion.span
- className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
+ className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#0000FF]" : "bg-[#000f89]"}`}
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
  transition={{ duration: 2, repeat: Infinity }}
  aria-hidden="true"
  />
- <span className={`text-[13px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>
+ <span className={`text-[13px] font-semibold ${dark ? "text-[#4D4DFF]" : "text-[#000f89]"}`}>
  {label}
  </span>
  </div>
@@ -263,7 +263,7 @@ function FAQItem({ faq, dark = false }) {
  <span className={`text-[13.5px] font-semibold leading-snug transition-colors duration-150 ${
  dark
  ? open ? "text-white" : "text-white/80 group-hover:text-white"
- : open ? "text-[#0818A8]" : "text-gray-800 group-hover:text-[#0818A8]"
+ : open ? "text-[#000f89]" : "text-gray-800 group-hover:text-[#000f89]"
  }`}>
  {faq.q}
  </span>
@@ -275,8 +275,8 @@ function FAQItem({ faq, dark = false }) {
  >
  <ChevronDown size={15} className={
  dark
- ? open ? "text-[#1F51FF]" : "text-white/80"
- : open ? "text-[#0818A8]" : "text-gray-800"
+ ? open ? "text-[#4D4DFF]" : "text-white/80"
+ : open ? "text-[#000f89]" : "text-gray-800"
  } />
  </motion.div>
  </button>
@@ -309,7 +309,7 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
 
  return (
  <section
- className="relative bg-[#00061a] overflow-hidden hero-section"
+ className="relative bg-[#00112E] overflow-hidden hero-section"
  aria-labelledby="support-hero-heading"
  >
  <div
@@ -318,8 +318,8 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-15%] left-[10%] w-[700px] h-[500px] bg-[#0818A8]/18 rounded-full blur-[150px]" />
- <div className="absolute bottom-[-15%] right-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/10 rounded-full blur-[130px]" />
+ <div className="absolute top-[-15%] left-[10%] w-[700px] h-[500px] bg-[#000f89]/18 rounded-full blur-[150px]" />
+ <div className="absolute bottom-[-15%] right-[-5%] w-[500px] h-[400px] bg-[#0000FF]/10 rounded-full blur-[130px]" />
  </div>
 
  <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-[100px] pb-16 md:pb-20">
@@ -327,7 +327,7 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  {/* Breadcrumb */}
  <motion.nav
  aria-label="Breadcrumb"
- className="flex items-center gap-2 mb-10"
+ className="flex items-center gap-2 mb-10 pt-3.5 lg:mt-[11px] max-lg:-mt-[16px]"
  initial={{ opacity: 0 }}
  animate={inView ? { opacity: 1 } : {}}
  transition={{ duration: 0.4 }}
@@ -346,16 +346,16 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
 
  <motion.h1
  id="support-hero-heading"
- className="font-black text-[clamp(34px,6vw,68px)] text-white leading-[0.88] tracking-[-0.035em] uppercase mb-5"
+ className="font-extrabold text-[clamp(34px,6vw,68px)] text-white leading-[1.06] tracking-[-0.035em] mb-5"
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: 0.1 }}
  >
  How Can We<br />
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Help You?
  <motion.span
- className="absolute -bottom-2 left-0 h-[4px] bg-[#1F51FF] rounded-full"
+ className="absolute -bottom-2 left-0 h-[4px] bg-[#0000FF] rounded-full"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -371,8 +371,7 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  transition={{ duration: 0.55, delay: 0.22 }}
  >
  Search our help articles, track your shipment, or get directly in touch
- with our UK-based team. The highest-rated cargo company between the UK,
- Nigeria, and across Africa.
+ with our UK-based team. 120+ five-star Google reviews, all organically earned.
  </motion.p>
 
  {/* Search bar */}
@@ -390,12 +389,12 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  value={searchQuery}
  onChange={e => setSearchQuery(e.target.value)}
  onKeyDown={handleKey}
- className="w-full bg-white/[0.08] border border-white/[0.15] text-white text-[14px] font-normal placeholder-white/60 pl-12 pr-[120px] py-4 outline-none focus:border-[#1F51FF]/60 focus:bg-white/[0.12] transition-all duration-200"
+ className="w-full bg-white/[0.08] border border-white/[0.15] text-white text-[14px] font-normal placeholder-white/60 pl-12 pr-[120px] py-4 outline-none focus:border-[#0000FF]/60 focus:bg-white/[0.12] transition-all duration-200 rounded-xl"
  aria-label="Search support articles"
  />
  <button
  onClick={onSearch}
- className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2 transition-all duration-200"
+ className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-5 py-2 transition-all duration-200 rounded-full"
  aria-label="Search"
  >
  Search
@@ -408,7 +407,7 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  <button
  key={t}
  onClick={() => { setSearchQuery(t); onSearch(t); }}
- className="text-[13px] font-medium text-white/80 hover:text-white border border-white/[0.15] hover:border-white/30 px-3 py-1.5 transition-all duration-150 bg-white/[0.03] hover:bg-white/[0.07]"
+ className="text-[13px] font-medium text-white/80 hover:text-white border border-white/[0.15] hover:border-white/30 px-3 py-1.5 transition-all duration-150 bg-white/[0.03] hover:bg-white/[0.07] rounded-full"
  aria-label={`Search for "${t}"`}
  >
  {t}
@@ -425,16 +424,16 @@ function Hero({ onSearch, searchQuery, setSearchQuery }) {
  transition={{ duration: 0.5, delay: 0.5 }}
  >
  {[
- { icon: Hash, label: "Track Shipment", desc: "Enter your reference", href: "#track", color: "#0818A8" },
- { icon: BookOpen, label: "FAQs", desc: "Common questions", href: "#faqs", color: "#1F51FF" },
- { icon: Phone, label: "Contact Us", desc: "+44 800 772 0864", href: "#contact", color: "#0437F2" },
+ { icon: Hash, label: "Track Shipment", desc: "Enter your reference", href: "#track", color: "#000f89" },
+ { icon: BookOpen, label: "FAQs", desc: "Common questions", href: "#faqs", color: "#0000FF" },
+ { icon: Phone, label: "Contact Us", desc: "+44 800 772 0864", href: "#contact", color: "#0000CD" },
  ].map(item => {
  const Icon = item.icon;
  return (
  <a
  key={item.label}
  href={item.href}
- className="group flex items-center gap-3 border border-white/[0.08] bg-white/[0.05] hover:border-white/[0.2] hover:bg-white/[0.09] p-4 transition-all duration-200 relative overflow-hidden"
+ className="group flex items-center gap-3 border border-white/[0.08] bg-white/[0.05] hover:border-white/[0.2] hover:bg-white/[0.09] p-4 transition-all duration-200 relative overflow-hidden rounded-[20px]"
  aria-label={item.label}
  >
  <div
@@ -513,7 +512,7 @@ function SystemStatus() {
  </div>
  <a
  href="#"
- className="text-[13px] font-semibold text-[#0818A8] hover:text-[#0437F2] transition-colors flex-shrink-0 flex items-center gap-1 whitespace-nowrap"
+ className="text-[13px] font-semibold text-[#000f89] hover:text-[#0000CD] transition-colors flex-shrink-0 flex items-center gap-1 whitespace-nowrap"
  aria-label="View full system status"
  >
  Full Status <ExternalLink size={9} aria-hidden="true" />
@@ -563,7 +562,7 @@ function TrackWidget() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-16 md:py-20">
@@ -578,13 +577,13 @@ function TrackWidget() {
  <TagPill label="Real-Time Tracking" />
  <h2
  id="track-heading"
- className="font-black text-[clamp(24px,4vw,42px)] text-gray-900 leading-[0.92] tracking-[-0.025em] uppercase mb-4"
+ className="font-extrabold text-[clamp(24px,4vw,42px)] text-gray-900 leading-[1.06] tracking-[-0.03em] mb-4"
  >
  Track Your<br />
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  Shipment.
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full"
+ className="absolute -bottom-1 left-0 h-[3px] bg-[#000f89] rounded-full"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -610,14 +609,14 @@ function TrackWidget() {
  value={trackInput}
  onChange={e => setTrackInput(e.target.value)}
  onKeyDown={e => e.key === "Enter" && handleTrack()}
- className="w-full border border-gray-300 border-r-0 text-gray-900 text-[14px] font-mono placeholder-gray-800 pl-10 pr-4 py-3.5 outline-none focus:border-[#0818A8] transition-all duration-200 bg-white"
+ className="w-full border border-gray-300 border-r-0 text-gray-900 text-[14px] font-mono placeholder-gray-800 pl-10 pr-4 py-3.5 outline-none focus:border-[#000f89] transition-all duration-200 bg-white rounded-xl"
  aria-label="Enter booking reference"
  />
  </div>
  <button
  onClick={handleTrack}
  disabled={trackStatus === "loading"}
- className="flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-all duration-200 flex-shrink-0"
+ className="flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 text-white text-[13px] font-bold px-6 py-3.5 transition-all duration-200 flex-shrink-0 rounded-full"
  aria-label="Track shipment"
  >
  {trackStatus === "loading"
@@ -634,7 +633,7 @@ function TrackWidget() {
  <button
  key={ref}
  onClick={() => setTrackInput(ref)}
- className="text-[13px] font-semibold text-[#0818A8] border border-[#0818A8]/20 bg-[#0818A8]/5 hover:bg-[#0818A8]/10 px-2.5 py-1 transition-colors"
+ className="text-[13px] font-semibold text-[#000f89] border border-[#000f89]/20 bg-[#000f89]/5 hover:bg-[#000f89]/10 px-2.5 py-1 transition-colors rounded-full"
  aria-label={`Use sample tracking number ${ref}`}
  >
  {ref}
@@ -657,10 +656,10 @@ function TrackWidget() {
  initial={{ opacity: 0 }}
  animate={{ opacity: 1 }}
  exit={{ opacity: 0 }}
- className="border border-gray-200 bg-gray-50 p-8 text-center"
+ className="border border-gray-200 bg-gray-50 p-8 text-center rounded-[20px]"
  >
- <div className="w-14 h-14 bg-[#0818A8]/8 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
- <Package size={24} className="text-[#0818A8]" />
+ <div className="w-14 h-14 bg-[#000f89]/8 flex items-center justify-center mx-auto mb-4 rounded-full" aria-hidden="true">
+ <Package size={24} className="text-[#000f89]" />
  </div>
  <p className="text-gray-800 font-bold text-[16px] mb-2">Enter Your Reference</p>
  <p className="text-gray-800 text-[13px] font-normal">
@@ -675,7 +674,7 @@ function TrackWidget() {
  initial={{ opacity: 0, scale: 0.97 }}
  animate={{ opacity: 1, scale: 1 }}
  exit={{ opacity: 0 }}
- className="border border-red-200 bg-red-50 p-8 text-center"
+ className="border border-red-200 bg-red-50 p-8 text-center rounded-[20px]"
  >
  <AlertCircle size={32} className="text-red-400 mx-auto mb-4" aria-hidden="true" />
  <p className="text-red-800 font-bold text-[16px] mb-2">Reference Not Found</p>
@@ -684,7 +683,7 @@ function TrackWidget() {
  </p>
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2 bg-[#0818A8] text-white text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-[#0437F2] transition-colors"
+ className="inline-flex items-center gap-2 bg-[#000f89] text-white text-[13px] font-bold px-5 py-2.5 hover:bg-[#000f89] transition-colors rounded-full"
  aria-label="Call R-Zone for help"
  >
  <Phone size={11} aria-hidden="true" /> Call for Help
@@ -698,14 +697,14 @@ function TrackWidget() {
  initial={{ opacity: 0, y: 12 }}
  animate={{ opacity: 1, y: 0 }}
  exit={{ opacity: 0 }}
- className="border border-gray-200 bg-white overflow-hidden"
+ className="border border-gray-200 bg-white overflow-hidden rounded-[20px]"
  >
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="p-6">
  {/* Header */}
  <div className="flex items-start justify-between mb-5">
  <div>
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-800 mb-1">Booking Reference</p>
+ <p className="text-gray-800 mb-1 text-[13px] font-semibold">Booking Reference</p>
  <p className="font-mono font-bold text-[15px] text-gray-900">{trackInput.trim().toUpperCase()}</p>
  </div>
  <span className={`inline-flex items-center gap-1.5 px-3 py-1 border text-[13px] font-bold rounded-full ${statusColors[trackResult.status] || "bg-gray-100 text-gray-800 border-gray-200"}`}>
@@ -717,16 +716,16 @@ function TrackWidget() {
  {/* Route */}
  <div className="flex items-center gap-3 border border-gray-100 bg-gray-50 px-4 py-3 mb-6">
  <div className="text-center flex-shrink-0">
- <p className="text-[13px] font-bold tracking-[0.15em] uppercase text-gray-800 mb-0.5">From</p>
+ <p className="text-gray-800 mb-0.5 text-[13px] font-semibold">From</p>
  <p className="font-bold text-[13px] text-gray-800">{trackResult.origin}</p>
  </div>
  <div className="flex-1 flex items-center justify-center">
- <div className="h-px flex-1 bg-gradient-to-r from-[#0818A8]/30 to-[#1F51FF]/30 relative">
- <ArrowRight size={12} className="absolute -right-1 top-1/2 -translate-y-1/2 text-[#1F51FF]" aria-hidden="true" />
+ <div className="h-px flex-1 bg-gradient-to-r from-[#000f89]/30 to-[#0000FF]/30 relative">
+ <ArrowRight size={12} className="absolute -right-1 top-1/2 -translate-y-1/2 text-[#4D4DFF]" aria-hidden="true" />
  </div>
  </div>
  <div className="text-center flex-shrink-0">
- <p className="text-[13px] font-bold tracking-[0.15em] uppercase text-gray-800 mb-0.5">To</p>
+ <p className="text-gray-800 mb-0.5 text-[13px] font-semibold">To</p>
  <p className="font-bold text-[13px] text-gray-800">{trackResult.destination}</p>
  </div>
  </div>
@@ -737,23 +736,23 @@ function TrackWidget() {
  <div key={i} className="flex items-start gap-3.5 relative">
  {i < trackResult.timeline.length - 1 && (
  <div
- className={`absolute left-[11px] top-[24px] w-px h-full ${step.done ? "bg-[#0818A8]/30" : "bg-gray-100"}`}
+ className={`absolute left-[11px] top-[24px] w-px h-full ${step.done ? "bg-[#000f89]/30" : "bg-gray-100"}`}
  aria-hidden="true"
  />
  )}
  <div
  className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border-2 ${
- step.done ? "border-[#0818A8] bg-[#0818A8]"
- : step.active ? "border-[#1F51FF] bg-white animate-pulse"
+ step.done ? "border-[#000f89] bg-[#000f89]"
+ : step.active ? "border-[#0000FF] bg-white animate-pulse"
  : "border-gray-200 bg-white"
  }`}
  aria-label={step.done ? "Completed" : step.active ? "In progress" : "Pending"}
  >
  {step.done && <Check size={10} className="text-white" aria-hidden="true" />}
- {step.active && <div className="w-2 h-2 rounded-full bg-[#1F51FF]" aria-hidden="true" />}
+ {step.active && <div className="w-2 h-2 rounded-full bg-[#0000FF]" aria-hidden="true" />}
  </div>
  <div className={`pb-4 flex-1 flex items-start justify-between ${step.done ? "opacity-100" : step.active ? "opacity-100" : "opacity-40"}`}>
- <p className={`text-[13px] ${step.done || step.active ? "font-semibold" : "font-normal"} ${step.active ? "text-[#0818A8]" : "text-gray-800"}`}>
+ <p className={`text-[13px] ${step.done || step.active ? "font-semibold" : "font-normal"} ${step.active ? "text-[#000f89]" : "text-gray-800"}`}>
  {step.label}
  </p>
  <div className="text-right flex-shrink-0 ml-4">
@@ -769,7 +768,7 @@ function TrackWidget() {
  <div className="border-t border-gray-100 pt-4 mt-2 grid grid-cols-2 gap-3">
  {[["Service", trackResult.service], ["Weight", trackResult.weight]].map(([k, v]) => (
  <div key={k}>
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-gray-800">{k}</p>
+ <p className="text-gray-800 text-[13px] font-semibold">{k}</p>
  <p className="text-gray-800 font-semibold text-[13px]">{v}</p>
  </div>
  ))}
@@ -798,7 +797,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  <section
  id="faqs"
  ref={ref}
- className="relative bg-[#00061a] scroll-mt-20 overflow-hidden"
+ className="relative bg-[#00112E] scroll-mt-20 overflow-hidden"
  aria-labelledby="faq-heading"
  >
  <div
@@ -806,7 +805,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
 
@@ -816,16 +815,16 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  </motion.div>
  <motion.h2
  id="faq-heading"
- className="font-black text-[clamp(26px,4.5vw,50px)] text-white leading-[0.92] tracking-[-0.028em] uppercase"
+ className="font-extrabold text-[clamp(26px,4.5vw,50px)] text-white leading-[1.06] tracking-[-0.03em]"
  initial={{ opacity: 0, y: 16 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: 0.1 }}
  >
  Find Your{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Answer.
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"
+ className="absolute -bottom-1 left-0 h-[3px] bg-[#0000FF] rounded-full"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -852,8 +851,8 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  <X size={12} aria-hidden="true" /> Clear search
  </button>
  </div>
- <div className="border border-white/[0.09] bg-white/[0.03] overflow-hidden">
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-white/[0.09] bg-white/[0.03] overflow-hidden rounded-[20px]">
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
  <div className="divide-y divide-white/[0.06]">
  {searchResults.map((result, i) => (
  <div key={i} className="px-6">
@@ -870,7 +869,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  initial={{ opacity: 0 }}
  animate={{ opacity: 1 }}
  exit={{ opacity: 0 }}
- className="border border-white/[0.08] bg-white/[0.03] p-8 text-center mb-10"
+ className="border border-white/[0.08] bg-white/[0.03] p-8 text-center mb-10 rounded-[20px]"
  >
  <HelpCircle size={32} className="text-white/80 mx-auto mb-3" aria-hidden="true" />
  <p className="text-white/80 font-semibold text-[15px] mb-1">No results for &ldquo;{searchQuery}&rdquo;</p>
@@ -879,7 +878,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  </p>
  <button
  onClick={clearSearch}
- className="text-[13px] font-semibold text-[#1F51FF] hover:text-white transition-colors"
+ className="text-[13px] font-semibold text-[#4D4DFF] hover:text-white transition-colors"
  aria-label="Clear search"
  >
  Clear and browse all FAQs
@@ -894,7 +893,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
 
  {/* Category sidebar */}
  <div className="lg:col-span-3" role="tablist" aria-label="FAQ categories">
- <p className="text-[13px] font-black tracking-[0.35em] uppercase text-white/80 mb-4 px-1">
+ <p className="text-white/80 mb-4 px-1 text-[13px] font-semibold">
  Categories
  </p>
  <div className="space-y-1">
@@ -910,7 +909,7 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  onClick={() => setActiveCategory(cat.id)}
  className={`w-full flex items-center gap-3 px-4 py-3 text-left border-l-2 transition-all duration-150 ${
  isActive
- ? "border-[#1F51FF] bg-white/[0.06] text-white"
+ ? "border-[#0000FF] bg-white/[0.06] text-white"
  : "border-transparent text-white/80 hover:text-white hover:bg-white/[0.04]"
  }`}
  >
@@ -945,11 +944,11 @@ function FAQSection({ searchResults, searchQuery, clearSearch }) {
  animate={{ opacity: 1, y: 0 }}
  exit={{ opacity: 0, y: -4 }}
  transition={{ duration: 0.25 }}
- className="border border-white/[0.09] bg-white/[0.03] overflow-hidden"
+ className="border border-white/[0.09] bg-white/[0.03] overflow-hidden rounded-[20px]"
  >
  <div
  className="h-[2px]"
- style={{ background: `linear-gradient(to right, ${currentCategory?.color}, #1F51FF)` }}
+ style={{ background: `linear-gradient(to right, ${currentCategory?.color}, #0000FF)` }}
  aria-hidden="true"
  />
  <div className="divide-y divide-white/[0.06]">
@@ -981,7 +980,7 @@ function GuidesSection() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-16 md:py-20">
@@ -993,23 +992,23 @@ function GuidesSection() {
  <TagPill label="Guides & Resources" />
  <h2
  id="guides-heading"
- className="font-black text-[clamp(22px,3.5vw,38px)] text-gray-900 leading-[0.92] tracking-[-0.025em] uppercase mb-4"
+ className="font-extrabold text-[clamp(22px,3.5vw,38px)] text-gray-900 leading-[1.06] tracking-[-0.03em] mb-4"
  >
- Helpful<br /><span className="text-[#0818A8]">Guides.</span>
+ Helpful<br /><span className="text-[#000f89]">Guides.</span>
  </h2>
  <p className="text-gray-800 text-[14px] font-normal leading-relaxed mb-6">
  Step-by-step guides for common tasks written by our operations team in plain language.
  </p>
- <div className="border border-gray-200 bg-gray-50 p-5">
- <p className="text-[13px] font-bold tracking-[0.25em] uppercase text-gray-800 mb-4">Popular Articles</p>
+ <div className="border border-gray-200 bg-gray-50 p-5 rounded-[20px]">
+ <p className="text-gray-800 mb-4 text-[13px] font-semibold">Popular Articles</p>
  <div className="space-y-3">
  {POPULAR_ARTICLES.map((a, i) => (
  <a
  key={i}
  href={a.href}
- className="group flex items-start gap-2.5 text-[13px] text-gray-800 hover:text-[#0818A8] font-normal transition-colors"
+ className="group flex items-start gap-2.5 text-[13px] text-gray-800 hover:text-[#000f89] font-normal transition-colors"
  >
- <ChevronRight size={12} className="flex-shrink-0 mt-0.5 text-gray-800 group-hover:text-[#0818A8] transition-colors" aria-hidden="true" />
+ <ChevronRight size={12} className="flex-shrink-0 mt-0.5 text-gray-800 group-hover:text-[#000f89] transition-colors" aria-hidden="true" />
  <span>{a.title}</span>
  </a>
  ))}
@@ -1026,15 +1025,15 @@ function GuidesSection() {
  <motion.a
  key={i}
  href={guide.href}
- className="group border border-gray-200 bg-white p-6 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 relative overflow-hidden"
+ className="group border border-gray-200 bg-white p-6 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 relative overflow-hidden"
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.55, delay: i * 0.1 }}
  aria-label={guide.title}
  >
- <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
- <div className="w-10 h-10 bg-[#0818A8]/8 flex items-center justify-center mb-4" aria-hidden="true">
- <Icon size={17} className="text-[#0818A8]" />
+ <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
+ <div className="w-10 h-10 bg-[#000f89]/8 flex items-center justify-center mb-4 rounded-full" aria-hidden="true">
+ <Icon size={17} className="text-[#000f89]" />
  </div>
  <p className="text-gray-900 font-bold text-[14px] leading-snug mb-2">{guide.title}</p>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-4">{guide.desc}</p>
@@ -1042,7 +1041,7 @@ function GuidesSection() {
  <span className="text-gray-800 text-[13px] font-normal flex items-center gap-1.5">
  <Clock size={10} aria-hidden="true" /> {guide.time}
  </span>
- <span className="flex items-center gap-1 text-[13px] font-bold text-[#0818A8] group-hover:text-[#0437F2] transition-colors">
+ <span className="flex items-center gap-1 text-[13px] font-bold text-[#000f89] group-hover:text-[#0000CD] transition-colors">
  Read <ArrowRight size={9} aria-hidden="true" />
  </span>
  </div>
@@ -1067,7 +1066,7 @@ function ContactSection() {
  <section
  id="contact"
  ref={ref}
- className="relative bg-[#00061a] scroll-mt-20 overflow-hidden"
+ className="relative bg-[#00112E] scroll-mt-20 overflow-hidden"
  aria-labelledby="contact-support-heading"
  >
  <div
@@ -1075,8 +1074,8 @@ function ContactSection() {
  aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
- <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#0818A8]/10 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#000f89]/10 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
 
@@ -1086,16 +1085,16 @@ function ContactSection() {
  </motion.div>
  <motion.h2
  id="contact-support-heading"
- className="font-black text-[clamp(26px,4.5vw,50px)] text-white leading-[0.92] tracking-[-0.028em] uppercase"
+ className="font-extrabold text-[clamp(26px,4.5vw,50px)] text-white leading-[1.06] tracking-[-0.03em]"
  initial={{ opacity: 0, y: 16 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: 0.1 }}
  >
  Talk to a Real{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Person.
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full"
+ className="absolute -bottom-1 left-0 h-[3px] bg-[#0000FF] rounded-full"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -1137,7 +1136,7 @@ function ContactSection() {
  />
  {ch.badge && (
  <span
- className="absolute top-4 right-4 text-[13px] font-bold tracking-[0.18em] uppercase px-2 py-0.5 border"
+ className="absolute top-4 right-4 px-2 py-0.5 border text-[13px] font-semibold"
  style={{ borderColor: `${ch.color}40`, color: ch.color, backgroundColor: `${ch.color}12` }}
  >
  {ch.badge}
@@ -1150,12 +1149,12 @@ function ContactSection() {
  >
  <Icon size={18} style={{ color: ch.color }} />
  </div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{ch.desc}</p>
+ <p className="text-white/80 mb-1 text-[13px] font-semibold">{ch.desc}</p>
  <p className="text-white font-black text-[15px] leading-tight mb-1.5">{ch.title}</p>
  <p className="text-white/80 text-[13px] font-semibold mb-1 break-all">{ch.value}</p>
  <p className="text-white/80 text-[13px] font-normal mb-5 leading-snug">{ch.sub}</p>
  <span
- className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.08em] uppercase transition-colors group-hover:text-white"
+ className="flex items-center gap-1.5 transition-colors group-hover:text-white text-[13px] font-semibold"
  style={{ color: ch.color }}
  >
  {ch.action} <ArrowRight size={9} className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
@@ -1177,26 +1176,26 @@ function ContactSection() {
  flag: "🇬🇧", country: "UK Office Upminster, Essex",
  addr: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, Essex RM14 3TS",
  hours: [
- { d: "Mon Fri", t: "10:00AM 6:00PM" },
- { d: "Saturday", t: "11:00AM 2:00PM" },
+ { d: "Mon to Fri", t: "10:00AM to 6:00PM" },
+ { d: "Saturday", t: "11:00AM to 2:00PM" },
  { d: "Sunday", t: "Closed" },
  ],
- color: "#0818A8",
+ color: "#000f89",
  },
  {
  flag: "🇳🇬", country: "Nigeria Hub Lagos",
  addr: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
  hours: [
- { d: "Mon Fri", t: "9:00AM 5:00PM WAT" },
- { d: "Saturday", t: "9:00AM 1:00PM WAT" },
+ { d: "Mon to Fri", t: "9:00AM to 5:00PM WAT" },
+ { d: "Saturday", t: "9:00AM to 1:00PM WAT" },
  { d: "Sunday", t: "Closed" },
  ],
- color: "#1F51FF",
+ color: "#0000FF",
  },
  ].map(office => (
  <div
  key={office.country}
- className="group border border-white/[0.07] bg-white/[0.04] p-6 hover:border-white/[0.15] transition-all duration-300 relative overflow-hidden"
+ className="group border border-white/[0.07] bg-white/[0.04] p-6 hover:border-white/[0.15] transition-all duration-300 relative overflow-hidden rounded-[20px]"
  >
  <div
  className="h-[2px] w-0 group-hover:w-full transition-all duration-500 absolute top-0 left-0"
@@ -1213,7 +1212,7 @@ function ContactSection() {
  <div className="border-t border-white/[0.07] pt-4 grid grid-cols-3 gap-2">
  {office.hours.map(h => (
  <div key={h.d}>
- <p className="text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase">{h.d}</p>
+ <p className="text-white/80 text-[13px] font-semibold">{h.d}</p>
  <p className={`text-[13px] font-semibold mt-0.5 ${h.t === "Closed" ? "text-white/80" : "text-white/80"}`}>
  {h.t}
  </p>
@@ -1244,7 +1243,7 @@ function EscalationCTA() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-16 md:py-18">
@@ -1252,20 +1251,20 @@ function EscalationCTA() {
 
  {/* Damaged cargo */}
  <motion.div
- className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-7 relative overflow-hidden group hover:border-[#0818A8]/35 transition-all duration-300"
+ className="border border-[#000f89]/15 bg-[#000f89]/4 p-7 relative overflow-hidden group hover:border-[#000f89]/35 transition-all duration-300 rounded-[20px]"
  initial={{ opacity: 0, y: 18 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.55 }}
  >
- <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-[#0818A8]" aria-hidden="true" />
- <AlertCircle size={22} className="text-[#0818A8] mb-4" aria-hidden="true" />
- <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-2">Report Damaged Cargo</h3>
+ <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-[#000f89]" aria-hidden="true" />
+ <AlertCircle size={22} className="text-[#000f89] mb-4" aria-hidden="true" />
+ <h3 className="text-gray-900 font-extrabold text-[16px] tracking-[-0.03em] mb-2">Report Damaged Cargo</h3>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-5">
  Cargo arrived damaged? Report within 7 days for a full investigation and claim.
  </p>
  <a
  href="mailto:claims@r-zoneenterprises.com"
- className="inline-flex items-center gap-2 text-[13px] font-black tracking-[0.08em] uppercase text-[#0818A8] hover:text-[#0437F2] transition-colors"
+ className="inline-flex items-center gap-2 text-[13px] font-black tracking-[0.08em] uppercase text-[#000f89] hover:text-[#0000CD] transition-colors"
  aria-label="Email claims team about damaged cargo"
  >
  Report Damage <ArrowRight size={10} aria-hidden="true" />
@@ -1274,14 +1273,14 @@ function EscalationCTA() {
 
  {/* Delayed cargo */}
  <motion.div
- className="border border-amber-200 bg-amber-50 p-7 relative overflow-hidden group hover:border-amber-300 transition-all duration-300"
+ className="border border-amber-200 bg-amber-50 p-7 relative overflow-hidden group hover:border-amber-300 transition-all duration-300 rounded-[20px]"
  initial={{ opacity: 0, y: 18 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.55, delay: 0.1 }}
  >
  <div className="absolute top-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 bg-amber-500" aria-hidden="true" />
  <Clock size={22} className="text-amber-600 mb-4" aria-hidden="true" />
- <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-2">Missing or Delayed Cargo</h3>
+ <h3 className="text-gray-900 font-extrabold text-[16px] tracking-[-0.03em] mb-2">Missing or Delayed Cargo</h3>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-5">
  Cargo not arrived? Let us investigate. Contact us if you&apos;re outside the expected delivery window.
  </p>
@@ -1296,7 +1295,7 @@ function EscalationCTA() {
 
  {/* Formal complaint */}
  <motion.div
- className="bg-[#0818A8] p-7 relative overflow-hidden"
+ className="bg-[#000f89] p-7 relative overflow-hidden"
  initial={{ opacity: 0, y: 18 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.55, delay: 0.2 }}
@@ -1308,13 +1307,13 @@ function EscalationCTA() {
  />
  <div className="relative z-10">
  <LifeBuoy size={22} className="text-white/80 mb-4" aria-hidden="true" />
- <h3 className="text-white font-black text-[16px] tracking-[-0.01em] mb-2">Make a Formal Complaint</h3>
+ <h3 className="text-white font-extrabold text-[16px] tracking-[-0.03em] mb-2">Make a Formal Complaint</h3>
  <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-5">
  Not satisfied? Our complaints team aims to resolve all cases within 14 working days.
  </p>
  <a
  href="mailto:complaints@r-zoneenterprises.com"
- className="inline-flex items-center gap-2 bg-white text-[#0818A8] text-[13px] font-black tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-white/90 transition-colors"
+ className="inline-flex items-center gap-2 bg-white text-[#000f89] text-[13px] font-bold px-5 py-2.5 hover:bg-white/90 transition-colors rounded-full"
  aria-label="Email formal complaints team"
  >
  Submit Complaint <ArrowRight size={10} aria-hidden="true" />

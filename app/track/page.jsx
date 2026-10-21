@@ -6,7 +6,7 @@
  * /track
  *
  * Design: Mission Control dark navy operational terminal aesthetic.
- * Matches R-Zone brand palette (#00061a base, #0818A8 / #1F51FF accents).
+ * Matches R-Zone brand palette (#00061a base, #000f89 / #0000FF accents).
  */
 
 // SEO metadata for this route lives in ./layout.jsx (a Server Component),
@@ -126,7 +126,7 @@ const MOCK_SHIPMENTS = {
 const SAMPLE_IDS = ["RZC-2024-00847", "RZC-2024-00612", "RZC-2024-00991"];
 
 const STATUS_CONFIG = {
- in_transit: { color:"#1F51FF", label:"In Transit", dotClass:"bg-[#1F51FF]", chipClass:"border-[#1F51FF]/30 bg-[#1F51FF]/10 text-[#1F51FF]", pulse:true },
+ in_transit: { color:"#0000FF", label:"In Transit", dotClass:"bg-[#0000FF]", chipClass:"border-[#0000FF]/30 bg-[#0000FF]/10 text-[#4D4DFF]", pulse:true },
  delivered: { color:"#22c55e", label:"Delivered", dotClass:"bg-emerald-400", chipClass:"border-emerald-400/30 bg-emerald-400/10 text-emerald-400", pulse:false },
  customs: { color:"#f59e0b", label:"Customs Clearance", dotClass:"bg-amber-400", chipClass:"border-amber-400/30 bg-amber-400/10 text-amber-400", pulse:true },
  booked: { color:"#a78bfa", label:"Booked", dotClass:"bg-violet-400", chipClass:"border-violet-400/30 bg-violet-400/10 text-violet-400", pulse:false },
@@ -137,7 +137,7 @@ function ScanRing() {
  return (
  <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
  {[1,2,3].map(i=>(
- <motion.div key={i} className="absolute rounded-full border border-[#1F51FF]/20"
+ <motion.div key={i} className="absolute rounded-full border border-[#0000FF]/20"
  animate={{ scale:[1,2.5], opacity:[0.6,0] }}
  transition={{ duration:2.5, repeat:Infinity, delay:i*0.8, ease:"easeOut" }}
  style={{ width:40, height:40 }}/>
@@ -153,7 +153,7 @@ function RouteVisualiser({ shipment }) {
  const isSeaFreight = shipment.service === "Sea Freight";
 
  return (
- <div className="relative bg-[#020c28] border border-white/[0.07] overflow-hidden">
+ <div className="relative bg-[#020c28] border border-white/[0.07] overflow-hidden rounded-[20px]">
  {/* Grid overlay */}
  <div className="absolute inset-0 opacity-[0.04]"
  style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"32px 32px" }}
@@ -164,8 +164,8 @@ function RouteVisualiser({ shipment }) {
 
  {/* Origin */}
  <div className="flex flex-col items-center text-center flex-shrink-0 min-w-[72px]">
- <div className="w-10 h-10 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center mb-2">
- <span className="text-[#1F51FF] font-black text-[13px] leading-none">{shipment.origin.code}</span>
+ <div className="w-10 h-10 rounded-full bg-[#000f89]/30 border border-[#000f89]/40 flex items-center justify-center mb-2">
+ <span className="text-[#4D4DFF] font-black text-[13px] leading-none">{shipment.origin.code}</span>
  </div>
  <p className="text-white font-bold text-[13px] leading-tight">{shipment.origin.city}</p>
  <p className="text-white/50 text-[13px] leading-tight">{shipment.origin.country}</p>
@@ -176,12 +176,12 @@ function RouteVisualiser({ shipment }) {
  {/* Path line */}
  <div className="relative w-full h-[2px] bg-white/[0.06] overflow-hidden">
  <motion.div className="absolute inset-y-0 left-0 h-full"
- style={{ background:`linear-gradient(to right, #0818A8, ${cfg.color})` }}
+ style={{ background:`linear-gradient(to right, #000f89, ${cfg.color})` }}
  initial={{ width:"0%" }} animate={{ width:`${shipment.progress}%` }}
  transition={{ duration:1.5, ease:[0.25,0.46,0.45,0.94], delay:0.4 }}/>
  {/* Travelling dot */}
  {shipment.status !== "delivered" && (
- <motion.div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-[#00061a] shadow-lg"
+ <motion.div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-[#00112E] shadow-lg"
  style={{ backgroundColor:cfg.color, boxShadow:`0 0 8px ${cfg.color}` }}
  initial={{ left:"0%" }} animate={{ left:`${shipment.progress}%` }}
  transition={{ duration:1.5, ease:[0.25,0.46,0.45,0.94], delay:0.4 }}
@@ -237,22 +237,22 @@ function TimelineEvent({ event, index, isLast }) {
  <div className="flex flex-col items-center flex-shrink-0 w-7">
  <div className={`relative z-10 w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
  event.status==="done"
- ? "bg-[#0818A8] shadow-lg shadow-[#0818A8]/30"
+ ? "bg-[#000f89] shadow-lg shadow-[#000f89]/30"
  : event.status==="active"
- ? "bg-transparent border-2 border-[#1F51FF]"
+ ? "bg-transparent border-2 border-[#0000FF]"
  : "bg-transparent border border-white/[0.1]"
  }`}>
  {event.status==="done" ? (
  <CheckCircle size={12} className="text-white" aria-hidden="true"/>
  ) : event.status==="active" ? (
- <motion.div className="w-2.5 h-2.5 rounded-full bg-[#1F51FF]"
+ <motion.div className="w-2.5 h-2.5 rounded-full bg-[#0000FF]"
  animate={{ scale:[1,1.3,1], opacity:[1,0.5,1] }} transition={{ duration:1.4, repeat:Infinity }} aria-hidden="true"/>
  ) : (
  <div className="w-2 h-2 rounded-full bg-white/[0.1]" aria-hidden="true"/>
  )}
  </div>
  {!isLast && (
- <div className={`flex-1 w-px mt-1 min-h-[24px] ${event.status==="done"?"bg-[#0818A8]/35":"bg-white/[0.06]"}`}
+ <div className={`flex-1 w-px mt-1 min-h-[24px] ${event.status==="done"?"bg-[#000f89]/35":"bg-white/[0.06]"}`}
  aria-hidden="true"/>
  )}
  </div>
@@ -266,8 +266,8 @@ function TimelineEvent({ event, index, isLast }) {
  {event.title}
  </span>
  {event.status==="active" && (
- <span className="inline-flex items-center gap-1 border border-[#1F51FF]/30 bg-[#1F51FF]/10 text-[#1F51FF] text-[13px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
- <motion.span className="w-1 h-1 rounded-full bg-[#1F51FF]"
+ <span className="inline-flex items-center gap-1 border border-[#0000FF]/30 bg-[#0000FF]/10 text-[#4D4DFF] px-2 py-0.5 rounded-full text-[13px] font-semibold">
+ <motion.span className="w-1 h-1 rounded-full bg-[#0000FF]"
  animate={{ opacity:[1,0.3,1] }} transition={{ duration:1.2, repeat:Infinity }} aria-hidden="true"/>
  Live
  </span>
@@ -312,18 +312,18 @@ function TrackingResult({ shipment }) {
  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
  <div className="flex items-center gap-3">
  {/* Status chip */}
- <span className={`inline-flex items-center gap-2 border px-3.5 py-1.5 text-[13px] font-bold tracking-[0.12em] uppercase ${cfg.chipClass}`}>
+ <span className={`inline-flex items-center gap-2 border px-3.5 py-1.5 text-[13px] font-semibold ${cfg.chipClass}`}>
  <span className={`w-1.5 h-1.5 rounded-full ${cfg.dotClass} ${cfg.pulse?"animate-pulse":""}`} aria-hidden="true"/>
  {cfg.label}
  </span>
  <span className="text-white/40 text-[13px] font-normal">{shipment.id}</span>
  </div>
  <div className="flex items-center gap-2">
- <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200"
+ <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200 rounded-full"
  aria-label="Export tracking data">
  <Download size={11} aria-hidden="true"/> Export
  </button>
- <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200"
+ <button className="flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white font-medium border border-white/[0.1] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.07] px-3 py-1.5 transition-all duration-200 rounded-full"
  aria-label="Share tracking link">
  <Share2 size={11} aria-hidden="true"/> Share
  </button>
@@ -331,13 +331,13 @@ function TrackingResult({ shipment }) {
  </div>
 
  {/* ── Service + reference bar ── */}
- <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+ <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-[20px]">
  <div className="flex items-center gap-3">
- <div className="w-9 h-9 bg-[#0818A8]/25 border border-[#0818A8]/30 flex items-center justify-center flex-shrink-0">
- <ServiceIcon size={15} className="text-[#1F51FF]" aria-hidden="true"/>
+ <div className="w-9 h-9 bg-[#000f89]/25 border border-[#000f89]/30 flex items-center justify-center flex-shrink-0 rounded-full">
+ <ServiceIcon size={15} className="text-[#4D4DFF]" aria-hidden="true"/>
  </div>
  <div>
- <p className="text-[#1F51FF] text-[13px] font-bold tracking-[0.18em] uppercase">{shipment.service}</p>
+ <p className="text-[#4D4DFF] text-[13px] font-semibold">{shipment.service}</p>
  <p className="text-white/60 text-[13px] font-normal">{shipment.description}</p>
  </div>
  </div>
@@ -360,37 +360,37 @@ function TrackingResult({ shipment }) {
  <RouteVisualiser shipment={shipment}/>
 
  {/* ── Progress milestone bar ── */}
- <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mt-4 mb-4">
+ <div className="border border-white/[0.09] bg-white/[0.03] px-5 py-4 mt-4 mb-4 rounded-[20px]">
  <div className="flex items-center justify-between mb-2.5">
  <span className="text-white/50 text-[13px] font-normal">{completed} of {total} milestones completed</span>
  <span className="text-[13px] font-black" style={{ color:cfg.color }}>{shipment.progress}%</span>
  </div>
  <div className="w-full h-1.5 bg-white/[0.07] overflow-hidden">
  <motion.div className="h-full"
- style={{ background:`linear-gradient(to right, #0818A8, ${cfg.color})` }}
+ style={{ background:`linear-gradient(to right, #000f89, ${cfg.color})` }}
  initial={{ width:"0%" }} animate={{ width:`${shipment.progress}%` }}
  transition={{ duration:1.4, ease:[0.25,0.46,0.45,0.94], delay:0.3 }}/>
  </div>
  {/* Milestone ticks */}
  <div className="flex justify-between mt-1.5">
  {shipment.events.map((_,i)=>(
- <div key={i} className={`w-px h-2 ${i<completed?"bg-[#0818A8]":"bg-white/[0.08]"}`} aria-hidden="true"/>
+ <div key={i} className={`w-px h-2 ${i<completed?"bg-[#000f89]":"bg-white/[0.08]"}`} aria-hidden="true"/>
  ))}
  </div>
  </div>
 
  {/* ── Cargo details grid ── */}
- <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.09] mb-4 overflow-hidden">
+ <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.09] mb-4 overflow-hidden rounded-[20px]">
  {[
  { icon:Package, label:"Shipper", val:shipment.shipper },
  { icon:MapPin, label:"Consignee", val:shipment.consignee },
  { icon:BarChart3,label:"Pieces", val:shipment.pieces },
  { icon:Weight, label:"Weight", val:shipment.weight },
  ].map(({icon:Icon,label,val})=>(
- <div key={label} className="bg-[#00061a] px-4 py-4">
+ <div key={label} className="bg-[#00112E] px-4 py-4">
  <div className="flex items-center gap-1.5 mb-1.5">
  <Icon size={10} className="text-white/35" aria-hidden="true"/>
- <span className="text-[13px] font-bold text-white/35 tracking-[0.15em] uppercase">{label}</span>
+ <span className="text-white/35 text-[13px] font-semibold">{label}</span>
  </div>
  <p className="text-white/80 font-semibold text-[13px] leading-snug">{val}</p>
  </div>
@@ -398,12 +398,12 @@ function TrackingResult({ shipment }) {
  </div>
 
  {/* ── Timeline ── */}
- <div className="border border-white/[0.09] bg-white/[0.02] overflow-hidden">
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true"/>
+ <div className="border border-white/[0.09] bg-white/[0.02] overflow-hidden rounded-[20px]">
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true"/>
  <div className="px-5 sm:px-7 py-6">
  <div className="flex items-center gap-2 mb-6">
- <Clock size={13} className="text-[#1F51FF]" aria-hidden="true"/>
- <h3 className="text-white font-black text-[13px] tracking-[0.2em] uppercase">Shipment Timeline</h3>
+ <Clock size={13} className="text-[#4D4DFF]" aria-hidden="true"/>
+ <h3 className="text-white font-extrabold text-[13px] tracking-[0.2em]">Shipment Timeline</h3>
  <span className="ml-auto text-white/40 text-[13px] font-normal">{completed}/{total} complete</span>
  </div>
  {shipment.events.map((event,i)=>(
@@ -440,7 +440,7 @@ export default function TrackPage() {
  const handleKey = (e) => { if (e.key==="Enter") handleTrack(); };
 
  return (
- <main className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-[#00061a] min-h-screen`}>
+ <main className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-[#00112E] min-h-screen hero-section`}>
 
  {/* ══ HERO ═════════════════════════════════════════════════════════════ */}
  <section className="relative overflow-hidden" aria-labelledby="track-hero-heading">
@@ -451,15 +451,15 @@ export default function TrackPage() {
 
  {/* Atmospheric glows */}
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-10%] left-[15%] w-[700px] h-[500px] bg-[#0818A8]/18 rounded-full blur-[150px]"/>
- <div className="absolute top-[30%] right-[-5%] w-[400px] h-[300px] bg-[#1F51FF]/10 rounded-full blur-[120px]"/>
+ <div className="absolute top-[-10%] left-[15%] w-[700px] h-[500px] bg-[#000f89]/18 rounded-full blur-[150px]"/>
+ <div className="absolute top-[30%] right-[-5%] w-[400px] h-[300px] bg-[#0000FF]/10 rounded-full blur-[120px]"/>
  </div>
 
  {/* Vertical accent lines */}
  <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
  {[20,50,80].map(p=>(
  <div key={p} className="absolute top-0 bottom-0 w-px opacity-[0.035]"
- style={{ left:`${p}%`, background:"linear-gradient(to bottom, transparent, rgba(31,81,255,0.8) 50%, transparent)" }}/>
+ style={{ left:`${p}%`, background:"linear-gradient(to bottom, transparent, rgba(0,0,255,0.8) 50%, transparent)" }}/>
  ))}
  </div>
 
@@ -467,40 +467,31 @@ export default function TrackPage() {
 
  {/* Breadcrumb */}
  <motion.nav aria-label="Breadcrumb"
- className="flex items-center gap-2 justify-center mb-8"
+ className="flex items-center gap-2 justify-center mb-8 lg:mt-[14px] max-lg:-mt-[13px]"
  initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.4 }}>
  <Link href="/" className="text-white/40 text-[13px] font-medium hover:text-white/60 transition-colors">Home</Link>
  <ChevronRight size={10} className="text-white/30" aria-hidden="true"/>
  <span className="text-white/50 text-[13px] font-medium" aria-current="page">Track Shipment</span>
  </motion.nav>
 
- {/* #1 badge */}
- <motion.div className="flex justify-center mb-5"
- initial={{ opacity:0, y:-8 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
- <div className="inline-flex items-center gap-2 bg-[#0818A8]/20 border border-[#1F51FF]/25 px-4 py-2 rounded-full">
- <Award size={12} className="text-[#1F51FF]" aria-hidden="true"/>
- <span className="text-white text-[13px] font-bold">#1 Highest-Rated UK Nigeria Cargo on Google · 100+ Five-Star Reviews</span>
- </div>
- </motion.div>
-
  {/* Tag pill */}
  <motion.div className="flex justify-center mb-5"
  initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.5, delay:0.05 }}>
- <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 px-4 py-1.5 rounded-full">
- <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
+ <div className="inline-flex items-center gap-2.5 border border-[#0000FF]/25 bg-[#000f89]/12 px-4 py-1.5 rounded-full">
+ <motion.span className="w-1.5 h-1.5 rounded-full bg-[#0000FF] flex-shrink-0"
  animate={{ scale:[1,1.7,1], opacity:[1,0.4,1] }} transition={{ duration:2, repeat:Infinity }} aria-hidden="true"/>
- <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Real-Time UK Nigeria Tracking</span>
+ <span className="text-[#4D4DFF] text-[13px] font-semibold">Real-Time UK Nigeria Tracking</span>
  </div>
  </motion.div>
 
  {/* H1 */}
  <motion.h1 id="track-hero-heading"
- className="text-white font-black text-center text-[clamp(30px,6vw,68px)] leading-[0.88] tracking-[-0.035em] uppercase mb-4"
+ className="text-white font-extrabold text-center text-[clamp(30px,6vw,68px)] leading-[1.06] tracking-[-0.035em] mb-4"
  initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.65, delay:0.1 }}>
  Track Your{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Shipment.
- <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width:0 }} animate={{ width:"100%" }} transition={{ duration:0.6, delay:0.8 }}/>
  </span>
  </motion.h1>
@@ -508,7 +499,7 @@ export default function TrackPage() {
  {/* Subtext */}
  <motion.p className="text-white/60 text-[14px] font-normal leading-relaxed max-w-md mx-auto text-center mb-10"
  initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.55, delay:0.22 }}>
- Track your UK to Nigeria cargo shipment air freight to Nigeria, sea freight to Nigeria from UK and door to door cargo Nigeria by entering your R-Zone booking reference, AWB, or Bill of Lading number for live status, customs clearance progress, full milestone timeline, and cargo details.
+ Enter your R-Zone booking reference, AWB or Bill of Lading number to see live status, customs progress and every milestone of your UK to Nigeria shipment.
  </motion.p>
 
  {/* ── SEARCH BAR ── */}
@@ -524,15 +515,15 @@ export default function TrackPage() {
  </div>
  )}
  <div className="relative flex-1">
- <Search size={16} className={`absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none transition-colors ${loading?"text-[#1F51FF]":"text-white/30"}`} aria-hidden="true"/>
+ <Search size={16} className={`absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none transition-colors ${loading?"text-[#4D4DFF]":"text-white/30"}`} aria-hidden="true"/>
  <input type="text"
  placeholder="e.g. RZC-2024-00847 · AWB · Bill of Lading"
  value={query} onChange={e=>{setQuery(e.target.value);setError(null);}} onKeyDown={handleKey}
- className="w-full h-[54px] pl-11 pr-4 bg-white/[0.07] border border-white/[0.12] border-r-0 text-white text-[14px] font-normal placeholder-white/25 focus:outline-none focus:bg-white/[0.1] focus:border-[#1F51FF]/50 transition-all duration-200 font-mono"
+ className="w-full h-[54px] pl-11 pr-4 bg-white/[0.07] border border-white/[0.12] border-r-0 text-white text-[14px] font-normal placeholder-white/25 focus:outline-none focus:bg-white/[0.1] focus:border-[#0000FF]/50 transition-all duration-200 font-mono rounded-xl"
  aria-label="Enter UK Nigeria shipment tracking number"/>
  </div>
  <motion.button onClick={()=>handleTrack()} disabled={loading}
- className="h-[54px] px-8 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.1em] uppercase transition-all duration-200 flex items-center gap-2 flex-shrink-0 border border-[#1F51FF]/30"
+ className="h-[54px] px-8 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.1em] uppercase transition-all duration-200 flex items-center gap-2 flex-shrink-0 border border-[#0000FF]/30"
  whileHover={{ scale:1.01 }} whileTap={{ scale:0.98 }}
  aria-label="Track UK Nigeria shipment">
  {loading
@@ -547,7 +538,7 @@ export default function TrackPage() {
  <span className="text-white/30 text-[13px] font-normal">Try a sample:</span>
  {SAMPLE_IDS.map(id=>(
  <button key={id} onClick={()=>{setQuery(id); handleTrack(id);}}
- className="text-white/40 hover:text-white text-[13px] font-mono border border-white/[0.1] hover:border-white/[0.3] bg-white/[0.03] hover:bg-white/[0.07] px-2.5 py-1 transition-all duration-200"
+ className="text-white/40 hover:text-white text-[13px] font-mono border border-white/[0.1] hover:border-white/[0.3] bg-white/[0.03] hover:bg-white/[0.07] px-2.5 py-1 transition-all duration-200 rounded-full"
  aria-label={`Track sample shipment ${id}`}>
  {id}
  </button>
@@ -561,7 +552,7 @@ export default function TrackPage() {
  {/* Error */}
  <AnimatePresence>
  {error && (
- <motion.div className="mt-6 flex items-start gap-3 bg-red-500/8 border border-red-500/25 px-5 py-4"
+ <motion.div className="mt-6 flex items-start gap-3 bg-red-500/8 border border-red-500/25 px-5 py-4 rounded-[20px]"
  initial={{ opacity:0, y:12 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-12 }} transition={{ duration:0.3 }}>
  <AlertCircle size={16} className="text-red-400 flex-shrink-0 mt-0.5" aria-hidden="true"/>
  <div>
@@ -600,26 +591,26 @@ export default function TrackPage() {
  </section>
 
  {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
- <section ref={featuresRef} className="relative border-t border-white/[0.06] py-16 md:py-20" aria-labelledby="features-heading">
+ <section ref={featuresRef} className="relative overflow-hidden border-t border-white/[0.06] py-16 md:py-20" aria-labelledby="features-heading">
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"64px 64px" }}/>
- <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0818A8]/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"/>
+ <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#000f89]/10 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"/>
 
  <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10">
  <div className="text-center mb-12">
  <motion.div initial={{ opacity:0 }} animate={featuresInView?{ opacity:1 }:{}} transition={{ duration:0.5 }}>
- <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/25 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
- <span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]" aria-hidden="true"/>
- <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.3em] uppercase">Why Track with R-Zone</span>
+ <div className="inline-flex items-center gap-2.5 border border-[#0000FF]/25 bg-[#000f89]/12 px-4 py-1.5 rounded-full mb-5">
+ <span className="w-1.5 h-1.5 rounded-full bg-[#0000FF]" aria-hidden="true"/>
+ <span className="text-[#4D4DFF] text-[13px] font-semibold">Why Track with R-Zone</span>
  </div>
  </motion.div>
  <motion.h2 id="features-heading"
- className="text-white font-black text-[clamp(24px,4vw,44px)] leading-[0.9] tracking-[-0.025em] uppercase mb-3"
+ className="text-white font-extrabold text-[clamp(24px,4vw,44px)] leading-[1.06] tracking-[-0.03em] mb-3"
  initial={{ opacity:0, y:16 }} animate={featuresInView?{ opacity:1, y:0 }:{}} transition={{ duration:0.6, delay:0.1 }}>
  Full Visibility.{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Zero Surprises.
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width:0 }} animate={featuresInView?{ width:"100%" }:{}} transition={{ duration:0.6, delay:0.5 }}/>
  </span>
  </motion.h2>
@@ -631,19 +622,19 @@ export default function TrackPage() {
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
  {[
- { icon:Zap, title:"Live Status Updates", desc:"Real-time milestone tracking from booking to proof of delivery air or sea.", accent:"#1F51FF" },
- { icon:Shield, title:"Secure Reference Access",desc:"Tracking data accessible only with your unique R-Zone booking reference.", accent:"#0818A8" },
- { icon:Globe, title:"UK & Nigeria Coverage", desc:"Track UK-to-Nigeria and Nigeria-to-UK shipments across air, sea, and road.", accent:"#1F51FF" },
- { icon:FileText, title:"Document Download", desc:"Download AWBs, packing lists, and proof of delivery directly from tracking results.", accent:"#0818A8" },
+ { icon:Zap, title:"Live Status Updates", desc:"Real-time milestone tracking from booking to proof of delivery air or sea.", accent:"#0000FF" },
+ { icon:Shield, title:"Secure Reference Access",desc:"Tracking data accessible only with your unique R-Zone booking reference.", accent:"#000f89" },
+ { icon:Globe, title:"UK & Nigeria Coverage", desc:"Track UK-to-Nigeria and Nigeria-to-UK shipments across air, sea, and road.", accent:"#0000FF" },
+ { icon:FileText, title:"Document Download", desc:"Download AWBs, packing lists, and proof of delivery directly from tracking results.", accent:"#000f89" },
  ].map((f,i)=>{const Icon=f.icon;return(
  <motion.div key={i}
- className="group border border-white/[0.07] bg-white/[0.03] p-6 hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 relative overflow-hidden"
+ className="group border border-white/[0.07] bg-white/[0.03] p-6 hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 relative overflow-hidden rounded-[20px]"
  initial={{ opacity:0, y:16 }} animate={featuresInView?{ opacity:1, y:0 }:{}} transition={{ delay:i*0.1, duration:0.5 }}>
  <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500" style={{ backgroundColor:f.accent }} aria-hidden="true"/>
  <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ backgroundColor:`${f.accent}18`, border:`1px solid ${f.accent}30` }} aria-hidden="true">
  <Icon size={16} style={{ color:f.accent }}/>
  </div>
- <h3 className="text-white font-black text-[13.5px] mb-2 tracking-[-0.01em]">{f.title}</h3>
+ <h3 className="text-white font-extrabold text-[13.5px] mb-2 tracking-[-0.03em]">{f.title}</h3>
  <p className="text-white/50 text-[13px] font-normal leading-relaxed">{f.desc}</p>
  </motion.div>
  );})}
@@ -652,34 +643,34 @@ export default function TrackPage() {
  </section>
 
  {/* ══ HELP STRIP ════════════════════════════════════════════════════════ */}
- <section className="relative bg-[#0818A8] overflow-hidden py-12 md:py-14"
+ <section className="relative bg-[#000f89] overflow-hidden py-12 md:py-14"
  aria-label="Contact R-Zone for UK Nigeria tracking help">
  <div className="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage:"linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize:"44px 44px" }}/>
  <div className="relative z-10 max-w-[1100px] mx-auto px-5 sm:px-8 xl:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
  <div>
- <p className="text-white/60 text-[13px] font-bold tracking-[0.28em] uppercase mb-1">Need Help?</p>
- <h3 className="text-white font-black text-[clamp(18px,3vw,26px)] tracking-[-0.02em] uppercase mb-1">
+ <p className="text-white/60 mb-1 text-[13px] font-semibold">Need Help?</p>
+ <h3 className="text-white font-extrabold text-[clamp(18px,3vw,26px)] tracking-[-0.03em] mb-1">
  Can&apos;t find your UK Nigeria shipment?
  </h3>
  <p className="text-white/60 text-[13px] font-normal">
- Our UK-based team is available Mon Fri 10AM 6PM · Sat 11AM 2PM to assist with any tracking query.
+ Our UK-based team is available Mon to Fri 10AM to 6PM · Sat 11AM to 2PM to assist with any tracking query.
  </p>
  </div>
  <div className="flex flex-wrap gap-3 flex-shrink-0">
  <a href="tel:+448007720864"
- className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200"
+ className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="Call R-Zone UK: +44 800 772 0864">
  <Phone size={12} aria-hidden="true"/> +44 800 772 0864
  </a>
  <a href="https://wa.me/447915647119?text=Hello%2C%20I%20need%20help%20tracking%20my%20UK%20to%20Nigeria%20shipment."
  target="_blank" rel="noopener noreferrer"
- className="flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200"
+ className="flex items-center gap-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="WhatsApp R-Zone about tracking">
  <MessageSquare size={12} className="text-[#25D366]" aria-hidden="true"/> WhatsApp Us
  </a>
  <a href="mailto:info@r-zoneenterprises.com"
- className="flex items-center gap-2 bg-white text-[#0818A8] hover:bg-white/90 text-[13px] font-black px-5 py-2.5 transition-all duration-200"
+ className="flex items-center gap-2 bg-white text-[#000f89] hover:bg-white/90 text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="Email R-Zone tracking support">
  <Mail size={12} aria-hidden="true"/> Email Support
  </a>

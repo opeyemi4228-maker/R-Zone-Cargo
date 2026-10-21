@@ -32,7 +32,7 @@ function Sidebar({ pathname, onClose }) {
  {/* Brand */}
  <div className="flex items-center justify-between px-5 py-4 border-b border-[#e2e8f0]">
  <div className="flex items-center gap-3">
- <div className="w-8 h-8 bg-[#0818A8] flex items-center justify-center flex-shrink-0 rounded-sm shadow shadow-[#0818A8]/20">
+ <div className="w-8 h-8 bg-[#000f89] flex items-center justify-center flex-shrink-0 rounded-sm shadow shadow-[#000f89]/20">
  <ShieldCheck size={15} className="text-white" />
  </div>
  <div>
@@ -57,13 +57,13 @@ function Sidebar({ pathname, onClose }) {
  <Link key={href} href={href} onClick={onClose}
  className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-sm transition-all duration-200 ${
  active
- ? "bg-[#eff6ff] text-[#0818A8] border-l-2 border-[#0818A8]"
+ ? "bg-[#eff6ff] text-[#000f89] border-l-2 border-[#000f89]"
  : "text-[#475569] hover:text-[#0f172a] hover:bg-[#f8fafc] border-l-2 border-transparent"
  }`}
  >
- <Icon size={15} className={active ? "text-[#0818A8]" : "text-[#94a3b8] group-hover:text-[#475569]"} aria-hidden="true" />
+ <Icon size={15} className={active ? "text-[#000f89]" : "text-[#94a3b8] group-hover:text-[#475569]"} aria-hidden="true" />
  <span className="text-[13px] font-semibold">{label}</span>
- {active && <ChevronRight size={11} className="ml-auto text-[#0818A8]" aria-hidden="true" />}
+ {active && <ChevronRight size={11} className="ml-auto text-[#000f89]" aria-hidden="true" />}
  </Link>
  );
  })}
@@ -110,7 +110,7 @@ export default function AdminLayout({ children }) {
  if (!ready && !isLoginPage) {
  return (
  <div className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] min-h-screen bg-[#f1f5f9] flex items-center justify-center`}>
- <motion.div className="w-5 h-5 border-2 border-[#0818A8]/20 border-t-[#0818A8] rounded-full"
+ <motion.div className="w-5 h-5 border-2 border-[#000f89]/20 border-t-[#000f89] rounded-full"
  animate={{ rotate: 360 }} transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }} />
  </div>
  );
@@ -157,7 +157,7 @@ export default function AdminLayout({ children }) {
  <Menu size={20} />
  </button>
  <div className="flex items-center gap-2">
- <div className="w-6 h-6 bg-[#0818A8] flex items-center justify-center rounded-sm">
+ <div className="w-6 h-6 bg-[#000f89] flex items-center justify-center rounded-sm">
  <ShieldCheck size={12} className="text-white" />
  </div>
  <span className="text-[#0f172a] font-black text-[13px] uppercase tracking-[-0.01em]">R-Zone Admin</span>

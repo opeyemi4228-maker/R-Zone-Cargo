@@ -134,15 +134,15 @@ const fadeUp = {
 function TestimonialCard({ t, featured = false }) {
  return (
  <motion.div
- className={`relative flex flex-col justify-between border transition-all duration-300 cursor-default
+ className={`relative flex flex-col justify-between rounded-[20px] border transition-all duration-300 cursor-default
  ${featured
- ? "bg-[#0818A8] border-[#0818A8] shadow-2xl shadow-[#0818A8]/20 p-7 md:p-8"
- : "bg-white border-gray-200 hover:border-[#0818A8]/30 hover:shadow-lg hover:shadow-[#0818A8]/8 p-6"
+ ? "bg-[#000f89] border-[#000f89] shadow-2xl shadow-[#000f89]/20 p-7 md:p-8"
+ : "bg-[#F6FAFF] border-[#E3EAF7] hover:border-[#000f89]/25 p-6"
  }`}
  whileHover={{ y: -4, transition: { duration: 0.25 } }}
  >
  <div className={`absolute top-5 right-5 ${featured ? "opacity-20" : "opacity-[0.08]"}`} aria-hidden="true">
- <Quote size={28} className={featured ? "text-white" : "text-[#0818A8]"} />
+ <Quote size={28} className={featured ? "text-white" : "text-[#000f89]"} />
  </div>
 
  {/* Stars */}
@@ -150,7 +150,7 @@ function TestimonialCard({ t, featured = false }) {
  <div className="flex items-center gap-0.5" aria-label={`${t.stars} out of 5 stars`}
 >
  {Array.from({ length: t.stars }).map((_, i) => (
- <Star key={i} size={11} className={featured ? "fill-white text-white" : "fill-[#0818A8] text-[#0818A8]"} aria-hidden="true" />
+ <Star key={i} size={11} className={featured ? "fill-white text-white" : "fill-[#000f89] text-[#000f89]"} aria-hidden="true" />
  ))}
  </div>
  </div>
@@ -170,7 +170,7 @@ function TestimonialCard({ t, featured = false }) {
  {/* Author */}
  <div className={`flex items-center gap-3 pt-4 border-t ${featured ? "border-white/20" : "border-gray-100"}`}
 >
- <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-black ${featured ? "bg-white/20 text-white" : "bg-[#0818A8] text-white"}`}
+ <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-black ${featured ? "bg-white/20 text-white" : "bg-[#000f89] text-white"}`}
  aria-hidden="true">
  {t.avatar}
  </div>
@@ -240,12 +240,6 @@ export default function TestimonialsSection() {
  className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative bg-white overflow-hidden py-20 md:py-28`}
  aria-labelledby="testimonials-heading"
  >
- {/* Backgrounds */}
- <div className="absolute inset-0 opacity-[0.035] pointer-events-none" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, #0818A8 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/30 to-transparent" aria-hidden="true" />
- <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-[#0818A8]/5 blur-3xl rounded-full pointer-events-none" aria-hidden="true" />
-
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10">
 
  {/* Header */}
@@ -253,31 +247,23 @@ export default function TestimonialsSection() {
  initial="hidden" animate={inView ? "visible" : "hidden"}
  variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
  <motion.div variants={fadeUp} custom={0} className="flex justify-center mb-4">
- <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
- <Star size={10} className="fill-[#0818A8] text-[#0818A8]" aria-hidden="true" />
- <span className="text-[#0818A8] text-[13px] font-bold tracking-[0.22em] uppercase">
- 100+ Five-Star Reviews · #1 Ranked UK Nigeria Cargo
+ <div className="inline-flex items-center gap-2 rounded-full bg-[#000f89]/[0.07] px-3.5 py-1.5">
+ <Star size={12} className="fill-[#000f89] text-[#000f89]" aria-hidden="true" />
+ <span className="text-[#000f89] text-[13px] font-semibold">
+ 120+ five-star reviews on Google
  </span>
  </div>
  </motion.div>
 
  <motion.h2 id="testimonials-heading" variants={fadeUp} custom={0.1}
- className="text-gray-900 font-black text-[clamp(28px,5vw,56px)] leading-tight tracking-[-0.02em] mb-3">
- What Our Customers{" "}
- <span className="relative inline-block text-[#0818A8]">
- Say About Us
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full"
- initial={{ width: 0 }} animate={inView ? { width: "100%" } : { width: 0 }}
- transition={{ duration: 0.6, delay: 0.5 }} aria-hidden="true" />
- </span>
- .
+ className="font-extrabold leading-[1.04] tracking-[-0.035em] text-[#00112E] mb-4"
+ style={{ fontSize: "clamp(30px, 3.8vw, 52px)" }}>
+ What our customers say.
  </motion.h2>
 
  <motion.p variants={fadeUp} custom={0.2}
- className="text-gray-800 text-[14px] font-normal max-w-lg mx-auto leading-relaxed">
- The{" "}
- <strong className="text-gray-900 font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
- {" "} 100+ verified five-star reviews from real customers across the UK and Nigeria.
+ className="text-slate-600 text-[16px] font-normal max-w-lg mx-auto leading-relaxed">
+ Real reviews from customers who ship with us between the UK and Nigeria.
  </motion.p>
  </motion.div>
 
@@ -317,7 +303,7 @@ export default function TestimonialsSection() {
  scale: { duration: 1.0, ease: "easeOut" }
  }}
  style={{
- filter: testimonial.isCenter ? 'drop-shadow(0 20px 25px rgba(8, 24, 168, 0.15))' : 'none'
+ filter: testimonial.isCenter ? 'drop-shadow(0 20px 25px rgba(0,15,137, 0.15))' : 'none'
  }}
  >
  <TestimonialCard t={testimonial} featured={testimonial.isCenter} />
@@ -330,7 +316,7 @@ export default function TestimonialsSection() {
  <div className="flex items-center justify-center gap-4 mt-8">
  <button
  onClick={prevSlide}
- className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+ className="w-12 h-12 rounded-full border-2 border-[#000f89]/20 bg-white hover:bg-[#000f89] hover:border-[#000f89] flex items-center justify-center text-[#000f89] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
  aria-label="Previous testimonials"
  >
  <ChevronLeft size={20} />
@@ -344,7 +330,7 @@ export default function TestimonialsSection() {
  onClick={() => setCurrentIndex(i)}
  className={`rounded-full transition-all duration-300 ${
  i === currentIndex
- ? 'w-8 h-3 bg-[#0818A8]'
+ ? 'w-8 h-3 bg-[#000f89]'
  : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
  }`}
  aria-label={`Go to testimonial ${i + 1}`}
@@ -354,7 +340,7 @@ export default function TestimonialsSection() {
 
  <button
  onClick={nextSlide}
- className="w-12 h-12 rounded-full border-2 border-[#0818A8]/20 bg-white hover:bg-[#0818A8] hover:border-[#0818A8] flex items-center justify-center text-[#0818A8] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+ className="w-12 h-12 rounded-full border-2 border-[#000f89]/20 bg-white hover:bg-[#000f89] hover:border-[#000f89] flex items-center justify-center text-[#000f89] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
  aria-label="Next testimonials"
  >
  <ChevronRight size={20} />
@@ -362,32 +348,9 @@ export default function TestimonialsSection() {
  </div>
  </div>
 
- {/* Bottom stat bar */}
- <motion.div
- className="mt-14 md:mt-16 pt-8 border-t border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-6"
- initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.6, delay: 0.8 }} role="list"
- aria-label="R-Zone Enterprises customer satisfaction statistics">
- {[
- { value: "100+", label: "Five-Star Reviews" },
- { value: "12+", label: "Years of Service" },
- { value: "5.0", label: "Google Rating" },
- { value: "50K+", label: "Shipments Delivered" },
- ].map((s, i) => (
- <div key={i} className="flex flex-col gap-1 text-center md:text-left" role="listitem">
- <span className="text-[#0818A8] font-black text-[clamp(24px,3vw,36px)] leading-none tracking-tight">
- {s.value}
- </span>
- <span className="text-gray-800 text-[13px] font-medium tracking-[0.12em] uppercase">
- {s.label}
- </span>
- </div>
- ))}
- </motion.div>
 
  </div>
 
- <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/20 to-transparent" aria-hidden="true" />
  </section>
  </>
  );

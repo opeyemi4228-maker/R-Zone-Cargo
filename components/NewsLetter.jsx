@@ -9,30 +9,30 @@ import { montserrat } from "../lib/fonts";
 const STEPS = [
  {
  number: "01", icon: ClipboardList,
- title: "Book Your Shipment",
+ title: "Book your shipment",
  subtitle: "Online, WhatsApp or phone",
  description: "Request a free quote online, via WhatsApp (+447915647119), or call our UK team. Tell us what you're shipping, the Nigerian destination, and your preferred service air or sea.",
  bullets: ["Free instant quote", "Air or sea freight options", "Same-day response"],
- cta: { label: "Get a Free Quote", href: "/quote" },
- accentColor: "#1F51FF",
+ cta: { label: "Get a free quote", href: "/quote" },
+ accentColor: "#0000FF",
  },
  {
  number: "02", icon: PackageCheck,
- title: "Drop Off or Book Collection",
+ title: "Drop off or book a collection",
  subtitle: "UK-wide collection available",
  description: "Drop your cargo at our Upminster, Essex warehouse or book a door collection from anywhere in the UK. We accept boxes, bags, household goods, foodstuffs and commercial freight.",
  bullets: ["Upminster warehouse drop-off", "UK-wide door collection", "All cargo types accepted"],
- cta: { label: "Our Location", href: "/contact" },
- accentColor: "#0818A8",
+ cta: { label: "Our location", href: "/contact" },
+ accentColor: "#000f89",
  },
  {
  number: "03", icon: Plane,
- title: "Cargo Dispatched UK → Nigeria",
+ title: "Cargo dispatched to Nigeria",
  subtitle: "Weekly air freight & sea sailings",
  description: "Your cargo is consolidated, customs-cleared and dispatched via our partner airlines or weekly sea freight sailings to Lagos. Every milestone tracked in real time.",
- bullets: ["Air freight: 5 10 working days", "Sea freight: 4 6 weeks", "Real-time tracking included"],
- cta: { label: "Track a Shipment", href: "/track" },
- accentColor: "#1F51FF",
+ bullets: ["Air freight: 5 to 10 working days", "Sea freight: 4 to 6 weeks", "Real-time tracking included"],
+ cta: { label: "Track a shipment", href: "/track" },
+ accentColor: "#0000FF",
  },
  {
  number: "04", icon: MapPin,
@@ -40,98 +40,75 @@ const STEPS = [
  subtitle: "All 36 states covered",
  description: "Door delivery across all 36 Nigerian states Lagos, Abuja, Port Harcourt, Kano and beyond or collect from our Lagos hub. All Nigerian customs clearance handled by our in-house team.",
  bullets: ["Door delivery Nigeria-wide", "Lagos & Abuja covered", "Nigerian customs handled"],
- cta: { label: "Learn More", href: "/services" },
- accentColor: "#0818A8",
+ cta: { label: "Learn more", href: "/services" },
+ accentColor: "#000f89",
  },
 ];
 
 function StepCard({ step, index, isActive, onClick, inView }) {
  const Icon = step.icon;
- const isLast = index === STEPS.length - 1;
  return (
- <div className="flex-1 flex flex-col relative min-w-0">
- {!isLast && (
- <div className="absolute top-[34px] left-[calc(50%+28px)] right-0 h-px hidden lg:block z-0" aria-hidden="true">
- <motion.div className="h-full bg-gradient-to-r from-[#0818A8]/60 to-[#0818A8]/20"
- initial={{ scaleX: 0 }} animate={inView ? { scaleX: 1 } : {}}
- transition={{ duration: 0.6, delay: 0.5 + index * 0.18 }} style={{ transformOrigin: "left" }} />
- <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[4px] border-b-[4px] border-l-[6px] border-t-transparent border-b-transparent border-l-[#0818A8]/40" />
- </div>
- )}
  <motion.button onClick={() => onClick(index)}
- className={`relative flex flex-col h-full text-left border transition-all duration-350 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1F51FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#00061a] ${isActive ? "bg-[#0818A8]/18 border-[#0818A8]/60" : "bg-white/[0.03] border-white/[0.07] hover:border-[#0818A8]/35 hover:bg-[#0818A8]/8"}`}
+ className={`relative flex h-full w-full flex-col rounded-[20px] p-7 text-left transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000f89] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6FAFF] ${isActive ? "bg-white shadow-[0_24px_50px_-24px_rgba(0,15,137,0.35)] ring-1 ring-[#000f89]/25" : "bg-white/60 ring-1 ring-[#E3EAF7] hover:bg-white"}`}
  initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: 0.25 + index * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
  aria-expanded={isActive} aria-label={`Step ${step.number}: ${step.title}`}>
- <AnimatePresence>
- {isActive && (
- <motion.div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
- initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} exit={{ scaleX: 0 }}
- transition={{ duration: 0.3 }} aria-hidden="true" />
- )}
- </AnimatePresence>
- <div className="p-6 md:p-7 flex flex-col gap-4 h-full">
  <div className="flex items-start justify-between gap-3">
- <span className={`text-[13px] font-black tracking-[0.2em] uppercase transition-colors duration-250 ${isActive ? "text-[#1F51FF]" : "text-white/80"}`}>
- {step.number}
+ <span className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${isActive ? "bg-[#000f89] text-white" : "bg-[#000f89]/[0.07] text-[#000f89]"}`} aria-hidden="true">
+ <Icon size={19} />
  </span>
- <div className={`w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isActive ? "bg-[#0818A8] shadow-lg shadow-[#0818A8]/35" : "bg-white/[0.06] border border-white/[0.12]"}`} aria-hidden="true">
- <Icon size={19} className={`transition-colors duration-250 ${isActive ? "text-white" : "text-white/80"}`} />
+ <span className={`text-[13px] font-bold tabular-nums transition-colors duration-300 ${isActive ? "text-[#000f89]" : "text-slate-400"}`}>
+ Step {step.number}
+ </span>
  </div>
- </div>
- <div>
- <h3 className={`font-black text-[14.5px] leading-tight tracking-[-0.01em] uppercase mb-1 transition-colors duration-250 ${isActive ? "text-white" : "text-white/80"}`}>
+ <h3 className="mt-6 text-[18px] font-extrabold leading-snug tracking-[-0.02em] text-[#00112E]">
  {step.title}
  </h3>
- <p className={`text-[13px] font-medium tracking-wide transition-colors duration-250 ${isActive ? "text-[#1F51FF]" : "text-white/80"}`}>
+ <p className="mt-1 text-[14px] font-medium text-[#000f89]">
  {step.subtitle}
  </p>
- </div>
- <AnimatePresence>
+ <AnimatePresence initial={false}>
  {isActive && (
  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}
  exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
  className="overflow-hidden">
- <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-4">{step.description}</p>
- <ul className="flex flex-col gap-1.5 mb-5" role="list">
+ <p className="mt-4 text-[14.5px] font-normal leading-relaxed text-slate-600">{step.description}</p>
+ <ul className="mt-4 flex flex-col gap-2" role="list">
  {step.bullets.map(bullet => (
- <li key={bullet} className="flex items-center gap-2">
- <span className="w-4 h-4 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/50 flex items-center justify-center flex-shrink-0" aria-hidden="true">
- <Check size={8} className="text-[#1F51FF]" />
+ <li key={bullet} className="flex items-center gap-2.5">
+ <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#000f89]/[0.08]" aria-hidden="true">
+ <Check size={11} className="text-[#000f89]" />
  </span>
- <span className="text-white/80 text-[13px] font-normal">{bullet}</span>
+ <span className="text-[14px] font-normal text-slate-700">{bullet}</span>
  </li>
  ))}
  </ul>
  <Link href={step.cta.href}
- className="inline-flex items-center gap-2 text-[13px] font-black tracking-[0.1em] uppercase text-[#1F51FF] hover:text-white transition-colors duration-200"
- aria-label={`${step.cta.label} R-Zone Enterprises UK to Nigeria cargo`}
+ className="mt-5 inline-flex items-center gap-2 text-[14px] font-bold text-[#000f89] hover:text-[#0000CD]"
+ aria-label={`${step.cta.label}: R-Zone Enterprises UK to Nigeria cargo`}
  onClick={e => e.stopPropagation()}>
- {step.cta.label} <ArrowRight size={11} aria-hidden="true" />
+ {step.cta.label} <ArrowRight size={14} aria-hidden="true" />
  </Link>
  </motion.div>
  )}
  </AnimatePresence>
  {!isActive && (
- <div className="mt-auto">
- <ChevronRight size={13} className="text-white/80" aria-hidden="true" />
- </div>
+ <span className="mt-auto pt-5 inline-flex items-center gap-1 text-[13px] font-semibold text-slate-500">
+ Show details <ChevronRight size={14} aria-hidden="true" />
+ </span>
  )}
- </div>
  </motion.button>
- </div>
  );
 }
 
 function ProgressBar({ activeIndex, total }) {
  return (
- <div className="flex items-center gap-2" role="tablist" aria-label="Shipping process steps">
+ <div className="flex items-center gap-2" aria-hidden="true">
  {Array.from({ length: total }).map((_, i) => (
- <div key={i} role="presentation"
- className={`h-[2px] transition-all duration-400 rounded-full ${i <= activeIndex ? "bg-[#0818A8]" : "bg-white/20"} ${i === activeIndex ? "w-8" : "w-4"}`}
- aria-hidden="true" />
+ <div key={i}
+ className={`h-1.5 rounded-full transition-all duration-300 ${i <= activeIndex ? "bg-[#000f89]" : "bg-[#000f89]/15"} ${i === activeIndex ? "w-8" : "w-3"}`} />
  ))}
- <span className="text-white/80 text-[13px] font-medium ml-2 tabular-nums">{activeIndex + 1} / {total}</span>
+ <span className="ml-2 text-[13px] font-semibold text-slate-500 tabular-nums">{activeIndex + 1} / {total}</span>
  </div>
  );
 }
@@ -149,7 +126,7 @@ export default function HowItWorks() {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": "How to Ship Cargo from UK to Nigeria Step by Step",
- "description": "Simple 4-step process to ship air freight or sea cargo from the UK to Nigeria with R-Zone Enterprises the highest-rated and highest-ranked UK-to-Nigeria cargo company on Google.",
+ "description": "Simple 4-step process to ship air freight or sea cargo from the UK to Nigeria with R-Zone Enterprises.",
  "totalTime": "PT10D",
  "estimatedCost": { "@type": "MonetaryAmount", "currency": "GBP", "value": "From £3/kg" },
  "supply": [
@@ -171,78 +148,42 @@ export default function HowItWorks() {
  }} />
 
  <section ref={sectionRef}
- className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative w-full bg-[#00061a] overflow-hidden`}
+ className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative w-full bg-[#F6FAFF] overflow-hidden`}
  aria-labelledby="how-it-works-heading">
-
- {/* Backgrounds */}
- <div className="absolute inset-0 pointer-events-none opacity-[0.022]" aria-hidden="true"
- style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
- <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-[#1F51FF]/6 rounded-full blur-[100px] pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 lg:py-28">
 
  {/* Header */}
- <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-16">
+ <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10 md:mb-12">
  <motion.div initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}>
- <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/28 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
- <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
- animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
- <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">
- How to Ship from UK to Nigeria
- </span>
- </div>
- <h2 id="how-it-works-heading" className="text-white font-black text-[clamp(28px,5vw,58px)] leading-[0.92] tracking-[-0.025em] uppercase mb-4">
- How{" "}
- <span className="relative inline-block text-[#1F51FF]">
- Shipping Works.
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
- initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.55 }} />
- </span>
+ <p className="mb-5 inline-flex rounded-full bg-[#000f89]/[0.07] px-3.5 py-1.5 text-[13px] font-semibold text-[#000f89]">
+ How to ship from the UK to Nigeria
+ </p>
+ <h2 id="how-it-works-heading" className="font-extrabold leading-[1.04] tracking-[-0.035em] text-[#00112E]"
+ style={{ fontSize: "clamp(30px, 3.8vw, 52px)" }}>
+ How shipping works.
  </h2>
- <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-lg">
+ <p className="mt-4 max-w-lg text-[16px] font-normal leading-relaxed text-slate-600">
  Four steps from booking to doorstep delivery anywhere in Nigeria.
- Weekly air freight and sea sailings the UK&apos;s{" "}
- <strong className="text-white font-semibold">#1 ranked cargo company</strong>{" "}
- handles everything in between.
+ Weekly air freight and sea sailings, and our team handles everything
+ in between.
  </p>
  </motion.div>
- <motion.div className="hidden md:block" initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
+ <motion.div className="hidden md:flex flex-col items-end gap-3" initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
  transition={{ duration: 0.5, delay: 0.4 }}>
- <ProgressBar activeIndex={activeStep} total={STEPS.length} />
+ <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13.5px] font-semibold text-[#00112E] ring-1 ring-[#E3EAF7]">
+ <span aria-hidden="true">🇬🇧</span> United Kingdom
+ <ArrowRight size={13} className="text-[#000f89]" aria-hidden="true" />
+ <span aria-hidden="true">🇳🇬</span> Nigeria
+ </p>
+ <p className="text-[13px] font-medium text-slate-500">Air: 5 to 10 working days · Sea: 4 to 6 weeks</p>
  </motion.div>
  </div>
-
- {/* Route label */}
- <motion.div className="flex items-center gap-4 mb-10 md:mb-12"
- initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.5, delay: 0.35 }}>
- <div className="flex items-center gap-3">
- <span className="text-[13px]" aria-hidden="true">🇬🇧</span>
- <span className="text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase">United Kingdom</span>
- </div>
- <div className="flex items-center gap-1 flex-1 max-w-[120px]">
- {Array.from({ length: 6 }).map((_, i) => (
- <motion.div key={i} className="flex-1 h-px bg-[#0818A8]/50 rounded-full"
- initial={{ opacity: 0, scaleX: 0 }} animate={inView ? { opacity: 1, scaleX: 1 } : {}}
- transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }} style={{ transformOrigin: "left" }} aria-hidden="true" />
- ))}
- <div className="w-0 h-0 border-t-[3px] border-b-[3px] border-l-[5px] border-t-transparent border-b-transparent border-l-[#0818A8]/50 flex-shrink-0" aria-hidden="true" />
- </div>
- <div className="flex items-center gap-3">
- <span className="text-[13px]" aria-hidden="true">🇳🇬</span>
- <span className="text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase">Nigeria</span>
- </div>
- <div className="hidden sm:block h-px w-12 bg-white/15" aria-hidden="true" />
- <span className="hidden sm:block text-white/80 text-[13px] font-medium">
- Air: 5 10 working days · Sea: 4 6 weeks
- </span>
- </motion.div>
 
  {/* Step cards */}
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
- role="list" aria-label="How to ship cargo from UK to Nigeria 4 steps">
+ <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 items-start"
+ role="list" aria-label="How to ship cargo from UK to Nigeria in 4 steps">
  {STEPS.map((step, index) => (
  <div key={step.number} role="listitem">
  <StepCard step={step} index={index} isActive={activeStep === index}
@@ -251,49 +192,24 @@ export default function HowItWorks() {
  ))}
  </div>
 
- {/* Mobile progress */}
- <motion.div className="flex md:hidden items-center justify-between mt-6"
+ {/* Progress + mobile controls */}
+ <motion.div className="flex items-center justify-between mt-8"
  initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }}>
  <ProgressBar activeIndex={activeStep} total={STEPS.length} />
  <div className="flex items-center gap-2">
  <button onClick={() => setActiveStep(p => Math.max(0, p - 1))} disabled={activeStep === 0}
- className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
+ className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#000f89] ring-1 ring-[#E3EAF7] transition-colors duration-200 hover:bg-[#000f89] hover:text-white disabled:opacity-35 disabled:hover:bg-white disabled:hover:text-[#000f89]"
  aria-label="Previous shipping step">
- <ArrowRight size={13} className="rotate-180" aria-hidden="true" />
+ <ArrowRight size={15} className="rotate-180" aria-hidden="true" />
  </button>
  <button onClick={() => setActiveStep(p => Math.min(STEPS.length - 1, p + 1))} disabled={activeStep === STEPS.length - 1}
- className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 disabled:opacity-25 disabled:cursor-not-allowed transition-all duration-200"
+ className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#000f89] ring-1 ring-[#E3EAF7] transition-colors duration-200 hover:bg-[#000f89] hover:text-white disabled:opacity-35 disabled:hover:bg-white disabled:hover:text-[#000f89]"
  aria-label="Next shipping step">
- <ArrowRight size={13} aria-hidden="true" />
+ <ArrowRight size={15} aria-hidden="true" />
  </button>
  </div>
  </motion.div>
 
- {/* Bottom strip */}
- <motion.div className="mt-14 pt-10 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
- initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.6 }}>
- <div>
- <p className="text-white font-black text-[16px] tracking-[-0.01em] uppercase mb-1">
- Ready to ship from the UK to Nigeria?
- </p>
- <p className="text-white/80 text-[14px] font-normal max-w-sm leading-relaxed">
- Get a free quote in under 2 minutes our UK team responds the same day.
- </p>
- </div>
- <div className="flex flex-wrap gap-3">
- <Link href="/quote"
- className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
- aria-label="Get a free UK to Nigeria shipping quote from R-Zone">
- Get a Free Quote
- <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
- </Link>
- <Link href="/contact"
- className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200"
- aria-label="Contact R-Zone Enterprises UK Nigeria cargo team">
- Speak to Us
- </Link>
- </div>
- </motion.div>
 
  </div>
  </section>

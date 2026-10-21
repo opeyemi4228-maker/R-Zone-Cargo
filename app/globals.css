@@ -1,7 +1,7 @@
 /* ============================================================
    R-ZONE CARGO — globals.css
    Production-ready · Next.js App Router · Tailwind CSS v3
-   Brand: Montserrat · #0818A8 · #1F51FF · #0437F2
+   Brand: Montserrat · #000f89 · #0000FF · #0000CD
    ============================================================ */
 
 @tailwind base;
@@ -15,10 +15,10 @@
   /* ── Brand colours ── */
   --rz-blue-900:   #00061a;
   --rz-blue-800:   #030f3a;
-  --rz-blue-700:   #0818A8;
-  --rz-blue-600:   #1F51FF;
-  --rz-blue-500:   #0437F2;
-  --rz-blue-400:   #4f7bff;
+  --rz-blue-700:   #000f89;
+  --rz-blue-600:   #0000FF;
+  --rz-blue-500:   #0000CD;
+  --rz-blue-400:   #4D4DFF;
   --rz-blue-100:   #e8eeff;
 
   /* ── Neutral scale ── */
@@ -39,7 +39,7 @@
   --rz-success:    #16a34a;
   --rz-warning:    #d97706;
   --rz-error:      #dc2626;
-  --rz-info:       #0818A8;
+  --rz-info:       #000f89;
 
   /* ── Typography ── */
   --rz-font-sans:  var(--font-montserrat), "Montserrat", system-ui, sans-serif;
@@ -58,7 +58,7 @@
   --rz-shadow-md:  0 4px 20px 0 rgb(0 0 0 / 0.10), 0 2px 6px -2px rgb(0 0 0 / 0.08);
   --rz-shadow-lg:  0 10px 40px -4px rgb(0 0 0 / 0.12), 0 4px 16px -4px rgb(0 0 0 / 0.08);
   --rz-shadow-xl:  0 20px 60px -8px rgb(0 0 0 / 0.16), 0 8px 24px -8px rgb(0 0 0 / 0.10);
-  --rz-shadow-blue:0 8px 28px 0 rgb(8 24 168 / 0.30);
+  --rz-shadow-blue:0 8px 28px 0 rgb(0 15 137 / 0.30);
 }
 
 /* ============================================================
@@ -256,33 +256,47 @@
 }
 
 /* ============================================================
-   3. SCROLLBAR — Hidden on all browsers (preserved from original)
+   3. SCROLLBAR — Slim and branded, visible on every browser
+   Royal-blue thumb on the pale tint the header strip uses; it
+   brightens to the hero blue on hover. Containers that should
+   stay clean (carousels etc.) keep the .no-scrollbar utility.
    ============================================================ */
-
-/* Webkit */
-::-webkit-scrollbar {
-  display: none;
-}
 
 /* Firefox */
 html {
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #000f89 #F3F6FF;
 }
 
-/* IE / Edge Legacy */
-html {
-  -ms-overflow-style: none;
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F6FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #000f89;
+  border-radius: 999px;
+  border: 2px solid #F3F6FF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0000FF;
+}
+::-webkit-scrollbar-corner {
+  background: #F3F6FF;
 }
 
 /* ============================================================
    4. SELECTION — Brand-coloured text selection
    ============================================================ */
 ::selection {
-  background-color: rgba(31, 81, 255, 0.20);
+  background-color: rgba(0,0,255, 0.20);
   color: #00061a;
 }
 ::-moz-selection {
-  background-color: rgba(31, 81, 255, 0.20);
+  background-color: rgba(0,0,255, 0.20);
   color: #00061a;
 }
 
@@ -307,7 +321,7 @@ html {
 
   /* ── Buttons ── */
   .rz-btn-primary {
-    @apply inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2]
+    @apply inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89]
            text-white font-black tracking-[0.1em] uppercase text-[13px]
            px-7 py-3.5 transition-all duration-200 cursor-pointer
            shadow-lg hover:shadow-xl;
@@ -319,9 +333,9 @@ html {
   }
 
   .rz-btn-secondary {
-    @apply inline-flex items-center gap-2.5 border border-[#0818A8]/20
-           bg-[#0818A8]/6 hover:bg-[#0818A8]/12 hover:border-[#0818A8]/40
-           text-[#0818A8] font-bold tracking-[0.08em] uppercase text-[13px]
+    @apply inline-flex items-center gap-2.5 border border-[#000f89]/20
+           bg-[#000f89]/6 hover:bg-[#000f89]/12 hover:border-[#000f89]/40
+           text-[#000f89] font-bold tracking-[0.08em] uppercase text-[13px]
            px-7 py-3.5 transition-all duration-200 cursor-pointer;
   }
 
@@ -334,21 +348,21 @@ html {
 
   /* ── Tag pill ── */
   .rz-pill {
-    @apply inline-flex items-center gap-2.5 border border-[#0818A8]/20
-           bg-[#0818A8]/6 px-4 py-1.5 rounded-full;
+    @apply inline-flex items-center gap-2.5 border border-[#000f89]/20
+           bg-[#000f89]/6 px-4 py-1.5 rounded-full;
   }
 
   .rz-pill-dark {
-    @apply inline-flex items-center gap-2.5 border border-[#1F51FF]/30
-           bg-[#0818A8]/14 px-4 py-1.5 rounded-full;
+    @apply inline-flex items-center gap-2.5 border border-[#0000FF]/30
+           bg-[#000f89]/14 px-4 py-1.5 rounded-full;
   }
 
   .rz-pill-label {
-    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#0818A8];
+    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#000f89];
   }
 
   .rz-pill-label-dark {
-    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#1F51FF];
+    @apply text-[13px] font-bold tracking-[0.30em] uppercase text-[#4D4DFF];
   }
 
   /* ── Section headings ── */
@@ -370,7 +384,7 @@ html {
   /* ── Cards ── */
   .rz-card {
     @apply border border-gray-200 bg-white transition-all duration-300
-           hover:border-[#0818A8]/30 hover:shadow-lg;
+           hover:border-[#000f89]/30 hover:shadow-lg;
     box-shadow: var(--rz-shadow-sm);
   }
   .rz-card:hover {
@@ -392,13 +406,13 @@ html {
 
   /* ── Dot grid ── */
   .rz-dot-grid {
-    background-image: radial-gradient(circle, rgba(8, 24, 168, 0.045) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0,15,137, 0.045) 1px, transparent 1px);
     background-size: 44px 44px;
   }
 
   /* ── Atmospheric glow ── */
   .rz-glow-blue {
-    background: radial-gradient(circle, rgba(8, 24, 168, 0.22) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(0,15,137, 0.22) 0%, transparent 60%);
   }
 
   /* ── Form inputs ── */
@@ -406,9 +420,9 @@ html {
     @apply w-full border border-gray-300 bg-white text-gray-900
            text-[13.5px] font-normal placeholder-gray-400
            px-4 py-3.5 outline-none transition-all duration-200
-           focus:border-[#0818A8] focus:ring-1;
+           focus:border-[#000f89] focus:ring-1;
     border-radius: 0;
-    --tw-ring-color: rgb(8 24 168 / 0.15);
+    --tw-ring-color: rgb(0 15 137 / 0.15);
   }
 
   .rz-input:hover:not(:focus) {
@@ -436,7 +450,7 @@ html {
 
   /* ── Brand gradient text ── */
   .rz-gradient-text {
-    background: linear-gradient(135deg, #ffffff 0%, #1F51FF 60%, #0818A8 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #0000FF 60%, #000f89 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -446,7 +460,7 @@ html {
   /* ── Animated accent underline ── */
   .rz-underline-blue {
     @apply absolute -bottom-1 left-0 h-[3px] rounded-full;
-    background: linear-gradient(to right, #0818A8, #1F51FF);
+    background: linear-gradient(to right, #000f89, #0000FF);
   }
 
   /* ── Loading skeleton ── */
@@ -474,7 +488,7 @@ html {
   }
 
   .rz-badge-blue {
-    @apply bg-[#0818A8]/8 text-[#0818A8] border-[#0818A8]/20;
+    @apply bg-[#000f89]/8 text-[#000f89] border-[#000f89]/20;
   }
 
   .rz-badge-red {
@@ -487,7 +501,7 @@ html {
   }
 
   .rz-callout-blue {
-    @apply bg-[#0818A8]/4 border-[#0818A8] text-gray-800;
+    @apply bg-[#000f89]/4 border-[#000f89] text-gray-800;
   }
 
   .rz-callout-amber {

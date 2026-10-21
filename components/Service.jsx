@@ -88,7 +88,7 @@ function GridCard({ service, index }) {
  >
  <Link
  href={service.href}
- className="group block relative border border-gray-200 hover:border-[#0818A8]/30 bg-white hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 overflow-hidden"
+ className="group block relative border border-gray-200 hover:border-[#000f89]/30 bg-white hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 overflow-hidden"
  >
  {/* Image */}
  <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
@@ -99,20 +99,20 @@ function GridCard({ service, index }) {
  loading="lazy"
  />
  {/* Blue overlay */}
- <div className="absolute inset-0 bg-[#0818A8]/0 group-hover:bg-[#0818A8]/12 transition-all duration-300" />
+ <div className="absolute inset-0 bg-[#000f89]/0 group-hover:bg-[#000f89]/12 transition-all duration-300" />
  </div>
 
  {/* Text */}
  <div className="px-5 py-4">
- <p className="text-[#0818A8] text-[13px] font-bold tracking-[0.2em] uppercase mb-1.5">
+ <p className="text-[#000f89] text-[13px] font-bold tracking-[0.2em] uppercase mb-1.5">
  {service.tag}
  </p>
- <h3 className="text-gray-900 font-black text-[14.5px] leading-snug tracking-[-0.01em] mb-3 group-hover:text-[#0818A8] transition-colors duration-200">
+ <h3 className="text-gray-900 font-black text-[14.5px] leading-snug tracking-[-0.01em] mb-3 group-hover:text-[#000f89] transition-colors duration-200">
  {service.title}
  </h3>
  {/* Blue underline accent matches Emirates red line */}
- <div className="w-8 h-[2px] bg-[#0818A8] mb-3 group-hover:w-14 transition-all duration-300 rounded-full" />
- <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-500 group-hover:text-[#0818A8] transition-colors duration-200 tracking-[0.02em]">
+ <div className="w-8 h-[2px] bg-[#000f89] mb-3 group-hover:w-14 transition-all duration-300 rounded-full" />
+ <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-500 group-hover:text-[#000f89] transition-colors duration-200 tracking-[0.02em]">
  Learn more
  <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform duration-200" />
  </span>
@@ -138,7 +138,7 @@ export default function OurServicesSection() {
  <div
  className="absolute inset-0 opacity-[0.025] pointer-events-none"
  style={{
- backgroundImage: `radial-gradient(circle, #0818A8 1px, transparent 1px)`,
+ backgroundImage: `radial-gradient(circle, #000f89 1px, transparent 1px)`,
  backgroundSize: "28px 28px",
  }}
  />
@@ -154,9 +154,9 @@ export default function OurServicesSection() {
  >
  {/* Tag pill */}
  <motion.div variants={fadeUp} custom={0} className="flex justify-center mb-4">
- <div className="inline-flex items-center gap-2 border border-[#0818A8]/20 bg-[#0818A8]/5 px-4 py-1.5 rounded-full">
- <span className="w-1.5 h-1.5 rounded-full bg-[#0818A8]" />
- <span className="text-[#0818A8] text-[13px] font-semibold tracking-[0.22em] uppercase">
+ <div className="inline-flex items-center gap-2 border border-[#000f89]/20 bg-[#000f89]/5 px-4 py-1.5 rounded-full">
+ <span className="w-1.5 h-1.5 rounded-full bg-[#000f89]" />
+ <span className="text-[#000f89] text-[13px] font-semibold tracking-[0.22em] uppercase">
  Our Services
  </span>
  </div>
@@ -169,10 +169,10 @@ export default function OurServicesSection() {
  className="text-gray-900 font-black text-[clamp(28px,5vw,56px)] leading-tight tracking-[-0.02em] mb-3"
  >
  Make it an{" "}
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  incredible journey
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full"
+ className="absolute -bottom-1 left-0 h-[3px] bg-[#000f89] rounded-full"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : { width: 0 }}
  transition={{ duration: 0.7, delay: 0.5 }}
@@ -214,7 +214,7 @@ export default function OurServicesSection() {
  >
  <Link
  href={FEATURED.href}
- className="group relative flex flex-col justify-end border border-gray-200 hover:border-[#0818A8]/40 bg-white overflow-hidden h-full min-h-[380px] md:min-h-[520px] hover:shadow-xl hover:shadow-[#0818A8]/10 transition-all duration-300"
+ className="group relative flex flex-col justify-end border border-gray-200 hover:border-[#000f89]/40 bg-white overflow-hidden h-full min-h-[380px] md:min-h-[520px] hover:shadow-xl hover:shadow-[#000f89]/10 transition-all duration-300"
  >
  {/* Background image */}
  <div className="absolute inset-0">
@@ -227,7 +227,7 @@ export default function OurServicesSection() {
  {/* Gradient so text is readable */}
  <div className="absolute inset-0 bg-gradient-to-t from-[#00061a]/90 via-[#00061a]/30 to-transparent" />
  {/* Blue hover tint */}
- <div className="absolute inset-0 bg-[#0818A8]/0 group-hover:bg-[#0818A8]/15 transition-all duration-300" />
+ <div className="absolute inset-0 bg-[#000f89]/0 group-hover:bg-[#000f89]/15 transition-all duration-300" />
  </div>
 
  {/* Content */}
@@ -239,11 +239,11 @@ export default function OurServicesSection() {
  {FEATURED.title}
  </h3>
  {/* Blue underline */}
- <div className="w-8 h-[2px] bg-[#1F51FF] mb-3 group-hover:w-16 transition-all duration-300 rounded-full" />
+ <div className="w-8 h-[2px] bg-[#0000FF] mb-3 group-hover:w-16 transition-all duration-300 rounded-full" />
  <p className="text-white/65 text-[13px] font-normal leading-relaxed mb-4 max-w-xs">
  {FEATURED.desc}
  </p>
- <span className="inline-flex items-center gap-2 text-white text-[13px] font-semibold tracking-[0.04em] group-hover:text-[#1F51FF] transition-colors duration-200">
+ <span className="inline-flex items-center gap-2 text-white text-[13px] font-semibold tracking-[0.04em] group-hover:text-[#4D4DFF] transition-colors duration-200">
  Learn more
  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-200" />
  </span>
@@ -280,7 +280,7 @@ export default function OurServicesSection() {
  >
  <Link
  href="/services"
- className="group inline-flex items-center gap-2.5 border border-[#0818A8] text-[#0818A8] hover:bg-[#0818A8] hover:text-white text-[13px] font-bold tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all duration-200"
+ className="group inline-flex items-center gap-2.5 border border-[#000f89] text-[#000f89] hover:bg-[#000f89] hover:text-white text-[13px] font-bold tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all duration-200"
  >
  View All Services
  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />

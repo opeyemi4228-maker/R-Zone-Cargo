@@ -133,14 +133,14 @@ const schemas = [
 function CTAButtons({ light = false }) {
   return (
     <div className="flex flex-wrap gap-3">
-      <Link href="/quote" className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0a1fce] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-colors">
+      <Link href="/quote" className={`group inline-flex items-center gap-2 ${light ? "bg-white text-[#000f89] hover:bg-[#E8EEFF]" : "bg-[#000f89] hover:bg-[#000f89] text-white"} text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full`}>
         Get a Free Quote
         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
-      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#0818A8] text-gray-800 hover:text-[#0818A8]"}`}>
+      <a href="tel:+448007720864" className={`inline-flex items-center gap-2 border text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full ${light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#000f89] text-gray-800 hover:text-[#000f89]"}`}>
         <PhoneCall size={13} aria-hidden="true" /> Call Us
       </a>
-      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors">
+      <a href={`https://wa.me/${WHATSAPP}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full">
         <MessageCircle size={13} aria-hidden="true" /> WhatsApp
       </a>
     </div>
@@ -150,8 +150,8 @@ function CTAButtons({ light = false }) {
 function H2({ id, eyebrow, children }) {
   return (
     <div className="mb-7">
-      {eyebrow && <p className="text-[12px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-3">{eyebrow}</p>}
-      <h2 id={id} className="font-black text-[clamp(26px,4.2vw,40px)] text-[#0b0f1a] leading-[1.03] tracking-[-0.02em] uppercase">{children}</h2>
+      {eyebrow && <p className="mb-3 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">{eyebrow}</p>}
+      <h2 id={id} className="font-extrabold text-[clamp(26px,4.2vw,40px)] text-[#00112E] leading-[1.03] tracking-[-0.03em]">{children}</h2>
     </div>
   );
 }
@@ -191,7 +191,7 @@ export default function Page() {
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="bg-white">
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
+          <h1 className="font-extrabold text-[clamp(30px,5.4vw,55px)] text-[#00112E] leading-[1.05] tracking-[-0.03em] mb-5">
             Door to Door vs Drop-Off Cargo to Nigeria: Which Is Cheaper and Better in {CURRENT_YEAR}?
           </h1>
           <p className="text-gray-500 text-[17px] md:text-[20px] font-normal leading-relaxed mb-8 max-w-3xl">
@@ -212,7 +212,7 @@ export default function Page() {
                 <p className="text-white text-[14px] font-bold">17 August 2026</p>
               </div>
             </div>
-            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8">
+            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8 hidden sm:block">
               <ShareRow url={PAGE_URL} title={TITLE} />
             </div>
           </div>
@@ -227,10 +227,10 @@ export default function Page() {
           handles the first mile in the UK and the last mile in Nigeria, and that difference is
           where the real cost hides.
         </p>
-        <div className="overflow-x-auto border border-gray-200">
+        <div className="overflow-x-auto border border-gray-200 rounded-[20px]">
           <table className="w-full text-left border-collapse min-w-[620px]">
             <thead>
-              <tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]">
+              <tr className="bg-[#000f89] text-white text-[12px] uppercase tracking-[0.06em]">
                 <th className="p-4 font-bold">What matters</th>
                 <th className="p-4 font-bold">Drop-Off</th>
                 <th className="p-4 font-bold">Door to Door</th>
@@ -260,18 +260,18 @@ export default function Page() {
           <H2 id="options" eyebrow="Two ways to send">Your Two Options Explained</H2>
           <div className="grid gap-5 md:grid-cols-2 mt-2">
             {OPTIONS.map(({ icon: Icon, name, price, href, points }) => (
-              <div key={name} className="group bg-white border border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/5 transition-all duration-300 flex flex-col">
+              <div key={name} className="group bg-white border border-gray-200 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/5 transition-all duration-300 flex flex-col">
                 <div className="p-6 pb-5 border-b border-gray-100">
-                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Icon size={22} aria-hidden="true" /></span>
-                  <h3 className="font-black text-[18.5px] text-gray-900 uppercase tracking-[-0.01em] mb-1">{name}</h3>
-                  <p className="text-[#0818A8] font-black text-[16px]">{price}</p>
+                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Icon size={22} aria-hidden="true" /></span>
+                  <h3 className="font-extrabold text-[18.5px] text-gray-900 tracking-[-0.03em] mb-1">{name}</h3>
+                  <p className="text-[#000f89] font-black text-[16px]">{price}</p>
                 </div>
                 <ul className="p-6 pt-5 space-y-2.5 flex-1">
                   {points.map((pt) => (
                     <li key={pt} className="flex items-start gap-2.5 text-gray-700 text-[14.5px] leading-snug"><Check size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{pt}</li>
                   ))}
                 </ul>
-                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#0818A8] text-[12px] font-black tracking-[0.06em] uppercase group-hover:bg-[#0818A8] group-hover:text-white transition-colors">Get a quote<ArrowRight size={13} aria-hidden="true" /></Link>
+                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#000f89] text-[14px] font-bold group-hover:bg-[#000f89] group-hover:text-white transition-colors rounded-full">Get a quote<ArrowRight size={13} aria-hidden="true" /></Link>
               </div>
             ))}
           </div>
@@ -287,18 +287,18 @@ export default function Page() {
           £20 to £30, and these hidden costs can wipe that out.
         </p>
         <div className="grid gap-5 md:grid-cols-2 mt-2">
-          <div className="border border-gray-200 p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><MapPin size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">Your side in the UK</h3>
+          <div className="border border-gray-200 p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><MapPin size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">Your side in the UK</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">
               Fuel or a courier to the depot, parking, your time, and sometimes a second trip if the
               depot is far or busy. For heavy or bulky boxes you may also need help loading and
               unloading the car.
             </p>
           </div>
-          <div className="border border-gray-200 p-7">
-            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Globe size={20} aria-hidden="true" /></span>
-            <h3 className="font-black text-[17px] text-gray-900 uppercase mb-3">Their side in Nigeria</h3>
+          <div className="border border-gray-200 p-7 rounded-[20px]">
+            <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Globe size={20} aria-hidden="true" /></span>
+            <h3 className="font-extrabold text-[17px] text-gray-900 mb-3">Their side in Nigeria</h3>
             <p className="text-gray-700 text-[15px] leading-relaxed">
               The recipient has to travel to the collection point, often through Lagos traffic, pay
               for transport back home, and carry heavy boxes. For elderly parents or busy family,
@@ -306,7 +306,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="mt-6 max-w-3xl border-l-[4px] border-[#0818A8] bg-[#0818A8]/[0.04] p-5">
+        <div className="mt-6 max-w-3xl border-l-[4px] border-[#000f89] bg-[#000f89]/[0.04] p-5">
           <p className="text-gray-800 text-[14.5px] leading-relaxed">
             <strong className="text-gray-900">The verdict:</strong> for a small premium, door to
             door removes the two hardest, most expensive parts of sending cargo to Nigeria. That is
@@ -320,16 +320,16 @@ export default function Page() {
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <H2 id="which-to-choose" eyebrow="Choose with confidence">When to Choose Each Option</H2>
           <div className="grid gap-5 md:grid-cols-2 mt-2">
-            <div className="bg-white border border-gray-200 p-7">
-              <h3 className="font-black text-[17px] text-gray-900 uppercase mb-4">Choose drop-off if</h3>
+            <div className="bg-white border border-gray-200 p-7 rounded-[20px]">
+              <h3 className="font-extrabold text-[17px] text-gray-900 mb-4">Choose drop-off if</h3>
               <ul className="space-y-2.5">
                 {["You live near a drop-off point", "The recipient can easily collect in Nigeria", "You are sending something light where every pound counts"].map((p) => (
                   <li key={p} className="flex items-start gap-2.5 text-gray-700 text-[14.5px] leading-snug"><Check size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{p}</li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white border border-[#0818A8]/25 p-7">
-              <h3 className="font-black text-[17px] text-[#0818A8] uppercase mb-4">Choose door to door if</h3>
+            <div className="bg-white border border-[#000f89]/25 p-7 rounded-[20px]">
+              <h3 className="font-extrabold text-[17px] text-[#000f89] mb-4">Choose door to door if</h3>
               <ul className="space-y-2.5">
                 {["The cargo is heavy or bulky", "The recipient cannot easily travel to collect", "You value your time and want it handled"].map((p) => (
                   <li key={p} className="flex items-start gap-2.5 text-gray-700 text-[14.5px] leading-snug"><Check size={16} className="text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />{p}</li>
@@ -345,8 +345,8 @@ export default function Page() {
         <H2 id="why-r-zone" eyebrow="Trusted by 100+ customers">Why Send Your Cargo with R-Zone</H2>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
           {WHY.map(([Icon, t, d]) => (
-            <li key={t} className="border border-gray-200 p-6">
-              <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4"><Icon size={20} aria-hidden="true" /></span>
+            <li key={t} className="border border-gray-200 p-6 rounded-[20px]">
+              <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full"><Icon size={20} aria-hidden="true" /></span>
               <h3 className="font-bold text-gray-900 text-[15px] mb-2">{t}</h3>
               <p className="text-gray-600 text-[14px] leading-relaxed">{d}</p>
             </li>
@@ -360,10 +360,10 @@ export default function Page() {
           <H2 id="faq" eyebrow="Everything you need to know">Door to Door vs Drop-Off FAQs</H2>
           <div className="space-y-3 mt-2">
             {FAQS.map((f) => (
-              <details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
+              <details key={freshYear(f.q)} className="rounded-[16px] group bg-white border border-gray-200 open:border-[#000f89]/40 transition-colors">
                 <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3>
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
+                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#000f89] transition-colors">{freshYear(f.q)}</h3>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#000f89] group-open:bg-[#000f89] transition-colors" aria-hidden="true">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" /></svg>
                   </span>
                 </summary>
@@ -375,11 +375,11 @@ export default function Page() {
       </section>
 
       {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0818A8] text-white overflow-hidden">
+      <section className="relative bg-[#000f89] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "46px 46px" }} />
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Not sure which to pick?</p>
-          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">Get both options priced in one free quote</h2>
+          <p className="text-white/60 mb-3 text-[13px] font-semibold">Not sure which to pick?</p>
+          <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">Get both options priced in one free quote</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
             Door to door from £6/kg. Drop-off air from £5.50/kg, sea from £3/kg. Weekly departures and
             delivery to every state in Nigeria. Tell us what you are sending and we will price both
@@ -388,7 +388,7 @@ export default function Page() {
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/door-to-door-shipping-uk-to-nigeria" className="hover:text-white transition-colors">Door to Door Guide</Link>
-            <Link href="/blog/how-door-to-door-cargo-to-nigeria-works" className="hover:text-white transition-colors">How Door to Door Works</Link>
+            <Link href="/blog/door-to-door-shipping-uk-to-nigeria" className="hover:text-white transition-colors">How Door to Door Works</Link>
             <Link href="/cargo-from-uk-to-nigeria" className="hover:text-white transition-colors">Cargo from UK to Nigeria</Link>
             <Link href="/blog" className="hover:text-white transition-colors">All Shipping Guides</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>

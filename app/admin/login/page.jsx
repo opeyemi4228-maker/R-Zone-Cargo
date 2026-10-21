@@ -50,7 +50,7 @@ export default function AdminLoginPage() {
 
  {/* Brand */}
  <div className="flex flex-col items-center mb-8">
- <div className="w-12 h-12 bg-[#0818A8] flex items-center justify-center mb-4 shadow-lg shadow-[#0818A8]/25 rounded-sm">
+ <div className="w-12 h-12 bg-[#000f89] flex items-center justify-center mb-4 shadow-lg shadow-[#000f89]/25 rounded-sm">
  <ShieldCheck size={22} className="text-white" />
  </div>
  <h1 className="text-[#0f172a] font-black text-[20px] tracking-[-0.02em] uppercase">
@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
  onChange={e => { setEmail(e.target.value); setStatus("idle"); }}
  placeholder="admin@rzonecargo.com"
  autoComplete="email"
- className="w-full bg-[#f8fafc] border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-10 pr-4 py-3 outline-none focus:border-[#0818A8] focus:bg-white focus:ring-2 focus:ring-[#0818A8]/10 transition-all duration-200 rounded-sm"
+ className="w-full bg-[#f8fafc] border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-10 pr-4 py-3 outline-none focus:border-[#000f89] focus:bg-white focus:ring-2 focus:ring-[#000f89]/10 transition-all duration-200 rounded-sm"
  />
  </div>
  </div>
@@ -108,7 +108,7 @@ export default function AdminLoginPage() {
  onChange={e => { setPassword(e.target.value); setStatus("idle"); }}
  placeholder="••••••••••••"
  autoComplete="current-password"
- className="w-full bg-[#f8fafc] border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-10 pr-11 py-3 outline-none focus:border-[#0818A8] focus:bg-white focus:ring-2 focus:ring-[#0818A8]/10 transition-all duration-200 rounded-sm"
+ className="w-full bg-[#f8fafc] border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-10 pr-11 py-3 outline-none focus:border-[#000f89] focus:bg-white focus:ring-2 focus:ring-[#000f89]/10 transition-all duration-200 rounded-sm"
  />
  <button type="button" onClick={() => setShowPw(v => !v)}
  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#94a3b8] hover:text-[#475569] transition-colors"
@@ -122,7 +122,7 @@ export default function AdminLoginPage() {
  <motion.button
  type="submit"
  disabled={status === "loading"}
- className="mt-2 w-full bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.12em] uppercase py-3.5 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#0818A8]/20 rounded-sm"
+ className="mt-2 w-full bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 text-white text-[13px] font-black tracking-[0.12em] uppercase py-3.5 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#000f89]/20 rounded-sm"
  whileTap={{ scale: 0.98 }}
  >
  {status === "loading" ? (

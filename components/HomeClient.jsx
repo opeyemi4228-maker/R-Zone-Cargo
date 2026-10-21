@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Settings, ChevronDown, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import HeaderSlider from "@/components/HeaderSlider";
+import HomeHighlights from "@/components/HomeHighlights";
 import HomeProducts from "@/components/HomeProducts";
 import Banner from "@/components/Banner";
 import NewsLetter from "@/components/NewsLetter";
@@ -59,7 +60,7 @@ function PrefRow({ label, description, checked, onChange, disabled = false }) {
  <p className="text-gray-800 text-[13px] font-semibold leading-tight mb-0.5">
  {label}
  {disabled && (
- <span className="ml-2 text-[13px] font-black tracking-[0.1em] uppercase text-[#0818A8] bg-[#0818A8]/8 px-1.5 py-0.5">
+ <span className="ml-2 text-[13px] font-black tracking-[0.1em] uppercase text-[#000f89] bg-[#000f89]/8 px-1.5 py-0.5">
  Always On
  </span>
  )}
@@ -78,11 +79,11 @@ function PrefRow({ label, description, checked, onChange, disabled = false }) {
  className={`
  relative flex-shrink-0 w-9 h-5 rounded-full border-2
  transition-all duration-200 mt-0.5
- focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-1
+ focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000f89] focus-visible:ring-offset-1
  ${disabled
- ? "bg-[#0818A8] border-[#0818A8] opacity-70 cursor-not-allowed"
+ ? "bg-[#000f89] border-[#000f89] opacity-70 cursor-not-allowed"
  : checked
- ? "bg-[#0818A8] border-[#0818A8] cursor-pointer"
+ ? "bg-[#000f89] border-[#000f89] cursor-pointer"
  : "bg-gray-200 border-gray-300 cursor-pointer hover:border-gray-400"
  }
  `}
@@ -196,7 +197,7 @@ function CookieBanner() {
 
  {/* Blue top accent line */}
  <div
- className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]"
+ className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]"
  aria-hidden="true"
  />
 
@@ -205,7 +206,7 @@ function CookieBanner() {
  {/* ── Text content ── */}
  <div className="flex-1 min-w-0">
  <div className="flex items-center gap-2.5 mb-3">
- <ShieldCheck size={15} className="text-[#0818A8] flex-shrink-0" aria-hidden="true" />
+ <ShieldCheck size={15} className="text-[#000f89] flex-shrink-0" aria-hidden="true" />
  <h3 className="text-gray-900 font-bold text-[16px] md:text-[17px] tracking-[-0.01em]">
  Your privacy matters.
  </h3>
@@ -228,14 +229,14 @@ function CookieBanner() {
  view our{" "}
  <Link
  href="/cookies"
- className="text-[#0818A8] underline underline-offset-2 hover:text-[#0437F2] transition-colors"
+ className="text-[#000f89] underline underline-offset-2 hover:text-[#0000CD] transition-colors"
  >
  Cookie Policy
  </Link>
  {" "}&amp;{" "}
  <Link
  href="/privacy"
- className="text-[#0818A8] underline underline-offset-2 hover:text-[#0437F2] transition-colors"
+ className="text-[#000f89] underline underline-offset-2 hover:text-[#0000CD] transition-colors"
  >
  Privacy Policy.
  </Link>
@@ -252,7 +253,7 @@ function CookieBanner() {
 
  <motion.button
  onClick={handleAcceptAll}
- className="flex items-center justify-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-semibold px-6 py-2.5 rounded-sm transition-colors duration-150 tracking-[0.01em] shadow-md shadow-[#0818A8]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
+ className="flex items-center justify-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-semibold px-6 py-2.5 rounded-sm transition-colors duration-150 tracking-[0.01em] shadow-md shadow-[#000f89]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000f89] focus-visible:ring-offset-2"
  whileHover={{ scale: 1.01 }}
  whileTap={{ scale: 0.98 }}
  aria-label="Accept all cookies"
@@ -275,7 +276,7 @@ function CookieBanner() {
  onClick={() => setExpanded((p) => !p)}
  aria-expanded={expanded}
  aria-controls="cookie-prefs-panel"
- className="flex items-center justify-center gap-1.5 text-[#0818A8] hover:text-[#0437F2] text-[13px] font-bold tracking-[0.06em] uppercase transition-colors duration-150 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
+ className="flex items-center justify-center gap-1.5 text-[#000f89] hover:text-[#0000CD] text-[13px] font-bold tracking-[0.06em] uppercase transition-colors duration-150 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000f89] focus-visible:ring-offset-2"
  >
  <Settings size={11} aria-hidden="true" />
  Manage
@@ -335,7 +336,7 @@ function CookieBanner() {
  <motion.button
  onClick={handleSaveCustom}
  whileTap={{ scale: 0.98 }}
- className="flex items-center gap-1.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-bold tracking-[0.06em] uppercase px-5 py-2 rounded-sm transition-colors duration-150 shadow-sm shadow-[#0818A8]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0818A8] focus-visible:ring-offset-2"
+ className="flex items-center gap-1.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold tracking-[0.06em] uppercase px-5 py-2 rounded-sm transition-colors duration-150 shadow-sm shadow-[#000f89]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#000f89] focus-visible:ring-offset-2"
  aria-label="Save selected cookie preferences"
  >
  <Check size={11} strokeWidth={2.5} aria-hidden="true" />
@@ -364,6 +365,7 @@ const Home = () => {
  <>
  <div>
  <HeaderSlider />
+ <HomeHighlights />
  <HomeProducts />
  <Priceguide/>
  <NewsLetter />

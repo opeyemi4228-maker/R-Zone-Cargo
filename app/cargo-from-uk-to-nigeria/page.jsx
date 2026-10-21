@@ -105,6 +105,50 @@ const FAQS = [
     q: "Do you handle Nigerian customs clearance?",
     a: "Yes. Every price includes Nigeria customs clearance through Nigeria Customs Service, plus NAFDAC and SON clearance where applicable, handled by our own team in Lagos. Import duty is a separate government charge that most personal use household goods attract little or none of.",
   },
+  {
+    q: "Do you collect cargo from anywhere in the UK?",
+    a: "Yes. R-Zone collects from any UK address, including London, Manchester, Birmingham, Leeds, Glasgow and Cardiff. Collection charges vary by location and are confirmed on your quote. You can also drop off free at our Upminster, Essex warehouse, Monday to Friday 10am to 6pm and Saturday 11am to 2pm.",
+  },
+  {
+    q: "Is there a minimum weight for cargo to Nigeria?",
+    a: "Minimum weights depend on the service and the destination state, and are shown on the R-Zone schedules and prices page. Lagos has the lowest minimum. For very small parcels, ask us to compare cargo with an express courier so you get the cheapest option.",
+  },
+  {
+    q: "What items cannot be sent as cargo to Nigeria?",
+    a: "Prohibited items include illegal drugs, weapons and ammunition, explosives, counterfeit goods, currency and negotiable instruments, pornographic material and radioactive materials. Food, cosmetics, medicine and some electronics are restricted and may need NAFDAC or SON clearance, which R-Zone advises on before you ship.",
+  },
+  {
+    q: "Can I send food from the UK to Nigeria?",
+    a: "Yes. R-Zone accepts garri, fufu, egusi, dried fish, crayfish, palm oil, ogi, elubo, beans, plantain chips, chin chin and most dry goods. Chicken-flavoured Indomie and Maggi, fresh meat and alcohol are not accepted.",
+  },
+  {
+    q: "Can I send barrels, suitcases or Ghana Must Go bags instead of boxes?",
+    a: "Strong double-walled boxes give the best protection and are what we recommend. If you would rather send barrels, suitcases or large bags, tell us when you request your quote and we will confirm how they will be packed and priced. Everything is charged on actual or volumetric weight, whichever is greater.",
+  },
+  {
+    q: "Can I track my cargo to Nigeria?",
+    a: "Yes. Every R-Zone shipment has a booking reference, and air shipments also carry an Air Waybill (AWB) while sea shipments carry a Bill of Lading. Enter any of these on the R-Zone tracking page to see status, customs progress and milestones.",
+  },
+  {
+    q: "Is my cargo insured?",
+    a: "Carrier liability is limited, so R-Zone offers optional marine transit insurance on your declared value, usually CIF plus 10 percent. The premium is confirmed on your quote. Cover is mandatory for goods declared above \u00a35,000.",
+  },
+  {
+    q: "How do I pay for my cargo?",
+    a: "R-Zone accepts bank transfer (BACS or Faster Payments), debit and credit card, and PayPal. Full payment is due before cargo is shipped for individual customers; business accounts can agree 14 or 30 day terms in writing.",
+  },
+];
+
+// Folded in from the retired /blog/cargo-from-uk-to-nigeria pillar and
+// /blog/sending-cargo-to-nigeria-from-uk post (both now redirect here).
+// Short summaries; each links to the guide that covers it in depth.
+const BEFORE_YOU_SHIP = [
+  ["UK collection or drop-off", "We collect from any address in England, Scotland, Wales and Northern Ireland, or drop off free at our Upminster warehouse.", "/blog/cargo-to-nigeria-from-london-and-england", "Collection areas"],
+  ["Packing and labelling", "Use strong double-walled boxes. Label two sides with the recipient's name, Nigerian address and phone, your name and booking reference.", "/blog/how-to-pack-cargo-for-shipping-to-nigeria", "Packing guide"],
+  ["Prohibited and restricted items", "Weapons, drugs, counterfeits and currency are banned. Food, cosmetics and medicine may need NAFDAC or SON clearance.", "/blog/prohibited-items-shipping-to-nigeria-from-uk", "What you cannot send"],
+  ["Customs, duty and documents", "Clearance is included. Most personal-use goods attract little or no duty; we need a contents list with honest values.", "/blog/nigeria-customs-duty-guide", "Customs duty guide"],
+  ["Insurance", "Optional transit cover on your declared value, usually CIF plus 10 percent. Mandatory for goods declared above £5,000.", "/blog/marine-cargo-insurance-uk-to-nigeria", "How cover works"],
+  ["Tracking and payment", "Track with your booking reference, AWB or Bill of Lading. Pay by bank transfer, card or PayPal; we do not take cash.", "/track", "Track a shipment"],
 ];
 
 const schemas = [
@@ -130,7 +174,7 @@ const schemas = [
       name: "UK to Nigeria cargo services",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sea freight UK to Nigeria" }, priceCurrency: "GBP", price: "3", description: "From £3/kg, 4 to 6 weeks" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5", description: "From £5.50/kg, 5 to 10 working days" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5.50", description: "From £5.50/kg, 5 to 10 working days" },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Door to door cargo UK to Nigeria" }, priceCurrency: "GBP", price: "6", description: "From £6/kg, UK collection plus Nigeria doorstep delivery" },
       ],
     },
@@ -169,22 +213,22 @@ function CTAButtons({ light = false }) {
     <div className="flex flex-wrap gap-3">
       <Link
         href="/quote"
-        className="group inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0a1fce] text-white text-[12px] font-black tracking-[0.08em] uppercase px-6 py-3.5 transition-colors"
+        className={`group inline-flex items-center gap-2 ${light ? "bg-white text-[#000f89] hover:bg-[#E8EEFF]" : "bg-[#000f89] hover:bg-[#000f89] text-white"} text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full`}
       >
         Get a Free Quote
         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
       </Link>
       <a
         href="tel:+448007720864"
-        className={`inline-flex items-center gap-2 border text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors ${
-          light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#0818A8] text-gray-800 hover:text-[#0818A8]"
+        className={`inline-flex items-center gap-2 border text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full ${
+          light ? "border-white/30 hover:border-white text-white" : "border-gray-300 hover:border-[#000f89] text-gray-800 hover:text-[#000f89]"
         }`}
       >
         <PhoneCall size={13} aria-hidden="true" /> Call Us
       </a>
       <a
         href={`https://wa.me/${WHATSAPP}`}
-        className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[12px] font-bold tracking-[0.08em] uppercase px-6 py-3.5 transition-colors"
+        className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-[14px] font-bold px-6 py-3.5 transition-colors rounded-full"
       >
         <MessageCircle size={13} aria-hidden="true" /> WhatsApp
       </a>
@@ -196,11 +240,11 @@ function H2({ id, eyebrow, children }) {
   return (
     <div className="mb-7">
       {eyebrow && (
-        <p className="text-[12px] font-black tracking-[0.3em] uppercase text-[#0818A8] mb-3">{eyebrow}</p>
+        <p className="mb-3 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">{eyebrow}</p>
       )}
       <h2
         id={id}
-        className="font-black text-[clamp(26px,4.2vw,40px)] text-[#0b0f1a] leading-[1.03] tracking-[-0.02em] uppercase"
+        className="font-extrabold text-[clamp(26px,4.2vw,40px)] text-[#00112E] leading-[1.03] tracking-[-0.03em]"
       >
         {children}
       </h2>
@@ -229,7 +273,7 @@ const WHY = [
   [PoundSterling, "Transparent, cheap prices", "All inclusive rates from £3/kg. The price we quote is the price you pay, with no hidden fees."],
   [Zap, "Weekly air and sea departures", "Your cargo never waits. It joins the next available flight or sailing."],
   [ShieldCheck, "Own teams in UK and Lagos", "We control collection, customs clearance and delivery from end to end."],
-  [Star, "120+ five star reviews", "One of the highest rated UK to Nigeria cargo companies on Google."],
+  [Star, "120+ five star reviews", "Real reviews from real customers on Google."],
   [Globe, "Every state in Nigeria", "Delivery to Lagos, Abuja, Port Harcourt, Ibadan, Kano and beyond."],
 ];
 
@@ -247,7 +291,7 @@ export default function Page() {
       <section className="bg-white">
         {/* pt clears the fixed Navbar (row1 80px mobile / 50px + 50px desktop) with breathing room */}
         <div className="max-w-[940px] mx-auto px-5 sm:px-8 pt-[128px] md:pt-[140px]">
-          <h1 className="font-black text-[clamp(30px,5.4vw,55px)] text-[#0b0f1a] leading-[1.05] tracking-[-0.02em] mb-5">
+          <h1 className="font-extrabold text-[clamp(30px,5.4vw,55px)] text-[#00112E] leading-[1.05] tracking-[-0.03em] mb-5">
             Cargo from the UK to Nigeria: Door to Door, Air, Sea &amp; Cheap Prices
           </h1>
 
@@ -276,13 +320,13 @@ export default function Page() {
                 <p className="text-white text-[14px] font-bold">R-Zone Cargo Team</p>
               </div>
               <div>
-                <p className="text-white/65 text-[11px] font-medium mb-1">Published on</p>
-                <p className="text-white text-[14px] font-bold">24 July 2026</p>
+                <p className="text-white/65 text-[11px] font-medium mb-1">Updated on</p>
+                <p className="text-white text-[14px] font-bold">19 October 2026</p>
               </div>
             </div>
 
             {/* Share — bottom right */}
-            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8">
+            <div className="absolute bottom-5 right-5 sm:bottom-7 sm:right-8 hidden sm:block">
               <ShareRow url={PAGE_URL} title={TITLE} />
             </div>
           </div>
@@ -297,10 +341,10 @@ export default function Page() {
           with no fuel surcharges or surprise charges. Air shipments carry a single £20 handling fee, shown on your quote. Every rate below
           includes UK export documentation, transit, Nigeria customs clearance and delivery.
         </p>
-        <div className="overflow-x-auto border border-gray-200">
+        <div className="overflow-x-auto border border-gray-200 rounded-[20px]">
           <table className="w-full text-left border-collapse min-w-[620px]">
             <thead>
-              <tr className="bg-[#0818A8] text-white text-[12px] uppercase tracking-[0.06em]">
+              <tr className="bg-[#000f89] text-white text-[12px] uppercase tracking-[0.06em]">
                 <th className="p-4 font-bold">Service</th>
                 <th className="p-4 font-bold">From</th>
                 <th className="p-4 font-bold">Transit time</th>
@@ -316,11 +360,11 @@ export default function Page() {
                 <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
                   <td className="p-4 font-bold">
                     <span className="inline-flex items-center gap-2.5">
-                      <Icon size={17} className="text-[#0818A8]" aria-hidden="true" />
+                      <Icon size={17} className="text-[#000f89]" aria-hidden="true" />
                       {name}
                     </span>
                   </td>
-                  <td className="p-4 font-black text-[#0818A8]">{price}</td>
+                  <td className="p-4 font-black text-[#000f89]">{price}</td>
                   <td className="p-4">{transit}</td>
                   <td className="p-4">{best}</td>
                 </tr>
@@ -332,7 +376,7 @@ export default function Page() {
           <strong className="text-gray-900">Example (20kg box, London to Lagos):</strong>{" "}
           sea £60 to £90, air £100 to £160, door to door £120 to £180. You pay for actual or
           volumetric weight, whichever is greater, so packing densely keeps your price low.{" "}
-          <Link href="/blog/how-much-does-cargo-cost-from-uk-to-nigeria" className="text-[#0818A8] font-semibold underline">
+          <Link href="/blog/how-much-does-cargo-cost-from-uk-to-nigeria" className="text-[#000f89] font-semibold underline">
             See the full price breakdown
           </Link>.
         </p>
@@ -344,13 +388,13 @@ export default function Page() {
           <H2 id="services" eyebrow="Three ways to ship">Door to Door, Air Freight and Sea Freight</H2>
           <div className="grid gap-5 md:grid-cols-3 mt-2">
             {SERVICES.map(({ icon: Icon, name, price, transit, href, points }) => (
-              <div key={name} className="group bg-white border border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/5 transition-all duration-300 flex flex-col">
+              <div key={name} className="group bg-white border border-gray-200 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/5 transition-all duration-300 flex flex-col">
                 <div className="p-6 pb-5 border-b border-gray-100">
-                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#0818A8]/8 text-[#0818A8] mb-4">
+                  <span className="inline-flex items-center justify-center w-12 h-12 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full">
                     <Icon size={22} aria-hidden="true" />
                   </span>
-                  <h3 className="font-black text-[18.5px] text-gray-900 uppercase tracking-[-0.01em] mb-1">{name}</h3>
-                  <p className="text-[#0818A8] font-black text-[16px]">{price}</p>
+                  <h3 className="font-extrabold text-[18.5px] text-gray-900 tracking-[-0.03em] mb-1">{name}</h3>
+                  <p className="text-[#000f89] font-black text-[16px]">{price}</p>
                   <p className="text-gray-500 text-[12.5px] font-medium mt-0.5">{transit}</p>
                 </div>
                 <ul className="p-6 pt-5 space-y-2.5 flex-1">
@@ -361,7 +405,7 @@ export default function Page() {
                     </li>
                   ))}
                 </ul>
-                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#0818A8] text-[12px] font-black tracking-[0.06em] uppercase group-hover:bg-[#0818A8] group-hover:text-white transition-colors">
+                <Link href={href} className="flex items-center gap-1.5 px-6 py-4 border-t border-gray-100 text-[#000f89] text-[14px] font-bold group-hover:bg-[#000f89] group-hover:text-white transition-colors rounded-full">
                   Read the guide
                   <ArrowRight size={13} aria-hidden="true" />
                 </Link>
@@ -376,8 +420,8 @@ export default function Page() {
         <H2 id="how-it-works" eyebrow="Simple and stress free">How to Send Cargo to Nigeria in 4 Steps</H2>
         <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 mt-2">
           {STEPS.map(([t, d], i) => (
-            <li key={t} className="relative border border-gray-200 p-6">
-              <div className="font-black text-[#0818A8]/15 text-[46px] leading-none absolute top-3 right-4 select-none" aria-hidden="true">
+            <li key={t} className="relative border border-gray-200 p-6 rounded-[20px]">
+              <div className="font-black text-[#000f89]/15 text-[46px] leading-none absolute top-3 right-4 select-none" aria-hidden="true">
                 {i + 1}
               </div>
               <h3 className="font-bold text-gray-900 text-[15px] mb-2 relative">{t}</h3>
@@ -393,8 +437,8 @@ export default function Page() {
           <H2 id="why-r-zone" eyebrow="Trusted by 100+ customers">Why Send Your Cargo to Nigeria with R-Zone</H2>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
             {WHY.map(([Icon, t, d]) => (
-              <li key={t} className="bg-white border border-gray-200 p-6">
-                <span className="inline-flex items-center justify-center w-11 h-11 bg-[#0818A8]/8 text-[#0818A8] mb-4">
+              <li key={t} className="bg-white border border-gray-200 p-6 rounded-[20px]">
+                <span className="inline-flex items-center justify-center w-11 h-11 bg-[#000f89]/8 text-[#000f89] mb-4 rounded-full">
                   <Icon size={20} aria-hidden="true" />
                 </span>
                 <h3 className="font-bold text-gray-900 text-[15px] mb-2">{t}</h3>
@@ -416,11 +460,29 @@ export default function Page() {
         <ul className="flex flex-wrap gap-2.5">
           {CITIES.map((c) => (
             <li key={c} className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 text-[14px] font-semibold px-3.5 py-2">
-              <MapPin size={13} className="text-[#0818A8]" aria-hidden="true" />
+              <MapPin size={13} className="text-[#000f89]" aria-hidden="true" />
               {c}
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* ── BEFORE YOU SHIP ────────────────────────────────────────────────── */}
+      <section className="bg-white">
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
+          <H2 id="before-you-ship" eyebrow="Everything in one place">Before You Ship: What to Know</H2>
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-2">
+            {BEFORE_YOU_SHIP.map(([t, d, href, label]) => (
+              <li key={t} className="flex flex-col bg-[#F6FAFF] rounded-[20px] ring-1 ring-[#E3EAF7] p-6">
+                <h3 className="font-bold text-gray-900 text-[15.5px] mb-2">{t}</h3>
+                <p className="text-gray-600 text-[14px] leading-relaxed flex-1">{d}</p>
+                <Link href={href} className="mt-4 inline-flex items-center gap-1.5 text-[#000f89] text-[14px] font-semibold hover:underline">
+                  {label} <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* ── FAQ (native accordion, no client JS) ──────────────────────────── */}
@@ -429,10 +491,10 @@ export default function Page() {
           <H2 id="faq" eyebrow="Everything you need to know">Cargo from UK to Nigeria FAQs</H2>
           <div className="space-y-3 mt-2">
             {FAQS.map((f) => (
-              <details key={freshYear(f.q)} className="group bg-white border border-gray-200 open:border-[#0818A8]/40 transition-colors">
+              <details key={freshYear(f.q)} className="rounded-[16px] group bg-white border border-gray-200 open:border-[#000f89]/40 transition-colors">
                 <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none">
-                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#0818A8] transition-colors">{freshYear(f.q)}</h3>
-                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#0818A8] group-open:bg-[#0818A8] transition-colors" aria-hidden="true">
+                  <h3 className="font-bold text-[15.5px] text-gray-900 group-open:text-[#000f89] transition-colors">{freshYear(f.q)}</h3>
+                  <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gray-200 rounded-full group-open:border-[#000f89] group-open:bg-[#000f89] transition-colors" aria-hidden="true">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-open:rotate-180 transition-transform">
                       <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="stroke-gray-500 group-open:stroke-white" />
                     </svg>
@@ -446,7 +508,7 @@ export default function Page() {
       </section>
 
       {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0818A8] text-white overflow-hidden">
+      <section className="relative bg-[#000f89] text-white overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.07] pointer-events-none"
           aria-hidden="true"
@@ -457,8 +519,8 @@ export default function Page() {
           }}
         />
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
-          <p className="text-white/60 text-[11px] font-black tracking-[0.3em] uppercase mb-3">Ready to ship?</p>
-          <h2 className="font-black text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.02em] mb-4 leading-[1.05] max-w-3xl">
+          <p className="text-white/60 mb-3 text-[13px] font-semibold">Ready to ship?</p>
+          <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">
             Get your free UK to Nigeria cargo quote today
           </h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">

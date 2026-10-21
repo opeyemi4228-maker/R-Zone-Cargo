@@ -141,8 +141,8 @@ export default function QuotesPage() {
  {/* Header */}
  <motion.div className="mb-7" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
  <div className="flex items-center gap-2 mb-1">
- <FileText size={13} className="text-[#0818A8]" aria-hidden="true" />
- <span className="text-[#0818A8] text-[11px] font-bold tracking-[0.2em] uppercase">Submissions</span>
+ <FileText size={13} className="text-[#000f89]" aria-hidden="true" />
+ <span className="text-[#000f89] text-[11px] font-bold tracking-[0.2em] uppercase">Submissions</span>
  </div>
  <h1 className="text-[#0f172a] font-black text-[28px] sm:text-[32px] tracking-[-0.02em] uppercase leading-none">
  Quote Requests
@@ -159,7 +159,7 @@ export default function QuotesPage() {
  <Search size={13} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94a3b8] pointer-events-none" aria-hidden="true" />
  <input type="search" placeholder="Search by name, email, service…" value={search}
  onChange={e => setSearch(e.target.value)}
- className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#0818A8] focus:ring-2 focus:ring-[#0818A8]/10 rounded-sm transition-all duration-200 shadow-sm" />
+ className="w-full bg-white border border-[#e2e8f0] text-[#0f172a] placeholder-[#94a3b8] text-[13px] pl-9 pr-4 py-2.5 outline-none focus:border-[#000f89] focus:ring-2 focus:ring-[#000f89]/10 rounded-sm transition-all duration-200 shadow-sm" />
  </div>
  <div className="flex items-center gap-2">
  <Filter size={13} className="text-[#94a3b8]" aria-hidden="true" />
@@ -167,7 +167,7 @@ export default function QuotesPage() {
  <button key={s} onClick={() => setFilter(s)}
  className={`px-3.5 py-2 text-[11px] font-bold tracking-[0.08em] uppercase rounded-sm transition-all duration-200 ${
  filter === s
- ? "bg-[#0818A8] text-white shadow-sm"
+ ? "bg-[#000f89] text-white shadow-sm"
  : "bg-white border border-[#e2e8f0] text-[#64748b] hover:text-[#0f172a] hover:border-[#cbd5e1] shadow-sm"
  }`}>
  {s}

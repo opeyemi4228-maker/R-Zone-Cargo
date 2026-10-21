@@ -104,6 +104,14 @@ export default function sitemap() {
  priority: 0.6,
  },
  {
+ // Group page. Has its own title and canonical (app/rzone/layout.jsx) so it
+ // no longer competes with the homepage for brand searches.
+ url: `${SITE_URL}/rzone`,
+ lastModified: new Date(),
+ changeFrequency: "monthly",
+ priority: 0.5,
+ },
+ {
  url: `${SITE_URL}/careers`,
  lastModified: new Date(),
  changeFrequency: "monthly",

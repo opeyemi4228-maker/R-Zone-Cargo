@@ -29,7 +29,7 @@ const PARTNER_TYPES = [
  "Access to our weekly air & monthly sea schedule",
  "Marketing materials & rate cards provided",
  ],
- color: "#0818A8",
+ color: "#000f89",
  featured: false,
  },
  {
@@ -46,7 +46,7 @@ const PARTNER_TYPES = [
  "No minimum volume requirement",
  "Full training and support provided",
  ],
- color: "#1F51FF",
+ color: "#0000FF",
  featured: true,
  },
  {
@@ -63,7 +63,7 @@ const PARTNER_TYPES = [
  "Priority boarding on busy sailings",
  "Net-30 payment terms available",
  ],
- color: "#0437F2",
+ color: "#0000CD",
  featured: false,
  },
  {
@@ -80,7 +80,7 @@ const PARTNER_TYPES = [
  "Credit terms up to net-60",
  "Board-level account reviews on request",
  ],
- color: "#0818A8",
+ color: "#000f89",
  featured: false,
  },
  {
@@ -97,7 +97,7 @@ const PARTNER_TYPES = [
  "Free pre-shipment consultation",
  "Nigerian beneficiary notifications",
  ],
- color: "#1F51FF",
+ color: "#0000FF",
  featured: false,
  },
  {
@@ -114,7 +114,7 @@ const PARTNER_TYPES = [
  "Duty calculator and pre-shipment advice",
  "Local Lagos account management",
  ],
- color: "#0437F2",
+ color: "#0000CD",
  featured: false,
  },
 ];
@@ -127,7 +127,7 @@ const PROCESS_STEPS = [
 ];
 
 const WHY_PARTNER = [
- { icon: Star, title: "100+ Five-Star Reviews", body: "Your customers get a service that's already proven. Our Google rating means you're referring with confidence, not risk." },
+ { icon: Star, title: "120+ Five-Star Reviews", body: "Your customers get a service that's already proven. Our Google rating means you're referring with confidence, not risk." },
  { icon: Clock, title: "12+ Years of Track Record", body: "Established in 2012 we've operated through a pandemic, currency crises, and Brexit without missing a sailing." },
  { icon: Globe, title: "All 36 Nigerian States", body: "Wherever your customers need cargo to go in Nigeria, we can get it there. No off-limits destinations." },
  { icon: BarChart3, title: "Transparent Partner Portal", body: "Real-time visibility of referred shipments, commissions earned, and payment schedules no chasing, no guesswork." },
@@ -138,7 +138,7 @@ const WHY_PARTNER = [
 const STATS = [
  { val: "50,000+", label: "Shipments Delivered", icon: Package },
  { val: "12+", label: "Years Operating", icon: Clock },
- { val: "100+", label: "5-Star Reviews", icon: Star },
+ { val: "120+", label: "5-Star Reviews", icon: Star },
  { val: "36", label: "Nigerian States", icon: MapPin },
 ];
 
@@ -160,11 +160,11 @@ const fadeUp = {
 function TagPill({ label, dark = false }) {
  return (
  <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-5 ${
- dark ? "border-[#1F51FF]/30 bg-[#0818A8]/14" : "border-[#0818A8]/20 bg-[#0818A8]/6"
+ dark ? "border-[#0000FF]/30 bg-[#000f89]/14" : "border-[#000f89]/20 bg-[#000f89]/6"
  }`}>
- <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#1F51FF]" : "bg-[#0818A8]"}`}
+ <motion.span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? "bg-[#0000FF]" : "bg-[#000f89]"}`}
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
- <span className={`text-[13px] font-bold tracking-[0.3em] uppercase ${dark ? "text-[#1F51FF]" : "text-[#0818A8]"}`}>{label}</span>
+ <span className={`text-[13px] font-semibold ${dark ? "text-[#4D4DFF]" : "text-[#000f89]"}`}>{label}</span>
  </div>
  );
 }
@@ -174,12 +174,12 @@ function SectionHeading({ eyebrow, line1, accent, dark = false, id }) {
  const inView = useInView(ref, { once: true, margin: "-60px" });
  return (
  <div ref={ref}>
- {eyebrow && <p className={`text-[13px] font-bold tracking-[0.32em] uppercase mb-3 ${dark ? "text-white/70" : "text-gray-500"}`}>{eyebrow}</p>}
- <h2 id={id} className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${dark ? "text-white" : "text-gray-900"}`}>
+ {eyebrow && <p className={`mb-3 text-[13px] font-semibold ${dark ? "text-white/70" : "text-gray-500"}`}>{eyebrow}</p>}
+ <h2 id={id} className={`font-extrabold text-[clamp(26px,4.5vw,52px)] leading-[1.06] tracking-[-0.03em] ${dark ? "text-white" : "text-gray-900"}`}>
  {line1}{" "}
- <span className="relative inline-block text-[#0818A8]">
+ <span className="relative inline-block text-[#000f89]">
  {accent}
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0818A8] rounded-full"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#000f89] rounded-full"
  aria-hidden="true" initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
  </span>
  </h2>
@@ -192,9 +192,9 @@ function FAQ({ q, a }) {
  return (
  <div className="border-b border-gray-100 last:border-0">
  <button onClick={() => setOpen(o => !o)} className="w-full flex items-start justify-between gap-4 py-5 text-left group" aria-expanded={open}>
- <span className={`text-[14px] font-semibold leading-snug transition-colors duration-150 ${open ? "text-[#0818A8]" : "text-gray-800 group-hover:text-[#0818A8]"}`}>{q}</span>
+ <span className={`text-[14px] font-semibold leading-snug transition-colors duration-150 ${open ? "text-[#000f89]" : "text-gray-800 group-hover:text-[#000f89]"}`}>{q}</span>
  <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="flex-shrink-0 mt-0.5" aria-hidden="true">
- <ChevronDown size={15} className={open ? "text-[#0818A8]" : "text-gray-400"} />
+ <ChevronDown size={15} className={open ? "text-[#000f89]" : "text-gray-400"} />
  </motion.div>
  </button>
  <AnimatePresence>
@@ -254,33 +254,33 @@ function ApplicationForm() {
 
  const inputCls = (field) =>
  `w-full border text-gray-900 text-[13.5px] font-normal placeholder-gray-400 px-4 py-3.5 outline-none transition-all duration-200 rounded-none
- focus:border-[#0818A8] focus:ring-1 focus:ring-[#0818A8]/20 bg-white
+ focus:border-[#000f89] focus:ring-1 focus:ring-[#000f89]/20 bg-white
  ${errors[field] && touched[field] ? "border-red-400 bg-red-50/30" : "border-gray-300 hover:border-gray-400"}`;
 
  const labelCls = "block text-[13px] font-bold tracking-[0.2em] uppercase text-gray-600 mb-2";
 
  return (
- <div className="border border-gray-200 bg-white overflow-hidden">
- <div className="h-[3px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
+ <div className="border border-gray-200 bg-white overflow-hidden rounded-[20px]">
+ <div className="h-[3px] bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
 
  <AnimatePresence mode="wait">
  {status === "success" ? (
  <motion.div key="success" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} className="p-10 md:p-14 text-center">
- <motion.div className="w-16 h-16 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-6 relative"
+ <motion.div className="w-16 h-16 bg-[#000f89] rounded-full flex items-center justify-center mx-auto mb-6 relative"
  initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}>
- <motion.div className="absolute inset-0 rounded-full bg-[#0818A8]/20"
+ <motion.div className="absolute inset-0 rounded-full bg-[#000f89]/20"
  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }} transition={{ duration: 2.5, repeat: Infinity }} aria-hidden="true" />
  <CheckCircle size={28} className="text-white relative z-10" aria-hidden="true" />
  </motion.div>
- <h3 className="font-black text-[24px] text-gray-900 tracking-[-0.015em] mb-3">Application Received!</h3>
+ <h3 className="font-extrabold text-[24px] text-gray-900 tracking-[-0.03em] mb-3">Application Received!</h3>
  <p className="text-gray-600 text-[14px] font-normal leading-relaxed max-w-md mx-auto mb-8">
  Thank you, <strong className="font-semibold text-gray-800">{form.name}</strong>. Our partnerships team will call you within 2 working days to discuss the right programme for you.
  </p>
  <div className="flex flex-wrap justify-center gap-3">
- <Link href="/services" className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25" aria-label="View R-Zone services">
+ <Link href="/services" className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 shadow-lg shadow-[#000f89]/25 rounded-full" aria-label="View R-Zone services">
  Explore Services
  </Link>
- <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#0818A8] hover:text-[#0818A8] text-[13px] font-bold uppercase px-6 py-3 transition-all duration-200" aria-label="Back to home">
+ <Link href="/" className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#000f89] hover:text-[#000f89] text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full" aria-label="Back to home">
  Back to Home
  </Link>
  </div>
@@ -288,7 +288,7 @@ function ApplicationForm() {
  ) : (
  <motion.div key="form" className="p-7 md:p-9">
  <div className="mb-7">
- <h3 className="font-black text-[20px] text-gray-900 tracking-[-0.015em] mb-1">Apply to Partner With Us</h3>
+ <h3 className="font-extrabold text-[20px] text-gray-900 tracking-[-0.03em] mb-1">Apply to Partner With Us</h3>
  <p className="text-gray-600 text-[13.5px] font-normal">Takes 3 minutes. We'll call you within 2 working days.</p>
  </div>
 
@@ -362,11 +362,11 @@ function ApplicationForm() {
  </div>
 
  <p className="text-gray-500 text-[13px] font-normal leading-relaxed mb-5">
- By submitting, you agree that R-Zone Enterprises may contact you about our partner programme. See our <Link href="/privacy" className="text-[#0818A8] font-semibold underline underline-offset-2 hover:text-[#0437F2] transition-colors">Privacy Policy</Link>.
+ By submitting, you agree that R-Zone Enterprises may contact you about our partner programme. See our <Link href="/privacy" className="text-[#000f89] font-semibold underline underline-offset-2 hover:text-[#0000CD] transition-colors">Privacy Policy</Link>.
  </p>
 
  <button onClick={handleSubmit} disabled={status === "loading"}
- className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-8 py-4 transition-all duration-200 shadow-xl shadow-[#0818A8]/25 w-full sm:w-auto justify-center"
+ className="group inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-bold px-8 py-4 transition-all duration-200 shadow-xl shadow-[#000f89]/25 w-full sm:w-auto justify-center rounded-full"
  aria-label="Submit partner application" aria-busy={status === "loading"}>
  {status === "loading"
  ? <><Loader2 size={13} className="animate-spin" aria-hidden="true" /> Submitting…</>
@@ -406,20 +406,20 @@ export default function PartnerPage() {
  <div className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] bg-white min-h-screen`}>
 
  {/* ── HERO ── */}
- <section className="relative bg-[#00061a] overflow-hidden" aria-labelledby="partner-hero-heading">
+ <section className="relative bg-[#00112E] overflow-hidden hero-section" aria-labelledby="partner-hero-heading">
  <div className="absolute inset-0 opacity-[0.025] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-15%] left-[5%] w-[800px] h-[600px] bg-[#0818A8]/18 rounded-full blur-[150px]" />
- <div className="absolute bottom-[-20%] right-[-5%] w-[600px] h-[500px] bg-[#1F51FF]/10 rounded-full blur-[130px]" />
+ <div className="absolute top-[-15%] left-[5%] w-[800px] h-[600px] bg-[#000f89]/18 rounded-full blur-[150px]" />
+ <div className="absolute bottom-[-20%] right-[-5%] w-[600px] h-[500px] bg-[#0000FF]/10 rounded-full blur-[130px]" />
  </div>
  {[15, 35, 65, 82].map(p => (
  <div key={p} className="absolute top-0 bottom-0 w-px opacity-[0.04] pointer-events-none"
- style={{ left: `${p}%`, background: "linear-gradient(to bottom, transparent, rgba(31,81,255,1) 40%, transparent)" }} aria-hidden="true" />
+ style={{ left: `${p}%`, background: "linear-gradient(to bottom, transparent, rgba(0,0,255,1) 40%, transparent)" }} aria-hidden="true" />
  ))}
 
  <div ref={heroRef} className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 pt-[100px] pb-16 md:pb-20">
- <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10"
+ <motion.nav aria-label="Breadcrumb" className="flex items-center gap-2 mb-10 pt-3.5 lg:mt-[11px] max-lg:-mt-[16px]"
  initial={{ opacity: 0 }} animate={heroInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
  <Link href="/" className="text-white/60 text-[13px] font-medium hover:text-white transition-colors">Home</Link>
  <ChevronRight size={11} className="text-white/30" aria-hidden="true" />
@@ -429,11 +429,11 @@ export default function PartnerPage() {
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
  <motion.div initial={{ opacity: 0, y: 24 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
  <TagPill label="Partnership Programmes" dark />
- <h1 id="partner-hero-heading" className="font-black text-[clamp(38px,7vw,80px)] text-white leading-[0.88] tracking-[-0.035em] uppercase mb-6">
+ <h1 id="partner-hero-heading" className="font-extrabold text-[clamp(38px,7vw,80px)] text-white leading-[1.06] tracking-[-0.035em] mb-6">
  Grow Together.<br />
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Win Together.
- <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-2 left-0 h-[4px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width: 0 }} animate={heroInView ? { width: "100%" } : {}} transition={{ duration: 0.6, delay: 0.8 }} />
  </span>
  </h1>
@@ -441,10 +441,10 @@ export default function PartnerPage() {
  R-Zone Enterprises is looking for agents, referrers, businesses, and community organisations who share our belief that the UK Nigeria corridor deserves world-class logistics. If that's you, let's build something together.
  </p>
  <div className="flex flex-wrap gap-4">
- <a href="#apply" className="group inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#0818A8]/35" aria-label="Apply to become a partner">
+ <a href="#apply" className="group inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 shadow-2xl shadow-[#000f89]/35 rounded-full" aria-label="Apply to become a partner">
  Apply Now <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
  </a>
- <a href="#programmes" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold tracking-[0.08em] uppercase px-7 py-3.5 transition-all duration-200" aria-label="View partnership programmes">
+ <a href="#programmes" className="inline-flex items-center gap-2.5 border border-white/22 hover:border-white/50 text-white/80 hover:text-white text-[13px] font-bold px-7 py-3.5 transition-all duration-200 rounded-full" aria-label="View partnership programmes">
  View Programmes
  </a>
  </div>
@@ -454,11 +454,11 @@ export default function PartnerPage() {
  {STATS.map((s, i) => {
  const Icon = s.icon;
  return (
- <motion.div key={s.label} className="border border-white/[0.08] bg-white/[0.05] p-6 hover:border-white/[0.18] hover:bg-white/[0.08] transition-all duration-300 group"
+ <motion.div key={s.label} className="border border-white/[0.08] bg-white/[0.05] p-6 hover:border-white/[0.18] hover:bg-white/[0.08] transition-all duration-300 group rounded-[20px]"
  initial={{ opacity: 0, y: 12 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.45 + i * 0.08 }}>
- <Icon size={16} className="text-[#1F51FF] mb-3" aria-hidden="true" />
+ <Icon size={16} className="text-[#4D4DFF] mb-3" aria-hidden="true" />
  <p className="text-white font-black text-[28px] leading-none tracking-[-0.025em]">{s.val}</p>
- <p className="text-white/60 text-[13px] font-semibold tracking-[0.08em] uppercase mt-1">{s.label}</p>
+ <p className="text-white/60 font-semibold mt-1 text-[13px]">{s.label}</p>
  </motion.div>
  );
  })}
@@ -470,7 +470,7 @@ export default function PartnerPage() {
  {/* ── PROGRAMMES ── */}
  <section id="programmes" className="relative bg-white scroll-mt-20" aria-labelledby="programmes-heading">
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -499,24 +499,24 @@ export default function PartnerPage() {
  const Icon = p.icon;
  return (
  <motion.div key={p.id} ref={ref}
- className={`relative border overflow-hidden group ${p.featured ? "border-[#0818A8] shadow-xl shadow-[#0818A8]/15" : "border-gray-200 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8"} transition-all duration-300`}
+ className={`relative border overflow-hidden group rounded-[20px] ${p.featured ? "border-[#000f89] shadow-xl shadow-[#000f89]/15" : "border-gray-200 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8"} transition-all duration-300`}
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.65, delay: i * 0.07 }}>
 
  {p.featured && (
- <div className="bg-[#0818A8] text-center py-1.5">
- <span className="text-white text-[13px] font-bold tracking-[0.25em] uppercase">Most Popular</span>
+ <div className="bg-[#000f89] text-center py-1.5">
+ <span className="text-white text-[13px] font-semibold">Most Popular</span>
  </div>
  )}
 
  <div className={`h-[3px] transition-all duration-500 ${p.featured ? "opacity-100" : "w-0 group-hover:w-full opacity-0 group-hover:opacity-100"}`}
- style={{ background: `linear-gradient(to right, ${p.color}, #1F51FF)` }} aria-hidden="true" />
+ style={{ background: `linear-gradient(to right, ${p.color}, #0000FF)` }} aria-hidden="true" />
 
  <div className="p-7">
  <div className="w-11 h-11 flex items-center justify-center mb-5" style={{ backgroundColor: `${p.color}10` }} aria-hidden="true">
  <Icon size={18} style={{ color: p.color }} />
  </div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase mb-1" style={{ color: p.color }}>{p.tagline}</p>
- <h3 className="text-gray-900 font-black text-[19px] tracking-[-0.015em] mb-3">{p.title}</h3>
+ <p className="mb-1 text-[13px] font-semibold" style={{ color: p.color }}>{p.tagline}</p>
+ <h3 className="text-gray-900 font-extrabold text-[19px] tracking-[-0.03em] mb-3">{p.title}</h3>
  <p className="text-gray-600 text-[13px] font-normal leading-relaxed mb-6">{p.desc}</p>
 
  <ul className="space-y-2 mb-7" role="list">
@@ -543,11 +543,11 @@ export default function PartnerPage() {
  </section>
 
  {/* ── WHY PARTNER ── */}
- <section className="relative bg-[#00061a] overflow-hidden" aria-labelledby="why-partner-heading">
+ <section className="relative bg-[#00112E] overflow-hidden" aria-labelledby="why-partner-heading">
  <div className="absolute inset-0 opacity-[0.022] pointer-events-none" aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
- <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-[#0818A8]/10 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-[#000f89]/10 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -559,11 +559,11 @@ export default function PartnerPage() {
  <TagPill label="Why Partner With Us" dark />
  </motion.div>
  <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
- <h2 id="why-partner-heading" className="font-black text-[clamp(26px,4.5vw,52px)] text-white leading-[0.92] tracking-[-0.028em] uppercase">
+ <h2 id="why-partner-heading" className="font-extrabold text-[clamp(26px,4.5vw,52px)] text-white leading-[1.06] tracking-[-0.03em]">
  Partner With a Company{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  Worth Backing.
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
+ <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#0000FF] rounded-full" aria-hidden="true"
  initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.5 }} />
  </span>
  </h2>
@@ -579,13 +579,13 @@ export default function PartnerPage() {
  const Icon = item.icon;
  return (
  <motion.div key={item.title} ref={ref}
- className="group border border-white/[0.07] bg-white/[0.03] p-7 hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 relative overflow-hidden"
+ className="group border border-white/[0.07] bg-white/[0.03] p-7 hover:border-white/[0.18] hover:bg-white/[0.06] transition-all duration-300 relative overflow-hidden rounded-[20px]"
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.07 }}>
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#0818A8] to-[#1F51FF]" aria-hidden="true" />
- <div className="w-10 h-10 bg-[#0818A8]/20 flex items-center justify-center mb-5" aria-hidden="true">
- <Icon size={16} className="text-[#1F51FF]" />
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#000f89] to-[#0000FF]" aria-hidden="true" />
+ <div className="w-10 h-10 bg-[#000f89]/20 flex items-center justify-center mb-5 rounded-full" aria-hidden="true">
+ <Icon size={16} className="text-[#4D4DFF]" />
  </div>
- <h3 className="text-white font-black text-[16px] tracking-[-0.01em] mb-3">{item.title}</h3>
+ <h3 className="text-white font-extrabold text-[16px] tracking-[-0.03em] mb-3">{item.title}</h3>
  <p className="text-white/70 text-[13px] font-normal leading-relaxed">{item.body}</p>
  </motion.div>
  );
@@ -597,7 +597,7 @@ export default function PartnerPage() {
  {/* ── HOW IT WORKS ── */}
  <section className="relative bg-white overflow-hidden" aria-labelledby="how-it-works-heading">
  <div className="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  {(() => {
@@ -622,16 +622,16 @@ export default function PartnerPage() {
  const Icon = step.icon;
  return (
  <motion.div key={step.num} ref={ref}
- className="relative border border-gray-200 bg-gray-50 p-7 hover:border-[#0818A8]/40 hover:shadow-lg hover:shadow-[#0818A8]/8 transition-all duration-300 group"
+ className="relative border border-gray-200 bg-gray-50 p-7 hover:border-[#000f89]/40 hover:shadow-lg hover:shadow-[#000f89]/8 transition-all duration-300 group rounded-[20px]"
  initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}>
- <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#0818A8]" aria-hidden="true" />
+ <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-[#000f89]" aria-hidden="true" />
  <div className="flex items-center justify-between mb-6">
- <span className="font-black text-[42px] text-[#0818A8]/10 leading-none tracking-[-0.02em]" aria-hidden="true">{step.num}</span>
- <div className="w-10 h-10 bg-[#0818A8]/8 flex items-center justify-center" aria-hidden="true">
- <Icon size={16} className="text-[#0818A8]" />
+ <span className="font-black text-[42px] text-[#000f89]/10 leading-none tracking-[-0.02em]" aria-hidden="true">{step.num}</span>
+ <div className="w-10 h-10 bg-[#000f89]/8 flex items-center justify-center rounded-full" aria-hidden="true">
+ <Icon size={16} className="text-[#000f89]" />
  </div>
  </div>
- <h3 className="text-gray-900 font-black text-[16px] tracking-[-0.01em] mb-3">{step.title}</h3>
+ <h3 className="text-gray-900 font-extrabold text-[16px] tracking-[-0.03em] mb-3">{step.title}</h3>
  <p className="text-gray-600 text-[13px] font-normal leading-relaxed">{step.body}</p>
  </motion.div>
  );
@@ -643,7 +643,7 @@ export default function PartnerPage() {
  {/* ── APPLY + FAQS ── */}
  <section id="apply" className="relative bg-gray-50 scroll-mt-20 overflow-hidden" aria-labelledby="apply-heading">
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.03) 1px, transparent 1px)", backgroundSize: "44px 44px" }} />
 
  <div className="relative z-10 max-w-[1380px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -659,23 +659,23 @@ export default function PartnerPage() {
  <SectionHeading line1="Partner" accent="FAQs." id="apply-heading" />
  <p className="text-gray-600 text-[14px] font-normal mt-4 mb-8 leading-relaxed">
  Still have questions? Call us on{" "}
- <a href="tel:+448007720864" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">+44 800 772 0864</a>{" "}
- or email <a href="mailto:partners@r-zoneenterprises.com" className="text-[#0818A8] font-semibold hover:text-[#0437F2] transition-colors">partners@r-zoneenterprises.com</a>.
+ <a href="tel:+448007720864" className="text-[#000f89] font-semibold hover:text-[#0000CD] transition-colors">+44 800 772 0864</a>{" "}
+ or email <a href="mailto:partners@r-zoneenterprises.com" className="text-[#000f89] font-semibold hover:text-[#0000CD] transition-colors">partners@r-zoneenterprises.com</a>.
  </p>
 
  <div className="border border-gray-200 bg-white divide-y divide-gray-100 mb-8">
  {FAQS.map((item, i) => <FAQ key={i} q={item.q} a={item.a} />)}
  </div>
 
- <div className="border border-[#0818A8]/15 bg-[#0818A8]/4 p-5">
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-[#0818A8] mb-2">Direct Contact</p>
- <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon Fri 9am 6pm.</p>
+ <div className="border border-[#000f89]/15 bg-[#000f89]/4 p-5 rounded-[20px]">
+ <p className="mb-2 text-[13px] font-semibold inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#000f89]/[0.07] text-[#000f89]">Direct Contact</p>
+ <p className="text-gray-700 text-[13.5px] font-normal leading-relaxed mb-4">Prefer to speak to someone first? Our partnerships team is available Mon to Fri 9am to 6pm.</p>
  <div className="space-y-2.5">
- <a href="tel:+448007720864" className="flex items-center gap-3 text-gray-800 hover:text-[#0818A8] font-semibold text-[13px] transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
- <Phone size={13} className="text-[#0818A8]" aria-hidden="true" /> +44 800 772 0864
+ <a href="tel:+448007720864" className="flex items-center gap-3 text-gray-800 hover:text-[#000f89] font-semibold text-[13px] transition-colors" aria-label="Call R-Zone: +44 800 772 0864">
+ <Phone size={13} className="text-[#000f89]" aria-hidden="true" /> +44 800 772 0864
  </a>
- <a href="mailto:partners@r-zoneenterprises.com" className="flex items-center gap-3 text-gray-800 hover:text-[#0818A8] font-semibold text-[13px] transition-colors" aria-label="Email partnerships team">
- <Mail size={13} className="text-[#0818A8]" aria-hidden="true" /> partners@r-zoneenterprises.com
+ <a href="mailto:partners@r-zoneenterprises.com" className="flex items-center gap-3 text-gray-800 hover:text-[#000f89] font-semibold text-[13px] transition-colors" aria-label="Email partnerships team">
+ <Mail size={13} className="text-[#000f89]" aria-hidden="true" /> partners@r-zoneenterprises.com
  </a>
  </div>
  </div>

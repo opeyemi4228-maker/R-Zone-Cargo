@@ -1,69 +1,50 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { montserrat } from "../lib/fonts";
 import {
- Shield, Award, Globe, Clock, Package,
- CheckCircle, Warehouse, Plane, Star,
- TrendingUp, Users, MapPin, Phone, MessageSquare,
- Ship,
+ Shield, Award, CheckCircle, Users, Plane, Ship, ArrowRight,
 } from "lucide-react";
 
-function AnimatedCounter({ target, suffix = "", prefix = "" }) {
- const ref = useRef(null);
- const inView = useInView(ref, { once: true, margin: "-60px" });
- const motionVal = useMotionValue(0);
- const spring = useSpring(motionVal, { stiffness: 38, damping: 14 });
- const [display, setDisplay] = useState(0);
- useEffect(() => { if (inView) motionVal.set(target); }, [inView, target, motionVal]);
- useEffect(() => { const u = spring.on("change", v => setDisplay(Math.floor(v))); return u; }, [spring]);
- return <span ref={ref} aria-label={`${prefix}${target}${suffix}`}>{prefix}{display.toLocaleString()}{suffix}</span>;
-}
+// "Why R-Zone": four plain reasons, then proof (credentials, partners).
+// Offices are not repeated here; the footer carries both addresses.
 
-const METRICS = [
- { value: 12, suffix: "+", label: "Years Operating", sub: "Established 2012", icon: Clock, color: "#1F51FF" },
- { value: 50000, suffix: "+", label: "Shipments Delivered", sub: "UK to Nigeria & beyond", icon: Package, color: "#0818A8" },
- { value: 100, suffix: "+", label: "5-Star Google Reviews",sub: "Highest-ranked UK Nigeria cargo", icon: Star, color: "#1F51FF" },
- { value: 99, suffix: "%", label: "Delivery Success Rate", sub: "Industry-leading reliability", icon: TrendingUp, color: "#0818A8" },
+const REASONS = [
+ {
+ title: "Real people, not a call centre.",
+ text: "Our UK team answers every query personally, by phone, WhatsApp or email. No bots and no ticket numbers.",
+ },
+ {
+ title: "Customs handled at both ends.",
+ text: "Our own teams clear your goods through UK export and Nigeria Customs, so nothing sits waiting at the port.",
+ },
+ {
+ title: "Our own warehouses.",
+ text: "Drop off in Essex, collect in Lagos, with collection points in Egbeda, Surulere, Ajah and Ibadan.",
+ },
+ {
+ title: "Weekly departures.",
+ text: "Air freight every week and weekly sailings to Lagos, so your cargo never waits long for a slot.",
+ },
 ];
 
 const CERTIFICATIONS = [
- { icon: Shield, label: "Fully Insured", sub: "End-to-end cargo cover" },
- { icon: Award, label: "IATA Registered", sub: "Certified air freight agent" },
- { icon: CheckCircle, label: "NCS Compliant", sub: "Nigeria Customs Service" },
- { icon: Star, label: "#1 Ranked on Google", sub: "UK Nigeria cargo · Organic" },
- { icon: Globe, label: "6 Continents Served", sub: "Worldwide freight reach" },
- { icon: Users, label: "10,000+ Customers", sub: "Families & businesses" },
+ { icon: Shield, label: "Fully insured" },
+ { icon: Award, label: "IATA registered" },
+ { icon: CheckCircle, label: "NCS compliant" },
+ { icon: Users, label: "10,000+ customers" },
 ];
 
-const AIRLINE_PARTNERS = [
- { name: "Allied Air", code: "AA" },
- { name: "DHL", code: "DH" },
- { name: "Air Peace", code: "P4" },
-];
-
-const SEA_PARTNERS = [
- { name: "GRIMALDI", url: "https://www.grimaldi.co.uk/" },
- { name: "MSC", url: "https://www.msc.com/" },
- { name: "MAERSK LINE", url: "https://www.maersk.com/" },
- { name: "CMA CGM", url: "https://www.cmacgm.com/" },
-];
-
-const OFFICES = [
- {
- flag: "🇬🇧", city: "Upminster, United Kingdom", role: "UK Primary Hub",
- address: "Unit 9 Moorhen Yard, Elms Lane, Bulphan, Upminster, RM14 3TS",
- phone: "+44 (0) 800 772 0864", phoneHref: "tel:+448007720864",
- email: "info@r-zoneenterprises.com", hours: "Mon Fri 10AM 6PM · Sat 11AM 2PM",
- },
- {
- flag: "🇳🇬", city: "Lagos, Nigeria", role: "West Africa Hub",
- address: "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange, Lagos. <strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan",
- phone: "+234 906 680 6861", phoneHref: "tel:+2349066806861",
- email: "nigeria@r-zoneenterprises.com", hours: "Mon Fri 9AM 5PM WAT",
- },
+const PARTNERS = [
+ { name: "Allied Air", mode: "air" },
+ { name: "DHL", mode: "air" },
+ { name: "Air Peace", mode: "air" },
+ { name: "Grimaldi", mode: "sea" },
+ { name: "MSC", mode: "sea" },
+ { name: "Maersk Line", mode: "sea" },
+ { name: "CMA CGM", mode: "sea" },
 ];
 
 export default function TrustAuthority() {
@@ -80,262 +61,108 @@ export default function TrustAuthority() {
  "name": "R-Zone Enterprises",
  "url": "https://r-zoneenterprises.com",
  "foundingDate": "2012",
- "description": "The highest-rated and highest-ranked UK-to-Nigeria cargo company on Google 100+ five-star reviews, organically earned. Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
- "award": [
- "Highest-Rated & Highest-Ranked UK-to-Nigeria Cargo Company on Google",
- "100+ Five-Star Google Reviews Organically Earned",
- "IATA Registered Air Freight Agent",
- "NCS Compliant Nigeria Customs Service",
- ],
+ "description": "Air freight, sea freight with weekly sailings, door-to-door delivery and customs clearance between the UK and Nigeria since 2012.",
  "areaServed": [
  { "@type": "Country", "name": "United Kingdom" },
  { "@type": "Country", "name": "Nigeria" },
  { "@type": "City", "name": "Lagos" },
  { "@type": "City", "name": "Abuja" },
  { "@type": "City", "name": "London" },
- { "@type": "Continent", "name": "Africa" },
  ],
  "address": [
  { "@type": "PostalAddress", "streetAddress": "Unit 9 Moorhen Yard, Elms Lane, Bulphan", "addressLocality": "Upminster", "addressRegion": "Essex", "postalCode": "RM14 3TS", "addressCountry": "GB" },
- { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG", "description": "<strong>Collection Points:</strong> Egbeda, Surulele, Ajah, Ibadan" },
+ { "@type": "PostalAddress", "streetAddress": "1-3 R-Zone Crescent, Queens Park Estate II, Shagam Interchange", "addressLocality": "Lagos", "addressCountry": "NG", "description": "<strong>Collection Points:</strong> Egbeda, Surulere, Ajah, Ibadan" },
  ],
  }),
  }} />
 
  <section
- className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative w-full bg-[#00061a] overflow-hidden`}
+ className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] relative w-full bg-[#00112E] overflow-hidden`}
  aria-labelledby="trust-heading"
- itemScope itemType="https://schema.org/Organization"
  >
- {/* Backgrounds */}
- <div className="absolute inset-0 pointer-events-none opacity-[0.022]" aria-hidden="true"
- style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
- <div className="absolute top-0 left-1/3 w-[800px] h-[600px] rounded-full bg-[#0818A8]/10 blur-[140px] pointer-events-none" aria-hidden="true" />
- <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] rounded-full bg-[#1F51FF]/8 blur-[120px] pointer-events-none" aria-hidden="true" />
+ <div className="pointer-events-none absolute -top-40 left-1/4 h-[520px] w-[720px] rounded-full bg-[#000f89]/25 blur-[150px]" aria-hidden="true" />
 
- {/* ── PART 1: Header + Metrics ── */}
- <div className="relative border-b border-white/[0.06]">
- <div ref={headerRef} className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24 lg:py-28">
+ <div ref={headerRef} className="relative mx-auto max-w-[1400px] px-5 py-20 sm:px-8 md:py-24 lg:py-28 xl:px-10">
 
- <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 md:mb-20">
- <motion.div initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+ {/* Header */}
+ <motion.div className="max-w-2xl"
+ initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}>
- <div className="inline-flex items-center gap-2.5 border border-[#1F51FF]/30 bg-[#0818A8]/12 px-4 py-1.5 rounded-full mb-5">
- <motion.span className="w-1.5 h-1.5 rounded-full bg-[#1F51FF]"
- animate={{ scale: [1, 1.6, 1], opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
- <span className="text-[#1F51FF] text-[13px] font-bold tracking-[0.28em] uppercase">
- #1 Ranked UK Nigeria Cargo on Google
- </span>
- </div>
- <h2 id="trust-heading" className="text-white font-black text-[clamp(28px,5vw,58px)] leading-[0.92] tracking-[-0.025em] uppercase mb-4">
- Trusted By Thousands
- <span className="relative inline-block text-[#1F51FF]">
- {" "}Since 2012.
- <motion.span className="absolute -bottom-1 left-0 h-[3px] bg-[#1F51FF] rounded-full" aria-hidden="true"
- initial={{ width: 0 }} animate={inView ? { width: "100%" } : {}} transition={{ duration: 0.55, delay: 0.55 }} />
- </span>
+ <p className="mb-5 inline-flex rounded-full bg-white/[0.08] px-3.5 py-1.5 text-[13px] font-semibold text-[#A6A6FF]">
+ Why R-Zone
+ </p>
+ <h2 id="trust-heading" className="font-extrabold leading-[1.04] tracking-[-0.035em] text-white"
+ style={{ fontSize: "clamp(30px, 3.8vw, 52px)" }}>
+ Trusted by thousands since 2012.
  </h2>
- <p className="text-white/80 text-[15px] font-normal leading-relaxed max-w-lg">
- The{" "}
- <strong className="text-white font-semibold">highest-rated and highest-ranked UK-to-Nigeria cargo company on Google</strong>
- {" "} 100+ five-star reviews, organically earned. Families and businesses
- across the UK trust R-Zone for air freight, weekly sea sailings, and
- door-to-door delivery to Lagos, Abuja and all 36 Nigerian states.
+ <p className="mt-4 max-w-xl text-[16px] font-normal leading-relaxed text-white/70">
+ Families and businesses across the UK ship with us for one reason: their
+ cargo arrives, and someone they can talk to is with it the whole way.
  </p>
  </motion.div>
 
- <motion.div className="flex flex-wrap lg:flex-col gap-3 lg:items-end"
- initial={{ opacity: 0, x: 16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
- transition={{ duration: 0.6, delay: 0.3 }}>
- {["#1 Ranked on Google UK to Nigeria", "IATA Registered Air Freight Agent", "100+ Five-Star Reviews Organically Earned"].map(badge => (
- <span key={badge} className="inline-flex items-center gap-2 border border-white/[0.12] bg-white/[0.04] px-3.5 py-2 text-white/80 text-[13px] font-semibold tracking-[0.08em] uppercase">
- <CheckCircle size={11} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
- {badge}
+ {/* Four reasons */}
+ <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 md:mt-14" role="list">
+ {REASONS.map((reason, i) => (
+ <motion.div key={reason.title} role="listitem"
+ className="flex flex-col rounded-[20px] bg-white/[0.05] p-7 ring-1 ring-white/[0.08] transition-colors duration-300 hover:bg-white/[0.08]"
+ initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+ transition={{ duration: 0.6, delay: 0.15 + i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}>
+ <span className="text-[13px] font-bold text-[#A6A6FF] tabular-nums" aria-hidden="true">
+ {String(i + 1).padStart(2, "0")}
  </span>
+ <h3 className="mt-6 text-[19px] font-extrabold leading-snug tracking-[-0.02em] text-white">
+ {reason.title}
+ </h3>
+ <p className="mt-3 text-[14.5px] font-normal leading-relaxed text-white/65">
+ {reason.text}
+ </p>
+ </motion.div>
  ))}
- </motion.div>
  </div>
 
- {/* Metric cards */}
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" role="list"
- aria-label="R-Zone key performance statistics UK to Nigeria cargo">
- {METRICS.map((metric, i) => {
- const Icon = metric.icon;
- return (
- <motion.div key={metric.label} role="listitem"
- className="group relative overflow-hidden bg-white/[0.04] border border-white/[0.08] hover:border-[#0818A8]/50 hover:bg-[#0818A8]/10 transition-all duration-300 p-7"
- initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
- transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}>
- <div className="absolute top-0 left-0 w-14 h-14 opacity-25 group-hover:opacity-50 transition-opacity duration-300" aria-hidden="true"
- style={{ background: `radial-gradient(circle at top left, ${metric.color}55, transparent 70%)` }} />
- <div className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[#0818A8] to-[#1F51FF] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" aria-hidden="true" />
- <div className="w-10 h-10 rounded-sm flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
- style={{ backgroundColor: `${metric.color}1A` }} aria-hidden="true">
- <Icon size={16} style={{ color: metric.color }} />
- </div>
- <p className="text-white font-black leading-none tracking-[-0.03em] tabular-nums mb-2"
- style={{ fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)" }}>
- <AnimatedCounter target={metric.value} suffix={metric.suffix} />
- </p>
- <p className="text-white font-bold text-[13px] tracking-[0.08em] uppercase leading-tight mb-1.5" itemProp="description">
- {metric.label}
- </p>
- <p className="text-white/80 text-[13px] font-normal">{metric.sub}</p>
- </motion.div>
- );
- })}
- </div>
- </div>
- </div>
-
- {/* ── PART 2: Certifications ── */}
- <div className="relative border-b border-white/[0.06]">
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-12 md:py-14">
- <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
- initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
- <span className="w-5 h-px bg-white/30" aria-hidden="true" />
- Credentials &amp; Standards
- </motion.p>
- <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-5 gap-y-5"
- role="list" aria-label="R-Zone certifications and credentials">
- {CERTIFICATIONS.map((cert, i) => {
- const Icon = cert.icon;
- return (
- <motion.div key={cert.label} role="listitem" className="group flex items-center gap-3"
- initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.07 }}>
- <div className="w-9 h-9 bg-[#0818A8]/15 border border-[#0818A8]/25 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-200 rounded-sm" aria-hidden="true">
- <Icon size={14} className="text-[#1F51FF] group-hover:text-white transition-colors duration-200" />
+ {/* Credentials + partners */}
+ <div className="mt-14 grid gap-10 border-t border-white/[0.08] pt-10 lg:grid-cols-2 lg:gap-16 md:mt-16">
+ <div>
+ <p className="mb-4 text-[13px] font-semibold text-white/50">Credentials</p>
+ <ul className="flex flex-wrap gap-2.5" aria-label="R-Zone certifications and credentials">
+ {CERTIFICATIONS.map(({ icon: Icon, label }) => (
+ <li key={label} className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-4 py-2 text-[13.5px] font-semibold text-white/85 ring-1 ring-white/[0.08]">
+ <Icon size={14} className="text-[#A6A6FF]" aria-hidden="true" />
+ {label}
+ </li>
+ ))}
+ </ul>
  </div>
  <div>
- <p className="text-white text-[13px] font-bold tracking-[0.04em] leading-none mb-0.5">{cert.label}</p>
- <p className="text-white/80 text-[13px] font-normal leading-none">{cert.sub}</p>
- </div>
- </motion.div>
+ <p className="mb-4 text-[13px] font-semibold text-white/50">Air and sea partners</p>
+ <ul className="flex flex-wrap gap-2.5" aria-label="R-Zone airline and shipping line partners">
+ {PARTNERS.map(({ name, mode }) => {
+ const Icon = mode === "air" ? Plane : Ship;
+ return (
+ <li key={name} className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-4 py-2 text-[13.5px] font-semibold text-white/85 ring-1 ring-white/[0.08]">
+ <Icon size={13} className="text-[#A6A6FF]" aria-hidden="true" />
+ {name}
+ </li>
  );
  })}
- </div>
+ </ul>
  </div>
  </div>
 
- {/* ── PART 3: Airline marquee ── */}
- <div className="relative border-b border-white/[0.06] overflow-hidden">
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14 flex justify-center">
- <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
- initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
- <span className="w-5 h-px bg-white/30" aria-hidden="true" />
- Airline &amp; Logistics Partners
- </motion.p>
- </div>
- <div className="relative py-5 md:py-7 flex justify-center" aria-label="R-Zone airline partners for UK to Nigeria air freight">
- <motion.div className="flex items-center gap-4 flex-wrap justify-center max-w-3xl">
- {AIRLINE_PARTNERS.map((p, i) => (
- <div key={i}
- className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
- aria-label={`${p.name} R-Zone airline partner for UK Nigeria air freight`}>
- <span className="font-black text-[13px] tracking-[0.14em] text-[#1F51FF] bg-[#0818A8]/22 px-2 py-0.5" aria-hidden="true">{p.code}</span>
- <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
- <Plane size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
- </div>
- ))}
- </motion.div>
- </div>
- <div className="pb-12" />
- </div>
-
- {/* ── PART 3.5: Sea partners ── */}
- <div className="relative border-b border-white/[0.06] overflow-hidden">
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 pt-12 md:pt-14 flex justify-center">
- <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
- initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
- <span className="w-5 h-px bg-white/30" aria-hidden="true" />
- Sea Freight Partners
- </motion.p>
- </div>
- <div className="relative py-5 md:py-7 flex justify-center" aria-label="R-Zone sea freight partners for UK to Nigeria shipping">
- <motion.div className="flex items-center gap-4 flex-wrap justify-center max-w-3xl">
- {SEA_PARTNERS.map((p, i) => (
- <div key={i}
- className="flex-shrink-0 flex items-center gap-3 border border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.07] px-5 py-3 transition-all duration-200 cursor-default"
- aria-label={`${p.name} R-Zone sea freight partner for UK Nigeria shipping`}>
- <span className="text-white/80 text-[13px] font-medium whitespace-nowrap">{p.name}</span>
- <Ship size={10} className="text-white/80 flex-shrink-0" aria-hidden="true" />
- </div>
- ))}
- </motion.div>
- </div>
- <div className="pb-12" />
- </div>
-
- {/* ── PART 4: Offices ── */}
- <div className="relative">
- <div className="max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-14 md:py-16">
- <motion.p className="text-white/80 text-[13px] font-bold tracking-[0.32em] uppercase mb-8 flex items-center gap-3"
- initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
- <span className="w-5 h-px bg-white/30" aria-hidden="true" />
- Our UK &amp; Nigeria Offices
- </motion.p>
-
- <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10" role="list"
- aria-label="R-Zone office locations UK and Nigeria">
- {OFFICES.map((office, i) => (
- <motion.div key={office.city} role="listitem"
- className="group relative bg-white/[0.04] border border-white/[0.08] hover:border-[#0818A8]/40 hover:bg-[#0818A8]/8 transition-all duration-300 p-6 md:p-7 overflow-hidden"
- initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }} transition={{ duration: 0.55, delay: i * 0.12 }}
- itemScope itemType="https://schema.org/PostalAddress">
- <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" aria-hidden="true" />
- <div className="flex items-start gap-4">
- <div className="w-11 h-11 bg-[#0818A8]/18 border border-[#0818A8]/28 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8] group-hover:border-[#0818A8] transition-all duration-200 rounded-sm" aria-hidden="true">
- <MapPin size={16} className="text-[#1F51FF] group-hover:text-white transition-colors duration-200" />
- </div>
- <div className="flex-1 min-w-0">
- <div className="flex items-center flex-wrap gap-2 mb-1.5">
- <span className="text-[15px] text-white/80" aria-hidden="true">{office.flag}</span>
- <span className="text-white font-black text-[13px] tracking-[0.06em] uppercase">{office.city}</span>
- <span className="text-[#1F51FF] text-[11px] font-bold tracking-[0.14em] uppercase bg-[#0818A8]/22 px-2 py-0.5">{office.role}</span>
- </div>
- <p className="text-white/80 text-[13px] font-normal leading-snug mb-3" itemProp="streetAddress" dangerouslySetInnerHTML={{ __html: office.address }}></p>
- <div className="flex flex-wrap gap-x-5 gap-y-1.5">
- <a href={office.phoneHref} className="flex items-center gap-1.5 text-white/80 hover:text-white text-[13px] font-medium transition-colors duration-200"
- aria-label={`Call R-Zone ${office.city}: ${office.phone}`}>
- <Phone size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
- {office.phone}
- </a>
- <a href={`mailto:${office.email}`} className="flex items-center gap-1.5 text-white/80 hover:text-white text-[13px] font-medium transition-colors duration-200"
- aria-label={`Email R-Zone ${office.city}: ${office.email}`}>
- <MessageSquare size={10} className="text-[#1F51FF] flex-shrink-0" aria-hidden="true" />
- {office.email}
- </a>
- </div>
- <p className="text-white/80 text-[13px] font-normal mt-2">{office.hours}</p>
- </div>
- </div>
- </motion.div>
- ))}
- </div>
-
- <motion.div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
- initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
- <p className="text-white/80 text-[13px] font-normal max-w-md leading-relaxed">
- Our UK-based team handles every query personally no automated responses, no call centres. Real people who care about your cargo.
- </p>
- <div className="flex flex-wrap gap-3">
+ {/* One action */}
+ <div className="mt-12 flex flex-wrap items-center gap-3">
  <Link href="/contact"
- className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 bg-white/[0.05] hover:bg-white/10 text-white text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-all duration-200"
- aria-label="Contact R-Zone Enterprises UK to Nigeria cargo">
- Contact Us
+ className="group inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-white px-7 text-[15px] font-bold text-[#00112E] transition-colors duration-200 hover:bg-[#E8EEFF]">
+ Talk to our team
+ <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
  </Link>
  <Link href="/quote"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.1em] uppercase px-6 py-3 transition-all duration-200 shadow-lg shadow-[#0818A8]/25"
- aria-label="Get a free UK to Nigeria shipping quote from R-Zone">
- Get a Quote
+ className="inline-flex min-h-[52px] items-center rounded-full px-5 text-[15px] font-semibold text-white/75 transition-colors duration-200 hover:text-white">
+ Or get a quote
  </Link>
  </div>
- </motion.div>
  </div>
- </div>
-
  </section>
  </>
  );

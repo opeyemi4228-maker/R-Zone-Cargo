@@ -76,18 +76,18 @@ const CONTACT_CHANNELS = [
  icon: Phone,
  label: "Call Us UK",
  value: "+44 800 772 0864",
- sub: "Free to call · Mon Fri 10AM 6PM, Sat 11AM 2PM",
+ sub: "Free to call · Mon to Fri 10AM to 6PM, Sat 11AM to 2PM",
  href: "tel:+448007720864",
- accent: "#0818A8",
+ accent: "#000f89",
  cta: "Call Now",
  },
  {
  icon: Phone,
  label: "Call Us Nigeria",
  value: "+234 906 680 6861",
- sub: "Nigeria representative · Mon Fri 9AM 5PM WAT",
+ sub: "Nigeria representative · Mon to Fri 9AM to 5PM WAT",
  href: "tel:+2349066806861",
- accent: "#1F51FF",
+ accent: "#0000FF",
  cta: "Call Nigeria",
  },
  {
@@ -96,7 +96,7 @@ const CONTACT_CHANNELS = [
  value: "info@r-zoneenterprises.com",
  sub: "Same-day response guaranteed on weekdays",
  href: "mailto:info@r-zoneenterprises.com",
- accent: "#0437F2",
+ accent: "#0000CD",
  cta: "Send Email",
  },
  {
@@ -116,14 +116,14 @@ const SOCIAL_CHANNELS = [
  label: "Instagram",
  value: "@rzoneenterprises",
  href: "https://www.instagram.com/rzoneenterprises",
- accent: "#0437F2",
+ accent: "#0000CD",
  },
  {
  icon: FacebookIcon,
  label: "Facebook",
  value: "R-Zone Enterprises",
  href: "https://www.facebook.com/share/1Gfw2SvFgY/?mibextid=wwXIfr",
- accent: "#0818A8",
+ accent: "#000f89",
  },
 ];
 
@@ -137,11 +137,11 @@ const OFFICES = [
  phoneHref: "tel:+448007720864",
  email: "info@r-zoneenterprises.com",
  hours: [
- { day: "Monday Friday", time: "10:00AM 6:00PM" },
- { day: "Saturday", time: "11:00AM 2:00PM" },
+ { day: "Monday to Friday", time: "10:00AM to 6:00PM" },
+ { day: "Saturday", time: "11:00AM to 2:00PM" },
  { day: "Sunday", time: "Closed" },
  ],
- accent: "#0818A8",
+ accent: "#000f89",
  },
  {
  flag: "🇳🇬",
@@ -152,11 +152,11 @@ const OFFICES = [
  phoneHref: "tel:+2349066806861",
  email: "nigeria@r-zoneenterprises.com",
  hours: [
- { day: "Monday Friday", time: "9:00AM 5:00PM WAT" },
- { day: "Saturday", time: "9:00AM 1:00PM WAT" },
+ { day: "Monday to Friday", time: "9:00AM to 5:00PM WAT" },
+ { day: "Saturday", time: "9:00AM to 1:00PM WAT" },
  { day: "Sunday", time: "Closed" },
  ],
- accent: "#1F51FF",
+ accent: "#0000FF",
  },
 ];
 
@@ -177,7 +177,7 @@ const ENQUIRY_TYPES = [
 const FAQS = [
  {
  q: "How quickly will you respond to my enquiry?",
- a: "We respond to all enquiries received Monday Friday within the same business day. Weekend messages are answered first thing Monday morning.",
+ a: "We respond to all enquiries received Monday to Friday within the same business day. Weekend messages are answered first thing Monday morning.",
  },
  {
  q: "Can I get a quote over the phone?",
@@ -189,7 +189,7 @@ const FAQS = [
  },
  {
  q: "Can I visit your warehouse to drop off cargo?",
- a: "Yes our Upminster, Essex warehouse accepts drop-offs Monday Friday 10AM 6PM and Saturday 11AM 2PM. Please call ahead so we can prepare for your arrival.",
+ a: "Yes our Upminster, Essex warehouse accepts drop-offs Monday to Friday 10AM to 6PM and Saturday 11AM to 2PM. Please call ahead so we can prepare for your arrival.",
  },
  {
  q: "Do you ship commercial / business cargo?",
@@ -202,7 +202,7 @@ const FAQS = [
 ];
 
 const TRUST_BADGES = [
- { icon: Star, label: "100+ Five-Star Reviews" },
+ { icon: Star, label: "120+ Five-Star Reviews" },
  { icon: Shield, label: "Fully Insured Cargo" },
  { icon: Clock, label: "Same-Day Response" },
  { icon: CheckCircle, label: "No Automated Replies" },
@@ -222,17 +222,17 @@ function TagPill({ label, dark = true }) {
  return (
  <div className={`inline-flex items-center gap-2.5 border px-4 py-1.5 rounded-full mb-6 ${
  dark
- ? "border-[#1F51FF]/30 bg-[#0818A8]/14"
- : "border-[#0818A8]/20 bg-[#0818A8]/6"
+ ? "border-[#0000FF]/30 bg-[#000f89]/14"
+ : "border-[#000f89]/20 bg-[#000f89]/6"
  }`}>
  <motion.span
- className="w-1.5 h-1.5 rounded-full bg-[#1F51FF] flex-shrink-0"
+ className="w-1.5 h-1.5 rounded-full bg-[#0000FF] flex-shrink-0"
  animate={{ scale: [1, 1.7, 1], opacity: [1, 0.4, 1] }}
  transition={{ duration: 2.2, repeat: Infinity }}
  aria-hidden="true"
  />
- <span className={`text-[13px] font-bold tracking-[0.28em] uppercase ${
- dark ? "text-[#1F51FF]" : "text-[#0818A8]"
+ <span className={`text-[13px] font-semibold ${
+ dark ? "text-[#4D4DFF]" : "text-[#000f89]"
  }`}>{label}</span>
  </div>
  );
@@ -247,14 +247,14 @@ function PageHeading({ line1, accent, dark = true, as: Tag = "h2", id }) {
  id={id}
  ref={ref}
  className={`font-black text-[clamp(26px,4.5vw,52px)] leading-[0.92] tracking-[-0.028em] uppercase ${
- dark ? "text-white" : "text-[#0b0f1a]"
+ dark ? "text-white" : "text-[#00112E]"
  }`}
  >
  {line1}{" "}
- <span className="relative inline-block text-[#1F51FF]">
+ <span className="relative inline-block text-[#4D4DFF]">
  {accent}
  <motion.span
- className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#1F51FF]"
+ className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#0000FF]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -274,7 +274,7 @@ function Hero() {
 
  return (
  <section
- className="relative bg-[#00061a] overflow-hidden hero-section"
+ className="relative bg-[#00112E] overflow-hidden hero-section"
  aria-labelledby="contact-hero-heading"
  >
  {/* Grid texture */}
@@ -288,13 +288,13 @@ function Hero() {
  />
  {/* Glows */}
  <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
- <div className="absolute top-[-10%] left-[15%] w-[800px] h-[500px] bg-[#0818A8]/16 rounded-full blur-[140px]" />
- <div className="absolute bottom-[-15%] right-[-5%] w-[500px] h-[400px] bg-[#1F51FF]/10 rounded-full blur-[120px]" />
+ <div className="absolute top-[-10%] left-[15%] w-[800px] h-[500px] bg-[#000f89]/16 rounded-full blur-[140px]" />
+ <div className="absolute bottom-[-15%] right-[-5%] w-[500px] h-[400px] bg-[#0000FF]/10 rounded-full blur-[120px]" />
  </div>
  {/* Vertical accent */}
  <div
  className="absolute top-0 right-[20%] w-px h-full opacity-[0.06] pointer-events-none"
- style={{ background: "linear-gradient(to bottom, transparent, #1F51FF 40%, transparent)" }}
+ style={{ background: "linear-gradient(to bottom, transparent, #0000FF 40%, transparent)" }}
  aria-hidden="true"
  />
 
@@ -305,7 +305,7 @@ function Hero() {
  {/* Breadcrumb */}
  <motion.nav
  aria-label="Breadcrumb"
- className="flex items-center gap-2 mb-10"
+ className="flex items-center gap-2 mb-10 lg:mt-[4px] max-lg:-mt-[23px]"
  initial={{ opacity: 0 }}
  animate={inView ? { opacity: 1 } : {}}
  transition={{ duration: 0.4 }}
@@ -334,13 +334,13 @@ function Hero() {
  id="contact-hero-heading"
  variants={fadeUp}
  custom={0.1}
- className="text-white font-black text-[clamp(36px,7vw,80px)] leading-[0.88] tracking-[-0.035em] uppercase mb-6"
+ className="text-white font-extrabold text-[clamp(36px,7vw,80px)] leading-[1.06] tracking-[-0.035em] mb-6"
  >
  Let&apos;s{" "}
  <span className="relative inline-block">
- <span className="text-[#1F51FF]">Talk.</span>
+ <span className="text-[#4D4DFF]">Talk.</span>
  <motion.span
- className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#1F51FF]"
+ className="absolute -bottom-2 left-0 h-[4px] rounded-full bg-[#0000FF]"
  aria-hidden="true"
  initial={{ width: 0 }}
  animate={inView ? { width: "100%" } : {}}
@@ -348,7 +348,7 @@ function Hero() {
  />
  </span>
  <br />
- <span className="text-white/80">We&apos;re Ready.</span>
+ We&apos;re Ready.
  </motion.h1>
 
  <motion.p
@@ -358,15 +358,14 @@ function Hero() {
  >
  No call centres. No automated emails. When you contact R-Zone Enterprises,
  you speak directly to our UK-based logistics team same day, every time.
- The highest-rated organically earned cargo company between the UK, Nigeria,
- and across Africa.
+ 120+ five-star Google reviews, all organically earned.
  </motion.p>
 
  {/* Trust row */}
  <motion.div variants={fadeUp} custom={0.3} className="flex flex-wrap gap-4 mb-6">
  {TRUST_BADGES.map(({ icon: Icon, label }) => (
  <div key={label} className="flex items-center gap-2">
- <Icon size={12} className="text-[#1F51FF]" aria-hidden="true" />
+ <Icon size={12} className="text-[#4D4DFF]" aria-hidden="true" />
  <span className="text-white/80 text-[13px] font-normal">{label}</span>
  </div>
  ))}
@@ -382,7 +381,7 @@ function Hero() {
  href={s.href}
  target="_blank"
  rel="noopener noreferrer"
- className="flex items-center gap-2 border border-white/[0.1] bg-white/[0.04] hover:border-white/[0.22] hover:bg-white/[0.08] px-3.5 py-2 transition-all duration-200"
+ className="flex items-center gap-2 border border-white/[0.1] bg-white/[0.04] hover:border-white/[0.22] hover:bg-white/[0.08] px-3.5 py-2 transition-all duration-200 rounded-full"
  aria-label={`Follow R-Zone on ${s.label}`}
  >
  <Icon size={12} style={{ color: s.accent }} />
@@ -427,7 +426,7 @@ function Hero() {
  >
  <Icon size={15} style={{ color: ch.accent }} />
  </div>
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-white/80 mb-1">{ch.label}</p>
+ <p className="text-white/80 mb-1 text-[13px] font-semibold">{ch.label}</p>
  <p className="text-white font-semibold text-[13px] leading-tight mb-1 break-all">{ch.value}</p>
  <p className="text-white/80 text-[13px] font-normal leading-snug mb-3">{ch.sub}</p>
  <div
@@ -444,7 +443,7 @@ function Hero() {
  </div>
  </div>
 
- <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#00061a] to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#00112E] to-transparent pointer-events-none" aria-hidden="true" />
  </section>
  );
 }
@@ -509,7 +508,7 @@ function ContactForm() {
  const fieldClass = (field) =>
  `w-full bg-white/[0.05] border text-white text-[13px] font-normal placeholder-white/60
  px-4 py-3 outline-none transition-all duration-200
- focus:bg-white/[0.08] focus:border-[#1F51FF]/60
+ focus:bg-white/[0.08] focus:border-[#0000FF]/60
  ${errors[field] && touched[field]
  ? "border-red-400/60 bg-red-400/5"
  : "border-white/[0.1] hover:border-white/[0.2]"
@@ -520,7 +519,7 @@ function ContactForm() {
  return (
  <section
  ref={ref}
- className="relative bg-[#00061a] overflow-hidden"
+ className="relative bg-[#00112E] overflow-hidden"
  aria-labelledby="contact-form-heading"
  id="contact-form"
  >
@@ -529,8 +528,8 @@ function ContactForm() {
  aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/50 to-transparent pointer-events-none" aria-hidden="true" />
- <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/50 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] bg-[#000f89]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
@@ -558,15 +557,15 @@ function ContactForm() {
  </motion.p>
 
  {/* What happens next */}
- <motion.div variants={fadeUp} custom={0.2} className="border border-white/[0.08] bg-white/[0.03] p-6 mb-6">
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] -mx-6 -mt-6 mb-6" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-5">
+ <motion.div variants={fadeUp} custom={0.2} className="border border-white/[0.08] bg-white/[0.03] p-6 mb-6 rounded-[20px]">
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF] -mx-6 -mt-6 mb-6" aria-hidden="true" />
+ <p className="text-white/80 mb-5 text-[13px] font-semibold">
  What Happens Next
  </p>
  {[
  { n: "01", t: "You submit the form", d: "Takes less than 2 minutes" },
  { n: "02", t: "We review your enquiry", d: "By our UK logistics team" },
- { n: "03", t: "We respond same day", d: "Mon Fri business hours" },
+ { n: "03", t: "We respond same day", d: "Mon to Fri business hours" },
  { n: "04", t: "We get your cargo moving", d: "From booking to delivery" },
  ].map((s, si) => (
  <div key={s.n} className="flex items-start gap-3 pb-4 last:pb-0 relative">
@@ -574,7 +573,7 @@ function ContactForm() {
  <div className="absolute left-[11px] top-[26px] w-px h-[calc(100%-12px)] bg-white/[0.08]" aria-hidden="true" />
  )}
  <div
- className="w-6 h-6 rounded-full bg-[#0818A8]/30 border border-[#0818A8]/40 flex items-center justify-center flex-shrink-0 text-[13px] font-black text-[#1F51FF]"
+ className="w-6 h-6 rounded-full bg-[#000f89]/30 border border-[#000f89]/40 flex items-center justify-center flex-shrink-0 text-[13px] font-black text-[#4D4DFF]"
  aria-label={`Step ${s.n}`}
  >
  {s.n}
@@ -589,12 +588,12 @@ function ContactForm() {
 
  {/* Direct contact */}
  <motion.div variants={fadeUp} custom={0.3} className="space-y-3">
- <p className="text-[13px] font-bold tracking-[0.28em] uppercase text-white/80 mb-3">
+ <p className="text-white/80 mb-3 text-[13px] font-semibold">
  Or Contact Directly
  </p>
  <a href="tel:+448007720864" className="flex items-center gap-3 group" aria-label="Call UK: +44 800 772 0864">
- <div className="w-8 h-8 bg-[#0818A8]/20 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/40 transition-colors" aria-hidden="true">
- <Phone size={13} className="text-[#1F51FF]" />
+ <div className="w-8 h-8 bg-[#000f89]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#000f89]/40 transition-colors rounded-full" aria-hidden="true">
+ <Phone size={13} className="text-[#4D4DFF]" />
  </div>
  <div>
  <p className="text-white/80 text-[13px] font-normal">UK Phone</p>
@@ -602,8 +601,8 @@ function ContactForm() {
  </div>
  </a>
  <a href="tel:+2349066806861" className="flex items-center gap-3 group" aria-label="Call Nigeria: +234 906 680 6861">
- <div className="w-8 h-8 bg-[#0818A8]/20 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/40 transition-colors" aria-hidden="true">
- <Phone size={13} className="text-[#1F51FF]" />
+ <div className="w-8 h-8 bg-[#000f89]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#000f89]/40 transition-colors rounded-full" aria-hidden="true">
+ <Phone size={13} className="text-[#4D4DFF]" />
  </div>
  <div>
  <p className="text-white/80 text-[13px] font-normal">Nigeria Phone</p>
@@ -611,8 +610,8 @@ function ContactForm() {
  </div>
  </a>
  <a href="mailto:info@r-zoneenterprises.com" className="flex items-center gap-3 group" aria-label="Email: info@r-zoneenterprises.com">
- <div className="w-8 h-8 bg-[#0818A8]/20 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#0818A8]/40 transition-colors" aria-hidden="true">
- <Mail size={13} className="text-[#1F51FF]" />
+ <div className="w-8 h-8 bg-[#000f89]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#000f89]/40 transition-colors rounded-full" aria-hidden="true">
+ <Mail size={13} className="text-[#4D4DFF]" />
  </div>
  <div>
  <p className="text-white/80 text-[13px] font-normal">Email</p>
@@ -645,18 +644,18 @@ function ContactForm() {
  key="success"
  initial={{ opacity: 0, scale: 0.95 }}
  animate={{ opacity: 1, scale: 1 }}
- className="border border-[#1F51FF]/30 bg-[#0818A8]/12 p-12 text-center"
+ className="border border-[#0000FF]/30 bg-[#000f89]/12 p-12 text-center"
  >
  <motion.div
  initial={{ scale: 0 }}
  animate={{ scale: 1 }}
  transition={{ type: "spring", stiffness: 280, damping: 22 }}
- className="w-16 h-16 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-6"
+ className="w-16 h-16 bg-[#000f89] rounded-full flex items-center justify-center mx-auto mb-6"
  aria-hidden="true"
  >
  <CheckCircle size={28} className="text-white" />
  </motion.div>
- <h3 className="text-white font-black text-[26px] tracking-[-0.015em] mb-3">Message Sent!</h3>
+ <h3 className="text-white font-extrabold text-[26px] tracking-[-0.03em] mb-3">Message Sent!</h3>
  <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-sm mx-auto mb-8">
  Thank you for reaching out. A member of our UK team will respond to your
  enquiry within the same business day.
@@ -664,14 +663,14 @@ function ContactForm() {
  <div className="flex flex-wrap justify-center gap-3">
  <Link
  href="/services"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 rounded-sm transition-all duration-200"
+ className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="View R-Zone services"
  >
  View Services
  </Link>
  <Link
  href="/track"
- className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 rounded-sm transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-white/25 hover:border-white/50 text-white text-[13px] font-bold px-6 py-3 transition-all duration-200 rounded-full"
  aria-label="Track a shipment"
  >
  Track Shipment
@@ -681,9 +680,9 @@ function ContactForm() {
  ) : (
  <motion.div
  key="form"
- className="border border-white/[0.09] bg-white/[0.03] p-7 md:p-9 relative overflow-hidden"
+ className="border border-white/[0.09] bg-white/[0.03] p-7 md:p-9 relative overflow-hidden rounded-[20px]"
  >
- <div className="h-[2px] bg-gradient-to-r from-[#0818A8] to-[#1F51FF] absolute top-0 left-0 right-0" aria-hidden="true" />
+ <div className="h-[2px] bg-gradient-to-r from-[#000f89] to-[#0000FF] absolute top-0 left-0 right-0" aria-hidden="true" />
 
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
 
@@ -754,7 +753,7 @@ function ContactForm() {
  placeholder="+44 or +234..."
  value={form.phone}
  onChange={e => handleChange("phone", e.target.value)}
- className={`${fieldClass("phone")} pl-9 border-white/[0.08]`}
+ className={`${fieldClass("phone")} pl-9 border-white/[0.08] rounded-xl`}
  />
  </div>
  </div>
@@ -804,7 +803,7 @@ function ContactForm() {
  placeholder="Brief subject line…"
  value={form.subject}
  onChange={e => handleChange("subject", e.target.value)}
- className={`${fieldClass("subject")} border-white/[0.08]`}
+ className={`${fieldClass("subject")} border-white/[0.08] rounded-xl`}
  />
  </div>
 
@@ -849,7 +848,7 @@ function ContactForm() {
  <button
  onClick={handleSubmit}
  disabled={status === "loading"}
- className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-black tracking-[0.1em] uppercase px-10 py-4 rounded-sm transition-all duration-200 shadow-xl shadow-[#0818A8]/30"
+ className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] disabled:opacity-60 disabled:cursor-not-allowed text-white text-[13px] font-bold px-10 py-4 transition-all duration-200 shadow-xl shadow-[#000f89]/30 rounded-full"
  aria-label="Submit contact form"
  aria-busy={status === "loading"}
  >
@@ -899,7 +898,7 @@ function Offices() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.035) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.035) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
@@ -924,7 +923,7 @@ function Offices() {
  {OFFICES.map((office, i) => (
  <motion.div
  key={office.country}
- className="group relative border border-gray-200 bg-gray-50 overflow-hidden hover:shadow-xl hover:shadow-[#0818A8]/8 transition-all duration-400"
+ className="group relative border border-gray-200 bg-gray-50 overflow-hidden hover:shadow-xl hover:shadow-[#000f89]/8 transition-all duration-400 rounded-[20px]"
  initial={{ opacity: 0, y: 24 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: i * 0.15 }}
@@ -942,10 +941,10 @@ function Offices() {
  <div className="flex items-start justify-between mb-7">
  <div>
  <span className="text-[40px] leading-none block mb-2" aria-hidden="true">{office.flag}</span>
- <h3 className="text-[#0b0f1a] font-black text-[22px] tracking-[-0.015em]" itemProp="addressCountry">
+ <h3 className="text-[#00112E] font-extrabold text-[22px] tracking-[-0.03em]" itemProp="addressCountry">
  {office.country}
  </h3>
- <p className="text-[13px] font-bold tracking-[0.2em] uppercase mt-0.5" style={{ color: office.accent }}>
+ <p className="mt-0.5 text-[13px] font-semibold" style={{ color: office.accent }}>
  {office.role}
  </p>
  </div>
@@ -968,7 +967,7 @@ function Offices() {
  <Phone size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
  <a
  href={office.phoneHref}
- className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+ className="text-gray-800 text-[13px] font-medium hover:text-[#000f89] transition-colors"
  itemProp="telephone"
  aria-label={`Call ${office.country} office: ${office.phone}`}
  >
@@ -979,7 +978,7 @@ function Offices() {
  <Mail size={13} className="flex-shrink-0 text-gray-800" aria-hidden="true" />
  <a
  href={`mailto:${office.email}`}
- className="text-gray-800 text-[13px] font-medium hover:text-[#0818A8] transition-colors"
+ className="text-gray-800 text-[13px] font-medium hover:text-[#000f89] transition-colors"
  itemProp="email"
  aria-label={`Email ${office.country} office: ${office.email}`}
  >
@@ -992,7 +991,7 @@ function Offices() {
  <div className="border-t border-gray-100 pt-5">
  <div className="flex items-center gap-2 mb-3">
  <Clock size={11} className="text-gray-800" aria-hidden="true" />
- <p className="text-[13px] font-bold tracking-[0.22em] uppercase text-gray-800">Opening Hours</p>
+ <p className="text-gray-800 text-[13px] font-semibold">Opening Hours</p>
  </div>
  <dl className="space-y-1.5">
  {office.hours.map(({ day, time }) => (
@@ -1015,23 +1014,23 @@ function Offices() {
 
  {/* Map placeholder */}
  <motion.div
- className="relative border border-gray-200 overflow-hidden bg-gray-50"
+ className="relative border border-gray-200 overflow-hidden bg-gray-50 rounded-[20px]"
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.65, delay: 0.4 }}
  >
  <div
  className="aspect-[21/6] md:aspect-[21/5] flex items-center justify-center relative"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.06) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.06) 1px, transparent 1px)", backgroundSize: "28px 28px" }}
  >
  <div className="text-center z-10 relative">
  <div
- className="w-14 h-14 bg-[#0818A8] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#0818A8]/30"
+ className="w-14 h-14 bg-[#000f89] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#000f89]/30"
  aria-hidden="true"
  >
  <MapPin size={22} className="text-white" />
  </div>
- <p className="text-[#0b0f1a] font-bold text-[14px] mb-1">
+ <p className="text-[#00112E] font-bold text-[14px] mb-1">
  Unit 9 Moorhen Yard, Elms Lane, Bulphan
  </p>
  <p className="text-gray-800 text-[13px] font-normal mb-5">
@@ -1041,7 +1040,7 @@ function Offices() {
  href="https://maps.google.com/?q=Unit+10+Moorhen+Yard+Elms+Lane+Upminster+Essex+RM14+3TS"
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-2 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-2.5 rounded-sm transition-colors duration-200"
+ className="inline-flex items-center gap-2 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-2.5 transition-colors duration-200 rounded-full"
  aria-label="Get directions to R-Zone Upminster warehouse (opens Google Maps)"
  >
  <MapPin size={11} aria-hidden="true" />
@@ -1066,7 +1065,7 @@ function FAQ() {
  return (
  <section
  ref={ref}
- className="relative bg-[#00061a] overflow-hidden"
+ className="relative bg-[#00112E] overflow-hidden"
  aria-labelledby="faq-heading"
  id="faq"
  >
@@ -1075,8 +1074,8 @@ function FAQ() {
  aria-hidden="true"
  style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "64px 64px" }}
  />
- <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0818A8]/40 to-transparent pointer-events-none" aria-hidden="true" />
- <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#0818A8]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
+ <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#000f89]/40 to-transparent pointer-events-none" aria-hidden="true" />
+ <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#000f89]/8 rounded-full blur-[130px] pointer-events-none" aria-hidden="true" />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-28">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
@@ -1100,7 +1099,7 @@ function FAQ() {
  className="text-white/80 text-[13.5px] font-normal leading-relaxed mt-5 mb-8"
  >
  Can&apos;t find your answer? Call us on{" "}
- <a href="tel:+448007720864" className="text-[#1F51FF] hover:text-white transition-colors font-medium">
+ <a href="tel:+448007720864" className="text-[#4D4DFF] hover:text-white transition-colors font-medium">
  +44 800 772 0864
  </a>{" "}
  or use the contact form above.
@@ -1109,7 +1108,7 @@ function FAQ() {
  <motion.div variants={fadeUp} custom={0.25}>
  <a
  href="#contact-form"
- className="inline-flex items-center gap-2 border border-white/25 hover:border-[#0818A8] hover:bg-[#0818A8]/20 text-white text-[13px] font-bold tracking-[0.07em] uppercase px-5 py-2.5 rounded-sm transition-all duration-200"
+ className="inline-flex items-center gap-2 border border-white/25 hover:border-[#000f89] hover:bg-[#000f89]/20 text-white text-[13px] font-bold px-5 py-2.5 transition-all duration-200 rounded-full"
  aria-label="Scroll to contact form"
  >
  <MessageSquare size={12} aria-hidden="true" />
@@ -1149,7 +1148,7 @@ function FAQ() {
  aria-hidden="true"
  >
  <ChevronDown size={15} className={`transition-colors duration-200 ${
- open === i ? "text-[#1F51FF]" : "text-white/80 group-hover:text-white"
+ open === i ? "text-[#4D4DFF]" : "text-white/80 group-hover:text-white"
  }`} />
  </motion.div>
  </button>
@@ -1190,7 +1189,7 @@ function SocialProofBar() {
  return (
  <div
  ref={ref}
- className="bg-[#0818A8] relative overflow-hidden"
+ className="bg-[#000f89] relative overflow-hidden"
  role="region"
  aria-label="Customer trust statistics"
  >
@@ -1201,12 +1200,12 @@ function SocialProofBar() {
  />
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-8 md:py-10">
  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-0 justify-between">
- <p className="text-white/80 text-[13px] font-bold tracking-[0.3em] uppercase flex-shrink-0">
+ <p className="text-white/80 flex-shrink-0 text-[13px] font-semibold">
  Why Customers Choose Us
  </p>
  <div className="flex flex-wrap gap-x-10 gap-y-4">
  {[
- { val: "100+", label: "5-Star Reviews", icon: Star },
+ { val: "120+", label: "5-Star Reviews", icon: Star },
  { val: "99%", label: "Delivery Rate", icon: CheckCircle },
  { val: "12+", label: "Years in Business", icon: Clock },
  { val: "50,000+", label: "Shipments Delivered", icon: Package },
@@ -1246,7 +1245,7 @@ function FinalCTA() {
  <div
  className="absolute inset-0 pointer-events-none opacity-40"
  aria-hidden="true"
- style={{ backgroundImage: "radial-gradient(circle, rgba(8,24,168,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
+ style={{ backgroundImage: "radial-gradient(circle, rgba(0,15,137,0.04) 1px, transparent 1px)", backgroundSize: "44px 44px" }}
  />
 
  <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 py-20 md:py-24">
@@ -1254,7 +1253,7 @@ function FinalCTA() {
 
  {/* Quote CTA */}
  <motion.div
- className="relative bg-[#0818A8] p-10 overflow-hidden group"
+ className="relative bg-[#000f89] p-10 overflow-hidden group"
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6 }}
@@ -1266,10 +1265,10 @@ function FinalCTA() {
  />
  <div className="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none translate-x-16 translate-y-16" aria-hidden="true" />
  <div className="relative z-10">
- <div className="w-11 h-11 bg-white/15 rounded-sm flex items-center justify-center mb-6" aria-hidden="true">
+ <div className="w-11 h-11 bg-white/15 flex items-center justify-center mb-6 rounded-full" aria-hidden="true">
  <BarChart3 size={18} className="text-white" />
  </div>
- <h3 className="text-white font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
+ <h3 className="text-white font-extrabold text-[22px] leading-tight tracking-[-0.03em] mb-3">
  Get a Free Quote
  </h3>
  <p className="text-white/80 text-[13px] font-normal leading-relaxed mb-8">
@@ -1278,7 +1277,7 @@ function FinalCTA() {
  </p>
  <Link
  href="/quote"
- className="inline-flex items-center gap-2.5 bg-white text-[#0818A8] text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 hover:bg-white/90 transition-colors duration-200"
+ className="inline-flex items-center gap-2.5 bg-white text-[#000f89] text-[13px] font-bold px-6 py-3 hover:bg-white/90 transition-colors duration-200 rounded-full"
  aria-label="Get a free shipping quote"
  >
  Get Quote
@@ -1289,25 +1288,25 @@ function FinalCTA() {
 
  {/* Call CTA */}
  <motion.div
- className="relative border-2 border-[#0818A8]/15 bg-gray-50 p-10 overflow-hidden hover:border-[#0818A8]/40 transition-colors duration-300"
+ className="relative border-2 border-[#000f89]/15 bg-gray-50 p-10 overflow-hidden hover:border-[#000f89]/40 transition-colors duration-300 rounded-[20px]"
  initial={{ opacity: 0, y: 20 }}
  animate={inView ? { opacity: 1, y: 0 } : {}}
  transition={{ duration: 0.6, delay: 0.12 }}
  >
- <div className="w-11 h-11 bg-[#0818A8]/10 rounded-sm flex items-center justify-center mb-6" aria-hidden="true">
- <Phone size={18} className="text-[#0818A8]" />
+ <div className="w-11 h-11 bg-[#000f89]/10 flex items-center justify-center mb-6 rounded-full" aria-hidden="true">
+ <Phone size={18} className="text-[#000f89]" />
  </div>
- <h3 className="text-[#0b0f1a] font-black text-[22px] leading-tight tracking-[-0.01em] mb-3">
+ <h3 className="text-[#00112E] font-extrabold text-[22px] leading-tight tracking-[-0.03em] mb-3">
  Prefer to Call?
  </h3>
  <p className="text-gray-800 text-[13px] font-normal leading-relaxed mb-8">
- Our UK team is available Monday Friday 10AM 6PM and Saturday 11AM 2PM.
- Free to call. Our Nigeria team is also available Mon Fri 9AM 5PM WAT.
+ Our UK team is available Monday to Friday 10AM to 6PM and Saturday 11AM to 2PM.
+ Free to call. Our Nigeria team is also available Mon to Fri 9AM to 5PM WAT.
  </p>
  <div className="flex flex-wrap gap-3">
  <a
  href="tel:+448007720864"
- className="inline-flex items-center gap-2.5 bg-[#0818A8] hover:bg-[#0437F2] text-white text-[13px] font-black tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+ className="inline-flex items-center gap-2.5 bg-[#0000CD] hover:bg-[#000f89] text-white text-[13px] font-bold px-6 py-3 transition-colors duration-200 rounded-full"
  aria-label="Call R-Zone UK: +44 800 772 0864"
  >
  <Phone size={11} aria-hidden="true" />
@@ -1315,7 +1314,7 @@ function FinalCTA() {
  </a>
  <a
  href="tel:+2349066806861"
- className="inline-flex items-center gap-2.5 border border-[#0818A8]/25 hover:bg-[#0818A8]/5 text-[#0818A8] text-[13px] font-bold tracking-[0.08em] uppercase px-6 py-3 transition-colors duration-200"
+ className="inline-flex items-center gap-2.5 border border-[#000f89]/25 hover:bg-[#000f89]/5 text-[#000f89] text-[13px] font-bold px-6 py-3 transition-colors duration-200 rounded-full"
  aria-label="Call R-Zone Nigeria: +234 906 680 6861"
  >
  NG: +234 906 680 6861
@@ -1342,7 +1341,7 @@ export default function ContactPageClient() {
  "@type": "ContactPage",
  "name": "Contact R-Zone Enterprises",
  "url": "https://r-zoneenterprises.com/contact",
- "description": "Contact R-Zone Enterprises the highest-rated organically earned cargo company between the UK, Nigeria, and across Africa.",
+ "description": "Contact R-Zone Enterprises a UK to Nigeria cargo company with 120+ five-star Google reviews.",
  "mainEntity": {
  "@type": ["Organization", "LocalBusiness"],
  "name": "R-Zone Enterprises",
