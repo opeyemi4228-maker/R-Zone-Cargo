@@ -42,17 +42,8 @@ const schemas = [
  acceptedAnswer: { "@type": "Answer", text: f.answer },
  })),
  },
- // Event schema Christmas 2026 seasonal relevance signal for Google
- {
- "@context": "https://schema.org",
- "@type": "Event",
- name: "R-Zone Christmas Nigeria Cargo 2026 Sea Freight Booking Deadline",
- startDate: "2026-11-07",
- endDate: "2026-12-12",
- description: "R-Zone Cargo UK-to-Nigeria Christmas shipping season 2026. Sea freight deadline: 7 November. Air freight deadline: 11 December.",
- location: { "@type": "Place", name: "R-Zone Cargo Upminster Warehouse", address: { "@type": "PostalAddress", addressLocality: "Upminster", addressRegion: "Essex", addressCountry: "GB" } },
- organizer: ORGANIZATION_SCHEMA,
- },
+ // No Event schema: a shipping deadline is not an event, and Google's event
+ // policy treats marking up non-events (sales periods, deadlines) as spam.
  { "@context": "https://schema.org", ...ORGANIZATION_SCHEMA },
 ];
 
