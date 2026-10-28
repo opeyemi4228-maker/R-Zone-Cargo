@@ -18,6 +18,7 @@
 import {
  getAllArticles,
  getFeaturedArticle,
+ toCard,
  ARTICLES,
  CATEGORIES,
  SITE_URL,
@@ -144,15 +145,10 @@ function buildBlogPageSchemas(articles) {
  width: 1200,
  height: 630,
  },
- author: {
- "@type": "Organization",
- name: a.author,
- url: `${SITE_URL}/about`,
- },
- publisher: ORGANIZATION_SCHEMA,
- keywords: a.keywords
- ? a.keywords.join(", ")
- : a.tags.join(", "),
+ // Reference the Organization node (emitted once below) by @id instead
+ // of repeating it 50+ times, which made this one block ~80KB.
+ author: { "@id": ORGANIZATION_SCHEMA["@id"] },
+ publisher: { "@id": ORGANIZATION_SCHEMA["@id"] },
  })),
  },
 
@@ -226,7 +222,7 @@ export default function BlogPage() {
  {/* ── Interactive Blog UI (Client Component) ───────────────────────────── */}
  {/* BlogList handles all filtering, search, animations and navigation. */}
  {/* It receives pre-fetched data as props no client-side data fetching. */}
- <BlogList articles={articles} featured={featured} categories={CATEGORIES} />
+ <BlogList articles={articles.map(toCard)} featured={toCard(featured)} categories={CATEGORIES} />
  </>
  );
 }

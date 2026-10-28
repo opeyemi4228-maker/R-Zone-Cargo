@@ -180,7 +180,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 mb-3 text-[13px] font-semibold">Join 120+ happy customers</p>
           <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">Ship with the team that has done this since 2012</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. All-inclusive pricing, weekly departures, our own clearing team in Lagos, and 120+ five star reviews behind us.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.80/kg, door to door from £6/kg. All-inclusive pricing, weekly departures, our own clearing team in Lagos, and 120+ five star reviews behind us.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/r-zone-cargo-reviews-uk-nigeria-shipping" className="hover:text-white transition-colors">Customer Reviews</Link>

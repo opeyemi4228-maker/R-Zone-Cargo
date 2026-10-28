@@ -57,7 +57,7 @@ const SERVICE_OPTIONS = [
  label: "Air Freight",
  icon: Plane,
  tagline: "5 to 10 working days · UK to Nigeria",
- rate: "from £5.50/kg",
+ rate: "from £5.80/kg",
  accent: "#000f89",
  popular: false,
  seoDesc: "Fast air cargo from the UK to Nigeria. Ideal for time-sensitive shipments documents, electronics, and commercial merchandise delivered in 5 to 10 working days.",
@@ -87,7 +87,7 @@ const SERVICE_OPTIONS = [
  label: "Import from Nigeria",
  icon: Package,
  tagline: "Nigeria → UK · All 36 states",
- rate: "from £5.50/kg",
+ rate: "from £5.80/kg",
  accent: "#000f89",
  popular: false,
  seoDesc: "Reliable cargo import service from Nigeria to the UK. We collect from all 36 Nigerian states and deliver to any UK address.",
@@ -165,7 +165,7 @@ const FAQ_ITEMS = [
  },
  {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
- a: "Air freight starts from £5.50 per kg and sea freight from £3 per kg. The final price depends on your cargo weight (actual or volumetric, whichever is greater), collection location, and delivery state. Use our free quote form above for a same-day personalised price.",
+ a: "Air freight starts from £5.80 per kg and sea freight from £3 per kg. The final price depends on your cargo weight (actual or volumetric, whichever is greater), collection location, and delivery state. Use our free quote form above for a same-day personalised price.",
  },
  {
  q: "Do you ship to all Nigerian states including Abuja and Lagos?",
@@ -1532,7 +1532,7 @@ export default function QuotePageClient() {
  "@type": "WebPage",
  "name": "Free UK Nigeria Shipping Quote R-Zone Enterprises",
  "url": "https://r-zoneenterprises.com/quote",
- "description": "Get a free UK-to-Nigeria cargo shipping quote from a cargo company with 120+ five-star Google reviews. Air freight from £5.50/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
+ "description": "Get a free UK-to-Nigeria cargo shipping quote from a cargo company with 120+ five-star Google reviews. Air freight from £5.80/kg, sea freight from £3/kg. Same-day response from our UK-based team.",
  "isPartOf": { "@type": "WebSite", "url": "https://r-zoneenterprises.com", "name": "R-Zone Enterprises" },
  "breadcrumb": { "@type": "BreadcrumbList" },
  },
@@ -1541,7 +1541,7 @@ export default function QuotePageClient() {
  "@type": "LocalBusiness",
  "@id": "https://r-zoneenterprises.com/#business",
  "name": "R-Zone Enterprises",
- "description": "UK to Nigeria cargo company with 120+ five-star Google reviews. organically earned. Air freight from £5.50/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
+ "description": "UK to Nigeria cargo company with 120+ five-star Google reviews. organically earned. Air freight from £5.80/kg, sea freight from £3/kg. Delivering to all 36 Nigerian states for 12+ years.",
  "url": "https://r-zoneenterprises.com",
  "telephone": "+448007720864",
  "email": "info@r-zoneenterprises.com",
@@ -1563,7 +1563,7 @@ export default function QuotePageClient() {
  "@type": "Offer",
  "price": "5.00",
  "priceCurrency": "GBP",
- "description": "from £5.50 per kg",
+ "description": "from £5.80 per kg",
  },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Air Freight",
@@ -1677,7 +1677,7 @@ export default function QuotePageClient() {
  transition={{ duration: 0.5, delay: 0.35 }}
  >
  {[
- { icon: Plane, label: "Air Freight", rate: "from £5.50/kg", sub: "5 to 10 working days" },
+ { icon: Plane, label: "Air Freight", rate: "from £5.80/kg", sub: "5 to 10 working days" },
  { icon: Ship, label: "Sea Freight", rate: "from £3/kg", sub: "4 to 6 weeks · Weekly sailings" },
  { icon: Zap, label: "Quote Response", rate: "Same Day", sub: "Mon to Fri, real humans" },
  ].map(({ icon: Icon, label, rate, sub }) => (

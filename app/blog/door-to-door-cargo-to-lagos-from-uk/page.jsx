@@ -35,7 +35,7 @@ export const metadata = {
 };
 
 const FAQS = [
-  { q: "How much is door to door cargo to Lagos from the UK?", a: "Door to door cargo to Lagos starts from £6/kg with R-Zone, including UK collection, transit, Nigeria customs clearance and doorstep delivery in Lagos. A 20kg box is roughly £120 to £180 by air or £80 to £120 by sea, all inclusive with no hidden fees." },
+  { q: "How much is door to door cargo to Lagos from the UK?", a: "Door to door cargo to Lagos starts from £6/kg with R-Zone, including UK collection, transit, Nigeria customs clearance and doorstep delivery in Lagos. A 20kg box to a Lagos door is about £140 by air, including the £20 handling fee, with customs clearance included." },
   { q: "How long does cargo take to reach Lagos from the UK?", a: "Door to door air freight to Lagos takes 5 to 10 working days and sea freight takes 4 to 6 weeks, including UK collection, transit, Nigeria customs clearance and final delivery. R-Zone runs weekly air and sea departures to Lagos." },
   { q: "Do you collect cargo from my UK address for Lagos delivery?", a: "Yes. With door to door we collect from any UK address, home or business, nationwide, and deliver to the recipient's door anywhere in Lagos. There is no need to visit a depot at either end." },
   { q: "Which areas of Lagos do you deliver to?", a: "R-Zone delivers door to door across Lagos, including the mainland and island, Ikeja, Lekki, Victoria Island, Surulere, Ikorodu and beyond. Standard Lagos delivery is included in the quote." },
@@ -116,7 +116,7 @@ export default function Page() {
           <table className="w-full text-left border-collapse min-w-[560px]">
             <thead><tr className="bg-[#000f89] text-white text-[12px] uppercase tracking-[0.06em]"><th className="p-4 font-bold">Service</th><th className="p-4 font-bold">Transit time</th><th className="p-4 font-bold">20kg example</th></tr></thead>
             <tbody className="text-[15px] text-gray-800">
-              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#000f89]" aria-hidden="true" />Door to door by air</span></td><td className="p-4">5 to 10 working days</td><td className="p-4 font-black text-[#000f89]">£120 to £180</td></tr>
+              <tr><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Plane size={17} className="text-[#000f89]" aria-hidden="true" />Door to door by air</span></td><td className="p-4">5 to 10 working days</td><td className="p-4 font-black text-[#000f89]">£140 to £165</td></tr>
               <tr className="bg-gray-50"><td className="p-4 font-bold"><span className="inline-flex items-center gap-2.5"><Ship size={17} className="text-[#000f89]" aria-hidden="true" />Door to door by sea</span></td><td className="p-4">4 to 6 weeks</td><td className="p-4 font-black text-[#000f89]">£80 to £120</td></tr>
             </tbody>
           </table>

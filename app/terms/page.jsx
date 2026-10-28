@@ -33,7 +33,7 @@ const TOC = [
 ];
 
 const SERVICES_LIST = [
- { icon: "✈", title: "Air Freight", desc: "Weekly air cargo from LHR, LGW, MAN to Lagos (LOS) and Abuja (ABV). Transit typically 5 to 10 working days." },
+ { icon: "✈", title: "Air Freight", desc: "Weekly air cargo every Friday from LHR to Lagos (LOS). Transit typically 5 to 10 working days." },
  { icon: "🚢", title: "Sea Freight", desc: "Weekly consolidated sea freight from UK ports to Apapa and Tin Can Island, Lagos. Transit 4 to 6 weeks." },
  { icon: "🚚", title: "Door-to-Door Cargo", desc: "Collection from your UK address with delivery to any Nigerian address, via air or sea." },
  { icon: "📦", title: "Import from Nigeria", desc: "Air and sea import services bringing goods from Nigeria to the United Kingdom." },
@@ -62,7 +62,7 @@ const RESTRICTED = [
 ];
 
 const TRANSIT_TABLE = [
- { service: "Air Freight", typical: "5 to 10 working days", note: "LHR/LGW/MAN to LOS/ABV excludes customs" },
+ { service: "Air Freight", typical: "5 to 10 working days", note: "LHR to LOS, excludes customs" },
  { service: "Sea Freight", typical: "4 to 6 weeks", note: "UK ports to Apapa/Tin Can Island, Lagos" },
  { service: "Door-to-Door (Air)", typical: "7 to 14 working days", note: "Includes UK collection and Nigeria delivery" },
  { service: "Door-to-Door (Sea)", typical: "5 to 8 weeks", note: "Includes UK collection and Nigeria delivery" },

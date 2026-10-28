@@ -27,7 +27,7 @@ const SERVICES = [
  title: "Air Freight to Nigeria",
  tagline: "Fast, reliable UK Nigeria air cargo. 5 to 10 working days.",
  description:
- "Our air freight service is the fastest way to send cargo from the United Kingdom to Nigeria. Whether you're shipping personal effects, commercial merchandise, or time-sensitive goods, R-Zone Enterprises connects you to all 36 Nigerian states via a network of trusted airline partners weekly departures from London Heathrow, Gatwick and Manchester.",
+ "Our air freight service is the fastest way to send cargo from the United Kingdom to Nigeria. Whether you're shipping personal effects, commercial merchandise, or time-sensitive goods, R-Zone Enterprises connects you to all 36 Nigerian states via a network of trusted airline partners a departure every Friday from London Heathrow.",
  highlights: [
  "5 to 10 working days transit",
  "All 36 Nigerian states covered",
@@ -49,7 +49,7 @@ const SERVICES = [
  imgAlt: "Cargo aircraft being loaded at UK airport for Nigeria air freight service",
  faq: [
  { q: "How long does air freight to Nigeria take?", a: "Typically 5 to 10 working days from the UK to Lagos, Abuja, Port Harcourt and all major Nigerian cities. Weekly departures guarantee no long waits." },
- { q: "How much does air freight to Nigeria cost per kg?", a: <>Air freight from the UK to Nigeria starts from £5.50 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#000f89] hover:underline">Price List</Link></> },
+ { q: "How much does air freight to Nigeria cost per kg?", a: <>Air freight from the UK to Nigeria starts from £5.80 per kg. <Link href="/schedulesprices#pricing" className="font-bold text-[#000f89] hover:underline">Price List</Link></> },
  { q: "What items can I send by air to Nigeria?", a: "We accept clothing, electronics, foodstuffs, documents, personal effects and most general cargo. Contact us for a full list of accepted and prohibited items." },
  ],
  },
@@ -586,7 +586,7 @@ function FinalCTA() {
  Ready to Ship from the UK to{" "}<span className="text-[#4D4DFF]">Nigeria?</span>
  </h2>
  <p className="text-white/80 text-[14px] font-normal leading-relaxed max-w-xl mx-auto mb-10">
- Air freight from £5.50/kg · Sea freight from £3/kg · Weekly departures.
+ Air freight from £5.80/kg · Sea freight from £3/kg · Weekly departures.
  Free quote in under 2 minutes our UK team responds the same day.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-4 mb-10">

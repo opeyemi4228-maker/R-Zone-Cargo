@@ -34,15 +34,15 @@ export const metadata = {
 
 const GROUPS = [
   { id: "pricing", icon: PoundSterling, eyebrow: "Money", title: "Prices and Payment", items: [
-    { q: "How much does it cost to send cargo from the UK to Nigeria?", a: "Sea freight starts from £3/kg, air freight from £5.50/kg and door to door from £6/kg, all inclusive of documentation, transit, Nigeria customs clearance and delivery. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air." },
-    { q: "What is the cheapest way to send cargo to Nigeria?", a: "Sea freight from £3/kg, especially for large or heavy loads. The saving over air grows with weight: a 100kg shipment is about £300 to £450 by sea versus £500 to £700 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air." },
+    { q: "How much does it cost to send cargo from the UK to Nigeria?", a: "Sea freight starts from £3/kg, air freight from £5.80/kg and door to door from £6/kg, all inclusive of documentation, transit, Nigeria customs clearance and delivery. A 20kg box is roughly £60 to £90 by sea or £136 to £176 by air." },
+    { q: "What is the cheapest way to send cargo to Nigeria?", a: "Sea freight from £3/kg, especially for large or heavy loads. The saving over air grows with weight: a 100kg shipment is about £300 to £450 by sea versus £600 to £800 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air." },
     { q: "Are there any hidden fees?", a: "No. R-Zone quotes are all inclusive of UK documentation, transit, Nigeria customs clearance and delivery, with no fuel surcharges or arrival surprises. Import duty is a separate government charge and we tell you about it upfront." },
     { q: "How is my cargo priced, by weight or size?", a: "You pay for actual weight or volumetric weight, whichever is greater. Air uses length x width x height in cm divided by 6,000; sea uses a divisor of 1,000. This is why packing densely saves real money, particularly on sea freight." },
     { q: "Do I pay before or after shipping?", a: "Payment is arranged when you book, and your quote is confirmed in writing first. Ask us about the current payment options when you request your quote." },
   ]},
   { id: "times", icon: Clock, eyebrow: "Speed", title: "Transit Times", items: [
     { q: "How long does cargo take to reach Nigeria?", a: "Air freight takes 5 to 10 working days and sea freight takes 4 to 6 weeks, each including UK handling, transit to Lagos, Nigeria customs clearance and final delivery." },
-    { q: "What is the fastest way to ship to Nigeria?", a: "Express air freight, arriving in 5 to 10 working days from £5.50/kg. It suits urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
+    { q: "What is the fastest way to ship to Nigeria?", a: "Express air freight, arriving in 5 to 10 working days from £5.80/kg. It suits urgent, high-value or time-sensitive cargo such as electronics, documents and medicine." },
     { q: "How often do you ship?", a: "R-Zone runs weekly air and sea departures, so your cargo joins the next available service rather than waiting for a full load." },
     { q: "What can delay my shipment?", a: "The flight or sailing schedule, port and customs conditions in Lagos, seasonal peaks such as Christmas, and incomplete paperwork. An accurate contents list is the simplest way to avoid customs hold-ups." },
     { q: "When should I ship for Christmas?", a: "Send sea freight by early November and air freight by mid-December. Demand and timelines both tighten as December approaches, so booking early is the safest way to arrive on time." },
@@ -174,7 +174,7 @@ export default function Page() {
         <div className="relative max-w-[1120px] mx-auto px-5 sm:px-8 py-16 md:py-20">
           <p className="text-white/60 mb-3 text-[13px] font-semibold">Still have a question?</p>
           <h2 className="font-extrabold text-[clamp(26px,4.4vw,44px)] text-white tracking-[-0.03em] mb-4 leading-[1.05] max-w-3xl">Ask us anything, we answer the same day</h2>
-          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. Call, WhatsApp or use the quote form and a real person from our team will answer, usually within hours.</p>
+          <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">Sea from £3/kg, air from £5.80/kg, door to door from £6/kg. Call, WhatsApp or use the quote form and a real person from our team will answer, usually within hours.</p>
           <CTAButtons light />
           <nav aria-label="Related pages" className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2 text-[12.5px] font-semibold text-white/70">
             <Link href="/blog/most-trusted-uk-to-nigeria-cargo-company" className="hover:text-white transition-colors">Why R-Zone Is Trusted</Link>

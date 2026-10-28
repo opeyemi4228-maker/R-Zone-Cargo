@@ -58,10 +58,10 @@ const SERVICES = [
  {
  icon: Plane,
  name: "Air freight",
- from: "£5.50",
+ from: "£5.80",
  transit: "5 to 10 working days",
  blurb:
- "The fast route for electronics, documents, fashion and anything urgent. Weekly departures from Heathrow, Gatwick and Manchester.",
+ "The fast route for electronics, documents, fashion and anything urgent. Departs every Friday from Heathrow.",
  href: "/services#air-freight",
  },
  {

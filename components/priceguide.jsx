@@ -19,8 +19,8 @@ const GUIDE_URL = "/priceguide";
 const HIGHLIGHTS = [
  { icon: Calculator, label: "Free calculator", desc: "Get an instant cost estimate by weight and dimensions" },
  { icon: Package, label: "Item price list", desc: "iPhone, PS5, TV, generator, clothes bale and more" },
- { icon: Zap, label: "Air from £5.50/kg", desc: "3× weekly flights, 5 to 10 working days to Lagos" },
- { icon: TrendingUp, label: "Sea from £2.00/kg", desc: "Weekly sailings, the cheapest way to ship bulk cargo" },
+ { icon: Zap, label: "Air from £5.80/kg", desc: "Every Friday from Heathrow, 5 to 10 working days to Lagos" },
+ { icon: TrendingUp, label: "Sea from £3/kg", desc: "Weekly sailings, the cheapest way to ship bulk cargo" },
 ];
 
 const fadeUp = {
@@ -149,7 +149,7 @@ export default function PriceGuidePromo() {
  UK to Nigeria Shipping Price Guide 2026: full cost breakdown
  </h3>
  <p className="mt-3 text-[14.5px] font-normal leading-relaxed text-white/65">
- Air from £5.50/kg · Sea from £2/kg · Item prices, calculator, 36-state delivery rates, hidden charge breakdown.
+ Air from £5.80/kg · Sea from £3/kg · Item prices, calculator, 36-state delivery rates, hidden charge breakdown.
  </p>
 
  <div className="mt-6 grid grid-cols-3 gap-3 rounded-[16px] bg-white/[0.05] p-4">

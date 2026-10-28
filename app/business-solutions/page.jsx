@@ -21,7 +21,7 @@ const PAGE_URL = `${SITE_URL}/business-solutions`;
 const HERO_IMG = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80&auto=format&fit=crop";
 
 const SERVICES = [
-  { icon: Plane, name: "Air freight", fact: "From £5.50/kg · 5 to 10 working days", text: "Weekly flights from Heathrow, Gatwick and Manchester for urgent or high-value stock.", href: "/blog/air-freight-uk-to-nigeria" },
+  { icon: Plane, name: "Air freight", fact: "From £5.80/kg · 5 to 10 working days", text: "Every Friday from Heathrow for urgent or high-value stock.", href: "/blog/air-freight-uk-to-nigeria" },
   { icon: Ship, name: "Sea freight", fact: "From £3/kg · 4 to 6 weeks", text: "Weekly sailings to Lagos. Share a container (LCL) or book your own (FCL).", href: "/blog/sea-freight-uk-to-nigeria" },
   { icon: Truck, name: "Door to door", fact: "From £6/kg · UK collection", text: "We collect anywhere in the UK and deliver to any address in all 36 states.", href: "/blog/door-to-door-shipping-uk-to-nigeria" },
   { icon: Package, name: "Import from Nigeria", fact: "Weekly air · monthly sea", text: "Our Lagos team collects your goods and delivers them to your UK door, customs cleared.", href: "/importation" },

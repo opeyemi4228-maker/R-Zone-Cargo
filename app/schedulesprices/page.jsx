@@ -70,11 +70,11 @@ const AIR_SCHEDULES = [
 ];
 
 const AIR_RATES = [
- { range: "All weights", rate: "£5.50", per: "per kg", note: "Plus £20 handling fee" },
+ { range: "All weights", rate: "£5.80", per: "per kg", note: "Plus £20 handling fee" },
 ];
 
 const SEA_RATES = [
- { range: "All weights", rate: "£2.00", per: "per kg", note: "Bags from £65 depending on size" },
+ { range: "All weights", rate: "£3.00", per: "per kg", note: "Bags from £65 depending on size" },
 ];
 
 const STATE_RATES = [
@@ -101,7 +101,7 @@ const STATE_RATES = [
  { state: "Kebbi", doorToDoor: null, collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Kogi", doorToDoor: "6.80", collection: "6.50", minWeight: "30", minWeightNote: null, days: "15" },
  { state: "Kwara", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "15" },
- { state: "Lagos", doorToDoor: "5.80", collection: "5.50", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 to 7" },
+ { state: "Lagos", doorToDoor: "6.00", collection: "5.80", minWeight: "10", minWeightNote: "10kg Office · 20kg D2D", days: "5 to 7" },
  { state: "Nasarawa", doorToDoor: "7.30", collection: "7.30", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Niger", doorToDoor: "6.80", collection: "6.50", minWeight: "20", minWeightNote: null, days: "15" },
  { state: "Ogun", doorToDoor: "6.30", collection: "6.30", minWeight: "20", minWeightNote: null, days: "10" },
@@ -157,13 +157,13 @@ const DOOR_SURCHARGES = [
 const PRICING_TIERS = [
  {
  name: "Personal", icon: Package, tagline: "For individuals & families",
- accent: "#000f89", featured: false, airRate: "from £5.50/kg", seaRate: "from £2/kg",
+ accent: "#000f89", featured: false, airRate: "from £5.80/kg", seaRate: "from £3/kg",
  includes: ["Air & sea options", "UK door collection", "Nigeria door delivery", "Real-time tracking", "Customs clearance", "SMS & email notifications"],
  cta: "Get a Quote", href: "/quote",
  },
  {
  name: "Business", icon: BarChart3, tagline: "For SMEs & commercial shippers",
- accent: "#000f89", featured: true, airRate: "from £5.50/kg", seaRate: "from £2/kg",
+ accent: "#000f89", featured: true, airRate: "from £5.80/kg", seaRate: "from £3/kg",
  includes: ["Discounted bulk rates", "Dedicated account manager", "Priority customs handling", "Weekly reporting", "SLA guarantee", "Credit terms available", "Volume discount schedule"],
  cta: "Contact Sales", href: "/contact",
  },
@@ -185,11 +185,11 @@ const INCLUDED_ALWAYS = [
 const FAQS_PRICING = [
  {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
- a: "Sea freight from the UK to Nigeria starts from £2 per kg (4 to 6 weeks transit). Air freight starts from £5.50 per kg plus a £20 handling fee per shipment, departing every Friday. Air rates vary by state, from £5.50/kg (Lagos, office collection) to £7.80/kg; see the state table on this page.",
+ a: "Sea freight from the UK to Nigeria starts from £3 per kg (4 to 6 weeks transit). Air freight starts from £5.80 per kg plus a £20 handling fee per shipment, departing every Friday. Air rates vary by state, from £5.80/kg (Lagos, office collection) to £7.80/kg; see the state table on this page.",
  },
  {
  q: "What is the cheapest way to ship from the UK to Nigeria?",
- a: "Sea freight is the cheapest option from £2 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 to 6 weeks. For time-sensitive cargo, air freight from £5.50/kg departs every Friday from LHR, arriving Lagos the following Friday.",
+ a: "Sea freight is the cheapest option from £3 per kg with weekly sailings from UK ports to Lagos Apapa and Tin Can Island. Transit time is 4 to 6 weeks. For time-sensitive cargo, air freight from £5.80/kg departs every Friday from LHR, arriving Lagos the following Friday.",
  },
  {
  q: "Are there any extra fees?",
@@ -256,8 +256,8 @@ const STATUS_CONFIG = {
 const HERO_FACTS = [
  { icon: Plane, val: "Every Friday", label: "Air departures" },
  { icon: Ship, val: "Weekly", label: "Sea sailings" },
- { icon: Plane, val: "£5.50/kg", label: "Air freight from" },
- { icon: Ship, val: "£2/kg", label: "Sea freight from" },
+ { icon: Plane, val: "£5.80/kg", label: "Air freight from" },
+ { icon: Ship, val: "£3/kg", label: "Sea freight from" },
 ];
 
 function Hero() {
@@ -593,8 +593,8 @@ function SchedulesSection() {
 // One idea per block, in the order people ask: what does it cost, what does it
 // cost to my state, fixed prices for electronics, vehicles, extras, questions.
 const SUMMARY = [
- { icon: Plane, name: "Air freight", price: "£5.50", unit: "/kg", from: true, lines: ["Departs every Friday", "Plus £20 handling per shipment"] },
- { icon: Ship, name: "Sea freight", price: "£2", unit: "/kg", from: true, lines: ["Weekly sailings to Lagos", "4 to 6 weeks transit"] },
+ { icon: Plane, name: "Air freight", price: "£5.80", unit: "/kg", from: true, lines: ["Departs every Friday", "Plus £20 handling per shipment"] },
+ { icon: Ship, name: "Sea freight", price: "£3", unit: "/kg", from: true, lines: ["Weekly sailings to Lagos", "4 to 6 weeks transit"] },
  { icon: Truck, name: "Door to door, Lagos", price: "£5.80", unit: "/kg", from: false, lines: ["Air, delivered to your door", "Other states in the table below"] },
 ];
 
@@ -837,8 +837,8 @@ const SCHEMA_LD = {
  "@type": "Service",
  "name": "Sea Freight UK to Nigeria Weekly Sailings",
  "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
- "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4 to 6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria from £2/kg.",
- "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "2.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £2 per kg" },
+ "description": "Weekly sea freight sailings from UK ports to Lagos Apapa and Tin Can Island. 4 to 6 weeks transit. FCL and LCL available. The cheapest way to ship from the UK to Nigeria from £3/kg.",
+ "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "3.00", "unitCode": "KGM", "description": "Sea freight UK to Nigeria from £3 per kg" },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Sea Freight",
  },
@@ -847,7 +847,7 @@ const SCHEMA_LD = {
  "name": "Air Freight UK to Nigeria Weekly Departures",
  "provider": { "@type": "Organization", "name": "R-Zone Enterprises", "@id": "https://r-zoneenterprises.com/#organization" },
  "description": "Air freight from UK to Nigeria. Weekly Friday departures from London Heathrow (LHR) to Lagos (LOS). Cargo cut-off 12pm Friday arrives Lagos the following Friday. 7 days transit.",
- "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.50", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5.50 per kg, plus a £20 handling fee per shipment" },
+ "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "5.80", "unitCode": "KGM", "description": "Air freight UK to Nigeria from £5.80 per kg, plus a £20 handling fee per shipment" },
  "areaServed": ["United Kingdom", "Nigeria"],
  "serviceType": "Air Freight",
  },
@@ -855,7 +855,7 @@ const SCHEMA_LD = {
  "@type": "WebPage",
  "url": "https://r-zoneenterprises.com/schedulesprices",
  "name": "UK to Nigeria Cargo Schedules & Prices R-Zone Enterprises",
- "description": "Weekly UK to Nigeria sea sailings and Friday air departures, with per-kg rates for all 36 states. Sea freight from £2/kg, air freight from £5.50/kg.",
+ "description": "Weekly UK to Nigeria sea sailings and Friday air departures, with per-kg rates for all 36 states. Sea freight from £3/kg, air freight from £5.80/kg.",
  "publisher": { "@id": "https://r-zoneenterprises.com/#organization" },
  },
  ],

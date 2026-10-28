@@ -83,11 +83,11 @@ export const metadata = {
 const FAQS = [
   {
     q: "How much does it cost to send cargo from the UK to Nigeria?",
-    a: "Cargo from the UK to Nigeria starts from £3/kg by sea and £5.50/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £100 to £160 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
+    a: "Cargo from the UK to Nigeria starts from £3/kg by sea and £5.80/kg by air with R-Zone; door to door starts from £6/kg. A 20kg box is roughly £60 to £90 by sea or £136 to £176 by air, all inclusive of documentation, transit, Nigeria customs clearance and delivery. There are no hidden fees. The price you are quoted is the price you pay.",
   },
   {
     q: "What is the cheapest way to send cargo to Nigeria from the UK?",
-    a: "Sea freight from £3/kg is the cheapest way to send cargo to Nigeria, especially for large or heavy shipments. The saving over air grows with weight: a 100kg shipment is about £300 to £450 by sea versus £500 to £700 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air.",
+    a: "Sea freight from £3/kg is the cheapest way to send cargo to Nigeria, especially for large or heavy shipments. The saving over air grows with weight: a 100kg shipment is about £300 to £450 by sea versus £600 to £800 by air. The trade off is time, 4 to 6 weeks by sea versus 5 to 10 working days by air.",
   },
   {
     q: "How long does cargo take to reach Nigeria from the UK?",
@@ -174,7 +174,7 @@ const schemas = [
       name: "UK to Nigeria cargo services",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sea freight UK to Nigeria" }, priceCurrency: "GBP", price: "3", description: "From £3/kg, 4 to 6 weeks" },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5.50", description: "From £5.50/kg, 5 to 10 working days" },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air freight UK to Nigeria" }, priceCurrency: "GBP", price: "5.80", description: "From £5.80/kg, 5 to 10 working days" },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Door to door cargo UK to Nigeria" }, priceCurrency: "GBP", price: "6", description: "From £6/kg, UK collection plus Nigeria doorstep delivery" },
       ],
     },
@@ -255,7 +255,7 @@ function H2({ id, eyebrow, children }) {
 const SERVICES = [
   { icon: Truck, name: "Door to Door Shipping", price: "From £6/kg", transit: "Air or sea", href: "/blog/door-to-door-shipping-uk-to-nigeria",
     points: ["We collect from any UK address", "Delivered to the recipient door in Nigeria", "No depot visits, no customs queues"] },
-  { icon: Plane, name: "Air Freight", price: "From £5.50/kg", transit: "5 to 10 working days", href: "/blog/air-freight-uk-to-nigeria",
+  { icon: Plane, name: "Air Freight", price: "From £5.80/kg", transit: "5 to 10 working days", href: "/blog/air-freight-uk-to-nigeria",
     points: ["Weekly flights to Lagos", "Ideal for urgent and high value goods", "Electronics, documents, fashion, medicine"] },
   { icon: Ship, name: "Sea Freight", price: "From £3/kg", transit: "4 to 6 weeks", href: "/blog/sea-freight-uk-to-nigeria",
     points: ["The cheapest option for heavy cargo", "Weekly sailings to Lagos", "Household goods, furniture, vehicles"] },
@@ -354,7 +354,7 @@ export default function Page() {
             <tbody className="text-[15px] text-gray-800">
               {[
                 [Ship, "Sea freight", "£3 / kg", "4 to 6 weeks", "Large, heavy or bulky cargo"],
-                [Plane, "Air freight", "£5.50 / kg", "5 to 10 working days", "Urgent or high value items"],
+                [Plane, "Air freight", "£5.80 / kg", "5 to 10 working days", "Urgent or high value items"],
                 [Truck, "Door to door", "£6 / kg", "Air or sea", "UK collection plus Nigeria delivery"],
               ].map(([Icon, name, price, transit, best], i) => (
                 <tr key={name} className={i % 2 ? "bg-gray-50" : ""}>
@@ -374,7 +374,7 @@ export default function Page() {
         </div>
         <p className="text-gray-600 text-[14.5px] leading-relaxed mt-5 max-w-3xl">
           <strong className="text-gray-900">Example (20kg box, London to Lagos):</strong>{" "}
-          sea £60 to £90, air £100 to £160, door to door £120 to £180. You pay for actual or
+          sea £60 to £90, air £136 to £176, door to door £140 to £165. You pay for actual or
           volumetric weight, whichever is greater, so packing densely keeps your price low.{" "}
           <Link href="/blog/how-much-does-cargo-cost-from-uk-to-nigeria" className="text-[#000f89] font-semibold underline">
             See the full price breakdown
@@ -524,7 +524,7 @@ export default function Page() {
             Get your free UK to Nigeria cargo quote today
           </h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-2xl leading-relaxed">
-            Sea from £3/kg, air from £5.50/kg, door to door from £6/kg. Weekly departures, same day
+            Sea from £3/kg, air from £5.80/kg, door to door from £6/kg. Weekly departures, same day
             response and 120+ five star reviews. Tell us what you are sending and we will give you
             the cheapest way to get it to Nigeria.
           </p>

@@ -18,9 +18,9 @@ const ARTICLE = {
  category: "guides",
  title: "UK to Nigeria Shipping Price Guide 2026 Full Cost Breakdown",
  excerpt:
- "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5.50/kg. Sea from £2/kg. Full breakdown by item type, weight, and destination plus a free shipping calculator.",
+ "How much does it really cost to ship from the UK to Nigeria in 2026? Air from £5.80/kg. Sea from £3/kg. Full breakdown by item type, weight, and destination plus a free shipping calculator.",
  author: "R-Zone Operations Team",
- date: "12 May 2026",
+ date: "28 October 2026",
  readTime: "14 min read",
  img: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=80&auto=format&fit=crop",
  imgAlt: "UK to Nigeria cargo shipping price guide 2026 R-Zone",
@@ -37,19 +37,19 @@ const ARTICLE = {
 // ─── Price Data ───────────────────────────────────────────────────────────────
 const ITEM_PRICES = [
  { name: "iPhone (latest)", weight: 0.5, category: "Electronics", airTotal: 3, seaTotal: 2, note: "Minimum charges apply" },
- { name: "MacBook / Laptop", weight: 2.5, category: "Electronics", airTotal: 14, seaTotal: 7, note: "Includes packaging" },
- { name: "PS5 Console", weight: 5, category: "Electronics", airTotal: 28, seaTotal: 15, note: "Box adds volume weight" },
- { name: "50\" LED TV", weight: 18, category: "Electronics", airTotal: 120, seaTotal: 55, note: "Volumetric may apply" },
- { name: "Generator (small)", weight: 30, category: "Machinery", airTotal: 180, seaTotal: 75, note: "Sea recommended" },
- { name: "Pair of Sneakers", weight: 1, category: "Fashion", airTotal: 6, seaTotal: 4, note: "Standard box size" },
- { name: "20kg Clothes Bale", weight: 20, category: "Fashion", airTotal: 110, seaTotal: 48, note: "Vacuum pack saves cost" },
- { name: "Perfume (100ml)", weight: 0.3, category: "Beauty", airTotal: 3, seaTotal: 2, note: "Min charge applies" },
- { name: "Car Parts (20kg)", weight: 20, category: "Auto", airTotal: 110, seaTotal: 48, note: "Varies by item" },
- { name: "Food Items (20kg)", weight: 20, category: "Food", airTotal: 110, seaTotal: 50, note: "Min 20kg for food" },
+ { name: "MacBook / Laptop", weight: 2.5, category: "Electronics", airTotal: 14, seaTotal: 8, note: "Includes packaging" },
+ { name: "PS5 Console", weight: 5, category: "Electronics", airTotal: 29, seaTotal: 15, note: "Box adds volume weight" },
+ { name: "50\" LED TV", weight: 18, category: "Electronics", airTotal: 104, seaTotal: 54, note: "Volumetric may apply" },
+ { name: "Generator (small)", weight: 30, category: "Machinery", airTotal: 174, seaTotal: 90, note: "Sea recommended" },
+ { name: "Pair of Sneakers", weight: 1, category: "Fashion", airTotal: 6, seaTotal: 3, note: "Standard box size" },
+ { name: "20kg Clothes Bale", weight: 20, category: "Fashion", airTotal: 116, seaTotal: 60, note: "Vacuum pack saves cost" },
+ { name: "Perfume (100ml)", weight: 0.3, category: "Beauty", airTotal: 2, seaTotal: 1, note: "Min charge applies" },
+ { name: "Car Parts (20kg)", weight: 20, category: "Auto", airTotal: 116, seaTotal: 60, note: "Varies by item" },
+ { name: "Food Items (20kg)", weight: 20, category: "Food", airTotal: 116, seaTotal: 60, note: "Min 20kg for food" },
 ];
 
 const STATE_RATES = [
- { state: "Lagos", door: "£5.80", office: "£5.50", minKg: 10, days: "5 to 7" },
+ { state: "Lagos", door: "£6.00", office: "£5.80", minKg: 10, days: "5 to 7" },
  { state: "Abuja (FCT)", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
  { state: "Anambra", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
  { state: "Rivers / PH", door: "£6.80", office: "£6.50", minKg: 20, days: "10" },
@@ -64,15 +64,15 @@ const STATE_RATES = [
 const FAQS = [
  {
  q: "How much does it cost to ship 20kg from the UK to Nigeria?",
- a: "By sea: approximately £40 to £60 depending on your destination state. By air: approximately £104 to £130. Door-to-door delivery adds £20 to £35 for Nigerian delivery.",
+ a: "By air to Lagos office collection: 20kg × £5.80 = £116, plus the £20 handling fee, so about £136. Other states cost more per kg (see the state table). By sea: from about £60 at £3/kg, before volumetric weight. Door to door delivery adds £20 to £35 depending on the state.",
  },
  {
  q: "Is air freight or sea freight cheaper?",
- a: "Sea freight is always cheaper per kg from £2/kg vs air at £5.50/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4 to 6 weeks.",
+ a: "Sea freight is always cheaper per kg from £3/kg vs air at £5.80/kg. But for small shipments under 10kg, air freight is often better value when you factor in the time cost of waiting 4 to 6 weeks.",
  },
  {
  q: "Are there hidden charges?",
- a: "At R-Zone, no. Your quote includes UK export documentation, transit, Lagos customs clearance, and standard delivery. UK door collection and Nigerian door delivery are quoted separately and transparently.",
+ a: "No. Your quote shows every charge upfront: the per-kg rate, the £20 handling fee on air shipments, and any UK collection or Nigerian door delivery. UK export documentation, transit and Lagos customs clearance are included.",
  },
  {
  q: "Do I pay customs duty in Nigeria?",
@@ -194,8 +194,8 @@ function ShippingCalculator() {
  const chargeableAir = Math.max(weight, volAir);
  const chargeableSea = Math.max(weight, volSea);
 
- const ratePerKgAir = 5.50;
- const ratePerKgSea = 2.00;
+ const ratePerKgAir = 5.80;
+ const ratePerKgSea = 3.00;
  const deliveryAdd = state === "Lagos" ? 20 : state === "Abuja (FCT)" ? 30 : 35;
 
  const airCost = Math.round(chargeableAir * ratePerKgAir + deliveryAdd);
@@ -276,7 +276,7 @@ function ShippingCalculator() {
  </div>
  <div className="flex justify-between text-[12px]">
  <span className="text-gray-500">Rate</span>
- <span className="font-semibold text-gray-800">£{method === "air" ? "5.50" : "2.00"}/kg</span>
+ <span className="font-semibold text-gray-800">£{method === "air" ? "5.80" : "3.00"}/kg</span>
  </div>
  <div className="flex justify-between text-[12px]">
  <span className="text-gray-500">Delivery ({state})</span>
@@ -337,7 +337,7 @@ function CTABox() {
  Get a free UK Nigeria cargo quote from R-Zone.
  </h3>
  <p className="text-white/70 text-[13px] font-normal mb-7 max-w-xl leading-relaxed">
- Air from £5.50/kg · Sea from £2/kg · Weekly departures · Same-day response · 120+ five-star reviews.
+ Air from £5.80/kg · Sea from £3/kg · Weekly departures · Same-day response · 120+ five-star reviews.
  </p>
  <div className="flex flex-wrap gap-3">
  <a href="https://r-zoneenterprises.com/quote" target="_blank" rel="noopener noreferrer"
@@ -387,7 +387,7 @@ export default function PriceGuideArticle() {
  "headline": ARTICLE.title,
  "description": ARTICLE.excerpt,
  "datePublished": "2026-05-12",
- "dateModified": "2026-05-12",
+ "dateModified": "2026-10-28",
  "author": { "@type": "Organization", "name": "R-Zone Operations Team" },
  "publisher": { "@type": "Organization", "name": "R-Zone Enterprises", "url": "https://r-zoneenterprises.com" },
  "url": `https://r-zoneenterprises.com/blog#article/${ARTICLE.slug}`,
@@ -457,8 +457,8 @@ export default function PriceGuideArticle() {
  <div className="max-w-[860px] mx-auto px-5 sm:px-8">
  <div className="flex flex-wrap gap-6 md:gap-10">
  {[
- ["Air Freight from", "£5.50/kg"],
- ["Sea Freight from", "£2.00/kg"],
+ ["Air Freight from", "£5.80/kg"],
+ ["Sea Freight from", "£3/kg"],
  ["Air Transit", "7 days (Friday to Friday)"],
  ["Sea Transit", "4 to 6 weeks"],
  ["Google Reviews", "120+ ★★★★★"],
@@ -497,8 +497,8 @@ export default function PriceGuideArticle() {
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
  {[
- { icon: "✈", mode: "Air Freight", rate: "from £5.50/kg", transit: "7 working days (Friday to Friday)", best: "Electronics, clothing, documents, urgent shipments", color: "#000f89" },
- { icon: "🚢", mode: "Sea Freight", rate: "from £2.00/kg", transit: "4 to 6 weeks", best: "Household goods, furniture, bulk clothing, machinery", color: "#0000CD" },
+ { icon: "✈", mode: "Air Freight", rate: "from £5.80/kg", transit: "7 working days (Friday to Friday)", best: "Electronics, clothing, documents, urgent shipments", color: "#000f89" },
+ { icon: "🚢", mode: "Sea Freight", rate: "from £3/kg", transit: "4 to 6 weeks", best: "Household goods, furniture, bulk clothing, machinery", color: "#0000CD" },
  ].map(s => (
  <div key={s.mode} className="border-2 border-[#000f89]/20 bg-white p-5 relative overflow-hidden rounded-[20px]">
  <div className="absolute top-0 left-0 w-full h-[3px]" style={{ backgroundColor: s.color }} />
@@ -534,7 +534,7 @@ export default function PriceGuideArticle() {
  <motion.section ref={s2} initial={{ opacity: 0, y: 20 }} animate={v2 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
  <SectionHeading index={2}>Air Freight Prices: UK to Nigeria</SectionHeading>
  <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-5">
- R-Zone air freight departs every <strong className="font-bold text-gray-900">Friday</strong> from London Heathrow (LHR), Gatwick (LGW) and Manchester (MAN). Your cargo arrives at Lagos Murtala Muhammed Airport (LOS) or Abuja Airport (ABV) the following <strong className="font-bold text-gray-900">Friday</strong> (7 working days).
+ R-Zone air freight departs every <strong className="font-bold text-gray-900">Friday</strong> from London Heathrow (LHR). Your cargo arrives at Lagos Murtala Muhammed Airport (LOS) or Abuja Airport (ABV) the following <strong className="font-bold text-gray-900">Friday</strong> (7 working days).
  </p>
  <div className="overflow-x-auto">
  <table className="w-full text-[13px] border-collapse">
@@ -547,8 +547,8 @@ export default function PriceGuideArticle() {
  </thead>
  <tbody>
  {[
- ["Air Freight (standard)", "£5.50/kg", "7 working days (Friday to Friday)", "Friday", "UK docs + customs + tracking"],
- ["Air Freight + UK Collection", "£5.50/kg + £20+", "7 working days (Friday to Friday)", "Friday", "Door-to-UK warehouse"],
+ ["Air Freight (standard)", "£5.80/kg", "7 working days (Friday to Friday)", "Friday", "UK docs + customs + tracking"],
+ ["Air Freight + UK Collection", "£5.80/kg + £20+", "7 working days (Friday to Friday)", "Friday", "Door-to-UK warehouse"],
  ["Air Door-to-Door", "£5.80+/kg", "10 working days (Friday to Friday + delivery)", "Friday", "UK door + NG delivery"],
  ].map((row, i) => (
  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
@@ -567,7 +567,7 @@ export default function PriceGuideArticle() {
  <motion.section ref={s3} initial={{ opacity: 0, y: 20 }} animate={v3 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
  <SectionHeading index={3}>Sea Freight Prices: UK to Nigeria</SectionHeading>
  <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-5">
- Sea freight from the UK to Nigeria sails weekly from UK ports to <strong className="font-bold text-gray-900">Apapa Port and Tin Can Island</strong> in Lagos. At £2/kg, it is the most cost-effective way to ship large, heavy, or bulky cargo.
+ Sea freight from the UK to Nigeria sails weekly from UK ports to <strong className="font-bold text-gray-900">Apapa Port and Tin Can Island</strong> in Lagos. At £3/kg, it is the most cost-effective way to ship large, heavy, or bulky cargo.
  </p>
  <div className="overflow-x-auto mb-4">
  <table className="w-full text-[13px] border-collapse">
@@ -580,7 +580,7 @@ export default function PriceGuideArticle() {
  </thead>
  <tbody>
  {[
- ["LCL Sea Freight", "£2.00/kg", "4 to 6 weeks", "Weekly", "UK docs + customs + tracking"],
+ ["LCL Sea Freight", "£3/kg", "4 to 6 weeks", "Weekly", "UK docs + customs + tracking"],
  ["FCL Container", "Custom", "4 to 6 weeks", "Weekly", "Full container load"],
  ["Vehicle (RoRo)", "Custom", "4 to 6 weeks", "Monthly", "Car, van, motorcycle"],
  ].map((row, i) => (
@@ -600,7 +600,7 @@ export default function PriceGuideArticle() {
  <motion.section ref={s4} initial={{ opacity: 0, y: 20 }} animate={v4 ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55 }} className="mb-14">
  <SectionHeading index={4}>Shipping Cost by Item Type</SectionHeading>
  <p className="text-gray-700 text-[15px] font-normal leading-[1.85] mb-6">
- Below are estimated shipping costs from the UK to Lagos for the most commonly shipped items. Prices include transit and Lagos customs clearance no hidden extras.
+ Below is the freight for each item's weight when it travels in a shared box to Lagos, including transit and Lagos customs clearance. Add the £20 handling fee once per air shipment, and note the 10kg minimum for Lagos office collection.
  </p>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
  {ITEM_PRICES.map((item, i) => (
