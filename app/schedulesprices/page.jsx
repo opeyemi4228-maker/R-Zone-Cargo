@@ -184,6 +184,10 @@ const INCLUDED_ALWAYS = [
 
 const FAQS_PRICING = [
  {
+ q: "What is the last date to ship to Nigeria for Christmas 2026?",
+ a: "The sea freight cut-offs for Christmas 2026 have passed (the final one was Friday 6 November). Air freight is still open: the last flight that delivers before Christmas Day leaves London Heathrow at 12pm on Friday 11 December and lands in Lagos on 18 December. Book the 4 December flight for a safety margin.",
+ },
+ {
  q: "How much does it cost to ship cargo from the UK to Nigeria?",
  a: "Sea freight from the UK to Nigeria starts from £3 per kg (4 to 6 weeks transit). Air freight starts from £5.80 per kg plus a £20 handling fee per shipment, departing every Friday. Air rates vary by state, from £5.80/kg (Lagos, office collection) to £7.80/kg; see the state table on this page.",
  },
