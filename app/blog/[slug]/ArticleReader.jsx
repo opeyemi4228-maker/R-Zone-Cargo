@@ -160,11 +160,11 @@ function RenderBlock({ block }) {
  const [head, ...body] = rows;
  return (
  <div className="overflow-x-auto border border-gray-200 -mx-1 sm:mx-0 rounded-[20px]">
- <table className="w-full text-left border-collapse min-w-[520px]">
+ <table className={`w-full text-left border-collapse ${head.length > 3 ? "min-w-[560px]" : ""}`}>
  <thead>
  <tr className="bg-[#000f89] text-white text-[11.5px] uppercase tracking-[0.06em]">
  {head.map((c, ci) => (
- <th key={ci} scope="col" className="p-3.5 font-bold">{renderInline(c)}</th>
+ <th key={ci} scope="col" className="p-3 sm:p-3.5 font-bold">{renderInline(c)}</th>
  ))}
  </tr>
  </thead>
@@ -172,7 +172,7 @@ function RenderBlock({ block }) {
  {body.map((r, ri) => (
  <tr key={ri} className={ri % 2 ? "bg-gray-50" : ""}>
  {r.map((c, ci) => (
- <td key={ci} className={`p-3.5 align-top ${ci === 0 ? "font-bold text-gray-900" : ""}`}>
+ <td key={ci} className={`p-3 sm:p-3.5 align-top ${ci === 0 ? "font-bold text-gray-900" : ""}`}>
  {renderInline(c)}
  </td>
  ))}
@@ -227,10 +227,46 @@ function RenderBlock({ block }) {
  );
 }
 
+// Split each blank-line-separated block into runs of one kind (a "### "
+// heading, table rows, "- " bullets, "1. " steps, "> " callouts or plain
+// text). Content often puts a heading or an intro line directly above a
+// list with no blank line between; without this split the whole list was
+// rendered inside the heading or run together as one paragraph.
+function lineKind(line) {
+ const t = line.trim();
+ if (t.startsWith("### ")) return "h3";
+ if (t.startsWith("|")) return "table";
+ if (/^- /.test(t)) return "ul";
+ if (/^\d+\. /.test(t)) return "ol";
+ if (/^> ?/.test(t)) return "quote";
+ return "p";
+}
+
+function splitBlocks(text) {
+ const out = [];
+ for (const block of text.split("\n\n")) {
+ let run = [];
+ let kind = null;
+ for (const line of block.split("\n")) {
+ if (!line.trim()) continue;
+ const k = lineKind(line);
+ // Headings always stand alone; other kinds group with their neighbours.
+ if (run.length && (k !== kind || k === "h3")) {
+ out.push(run.join("\n"));
+ run = [];
+ }
+ run.push(line);
+ kind = k;
+ }
+ if (run.length) out.push(run.join("\n"));
+ }
+ return out;
+}
+
 function RenderBody({ text }) {
  return (
  <div className="space-y-4">
- {text.split("\n\n").map((block, bi) => (
+ {splitBlocks(text).map((block, bi) => (
  <RenderBlock key={bi} block={block} />
  ))}
  </div>
