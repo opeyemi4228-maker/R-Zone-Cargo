@@ -5,14 +5,23 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Partner With R-Zone: UK to Nigeria Logistics" },
-  description: "Agent, reseller and commercial partnerships with a UK to Nigeria freight forwarder operating since 2012. Work with R-Zone across both markets.",
+ title: { absolute: "Partner With R-Zone: UK to Nigeria Logistics" },
+ description: "Agent, reseller and commercial partnerships with a UK to Nigeria freight forwarder operating since 2012. Work with R-Zone across both markets.",
   alternates: { canonical: "https://r-zoneenterprises.com/partners" },
   openGraph: {
     title: "Partner With R-Zone: UK to Nigeria Logistics",
     description: "Agent, reseller and commercial partnerships with a UK to Nigeria freight forwarder operating since 2012. Work with R-Zone across both markets.",
     url: "https://r-zoneenterprises.com/partners",
     siteName: "R-Zone Enterprises",
+   type: "website",
+   locale: "en_GB",
+   images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "Partner With R-Zone: UK to Nigeria Logistics",
+   description: "Agent, reseller and commercial partnerships with a UK to Nigeria freight forwarder operating since 2012. Work with R-Zone across both markets.",
+   images: ["/images/og-default.jpg"],
   },
 };
 

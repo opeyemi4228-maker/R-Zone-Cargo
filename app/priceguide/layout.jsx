@@ -5,14 +5,23 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "UK to Nigeria Shipping Prices 2026: Full Cost Guide" },
-  description: "Air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Every UK to Nigeria rate by state, item and weight, with a free cost calculator.",
+ title: { absolute: "UK to Nigeria Shipping Prices 2026: Full Cost Guide" },
+ description: "Air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Every UK to Nigeria rate by state, item and weight, with a free cost calculator.",
   alternates: { canonical: "https://r-zoneenterprises.com/priceguide" },
   openGraph: {
     title: "UK to Nigeria Shipping Prices 2026: Full Cost Guide",
     description: "Air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Every UK to Nigeria rate by state, item and weight, with a free cost calculator.",
     url: "https://r-zoneenterprises.com/priceguide",
     siteName: "R-Zone Enterprises",
+   type: "website",
+   locale: "en_GB",
+   images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "UK to Nigeria Shipping Prices 2026: Full Cost Guide",
+   description: "Air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Every UK to Nigeria rate by state, item and weight, with a free cost calculator.",
+   images: ["/images/og-default.jpg"],
   },
 };
 

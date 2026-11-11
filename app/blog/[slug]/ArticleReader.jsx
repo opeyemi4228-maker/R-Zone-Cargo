@@ -583,7 +583,7 @@ export default function ArticleReader({ article, related }) {
  <ol className="space-y-2.5">
  {article.content.map((sec, i) => (
  <li key={i} className="flex items-start gap-3">
- <span className="font-black text-[#000f89]/35 text-[12px] flex-shrink-0 w-5 mt-0.5">
+ <span className="font-black text-[#000f89]/70 text-[12px] flex-shrink-0 w-5 mt-0.5">
  {i + 1}.
  </span>
  <a
@@ -653,7 +653,7 @@ export default function ArticleReader({ article, related }) {
  {article.tags.map((t) => (
  <span
  key={t}
- className="text-[10px] font-semibold text-gray-500 border border-gray-200 px-3 py-1.5 hover:border-[#000f89] hover:text-[#000f89] transition-colors"
+ className="text-[12px] font-semibold text-gray-500 border border-gray-200 px-3 py-1.5 hover:border-[#000f89] hover:text-[#000f89] transition-colors"
  >
  #{t}
  </span>

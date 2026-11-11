@@ -147,7 +147,7 @@ function TestimonialCard({ t, featured = false }) {
 
  {/* Stars */}
  <div className="mb-4">
- <div className="flex items-center gap-0.5" aria-label={`${t.stars} out of 5 stars`}
+ <div className="flex items-center gap-0.5" role="img" aria-label={`${t.stars} out of 5 stars`}
 >
  {Array.from({ length: t.stars }).map((_, i) => (
  <Star key={i} size={11} className={featured ? "fill-white text-white" : "fill-[#000f89] text-[#000f89]"} aria-hidden="true" />
@@ -328,13 +328,19 @@ export default function TestimonialsSection() {
  <button
  key={i}
  onClick={() => setCurrentIndex(i)}
- className={`rounded-full transition-all duration-300 ${
+ className="group flex h-6 min-w-6 items-center justify-center"
+ aria-label={`Go to testimonial ${i + 1}`}
+ aria-current={i === currentIndex ? "true" : undefined}
+ >
+ {/* 24px hit area around a small dot, so it is easy to tap on phones */}
+ <span
+ className={`block rounded-full transition-all duration-300 ${
  i === currentIndex
  ? 'w-8 h-3 bg-[#000f89]'
- : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+ : 'w-3 h-3 bg-gray-300 group-hover:bg-gray-400'
  }`}
- aria-label={`Go to testimonial ${i + 1}`}
  />
+ </button>
  ))}
  </div>
 

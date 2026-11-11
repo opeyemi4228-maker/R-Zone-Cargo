@@ -89,7 +89,7 @@ export const metadata = {
  "Shipping services to Nigeria by air freight and sea freight. Door to door cargo, car shipping, and importation from Nigeria. Over 12 years experience. 120+ 5-star reviews.",
  images: [
  {
- url: "/og-image.jpg", // Place a 1200×630 image at /public/og-image.jpg
+ url: "/images/og-default.jpg",
  width: 1200,
  height: 630,
  alt: "R-Zone Enterprises Door to Door Cargo to Nigeria from UK",
@@ -106,7 +106,7 @@ export const metadata = {
  title: "R-Zone Enterprises | Cargo to Nigeria from UK",
  description:
  "Door to door cargo, air freight & sea shipping to Nigeria. Trusted UK-based shipping company serving all 36 Nigerian states.",
- images: ["/og-image.jpg"],
+ images: ["/images/og-default.jpg"],
  },
 
  // ── Verification placeholders add real tokens when available ────────────
@@ -206,9 +206,8 @@ export default function RootLayout({ children }) {
  <meta key="contact" name="contact" content="info@r-zoneenterprises.com" />,
  <meta key="reply-to" name="reply-to" content="info@r-zoneenterprises.com" />,
 
- /* ── Security headers via meta (supplement next.config.js headers) */
- <meta key="x-content-type" httpEquiv="X-Content-Type-Options" content="nosniff" />,
- <meta key="x-frame-options" httpEquiv="X-Frame-Options" content="SAMEORIGIN" />,
+ /* Security headers are sent as real HTTP headers from next.config.mjs.
+ X-Frame-Options in a <meta> is ignored and logs a console error. */
 
  /* ── JSON-LD: LocalBusiness schema ─────────────────────────────── */
  <script

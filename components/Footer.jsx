@@ -61,6 +61,7 @@ const SERVICES = [
 
 const COMPANY = [
  { label: "About Us", href: "/about" },
+ { label: "Why R-Zone", href: "/rzone" },
  { label: "Business Solutions", href: "/business-solutions" },
  { label: "Shipping Blog", href: "/blog" },
  { label: "Careers", href: "/careers" },
@@ -71,6 +72,7 @@ const SUPPORT = [
  { label: "Request a Quote", href: "/quote" },
  { label: "Track Shipment", href: "/track" },
  { label: "Prices & Schedules", href: "/schedulesprices" },
+ { label: "Price Guide", href: "/priceguide" },
  { label: "Cargo FAQs", href: "/blog/uk-to-nigeria-cargo-faq" },
  { label: "Help & Support", href: "/support" },
  { label: "Partner With Us", href: "/partners" },
@@ -455,7 +457,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="flex items-center gap-2.5" role="list" aria-label="Social media links">
+            <div className="flex items-center gap-2.5" aria-label="Social media links">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -464,7 +466,6 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    role="listitem"
                     aria-label={`Follow R-Zone on ${social.label} (opens in new tab)`}
                     className="w-10 h-10 bg-white/[0.06] border border-white/10 rounded-full flex items-center justify-center text-white/75 hover:text-white hover:bg-[#000f89] hover:border-[#000f89] transition-all duration-200"
                     whileHover={{ scale: 1.08, y: -2 }}
@@ -622,7 +623,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/55 hover:text-white text-[12.5px] tracking-[0.03em] transition-colors duration-200"
+                  className="inline-block py-1 text-white/55 hover:text-white text-[12.5px] tracking-[0.03em] transition-colors duration-200"
                 >
                   {link.label}
                 </Link>

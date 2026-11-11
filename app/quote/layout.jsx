@@ -19,6 +19,15 @@ export const metadata = {
  description: "Get a free UK to Nigeria cargo quote: air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Same-day reply, customs clearance included.",
  url: "https://r-zoneenterprises.com/quote",
  siteName: "R-Zone Enterprises",
+ type: "website",
+ locale: "en_GB",
+ images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+ },
+ twitter: {
+ card: "summary_large_image",
+ title: "Free UK to Nigeria Cargo Quote: Air, Sea, Door to Door",
+ description: "Get a free UK to Nigeria cargo quote: air from £5.80/kg, sea from £3/kg, door to door from £6/kg. Same-day reply, customs clearance included.",
+ images: ["/images/og-default.jpg"],
  },
 };
 

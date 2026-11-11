@@ -5,7 +5,7 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Cookie Policy | R-Zone Enterprises" },
+ title: { absolute: "Cookie Policy | R-Zone Enterprises" },
   description:
     "How R-Zone Enterprises uses cookies on its website to improve your experience and analyse site traffic.",
   alternates: { canonical: "https://r-zoneenterprises.com/cookies" },
@@ -15,6 +15,14 @@ export const metadata = {
       "How R-Zone Enterprises uses cookies on its website to improve your experience and analyse site traffic.",
     url: "https://r-zoneenterprises.com/cookies",
     siteName: "R-Zone Enterprises",
+   type: "website",
+   locale: "en_GB",
+   images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "Cookie Policy | R-Zone Enterprises",
+   images: ["/images/og-default.jpg"],
   },
 };
 

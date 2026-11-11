@@ -21,6 +21,15 @@ export const metadata = {
  description: "Air freight, sea freight, door to door cargo and Nigeria customs clearance from R-Zone, with weekly departures and collection across the UK.",
  url: "https://r-zoneenterprises.com/services",
  siteName: "R-Zone Enterprises",
+ type: "website",
+ locale: "en_GB",
+ images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+ },
+ twitter: {
+ card: "summary_large_image",
+ title: "UK to Nigeria Cargo Services: Air, Sea and Door to Door",
+ description: "Air freight, sea freight, door to door cargo and Nigeria customs clearance from R-Zone, with weekly departures and collection across the UK.",
+ images: ["/images/og-default.jpg"],
  },
 };
 

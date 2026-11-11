@@ -27,7 +27,23 @@ const nextConfig = {
  key: "Cache-Control",
  value: "public, max-age=0, s-maxage=60, stale-while-revalidate=60",
  };
+ // Real security headers (browsers ignore most of these in <meta>).
+ // No strict CSP yet: analytics, maps and WhatsApp embeds would need an
+ // audited allow-list first.
+ const securityHeaders = [
+ { key: "X-Frame-Options", value: "SAMEORIGIN" },
+ { key: "X-Content-Type-Options", value: "nosniff" },
+ { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+ { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+ { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+ ];
+ // Leftover e-commerce template pages and the admin area: reachable, but
+ // thin and off-topic for a cargo site, so keep them out of search results.
+ const noindex = [{ key: "X-Robots-Tag", value: "noindex, nofollow" }];
+ const privatePages = ["/cart", "/my-orders", "/order-placed", "/add-address", "/seller/:path*", "/product/:path*", "/admin/:path*"];
  return [
+ { source: "/:path*", headers: securityHeaders },
+ ...privatePages.map((source) => ({ source, headers: noindex })),
  { source: "/robots.txt", headers: [crawlerCache] },
  { source: "/sitemap.xml", headers: [crawlerCache] },
  { source: "/_next/static/:path*", headers: [immutableAsset] },

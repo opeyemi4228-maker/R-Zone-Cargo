@@ -17,6 +17,15 @@ export const metadata = {
  description: "Track your UK to Nigeria shipment in real time. Enter your R-Zone booking reference, Air Waybill or Bill of Lading for live status and milestones.",
  url: "https://r-zoneenterprises.com/track",
  siteName: "R-Zone Enterprises",
+ type: "website",
+ locale: "en_GB",
+ images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+ },
+ twitter: {
+ card: "summary_large_image",
+ title: "Track Your UK to Nigeria Cargo Shipment",
+ description: "Track your UK to Nigeria shipment in real time. Enter your R-Zone booking reference, Air Waybill or Bill of Lading for live status and milestones.",
+ images: ["/images/og-default.jpg"],
  },
 };
 

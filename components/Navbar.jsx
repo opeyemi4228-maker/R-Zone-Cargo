@@ -341,6 +341,8 @@ function Wordmark({ size = 19 }) {
 }
 
 // ─── Mobile Menu ──────────────────────────────────────────────────────────────
+// Overlay z-[60] and panel z-[70] sit above the cookie banner (z-50), so a
+// first-time visitor can still use the menu before dismissing it.
 function MobileMenu({ isOpen, onClose, pathname }) {
  const [expanded, setExpanded] = useState(null);
  const menuRef = useRef(null);
@@ -381,7 +383,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
  {isOpen && (
  <>
  <motion.div
- className="fixed inset-0 z-40 bg-[#00112E]/50 backdrop-blur-sm lg:hidden"
+ className="fixed inset-0 z-[60] bg-[#00112E]/50 backdrop-blur-sm lg:hidden"
  initial={{ opacity: 0 }}
  animate={{ opacity: 1 }}
  exit={{ opacity: 0 }}
@@ -395,7 +397,7 @@ function MobileMenu({ isOpen, onClose, pathname }) {
  role="dialog"
  aria-modal="true"
  aria-label="Navigation menu"
- className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] fixed top-0 right-0 z-50 flex h-full w-full max-w-[380px] flex-col bg-white shadow-[-8px_0_40px_rgba(0,17,46,0.18)] lg:hidden`}
+ className={`${montserrat.variable} font-[family-name:var(--font-montserrat)] fixed top-0 right-0 z-[70] flex h-full w-full max-w-[380px] flex-col bg-white shadow-[-8px_0_40px_rgba(0,17,46,0.18)] lg:hidden`}
  initial={{ x: "100%" }}
  animate={{ x: 0 }}
  exit={{ x: "100%" }}

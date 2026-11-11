@@ -5,14 +5,23 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Importation from Nigeria to the UK: Air and Sea Freight" },
-  description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
+ title: { absolute: "Importation from Nigeria to the UK: Air and Sea Freight" },
+ description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
   alternates: { canonical: "https://r-zoneenterprises.com/importation" },
   openGraph: {
     title: "Importation from Nigeria to the UK: Air and Sea Freight",
     description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
     url: "https://r-zoneenterprises.com/importation",
     siteName: "R-Zone Enterprises",
+   type: "website",
+   locale: "en_GB",
+   images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "Importation from Nigeria to the UK: Air and Sea Freight",
+   description: "Import from Nigeria to the UK with R-Zone: sourcing, air and sea freight, customs clearance and delivery for personal and commercial goods.",
+   images: ["/images/og-default.jpg"],
   },
 };
 

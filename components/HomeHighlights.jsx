@@ -105,7 +105,7 @@ export default function HomeHighlights() {
  >
  {/* ── Track record: one rounded panel that overlaps the hero edge ──── */}
  <div className="relative z-10 mx-auto -mt-16 max-w-[1400px] px-5 sm:px-8 xl:px-10 md:-mt-20">
- <dl className="grid grid-cols-2 overflow-hidden rounded-[24px] border border-[#DCE4F5] bg-white shadow-[0_30px_70px_-30px_rgba(0,17,46,0.45)] lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
+ <div className="grid grid-cols-2 overflow-hidden rounded-[24px] border border-[#DCE4F5] bg-white shadow-[0_30px_70px_-30px_rgba(0,17,46,0.45)] lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
  {STATS.map((stat, i) => {
  const featured = i === 0;
  return (
@@ -132,22 +132,22 @@ export default function HomeHighlights() {
  aria-hidden="true"
  />
  )}
- <dd
+ <p
  className={`relative font-extrabold leading-none tracking-[-0.04em] tabular-nums ${featured ? "text-white" : "text-[#00112E]"}`}
  style={{ fontSize: featured ? "clamp(52px, 6vw, 84px)" : "clamp(30px, 3.4vw, 46px)" }}
  >
  <Counter target={stat.value} suffix={stat.suffix} />
- </dd>
- <dt className={`relative mt-3 font-bold ${featured ? "text-[17px] text-white" : "text-[14px] text-[#000f89]"}`}>
+ </p>
+ <p className={`relative mt-3 font-bold ${featured ? "text-[17px] text-white" : "text-[14px] text-[#000f89]"}`}>
  {stat.label}
- </dt>
+ </p>
  <p className={`relative mt-0.5 leading-snug ${featured ? "text-[14px] text-white/75" : "text-[13px] text-slate-500"}`}>
  {stat.sub}
  </p>
  </motion.div>
  );
  })}
- </dl>
+ </div>
  </div>
 
  {/* ── What we do + the three ways to ship ──────────────────────────── */}

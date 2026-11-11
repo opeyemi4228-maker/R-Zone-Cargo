@@ -5,14 +5,23 @@
 // canonical" in Google Search Console. title.absolute opts out of the root
 // title template so the brand is not repeated.
 export const metadata = {
-  title: { absolute: "Contact R-Zone: UK to Nigeria Cargo and Shipping" },
-  description: "Contact R-Zone for UK to Nigeria cargo and shipping. Call +44 (0) 800 772 0864, WhatsApp +44 7915 647 119, or request a free same-day quote.",
+ title: { absolute: "Contact R-Zone: UK to Nigeria Cargo and Shipping" },
+ description: "Contact R-Zone for UK to Nigeria cargo and shipping. Call +44 (0) 800 772 0864, WhatsApp +44 7915 647 119, or request a free same-day quote.",
   alternates: { canonical: "https://r-zoneenterprises.com/contact" },
   openGraph: {
     title: "Contact R-Zone: UK to Nigeria Cargo and Shipping",
     description: "Contact R-Zone for UK to Nigeria cargo and shipping. Call +44 (0) 800 772 0864, WhatsApp +44 7915 647 119, or request a free same-day quote.",
     url: "https://r-zoneenterprises.com/contact",
     siteName: "R-Zone Enterprises",
+   type: "website",
+   locale: "en_GB",
+   images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+  },
+  twitter: {
+   card: "summary_large_image",
+   title: "Contact R-Zone: UK to Nigeria Cargo and Shipping",
+   description: "Contact R-Zone for UK to Nigeria cargo and shipping. Call +44 (0) 800 772 0864, WhatsApp +44 7915 647 119, or request a free same-day quote.",
+   images: ["/images/og-default.jpg"],
   },
 };
 

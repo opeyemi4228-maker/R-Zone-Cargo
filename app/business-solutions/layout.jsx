@@ -22,6 +22,15 @@ export const metadata = {
  description: "Business shipping between the UK and Nigeria: air and sea freight, door to door delivery, customs clearance, warehousing and account terms.",
  url: "https://r-zoneenterprises.com/business-solutions",
  siteName: "R-Zone Enterprises",
+ type: "website",
+ locale: "en_GB",
+ images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "R-Zone Cargo: UK to Nigeria shipping" }],
+ },
+ twitter: {
+ card: "summary_large_image",
+ title: "Business Cargo and Logistics: UK to Nigeria",
+ description: "Business shipping between the UK and Nigeria: air and sea freight, door to door delivery, customs clearance, warehousing and account terms.",
+ images: ["/images/og-default.jpg"],
  },
 };
 
